@@ -3,10 +3,10 @@
 <span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=gsantner&amp;repo=memetastic&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>[![CircleCI](https://circleci.com/gh/gsantner/memetastic.svg?style=shield)](https://circleci.com/gh/gsantner/memetastic)
 
-MemeTastic - Meme Creator for Android
-Available for devices running Jelly Bean (4.2.2 / API17) and above
-Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2015-
-License: **GPLv3**
+**MemeTastic - Meme Creator for Android**  
+Available for devices running Jelly Bean (4.2.2 / API17) and above  
+Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2015-  
+License: **GPLv3**  
 
 ## Description
 * Ad-Free and no watermarks
@@ -27,6 +27,10 @@ License: **GPLv3**
 * Change amount of displayed pictures per row
 * Works completly offline, no connection required
 
+## Download
+* F-Droid: Soon
+* [Nightly](https://gsantner.gitlab.io/fdroid/latest/io.github.gsantner.memetastic.test.apk) - Named MemeTestic, can be installed aside of MemeTastic
+
 ## Contributions
 For inclusion of new fonts or memes visit [issue #1](https://github.com/gsantner/memetastic/issues/1). Please only post stuff
 you own or is allowed to redistribute. Meme templates will only get added
@@ -39,8 +43,8 @@ You can maybe find something suitable here:
 
 
 ## Licensing
-The app itself is licensed GPL v3.
-For more licensing informations, see [`licenses.html`](/app/src/main/res/raw/licenses.html).
+The code of the app is licensed GPL v3.  
+For more licensing informations, see [`licenses.html`](/app/src/main/res/raw/licenses.html).  
 If one or more meme template (/font) violates copyright laws and you want them to be removed,
 please open a issue on GitHub and they will get removed as soon as possible. Note that
 memes are pretty sure free advertisments for what's in the picture (so for you or your company).
