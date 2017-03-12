@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- main -->
+    <string name="main__navdrawer__open">ナビゲーションドロワーを開く</string>
+    <string name="main__navdrawer__close">ナビゲーションドロワーを閉じる</string>
+
+    <string name="main__save_meme">ミームを保存</string>
+    <string name="main__share_meme">ミームを共有</string>
+    <string name="main__create_meme">ミームを作成</string>
+    <string name="main__delete_meme">ミームを削除</string>
+
+    <string name="main__memecat__humans">人</string>
+    <string name="main__memecat__cartoon">漫画</string>
+    <string name="main__memecat__animals">動物</string>
+
+    <string name="main__mode__saved">保存済</string>
+    <string name="main__mode__favs">お気に入り</string>
+    <string name="main__mode__create">作成</string>
+
+    <string name="main__get_picture_from_gallery">ギャラリーから画像を取得</string>
+    <string name="main__get_picture_from_camera">カメラから画像を取得</string>
+    <string name="main__error_camera_cannot_start">カメラを開始できません。</string>
+    <string name="main__error_no_picture_selected">画像が選択されていません。</string>
+    <string name="main__share_meme_prompt">ミームを共有…</string>
+
+    <string name="main__donate_bitcoin">Bitcoin で寄付</string>
+    <string name="main__recommend_app">おすすめ</string>
+    <string name="main__exit">終了</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">もう一度戻るを押すと、このミームの編集を終了します。 まだ保存していない場合、ミームは失われます。</string>
+    <string name="creator__saved_successfully_message">このミームはお使いのデバイスに保存されました。 このミームの編集を終了してもよろしいですか?</string>
+    <string name="creator__text_size">文字のサイズ</string>
+    <string name="creator__text_color">文字の色</string>
+    <string name="creator__border_color">ボーダーの色</string>
+    <string name="creator__saved_successfully">正常に保存しました!</string>
+    <string name="creator__hint_top_caption">上部のキャプション</string>
+    <string name="creator__hint_bottom_caption">下部のキャプション</string>
+    <string name="creator__font">フォント</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">設定</string>
+    <string name="settings__all_caps">すべて大文字</string>
+    <string name="settings__pref_render_quality_title">描画品質</string>
+    <string name="settings__cleanup_thumbnails">サムネイルをクリア</string>
+    <string name="settings__pref_columns_portrait">縦の項目数</string>
+    <string name="settings__pref_columns_landscape">横の項目数</string>
+
+    <!-- Info -->
+    <string name="info__info">情報</string>
+    <string name="info__developed_by">開発者</string>
+    <string name="info__additionalContact">詳細情報</string>
+    <string name="info__license">ライセンス</string>
+    <string name="info__show_licenses">ライセンスを表示</string>
+</resources>
