@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="meme_categories">
+        <item>@string/main__memecat__humans</item>
+        <item>@string/main__memecat__animals</item>
+        <item>@string/main__memecat__cartoon</item>
+        <item>@string/main__memecat__rage</item>
+    </string-array>
+</resources>

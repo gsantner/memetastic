@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="default_margin_0_5">4dp</dimen>
+    <dimen name="default_margin_1">8dp</dimen>
+    <dimen name="default_margin_2">16dp</dimen>
+
+    <dimen name="activity_margin">@dimen/default_margin_2</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+</resources>

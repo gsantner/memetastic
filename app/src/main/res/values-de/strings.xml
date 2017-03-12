@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main__create_meme">Meme erstellen</string>
+    <string name="main__delete_meme">Meme löschen</string>
+    <string name="main__donate_bitcoin">Bitcoin spenden</string>
+    <string name="main__error_camera_cannot_start">Kamera konnte nicht geladen werden.</string>
+    <string name="main__error_no_picture_selected">Kein Bild ausgewählt.</string>
+    <string name="main__exit">Beenden</string>
+    <string name="main__get_picture_from_camera">Bild von Kamera laden</string>
+    <string name="main__get_picture_from_gallery">Bild aus Galerie laden</string>
+    <string name="main__memecat__animals">Tiere</string>
+    <string name="main__memecat__cartoon">Cartoon</string>
+    <string name="main__memecat__humans">Menschen</string>
+    <string name="main__mode__create">Erstellen</string>
+    <string name="main__mode__favs">Favoriten</string>
+    <string name="main__mode__saved">Gespeichert</string>
+    <string name="main__navdrawer__close">NavDrawer schließen</string>
+    <string name="main__navdrawer__open">NavDrawer öffnen</string>
+    <string name="main__recommend_app">Empfehlen</string>
+    <string name="main__save_meme">Meme speichern</string>
+    <string name="main__share_meme">Meme teilen</string>
+    <string name="main__share_meme_prompt">Meme teilen über...</string>
+    <string name="creator__border_color">Rand-Farbe</string>
+    <string name="creator__font">Schriftart</string>
+    <string name="creator__hint_bottom_caption">Unterer Text</string>
+    <string name="creator__hint_top_caption">Oberer Text</string>
+    <string name="creator__press_back_again_to_exit">Erneut drücken um abzubrechen. Nicht gespeicherte Memes gehen verloren.</string>
+    <string name="creator__saved_successfully">Speichern erfolgreich!</string>
+    <string name="creator__saved_successfully_message">Das Meme wurde erfolgreich auf deinem Gerät gespeichert. Möchtest du zurück zur Übersicht?</string>
+    <string name="creator__text_color">Text-Farbe</string>
+    <string name="creator__text_size">Text-Größe</string>
+    <string name="settings__all_caps">Alles groß</string>
+    <string name="settings__cleanup_thumbnails">Vorschaubilder aufräumen</string>
+    <string name="settings__pref_columns_landscape">Spalten Querformat</string>
+    <string name="settings__pref_columns_portrait">Spalten Hochformat</string>
+    <string name="settings__pref_render_quality_title">Render-Qualität</string>
+    <string name="settings__settings">Einstellungen</string>
+    <string name="info__additionalContact">Mehr Informationen</string>
+    <string name="info__developed_by">Entwickelt von</string>
+    <string name="info__info">Info</string>
+    <string name="info__license">Lizenzen</string>
+    <string name="info__show_licenses">Lizenzen anzeigen</string>
+</resources>

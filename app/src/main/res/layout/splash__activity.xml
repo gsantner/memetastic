@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark"
+    android:paddingBottom="@dimen/default_margin_2"
+    android:paddingLeft="@dimen/default_margin_2"
+    android:paddingRight="@dimen/default_margin_2"
+    android:paddingTop="@dimen/default_margin_2"
+    tools:context="io.github.gsantner.memetastic.activity.SplashActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:drawableTop="@drawable/ic_launcher"
+        android:shadowColor="@color/black"
+        android:shadowDx="-4"
+        android:shadowDy="4"
+        android:shadowRadius="6"
+        android:text="@string/app_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="-4"
+        android:shadowDy="4"
+        android:shadowRadius="6"
+        android:text="@string/info_author"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</RelativeLayout>

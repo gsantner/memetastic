@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="io.github.gsantner.memetastic.activity.MemeCreateActivity"
+    tools:showIn="@layout/memecreate__activity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/default_margin_2"
+        android:paddingTop="0dp">
+
+        <EditText
+            android:id="@+id/memecreate__activity__edit_caption_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/creator__hint_top_caption"
+            android:inputType="textMultiLine"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/default_margin_2"
+            android:paddingRight="@dimen/default_margin_2"
+            android:paddingTop="@dimen/default_margin_2"
+            android:textColor="@color/primary_text" />
+
+        <EditText
+            android:id="@+id/memecreate__activity__edit_caption_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/creator__hint_bottom_caption"
+            android:inputType="textMultiLine"
+            android:paddingLeft="@dimen/default_margin_2"
+            android:paddingRight="@dimen/default_margin_2"
+            android:paddingTop="2dp"
+            android:textColor="@color/primary_text" />
+
+        <ImageView
+            android:id="@+id/memecreate__activity__image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:adjustViewBounds="true"
+            android:focusable="true"
+            android:paddingTop="0dp"
+            android:scaleType="fitStart" />
+
+    </LinearLayout>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/memecreate__activity__bottomsheet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+
+</FrameLayout>

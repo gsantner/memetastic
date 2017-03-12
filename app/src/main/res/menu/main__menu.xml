@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.github.gsantner.memetastic.activity.MainActivity">
+
+    <item
+        android:id="@+id/action_picture_from_camera"
+        android:icon="@drawable/ic_add_a_photo_white_48px"
+        android:title="@string/main__get_picture_from_camera"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_picture_from_gallery"
+        android:icon="@drawable/ic_insert_photo_white_48px"
+        android:title="@string/main__get_picture_from_gallery"
+        app:showAsAction="always" />
+
+</menu>
