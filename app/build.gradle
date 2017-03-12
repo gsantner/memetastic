@@ -28,7 +28,7 @@ android {
 
         flavorTest {
             applicationId "io.github.gsantner.memetastic.test"
-            manifestPlaceholders = [appName: "MemeTasticTest"]
+            manifestPlaceholders = [appName: "MemeTestic"]
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
         }
