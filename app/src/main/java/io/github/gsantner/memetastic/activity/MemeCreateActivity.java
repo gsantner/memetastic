@@ -263,8 +263,8 @@ public class MemeCreateActivity extends AppCompatActivity
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle(R.string.creator__saved_successfully)
                     .setMessage(R.string.creator__saved_successfully_message)
-                    .setNegativeButton(android.R.string.no, null)
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.creator__no_keep_editing, null)
+                    .setPositiveButton(R.string.main__yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             finish();
                         }

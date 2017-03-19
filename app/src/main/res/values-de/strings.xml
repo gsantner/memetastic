@@ -25,7 +25,7 @@
     <string name="creator__hint_bottom_caption">Unterer Text</string>
     <string name="creator__hint_top_caption">Oberer Text</string>
     <string name="creator__press_back_again_to_exit">Erneut drücken um abzubrechen. Nicht gespeicherte Memes gehen verloren.</string>
-    <string name="creator__saved_successfully">Speichern erfolgreich!</string>
+    <string name="creator__saved_successfully">Erfolgreich gespeichert!</string>
     <string name="creator__saved_successfully_message">Das Meme wurde erfolgreich auf deinem Gerät gespeichert. Möchtest du zurück zur Übersicht?</string>
     <string name="creator__text_color">Text-Farbe</string>
     <string name="creator__text_size">Text-Größe</string>
@@ -38,6 +38,12 @@
     <string name="info__additionalContact">Mehr Informationen</string>
     <string name="info__developed_by">Entwickelt von</string>
     <string name="info__info">Info</string>
-    <string name="info__license">Lizenzen</string>
+    <string name="info__licenses">Lizenzen</string>
     <string name="info__show_licenses">Lizenzen anzeigen</string>
+    <string name="main__yes">Ja</string>
+    <string name="creator__no_keep_editing">Nein, weiter bearbeiten</string>
+    <string name="info__show_gplv3_license">Show GNU GPLv3 license</string>
+    <string name="contributors">Beitragende</string>
+    <string name="info__show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
+    <string name="more_information">Mehr Informationen</string>
 </resources>

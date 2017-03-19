@@ -27,6 +27,7 @@
     <string name="main__donate_bitcoin">Donate Bitcoin</string>
     <string name="main__recommend_app">Recommend</string>
     <string name="main__exit">Exit</string>
+    <string name="main__yes">yes</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Press back again to stop editing this meme. Meme will be lost if it is not already saved.</string>
@@ -38,6 +39,7 @@
     <string name="creator__hint_top_caption">Top caption</string>
     <string name="creator__hint_bottom_caption">Bottom caption</string>
     <string name="creator__font">Font</string>
+    <string name="creator__no_keep_editing">No, keep editing</string>
 
     <!-- Settings -->
     <string name="settings__settings">Settings</string>
@@ -51,6 +53,11 @@
     <string name="info__info">Info</string>
     <string name="info__developed_by">Developed by</string>
     <string name="info__additionalContact">More informations</string>
-    <string name="info__license">Licenses</string>
+    <string name="info__licenses">Licenses</string>
     <string name="info__show_licenses">Show licenses</string>
+    <string name="maintainers" translatable="false">Maintainer</string>
+    <string name="contributors">Contributors</string>
+    <string name="more_information">More information</string>
+    <string name="info__show_gplv3_license">Show GNU GPLv3 license</string>
+    <string name="info__show_third_party_licenses">Show 3rd party licenses</string>
 </resources>

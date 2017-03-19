@@ -14,18 +14,23 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
 import android.widget.ImageView;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
@@ -197,7 +202,7 @@ public class Helpers {
         }
     }
 
-    public static void openWebpage(Context context, String url) {
+    public static void openWebpageWithExternalBrowser(Context context, String url) {
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         context.startActivity(intent);
@@ -212,12 +217,49 @@ public class Helpers {
             try {
                 context.startActivity(intent);
             } catch (ActivityNotFoundException e) {
-                openWebpage(context, "https://gsantner.github.io/donate/#donate");
+                openWebpageWithExternalBrowser(context, "https://gsantner.github.io/donate/#donate");
             }
         }
     }
 
+    public static String readTextfileFromRawRes(Context context, @RawRes int rawRessourceId, String linePrefix, String linePostfix) {
+        StringBuilder sb = new StringBuilder();
+        String line;
+        BufferedReader br = null;
+        linePrefix = linePrefix == null ? "" : linePrefix;
+        linePostfix = linePostfix == null ? "" : linePostfix;
+
+        try {
+            br = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(rawRessourceId)));
+            while ((line = br.readLine()) != null) {
+                sb.append(linePrefix);
+                sb.append(line);
+                sb.append(linePostfix);
+                sb.append("\n");
+            }
+        } catch (Exception ignored) {
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException ignored) {
+                }
+            }
+        }
+        return sb.toString();
+    }
+
     public static void showSnackBar(Activity a, @StringRes int stringId) {
         Snackbar.make(a.findViewById(android.R.id.content), stringId, Snackbar.LENGTH_SHORT).show();
+    }
+
+    public static void showDialogWithRawFileInWebView(Context context, String fileInRaw, @StringRes int resTitleId) {
+        WebView wv = new WebView(context);
+        wv.loadUrl("file:///android_res/raw/" + fileInRaw);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
+                .setPositiveButton(R.string.ok, null)
+                .setTitle(resTitleId)
+                .setView(wv);
+        dialog.show();
     }
 }

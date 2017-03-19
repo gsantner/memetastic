@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -25,6 +26,11 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash__activity);
+
+        if (BuildConfig.IS_TEST_BUILD) {
+            ((ImageView) findViewById(R.id.splash__activity__icon)).setImageResource(R.drawable.ic_launcher_test);
+        }
+
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();
 
@@ -66,7 +72,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void startMemeCreator(boolean skipDelay) {
         // Create MemeCreator directories
-        int delay = (skipDelay || BuildConfig.DEBUG) ? 1 : getResources().getInteger(R.integer.splash_delay);
+        int delay = (skipDelay || BuildConfig.DEBUG) ? 1000 : getResources().getInteger(R.integer.splash_delay);
         File dirMemeTastic = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), getString(R.string.app_name));
         new File(dirMemeTastic, getString(R.string.dot_thumbnails)).mkdirs();
 

@@ -23,72 +23,148 @@
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/default_margin_2"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/info__activity__text_android_app_info"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:text="@string/info__developed_by"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/info__activity__text_android_app_author"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/info__activity__text_android_app_info"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:autoLink="web|email"
-            android:clickable="true"
-            android:gravity="center"
-            android:text="@string/info_author"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/info__activity__text_additional_contact_info"
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/info__activity__text_android_app_author"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:text="@string/info__additionalContact"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/white" />
+            android:layout_height="match_parent"
+            android:layout_above="@+id/info__activity__text_app_version"
+            android:layout_alignParentTop="true">
 
-        <TextView
-            android:id="@+id/info__activity__text_additional_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/info__activity__text_additional_contact_info"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:autoLink="web|email"
-            android:clickable="true"
-            android:text="@string/page_additional_contact_text"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <Button
-            android:id="@+id/info__activity__button_licenses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/info__activity__text_additional_contact"
-            android:text="@string/info__show_licenses" />
+                <TextView
+                    android:id="@+id/info__activity__text_header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/maintainers"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/info__activity__text_maintainers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="all"
+                    android:clickable="true"
+                    android:gravity="start"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/secondary_text"
+                    tools:text="Maintainer 1\n  * Text\n  * Text" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/contributors"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/info__activity__text_contributors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="web|email"
+                    android:gravity="start"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/secondary_text"
+                    tools:text="Contributor 1: Person 1\nContributor 2: Person 2\n" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/more_information"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/info__activity__text_more_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="web|email"
+                    android:gravity="start"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/secondary_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/info__licenses"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/info__activity__text_license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="web|email"
+                    android:gravity="start"
+                    android:text="@string/info__gpl_v3_license_text"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/secondary_text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp">
+
+                    <Button
+                        android:id="@+id/info__activity__button_gplv3_license"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/info__show_gplv3_license" />
+
+                    <Button
+                        android:id="@+id/info__activity__button_third_party_licenses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/info__show_third_party_licenses" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
 
         <TextView
             android:id="@+id/info__activity__text_app_version"
@@ -102,8 +178,8 @@
             android:minHeight="50dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white"
-            tools:text="App Version   vA.b" />
+            tools:text="App Version   v0.9.42" />
+
 
     </RelativeLayout>
-
 </android.support.design.widget.CoordinatorLayout>

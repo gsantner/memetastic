@@ -19,6 +19,7 @@ public class AppSettings {
         public static final String LAST_SELECTED_CATEGORY = "pref_key__last_selected_category";
         public static final String GRID_COLUMN_COUNT_PORTRAIT = "pref_key__grid_column_count_portrait";
         public static final String GRID_COLUMN_COUNT_LANDSCAPE = "pref_key__grid_column_count_landscape";
+        public static final String APP_FIRST_RUN = "pref_key__app_first_run";
     }
 
     private Context context;
@@ -155,5 +156,13 @@ public class AppSettings {
 
     public void setGridColumnCountLandscape(int value) {
         pref.edit().putInt(PREF.GRID_COLUMN_COUNT_LANDSCAPE, value).apply();
+    }
+
+    public void setAppFirstRun(boolean v){
+        pref.edit().putBoolean(PREF.APP_FIRST_RUN, v).apply();
+    }
+
+    public boolean isAppFirstRun(){
+        return pref.getBoolean(PREF.APP_FIRST_RUN, true);
     }
 }

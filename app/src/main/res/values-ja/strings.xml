@@ -50,6 +50,6 @@
     <string name="info__info">情報</string>
     <string name="info__developed_by">開発者</string>
     <string name="info__additionalContact">詳細情報</string>
-    <string name="info__license">ライセンス</string>
+    <string name="info__licenses">ライセンス</string>
     <string name="info__show_licenses">ライセンスを表示</string>
 </resources>

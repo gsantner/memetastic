@@ -5,11 +5,19 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
+    def VERSION_CODE = 15
+    def VERSION_NAME = "0.9.1"
+    def APP_NAME = 'MemeTastic'
+    def APP_PACKAGE = "io.github.gsantner.memetastic"
+    def APP_ICON ="@drawable/ic_launcher"
+
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 25
 
+        buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
+
     }
     buildTypes {
         release {
@@ -20,17 +28,27 @@ android {
 
     productFlavors {
         flavorDefault {
-            applicationId "io.github.gsantner.memetastic"
-            manifestPlaceholders = [appName: "MemeTastic"]
-            versionCode 14
-            versionName "0.9.0"
+            applicationId APP_PACKAGE
+            resValue 'string', 'app_name', APP_NAME
+            manifestPlaceholders = [appIcon: APP_ICON]
+            versionCode VERSION_CODE ; versionName VERSION_NAME
         }
 
         flavorTest {
-            applicationId "io.github.gsantner.memetastic.test"
-            manifestPlaceholders = [appName: "MemeTestic"]
+            applicationId APP_PACKAGE + ".test"
+            resValue 'string', 'app_name', '"MemeTestic"'
+            manifestPlaceholders = [appIcon: APP_ICON + "_test"]
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
+            buildConfigField "boolean", "IS_TEST_BUILD", "true"
+        }
+
+        flavorGplay {
+            applicationId APP_PACKAGE
+            resValue 'string', 'app_name', APP_NAME
+            manifestPlaceholders = [appIcon: APP_ICON]
+            versionCode VERSION_CODE ; versionName VERSION_NAME
+            buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
         }
     }
 
@@ -65,3 +83,29 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
 }
+
+final String RAW_DIR = "app/src/main/res/raw"
+final String[] ROOT_TO_RAW_COPYFILES = ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.txt"]
+
+// Called before building
+task copyRepoFiles(type: Copy) {
+
+    // Copy files over to raw dir
+    from rootProject.files(ROOT_TO_RAW_COPYFILES)
+    into RAW_DIR.replaceFirst("app/", "")
+    rename { String fileName ->
+        fileName.replace(fileName, fileName.toLowerCase())
+    }
+
+    // Filter Contributors file
+    from(rootProject.file("CONTRIBUTORS.txt")) {
+        into '.'    // Target already changed to 'src/main/res/raw'
+        rename { String fileName ->
+            fileName.replace(fileName, fileName.toLowerCase())
+        }
+        filter { line ->
+            (line.toString().matches("..l>>.*") || line.toString().startsWith("## 99l CONTRIBUTORS")) ? null : line.toString().trim().replaceAll(" \\(.*\\)", "")
+        }
+    }
+}
+tasks.copyRepoFiles.execute()

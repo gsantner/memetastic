@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final String IMAGE_PATH = "imagePath";
     private static boolean isShowingFullscreenImage = false;
-
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -83,9 +83,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
         tabLayout.setOnTabSelectedListener(this);
-
 
         // Setup Floating Action Button
         int gridColumns = Helpers.isInPortraitMode(this)
@@ -105,6 +103,19 @@ public class MainActivity extends AppCompatActivity
             tabLayout.addTab(tab);
         }
         selectTab(app.settings.getLastSelectedCategory());
+
+        //
+        // Actions based on build type or version
+        //
+        navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
+        if (app.settings.isAppFirstRun()) {
+            app.settings.setAppFirstRun(false);
+            Helpers.showDialogWithRawFileInWebView(this, "licenses.html", R.string.info__licenses);
+        }
+
+        if (BuildConfig.IS_TEST_BUILD) {
+            ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__navheader__image)).setImageResource(R.drawable.ic_launcher_test);
+        }
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -163,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
             case R.id.action_homepage_github: {
-                Helpers.openWebpage(this, getString(R.string.app_www_source));
+                Helpers.openWebpageWithExternalBrowser(this, getString(R.string.app_www_source));
                 return true;
             }
             case R.id.action_picture_from_gallery: {
