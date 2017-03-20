@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Main -->
+    <string name="main__navdrawer__open">Ouvrir le menu de navigation</string>
+    <string name="main__navdrawer__close">Fermer le menu de navigation</string>
+
+    <string name="main__save_meme">Sauvegarder le Meme</string>
+    <string name="main__share_meme">Partager le Meme</string>
+    <string name="main__create_meme">Créer un Meme</string>
+    <string name="main__delete_meme">Effacer un Meme</string>
+
+    <string name="main__memecat__humans">Humains</string>
+    <string name="main__memecat__cartoon">Dessin Animé</string>
+    <string name="main__memecat__animals">Animaux</string>
+
+    <string name="main__mode__saved">Sauvegardés</string>
+    <string name="main__mode__favs">Favoris</string>
+    <string name="main__mode__create">Créer</string>
+
+    <string name="main__get_picture_from_gallery">Prendre une image de la galerie</string>
+    <string name="main__get_picture_from_camera">Prendre une image avec l\'appareil</string>
+    <string name="main__error_camera_cannot_start">Impossible de démarrer l\'appareil photo</string>
+    <string name="main__error_no_picture_selected">Aucune image n\'a été sélectionnée.</string>
+    <string name="main__share_meme_prompt">Partager votre Meme via...</string>
+
+    <string name="main__donate_bitcoin">Donner des Bitcoins</string>
+    <string name="main__recommend_app">Recommander</string>
+    <string name="main__exit">Quitter</string>
+    <string name="main__yes">oui</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">Appuyez à nouveau pour quitter l\'édition de ce Meme. Le Meme sera perdu s\'il n\'est pas déjà enregistré.</string>
+    <string name="creator__saved_successfully_message">Ce Meme a été enregistré avec succès sur votre appareil. Voulez-vous maintenant quitter l\'édition de celui-ci?</string>
+    <string name="creator__text_size">Taille du Texte</string>
+    <string name="creator__text_color">Couleur du Texte</string>
+    <string name="creator__border_color">Couleur de la Bordure</string>
+    <string name="creator__saved_successfully">Sauvegarde réussie!</string>
+    <string name="creator__hint_top_caption">Texte du haut</string>
+    <string name="creator__hint_bottom_caption">Sous-titre</string>
+    <string name="creator__font">Police</string>
+    <string name="creator__no_keep_editing">Non, continuer l\'édition</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">Préférences</string>
+    <string name="settings__all_caps">Tout en majuscules</string>
+    <string name="settings__pref_render_quality_title">Qualité du Rendu</string>
+    <string name="settings__cleanup_thumbnails">Effacer les vignettes</string>
+    <string name="settings__pref_columns_portrait">Colonnes en portrait</string>
+    <string name="settings__pref_columns_landscape">Colonnes en paysage</string>
+
+    <!-- Info -->
+    <string name="info__info">Infos</string>
+    <string name="info__developed_by">Développé par</string>
+    <string name="info__additionalContact">Plus d\'informations</string>
+    <string name="info__licenses">Licences</string>
+    <string name="info__show_licenses">Afficher les licences</string>
+    <string name="contributors">Contributeurs</string>
+    <string name="more_information">Plus d\'informations</string>
+    <string name="info__show_gplv3_license">Afficher la licence GNU GPLv3</string>
+    <string name="info__show_third_party_licenses">Montrer les licences tierces</string>
+</resources>
