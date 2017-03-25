@@ -2,52 +2,103 @@ package io.github.gsantner.memetastic.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
+
+import io.github.gsantner.memetastic.BuildConfig;
+import io.github.gsantner.memetastic.R;
 
 public class AppSettings {
+    private static final int MAX_FAVS = 50;
 
-    public static class PREF {
-        private static final int MAX_FAVS = 50;
-        public static final String RENDER_QUALITY = "pref_key__renderQuality";
-        public static final String LAST_SELECTED_FONT = "pref_key__last_selected_font";
-        public static final String FAVOURITED_MEMES = "pref_key__favourite_memes";
-        public static final String LAST_SELECTED_CATEGORY = "pref_key__last_selected_category";
-        public static final String GRID_COLUMN_COUNT_PORTRAIT = "pref_key__grid_column_count_portrait";
-        public static final String GRID_COLUMN_COUNT_LANDSCAPE = "pref_key__grid_column_count_landscape";
-        public static final String APP_FIRST_RUN = "pref_key__app_first_run";
-    }
-
-    private Context context;
-    private SharedPreferences pref;
+    private final SharedPreferences prefApp;
+    private final Context context;
 
     public AppSettings(Context context) {
         this.context = context.getApplicationContext();
-        pref = PreferenceManager.getDefaultSharedPreferences(this.context);
+        prefApp = this.context.getSharedPreferences("app", Context.MODE_PRIVATE);
     }
 
-    // appends a string array to a string with questionmarks to seperate the strings
-    private static String fromStringArray(String[] strings) {
-        if (strings == null || strings.length == 0)
-            return null;
+    public Context getApplicationContext() {
+        return context;
+    }
+
+    public void clearAppSettings() {
+        prefApp.edit().clear().commit();
+    }
+
+    public String getKey(int stringKeyResourceId) {
+        return context.getString(stringKeyResourceId);
+    }
+
+    public boolean isKeyEqual(String key, int stringKeyRessourceId) {
+        return key.equals(getKey(stringKeyRessourceId));
+    }
+
+    private void setString(SharedPreferences pref, int keyRessourceId, String value) {
+        pref.edit().putString(context.getString(keyRessourceId), value).apply();
+    }
+
+    private void setInt(SharedPreferences pref, int keyRessourceId, int value) {
+        pref.edit().putInt(context.getString(keyRessourceId), value).apply();
+    }
+
+    private void setLong(SharedPreferences pref, int keyRessourceId, long value) {
+        pref.edit().putLong(context.getString(keyRessourceId), value).apply();
+    }
+
+    private void setBool(SharedPreferences pref, int keyRessourceId, boolean value) {
+        pref.edit().putBoolean(context.getString(keyRessourceId), value).apply();
+    }
+
+    private void setStringArray(SharedPreferences pref, int keyRessourceId, Object[] values) {
         StringBuilder sb = new StringBuilder();
-        for (String meme : strings) {
-            sb.append(meme);
-            sb.append("?");
+        for (Object value : values) {
+            sb.append("%%%");
+            sb.append(value.toString());
         }
-        String ret = sb.toString();
-        return ret.substring(0, ret.length() - 1);
+        setString(pref, keyRessourceId, sb.toString().replaceFirst("%%%", ""));
     }
 
-    // splits a string that is seperated by questionmarks to a string array
-    private static String[] toStringArray(String questionSeperatedString) {
-        if (questionSeperatedString == null || questionSeperatedString.isEmpty())
-            return null;
-        return questionSeperatedString.split(Pattern.quote("?"));
+    private String[] getStringArray(SharedPreferences pref, int keyRessourceId) {
+        String value = pref.getString(context.getString(keyRessourceId), "%%%");
+        if (value.equals("%%%")) {
+            return new String[0];
+        }
+        return value.split("%%%");
+    }
+
+    private String getString(SharedPreferences pref, int ressourceId, String defaultValue) {
+        return pref.getString(context.getString(ressourceId), defaultValue);
+    }
+
+    private String getString(SharedPreferences pref, int ressourceId, int ressourceIdDefaultValue) {
+        return pref.getString(context.getString(ressourceId), context.getString(ressourceIdDefaultValue));
+    }
+
+    private boolean getBool(SharedPreferences pref, int ressourceId, boolean defaultValue) {
+        return pref.getBoolean(context.getString(ressourceId), defaultValue);
+    }
+
+    private int getInt(SharedPreferences pref, int ressourceId, int defaultValue) {
+        return pref.getInt(context.getString(ressourceId), defaultValue);
+    }
+
+    private long getLong(SharedPreferences pref, int ressourceId, long defaultValue) {
+        return pref.getLong(context.getString(ressourceId), defaultValue);
+    }
+
+
+    public int getColor(SharedPreferences pref, String key, int defaultColor) {
+        return pref.getInt(key, defaultColor);
+    }
+
+    public int getColorRes(@ColorRes int resColorId) {
+        return ContextCompat.getColor(context, resColorId);
     }
 
     // Adds a String to a String array and cuts of the last values to match a maximal size
@@ -65,32 +116,31 @@ public class AppSettings {
     }
 
     public int getRenderQuality() {
-        return pref.getInt(PREF.RENDER_QUALITY, 900);
+        return getInt(prefApp, R.string.pref_key__render_quality, 900);
     }
 
-    public void setRenderQuality(int renderQuality) {
-        pref.edit().putInt(PREF.RENDER_QUALITY, renderQuality).apply();
+    public void setRenderQuality(int value) {
+        setInt(prefApp, R.string.pref_key__render_quality, value);
     }
 
-    public void setLastSelectedFont(int lastSelectedFont) {
-        pref.edit().putInt(PREF.LAST_SELECTED_FONT, lastSelectedFont).apply();
+    public void setLastSelectedFont(int value) {
+        setInt(prefApp, R.string.pref_key__last_selected_font, value);
     }
 
     public int getLastSelectedFont() {
-        return pref.getInt(PREF.LAST_SELECTED_FONT, 0);
+        return getInt(prefApp, R.string.pref_key__last_selected_font, 0);
     }
 
-    public void setFavoriteMemes(String[] memes) {
-        String str = fromStringArray(memes);
-        pref.edit().putString(PREF.FAVOURITED_MEMES, str).apply();
+    public void setFavoriteMemes(String[] value) {
+        setStringArray(prefApp, R.string.pref_key__memes_favourites, value);
     }
 
     public String[] getFavoriteMemes() {
-        return toStringArray(pref.getString(PREF.FAVOURITED_MEMES, ""));
+        return getStringArray(prefApp, R.string.pref_key__memes_favourites);
     }
 
     public void appendFavoriteMeme(String meme) {
-        String[] memes = insertAndMaximize(getFavoriteMemes(), meme, PREF.MAX_FAVS);
+        String[] memes = insertAndMaximize(getFavoriteMemes(), meme, MAX_FAVS);
         setFavoriteMemes(memes);
     }
 
@@ -124,16 +174,16 @@ public class AppSettings {
         setFavoriteMemes(newFavs.toArray(new String[newFavs.size()]));
     }
 
-    public void setLastSelectedCategory(int lastSelected) {
-        pref.edit().putInt(PREF.LAST_SELECTED_CATEGORY, lastSelected).apply();
+    public void setLastSelectedCategory(int value) {
+        setInt(prefApp, R.string.pref_key__last_selected_category, value);
     }
 
     public int getLastSelectedCategory() {
-        return pref.getInt(PREF.LAST_SELECTED_CATEGORY, 0);
+        return getInt(prefApp, R.string.pref_key__last_selected_category, 0);
     }
 
     public int getGridColumnCountPortrait() {
-        int count = pref.getInt(PREF.GRID_COLUMN_COUNT_PORTRAIT, -1);
+        int count = getInt(prefApp, R.string.pref_key__grid_column_count_portrait, -1);
         if (count == -1) {
             count = 3 + (int) Math.max(0, 0.5 * (Helpers.getEstimatedScreenSizeInches(context) - 5.0));
             setGridColumnCountPortrait(count);
@@ -142,11 +192,11 @@ public class AppSettings {
     }
 
     public void setGridColumnCountPortrait(int value) {
-        pref.edit().putInt(PREF.GRID_COLUMN_COUNT_PORTRAIT, value).apply();
+        setInt(prefApp, R.string.pref_key__grid_column_count_portrait, value);
     }
 
     public int getGridColumnCountLandscape() {
-        int count = pref.getInt(PREF.GRID_COLUMN_COUNT_LANDSCAPE, -1);
+        int count = getInt(prefApp, R.string.pref_key__grid_column_count_landscape, -1);
         if (count == -1) {
             count = (int) (getGridColumnCountPortrait() * 1.8);
             setGridColumnCountLandscape(count);
@@ -155,14 +205,18 @@ public class AppSettings {
     }
 
     public void setGridColumnCountLandscape(int value) {
-        pref.edit().putInt(PREF.GRID_COLUMN_COUNT_LANDSCAPE, value).apply();
+        setInt(prefApp, R.string.pref_key__grid_column_count_landscape, value);
     }
 
-    public void setAppFirstRun(boolean v){
-        pref.edit().putBoolean(PREF.APP_FIRST_RUN, v).apply();
+    public boolean isAppFirstStart() {
+        boolean value = getBool(prefApp, R.string.pref_key__app_first_start, true);
+        setBool(prefApp, R.string.pref_key__app_first_start, false);
+        return value;
     }
 
-    public boolean isAppFirstRun(){
-        return pref.getBoolean(PREF.APP_FIRST_RUN, true);
+    public boolean isAppCurrentVersionFirstStart() {
+        int value = getInt(prefApp, R.string.pref_key__app_first_start_current_version, -1);
+        setInt(prefApp, R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
+        return value != BuildConfig.VERSION_CODE && !BuildConfig.IS_TEST_BUILD;
     }
 }

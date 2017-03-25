@@ -40,6 +40,7 @@ import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
 import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.memetastic.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
@@ -108,14 +109,29 @@ public class MainActivity extends AppCompatActivity
         // Actions based on build type or version
         //
         navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
-        if (app.settings.isAppFirstRun()) {
-            app.settings.setAppFirstRun(false);
-            Helpers.showDialogWithRawFileInWebView(this, "licenses.html", R.string.info__licenses);
+
+
+        // Show first start dialog / changelog
+        try {
+            if (app.settings.isAppFirstStart()) {
+                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                        getResources().openRawResource(R.raw.licenses_3rd_party),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
+                        R.string.info__licenses);
+            } else if (app.settings.isAppCurrentVersionFirstStart()) {
+                SimpleMarkdownParser smp = new SimpleMarkdownParser().parse(
+                        getResources().openRawResource(R.raw.changelog),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "");
+                Helpers.showDialogWithHtmlTextView(this, smp.getHtml(), R.string.main__changelog);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         if (BuildConfig.IS_TEST_BUILD) {
             ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__navheader__image)).setImageResource(R.drawable.ic_launcher_test);
         }
+
     }
 
     @SuppressWarnings("ConstantConditions")

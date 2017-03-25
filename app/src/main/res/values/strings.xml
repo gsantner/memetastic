@@ -26,6 +26,7 @@
 
     <string name="main__donate_bitcoin">Donate Bitcoin</string>
     <string name="main__recommend_app">Recommend</string>
+    <string name="main__changelog">Changelog</string>
     <string name="main__exit">Exit</string>
     <string name="main__yes">yes</string>
 

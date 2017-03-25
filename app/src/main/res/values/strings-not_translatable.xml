@@ -2,7 +2,8 @@
 
     <!-- General -->
     <string name="app_fileprovider" translatable="false">io.github.gsantner.memetastic.fileprovider</string>
-    <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>ß
+    <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>
+    ß
     <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io\n\nMatthias Ringwald</string>
     <string name="page_additional_contact_text" translatable="false">GitHub\nhttps://github.com/gsantner/memetastic</string>
     <string name="github" translatable="false">GitHub</string>
@@ -22,5 +23,16 @@
         \n
         \nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
     </string>
+
+
+    <!-- Pref keys -->
+    <string name="pref_key__render_quality" translatable="false">pref_key__render_quality</string>
+    <string name="pref_key__last_selected_font" translatable="false">pref_key__last_selected_font</string>
+    <string name="pref_key__memes_favourites" translatable="false">pref_key__memes_favourites</string>
+    <string name="pref_key__last_selected_category" translatable="false">pref_key__last_selected_category</string>
+    <string name="pref_key__grid_column_count_portrait" translatable="false">pref_key__grid_column_count_portrait</string>
+    <string name="pref_key__grid_column_count_landscape" translatable="false">pref_key__grid_column_count_landscape</string>
+    <string name="pref_key__app_first_start" translatable="false">pref_key__app_first_run</string>
+    <string name="pref_key__app_first_start_current_version" translatable="false">pref_key__app_current_versionfirst_run</string>
 
 </resources>

@@ -38,6 +38,7 @@
     <string name="info__additionalContact">Mehr Informationen</string>
     <string name="info__developed_by">Entwickelt von</string>
     <string name="info__info">Info</string>
+    <string name="main__changelog">Änderungen</string>
     <string name="info__licenses">Lizenzen</string>
     <string name="info__show_licenses">Lizenzen anzeigen</string>
     <string name="main__yes">Ja</string>

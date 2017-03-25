@@ -19,11 +19,18 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -253,13 +260,40 @@ public class Helpers {
         Snackbar.make(a.findViewById(android.R.id.content), stringId, Snackbar.LENGTH_SHORT).show();
     }
 
-    public static void showDialogWithRawFileInWebView(Context context, String fileInRaw, @StringRes int resTitleId) {
-        WebView wv = new WebView(context);
-        wv.loadUrl("file:///android_res/raw/" + fileInRaw);
+    public static String loadMarkdownFromRawForTextView(Context context, @RawRes int rawMdFile, String prepend) {
+        try {
+            return new SimpleMarkdownParser()
+                    .parse(context.getResources().openRawResource(rawMdFile),
+                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, prepend)
+                    .replaceColor("#000001", ContextCompat.getColor(context, R.color.accent))
+                    .removeMultiNewlines().replaceBulletCharacter("*").getHtml();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    // Show HTML a TextView in a scrollable Dialog
+    public static void showDialogWithHtmlTextView(Context context, String html, @StringRes int resTitleId) {
+        LinearLayout layout = new LinearLayout(context);
+        TextView textView = new TextView(context);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        ScrollView root = new ScrollView(context);
+        int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20,
+                context.getResources().getDisplayMetrics());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        layoutParams.setMargins(margin, 0, margin, 0);
+        layout.setLayoutParams(layoutParams);
+
+        layout.addView(textView);
+        root.addView(layout);
+
+        textView.setText(new SpannableString(Html.fromHtml(html)));
         AlertDialog.Builder dialog = new AlertDialog.Builder(context)
-                .setPositiveButton(R.string.ok, null)
+                .setPositiveButton(android.R.string.ok, null)
                 .setTitle(resTitleId)
-                .setView(wv);
+                .setView(root);
         dialog.show();
     }
 }
