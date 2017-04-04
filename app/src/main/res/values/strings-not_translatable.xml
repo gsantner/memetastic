@@ -3,7 +3,7 @@
     <!-- General -->
     <string name="app_fileprovider" translatable="false">io.github.gsantner.memetastic.fileprovider</string>
     <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>
-    ß
+    
     <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io\n\nMatthias Ringwald</string>
     <string name="page_additional_contact_text" translatable="false">GitHub\nhttps://github.com/gsantner/memetastic</string>
     <string name="github" translatable="false">GitHub</string>
