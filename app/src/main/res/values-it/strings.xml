@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- main -->
+    <string name="main__navdrawer__open">Apri barra di navigazione</string>
+    <string name="main__navdrawer__close">Chiudi barra di navigazione</string>
+
+    <string name="main__save_meme">Salva Meme</string>
+    <string name="main__share_meme">Condividi Meme</string>
+    <string name="main__create_meme">Crea un Meme</string>
+    <string name="main__delete_meme">Elimina meme</string>
+
+    <string name="main__memecat__humans">Umani</string>
+    <string name="main__memecat__cartoon">Fumetti</string>
+    <string name="main__memecat__animals">Animali</string>
+
+    <string name="main__mode__saved">Salvati</string>
+    <string name="main__mode__favs">Favoriti</string>
+    <string name="main__mode__create">Crea</string>
+
+    <string name="main__get_picture_from_gallery">Prendi immagine dalla Galleria</string>
+    <string name="main__get_picture_from_camera">Scatta foto dalla Camera</string>
+    <string name="main__error_camera_cannot_start">Non riesco ad avviare la Camera.</string>
+    <string name="main__error_no_picture_selected">Nessuna immagine selezionata.</string>
+    <string name="main__share_meme_prompt">Condividi il tuo Meme tramite...</string>
+
+    <string name="main__donate_bitcoin">Dona Bitcoin</string>
+    <string name="main__recommend_app">Raccomanda</string>
+    <string name="main__changelog">Log delle modifiche</string>
+    <string name="main__exit">Esci</string>
+    <string name="main__yes">sì</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">Premi indietro per interrompere le modifiche del meme. Il meme andrà perso se non è stato già salvato.</string>
+    <string name="creator__saved_successfully_message">Questo meme è stato salvato nel tuo dispositivo. Vuoi uscire dalle modifiche?</string>
+    <string name="creator__text_size">Grandezza del testo</string>
+    <string name="creator__text_color">Colore del testo</string>
+    <string name="creator__border_color">Colore del bordo</string>
+    <string name="creator__saved_successfully">Salvato con successo!</string>
+    <string name="creator__hint_top_caption">Didascalia superiore</string>
+    <string name="creator__hint_bottom_caption">Didascalia inferiore</string>
+    <string name="creator__font">Carattere</string>
+    <string name="creator__no_keep_editing">No, rimani in modifiche</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">Impostazioni</string>
+    <string name="settings__all_caps">Tutto maiuscolo</string>
+    <string name="settings__pref_render_quality_title">Qualità render</string>
+    <string name="settings__cleanup_thumbnails">Elimina miniature</string>
+    <string name="settings__pref_columns_portrait">Colonne in verticale</string>
+    <string name="settings__pref_columns_landscape">Colonne in orizzzontale</string>
+
+    <!-- Info -->
+    <string name="info__info">Informazioni</string>
+    <string name="info__developed_by">Sviluppato da</string>
+    <string name="info__additionalContact">Altre informazioni</string>
+    <string name="info__licenses">Licenze</string>
+    <string name="info__show_licenses">Mostra licenze</string>
+    <string name="contributors">Collaboratori</string>
+    <string name="more_information">Altre informazioni</string>
+    <string name="info__show_gplv3_license">Mostra licenza GNU GPLv3</string>
+    <string name="info__show_third_party_licenses">Mostra licenze di terze parti</string>
+</resources>
