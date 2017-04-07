@@ -5,8 +5,8 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
-    def VERSION_CODE = 15
-    def VERSION_NAME = "0.9.1"
+    def VERSION_CODE = 16
+    def VERSION_NAME = "0.9.2"
     def APP_NAME = 'MemeTastic'
     def APP_PACKAGE = "io.github.gsantner.memetastic"
     def APP_ICON ="@drawable/ic_launcher"

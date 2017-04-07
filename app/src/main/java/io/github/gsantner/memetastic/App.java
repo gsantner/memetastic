@@ -26,7 +26,7 @@ import io.github.gsantner.memetastic.util.Helpers;
 public class App extends Application {
     public AppSettings settings;
     List<MemeCategory> memeCategories;
-    List<MemeFont<Typeface>> fonts;
+    List<MemeFont> fonts;
 
     @Override
     public void onCreate() {
@@ -42,15 +42,15 @@ public class App extends Application {
         try {
             String[] fontFilenames = getAssets().list(FONT_FOLDER);
             FONT_FOLDER = MemeLibConfig.getPath(FONT_FOLDER, true);
-            fonts = new ArrayList<MemeFont<Typeface>>();
+            fonts = new ArrayList<>();
 
             for (int i = 0; i < fontFilenames.length; i++) {
                 Typeface tf = Typeface.createFromAsset(getResources().getAssets(), FONT_FOLDER + fontFilenames[i]);
-                fonts.add(new MemeFont<Typeface>(FONT_FOLDER + fontFilenames[i], tf));
+                fonts.add(new MemeFont(FONT_FOLDER + fontFilenames[i], tf));
             }
         } catch (IOException e) {
             log("Could not load fonts");
-            fonts = new ArrayList<MemeFont<Typeface>>();
+            fonts = new ArrayList<>();
         }
     }
 
@@ -70,7 +70,7 @@ public class App extends Application {
         }
     }
 
-    public List<MemeFont<Typeface>> getFonts() {
+    public List<MemeFont> getFonts() {
         return this.fonts;
     }
 

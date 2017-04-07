@@ -8,9 +8,9 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,6 +28,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -60,7 +61,7 @@ import uz.shift.colorpicker.LineColorPicker;
  * Activity for creating memes
  */
 public class MemeCreateActivity extends AppCompatActivity
-        implements MemeSetting.OnMemeSettingChangedListener<Typeface, Bitmap>,
+        implements MemeSetting.OnMemeSettingChangedListener,
         BottomSheetLayout.OnSheetStateChangeListener, OnSheetDismissedListener {
     //########################
     //## Static
@@ -99,12 +100,14 @@ public class MemeCreateActivity extends AppCompatActivity
     private Bitmap lastBitmap = null;
     private long memeSavetime = -1;
     private App app;
-    private MemeSetting<Typeface, Bitmap> memeSetting;
+    private MemeSetting memeSetting;
     private boolean bFullscreenImage = true;
+    private Bundle savedInstanceState = null;
 
     //#####################
     //## Methods
     //#####################
+    @SuppressWarnings({"unchecked", "ConstantConditions"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,30 +132,54 @@ public class MemeCreateActivity extends AppCompatActivity
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+        initMemeSettings(savedInstanceState);
+    }
 
-
-        Bitmap bitmap = extractBitmapFromIntent(intent);
-        memeSetting = new MemeSetting<>(app.getFonts().get(app.settings.getLastSelectedFont()), bitmap);
+    public void initMemeSettings(Bundle savedInstanceState){
+        Bitmap bitmap = extractBitmapFromIntent(getIntent());
+        if (savedInstanceState != null && savedInstanceState.containsKey("memeObj")) {
+            memeSetting = (MemeSetting) savedInstanceState.getSerializable("memeObj");
+            memeSetting.setImage(bitmap);
+            memeSetting.setFont(app.getFonts().get(app.settings.getLastSelectedFont()));
+        } else {
+            memeSetting = new MemeSetting(app.getFonts().get(app.settings.getLastSelectedFont()), bitmap);
+            memeSetting.setFontId(app.settings.getLastSelectedFont());
+        }
         memeSetting.setDisplayImage(memeSetting.getImage().copy(Bitmap.Config.RGB_565, false));
-        memeSetting.setFontId(app.settings.getLastSelectedFont());
 
         textEditTopCaption.setText(memeSetting.getCaptionTop());
         textEditBottomCaption.setText(memeSetting.getCaptionBottom());
-
         memeSetting.setMemeSettingChangedListener(this);
         memeSetting.notifyChangedListener();
+    }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        prepareForSaving();
+        outState.putSerializable("memeObj", memeSetting);
+        this.savedInstanceState = outState;
+    }
+
+    private void prepareForSaving() {
+        memeSetting.setMemeSettingChangedListener(null);
+        imageEditView.setImageBitmap(null);
+        if (lastBitmap != null && !lastBitmap.isRecycled())
+            lastBitmap.recycle();
+        if (memeSetting.getImage() != null && !memeSetting.getImage().isRecycled())
+            memeSetting.getImage().recycle();
+        if (memeSetting.getDisplayImage() != null && !memeSetting.getDisplayImage().isRecycled())
+            memeSetting.getDisplayImage().recycle();
+        lastBitmap = null;
+        memeSetting.setDisplayImage(null);
+        memeSetting.setImage(null);
+        memeSetting.setFont(null);
+        memeSetting.setMemeSettingChangedListener(null);
     }
 
     @Override
     protected void onDestroy() {
-        imageEditView.setImageBitmap(null);
-        if (lastBitmap != null && !lastBitmap.isRecycled())
-            lastBitmap.recycle();
-        if (!memeSetting.getImage().isRecycled())
-            memeSetting.getImage().recycle();
-        if (!memeSetting.getDisplayImage().isRecycled())
-            memeSetting.getDisplayImage().recycle();
+        prepareForSaving();
         super.onDestroy();
     }
 
@@ -162,6 +189,9 @@ public class MemeCreateActivity extends AppCompatActivity
         if (bFullscreenImage) {
             bFullscreenImage = false;
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+        }
+        if(savedInstanceState != null){
+            initMemeSettings(savedInstanceState);
         }
     }
 
@@ -286,6 +316,7 @@ public class MemeCreateActivity extends AppCompatActivity
         Spinner dropdownFont = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__dropdown_font);
         SeekBar seekFontSize = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_font_size);
         ToggleButton toggleAllCaps = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__toggle_all_caps);
+        Button rotateButton = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__rotate_plus_90deg);
 
         colorPickerText.setColors(MemeLibConfig.MEME_COLORS.ALL);
         colorPickerShade.setColors(MemeLibConfig.MEME_COLORS.ALL);
@@ -322,7 +353,7 @@ public class MemeCreateActivity extends AppCompatActivity
             }
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                memeSetting.setFont((MemeFont<Typeface>) parent.getSelectedItem());
+                memeSetting.setFont((MemeFont) parent.getSelectedItem());
                 memeSetting.setFontId(parent.getSelectedItemPosition());
                 app.settings.setLastSelectedFont(memeSetting.getFontId());
             }
@@ -343,12 +374,23 @@ public class MemeCreateActivity extends AppCompatActivity
                 memeSetting.setAllCaps(isChecked);
             }
         });
+        rotateButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                memeSetting.setRotationDeg((memeSetting.getRotationDeg() + 90) % 360);
+            }
+        });
     }
 
-    public Bitmap drawMultilineTextToBitmap(Context c, MemeSetting<Typeface, Bitmap> memeSetting) {
+    public Bitmap drawMultilineTextToBitmap(Context c, MemeSetting memeSetting) {
         // prepare canvas
         Resources resources = c.getResources();
         Bitmap bitmap = memeSetting.getDisplayImage();
+
+        if (memeSetting.getRotationDeg() != 0) {
+            Matrix matrix = new Matrix();
+            matrix.postRotate(memeSetting.getRotationDeg());
+            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+        }
 
         float scale = Helpers.getScalingFactor(bitmap.getWidth(), bitmap.getHeight());
         float borderScale = scale * memeSetting.getFontSize() / MemeLibConfig.FONT_SIZES.DEFAULT;
@@ -418,6 +460,7 @@ public class MemeCreateActivity extends AppCompatActivity
             textLayout.draw(canvas);
             canvas.restore();
         }
+
         return bitmap;
     }
 
@@ -432,7 +475,7 @@ public class MemeCreateActivity extends AppCompatActivity
     }
 
     @Override
-    public void onMemeSettingChanged(MemeSetting<Typeface, Bitmap> memeSetting) {
+    public void onMemeSettingChanged(MemeSetting memeSetting) {
         imageEditView.setImageBitmap(null);
         if (lastBitmap != null)
             lastBitmap.recycle();
@@ -445,17 +488,20 @@ public class MemeCreateActivity extends AppCompatActivity
     public void onSheetStateChanged(BottomSheetLayout.State state) {
         if (state == BottomSheetLayout.State.HIDDEN) {
             fab.setVisibility(View.VISIBLE);
+            toolbar.setVisibility(View.VISIBLE);
             textEditBottomCaption.setVisibility(View.VISIBLE);
             textEditTopCaption.setVisibility(View.VISIBLE);
         }
         if (state == BottomSheetLayout.State.EXPANDED || state == BottomSheetLayout.State.PEEKED) {
             textEditBottomCaption.setVisibility(View.GONE);
             textEditTopCaption.setVisibility(View.GONE);
+            toolbar.setVisibility(View.GONE);
         }
     }
 
     @Override
     public void onDismissed(BottomSheetLayout bottomSheetLayout) {
         fab.setVisibility(View.VISIBLE);
+        toolbar.setVisibility(View.VISIBLE);
     }
 }

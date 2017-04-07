@@ -47,4 +47,6 @@
     <string name="contributors">Beitragende</string>
     <string name="info__show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
     <string name="more_information">Mehr Informationen</string>
+    <string name="settings__caps_off">Caps aus</string>
+    <string name="settings__rotate">Drehen</string>
 </resources>

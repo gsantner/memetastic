@@ -1,29 +1,31 @@
 package io.github.gsantner.memetastic.data;
 
+import android.graphics.Bitmap;
+
+import java.io.Serializable;
+
 /**
  * A memes settings
- *
- * @param <F> FontType
- * @param <I> ImageType
  */
-public class MemeSetting<F, I> {
-    public static interface OnMemeSettingChangedListener<F, I> {
-        void onMemeSettingChanged(MemeSetting<F, I> memeSetting);
+public class MemeSetting implements Serializable {
+    public static interface OnMemeSettingChangedListener {
+        void onMemeSettingChanged(MemeSetting memeSetting);
     }
 
-    private OnMemeSettingChangedListener<F, I> memeSettingChangedListener;
-    private I displayImage;
+    private OnMemeSettingChangedListener memeSettingChangedListener;
+    private Bitmap displayImage;
     private int fontId;
-    private MemeFont<F> font;
-    private I image;
+    private MemeFont font;
+    private Bitmap image;
+    private int rotationDeg = 0;
 
-    private int fontSize;
-    private int textColor;
-    private int borderColor;
-    private boolean allCaps;
+    private int fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
+    private int textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
+    private int borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
+    private boolean allCaps = true;
 
-    private String captionTop;
-    private String captionBottom;
+    private String captionTop = "";
+    private String captionBottom = "";
 
     /**
      * Constructor
@@ -31,16 +33,9 @@ public class MemeSetting<F, I> {
      * @param font  A font
      * @param image A image
      */
-    public MemeSetting(MemeFont<F> font, I image) {
+    public MemeSetting(MemeFont font, Bitmap image) {
         this.image = image;
         this.font = font;
-
-        fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
-        textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
-        borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
-        captionBottom = "";
-        captionTop = "";
-        allCaps = true;
     }
 
     @Override
@@ -62,7 +57,7 @@ public class MemeSetting<F, I> {
      *
      * @return font
      */
-    public MemeFont<F> getFont() {
+    public MemeFont getFont() {
         return font;
     }
 
@@ -71,7 +66,7 @@ public class MemeSetting<F, I> {
      *
      * @param font font
      */
-    public void setFont(MemeFont<F> font) {
+    public void setFont(MemeFont font) {
         this.font = font;
         notifyChangedListener();
     }
@@ -214,7 +209,7 @@ public class MemeSetting<F, I> {
      *
      * @return the image
      */
-    public I getDisplayImage() {
+    public Bitmap getDisplayImage() {
         return displayImage;
     }
 
@@ -223,7 +218,7 @@ public class MemeSetting<F, I> {
      *
      * @param displayImage the image
      */
-    public void setDisplayImage(I displayImage) {
+    public void setDisplayImage(Bitmap displayImage) {
         this.displayImage = displayImage;
     }
 
@@ -232,7 +227,7 @@ public class MemeSetting<F, I> {
      *
      * @return THe listener
      */
-    public OnMemeSettingChangedListener<F, I> getMemeSettingChangedListener() {
+    public OnMemeSettingChangedListener getMemeSettingChangedListener() {
         return memeSettingChangedListener;
     }
 
@@ -241,7 +236,7 @@ public class MemeSetting<F, I> {
      *
      * @param memeSettingChangedListener The listener
      */
-    public void setMemeSettingChangedListener(OnMemeSettingChangedListener<F, I> memeSettingChangedListener) {
+    public void setMemeSettingChangedListener(OnMemeSettingChangedListener memeSettingChangedListener) {
         this.memeSettingChangedListener = memeSettingChangedListener;
     }
 
@@ -250,7 +245,7 @@ public class MemeSetting<F, I> {
      *
      * @return the image
      */
-    public I getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
@@ -259,8 +254,17 @@ public class MemeSetting<F, I> {
      *
      * @param image image
      */
-    public void setImage(I image) {
+    public void setImage(Bitmap image) {
         this.image = image;
+        notifyChangedListener();
+    }
+
+    public int getRotationDeg() {
+        return rotationDeg;
+    }
+
+    public void setRotationDeg(int rotationDeg) {
+        this.rotationDeg = rotationDeg;
         notifyChangedListener();
     }
 }

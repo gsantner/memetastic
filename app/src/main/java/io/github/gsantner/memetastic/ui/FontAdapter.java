@@ -15,8 +15,8 @@ import io.github.gsantner.memetastic.data.MemeFont;
 /**
  * Adapter to show the available fonts rendered in there own style as preview
  */
-public class FontAdapter extends ArrayAdapter<MemeFont<Typeface>> {
-    public FontAdapter(Context context, int resource, List<MemeFont<Typeface>> fontList) {
+public class FontAdapter extends ArrayAdapter<MemeFont> {
+    public FontAdapter(Context context, int resource, List<MemeFont> fontList) {
         super(context, resource, fontList);
     }
 

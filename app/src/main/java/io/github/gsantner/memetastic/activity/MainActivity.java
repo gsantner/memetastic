@@ -2,6 +2,7 @@ package io.github.gsantner.memetastic.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -136,9 +138,9 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("ConstantConditions")
     private void selectTab(int pos) {
-        if (pos < tabLayout.getTabCount()) {
-            tabLayout.getTabAt(pos).select();
-        }
+        pos = pos >= 0 ? pos : tabLayout.getTabCount() - 1;
+        pos = pos < tabLayout.getTabCount() ? pos : 0;
+        tabLayout.getTabAt(pos).select();
     }
 
     @Override
@@ -331,6 +333,26 @@ public class MainActivity extends AppCompatActivity
             recyclerMemeList.setAdapter(recyclerMemeAdapter);
             app.settings.setLastSelectedCategory(MemeLibConfig.getIndexOfCategory(mMemeCategory.getCategoryName()));
         }
+    }
+
+    private final RectF point = new RectF(0, 0, 0, 0);
+    private static final int SWIPE_MIN_DX = 150;
+    private static final int SWIPE_MAX_DY = 90;
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            point.set(event.getX(), event.getY(), 0, 0);
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            point.set(point.left, point.top, event.getX(), event.getY());
+            if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
+
+                selectTab(tabLayout.getSelectedTabPosition()
+                        + (point.width() > 0 ? -1 : +1)    // R->L : L<-R
+                );
+            }
+        }
+        return super.dispatchTouchEvent(event);
     }
 
 

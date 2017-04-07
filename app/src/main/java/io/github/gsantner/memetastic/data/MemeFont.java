@@ -1,14 +1,16 @@
 package io.github.gsantner.memetastic.data;
 
+import android.graphics.Typeface;
+
 import java.io.File;
 
 /**
  * Contains the path and the name of a font
  */
-public class MemeFont<F> {
+public class MemeFont {
     private final String filePath;
     private final String fontName;
-    private F font;
+    private Typeface font;
 
     /**
      * Constructor that takes and saves the filepath to the font and the font itself
@@ -16,7 +18,7 @@ public class MemeFont<F> {
      * @param filePath path where the font is saved
      * @param font     the platform specific font type for the font at the path
      */
-    public MemeFont(String filePath, F font) {
+    public MemeFont(String filePath, Typeface font) {
         this.font = font;
         this.filePath = filePath;
 
@@ -34,7 +36,7 @@ public class MemeFont<F> {
         return fontName;
     }
 
-    public F getFont() {
+    public Typeface getFont() {
         return font;
     }
 }

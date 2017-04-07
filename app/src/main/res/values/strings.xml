@@ -45,6 +45,8 @@
     <!-- Settings -->
     <string name="settings__settings">Settings</string>
     <string name="settings__all_caps">All caps</string>
+    <string name="settings__caps_off">Caps off</string>
+    <string name="settings__rotate">Rotate</string>
     <string name="settings__pref_render_quality_title">Render-Quality</string>
     <string name="settings__cleanup_thumbnails">Clear thumbnails</string>
     <string name="settings__pref_columns_portrait">Columns portrait</string>

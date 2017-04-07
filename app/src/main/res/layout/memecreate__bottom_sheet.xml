@@ -39,6 +39,34 @@
             android:max="30"
             android:progress="18" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ToggleButton
+                android:id="@+id/memecreate__bottom_sheet__toggle_all_caps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:checked="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_text"
+                android:textOff="@string/settings__caps_off"
+                android:textOn="@string/settings__all_caps" />
+
+            <Button
+                android:id="@+id/memecreate__bottom_sheet__rotate_plus_90deg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="@string/settings__rotate"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_text" />
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -88,26 +116,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:spinnerMode="dropdown" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/default_margin_1"
-            android:text="@string/settings__all_caps"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/primary_text"
-            android:textStyle="bold" />
-
-        <ToggleButton
-            android:id="@+id/memecreate__bottom_sheet__toggle_all_caps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:checked="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/primary_text" />
-
 
     </LinearLayout>
 </ScrollView>

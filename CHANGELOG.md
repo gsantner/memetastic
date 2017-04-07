@@ -1,3 +1,11 @@
+### v0.9.3
+- Allow rotation of images
+- Keep Meme Settings on device rotation
+- Swipe through category tabs
+- Remove generics from MemeSettings/Font
+- Translation added: Italian
+- More memes
+
 ### v0.9.2
 - Introduce minimalistic Markdown Parser
 - Show CHANGELOG after update
