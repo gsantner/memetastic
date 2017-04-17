@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- main -->
+    <string name="main__navdrawer__open">Otwórz panel nawigacyjny</string>
+    <string name="main__navdrawer__close">Zamknij panel nawigacyjny</string>
+
+    <string name="main__save_meme">Zapisz mem</string>
+    <string name="main__share_meme">Udostępnij mem</string>
+    <string name="main__create_meme">Stwórz mem</string>
+    <string name="main__delete_meme">Usuń mem</string>
+
+    <string name="main__memecat__humans">Ludzie</string>
+    <string name="main__memecat__cartoon">Komiks</string>
+    <string name="main__memecat__animals">Zwierzęta</string>
+
+    <string name="main__mode__saved">Zapisane</string>
+    <string name="main__mode__favs">Ulubione</string>
+    <string name="main__mode__create">Stwórz</string>
+
+    <string name="main__get_picture_from_gallery">Wybierz obraz z Galerii</string>
+    <string name="main__get_picture_from_camera">Zrób zdjęcie aparatem</string>
+    <string name="main__error_camera_cannot_start">Nie udało się włączyć aparatu.</string>
+    <string name="main__error_no_picture_selected">Nie wybrano żadnego obrazu.</string>
+    <string name="main__share_meme_prompt">Udostępnij Twój Mem za pomocą...</string>
+
+    <string name="main__donate_bitcoin">Wspomóż Bitcoinami</string>
+    <string name="main__recommend_app">Poleć</string>
+    <string name="main__changelog">Lista zmian</string>
+    <string name="main__exit">Wyjdź</string>
+    <string name="main__yes">tak</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">Naciśnij wstecz ponownie by przerwać edycję. Jeśli nie zapisałeś mema to go stracisz.</string>
+    <string name="creator__saved_successfully_message">Mem został pomyślnie zapisany na Twoim urządzeniu. Czy chcesz zakończyć edycję?</string>
+    <string name="creator__text_size">Rozmiar tekstu</string>
+    <string name="creator__text_color">Kolor tekstu</string>
+    <string name="creator__border_color">Kolor obramowania</string>
+    <string name="creator__saved_successfully">Zapisano pomyślnie!</string>
+    <string name="creator__hint_top_caption">Górny napis</string>
+    <string name="creator__hint_bottom_caption">Dolny napis</string>
+    <string name="creator__font">Czcionka</string>
+    <string name="creator__no_keep_editing">Nie, edytuję dalej</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">Ustawienia</string>
+    <string name="settings__all_caps">Tylko wielkie litery</string>
+    <string name="settings__caps_off">Wyłącz wielkie litery</string>
+    <string name="settings__rotate">Obróć</string>
+    <string name="settings__pref_render_quality_title">Jakość obrazu wyjściowego</string>
+    <string name="settings__cleanup_thumbnails">Wyczyść miniatury</string>
+    <string name="settings__pref_columns_portrait">Kolumny portretowo</string>
+    <string name="settings__pref_columns_landscape">Kolumny horyzontalnie</string>
+
+    <!-- Info -->
+    <string name="info__info">Informacje</string>
+    <string name="info__developed_by">Stworzone przez</string>
+    <string name="info__additionalContact">Więcej informacji</string>
+    <string name="info__licenses">Licencje</string>
+    <string name="info__show_licenses">Pokaż licencje</string>
+    <string name="contributors">Współautorzy</string>
+    <string name="more_information">Więcej informacji</string>
+    <string name="info__show_gplv3_license">Pokaż licencję GNU GPLv3</string>
+    <string name="info__show_third_party_licenses">Pokaż licencje bibliotek</string>
+</resources>
