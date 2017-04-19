@@ -1,13 +1,18 @@
 package io.github.gsantner.memetastic.data;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Contains the category name of the memes and all the available meme names in this category
  */
 public class MemeCategory {
     private final String categoryName;
-    private final String[] imageNames;
+    private String[] imageNames;
 
     /**
      * Constructor that takes and saves the category name and the memes
@@ -56,4 +61,10 @@ public class MemeCategory {
         return getFolderPath(true) + imageNames[position];
     }
 
+
+    public void shuffleList(){
+        List<String> l = new ArrayList<String>(Arrays.asList(imageNames));
+        Collections.shuffle(l);
+        imageNames = l.toArray(new String[l.size()]);
+    }
 }
