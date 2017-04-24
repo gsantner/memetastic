@@ -37,7 +37,8 @@ Meme templates will only get added if there are no existing watermarks (of e.g. 
 and if they are in a good image quality (do a quick search before).
 
 You can maybe find something suitable here:  
-[1001fonts.com](http://www.1001fonts.com) | [knowyourmeme.com](http://knowyourmeme.com) | [memes.at](http://www.memes.at/)
+* Fonts: [1001fonts](http://www.1001fonts.com) | [Font Squirell](https://www.fontsquirrel.com/fonts/list/find_fonts?filter%5Blicense%5D%5B0%5D=app&filter%5Blicense%5D%5B1%5D=open&q%5Bterm%5D=&q%5Bsearch_check%5D=Y) | [fontspace](http://www.fontspace.com/) 
+* Memes: [knowyourmeme.com](http://knowyourmeme.com) | [memes.at](http://www.memes.at/)
 
 
 ## Licensing

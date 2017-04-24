@@ -21,8 +21,8 @@ public class MemeLibConfig {
     }
 
     public static class FONT_SIZES {
-        public static final int DEFAULT = 18;
-        public static final int MIN = 10;
+        public static final int DEFAULT = 14;
+        public static final int MIN = 4;
         public static final int MAX = 30;
     }
 

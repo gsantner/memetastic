@@ -21,9 +21,12 @@ See <https://creativecommons.org/licenses> for full license texts.
 ### CC BY 3.0
 * (Font) [{PixelFlag}](https://fontstruct.com/fontstructions/show/578475/pixelflag)
 
-
 ### CC BY-SA 3.0
 * (Font) [Eenvoudige](http://www.1001fonts.com/eenvoudige-batik-font.html)
+
+### CC BY-ND 3.0
+* (Font) [Emoticomic](http://mirz123.deviantart.com)
+
 
 ## Apache License
 Version 2.0, January 2004  
