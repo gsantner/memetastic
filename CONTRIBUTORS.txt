@@ -12,3 +12,5 @@ Matthias Ringwald (): Initial builds of app
 Naofumi Fukue (https://github.com/naofum): Japanese translation
 François Vincent (https://github.com/poussinou): French translation
 Danilo Raffaelli (https://crowdin.com/profile/Daraf): Italian translation
+pskosinski (email AT pskosinski DOT pl): Polish translation
+

@@ -21,6 +21,9 @@ See <https://creativecommons.org/licenses> for full license texts.
 ### CC BY 3.0
 * (Font) [{PixelFlag}](https://fontstruct.com/fontstructions/show/578475/pixelflag)
 
+### CC BY 4.0
+* (Font) [DogeSans](http://dogesans.info/)
+
 ### CC BY-SA 3.0
 * (Font) [Eenvoudige](http://www.1001fonts.com/eenvoudige-batik-font.html)
 
@@ -96,3 +99,8 @@ See <https://opensource.org/licenses/OFL-1.1> for license text.
 
 * **Inconsolata**
 * **Press Start 2P**
+* **[Comic Relief](https://www.fontsquirrel.com/fonts/comic-relief)**
+
+## Unspecified
+
+* (Font) Emoticomic by Michelle Lehmann (a/k/a Mirz123)
