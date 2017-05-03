@@ -1,7 +1,10 @@
+### v0.9.5
+- Update libs
+
 ### v0.9.4
-* Smaller fontsizes
-* New fonts
-* Translation added: Polish
+- Smaller fontsizes
+- New fonts
+- Translation added: Polish
 
 ### v0.9.3
 - Allow rotation of images
