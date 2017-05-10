@@ -216,7 +216,7 @@ public class MemeCreateActivity extends AppCompatActivity
                 //Scale big images down to avoid "out of memory"
                 InputStream inputStream = getAssets().open(imagePath);
                 BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
-                options.inSampleSize = Helpers.calculateInSampleSize(options, app.settings.getRenderQuality());
+                options.inSampleSize = Helpers.calculateInSampleSize(options, app.settings.getRenderQualityReal());
                 options.inJustDecodeBounds = false;
                 inputStream.close();
                 inputStream = getAssets().open(imagePath);
@@ -228,7 +228,7 @@ public class MemeCreateActivity extends AppCompatActivity
         } else {
             //Scale big images down to avoid "out of memory"
             BitmapFactory.decodeFile(imagePath, options);
-            options.inSampleSize = Helpers.calculateInSampleSize(options, app.settings.getRenderQuality());
+            options.inSampleSize = Helpers.calculateInSampleSize(options, app.settings.getRenderQualityReal());
             options.inJustDecodeBounds = false;
             bitmap = BitmapFactory.decodeFile(imagePath, options);
         }

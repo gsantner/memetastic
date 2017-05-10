@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress AndroidElementNotAllowed -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/pref_title__size">
+
+        <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:defaultValue="3"
+            android:key="@string/pref_key__grid_column_count_portrait"
+            android:title="@string/settings__pref_columns_portrait"
+            app:maxValue="15"
+            app:minValue="2" />
+
+        <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:defaultValue="5"
+            android:key="@string/pref_key__grid_column_count_landscape"
+            android:title="@string/settings__pref_columns_landscape"
+            app:maxValue="20"
+            app:minValue="2" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title__appearance">
+
+        <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:defaultValue="24"
+            android:key="@string/pref_key__render_quality__percent"
+            android:title="@string/settings__pref_render_quality_title"
+            app:maxValue="100"
+            app:minValue="1" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/miscellaneous">
+
+        <Preference
+            android:key="@string/pref_key__cleanup_thumbnails"
+            android:title="@string/settings__cleanup_thumbnails" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

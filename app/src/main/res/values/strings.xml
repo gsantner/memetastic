@@ -63,4 +63,7 @@
     <string name="more_information">More information</string>
     <string name="info__show_gplv3_license">Show GNU GPLv3 license</string>
     <string name="info__show_third_party_licenses">Show 3rd party licenses</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="pref_title__appearance">Appearance</string>
+    <string name="pref_title__size">Size</string>
 </resources>

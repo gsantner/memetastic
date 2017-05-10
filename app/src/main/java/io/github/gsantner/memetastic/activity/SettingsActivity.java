@@ -1,22 +1,30 @@
 package io.github.gsantner.memetastic.activity;
 
-import android.annotation.SuppressLint;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.SeekBar;
+
+import io.github.gsantner.memetastic.R;
+import io.github.gsantner.memetastic.util.AppSettings;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import io.github.gsantner.memetastic.App;
-import io.github.gsantner.memetastic.R;
-import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
 
-public class SettingsActivity extends AppCompatActivity {
+/**
+ * SettingsActivity
+ * Created by vanitas on 24.10.16.
+ */
+
+public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     static final int ACTIVITY_ID = 10;
 
     static class RESULT {
@@ -24,78 +32,93 @@ public class SettingsActivity extends AppCompatActivity {
         static final int CHANGED = 1;
     }
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.settings__appbar)
+    protected AppBarLayout appBarLayout;
+    @BindView(R.id.settings__toolbar)
+    protected Toolbar toolbar;
 
-    @BindView(R.id.settings__activity__seek_render_quality)
-    SeekBar seekRenderQuality;
+    private AppSettings appSettings;
+    private int activityRetVal = RESULT.NOCHANGE;
 
-    @BindView(R.id.settings__activity__edit_columns_landscape)
-    EditText columnsLandscape;
-
-    @BindView(R.id.settings__activity__edit_columns_portrait)
-    EditText columnsPortrait;
-
-    private boolean settingsChanged = false;
-    AppSettings settings;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle b) {
+        super.onCreate(b);
         setContentView(R.layout.settings__activity);
         ButterKnife.bind(this);
-
+        toolbar.setTitle(R.string.settings__settings);
         setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        settings = ((App) getApplication()).settings;
-
-        loadSettings();
+        appSettings = new AppSettings(this);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_white_48px));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SettingsActivity.this.onBackPressed();
+            }
+        });
+        showFragment(SettingsFragmentMaster.TAG, false);
     }
 
-    @OnClick({R.id.action_done})
-    public void onFloatingActionClicked(View v) {
-        switch (v.getId()) {
-            case android.R.id.home:
-            case R.id.action_done:
-                setResult(isSettingsChanged() ? RESULT.CHANGED : RESULT.NOCHANGE);
-                finish();
-                break;
+    protected void showFragment(String tag, boolean addToBackStack) {
+        PreferenceFragment fragment = (PreferenceFragment) getFragmentManager().findFragmentByTag(tag);
+        if (fragment == null) {
+            switch (tag) {
+                case SettingsFragmentMaster.TAG:
+                default:
+                    fragment = new SettingsFragmentMaster();
+                    toolbar.setTitle(R.string.settings__settings);
+                    break;
+            }
         }
-    }
-
-
-    @SuppressLint("SetTextI18n")
-    public void loadSettings() {
-        seekRenderQuality.setProgress(settings.getRenderQuality() - 400);
-        columnsPortrait.setText(settings.getGridColumnCountPortrait() + "");
-        columnsLandscape.setText(settings.getGridColumnCountLandscape() + "");
-    }
-
-    public int editTextToInt(EditText ed) {
-        return Integer.parseInt(ed.getText().toString());
-    }
-
-    public boolean isSettingsChanged() {
-        if (editTextToInt(columnsPortrait) != settings.getGridColumnCountPortrait()) {
-            settings.setGridColumnCountPortrait(editTextToInt(columnsPortrait));
-            settingsChanged = true;
+        FragmentTransaction t = getFragmentManager().beginTransaction();
+        if (addToBackStack) {
+            t.addToBackStack(tag);
         }
-        if (editTextToInt(columnsLandscape) != settings.getGridColumnCountPortrait()) {
-            settings.setGridColumnCountLandscape(editTextToInt(columnsLandscape));
-            settingsChanged = true;
-        }
-        if (seekRenderQuality.getProgress() + 400 != settings.getRenderQuality()) {
-            settings.setRenderQuality(seekRenderQuality.getProgress() + 400);
-            settingsChanged = true;
-        }
-
-        return settingsChanged;
+        t.replace(R.id.settings__fragment_container, fragment, tag).commit();
     }
 
-    @OnClick(R.id.settings__activity__button_cleanup_thumbnails)
-    public void startThumbnailCleanupThread() {
-        new ThumbnailCleanupTask(getApplicationContext()).start();
+    @Override
+    protected void onResume() {
+        appSettings.registerPreferenceChangedListener(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        appSettings.unregisterPreferenceChangedListener(this);
+        super.onPause();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        activityRetVal = RESULT.CHANGED;
+    }
+
+    @Override
+    protected void onStop() {
+        setResult(activityRetVal);
+        super.onStop();
+    }
+
+    public static class SettingsFragmentMaster extends PreferenceFragment {
+        public static final String TAG = "io.github.gsantner.memetastic.settings.SettingsFragmentMaster";
+
+        public void onCreate(Bundle savedInstances) {
+            super.onCreate(savedInstances);
+            getPreferenceManager().setSharedPreferencesName("app");
+            addPreferencesFromResource(R.xml.preferences_master);
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
+            if (isAdded() && preference.hasKey()) {
+                Context context = getActivity().getApplicationContext();
+                AppSettings settings = new AppSettings(context);
+                String key = preference.getKey();
+
+                if (key.equals(getString(R.string.pref_key__cleanup_thumbnails))) {
+                    new ThumbnailCleanupTask(context).start();
+                    return true;
+                }
+            }
+            return super.onPreferenceTreeClick(screen, preference);
+        }
     }
 }

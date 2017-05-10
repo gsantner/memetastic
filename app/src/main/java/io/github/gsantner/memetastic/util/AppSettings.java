@@ -39,6 +39,15 @@ public class AppSettings {
         return key.equals(getKey(stringKeyRessourceId));
     }
 
+    public void registerPreferenceChangedListener(SharedPreferences.OnSharedPreferenceChangeListener value) {
+        prefApp.registerOnSharedPreferenceChangeListener(value);
+    }
+
+    public void unregisterPreferenceChangedListener(SharedPreferences.OnSharedPreferenceChangeListener value) {
+        prefApp.unregisterOnSharedPreferenceChangeListener(value);
+    }
+
+
     private void setString(SharedPreferences pref, int keyRessourceId, String value) {
         pref.edit().putString(context.getString(keyRessourceId), value).apply();
     }
@@ -115,12 +124,9 @@ public class AppSettings {
         return list.toArray(new String[list.size()]);
     }
 
-    public int getRenderQuality() {
-        return getInt(prefApp, R.string.pref_key__render_quality, 900);
-    }
-
-    public void setRenderQuality(int value) {
-        setInt(prefApp, R.string.pref_key__render_quality, value);
+    public int getRenderQualityReal() {
+        int val = getInt(prefApp, R.string.pref_key__render_quality__percent, 24);
+        return (int) (400 + (2100.0 * (val / 100.0)));
     }
 
     public void setLastSelectedFont(int value) {

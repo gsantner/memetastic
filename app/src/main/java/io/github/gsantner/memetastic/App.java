@@ -35,6 +35,14 @@ public class App extends Application {
         settings = new AppSettings(this);
         loadFonts();
         loadMemeNames();
+
+        int a = settings.getRenderQualityReal();
+
+        if (settings.isAppFirstStart()) {
+            // Set default values (calculated in getters)
+            settings.setGridColumnCountPortrait(settings.getGridColumnCountPortrait());
+            settings.setGridColumnCountLandscape(settings.getGridColumnCountLandscape());
+        }
     }
 
     public void loadFonts() {

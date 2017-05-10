@@ -1,130 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="io.github.gsantner.memetastic.activity.SettingsActivity">
+    android:orientation="vertical">
 
-    <!-- ActionBar -->
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/settings__appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/settings__toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     </android.support.design.widget.AppBarLayout>
 
-
-    <!-- Content -->
-    <android.support.v4.widget.NestedScrollView
+    <FrameLayout
+        android:id="@+id/settings__fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:focusableInTouchMode="true"
-        android:padding="@dimen/default_margin_2"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/settings__activity__button_cleanup_thumbnails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/settings__cleanup_thumbnails" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:text="@string/settings__pref_render_quality_title"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/primary_text"
-                android:textStyle="bold" />
-
-
-            <SeekBar
-                android:id="@+id/settings__activity__seek_render_quality"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginEnd="@dimen/default_margin_2"
-                android:layout_marginStart="@dimen/default_margin_2"
-                android:layout_marginTop="@dimen/default_margin_1"
-                android:max="2100"
-                android:progress="900" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:labelFor="@+id/settings__activity__edit_columns_portrait"
-                android:text="@string/settings__pref_columns_portrait"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/primary_text"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/settings__activity__edit_columns_portrait"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:inputType="numberSigned"
-                android:maxLength="2"
-                tools:text="3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:labelFor="@+id/settings__activity__edit_columns_landscape"
-                android:text="@string/settings__pref_columns_landscape"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/primary_text"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/settings__activity__edit_columns_landscape"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:inputType="numberSigned"
-                android:maxLength="2"
-                tools:text="5" />
-
-
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-    <!-- Floating Actions -->
-    <LinearLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/action_done"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin_2"
-            android:layout_marginEnd="@dimen/default_margin_2"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="@dimen/default_margin_2"
-            android:src="@drawable/ic_save_white_48px"
-            android:visibility="visible" />
-
-    </LinearLayout>
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
