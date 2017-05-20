@@ -42,7 +42,7 @@ import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
 import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.memetastic.util.SimpleMarkdownParser;
+import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
@@ -341,15 +341,17 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            point.set(event.getX(), event.getY(), 0, 0);
-        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-            point.set(point.left, point.top, event.getX(), event.getY());
-            if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
+        if (!drawer.isDrawerOpen(GravityCompat.START) && !drawer.isDrawerVisible(GravityCompat.START)) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                point.set(event.getX(), event.getY(), 0, 0);
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                point.set(point.left, point.top, event.getX(), event.getY());
+                if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
 
-                selectTab(tabLayout.getSelectedTabPosition()
-                        + (point.width() > 0 ? -1 : +1)    // R->L : L<-R
-                );
+                    selectTab(tabLayout.getSelectedTabPosition()
+                            + (point.width() > 0 ? -1 : +1)    // R->L : L<-R
+                    );
+                }
             }
         }
         return super.dispatchTouchEvent(event);

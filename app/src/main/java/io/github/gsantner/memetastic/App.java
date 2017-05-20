@@ -24,15 +24,21 @@ import io.github.gsantner.memetastic.util.Helpers;
  * The apps application object
  */
 public class App extends Application {
+    private volatile static App app;
     public AppSettings settings;
     List<MemeCategory> memeCategories;
     List<MemeFont> fonts;
 
+    public static App get() {
+        return app;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        app = this;
 
-        settings = new AppSettings(this);
+        settings = AppSettings.get();
         loadFonts();
         loadMemeNames();
 

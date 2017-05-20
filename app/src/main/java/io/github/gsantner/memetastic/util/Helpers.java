@@ -41,6 +41,7 @@ import java.io.InputStreamReader;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
+import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class Helpers {
 

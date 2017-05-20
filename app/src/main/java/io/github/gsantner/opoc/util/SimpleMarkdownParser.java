@@ -7,8 +7,69 @@
  * of warranty. No attribution required.                  - Gregor Santner
  * ----------------------------------------------------------------------------
  */
+ 
+ /*
+ * Get updates:
+ *  https://github.com/gsantner/onePieceOfCode/blob/master/java/SimpleMarkdownParser.java
+ * Parses most common markdown tags. Only inline tags are supported, multiline/block syntax
+ * is not supported (citation, multiline code, ..). This is intended to stay as easy as possible.
+ *
+ * You can e.g. apply a accent color by replacing #000001 with your accentColor string.
+ *
+ * FILTER_ANDROID_TEXTVIEW output is intended to be used at simple Android TextViews,
+ * were a limited set of html tags is supported. This allow to still display e.g. a simple
+ * CHANGELOG.md file without inlcuding a WebView for showing HTML, or other additional UI-libraries.
+ *
+ * FILTER_HTMLPART is intended to be used at engines understanding most common HTML tags.
+ *
+ * You can use this anywhere you want, no backlink/attribution required, but I would appreciate it.
+ */
 
-package io.github.gsantner.memetastic.util;
+/*
+    // Apply to Android TextView:
+    textView.setText(new SpannableString(Html.fromHtml(htmlFromParser)));
+
+    // As wrapper method, includes applying accent color
+    public static String loadMarkdownFromRawForTextView(Context context, @RawRes int rawMdFile, String prepend) {
+        try {
+            return new SimpleMarkdownParser()
+                    .parse(context.getResources().openRawResource(rawMdFile),
+                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, prepend)
+                    .replaceColor("#000001", ContextCompat.getColor(context, R.color.accent))
+                    .removeMultiNewlines().replaceBulletCharacter("*").getHtml();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    // Show HTML a TextView in a scrollable Dialog
+    public static void showDialogWithHtmlTextView(Context context, String html, @StringRes int resTitleId) {
+        LinearLayout layout = new LinearLayout(context);
+        TextView textView = new TextView(context);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        ScrollView root = new ScrollView(context);
+        int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20,
+                context.getResources().getDisplayMetrics());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        layoutParams.setMargins(margin, 0, margin, 0);
+        layout.setLayoutParams(layoutParams);
+
+        layout.addView(textView);
+        root.addView(layout);
+
+        textView.setText(new SpannableString(Html.fromHtml(html)));
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
+                .setPositiveButton(android.R.string.ok, null)
+                .setTitle(resTitleId)
+                .setView(root);
+        dialog.show();
+    }
+ */
+
+
+package io.github.gsantner.opoc.util;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -18,19 +79,6 @@ import java.io.InputStreamReader;
 
 /**
  * Simple Markdown Parser
- * <p>
- * Parses most common markdown tags. Only inline tags are supported, multiline/block syntax
- * is not supported (citation, multiline code, ..). This is intended to stay as easy as possible.
- * <p>
- * You can e.g. apply a accent color by replacing #000001 with your accentColor string.
- * <p>
- * FILTER_ANDROID_TEXTVIEW output is intended to be used at simple Android TextViews,
- * were a limited set of html tags is supported. This allow to still display e.g. a simple
- * CHANGELOG.md file without inlcuding a WebView for showing HTML, or other additional UI-libraries.
- * <p>
- * FILTER_HTMLPART is intended to be used at engines understanding most common HTML tags.
- * <p>
- * You can use this anywhere you want, no backlink/attribution required, but I would appreciate it.
  */
 @SuppressWarnings({"WeakerAccess", "CaughtExceptionImmediatelyRethrown"})
 public class SimpleMarkdownParser {
@@ -158,46 +206,3 @@ public class SimpleMarkdownParser {
         return html != null ? html : "";
     }
 }
-
-/*
-    // Apply to Android TextView:
-    textView.setText(new SpannableString(Html.fromHtml(htmlFromParser)));
-
-    // As wrapper method, includes applying accent color
-    public static String loadMarkdownFromRawForTextView(Context context, @RawRes int rawMdFile, String prepend) {
-        try {
-            return new SimpleMarkdownParser()
-                    .parse(context.getResources().openRawResource(rawMdFile),
-                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, prepend)
-                    .replaceColor("#000001", ContextCompat.getColor(context, R.color.accent))
-                    .removeMultiNewlines().replaceBulletCharacter("*").getHtml();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "";
-        }
-    }
-
-    // Show HTML a TextView in a scrollable Dialog
-    public static void showDialogWithHtmlTextView(Context context, String html, @StringRes int resTitleId) {
-        LinearLayout layout = new LinearLayout(context);
-        TextView textView = new TextView(context);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
-        ScrollView root = new ScrollView(context);
-        int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20,
-                context.getResources().getDisplayMetrics());
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        layoutParams.setMargins(margin, 0, margin, 0);
-        layout.setLayoutParams(layoutParams);
-
-        layout.addView(textView);
-        root.addView(layout);
-
-        textView.setText(new SpannableString(Html.fromHtml(html)));
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
-                .setPositiveButton(android.R.string.ok, null)
-                .setTitle(resTitleId)
-                .setView(root);
-        dialog.show();
-    }
- */

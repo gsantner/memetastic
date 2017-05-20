@@ -29,7 +29,7 @@
     <string name="pref_key__render_quality__percent" translatable="false">pref_key__render_quality__percent</string>
     <string name="pref_key__cleanup_thumbnails" translatable="false">pref_key__cleanup_thumbnails</string>
     <string name="pref_key__last_selected_font" translatable="false">pref_key__last_selected_font</string>
-    <string name="pref_key__memes_favourites" translatable="false">pref_key__memes_favourites</string>
+    <string name="pref_key__meme_favourites" translatable="false">pref_key__meme_favourites</string>
     <string name="pref_key__last_selected_category" translatable="false">pref_key__last_selected_category</string>
     <string name="pref_key__grid_column_count_portrait" translatable="false">pref_key__grid_column_count_portrait</string>
     <string name="pref_key__grid_column_count_landscape" translatable="false">pref_key__grid_column_count_landscape</string>
