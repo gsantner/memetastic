@@ -47,7 +47,7 @@
     <string name="settings__pref_render_quality_title">Qualità render</string>
     <string name="settings__cleanup_thumbnails">Elimina miniature</string>
     <string name="settings__pref_columns_portrait">Colonne in verticale</string>
-    <string name="settings__pref_columns_landscape">Colonne in orizzzontale</string>
+    <string name="settings__pref_columns_landscape">Colonne in orizzontale</string>
 
     <!-- Info -->
     <string name="info__info">Informazioni</string>
