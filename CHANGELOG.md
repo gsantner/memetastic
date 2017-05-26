@@ -1,3 +1,6 @@
+### v0.9.6
+- Update settings
+
 ### v0.9.5
 - Update libs
 
