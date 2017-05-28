@@ -1,7 +1,6 @@
 package io.github.gsantner.memetastic.ui;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;

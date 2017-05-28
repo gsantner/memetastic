@@ -135,7 +135,7 @@ public class MemeCreateActivity extends AppCompatActivity
         initMemeSettings(savedInstanceState);
     }
 
-    public void initMemeSettings(Bundle savedInstanceState){
+    public void initMemeSettings(Bundle savedInstanceState) {
         Bitmap bitmap = extractBitmapFromIntent(getIntent());
         if (savedInstanceState != null && savedInstanceState.containsKey("memeObj")) {
             memeSetting = (MemeSetting) savedInstanceState.getSerializable("memeObj");
@@ -190,7 +190,7 @@ public class MemeCreateActivity extends AppCompatActivity
             bFullscreenImage = false;
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         }
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             initMemeSettings(savedInstanceState);
         }
     }

@@ -12,11 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import io.github.gsantner.memetastic.R;
-import io.github.gsantner.memetastic.util.AppSettings;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.github.gsantner.memetastic.R;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
 
 /**

@@ -18,6 +18,7 @@
         android:layout_height="32dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:background="#00000000" />
 
 </RelativeLayout>

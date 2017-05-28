@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:shadowColor="@android:color/black"
         android:shadowDx="-4"
         android:shadowDy="4"

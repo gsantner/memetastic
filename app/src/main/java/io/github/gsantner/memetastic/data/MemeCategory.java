@@ -3,7 +3,6 @@ package io.github.gsantner.memetastic.data;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -62,7 +61,7 @@ public class MemeCategory {
     }
 
 
-    public void shuffleList(){
+    public void shuffleList() {
         List<String> l = new ArrayList<String>(Arrays.asList(imageNames));
         Collections.shuffle(l);
         imageNames = l.toArray(new String[l.size()]);
