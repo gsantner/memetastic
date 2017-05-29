@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class InfoActivity extends AppCompatActivity {
@@ -54,11 +55,11 @@ public class InfoActivity extends AppCompatActivity {
         }
 
         textMaintainers.setText(new SpannableString(Html.fromHtml(
-                Helpers.loadMarkdownFromRawForTextView(this, R.raw.maintainers, ""))));
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.maintainers, ""))));
         textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
 
         textContributors.setText(new SpannableString(Html.fromHtml(
-                Helpers.loadMarkdownFromRawForTextView(this, R.raw.contributors, "* ")
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "* ")
         )));
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -75,7 +76,7 @@ public class InfoActivity extends AppCompatActivity {
 
     @OnClick(R.id.info__activity__text_app_version)
     public void onVersionClicked(View v) {
-        Helpers.openWebpageWithExternalBrowser(this, getString(R.string.app_www_source));
+        Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
     }
 
     @OnClick({R.id.info__activity__text_app_version, R.id.info__activity__button_third_party_licenses, R.id.info__activity__button_gplv3_license})
@@ -83,19 +84,19 @@ public class InfoActivity extends AppCompatActivity {
         Context context = v.getContext();
         switch (v.getId()) {
             case R.id.info__activity__text_app_version: {
-                Helpers.openWebpageWithExternalBrowser(context, getString(R.string.app_www_source));
+                HelpersA.get(this).openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 break;
             }
             case R.id.info__activity__button_gplv3_license: {
-                Helpers.showDialogWithHtmlTextView(this, Helpers.loadMarkdownFromRawForTextView(this, R.raw.license, ""), R.string.info__licenses);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses, Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.license, ""));
                 break;
             }
             case R.id.info__activity__button_third_party_licenses: {
                 try {
-                    Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                    HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses, new SimpleMarkdownParser().parse(
                             getResources().openRawResource(R.raw.licenses_3rd_party),
-                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
-                            R.string.info__licenses);
+                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
+                    );
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

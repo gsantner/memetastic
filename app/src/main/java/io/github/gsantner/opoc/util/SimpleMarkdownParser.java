@@ -1,16 +1,20 @@
 /*
- * ----------------------------------------------------------------------------
- * "THE COKE-WARE LIBRARY LICENSE" (Revision 255):
+ * ---------------------------------------------------------------------------- *
  * Gregor Santner <gsantner.github.io> wrote this file. You can do whatever
  * you want with this stuff. If we meet some day, and you think this stuff is
  * worth it, you can buy me a coke in return. Provided as is without any kind
  * of warranty. No attribution required.                  - Gregor Santner
+ *
+ * License: Creative Commons Zero (CC0 1.0)
+ *  http://creativecommons.org/publicdomain/zero/1.0/
  * ----------------------------------------------------------------------------
  */
  
  /*
  * Get updates:
  *  https://github.com/gsantner/onePieceOfCode/blob/master/java/SimpleMarkdownParser.java
+ * Apply to TextView:
+ *   See https://github.com/gsantner/onePieceOfCode/blob/master/android/Helpers.get().java
  * Parses most common markdown tags. Only inline tags are supported, multiline/block syntax
  * is not supported (citation, multiline code, ..). This is intended to stay as easy as possible.
  *
@@ -21,53 +25,7 @@
  * CHANGELOG.md file without inlcuding a WebView for showing HTML, or other additional UI-libraries.
  *
  * FILTER_HTMLPART is intended to be used at engines understanding most common HTML tags.
- *
- * You can use this anywhere you want, no backlink/attribution required, but I would appreciate it.
  */
-
-/*
-    // Apply to Android TextView:
-    textView.setText(new SpannableString(Html.fromHtml(htmlFromParser)));
-
-    // As wrapper method, includes applying accent color
-    public static String loadMarkdownFromRawForTextView(Context context, @RawRes int rawMdFile, String prepend) {
-        try {
-            return new SimpleMarkdownParser()
-                    .parse(context.getResources().openRawResource(rawMdFile),
-                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, prepend)
-                    .replaceColor("#000001", ContextCompat.getColor(context, R.color.accent))
-                    .removeMultiNewlines().replaceBulletCharacter("*").getHtml();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "";
-        }
-    }
-
-    // Show HTML a TextView in a scrollable Dialog
-    public static void showDialogWithHtmlTextView(Context context, String html, @StringRes int resTitleId) {
-        LinearLayout layout = new LinearLayout(context);
-        TextView textView = new TextView(context);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
-        ScrollView root = new ScrollView(context);
-        int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20,
-                context.getResources().getDisplayMetrics());
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        layoutParams.setMargins(margin, 0, margin, 0);
-        layout.setLayoutParams(layoutParams);
-
-        layout.addView(textView);
-        root.addView(layout);
-
-        textView.setText(new SpannableString(Html.fromHtml(html)));
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
-                .setPositiveButton(android.R.string.ok, null)
-                .setTitle(resTitleId)
-                .setView(root);
-        dialog.show();
-    }
- */
-
 
 package io.github.gsantner.opoc.util;
 
@@ -137,9 +95,7 @@ public class SimpleMarkdownParser {
     };
 
     //########################
-    //##
     //##     Members
-    //##
     //########################
     private String html;
 
@@ -193,12 +149,8 @@ public class SimpleMarkdownParser {
     }
 
     public SimpleMarkdownParser replaceColor(String hexColor, int newIntColor) {
-        html = html.replace(hexColor, colorToHexString(newIntColor));
+        html = html.replace(hexColor, String.format("#%06X", 0xFFFFFF & newIntColor));
         return this;
-    }
-
-    public static String colorToHexString(int intColor) {
-        return String.format("#%06X", 0xFFFFFF & intColor);
     }
 
     @Override

@@ -42,6 +42,7 @@ import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
 import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setOnTabSelectedListener(this);
 
         // Setup Floating Action Button
-        int gridColumns = Helpers.isInPortraitMode(this)
+        int gridColumns = Helpers.get().isInPortraitMode()
                 ? app.settings.getGridColumnCountPortrait()
                 : app.settings.getGridColumnCountLandscape();
 
@@ -116,15 +117,15 @@ public class MainActivity extends AppCompatActivity
         // Show first start dialog / changelog
         try {
             if (app.settings.isAppFirstStart()) {
-                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
-                        getResources().openRawResource(R.raw.licenses_3rd_party),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
-                        R.string.info__licenses);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses,
+                        new SimpleMarkdownParser().parse(getResources().openRawResource(R.raw.licenses_3rd_party),
+                                SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
+                );
             } else if (app.settings.isAppCurrentVersionFirstStart()) {
                 SimpleMarkdownParser smp = new SimpleMarkdownParser().parse(
                         getResources().openRawResource(R.raw.changelog),
                         SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "");
-                Helpers.showDialogWithHtmlTextView(this, smp.getHtml(), R.string.main__changelog);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.main__changelog, smp.getHtml());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -184,11 +185,11 @@ public class MainActivity extends AppCompatActivity
 
         switch (item.getItemId()) {
             case R.id.action_info: {
-                Helpers.animateToActivity(this, InfoActivity.class, 0, false);
+                HelpersA.get(this).animateToActivity(InfoActivity.class, false, null);
                 return true;
             }
             case R.id.action_settings: {
-                Helpers.animateToActivity(this, SettingsActivity.class, SettingsActivity.ACTIVITY_ID, false);
+                HelpersA.get(this).animateToActivity(SettingsActivity.class, false, SettingsActivity.ACTIVITY_ID);
                 return true;
             }
             case R.id.action_exit: {
@@ -204,16 +205,16 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
             case R.id.action_donate_bitcoin: {
-                Helpers.donateBitcoinRequest(this);
+                Helpers.get().showDonateBitcoinRequest();
                 return true;
             }
             case R.id.action_homepage_github: {
-                Helpers.openWebpageWithExternalBrowser(this, getString(R.string.app_www_source));
+                Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 return true;
             }
             case R.id.action_picture_from_gallery: {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                Helpers.animateToActivity(this, i, REQUEST_LOAD_GALLERY_IMAGE);
+                HelpersA.get(this).animateToActivity(i, false, REQUEST_LOAD_GALLERY_IMAGE);
                 return true;
             }
             case R.id.action_picture_from_camera: {
@@ -274,7 +275,7 @@ public class MainActivity extends AppCompatActivity
                     onImageTemplateWasChosen(picturePath, false);
                 }
             } else {
-                Helpers.showSnackBar(this, R.string.main__error_no_picture_selected);
+                HelpersA.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
             }
         }
 
@@ -282,7 +283,7 @@ public class MainActivity extends AppCompatActivity
             if (resultCode == RESULT_OK) {
                 onImageTemplateWasChosen(cameraPictureFilepath, false);
             } else {
-                Helpers.showSnackBar(this, R.string.main__error_no_picture_selected);
+                HelpersA.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
             }
         }
     }
@@ -306,7 +307,7 @@ public class MainActivity extends AppCompatActivity
                 cameraPictureFilepath = photoFile.getAbsolutePath();
 
             } catch (IOException ex) {
-                Helpers.showSnackBar(this, R.string.main__error_camera_cannot_start);
+                HelpersA.get(this).showSnackBar(R.string.main__error_camera_cannot_start, false);
             }
 
             // Continue only if the File was successfully created
@@ -317,7 +318,7 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
                 }
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_CAMERA_PICTURE);
+                HelpersA.get(this).animateToActivity(takePictureIntent, false, REQUEST_TAKE_CAMERA_PICTURE);
             }
         }
 
@@ -327,7 +328,7 @@ public class MainActivity extends AppCompatActivity
         final Intent intent = new Intent(this, MemeCreateActivity.class);
         intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, filePath);
         intent.putExtra(MemeCreateActivity.ASSET_IMAGE, bIsAsset);
-        Helpers.animateToActivity(this, intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
+        HelpersA.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
     }
 
     public void openImageViewActivityWithImage(String imagePath) {
@@ -336,7 +337,7 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, ImageViewActivity.class);
         intent.putExtra(IMAGE_PATH, imagePath);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        Helpers.animateToActivity(this, intent, 0);
+        HelpersA.get(this).animateToActivity(intent, false, null);
     }
 
     @Override

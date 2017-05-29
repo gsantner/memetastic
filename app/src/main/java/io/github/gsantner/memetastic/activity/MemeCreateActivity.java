@@ -55,6 +55,7 @@ import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.data.MemeSetting;
 import io.github.gsantner.memetastic.ui.FontAdapter;
 import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
 import uz.shift.colorpicker.LineColorPicker;
 
 /**
@@ -216,7 +217,7 @@ public class MemeCreateActivity extends AppCompatActivity
                 //Scale big images down to avoid "out of memory"
                 InputStream inputStream = getAssets().open(imagePath);
                 BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
-                options.inSampleSize = Helpers.calculateInSampleSize(options, app.settings.getRenderQualityReal());
+                options.inSampleSize = Helpers.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
                 options.inJustDecodeBounds = false;
                 inputStream.close();
                 inputStream = getAssets().open(imagePath);
@@ -228,7 +229,7 @@ public class MemeCreateActivity extends AppCompatActivity
         } else {
             //Scale big images down to avoid "out of memory"
             BitmapFactory.decodeFile(imagePath, options);
-            options.inSampleSize = Helpers.calculateInSampleSize(options, app.settings.getRenderQualityReal());
+            options.inSampleSize = Helpers.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
             options.inJustDecodeBounds = false;
             bitmap = BitmapFactory.decodeFile(imagePath, options);
         }
@@ -276,7 +277,7 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @OnClick(R.id.memecreate__activity__image)
     public void onImageClicked(View view) {
-        Helpers.hideSoftKeyboard(this);
+        HelpersA.get(this).hideSoftKeyboard();
     }
 
     @Override
@@ -308,7 +309,7 @@ public class MemeCreateActivity extends AppCompatActivity
         }
 
         String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), memeSavetime);
-        boolean wasSaved = Helpers.saveBitmapToFile(filepath, filename, lastBitmap) != null && Helpers.saveBitmapToFile(thumbnailPath, filename, Helpers.createThumbnail(lastBitmap)) != null;
+        boolean wasSaved = Helpers.get().saveBitmapToFile(filepath, filename, lastBitmap) != null && Helpers.get().saveBitmapToFile(thumbnailPath, filename, Helpers.get().createThumbnail(lastBitmap)) != null;
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -414,7 +415,7 @@ public class MemeCreateActivity extends AppCompatActivity
             bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         }
 
-        float scale = Helpers.getScalingFactor(bitmap.getWidth(), bitmap.getHeight());
+        float scale = Helpers.get().getScalingFactorInPixelsForWritingOnPicture(bitmap.getWidth(), bitmap.getHeight());
         float borderScale = scale * memeSetting.getFontSize() / MemeLibConfig.FONT_SIZES.DEFAULT;
         Bitmap.Config bitmapConfig = bitmap.getConfig();
         // set default bitmap config if none

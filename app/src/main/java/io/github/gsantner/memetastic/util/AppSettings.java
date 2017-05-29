@@ -106,7 +106,7 @@ public class AppSettings extends AppSettingsBase {
     public int getGridColumnCountPortrait() {
         int count = getInt(prefApp, R.string.pref_key__grid_column_count_portrait, -1);
         if (count == -1) {
-            count = 3 + (int) Math.max(0, 0.5 * (Helpers.getEstimatedScreenSizeInches(context) - 5.0));
+            count = 3 + (int) Math.max(0, 0.5 * (Helpers.get().getEstimatedScreenSizeInches() - 5.0));
             setGridColumnCountPortrait(count);
         }
         return count;

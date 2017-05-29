@@ -47,11 +47,11 @@ public class ThumbnailCleanupTask extends Thread implements FilenameFilter {
         MemeOriginStorage memeOriginStorage = new MemeOriginStorage(picPath, strres_dotThumbnails);
         Map<String, String> missing = memeOriginStorage.getMissingThumbnails();
         for (Map.Entry<String, String> entry : missing.entrySet()) {
-            Bitmap bitmap = Helpers.loadImageFromFilesystem(entry.getKey());
+            Bitmap bitmap = Helpers.get().loadImageFromFilesystem(entry.getKey());
             if (bitmap != null) {
                 File thumbFp = new File(entry.getValue());
-                bitmap = Helpers.createThumbnail(bitmap);
-                Helpers.saveBitmapToFile(thumbFp.getParent(), thumbFp.getName(), bitmap);
+                bitmap = Helpers.get().createThumbnail(bitmap);
+                Helpers.get().saveBitmapToFile(thumbFp.getParent(), thumbFp.getName(), bitmap);
             }
         }
     }

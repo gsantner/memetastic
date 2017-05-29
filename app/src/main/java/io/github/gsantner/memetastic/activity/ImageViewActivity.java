@@ -44,7 +44,7 @@ public class ImageViewActivity extends AppCompatActivity {
         setContentView(R.layout.imageview__activity);
         ButterKnife.bind(this);
         app = (App) getApplication();
-        //Helpers.enableImmersiveMode(getWindow().getDecorView());
+        //Helpers.get().enableImmersiveMode(getWindow().getDecorView());
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -61,7 +61,7 @@ public class ImageViewActivity extends AppCompatActivity {
                     ".thumbnails" + File.separator + getString(R.string.app_name) + "_");
         }
 
-        mBitmap = Helpers.loadImageFromFilesystem(imagePath);
+        mBitmap = Helpers.get().loadImageFromFilesystem(imagePath);
         expandedImageView.setImageBitmap(mBitmap);
     }
 

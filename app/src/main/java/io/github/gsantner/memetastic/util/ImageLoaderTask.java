@@ -42,9 +42,9 @@ public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
         BitmapFactory.decodeFile(imagePath, options);
 
         if (bThumbnail)
-            options.inSampleSize = Helpers.calculateInSampleSize(options, MemeLibConfig.MEME_SHOWCASE_GRID_MAX_IMAGESIZE);
+            options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_SHOWCASE_GRID_MAX_IMAGESIZE);
         else
-            options.inSampleSize = Helpers.calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
+            options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeFile(imagePath, options);
     }
@@ -57,9 +57,9 @@ public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
             inputStream = assetManager.open(imagePath);
             BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
             if (bThumbnail) {
-                options.inSampleSize = Helpers.calculateInSampleSize(options, MemeLibConfig.MEME_SHOWCASE_GRID_MAX_IMAGESIZE);
+                options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_SHOWCASE_GRID_MAX_IMAGESIZE);
             } else {
-                options.inSampleSize = Helpers.calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
+                options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
             }
             if (inputStream != null) {
                 inputStream.close();

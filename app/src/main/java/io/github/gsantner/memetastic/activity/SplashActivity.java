@@ -16,7 +16,7 @@ import java.io.File;
 
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -83,7 +83,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Helpers.animateToActivity(SplashActivity.this, MainActivity.class, 0, true);
+                HelpersA.get(SplashActivity.this).animateToActivity(MainActivity.class, true, null);
             }
         }, delay);
     }
