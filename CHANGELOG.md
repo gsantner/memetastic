@@ -1,3 +1,9 @@
+### v0.9.7
+- API level lowered to API14 / ICS
+- Back press - auto save option #13
+- Back press - double back prompt #10
+- New memes 
+
 ### v0.9.6
 - Update settings
 

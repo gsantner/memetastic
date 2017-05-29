@@ -3,7 +3,7 @@
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>[![CircleCI](https://circleci.com/gh/gsantner/memetastic.svg?style=shield)](https://circleci.com/gh/gsantner/memetastic)
 
 **MemeTastic - Meme Creator for Android**  
-Available for devices running Jelly Bean (4.2.2 / API17) and above  
+Available for devices running Ice Cream Sandwich (4.0.0 / API14) and above  
 Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2015-  
 License: **GPLv3**  
 
