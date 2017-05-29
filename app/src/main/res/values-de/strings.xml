@@ -52,4 +52,9 @@
     <string name="miscellaneous">Diverses</string>
     <string name="pref_title__appearance">Erscheinungsbild</string>
     <string name="pref_title__size">Größe</string>
+    <string name="pref_title__default_main_mode">Standard Modus</string>
+    <string name="pref_summary__default_main_mode">Standard Modus bei Appstart (Erstellen, Favs, Gespeichert)</string>
+    <string name="pref_title__functionality">Funktionalität</string>
+    <string name="pref_summary__auto_save_meme">Meme automatisch speichern wenn zurück gedrückt und Text eingegeben wurde</string>
+    <string name="pref_title__auto_save_meme">Speichern bei zurück</string>
 </resources>

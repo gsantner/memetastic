@@ -23,15 +23,12 @@
     <group
         android:id="@+id/nav1"
         android:checkableBehavior="none">
-        <item
-            android:id="@+id/action_recommend"
-            android:icon="@drawable/ic_thumb_up_black_48px"
-            android:title="@string/main__recommend_app" />
 
         <item
             android:id="@+id/action_settings"
             android:icon="@drawable/ic_settings_white_48px"
             android:title="@string/settings__settings" />
+
         <item
             android:id="@+id/action_exit"
             android:icon="@drawable/ic_cancel_black_48px"
@@ -42,6 +39,10 @@
     <group
         android:id="@+id/nav2"
         android:checkableBehavior="none">
+        <item
+            android:id="@+id/action_recommend"
+            android:icon="@drawable/ic_thumb_up_black_48px"
+            android:title="@string/main__recommend_app" />
         <item
             android:id="@+id/action_donate_bitcoin"
             android:icon="@drawable/ic_favorite_white_48px"

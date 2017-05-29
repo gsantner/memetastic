@@ -6,4 +6,16 @@
         <item>@string/main__memecat__cartoon</item>
         <item>@string/main__memecat__rage</item>
     </string-array>
+
+    <string-array name="main_modes" translatable="false">
+        <item>@string/main__mode__create</item>
+        <item>@string/main__mode__favs</item>
+        <item>@string/main__mode__saved</item>
+    </string-array>
+
+    <string-array name="values__zero_to_two" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

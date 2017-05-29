@@ -140,4 +140,12 @@ public class AppSettings extends AppSettingsBase {
         setInt(prefApp, R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
         return value != BuildConfig.VERSION_CODE && !BuildConfig.IS_TEST_BUILD;
     }
+
+    public boolean isAutoSaveMeme() {
+        return getBool(R.string.pref_key__auto_save_meme, false);
+    }
+
+    public int getDefaultMainMode() {
+        return getIntOfStringPref(R.string.pref_key__default_main_mode, 0);
+    }
 }

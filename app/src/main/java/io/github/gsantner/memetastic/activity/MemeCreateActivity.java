@@ -237,10 +237,29 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        boolean hasTextInput = !textEditTopCaption.getText().toString().isEmpty() || !textEditBottomCaption.getText().toString().isEmpty();
+
+        // Close views above
         if (bottomSheet.isSheetShowing()) {
             bottomSheet.dismissSheet();
             return;
         }
+
+        // Auto save if option checked
+        if (hasTextInput && app.settings.isAutoSaveMeme()) {
+            if (saveMemeToFilesystem(false)) {
+                finish();
+                return;
+            }
+        }
+
+        // Close if no input
+        if (!hasTextInput) {
+            finish();
+            return;
+        }
+
+        // Else wait for double back-press
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
@@ -274,14 +293,14 @@ public class MemeCreateActivity extends AppCompatActivity
                 return true;
             }
             case R.id.action_save: {
-                saveMemeToFilesystem();
+                saveMemeToFilesystem(true);
                 return true;
             }
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void saveMemeToFilesystem() {
+    private boolean saveMemeToFilesystem(boolean showDialog) {
         String filepath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), getString(R.string.app_name)).getAbsolutePath();
         String thumbnailPath = new File(filepath, getString(R.string.dot_thumbnails)).getAbsolutePath();
         if (memeSavetime < 0) {
@@ -289,7 +308,9 @@ public class MemeCreateActivity extends AppCompatActivity
         }
 
         String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), memeSavetime);
-        if (Helpers.saveBitmapToFile(filepath, filename, lastBitmap) != null && Helpers.saveBitmapToFile(thumbnailPath, filename, Helpers.createThumbnail(lastBitmap)) != null) {
+        boolean wasSaved = Helpers.saveBitmapToFile(filepath, filename, lastBitmap) != null && Helpers.saveBitmapToFile(thumbnailPath, filename, Helpers.createThumbnail(lastBitmap)) != null;
+        if (wasSaved && showDialog) {
+
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle(R.string.creator__saved_successfully)
                     .setMessage(R.string.creator__saved_successfully_message)
@@ -301,6 +322,7 @@ public class MemeCreateActivity extends AppCompatActivity
                     });
             dialog.show();
         }
+        return wasSaved;
     }
 
     @OnClick(R.id.fab)
