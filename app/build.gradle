@@ -30,12 +30,9 @@ android {
     productFlavors {
         flavorDefault {
         }
-        /*
         flavorGplay {
             buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
         }
-        */
-
         flavorTest {
             applicationId "io.github.gsantner.memetastic.test"
             resValue 'string', 'app_name', "MemeTestic"

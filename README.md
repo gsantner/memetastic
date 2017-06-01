@@ -43,7 +43,7 @@ You can maybe find something suitable here:
 
 ## Licensing
 The code of the app is licensed GPL v3.  
-For more licensing informations, see [`licenses.html`](/app/src/main/res/raw/licenses.html).  
+For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).  
 We consider fair use of the included meme templates. We don't own any of these unless
 other specified. If one or more meme template (/font) violates copyright laws and 
 you want them to be removed, please open a issue on GitHub and they will get 
