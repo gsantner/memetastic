@@ -1,6 +1,6 @@
 # ![App icon](https://raw.githubusercontent.com/gsantner/memetastic/master/app/src/main/res/drawable-mdpi/ic_launcher.png "App Icon") MemeTastic
 
-<span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>[![CircleCI](https://circleci.com/gh/gsantner/memetastic.svg?style=shield)](https://circleci.com/gh/gsantner/memetastic)
+<span class="badge-bitcoin"><a href="https://gsantner.github.io/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>[![CircleCI](https://circleci.com/gh/gsantner/memetastic.svg?style=shield)](https://circleci.com/gh/gsantner/memetastic)
 
 **MemeTastic - Meme Creator for Android**  
 Available for devices running Ice Cream Sandwich (4.0.0 / API14) and above  
