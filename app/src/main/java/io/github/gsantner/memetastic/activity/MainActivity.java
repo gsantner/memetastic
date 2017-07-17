@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.StringDef;
+import android.support.annotation.StringRes;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.FileProvider;
@@ -116,16 +118,19 @@ public class MainActivity extends AppCompatActivity
 
         // Show first start dialog / changelog
         try {
-            if (app.settings.isAppFirstStart()) {
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses,
-                        new SimpleMarkdownParser().parse(getResources().openRawResource(R.raw.licenses_3rd_party),
-                                SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
-                );
+            SimpleMarkdownParser mdParser = SimpleMarkdownParser.get();
+            if (app.settings.isAppFirstStart(true)) {
+                String html = mdParser.parse(getString(R.string.copyright_license_text_official).replace("\n","  \n"),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+                html += new SimpleMarkdownParser().parse(getResources().openRawResource(R.raw.licenses_3rd_party),
+                                SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses, html);
             } else if (app.settings.isAppCurrentVersionFirstStart()) {
-                SimpleMarkdownParser smp = new SimpleMarkdownParser().parse(
+                mdParser.parse(
                         getResources().openRawResource(R.raw.changelog),
                         SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "");
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.main__changelog, smp.getHtml());
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.main__changelog, mdParser.getHtml());
             }
         } catch (IOException e) {
             e.printStackTrace();

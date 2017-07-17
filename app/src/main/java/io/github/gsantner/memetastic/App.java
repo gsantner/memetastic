@@ -44,7 +44,7 @@ public class App extends Application {
 
         int a = settings.getRenderQualityReal();
 
-        if (settings.isAppFirstStart()) {
+        if (settings.isAppFirstStart(false)) {
             // Set default values (calculated in getters)
             settings.setGridColumnCountPortrait(settings.getGridColumnCountPortrait());
             settings.setGridColumnCountLandscape(settings.getGridColumnCountLandscape());

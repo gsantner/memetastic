@@ -1,6 +1,6 @@
 00l>> This file contains references to people who contributed to the app.
 01l>> If you helped by translating the app, please send a message on Crowdin.  
-02l>> You can also send a mail to [gsantner AT mailbox DOT org](https://gsantner.github.io/about/email/) to get included.
+02l>> You can also send a mail to [gsantner AT mailbox DOT org](https://gsantner.github.io#contact) to get included.
 03l>>  
 04l>> Schemes:  
 05l>>   Firstname Lastname (Link): Text  
