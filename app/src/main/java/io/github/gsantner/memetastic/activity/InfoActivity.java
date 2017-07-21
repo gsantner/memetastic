@@ -39,6 +39,9 @@ public class InfoActivity extends AppCompatActivity {
     @BindView(R.id.info__activity__text_contributors)
     TextView textContributors;
 
+    @BindView(R.id.info__activity__text_license)
+    TextView textLicense;
+
     //####################
     //##  Methods
     //####################
@@ -62,6 +65,16 @@ public class InfoActivity extends AppCompatActivity {
                 Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "* ")
         )));
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
+
+        // License text MUST be shown
+        try {
+            textLicense.setText(new SpannableString(Html.fromHtml(
+                    SimpleMarkdownParser.get().parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"),
+                    SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
+            )));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         // App version

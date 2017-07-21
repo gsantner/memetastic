@@ -1,3 +1,7 @@
+### v1.0.0
+- Disable forced orientation
+- New memes
+
 ### v0.9.8
 - Use opoc/Helpers
 

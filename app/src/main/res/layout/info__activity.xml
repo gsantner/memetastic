@@ -137,7 +137,7 @@
                     android:layout_marginTop="10dp"
                     android:autoLink="web|email"
                     android:gravity="start"
-                    android:text="@string/info__gpl_v3_license_text"
+                    android:text="@string/copyright_license_text_official"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textColor="@color/secondary_text" />
 

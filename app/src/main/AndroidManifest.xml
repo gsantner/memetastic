@@ -31,7 +31,6 @@
             android:icon="${appIcon}"
             android:label="@string/app_name"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait"
             android:theme="@style/AppThemeSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -75,7 +74,6 @@
             android:name="io.github.gsantner.memetastic.activity.InfoActivity"
             android:launchMode="singleInstance"
             android:parentActivityName=".activity.MainActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

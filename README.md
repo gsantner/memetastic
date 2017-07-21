@@ -50,6 +50,11 @@ you want them to be removed, please open a issue on GitHub and they will get
 removed as soon as possible. Note that memes are pretty sure free
 advertisments for what's in the picture (so for you or your company).
 
+If you publish an app based on MemeTastic you MUST 
+* Keep copyright notice in the app, publish changes and link to <https://github.com/gsantner/memetastic>
+* Show that the app is `based on MemeTastic, developed by Gregor Santner and contributors`
+* Show that the app is not MemeTastic but an copy/changed version
+* Not use MemeTastic as app name
 
 
 ## Screenshots
@@ -65,3 +70,4 @@ advertisments for what's in the picture (so for you or your company).
     <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23828353/81ab1342-06cf-11e7-8e60-bcbbb28d7465.png" /> </td>
   </tr>
 </table>
+

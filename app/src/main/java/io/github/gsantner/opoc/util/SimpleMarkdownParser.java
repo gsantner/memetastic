@@ -40,6 +40,7 @@ import java.io.InputStreamReader;
  */
 @SuppressWarnings({"WeakerAccess", "CaughtExceptionImmediatelyRethrown"})
 public class SimpleMarkdownParser {
+
     public interface SimpleLineFilter {
         String filterLine(String line);
     }
@@ -69,6 +70,14 @@ public class SimpleMarkdownParser {
             return line.isEmpty() ? line + "<br/>" : line;
         }
     };
+
+    private static SimpleMarkdownParser instance;
+    public static SimpleMarkdownParser get(){
+        if (instance == null){
+            instance = new SimpleMarkdownParser();
+        }
+        return instance;
+    }
 
     public static final SimpleLineFilter FILTER_HTMLPART = new SimpleLineFilter() {
         @Override
@@ -125,6 +134,18 @@ public class SimpleMarkdownParser {
                 }
             }
         }
+        html = sb.toString().trim();
+        return this;
+    }
+
+    public SimpleMarkdownParser parse(String markdown, SimpleLineFilter simpleLineFilter, String lineMdPrefix) throws IOException {
+        StringBuilder sb = new StringBuilder();
+
+        for (String line : markdown.split("\n")) {
+            sb.append(simpleLineFilter.filterLine(lineMdPrefix + line));
+            sb.append("\n");
+        }
+
         html = sb.toString().trim();
         return this;
     }

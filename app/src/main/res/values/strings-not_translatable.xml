@@ -17,12 +17,28 @@
 
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="ok" translatable="false">@android:string/ok</string>
-    <string name="info__gpl_v3_license_text" translatable="false">
+    <string name="app_source">Th</string>
+
+    <!-- You are NOT allowed to remove parts of the license text below-->
+    <string name="copyright_short" translatable="false">
         Copyright © 2016-2017
+        \nGregor Santner and MemeTastic contributors
+    </string>
+    <string name="copyright_license_text_official" translatable="false"><![CDATA[
+        ### Copyright © 2016-2017
+        \n**Gregor Santner and MemeTastic contributors**
+        \n
+        \n**The official version of MemeTastic can be obtained at:**
+        \n* <https://github.com/gsantner/memetastic>
+        \n* <https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic>
+        \n* <https://play.google.com/store/apps/details?id=io.github.gsantner.memetastic>
+        \n
         \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
         \n
         \nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-    </string>
+    ]]></string>
+    <!-- License end -->
+
     <string name="donate__bitcoin_id" translatable="false">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</string>
     <string name="donate__bitcoin_amount" translatable="false">0.01</string>
     <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
