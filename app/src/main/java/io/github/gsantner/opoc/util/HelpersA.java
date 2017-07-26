@@ -20,7 +20,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.Html;
 import android.text.SpannableString;
-import android.text.method.ScrollingMovementMethod;
+import android.text.method.LinkMovementMethod;
 import android.util.TypedValue;
 import android.view.inputmethod.InputMethodManager;
 
@@ -98,7 +98,7 @@ public class HelpersA extends Helpers {
         AppCompatTextView textView = new AppCompatTextView(context);
         int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16,
                 context.getResources().getDisplayMetrics());
-        textView.setMovementMethod(new ScrollingMovementMethod());
+        textView.setMovementMethod(new LinkMovementMethod());
         textView.setPadding(padding, 0, padding, 0);
 
         textView.setText(new SpannableString(Html.fromHtml(html)));

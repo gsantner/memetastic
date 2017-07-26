@@ -1,3 +1,6 @@
+### v1.1.0
+- Better visibility of license terms and copyright
+
 ### v1.0.0
 - Disable forced orientation
 - New memes

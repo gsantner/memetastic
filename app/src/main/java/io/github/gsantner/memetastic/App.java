@@ -42,8 +42,6 @@ public class App extends Application {
         loadFonts();
         loadMemeNames();
 
-        int a = settings.getRenderQualityReal();
-
         if (settings.isAppFirstStart(false)) {
             // Set default values (calculated in getters)
             settings.setGridColumnCountPortrait(settings.getGridColumnCountPortrait());

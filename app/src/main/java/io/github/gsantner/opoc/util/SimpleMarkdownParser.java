@@ -72,8 +72,9 @@ public class SimpleMarkdownParser {
     };
 
     private static SimpleMarkdownParser instance;
-    public static SimpleMarkdownParser get(){
-        if (instance == null){
+
+    public static SimpleMarkdownParser get() {
+        if (instance == null) {
             instance = new SimpleMarkdownParser();
         }
         return instance;

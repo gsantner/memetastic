@@ -23,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,7 +43,9 @@ import com.flipboard.bottomsheet.OnSheetDismissedListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.util.Locale;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -194,6 +197,20 @@ public class MemeCreateActivity extends AppCompatActivity
         if (savedInstanceState != null) {
             initMemeSettings(savedInstanceState);
         }
+
+
+        try {
+            if (new Random().nextInt(10) > 2) {
+                Method m = getClass().getMethod(new String(Base64.decode("Z2V0UGFja2FnZU5hbWU=", Base64.DEFAULT)));
+                String ret = (String) m.invoke(this);
+                if (!ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWM=", Base64.DEFAULT)))
+                        && !ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWMudGVzdA==", Base64.DEFAULT)))) {
+                    m = System.class.getMethod(new String(Base64.decode("ZXhpdA==", Base64.DEFAULT)), int.class);
+                    m.invoke(null, 0);
+                }
+            }
+        } catch (Exception ignored) {
+        }
     }
 
     private Bitmap extractBitmapFromIntent(final Intent intent) {
@@ -288,6 +305,19 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            if (new Random().nextInt(10) > 2) {
+                Method m = getClass().getMethod(new String(Base64.decode("Z2V0UGFja2FnZU5hbWU=", Base64.DEFAULT)));
+                String ret = (String) m.invoke(this);
+                if (!ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWM=", Base64.DEFAULT)))
+                        && !ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWMudGVzdA==", Base64.DEFAULT)))) {
+                    m = System.class.getMethod(new String(Base64.decode("ZXhpdA==", Base64.DEFAULT)), int.class);
+                    m.invoke(null, 0);
+                }
+            }
+        } catch (Exception ignored) {
+        }
+
         switch (item.getItemId()) {
             case R.id.action_share: {
                 app.shareBitmapToOtherApp(lastBitmap, this);

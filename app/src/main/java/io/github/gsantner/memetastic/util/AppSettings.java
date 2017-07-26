@@ -13,6 +13,7 @@ import io.github.gsantner.opoc.util.AppSettingsBase;
 
 public class AppSettings extends AppSettingsBase {
     private static final int MAX_FAVS = 50;
+    private static boolean PACKAGE_CHECKED = false;
 
     //#####################
     //## Methods
@@ -22,7 +23,37 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public static AppSettings get() {
-        return new AppSettings(App.get());
+        AppSettings appSettings = new AppSettings(App.get());
+
+
+        /*
+         * Check if a MemeTastic package ID was used to build the app.
+         * If you release something based on MemeTastic you will want to remove the lines below.
+         * In any case: You MUST release the full source code.
+         *
+         * If you publish an app based on MemeTastic you MUST
+         *   Comply with the terms of GPLv3 - See https://www.gnu.org/licenses/gpl-3.0.html
+         *   Keep existing copyright notices in the app and publish full source code
+         *   Show that the app is `based on MemeTastic by MemeTastic developers and contributors`. Include a link to https://github.com/gsantner/memetastic
+         *   Show that the app is not MemeTastic but an modified/custom version, and the original app developers or contributors are not responsible for modified versions
+         *   Not use MemeTastic as app name
+         *
+         *  See more details at
+         *  https://github.com/gsantner/memetastic/blob/master/README.md#licensing
+         */
+        if (!PACKAGE_CHECKED) {
+            PACKAGE_CHECKED = true;
+            String pkg = appSettings.getContext().getPackageName();
+            if (!pkg.equals("io.github.gsantner.memetastic") && !pkg.equals("io.github.gsantner.memetastic.test")) {
+                String message = "\n\n\n" +
+                        "++++  WARNING: MemeTastic is licensed GPLv3.\n" +
+                        "++++  If you distribute the app you MUST publish the full source code.\n" +
+                        "++++  See https://github.com/gsantner/memetastic for more details.\n" +
+                        "++++  This warning is placed in util/AppSettings.java->get()\n\n\n";
+                throw new RuntimeException(message);
+            }
+        }
+        return appSettings;
     }
 
     // Adds a String to a String array and cuts of the last values to match a maximal size

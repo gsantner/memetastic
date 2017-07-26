@@ -33,8 +33,8 @@ public class InfoActivity extends AppCompatActivity {
     @BindView(R.id.info__activity__text_app_version)
     TextView textAppVersion;
 
-    @BindView(R.id.info__activity__text_maintainers)
-    TextView textMaintainers;
+    @BindView(R.id.info__activity__text_team)
+    TextView textTeam;
 
     @BindView(R.id.info__activity__text_contributors)
     TextView textContributors;
@@ -57,9 +57,9 @@ public class InfoActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        textMaintainers.setText(new SpannableString(Html.fromHtml(
+        textTeam.setText(new SpannableString(Html.fromHtml(
                 Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.maintainers, ""))));
-        textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
+        textTeam.setMovementMethod(LinkMovementMethod.getInstance());
 
         textContributors.setText(new SpannableString(Html.fromHtml(
                 Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "* ")
@@ -70,7 +70,7 @@ public class InfoActivity extends AppCompatActivity {
         try {
             textLicense.setText(new SpannableString(Html.fromHtml(
                     SimpleMarkdownParser.get().parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"),
-                    SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
+                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
             )));
         } catch (IOException e) {
             e.printStackTrace();
