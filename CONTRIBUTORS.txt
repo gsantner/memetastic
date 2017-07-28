@@ -8,9 +8,8 @@
 07l>>   Username (Link): Text  
 08l>>   Username (E-Mail): Text  
 ## 99l CONTRIBUTORS
-Matthias Ringwald (): Initial builds of app
+Matthias Ringwald (): Development of initial version
 Naofumi Fukue (https://github.com/naofum): Japanese translation
 François Vincent (https://github.com/poussinou): French translation
 Danilo Raffaelli (https://crowdin.com/profile/Daraf): Italian translation
 pskosinski (email AT pskosinski DOT pl): Polish translation
-

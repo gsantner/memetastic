@@ -22,11 +22,11 @@
     <!-- You are NOT allowed to remove parts of the license text below-->
     <string name="copyright_short" translatable="false">
         Copyright © 2016-2017
-        \nMemeTastic developers and contributors
+        \nMemeTastic contributors
     </string>
     <string name="copyright_license_text_official" translatable="false"><![CDATA[
         ### Copyright © 2016-2017
-        \n**Gregor Santner and MemeTastic contributors**
+        \n**MemeTastic contributors**
         \n
         \n**The official version of MemeTastic can be obtained at:**
         \n* <https://github.com/gsantner/memetastic>
