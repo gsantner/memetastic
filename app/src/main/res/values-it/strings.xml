@@ -23,7 +23,7 @@
     <string name="main__error_no_picture_selected">Nessuna immagine selezionata.</string>
     <string name="main__share_meme_prompt">Condividi il tuo Meme tramite...</string>
 
-    <string name="main__donate_bitcoin">Dona Bitcoin</string>
+    <string name="main__donate">Dona</string>
     <string name="main__recommend_app">Raccomanda</string>
     <string name="main__changelog">Log delle modifiche</string>
     <string name="main__exit">Esci</string>
@@ -50,13 +50,13 @@
     <string name="settings__pref_columns_landscape">Colonne in orizzontale</string>
 
     <!-- Info -->
-    <string name="info__info">Informazioni</string>
-    <string name="info__developed_by">Sviluppato da</string>
-    <string name="info__additionalContact">Altre informazioni</string>
-    <string name="info__licenses">Licenze</string>
-    <string name="info__show_licenses">Mostra licenze</string>
+    <string name="about">Informazioni</string>
+    <string name="developed_by">Sviluppato da</string>
+    <string name="additional_contact">Altre informazioni</string>
+    <string name="licenses">Licenze</string>
+    <string name="show_licenses">Mostra licenze</string>
     <string name="contributors">Collaboratori</string>
     <string name="more_information">Altre informazioni</string>
-    <string name="info__show_gplv3_license">Mostra licenza GNU GPLv3</string>
-    <string name="info__show_third_party_licenses">Mostra licenze di terze parti</string>
+    <string name="show_app_license">Mostra licenza GNU GPLv3</string>
+    <string name="show_third_party_licenses">Mostra licenze di terze parti</string>
 </resources>

@@ -119,23 +119,22 @@ public class MainActivity extends AppCompatActivity
 
         // Show first start dialog / changelog
         try {
-            SimpleMarkdownParser mdParser = SimpleMarkdownParser.get();
+            SimpleMarkdownParser mdParser = SimpleMarkdownParser.get().setDefaultSmpFilter(SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW);
             if (app.settings.isAppFirstStart(true)) {
-                String html = mdParser.parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
-                html += new SimpleMarkdownParser().parse(getResources().openRawResource(R.raw.licenses_3rd_party),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+                String html = mdParser.parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"), "").getHtml();
+                html += mdParser.parse(getResources().openRawResource(R.raw.licenses_3rd_party), "").getHtml();
 
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses, html);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.licenses, html);
             } else if (app.settings.isAppCurrentVersionFirstStart()) {
                 mdParser.parse(
-                        getResources().openRawResource(R.raw.changelog),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "");
+                        getResources().openRawResource(R.raw.changelog), "");
                 HelpersA.get(this).showDialogWithHtmlTextView(R.string.main__changelog, mdParser.getHtml());
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         if (BuildConfig.IS_TEST_BUILD) {
             ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__navheader__image)).setImageResource(R.drawable.ic_launcher_test);
@@ -204,8 +203,8 @@ public class MainActivity extends AppCompatActivity
         MemeOriginInterface memeOriginObject = null;
 
         switch (item.getItemId()) {
-            case R.id.action_info: {
-                HelpersA.get(this).animateToActivity(InfoActivity.class, false, null);
+            case R.id.action_about: {
+                HelpersA.get(this).animateToActivity(AboutActivity.class, false, null);
                 return true;
             }
             case R.id.action_settings: {
@@ -228,7 +227,7 @@ public class MainActivity extends AppCompatActivity
                 Helpers.get().showDonateBitcoinRequest();
                 return true;
             }
-            case R.id.action_homepage_github: {
+            case R.id.action_homepage_code: {
                 Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 return true;
             }

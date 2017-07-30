@@ -10,7 +10,7 @@ android {
         targetSdkVersion 25
 
         versionCode 25
-        versionName "1.1.1-dev"
+        versionName "1.1.1"
 
         applicationId "io.github.gsantner.memetastic"
         resValue 'string', 'app_name', "MemeTastic"
@@ -76,7 +76,7 @@ dependencies {
 }
 
 final String RAW_DIR = "app/src/main/res/raw"
-final String[] ROOT_TO_RAW_COPYFILES = ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.txt"]
+final String[] ROOT_TO_RAW_COPYFILES = ["README.md", "LICENSE.txt", "CHANGELOG.md", "CONTRIBUTORS.md"]
 
 // Called before building
 task copyRepoFiles(type: Copy) {
@@ -86,17 +86,6 @@ task copyRepoFiles(type: Copy) {
     into RAW_DIR.replaceFirst("app/", "")
     rename { String fileName ->
         fileName.replace(fileName, fileName.toLowerCase())
-    }
-
-    // Filter Contributors file
-    from(rootProject.file("CONTRIBUTORS.txt")) {
-        into '.'    // Target already changed to 'src/main/res/raw'
-        rename { String fileName ->
-            fileName.replace(fileName, fileName.toLowerCase())
-        }
-        filter { line ->
-            (line.toString().matches("..l>>.*") || line.toString().startsWith("## 99l CONTRIBUTORS")) ? null : line.toString().trim().replaceAll(" \\(.*\\)", "")
-        }
     }
 }
 tasks.copyRepoFiles.execute()

@@ -5,7 +5,7 @@
  * worth it, you can buy me a coke in return. Provided as is without any kind
  * of warranty. No attribution required.                  - Gregor Santner
  *
- * License: Creative Commons Zero (CC0 1.0)
+ * License of this file: Creative Commons Zero (CC0 1.0)
  *  http://creativecommons.org/publicdomain/zero/1.0/
  * ----------------------------------------------------------------------------
  */
@@ -91,17 +91,17 @@ public class HelpersA extends Helpers {
     }
 
     public void showDialogWithHtmlTextView(@StringRes int resTitleId, String html) {
-        showDialogWithHtmlTextView(resTitleId, html, null);
+        showDialogWithHtmlTextView(resTitleId, html, true, null);
     }
 
-    public void showDialogWithHtmlTextView(@StringRes int resTitleId, String html, DialogInterface.OnDismissListener dismissedListener) {
+    public void showDialogWithHtmlTextView(@StringRes int resTitleId, String text, boolean isHtml, DialogInterface.OnDismissListener dismissedListener) {
         AppCompatTextView textView = new AppCompatTextView(context);
         int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16,
                 context.getResources().getDisplayMetrics());
         textView.setMovementMethod(new LinkMovementMethod());
         textView.setPadding(padding, 0, padding, 0);
 
-        textView.setText(new SpannableString(Html.fromHtml(html)));
+        textView.setText(isHtml ? new SpannableString(Html.fromHtml(text)) : text);
         AlertDialog.Builder dialog = new AlertDialog.Builder(context)
                 .setPositiveButton(android.R.string.ok, null)
                 .setOnDismissListener(dismissedListener)

@@ -71,7 +71,7 @@
                 android:value="io.github.gsantner.memetastic.activity.MainActivity" />
         </activity>
         <activity
-            android:name="io.github.gsantner.memetastic.activity.InfoActivity"
+            android:name="io.github.gsantner.memetastic.activity.AboutActivity"
             android:launchMode="singleInstance"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

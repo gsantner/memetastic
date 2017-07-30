@@ -5,7 +5,7 @@
  * worth it, you can buy me a coke in return. Provided as is without any kind
  * of warranty. No attribution required.                  - Gregor Santner
  *
- * License: Creative Commons Zero (CC0 1.0)
+ * License of this file: Creative Commons Zero (CC0 1.0)
  *  http://creativecommons.org/publicdomain/zero/1.0/
  * ----------------------------------------------------------------------------
  */
@@ -32,9 +32,15 @@ import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatButton;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.DisplayMetrics;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -177,13 +183,24 @@ public class Helpers {
         try {
             return new SimpleMarkdownParser()
                     .parse(context.getResources().openRawResource(rawMdFile),
-                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, prepend)
+                            prepend, SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW)
                     .replaceColor("#000001", color(R.color.accent))
                     .removeMultiNewlines().replaceBulletCharacter("*").getHtml();
         } catch (IOException e) {
             e.printStackTrace();
             return "";
         }
+    }
+
+    public void setHtmlToTextView(TextView textView, String html) {
+        Spanned spanned;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            spanned = Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            spanned = Html.fromHtml(html);
+        }
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        textView.setText(new SpannableString(spanned));
     }
 
     public double getEstimatedScreenSizeInches() {

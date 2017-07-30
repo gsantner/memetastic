@@ -24,7 +24,7 @@
     <string name="main__error_no_picture_selected">No picture was selected.</string>
     <string name="main__share_meme_prompt">Share your Meme via…</string>
 
-    <string name="main__donate_bitcoin">Donate Bitcoin</string>
+    <string name="main__donate">Donate</string>
     <string name="main__recommend_app">Recommend</string>
     <string name="main__changelog">Changelog</string>
     <string name="main__exit">Exit</string>
@@ -43,16 +43,16 @@
     <string name="creator__no_keep_editing">No, keep editing</string>
 
     <!-- Info -->
-    <string name="info__info">Info</string>
-    <string name="info__developed_by">Developed by</string>
-    <string name="info__additionalContact">More informations</string>
-    <string name="info__licenses">Licenses</string>
-    <string name="info__show_licenses">Show licenses</string>
+    <string name="about">About</string>
+    <string name="developed_by">Developed by</string>
+    <string name="additional_contact">More informations</string>
+    <string name="licenses">Licenses</string>
+    <string name="show_licenses">Show licenses</string>
     <string name="team" translatable="false">Team</string>
     <string name="contributors">Contributors</string>
     <string name="more_information">More information</string>
-    <string name="info__show_gplv3_license">Show GNU GPLv3 license</string>
-    <string name="info__show_third_party_licenses">Show 3rd party licenses</string>
+    <string name="show_app_license">Show GNU GPLv3 license</string>
+    <string name="show_third_party_licenses">Show 3rd party licenses</string>
     <string name="miscellaneous">Miscellaneous</string>
 
     <!-- Settings -->

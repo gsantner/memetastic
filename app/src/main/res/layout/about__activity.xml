@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ *
+ * Gregor Santner <gsantner.github.io> wrote this file. You can do whatever
+ * you want with this file. If we meet some day, and you think this stuff is
+ * worth it, you can buy me a coke in return. Provided as is without any kind
+ * of warranty. No attribution required.                  - Gregor Santner
+ *
+ * License: Creative Commons Zero (CC0 1.0)
+ *  http://creativecommons.org/publicdomain/zero/1.0/
+ *
+ * A simple activity to show information about the app.
+ * Intended to use together: SimpleMarkdownParser, SettingsActivity and it's xml-layout.
+ *
+ * Source: https://github.com/gsantner/onePieceOfCode/blob/master/java/aboutActivity/about__activity.xml
+-->
+
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="io.github.gsantner.memetastic.activity.InfoActivity">
-
+    tools:context=".activity.AboutActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -30,7 +46,7 @@
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/info__activity__text_app_version"
+            android:layout_above="@+id/about__activity__text_app_version"
             android:layout_alignParentTop="true">
 
             <LinearLayout
@@ -39,7 +55,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/info__activity__text_header"
+                    android:id="@+id/about__activity__text_header"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorAccent"
@@ -50,17 +66,17 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/info__activity__text_team"
+                    android:id="@+id/about__activity__text_team"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:autoLink="all"
                     android:clickable="true"
                     android:gravity="start"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/secondary_text"
+                    tools:ignore="KeyboardInaccessibleWidget"
                     tools:text="Maintainer 1\n  * Text\n  * Text" />
 
                 <TextView
@@ -76,17 +92,16 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/info__activity__text_contributors"
+                    android:id="@+id/about__activity__text_contributors"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:autoLink="web|email"
                     android:gravity="start"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textColor="@color/secondary_text"
-                    tools:text="Contributor 1: Person 1\nContributor 2: Person 2\n" />
+                    tools:text="* Contributor 1\n   German translation\n* Contributor 1\n   Spanish translation" />
 
 
                 <TextView
@@ -103,13 +118,12 @@
                     android:visibility="gone" />
 
                 <TextView
-                    android:id="@+id/info__activity__text_more_information"
+                    android:id="@+id/about__activity__text_more_information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:autoLink="web|email"
                     android:gravity="start"
                     android:text=""
                     android:textAppearance="@style/TextAppearance.AppCompat"
@@ -123,19 +137,18 @@
                     android:background="@color/colorAccent"
                     android:gravity="center"
                     android:minHeight="50dp"
-                    android:text="@string/info__licenses"
+                    android:text="@string/licenses"
                     android:textAlignment="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/info__activity__text_license"
+                    android:id="@+id/about__activity__text_license"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:autoLink="web|email"
                     android:gravity="start"
                     android:text="@string/copyright_license_text_official"
                     android:textAppearance="@style/TextAppearance.AppCompat"
@@ -148,18 +161,18 @@
                     android:layout_marginStart="10dp">
 
                     <Button
-                        android:id="@+id/info__activity__button_gplv3_license"
+                        android:id="@+id/about__activity__button_app_license"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/info__show_gplv3_license" />
+                        android:text="@string/show_app_license" />
 
                     <Button
-                        android:id="@+id/info__activity__button_third_party_licenses"
+                        android:id="@+id/about__activity__button_third_party_licenses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/info__show_third_party_licenses" />
+                        android:text="@string/show_third_party_licenses" />
                 </LinearLayout>
 
 
@@ -167,7 +180,7 @@
         </android.support.v4.widget.NestedScrollView>
 
         <TextView
-            android:id="@+id/info__activity__text_app_version"
+            android:id="@+id/about__activity__text_app_version"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -178,6 +191,7 @@
             android:minHeight="50dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white"
+            tools:ignore="KeyboardInaccessibleWidget"
             tools:text="App Version   v0.9.42" />
 
 

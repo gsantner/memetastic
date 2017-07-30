@@ -1,3 +1,9 @@
+### v1.1.1
+- Update opoc/SimpleMarkdownParser
+- Update AboutActivity
+- Update license appearance
+- Rename Activity Info to About
+
 ### v1.1.0
 - Better visibility of license terms and copyright
 

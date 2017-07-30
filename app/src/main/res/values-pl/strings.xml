@@ -23,7 +23,7 @@
     <string name="main__error_no_picture_selected">Nie wybrano żadnego obrazu.</string>
     <string name="main__share_meme_prompt">Udostępnij Twój Mem za pomocą...</string>
 
-    <string name="main__donate_bitcoin">Wspomóż Bitcoinami</string>
+    <string name="main__donate">Wspomóż</string>
     <string name="main__recommend_app">Poleć</string>
     <string name="main__changelog">Lista zmian</string>
     <string name="main__exit">Wyjdź</string>
@@ -42,15 +42,15 @@
     <string name="creator__no_keep_editing">Nie, edytuję dalej</string>
 
     <!-- Info -->
-    <string name="info__info">Informacje</string>
-    <string name="info__developed_by">Stworzone przez</string>
-    <string name="info__additionalContact">Więcej informacji</string>
-    <string name="info__licenses">Licencje</string>
-    <string name="info__show_licenses">Pokaż licencje</string>
+    <string name="about">Informacje</string>
+    <string name="developed_by">Stworzone przez</string>
+    <string name="additional_contact">Więcej informacji</string>
+    <string name="licenses">Licencje</string>
+    <string name="show_licenses">Pokaż licencje</string>
     <string name="contributors">Współautorzy</string>
     <string name="more_information">Więcej informacji</string>
-    <string name="info__show_gplv3_license">Pokaż licencję GNU GPLv3</string>
-    <string name="info__show_third_party_licenses">Pokaż licencje dzieł osób trzecich</string>
+    <string name="show_app_license">Pokaż licencję GNU GPLv3</string>
+    <string name="show_third_party_licenses">Pokaż licencje dzieł osób trzecich</string>
     <string name="miscellaneous">Różne</string>
 
     <!-- Settings -->

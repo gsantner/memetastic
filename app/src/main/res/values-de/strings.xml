@@ -2,7 +2,7 @@
 <resources>
     <string name="main__create_meme">Meme erstellen</string>
     <string name="main__delete_meme">Meme löschen</string>
-    <string name="main__donate_bitcoin">Bitcoin spenden</string>
+    <string name="main__donate">Spenden</string>
     <string name="main__error_camera_cannot_start">Kamera konnte nicht geladen werden.</string>
     <string name="main__error_no_picture_selected">Kein Bild ausgewählt.</string>
     <string name="main__exit">Beenden</string>
@@ -19,7 +19,7 @@
     <string name="main__recommend_app">Empfehlen</string>
     <string name="main__save_meme">Meme speichern</string>
     <string name="main__share_meme">Meme teilen</string>
-    <string name="main__share_meme_prompt">Meme teilen über...</string>
+    <string name="main__share_meme_prompt">Meme teilen…</string>
     <string name="creator__border_color">Rand-Farbe</string>
     <string name="creator__font">Schriftart</string>
     <string name="creator__hint_bottom_caption">Unterer Text</string>
@@ -35,17 +35,17 @@
     <string name="settings__pref_columns_portrait">Spalten Hochformat</string>
     <string name="settings__pref_render_quality_title">Render-Qualität</string>
     <string name="settings__settings">Einstellungen</string>
-    <string name="info__additionalContact">Mehr Informationen</string>
-    <string name="info__developed_by">Entwickelt von</string>
-    <string name="info__info">Info</string>
+    <string name="additional_contact">Mehr Informationen</string>
+    <string name="developed_by">Entwickelt von</string>
+    <string name="about">Über</string>
     <string name="main__changelog">Änderungen</string>
-    <string name="info__licenses">Lizenzen</string>
-    <string name="info__show_licenses">Lizenzen anzeigen</string>
+    <string name="licenses">Lizenzen</string>
+    <string name="show_licenses">Lizenzen anzeigen</string>
     <string name="main__yes">Ja</string>
     <string name="creator__no_keep_editing">Nein, weiter bearbeiten</string>
-    <string name="info__show_gplv3_license">Show GNU GPLv3 license</string>
+    <string name="show_app_license">Show GNU GPLv3 license</string>
     <string name="contributors">Beitragende</string>
-    <string name="info__show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
+    <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
     <string name="more_information">Mehr Informationen</string>
     <string name="settings__caps_off">Caps aus</string>
     <string name="settings__rotate">Drehen</string>

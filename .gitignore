@@ -92,10 +92,10 @@ proguard/
 gen-external-apklibs
 
 ### Project ##
-app/src/main/res/raw/changelog.md
-app/src/main/res/raw/license.md
-app/src/main/res/raw/readme.md
-app/src/main/res/raw/contributors.txt
+app/src/main/res/raw/changelog.*
+app/src/main/res/raw/license.*
+app/src/main/res/raw/readme.*
+app/src/main/res/raw/contributors.*
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar

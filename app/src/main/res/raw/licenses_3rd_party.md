@@ -94,6 +94,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ## SIL Open Font License  (OFL)
 See <https://opensource.org/licenses/OFL-1.1> for license text.  
 
-* **Inconsolata**
-* **Press Start 2P**
-* **[Comic Relief](https://www.fontsquirrel.com/fonts/comic-relief)**
+* Inconsolata
+* Press Start 2P
+* [Comic Relief](https://www.fontsquirrel.com/fonts/comic-relief)

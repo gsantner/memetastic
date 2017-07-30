@@ -6,7 +6,7 @@
 
     <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io\n\nMatthias Ringwald</string>
     <string name="page_additional_contact_text" translatable="false">GitHub\nhttps://github.com/gsantner/memetastic</string>
-    <string name="github" translatable="false">GitHub</string>
+    <string name="code" translatable="false">Code</string>
 
     <string name="app_description" translatable="false">much meme. very wow.</string>
     <string name="main__ready_to_memetastic" translatable="false">Ready to MemeTastic? Try it now!\n%1$s</string>
@@ -28,14 +28,15 @@
         ### Copyright © 2016-2017
         \n**MemeTastic contributors**
         \n
-        \n**The official version of MemeTastic can be obtained at:**
-        \n* <https://github.com/gsantner/memetastic>
-        \n* <https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic>
-        \n* <https://play.google.com/store/apps/details?id=io.github.gsantner.memetastic>
+        \n**Get the official version of MemeTastic:**
+        \n
+            [Source code](https://github.com/gsantner/memetastic) | [Homepage](https://gsantner.github.io/#MemeTastic)
+        \n[Google Play](https://play.google.com/store/apps/details?id=io.github.gsantner.memetastic)~°| [F-Droid](https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic)
         \n
         \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
         \n
         \nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+        \n
     ]]></string>
     <!-- License end -->
 

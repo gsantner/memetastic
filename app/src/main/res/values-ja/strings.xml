@@ -23,7 +23,7 @@
     <string name="main__error_no_picture_selected">画像が選択されていません。</string>
     <string name="main__share_meme_prompt">ミームを共有…</string>
 
-    <string name="main__donate_bitcoin">Bitcoin で寄付</string>
+    <string name="main__donate">で寄付</string>
     <string name="main__recommend_app">おすすめ</string>
     <string name="main__exit">終了</string>
 
@@ -47,9 +47,9 @@
     <string name="settings__pref_columns_landscape">横の項目数</string>
 
     <!-- Info -->
-    <string name="info__info">情報</string>
-    <string name="info__developed_by">開発者</string>
-    <string name="info__additionalContact">詳細情報</string>
-    <string name="info__licenses">ライセンス</string>
-    <string name="info__show_licenses">ライセンスを表示</string>
+    <string name="about">情報</string>
+    <string name="developed_by">開発者</string>
+    <string name="additional_contact">詳細情報</string>
+    <string name="licenses">ライセンス</string>
+    <string name="show_licenses">ライセンスを表示</string>
 </resources>
