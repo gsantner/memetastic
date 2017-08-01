@@ -21,10 +21,11 @@
     <string name="main__get_picture_from_camera">Prendre une image avec l\'appareil</string>
     <string name="main__error_camera_cannot_start">Impossible de démarrer l\'appareil photo</string>
     <string name="main__error_no_picture_selected">Aucune image n\'a été sélectionnée.</string>
-    <string name="main__share_meme_prompt">Partager votre Meme via...</string>
+    <string name="main__share_meme_prompt">Partager votre Meme via…</string>
 
     <string name="main__donate">Donner</string>
     <string name="main__recommend_app">Recommander</string>
+    <string name="main__changelog">Changelog</string>
     <string name="main__exit">Quitter</string>
     <string name="main__yes">oui</string>
 
@@ -40,16 +41,8 @@
     <string name="creator__font">Police</string>
     <string name="creator__no_keep_editing">Non, continuer l\'édition</string>
 
-    <!-- Settings -->
-    <string name="settings__settings">Préférences</string>
-    <string name="settings__all_caps">Tout en majuscules</string>
-    <string name="settings__pref_render_quality_title">Qualité du Rendu</string>
-    <string name="settings__cleanup_thumbnails">Effacer les vignettes</string>
-    <string name="settings__pref_columns_portrait">Colonnes en portrait</string>
-    <string name="settings__pref_columns_landscape">Colonnes en paysage</string>
-
     <!-- Info -->
-    <string name="about">Infos</string>
+    <string name="about">À propos</string>
     <string name="developed_by">Développé par</string>
     <string name="additional_contact">Plus d\'informations</string>
     <string name="licenses">Licences</string>
@@ -58,4 +51,22 @@
     <string name="more_information">Plus d\'informations</string>
     <string name="show_app_license">Afficher la licence GNU GPLv3</string>
     <string name="show_third_party_licenses">Montrer les licences tierces</string>
+    <string name="miscellaneous">Divers</string>
+    
+    <!-- Settings -->
+    <string name="settings__settings">Préférences</string>
+    <string name="settings__all_caps">Tout en majuscules</string>
+    <string name="settings__caps_off">Majuscules désactivées</string>
+    <string name="settings__rotate">Rotation</string>
+    <string name="settings__pref_render_quality_title">Qualité du Rendu</string>
+    <string name="settings__cleanup_thumbnails">Effacer les vignettes</string>
+    <string name="settings__pref_columns_portrait">Colonnes en portrait</string>
+    <string name="settings__pref_columns_landscape">Colonnes en paysage</string>
+    <string name="pref_title__appearance">Apparence</string>
+    <string name="pref_title__size">Taille</string>
+    <string name="pref_title__default_main_mode">Mode par défaut</string>
+    <string name="pref_summary__default_main_mode">Mode par défaut à ouvrir au démarrage (Créer, Favoris ou Sauvegardés)</string>
+    <string name="pref_title__functionality">Fonctionnalité</string>
+    <string name="pref_summary__auto_save_meme">Sauvegarder automatiquement le Meme si vous appuyez sur retour et que vous aviez écrit qqc</string>
+    <string name="pref_title__auto_save_meme">Enregistrer lors de l\'appui sur Retour</string>
 </resources>
