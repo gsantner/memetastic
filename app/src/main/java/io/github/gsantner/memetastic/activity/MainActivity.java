@@ -364,6 +364,9 @@ public class MainActivity extends AppCompatActivity
         int tabPos = tab.getPosition();
         if (tabPos >= 0 && tabPos < MemeLibConfig.MEME_CATEGORIES.ALL.length) {
             mMemeCategory = app.getMemeCategory(MemeLibConfig.MEME_CATEGORIES.ALL[tabPos]);
+            if (app.settings.isShuffleMemeCategories()){
+                mMemeCategory.shuffleList();
+            }
             MemeOriginInterface memeOriginObject = new MemeOriginAssets(mMemeCategory, getAssets());
             GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(memeOriginObject, this);
             recyclerMemeList.setAdapter(recyclerMemeAdapter);

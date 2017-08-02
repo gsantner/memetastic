@@ -1,3 +1,7 @@
+### v1.1.2
+- Shuffle meme list option
+- Moar memes
+
 ### v1.1.1
 - Update opoc/SimpleMarkdownParser
 - Update AboutActivity

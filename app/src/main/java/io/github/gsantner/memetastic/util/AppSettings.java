@@ -181,4 +181,8 @@ public class AppSettings extends AppSettingsBase {
     public int getDefaultMainMode() {
         return getIntOfStringPref(R.string.pref_key__default_main_mode, 0);
     }
+
+    public boolean isShuffleMemeCategories(){
+        return getBool(R.string.pref_key__is_shuffle_meme_categories, false);
+    }
 }

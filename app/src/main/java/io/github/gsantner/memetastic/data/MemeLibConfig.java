@@ -5,6 +5,7 @@ import java.io.File;
 /**
  * Contains colors, fontsizes, categorynames and folders where fonts and memetemplates are saved
  */
+@SuppressWarnings("WeakerAccess")
 public class MemeLibConfig {
     public static class Assets {
         public static final String FONTS = "fonts";

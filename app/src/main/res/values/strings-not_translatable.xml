@@ -17,7 +17,6 @@
 
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="ok" translatable="false">@android:string/ok</string>
-    <string name="app_source">Th</string>
 
     <!-- You are NOT allowed to remove parts of the license text below-->
     <string name="copyright_short" translatable="false">
@@ -58,5 +57,6 @@
     <string name="pref_key__app_first_start_current_version" translatable="false">pref_key__app_current_versionfirst_run</string>
     <string name="pref_key__default_main_mode" translatable="false">pref_key__default_main_mode</string>
     <string name="pref_key__auto_save_meme" translatable="false">pref_key__auto_save_meme</string>
+    <string name="pref_key__is_shuffle_meme_categories" translatable="false">pref_key__is_shuffle_meme_categories</string>
 
 </resources>
