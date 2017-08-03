@@ -1,6 +1,6 @@
 # ![App icon](https://raw.githubusercontent.com/gsantner/memetastic/master/app/src/main/res/drawable-mdpi/ic_launcher.png "App Icon") MemeTastic
 
-<span class="badge-bitcoin"><a href="https://gsantner.github.io/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span> [![CircleCI](https://circleci.com/gh/gsantner/memetastic.svg?style=shield)](https://circleci.com/gh/gsantner/memetastic) [![Translate - with Stringlate](https://img.shields.io/badge/translate%20with-stringlate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git)
+<span class="badge-bitcoin"><a href="https://gsantner.github.io/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span> [![CircleCI](https://circleci.com/gh/gsantner/memetastic.svg?style=shield)](https://circleci.com/gh/gsantner/memetastic) [![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic)
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic)
 
