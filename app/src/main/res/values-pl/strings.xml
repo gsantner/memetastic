@@ -66,8 +66,10 @@
     <string name="pref_title__size">Rozmiar</string>
     <string name="pref_title__default_main_mode">Domyślny tryb</string>
     <string name="pref_summary__default_main_mode">Domyślny tryb uruchamiamy podczas startu\n
- (Stwórz, Ulubione lub Zapisane)</string>
+    (Stwórz, Ulubione lub Zapisane)</string>
     <string name="pref_title__functionality">Funkcjonalność</string>
     <string name="pref_summary__auto_save_meme">Automatycznie zapisz mem w przypadku naciśnięcia przycisku powrotu, jeśli wprowadzono jakieś dane</string>
     <string name="pref_title__auto_save_meme">Zapisz w przypadku wciśnięcia wstecz</string>
+    <string name="pref_summary__is_shuffle_meme_categories">Pomieszaj listę memów po zaznaczeniu kategorii</string>
+    <string name="pref_title__is_shuffle_meme_categories">Pomieszaj listę memów</string>
 </resources>
