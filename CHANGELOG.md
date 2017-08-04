@@ -1,6 +1,7 @@
 ### v1.1.2
 - Shuffle meme list option
 - Moar memes
+- Update to android-api26
 
 ### v1.1.1
 - Update opoc/SimpleMarkdownParser

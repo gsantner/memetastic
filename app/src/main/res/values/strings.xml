@@ -13,6 +13,7 @@
     <string name="main__memecat__humans">Humans</string>
     <string name="main__memecat__cartoon">Cartoon</string>
     <string name="main__memecat__animals">Animals</string>
+    <string name="main__memecat__custom">Custom</string>
 
     <string name="main__mode__saved">Saved</string>
     <string name="main__mode__favs">Favs</string>

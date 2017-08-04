@@ -28,6 +28,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -358,6 +360,14 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @OnClick(R.id.fab)
     public void onFloatingButtonClicked(View view) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        View focusedView = this.getCurrentFocus();
+        if (focusedView != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
+        }
+
+
         fab.setVisibility(View.INVISIBLE);
         bottomSheet.showWithSheetView(((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).
                 inflate(R.layout.memecreate__bottom_sheet, bottomSheet, false));

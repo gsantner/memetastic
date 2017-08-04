@@ -47,6 +47,7 @@
             android:name="io.github.gsantner.memetastic.activity.MemeCreateActivity"
             android:label="@string/main__create_meme"
             android:icon="${appIcon}"
+            android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

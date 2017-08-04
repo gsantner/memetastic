@@ -29,6 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_gavel_white_48px" />
+        android:src="@drawable/ic_color_lens_white_48dp" />
 
 </android.support.design.widget.CoordinatorLayout>
