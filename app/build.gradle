@@ -31,7 +31,6 @@ android {
 
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
-
     }
     buildTypes {
         release {

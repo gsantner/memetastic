@@ -31,6 +31,10 @@
     <string name="main__exit">Exit</string>
     <string name="main__yes">yes</string>
 
+    <string name="main__nodata__favourites">No favourites yet.\nUse the star button of a meme template to add it to the favourites.</string>
+    <string name="main__nodata__custom_templates">No custom templates yet.\nPlaced template images here:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__saved">No memes saved yet.\nUse the top save button after editing a meme.</string>
+
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Press back again to stop editing this meme. Meme will be lost if it is not already saved.</string>
     <string name="creator__saved_successfully_message">This meme was successfully stored on your device. Do you want to quit editing this meme now?</string>

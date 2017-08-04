@@ -43,4 +43,16 @@ public interface MemeOriginInterface {
      * @return true if the image is favoritable, else false
      */
     public boolean showFavButton();
+
+    /**
+     * Shuffle the list of items
+     */
+    public void shuffleList();
+
+    /**
+     * Tell if the image is to be used as template
+     *
+     * @return true if is template
+     */
+    public boolean isTemplate();
 }

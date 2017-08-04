@@ -60,7 +60,6 @@ public class MemeCategory {
         return getFolderPath(true) + imageNames[position];
     }
 
-
     public void shuffleList() {
         List<String> l = new ArrayList<String>(Arrays.asList(imageNames));
         Collections.shuffle(l);

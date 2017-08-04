@@ -2,15 +2,19 @@ package io.github.gsantner.memetastic.data;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Handles the already created memes (loading, count of memes, etc.) that are stored in the pictures folder
  */
 public class MemeOriginStorage implements MemeOriginInterface {
+    private boolean mIsTemplate;
     private File[] mFiles;
     private String mFilePath;
     private String mThumbnailPath;
@@ -78,6 +82,22 @@ public class MemeOriginStorage implements MemeOriginInterface {
     @Override
     public boolean showFavButton() {
         return false;
+    }
+
+    @Override
+    public void shuffleList() {
+        List<File> l = new ArrayList<>(Arrays.asList(mFiles));
+        Collections.shuffle(l);
+        mFiles = l.toArray(new File[l.size()]);
+    }
+
+    @Override
+    public boolean isTemplate() {
+        return mIsTemplate;
+    }
+
+    public void setIsTemplate(boolean isTemplate) {
+        this.mIsTemplate = isTemplate;
     }
 
     public Map<String, String> getMissingThumbnails() {

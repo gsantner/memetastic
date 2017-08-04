@@ -126,12 +126,12 @@ public class AppSettings extends AppSettingsBase {
         setFavoriteMemes(newFavs.toArray(new String[newFavs.size()]));
     }
 
-    public void setLastSelectedCategory(int value) {
-        setInt(prefApp, R.string.pref_key__last_selected_category, value);
+    public void setLastSelectedTab(int value) {
+        setInt(prefApp, R.string.pref_key__last_selected_tab, value);
     }
 
-    public int getLastSelectedCategory() {
-        return getInt(prefApp, R.string.pref_key__last_selected_category, 0);
+    public int getLastSelectedTab() {
+        return getInt(prefApp, R.string.pref_key__last_selected_tab, 0);
     }
 
     public int getGridColumnCountPortrait() {
@@ -182,7 +182,7 @@ public class AppSettings extends AppSettingsBase {
         return getIntOfStringPref(R.string.pref_key__default_main_mode, 0);
     }
 
-    public boolean isShuffleMemeCategories(){
+    public boolean isShuffleMemeCategories() {
         return getBool(R.string.pref_key__is_shuffle_meme_categories, false);
     }
 }

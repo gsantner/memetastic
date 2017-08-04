@@ -363,7 +363,7 @@ public class MemeCreateActivity extends AppCompatActivity
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         View focusedView = this.getCurrentFocus();
         if (focusedView != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
         }
 

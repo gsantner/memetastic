@@ -99,7 +99,7 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mMemeObject instanceof MemeOriginAssets) {
+                if (mMemeObject.isTemplate()) {
                     Intent intent = new Intent(mActivity, MemeCreateActivity.class);
                     intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, mMemeObject.getFilepath(position));
                     intent.putExtra(MemeCreateActivity.ASSET_IMAGE, mMemeObject.isAsset());

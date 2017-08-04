@@ -5,6 +5,7 @@
         <item>@string/main__memecat__animals</item>
         <item>@string/main__memecat__cartoon</item>
         <item>@string/main__memecat__rage</item>
+        <item>@string/main__memecat__custom</item>
     </string-array>
 
     <string-array name="main_modes" translatable="false">
