@@ -187,7 +187,7 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public boolean isEditorStatusBarHidden() {
-        return getBool(R.string.pref_key__is_editor_statusbar_hidden, true);
+        return getBool(R.string.pref_key__is_editor_statusbar_hidden, false);
     }
 
     public boolean isOverviewStatusBarHidden() {

@@ -58,6 +58,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeFont;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.data.MemeSetting;
+import io.github.gsantner.memetastic.data.MemeSettingBase;
 import io.github.gsantner.memetastic.ui.FontAdapter;
 import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -123,7 +124,7 @@ public class MemeCreateActivity extends AppCompatActivity
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         setContentView(R.layout.memecreate__activity);
-        if (AppSettings.get().isEditorStatusBarHidden()){
+        if (AppSettings.get().isEditorStatusBarHidden()) {
             AndroidBug5497Workaround.assistActivity(this);
         }
 
@@ -153,16 +154,18 @@ public class MemeCreateActivity extends AppCompatActivity
         Bitmap bitmap = extractBitmapFromIntent(getIntent());
         if (savedInstanceState != null && savedInstanceState.containsKey("memeObj")) {
             memeSetting = (MemeSetting) savedInstanceState.getSerializable("memeObj");
-            memeSetting.setImage(bitmap);
-            memeSetting.setFont(app.getFonts().get(app.settings.getLastSelectedFont()));
+            memeSetting.getImageMain().setImage(bitmap);
+            memeSetting.getCaptionTop().setFont(app.getFonts().get(app.settings.getLastSelectedFont()));
+            memeSetting.getCaptionBottom().setFont(app.getFonts().get(app.settings.getLastSelectedFont()));
         } else {
             memeSetting = new MemeSetting(app.getFonts().get(app.settings.getLastSelectedFont()), bitmap);
-            memeSetting.setFontId(app.settings.getLastSelectedFont());
+            memeSetting.getCaptionTop().setFontId(app.settings.getLastSelectedFont());
+            memeSetting.getCaptionBottom().setFontId(app.settings.getLastSelectedFont());
         }
-        memeSetting.setDisplayImage(memeSetting.getImage().copy(Bitmap.Config.RGB_565, false));
+        memeSetting.getImageMain().setDisplayImage(memeSetting.getImageMain().getImage().copy(Bitmap.Config.RGB_565, false));
 
-        textEditTopCaption.setText(memeSetting.getCaptionTop());
-        textEditBottomCaption.setText(memeSetting.getCaptionBottom());
+        textEditTopCaption.setText(memeSetting.getCaptionTop().getText());
+        textEditBottomCaption.setText(memeSetting.getCaptionBottom().getText());
         memeSetting.setMemeSettingChangedListener(this);
         memeSetting.notifyChangedListener();
     }
@@ -180,14 +183,16 @@ public class MemeCreateActivity extends AppCompatActivity
         imageEditView.setImageBitmap(null);
         if (lastBitmap != null && !lastBitmap.isRecycled())
             lastBitmap.recycle();
-        if (memeSetting.getImage() != null && !memeSetting.getImage().isRecycled())
-            memeSetting.getImage().recycle();
-        if (memeSetting.getDisplayImage() != null && !memeSetting.getDisplayImage().isRecycled())
-            memeSetting.getDisplayImage().recycle();
+        MemeSetting.MemeElementImage imageMain = memeSetting.getImageMain();
+        if (imageMain.getImage() != null && !imageMain.getImage().isRecycled())
+            imageMain.getImage().recycle();
+        if (imageMain.getDisplayImage() != null && !imageMain.getDisplayImage().isRecycled())
+            imageMain.getDisplayImage().recycle();
         lastBitmap = null;
-        memeSetting.setDisplayImage(null);
-        memeSetting.setImage(null);
-        memeSetting.setFont(null);
+        imageMain.setDisplayImage(null);
+        imageMain.setImage(null);
+        memeSetting.getCaptionTop().setFont(null);
+        memeSetting.getCaptionBottom().setFont(null);
         memeSetting.setMemeSettingChangedListener(null);
     }
 
@@ -406,13 +411,13 @@ public class MemeCreateActivity extends AppCompatActivity
 
 
         // Apply existing settings
-        colorPickerText.setSelectedColor(memeSetting.getTextColor());
-        colorPickerShade.setSelectedColor(memeSetting.getBorderColor());
-        colorPickerPadding.setSelectedColor(memeSetting.getPaddingColor());
-        dropdownFont.setSelection(memeSetting.getFontId());
-        toggleAllCaps.setChecked(memeSetting.isAllCaps());
-        seekFontSize.setProgress(memeSetting.getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
-        seekPaddingSize.setProgress(memeSetting.getPadding());
+        colorPickerText.setSelectedColor(memeSetting.getCaptionTop().getTextColor());
+        colorPickerShade.setSelectedColor(memeSetting.getCaptionTop().getBorderColor());
+        colorPickerPadding.setSelectedColor(memeSetting.getImageMain().getPaddingColor());
+        dropdownFont.setSelection(memeSetting.getCaptionTop().getFontId());
+        toggleAllCaps.setChecked(memeSetting.getCaptionTop().isAllCaps());
+        seekFontSize.setProgress(memeSetting.getCaptionTop().getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
+        seekPaddingSize.setProgress(memeSetting.getImageMain().getPadding());
 
 
         //
@@ -422,11 +427,14 @@ public class MemeCreateActivity extends AppCompatActivity
             public void onClick(View v) {
                 LineColorPicker picker = (LineColorPicker) v;
                 if (picker == colorPickerShade) {
-                    memeSetting.setBorderColor(picker.getColor());
+                    memeSetting.getCaptionTop().setBorderColor(picker.getColor());
+                    memeSetting.getCaptionBottom().setBorderColor(picker.getColor());
                 } else if (picker == colorPickerText) {
-                    memeSetting.setTextColor(picker.getColor());
+                    memeSetting.getCaptionTop().setTextColor(picker.getColor());
+                    memeSetting.getCaptionBottom().setTextColor(picker.getColor());
                 } else if (picker == colorPickerPadding) {
-                    memeSetting.setPaddingColor(picker.getColor());
+                    memeSetting.getImageMain().setPaddingColor(picker.getColor());
+                    memeSetting.getImageMain().setPaddingColor(picker.getColor());
                 }
             }
         };
@@ -439,9 +447,11 @@ public class MemeCreateActivity extends AppCompatActivity
             }
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                memeSetting.setFont((MemeFont) parent.getSelectedItem());
-                memeSetting.setFontId(parent.getSelectedItemPosition());
-                app.settings.setLastSelectedFont(memeSetting.getFontId());
+                memeSetting.getCaptionTop().setFont((MemeFont) parent.getSelectedItem());
+                memeSetting.getCaptionTop().setFontId(parent.getSelectedItemPosition());
+                memeSetting.getCaptionBottom().setFont((MemeFont) parent.getSelectedItem());
+                memeSetting.getCaptionBottom().setFontId(parent.getSelectedItemPosition());
+                app.settings.setLastSelectedFont(parent.getSelectedItemPosition());
             }
         });
         SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
@@ -453,9 +463,10 @@ public class MemeCreateActivity extends AppCompatActivity
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (seekBar == seekFontSize) {
-                    memeSetting.setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
+                    memeSetting.getCaptionTop().setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
+                    memeSetting.getCaptionBottom().setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
                 } else if (seekBar == seekPaddingSize) {
-                    memeSetting.setPadding(progress);
+                    memeSetting.getImageMain().setPadding(progress);
                 }
             }
         };
@@ -464,12 +475,13 @@ public class MemeCreateActivity extends AppCompatActivity
         seekPaddingSize.setOnSeekBarChangeListener(seekBarChangeListener);
         toggleAllCaps.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                memeSetting.setAllCaps(isChecked);
+                memeSetting.getCaptionTop().setAllCaps(isChecked);
+                memeSetting.getCaptionBottom().setAllCaps(isChecked);
             }
         });
         rotateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                memeSetting.setRotationDeg((memeSetting.getRotationDeg() + 90) % 360);
+                memeSetting.getImageMain().setRotationDeg((memeSetting.getImageMain().getRotationDeg() + 90) % 360);
             }
         });
     }
@@ -477,26 +489,26 @@ public class MemeCreateActivity extends AppCompatActivity
     public Bitmap drawMultilineTextToBitmap(Context c, MemeSetting memeSetting) {
         // prepare canvas
         Resources resources = c.getResources();
-        Bitmap bitmap = memeSetting.getDisplayImage();
+        Bitmap bitmap = memeSetting.getImageMain().getDisplayImage();
 
-        if (memeSetting.getRotationDeg() != 0) {
+        if (memeSetting.getImageMain().getRotationDeg() != 0) {
             Matrix matrix = new Matrix();
-            matrix.postRotate(memeSetting.getRotationDeg());
+            matrix.postRotate(memeSetting.getImageMain().getRotationDeg());
             bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         }
 
-        double pad = 1 + memeSetting.getPadding() / 100.0;
+        double pad = 1 + memeSetting.getImageMain().getPadding() / 100.0;
         if (pad > 1.01) {
             Bitmap workBmp = Bitmap.createBitmap((int) (bitmap.getWidth() * pad), (int) (bitmap.getHeight() * pad), Bitmap.Config.ARGB_8888);
             Canvas can = new Canvas(workBmp);
             //can.drawARGB(0xFF, 0xFF, 0xFF, 0xFF); //This represents White color
-            can.drawColor(memeSetting.getPaddingColor());
+            can.drawColor(memeSetting.getImageMain().getPaddingColor());
             can.drawBitmap(bitmap, (int) ((workBmp.getWidth() - bitmap.getWidth()) / 2.0), (int) ((workBmp.getHeight() - bitmap.getHeight()) / 2.0), null);
             bitmap = workBmp;
         }
 
         float scale = Helpers.get().getScalingFactorInPixelsForWritingOnPicture(bitmap.getWidth(), bitmap.getHeight());
-        float borderScale = scale * memeSetting.getFontSize() / MemeLibConfig.FONT_SIZES.DEFAULT;
+        float borderScale = scale * memeSetting.getCaptionTop().getFontSize() / MemeLibConfig.FONT_SIZES.DEFAULT;
         Bitmap.Config bitmapConfig = bitmap.getConfig();
         // set default bitmap config if none
         if (bitmapConfig == null) {
@@ -509,20 +521,20 @@ public class MemeCreateActivity extends AppCompatActivity
 
         // new antialiased Paint
         TextPaint paint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
-        paint.setTextSize((int) (memeSetting.getFontSize() * scale));
-        paint.setTypeface(memeSetting.getFont().getFont());
+        paint.setTextSize((int) (memeSetting.getCaptionTop().getFontSize() * scale));
+        paint.setTypeface(memeSetting.getCaptionTop().getFont().getFont());
         //paint.setStrokeWidth(memeSetting.getFontSize() / 4);
         paint.setStrokeWidth(borderScale);
 
-        String[] textStrings = {memeSetting.getCaptionTop(), memeSetting.getCaptionBottom()};
-        if (memeSetting.isAllCaps()) {
+        String[] textStrings = {memeSetting.getCaptionTop().getText(), memeSetting.getCaptionBottom().getText()};
+        if (memeSetting.getCaptionTop().isAllCaps()) {
             for (int i = 0; i < textStrings.length; i++) {
                 textStrings[i] = textStrings[i].toUpperCase();
             }
         }
 
         for (int i = 0; i < textStrings.length; i++) {
-            paint.setColor(memeSetting.getBorderColor());
+            paint.setColor(memeSetting.getCaptionTop().getBorderColor());
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
 
             // set text width to canvas width minus 16dp padding
@@ -549,7 +561,7 @@ public class MemeCreateActivity extends AppCompatActivity
             textLayout.draw(canvas);
 
             // new antialiased Paint
-            paint.setColor(memeSetting.getTextColor());
+            paint.setColor(memeSetting.getCaptionTop().getTextColor());
             paint.setStyle(Paint.Style.FILL);
 
             // init StaticLayout for text
@@ -569,20 +581,20 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @OnTextChanged(value = R.id.memecreate__activity__edit_caption_bottom, callback = OnTextChanged.Callback.TEXT_CHANGED)
     public void onCaptionBottomChanged(CharSequence text) {
-        memeSetting.setCaptionBottom(text.toString());
+        memeSetting.getCaptionBottom().setText(text.toString());
     }
 
     @OnTextChanged(value = R.id.memecreate__activity__edit_caption_top, callback = OnTextChanged.Callback.TEXT_CHANGED)
     public void onCaptionTopChanged(CharSequence text) {
-        memeSetting.setCaptionTop(text.toString());
+        memeSetting.getCaptionTop().setText(text.toString());
     }
 
     @Override
-    public void onMemeSettingChanged(MemeSetting memeSetting) {
+    public void onMemeSettingChanged(MemeSettingBase memeSetting) {
         imageEditView.setImageBitmap(null);
         if (lastBitmap != null)
             lastBitmap.recycle();
-        Bitmap bmp = drawMultilineTextToBitmap(this, memeSetting);
+        Bitmap bmp = drawMultilineTextToBitmap(this, (MemeSetting) memeSetting);
         imageEditView.setImageBitmap(bmp);
         lastBitmap = bmp;
     }

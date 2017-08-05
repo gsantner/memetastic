@@ -49,7 +49,7 @@
             android:title="@string/pref_title__auto_save_meme" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key__is_editor_statusbar_hidden"
             android:summary="@string/pref_summary__is_statusbar_hidden"
             android:title="@string/pref_title__is_statusbar_hidden" />
