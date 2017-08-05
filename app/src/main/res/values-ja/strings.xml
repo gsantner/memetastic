@@ -9,9 +9,11 @@
     <string name="main__create_meme">ミームを作成</string>
     <string name="main__delete_meme">ミームを削除</string>
 
+
     <string name="main__memecat__humans">人</string>
     <string name="main__memecat__cartoon">漫画</string>
     <string name="main__memecat__animals">動物</string>
+    <string name="main__memecat__custom">カスタム</string>
 
     <string name="main__mode__saved">保存済</string>
     <string name="main__mode__favs">お気に入り</string>
@@ -25,7 +27,13 @@
 
     <string name="main__donate">で寄付</string>
     <string name="main__recommend_app">おすすめ</string>
+    <string name="main__changelog">変更履歴</string>
     <string name="main__exit">終了</string>
+    <string name="main__yes">はい</string>
+
+    <string name="main__nodata__favourites">まだお気に入りはありません。\nミームテンプレートのスターボタンを使用して、お気に入りを追加してください。</string>
+    <string name="main__nodata__custom_templates">まだカスタムテンプレートはありません。\nテンプレート画像はここ:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__saved">まだミームは保存されていません。\nミームを編集した後に上部の保存ボタンを使用してください。</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">もう一度戻るを押すと、このミームの編集を終了します。 まだ保存していない場合、ミームは失われます。</string>
@@ -37,14 +45,7 @@
     <string name="creator__hint_top_caption">上部のキャプション</string>
     <string name="creator__hint_bottom_caption">下部のキャプション</string>
     <string name="creator__font">フォント</string>
-
-    <!-- Settings -->
-    <string name="settings__settings">設定</string>
-    <string name="settings__all_caps">すべて大文字</string>
-    <string name="settings__pref_render_quality_title">描画品質</string>
-    <string name="settings__cleanup_thumbnails">サムネイルをクリア</string>
-    <string name="settings__pref_columns_portrait">縦の項目数</string>
-    <string name="settings__pref_columns_landscape">横の項目数</string>
+    <string name="creator__no_keep_editing">いいえ、編集を続ける</string>
 
     <!-- Info -->
     <string name="about">情報</string>
@@ -52,4 +53,29 @@
     <string name="additional_contact">詳細情報</string>
     <string name="licenses">ライセンス</string>
     <string name="show_licenses">ライセンスを表示</string>
+
+    <string name="contributors">貢献者</string>
+    <string name="more_information">追加情報</string>
+    <string name="show_app_license">GNU GPLv3 ライセンスを表示</string>
+    <string name="show_third_party_licenses">サードパーティライセンスを表示</string>
+    <string name="miscellaneous">その他</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">設定</string>
+    <string name="settings__all_caps">すべて大文字</string>
+    <string name="settings__caps_off">小文字</string>
+    <string name="settings__rotate">回転</string>
+    <string name="settings__pref_render_quality_title">描画品質</string>
+    <string name="settings__cleanup_thumbnails">サムネイルをクリア</string>
+    <string name="settings__pref_columns_portrait">縦の項目数</string>
+    <string name="settings__pref_columns_landscape">横の項目数</string>
+    <string name="pref_title__appearance">外観</string>
+    <string name="pref_title__size">サイズ</string>
+    <string name="pref_title__default_main_mode">デフォルトモード</string>
+    <string name="pref_summary__default_main_mode">起動時に開くデフォルトモード (作成、お気に入り、保存済)</string>
+    <string name="pref_title__functionality">機能</string>
+    <string name="pref_summary__auto_save_meme">戻るを押したときに何か入力されている場合はミームを自動的に保存します</string>
+    <string name="pref_title__auto_save_meme">戻るを押したときに保存</string>
+    <string name="pref_summary__is_shuffle_meme_categories">カテゴリーを選んだ後、ミームのリストをシャッフルします</string>
+    <string name="pref_title__is_shuffle_meme_categories">ミームリストをシャッフル</string>
 </resources>
