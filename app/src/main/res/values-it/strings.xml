@@ -39,7 +39,7 @@
     <string name="creator__hint_top_caption">Didascalia superiore</string>
     <string name="creator__hint_bottom_caption">Didascalia inferiore</string>
     <string name="creator__font">Carattere</string>
-    <string name="creator__no_keep_editing">No, rimani in modifiche</string>
+    <string name="creator__keep_editing">Rimani in modifiche</string>
 
     <!-- Settings -->
     <string name="settings__settings">Impostazioni</string>

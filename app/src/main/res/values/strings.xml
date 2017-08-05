@@ -45,7 +45,7 @@
     <string name="creator__hint_top_caption">Top caption</string>
     <string name="creator__hint_bottom_caption">Bottom caption</string>
     <string name="creator__font">Font</string>
-    <string name="creator__no_keep_editing">No, keep editing</string>
+    <string name="creator__keep_editing">Keep editing</string>
 
     <!-- Info -->
     <string name="about">About</string>
@@ -78,4 +78,9 @@
     <string name="pref_title__auto_save_meme">Save when pressing back</string>
     <string name="pref_summary__is_shuffle_meme_categories">Shuffle the list of memes after selecting a category</string>
     <string name="pref_title__is_shuffle_meme_categories">Shuffle meme list</string>
+    <string name="creator__padding">Padding</string>
+    <string name="pref_title__overview">Overview</string>
+    <string name="pref_title__editor">Editor</string>
+    <string name="pref_summary__is_statusbar_hidden">Hide the statubar at this view</string>
+    <string name="pref_title__is_statusbar_hidden">Hide statusbar</string>
 </resources>

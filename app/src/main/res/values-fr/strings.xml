@@ -39,7 +39,7 @@
     <string name="creator__hint_top_caption">Texte du haut</string>
     <string name="creator__hint_bottom_caption">Sous-titre</string>
     <string name="creator__font">Police</string>
-    <string name="creator__no_keep_editing">Non, continuer l\'édition</string>
+    <string name="creator__keep_editing">Continuer l\'édition</string>
 
     <!-- Info -->
     <string name="about">À propos</string>

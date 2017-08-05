@@ -82,7 +82,8 @@
             android:id="@+id/memecreate__bottom_sheet__color_picker_for_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:orientation="horizontal" />
+            app:orientation="horizontal"
+            tools:background="@drawable/gradient_navbar" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -98,7 +99,8 @@
             android:id="@+id/memecreate__bottom_sheet__color_picker_for_border"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:orientation="horizontal" />
+            app:orientation="horizontal"
+            tools:background="@drawable/gradient_navbar" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -116,6 +118,34 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/creator__padding"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold" />
+
+
+        <SeekBar
+            android:id="@+id/memecreate__bottom_sheet__seek_padding_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="@dimen/default_margin_2"
+            android:layout_marginStart="@dimen/default_margin_2"
+            android:layout_marginTop="@dimen/default_margin_1"
+            android:max="150"
+            android:progress="18" />
+
+        <uz.shift.colorpicker.LineColorPicker
+            android:id="@+id/memecreate__bottom_sheet__color_picker_for_padding"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:orientation="horizontal"
+            tools:background="@drawable/gradient_navbar" />
 
     </LinearLayout>
 </ScrollView>

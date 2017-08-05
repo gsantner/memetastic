@@ -22,4 +22,28 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.MemeCreatorEditTextOnDarkBackground" parent="AppTheme.MemeCreatorEditTextOnLightBackground">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_accent</item>
+        <item name="android:theme">@style/AppTheme.MemeCreatorEditTextOnDarkBackground</item>
+        <item name="android:textColorHint">@color/secondary_text</item>
+        <item name="colorControlNormal">@color/secondary_text</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.MemeCreatorEditTextOnLightBackground">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:paddingLeft">@dimen/default_margin_2</item>
+        <item name="android:paddingRight">@dimen/default_margin_2</item>
+        <item name="android:inputType">textNoSuggestions|textMultiLine</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_secondary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ems">10</item>
+        <item name="android:theme">@style/AppTheme.MemeCreatorEditTextOnLightBackground</item>
+        <item name="android:textColorHint">@color/divider</item>
+        <item name="colorControlNormal">@color/divider</item>
+        <item name="colorControlActivated">@color/secondary_text</item>
+    </style>
+
 </resources>

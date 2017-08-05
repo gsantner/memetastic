@@ -185,4 +185,12 @@ public class AppSettings extends AppSettingsBase {
     public boolean isShuffleMemeCategories() {
         return getBool(R.string.pref_key__is_shuffle_meme_categories, false);
     }
+
+    public boolean isEditorStatusBarHidden() {
+        return getBool(R.string.pref_key__is_editor_statusbar_hidden, true);
+    }
+
+    public boolean isOverviewStatusBarHidden() {
+        return getBool(R.string.pref_key__is_overview_statusbar_hidden, false);
+    }
 }

@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -24,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,6 +48,7 @@ import io.github.gsantner.memetastic.data.MemeOriginInterface;
 import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.Helpers;
 import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
 import io.github.gsantner.opoc.util.HelpersA;
@@ -87,6 +90,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppSettings.get().isOverviewStatusBarHidden()) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
         setContentView(R.layout.main__activity);
 
         // Bind UI
@@ -177,6 +183,11 @@ public class MainActivity extends AppCompatActivity
         if (isShowingFullscreenImage) {
             isShowingFullscreenImage = false;
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+        }
+
+        if (SettingsActivity.activityRetVal == SettingsActivity.RESULT.CHANGE_RESTART){
+            SettingsActivity.activityRetVal = SettingsActivity.RESULT.NOCHANGE;
+            recreate();
         }
 
         try {

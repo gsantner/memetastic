@@ -18,17 +18,13 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
 
-/**
- * SettingsActivity
- * Created by vanitas on 24.10.16.
- */
-
 public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     static final int ACTIVITY_ID = 10;
 
     static class RESULT {
         static final int NOCHANGE = -1;
-        static final int CHANGED = 1;
+        static final int CHANGE = 1;
+        static final int CHANGE_RESTART = 2;
     }
 
     @BindView(R.id.settings__appbar)
@@ -37,7 +33,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
     protected Toolbar toolbar;
 
     private AppSettings appSettings;
-    private int activityRetVal = RESULT.NOCHANGE;
+    public static int activityRetVal = RESULT.NOCHANGE;
 
     public void onCreate(Bundle b) {
         super.onCreate(b);
@@ -52,6 +48,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                 SettingsActivity.this.onBackPressed();
             }
         });
+        activityRetVal = RESULT.NOCHANGE;
         showFragment(SettingsFragmentMaster.TAG, false);
     }
 
@@ -87,7 +84,9 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        activityRetVal = RESULT.CHANGED;
+        if (activityRetVal == RESULT.NOCHANGE) {
+            activityRetVal = RESULT.CHANGE;
+        }
     }
 
     @Override
@@ -115,6 +114,9 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                 if (key.equals(getString(R.string.pref_key__cleanup_thumbnails))) {
                     new ThumbnailCleanupTask(context).start();
                     return true;
+                }
+                if (key.equals(getString(R.string.pref_key__is_overview_statusbar_hidden))) {
+                    activityRetVal = RESULT.CHANGE_RESTART;
                 }
             }
             return super.onPreferenceTreeClick(screen, preference);

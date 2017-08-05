@@ -48,7 +48,7 @@
     <string name="main__nodata__saved">Keine gespeicherten Memes.\nBenutze den oberen Speicher-Button nach Bearbeitung eines Memes.</string>
     <string name="main__memecat__custom">Eigene</string>
 
-    <string name="creator__no_keep_editing">Nein, weiter bearbeiten</string>
+    <string name="creator__keep_editing">Weiter bearbeiten</string>
     <string name="show_app_license">Show GNU GPLv3 license</string>
     <string name="contributors">Beitragende</string>
     <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
@@ -65,4 +65,9 @@
     <string name="pref_title__auto_save_meme">Speichern bei zurück</string>
     <string name="pref_summary__is_shuffle_meme_categories">Zufällige Anordnung der Memes wählen wenn eine Kategorie ausgewählt wurde</string>
     <string name="pref_title__is_shuffle_meme_categories">Mischen der Meme Liste</string>
+    <string name="creator__padding">Padding</string>
+    <string name="pref_summary__is_statusbar_hidden">Die Statusleiste in dieser Ansicht verstecken</string>
+    <string name="pref_title__editor">Editor</string>
+    <string name="pref_title__is_statusbar_hidden">Statusleiste verstecken</string>
+    <string name="pref_title__overview">Übersicht</string>
 </resources>

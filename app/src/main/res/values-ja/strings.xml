@@ -45,7 +45,7 @@
     <string name="creator__hint_top_caption">上部のキャプション</string>
     <string name="creator__hint_bottom_caption">下部のキャプション</string>
     <string name="creator__font">フォント</string>
-    <string name="creator__no_keep_editing">いいえ、編集を続ける</string>
+    <string name="creator__keep_editing">編集を続ける</string>
 
     <!-- Info -->
     <string name="about">情報</string>

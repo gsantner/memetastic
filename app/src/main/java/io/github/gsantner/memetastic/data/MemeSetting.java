@@ -27,6 +27,9 @@ public class MemeSetting implements Serializable {
     private String captionTop = "";
     private String captionBottom = "";
 
+    private int padding = 0;
+    private int paddingColor = MemeLibConfig.MEME_COLORS.WHITE;
+
     /**
      * Constructor
      *
@@ -265,6 +268,33 @@ public class MemeSetting implements Serializable {
 
     public void setRotationDeg(int rotationDeg) {
         this.rotationDeg = rotationDeg;
+        notifyChangedListener();
+    }
+
+    public int getPadding() {
+        return padding;
+    }
+
+    /**
+     * Set the padding of the picture. A value of 10 means the picture is grown by 10
+     * percent (size * 1.1) and the background filled with paddingColor
+     * @param padding padding
+     */
+    public void setPadding(int padding) {
+        this.padding = padding;
+        notifyChangedListener();
+    }
+
+    public int getPaddingColor() {
+        return paddingColor;
+    }
+
+    /**
+     * Set the color to be used for padding background. See padding
+     * @param paddingColor the color
+     */
+    public void setPaddingColor(int paddingColor) {
+        this.paddingColor = paddingColor;
         notifyChangedListener();
     }
 }

@@ -59,6 +59,8 @@ import io.github.gsantner.memetastic.data.MemeFont;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.data.MemeSetting;
 import io.github.gsantner.memetastic.ui.FontAdapter;
+import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.Helpers;
 import io.github.gsantner.opoc.util.HelpersA;
 import uz.shift.colorpicker.LineColorPicker;
@@ -117,7 +119,13 @@ public class MemeCreateActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppSettings.get().isEditorStatusBarHidden()) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
         setContentView(R.layout.memecreate__activity);
+        if (AppSettings.get().isEditorStatusBarHidden()){
+            AndroidBug5497Workaround.assistActivity(this);
+        }
 
         // Quit activity if no image was given
         Intent intent = getIntent();
@@ -347,7 +355,12 @@ public class MemeCreateActivity extends AppCompatActivity
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle(R.string.creator__saved_successfully)
                     .setMessage(R.string.creator__saved_successfully_message)
-                    .setNegativeButton(R.string.creator__no_keep_editing, null)
+                    .setNegativeButton(R.string.creator__keep_editing, null)
+                    .setNeutralButton(R.string.main__share_meme, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            app.shareBitmapToOtherApp(lastBitmap, MemeCreateActivity.this);
+                        }
+                    })
                     .setPositiveButton(R.string.main__yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             finish();
@@ -360,7 +373,7 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @OnClick(R.id.fab)
     public void onFloatingButtonClicked(View view) {
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        HelpersA.get(this).hideSoftKeyboard();
         View focusedView = this.getCurrentFocus();
         if (focusedView != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -374,15 +387,18 @@ public class MemeCreateActivity extends AppCompatActivity
         bottomSheet.addOnSheetStateChangeListener(this);
         bottomSheet.addOnSheetDismissedListener(this);
 
-        LineColorPicker colorPickerShade = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_border);
-        LineColorPicker colorPickerText = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_text);
-        Spinner dropdownFont = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__dropdown_font);
-        SeekBar seekFontSize = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_font_size);
-        ToggleButton toggleAllCaps = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__toggle_all_caps);
-        Button rotateButton = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__rotate_plus_90deg);
+        final LineColorPicker colorPickerShade = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_border);
+        final LineColorPicker colorPickerText = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_text);
+        final Spinner dropdownFont = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__dropdown_font);
+        final SeekBar seekFontSize = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_font_size);
+        final ToggleButton toggleAllCaps = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__toggle_all_caps);
+        final Button rotateButton = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__rotate_plus_90deg);
+        final LineColorPicker colorPickerPadding = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_padding);
+        final SeekBar seekPaddingSize = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_padding_size);
 
         colorPickerText.setColors(MemeLibConfig.MEME_COLORS.ALL);
         colorPickerShade.setColors(MemeLibConfig.MEME_COLORS.ALL);
+        colorPickerPadding.setColors(MemeLibConfig.MEME_COLORS.ALL);
 
         FontAdapter adapter = new FontAdapter(
                 this, android.R.layout.simple_list_item_1, app.getFonts());
@@ -392,25 +408,32 @@ public class MemeCreateActivity extends AppCompatActivity
         // Apply existing settings
         colorPickerText.setSelectedColor(memeSetting.getTextColor());
         colorPickerShade.setSelectedColor(memeSetting.getBorderColor());
+        colorPickerPadding.setSelectedColor(memeSetting.getPaddingColor());
         dropdownFont.setSelection(memeSetting.getFontId());
         toggleAllCaps.setChecked(memeSetting.isAllCaps());
-        ((SeekBar) ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_font_size)).setProgress(memeSetting.getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
+        seekFontSize.setProgress(memeSetting.getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
+        seekPaddingSize.setProgress(memeSetting.getPadding());
+
 
         //
         //  Add bottom sheet listeners
         //
-        colorPickerShade.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener colorListener = new View.OnClickListener() {
             public void onClick(View v) {
                 LineColorPicker picker = (LineColorPicker) v;
-                memeSetting.setBorderColor(picker.getColor());
+                if (picker == colorPickerShade) {
+                    memeSetting.setBorderColor(picker.getColor());
+                } else if (picker == colorPickerText) {
+                    memeSetting.setTextColor(picker.getColor());
+                } else if (picker == colorPickerPadding) {
+                    memeSetting.setPaddingColor(picker.getColor());
+                }
             }
-        });
-        colorPickerText.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                LineColorPicker picker = (LineColorPicker) v;
-                memeSetting.setTextColor(picker.getColor());
-            }
-        });
+        };
+
+        colorPickerShade.setOnClickListener(colorListener);
+        colorPickerText.setOnClickListener(colorListener);
+        colorPickerPadding.setOnClickListener(colorListener);
         dropdownFont.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -421,7 +444,7 @@ public class MemeCreateActivity extends AppCompatActivity
                 app.settings.setLastSelectedFont(memeSetting.getFontId());
             }
         });
-        seekFontSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
 
@@ -429,9 +452,16 @@ public class MemeCreateActivity extends AppCompatActivity
             }
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                memeSetting.setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
+                if (seekBar == seekFontSize) {
+                    memeSetting.setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
+                } else if (seekBar == seekPaddingSize) {
+                    memeSetting.setPadding(progress);
+                }
             }
-        });
+        };
+
+        seekFontSize.setOnSeekBarChangeListener(seekBarChangeListener);
+        seekPaddingSize.setOnSeekBarChangeListener(seekBarChangeListener);
         toggleAllCaps.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 memeSetting.setAllCaps(isChecked);
@@ -453,6 +483,16 @@ public class MemeCreateActivity extends AppCompatActivity
             Matrix matrix = new Matrix();
             matrix.postRotate(memeSetting.getRotationDeg());
             bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+        }
+
+        double pad = 1 + memeSetting.getPadding() / 100.0;
+        if (pad > 1.01) {
+            Bitmap workBmp = Bitmap.createBitmap((int) (bitmap.getWidth() * pad), (int) (bitmap.getHeight() * pad), Bitmap.Config.ARGB_8888);
+            Canvas can = new Canvas(workBmp);
+            //can.drawARGB(0xFF, 0xFF, 0xFF, 0xFF); //This represents White color
+            can.drawColor(memeSetting.getPaddingColor());
+            can.drawBitmap(bitmap, (int) ((workBmp.getWidth() - bitmap.getWidth()) / 2.0), (int) ((workBmp.getHeight() - bitmap.getHeight()) / 2.0), null);
+            bitmap = workBmp;
         }
 
         float scale = Helpers.get().getScalingFactorInPixelsForWritingOnPicture(bitmap.getWidth(), bitmap.getHeight());
