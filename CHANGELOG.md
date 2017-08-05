@@ -1,13 +1,14 @@
 ### v1.2.0
 - Empty list: Info text & image
+- Complete rework of MemeCreateActivity
 - Custom image templates: `/sdcard/Pictures/MemeTastic/templates/custom/`
 - Shuffle meme list option
 - Moar memes
 - Update to android-api26
 - Hide statusbar options
 - Updated save dialog
-- Updated meme edittext
 - Added padding option in MemeCreate
+- Removed BottomSheet library
 
 ### v1.1.1
 - Update opoc/SimpleMarkdownParser

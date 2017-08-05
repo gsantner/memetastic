@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -185,7 +184,7 @@ public class MainActivity extends AppCompatActivity
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         }
 
-        if (SettingsActivity.activityRetVal == SettingsActivity.RESULT.CHANGE_RESTART){
+        if (SettingsActivity.activityRetVal == SettingsActivity.RESULT.CHANGE_RESTART) {
             SettingsActivity.activityRetVal = SettingsActivity.RESULT.NOCHANGE;
             recreate();
         }

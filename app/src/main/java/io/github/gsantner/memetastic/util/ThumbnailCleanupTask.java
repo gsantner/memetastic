@@ -37,8 +37,11 @@ public class ThumbnailCleanupTask extends Thread implements FilenameFilter {
     private void cleanupThumbnails(File picPath, File thumbPath) {
 
         // Scan for unused Thumbnails
-        List<File> thumbFiles = new LinkedList<File>(Arrays.asList(thumbPath.listFiles(this)));
-        for (File picFile : picPath.listFiles(this)) {
+        File[] tmp = thumbPath.listFiles(this);
+        tmp = tmp != null ? tmp : new File[0];
+        List<File> thumbFiles = new LinkedList<File>(Arrays.asList(tmp));
+        tmp = picPath.listFiles(this);
+        for (File picFile : (tmp == null ? new File[0] : tmp)) {
             String filename = picFile.getName();
             for (int i = 0; i < thumbFiles.size(); i++) {
                 if (thumbFiles.get(i).getName().equals(filename)) {

@@ -46,6 +46,11 @@
     <string name="creator__hint_bottom_caption">Bottom caption</string>
     <string name="creator__font">Font</string>
     <string name="creator__keep_editing">Keep editing</string>
+    <string name="creator__text">Text</string>
+    <string name="creator__size">Size</string>
+    <string name="creator__background">Background</string>
+    <string name="creator__border">Border</string>
+    <string name="creator__picture">Picture</string>
 
     <!-- Info -->
     <string name="about">About</string>

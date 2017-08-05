@@ -24,7 +24,6 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.Base64;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,12 +34,10 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
-
-import com.flipboard.bottomsheet.BottomSheetLayout;
-import com.flipboard.bottomsheet.OnSheetDismissedListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,6 +50,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
+import butterknife.OnTouch;
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeFont;
@@ -70,8 +68,7 @@ import uz.shift.colorpicker.LineColorPicker;
  * Activity for creating memes
  */
 public class MemeCreateActivity extends AppCompatActivity
-        implements MemeSetting.OnMemeSettingChangedListener,
-        BottomSheetLayout.OnSheetStateChangeListener, OnSheetDismissedListener {
+        implements MemeSetting.OnMemeSettingChangedListener {
     //########################
     //## Static
     //########################
@@ -89,9 +86,6 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
-    @BindView(R.id.memecreate__activity__bottomsheet_layout)
-    BottomSheetLayout bottomSheet;
 
     @BindView(R.id.memecreate__activity__image)
     ImageView imageEditView;
@@ -112,6 +106,7 @@ public class MemeCreateActivity extends AppCompatActivity
     private MemeSetting memeSetting;
     private boolean bFullscreenImage = true;
     private Bundle savedInstanceState = null;
+    boolean moarControlsContainerVisible = false;
 
     //#####################
     //## Methods
@@ -148,6 +143,7 @@ public class MemeCreateActivity extends AppCompatActivity
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         initMemeSettings(savedInstanceState);
+        initMoarControlsContainer();
     }
 
     public void initMemeSettings(Bundle savedInstanceState) {
@@ -273,8 +269,8 @@ public class MemeCreateActivity extends AppCompatActivity
         boolean hasTextInput = !textEditTopCaption.getText().toString().isEmpty() || !textEditBottomCaption.getText().toString().isEmpty();
 
         // Close views above
-        if (bottomSheet.isSheetShowing()) {
-            bottomSheet.dismissSheet();
+        if (moarControlsContainerVisible) {
+            toggleMoarControls(true, false);
             return;
         }
 
@@ -307,9 +303,16 @@ public class MemeCreateActivity extends AppCompatActivity
         }, 2000);
     }
 
-    @OnClick(R.id.memecreate__activity__image)
-    public void onImageClicked(View view) {
+    @OnTouch(R.id.memecreate__activity__image)
+    public boolean onImageTouched(View view) {
+        textEditBottomCaption.clearFocus();
+        textEditTopCaption.clearFocus();
+        imageEditView.requestFocus();
         HelpersA.get(this).hideSoftKeyboard();
+        if (moarControlsContainerVisible) {
+            toggleMoarControls(true, false);
+        }
+        return true;
     }
 
     @Override
@@ -376,37 +379,63 @@ public class MemeCreateActivity extends AppCompatActivity
         return wasSaved;
     }
 
+    public void toggleMoarControls(boolean forceVisibile, boolean visible) {
+        moarControlsContainerVisible = !moarControlsContainerVisible;
+        if (forceVisibile) {
+            moarControlsContainerVisible = visible;
+        }
+        textEditBottomCaption.setVisibility(moarControlsContainerVisible ? View.GONE : View.VISIBLE);
+        textEditTopCaption.setVisibility(moarControlsContainerVisible ? View.GONE : View.VISIBLE);
+        toolbar.setVisibility(moarControlsContainerVisible ? View.GONE : View.VISIBLE);
+
+        // higher weightRatio means the image is more wide, so below view can be higher
+        // 100 is the max weight, 55 means the below view is a little more weighted
+        Bitmap curImg = memeSetting.getImageMain().getDisplayImage();
+        int weight = (int) (55f * (1 + ((curImg.getWidth() / (float) curImg.getHeight()) / 10f)));
+        weight = weight > 100 ? 100 : weight;
+
+        // Set weights. If moarControlsContainerVisible == false -> Hide them = 0 weight
+        View container = findViewById(R.id.memecreate__activity__image_container);
+        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) container.getLayoutParams();
+        lp.height = 0;
+        lp.weight = moarControlsContainerVisible ? 100 - weight : 100;
+        container.setLayoutParams(lp);
+        container = findViewById(R.id.memecreate__activity__moar_controls_container);
+        container.setVisibility(moarControlsContainerVisible ? View.VISIBLE : View.GONE);
+        lp = (LinearLayout.LayoutParams) container.getLayoutParams();
+        lp.height = 0;
+        lp.weight = moarControlsContainerVisible ? weight : 0;
+        container.setLayoutParams(lp);
+    }
+
     @OnClick(R.id.fab)
     public void onFloatingButtonClicked(View view) {
+        toggleMoarControls(false, false);
         HelpersA.get(this).hideSoftKeyboard();
         View focusedView = this.getCurrentFocus();
         if (focusedView != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
         }
+    }
 
-
-        fab.setVisibility(View.INVISIBLE);
-        bottomSheet.showWithSheetView(((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).
-                inflate(R.layout.memecreate__bottom_sheet, bottomSheet, false));
-        bottomSheet.addOnSheetStateChangeListener(this);
-        bottomSheet.addOnSheetDismissedListener(this);
-
-        final LineColorPicker colorPickerShade = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_border);
-        final LineColorPicker colorPickerText = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_text);
-        final Spinner dropdownFont = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__dropdown_font);
-        final SeekBar seekFontSize = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_font_size);
-        final ToggleButton toggleAllCaps = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__toggle_all_caps);
-        final Button rotateButton = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__rotate_plus_90deg);
-        final LineColorPicker colorPickerPadding = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__color_picker_for_padding);
-        final SeekBar seekPaddingSize = ButterKnife.findById(this, R.id.memecreate__bottom_sheet__seek_padding_size);
+    private void initMoarControlsContainer() {
+        final LineColorPicker colorPickerShade = ButterKnife.findById(this, R.id.memecreate__moar_controls__color_picker_for_border);
+        final LineColorPicker colorPickerText = ButterKnife.findById(this, R.id.memecreate__moar_controls__color_picker_for_text);
+        final Spinner dropdownFont = ButterKnife.findById(this, R.id.memecreate__moar_controls__dropdown_font);
+        final SeekBar seekFontSize = ButterKnife.findById(this, R.id.memecreate__moar_controls__seek_font_size);
+        final ToggleButton toggleAllCaps = ButterKnife.findById(this, R.id.memecreate__moar_controls__toggle_all_caps);
+        final Button rotateButton = ButterKnife.findById(this, R.id.memecreate__moar_controls__rotate_plus_90deg);
+        final LineColorPicker colorPickerPadding = ButterKnife.findById(this, R.id.memecreate__moar_controls__color_picker_for_padding);
+        final SeekBar seekPaddingSize = ButterKnife.findById(this, R.id.memecreate__moar_controls__seek_padding_size);
 
         colorPickerText.setColors(MemeLibConfig.MEME_COLORS.ALL);
         colorPickerShade.setColors(MemeLibConfig.MEME_COLORS.ALL);
         colorPickerPadding.setColors(MemeLibConfig.MEME_COLORS.ALL);
 
-        FontAdapter adapter = new FontAdapter(
-                this, android.R.layout.simple_list_item_1, app.getFonts());
+        FontAdapter adapter = new FontAdapter(this,
+                android.R.layout.simple_list_item_1, app.getFonts(),
+                true, getString(R.string.creator__font));
         dropdownFont.setAdapter(adapter);
 
 
@@ -599,24 +628,8 @@ public class MemeCreateActivity extends AppCompatActivity
         lastBitmap = bmp;
     }
 
-    @Override
-    public void onSheetStateChanged(BottomSheetLayout.State state) {
-        if (state == BottomSheetLayout.State.HIDDEN) {
-            fab.setVisibility(View.VISIBLE);
-            toolbar.setVisibility(View.VISIBLE);
-            textEditBottomCaption.setVisibility(View.VISIBLE);
-            textEditTopCaption.setVisibility(View.VISIBLE);
-        }
-        if (state == BottomSheetLayout.State.EXPANDED || state == BottomSheetLayout.State.PEEKED) {
-            textEditBottomCaption.setVisibility(View.GONE);
-            textEditTopCaption.setVisibility(View.GONE);
-            toolbar.setVisibility(View.GONE);
-        }
-    }
-
-    @Override
-    public void onDismissed(BottomSheetLayout bottomSheetLayout) {
-        fab.setVisibility(View.VISIBLE);
-        toolbar.setVisibility(View.VISIBLE);
+    @OnClick(R.id.memecreate__moar_controls__layout)
+    void onMoarControlsContainerClicked() {
+        toggleMoarControls(true, false);
     }
 }

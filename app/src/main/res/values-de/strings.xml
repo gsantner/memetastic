@@ -70,4 +70,9 @@
     <string name="pref_title__editor">Editor</string>
     <string name="pref_title__is_statusbar_hidden">Statusleiste verstecken</string>
     <string name="pref_title__overview">Übersicht</string>
+    <string name="creator__text">Text</string>
+    <string name="creator__size">Größe</string>
+    <string name="creator__background">Hintergrund</string>
+    <string name="creator__border">Umrandung</string>
+    <string name="creator__picture">Bild</string>
 </resources>
