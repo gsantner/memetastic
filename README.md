@@ -31,13 +31,14 @@ License: **GPLv3**
 
 ## Download
 * [F-Droid](https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic)
-* [Nightly](https://gsantner.gitlab.io/fdroid/latest/io.github.gsantner.memetastic.test.apk) - Named MemeTestic, can be installed aside of MemeTastic
 
 ## Contributions
 For inclusion of new fonts or memes visit [issue #1](https://github.com/gsantner/memetastic/issues/1).
 Please only post stuff you own, is allowed to redistribute, or to be considered fair use.
 Meme templates will only get added if there are no existing watermarks (of e.g. other meme creators) 
 and if they are in a good image quality (do a quick search before).
+
+Translations can be contributed on GitHub or via E-Mail. You can use Stringlate ([![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic)) to translate the project directly on your Android phone. It allows you to both, send E-Mail and to post it on GitHub.
 
 You can maybe find something suitable here:  
 * Fonts: [1001fonts](http://www.1001fonts.com) | [Font Squirell](https://www.fontsquirrel.com/fonts/list/find_fonts?filter%5Blicense%5D%5B0%5D=app&filter%5Blicense%5D%5B1%5D=open&q%5Bterm%5D=&q%5Bsearch_check%5D=Y) | [fontspace](http://www.fontspace.com/) 
