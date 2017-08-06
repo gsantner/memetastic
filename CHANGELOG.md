@@ -1,9 +1,10 @@
+
 ### v1.2.0
 - Empty list: Info text & image
 - Complete rework of MemeCreateActivity
 - Custom image templates: `/sdcard/Pictures/MemeTastic/templates/custom/`
 - Shuffle meme list option
-- Moar memes
+- Moar memes, fonts
 - Update to android-api26
 - Hide statusbar options
 - Updated save dialog

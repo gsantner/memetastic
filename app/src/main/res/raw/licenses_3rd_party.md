@@ -11,7 +11,9 @@ If one or more fonts violates copyright laws and you want them to be removed,
 please send a mail to the maintainer and they will get removed as soon as possible from MemeTastic.  
 
 
-## Public domain / do whatever you want
+## Public domain
+Licensed pulic domain, public domain like or CC0 1.0 Universal
+
 * **Roman Gornitsky**
 ~° [Various Fonts (including Pressuru)](http://abstrkt.ru/index.php?p=freefonts)  
 
@@ -33,6 +35,12 @@ Version 2.0, January 2004
 
 * **Butterknife**
 ~° Copyright 2013 Jake Wharton  
+
+* **Open Sans**
+~° by [Steve Matteson](https://www.myfonts.com/person/Steve_Matteson/)  
+
+* **Roboto**
+~° Font data copyright Google 2012
 
 `---------------`  
 <small>Licensed under the Apache License, Version 2.0 (the "License");
@@ -94,6 +102,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ## SIL Open Font License  (OFL)
 See <https://opensource.org/licenses/OFL-1.1> for license text.  
 
-* Inconsolata
-* Press Start 2P
-* [Comic Relief](https://www.fontsquirrel.com/fonts/comic-relief)
+* **Inconsolata**
+~° Copyright 2006 The Inconsolata Project Authors  
+
+* **Press Start 2P**
+~° Copyright 2012 The Press Start 2P Project Authors (cody@zone38.net), with Reserved Font Name "Press Start 2P".  
+
+* **Comic Relief**
+~° Copyright (c) 2013, Jeff Davis (info@loudifier.com), with Reserved Font Name "Comic Relief"  
+
+* **Source Sans Pro**
+~° Copyright 2010, 2012, 2014 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'.  
