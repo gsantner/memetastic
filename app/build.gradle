@@ -59,7 +59,7 @@ android {
         disable 'MissingTranslation'
     }
 
-    sourceSets { main { assets.srcDirs = ['src/main/assets', '../Assets'] } }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', '../assets'] } }
 }
 
 dependencies {
