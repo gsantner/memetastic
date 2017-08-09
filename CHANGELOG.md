@@ -1,3 +1,5 @@
+### v1.2.1
+- Update opoc
 
 ### v1.2.0
 - Empty list: Info text & image

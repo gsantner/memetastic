@@ -143,7 +143,7 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
     }
 
     public File getPicturesMemetasticFolder() {
-        return new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), context.getString(R.string.app_name));
+        return new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), _context.getString(R.string.app_name));
     }
 
     public File getPicturesMemetasticTemplatesCustomFolder() {

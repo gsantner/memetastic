@@ -61,7 +61,7 @@ import io.github.gsantner.memetastic.ui.FontAdapter;
 import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.gsantner.memetastic.util.HelpersA;
 import uz.shift.colorpicker.LineColorPicker;
 
 /**

@@ -21,7 +21,7 @@
  * You can e.g. apply a accent color by replacing #000001 with your accentColor string.
  *
  * FILTER_ANDROID_TEXTVIEW output is intended to be used at simple Android TextViews,
- * were a limited set of html tags is supported. This allow to still display e.g. a simple
+ * were a limited set of _html tags is supported. This allow to still display e.g. a simple
  * CHANGELOG.md file without including a WebView for showing HTML, or other additional UI-libraries.
  *
  * FILTER_WEB is intended to be used at engines understanding most common HTML tags.
@@ -40,15 +40,9 @@ import java.io.InputStreamReader;
  */
 @SuppressWarnings({"WeakerAccess", "CaughtExceptionImmediatelyRethrown", "SameParameterValue", "unused", "SpellCheckingInspection", "RepeatedSpace", "SingleCharAlternation"})
 public class SimpleMarkdownParser {
-    private static SimpleMarkdownParser instance;
-
-    public static SimpleMarkdownParser get() {
-        if (instance == null) {
-            instance = new SimpleMarkdownParser();
-        }
-        return instance;
-    }
-
+    //########################
+    //## Statics
+    //########################
     public interface SmpFilter {
         String filter(String text);
     }
@@ -56,7 +50,7 @@ public class SimpleMarkdownParser {
     public final static SmpFilter FILTER_ANDROID_TEXTVIEW = new SmpFilter() {
         @Override
         public String filter(String text) {
-            // TextView supports a limited set of html tags, most notably
+            // TextView supports a limited set of _html tags, most notably
             // a href, b, big, font size&color, i, li, small, u
 
             // Don't start new line if 2 empty lines and heading
@@ -118,17 +112,32 @@ public class SimpleMarkdownParser {
     };
 
     //########################
-    //##     Members
+    //## Singleton
     //########################
-    private SmpFilter defaultSmpFilter;
-    private String html;
+    private static SimpleMarkdownParser instance;
+
+    public static SimpleMarkdownParser get() {
+        if (instance == null) {
+            instance = new SimpleMarkdownParser();
+        }
+        return instance;
+    }
+
+    //########################
+    //## Members, Constructors
+    //########################
+    private SmpFilter _defaultSmpFilter;
+    private String _html;
 
     public SimpleMarkdownParser() {
         setDefaultSmpFilter(FILTER_WEB);
     }
 
-    public SimpleMarkdownParser setDefaultSmpFilter(SmpFilter defaultSmpFilter) {
-        this.defaultSmpFilter = defaultSmpFilter;
+    //########################
+    //## Methods
+    //########################
+    public SimpleMarkdownParser setDefaultSmpFilter(SmpFilter _defaultSmpFilter) {
+        this._defaultSmpFilter = _defaultSmpFilter;
         return this;
     }
 
@@ -149,7 +158,7 @@ public class SimpleMarkdownParser {
                 sb.append("\n");
             }
         } catch (IOException rethrow) {
-            html = "";
+            _html = "";
             throw rethrow;
         } finally {
             if (br != null) {
@@ -159,47 +168,47 @@ public class SimpleMarkdownParser {
                 }
             }
         }
-        html = parse(sb.toString(), "", smpFilters).getHtml();
+        _html = parse(sb.toString(), "", smpFilters).getHtml();
         return this;
     }
 
     public SimpleMarkdownParser parse(String markdown, String lineMdPrefix, SmpFilter... smpFilters) throws IOException {
-        html = markdown;
+        _html = markdown;
         if (smpFilters.length == 0) {
-            smpFilters = new SmpFilter[]{defaultSmpFilter};
+            smpFilters = new SmpFilter[]{_defaultSmpFilter};
         }
         for (SmpFilter smpFilter : smpFilters) {
-            html = smpFilter.filter(html).trim();
+            _html = smpFilter.filter(_html).trim();
         }
         return this;
     }
 
     public String getHtml() {
-        return html;
+        return _html;
     }
 
     public SimpleMarkdownParser setHtml(String html) {
-        this.html = html;
+        _html = html;
         return this;
     }
 
     public SimpleMarkdownParser removeMultiNewlines() {
-        html = html.replace("\n", "").replaceAll("(<br/>){3,}", "<br/><br/>");
+        _html = _html.replace("\n", "").replaceAll("(<br/>){3,}", "<br/><br/>");
         return this;
     }
 
     public SimpleMarkdownParser replaceBulletCharacter(String replacment) {
-        html = html.replace("&#8226;", replacment);
+        _html = _html.replace("&#8226;", replacment);
         return this;
     }
 
     public SimpleMarkdownParser replaceColor(String hexColor, int newIntColor) {
-        html = html.replace(hexColor, String.format("#%06X", 0xFFFFFF & newIntColor));
+        _html = _html.replace(hexColor, String.format("#%06X", 0xFFFFFF & newIntColor));
         return this;
     }
 
     @Override
     public String toString() {
-        return html != null ? html : "";
+        return _html != null ? _html : "";
     }
 }

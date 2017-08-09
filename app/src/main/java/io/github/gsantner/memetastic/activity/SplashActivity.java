@@ -16,7 +16,7 @@ import java.io.File;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.gsantner.memetastic.util.HelpersA;
 
 public class SplashActivity extends AppCompatActivity {
 
