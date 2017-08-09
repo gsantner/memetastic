@@ -71,8 +71,17 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public int getRenderQualityReal() {
-        int val = getInt(prefApp, R.string.pref_key__render_quality__percent, 24);
+        int val = getInt(prefApp, R.string.pref_key__render_quality_editor_percent, 24);
         return (int) (400 + (2100.0 * (val / 100.0)));
+    }
+
+    public int getThumbnailQualityReal() {
+        // 24 should be 225. Mostly 3 will be on a phone, so 1080/3=360
+        // Additional reduction of quality to ~2/3 is roughly 225
+        // 150 is very fast loaded, but blurry, 200 is still a little blurry, 225 seems to be
+        // a good tradeoff between quality (400-600) and speed (-125)
+        int val = getInt(prefApp, R.string.pref_key__thumbnail_quality__percent, 24);
+        return (int) (100 + (939 * (val / 100.0)));
     }
 
     public void setLastSelectedFont(int value) {

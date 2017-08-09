@@ -44,7 +44,7 @@
     <!-- Settings -->
     <string name="settings__settings">Impostazioni</string>
     <string name="settings__all_caps">Tutto maiuscolo</string>
-    <string name="settings__pref_render_quality_title">Qualità render</string>
+    <string name="pref_title__render_quality_editor_percent">Qualità render</string>
     <string name="settings__cleanup_thumbnails">Elimina miniature</string>
     <string name="settings__pref_columns_portrait">Colonne in verticale</string>
     <string name="settings__pref_columns_landscape">Colonne in orizzontale</string>

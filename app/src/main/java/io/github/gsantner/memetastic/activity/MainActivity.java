@@ -112,9 +112,12 @@ public class MainActivity extends AppCompatActivity
                 : app.settings.getGridColumnCountLandscape();
 
         recyclerMemeList.setHasFixedSize(true);
+        recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
+        recyclerMemeList.setDrawingCacheEnabled(true);
+        recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
         RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
         recyclerMemeList.setLayoutManager(recyclerGridLayout);
-        recyclerMemeList.addItemDecoration(new GridDecoration(10));
 
         for (String cat : getResources().getStringArray(R.array.meme_categories)) {
             TabLayout.Tab tab = tabLayout.newTab();

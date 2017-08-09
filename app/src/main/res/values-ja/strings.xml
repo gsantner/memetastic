@@ -65,7 +65,7 @@
     <string name="settings__all_caps">すべて大文字</string>
     <string name="settings__caps_off">小文字</string>
     <string name="settings__rotate">回転</string>
-    <string name="settings__pref_render_quality_title">描画品質</string>
+    <string name="pref_title__render_quality_editor_percent">描画品質</string>
     <string name="settings__cleanup_thumbnails">サムネイルをクリア</string>
     <string name="settings__pref_columns_portrait">縦の項目数</string>
     <string name="settings__pref_columns_landscape">横の項目数</string>

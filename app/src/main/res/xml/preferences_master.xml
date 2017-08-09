@@ -31,6 +31,14 @@
             android:summary="@string/pref_summary__is_shuffle_meme_categories"
             android:title="@string/pref_title__is_shuffle_meme_categories" />
 
+        <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:defaultValue="24"
+            android:key="@string/pref_key__thumbnail_quality__percent"
+            android:title="@string/pref_title__thumbnail_quality__percent"
+            android:summary="@string/pref_summary__picture_quality__percent"
+            app:maxValue="100"
+            app:minValue="1" />
+
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -56,8 +64,9 @@
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="24"
-            android:key="@string/pref_key__render_quality__percent"
-            android:title="@string/settings__pref_render_quality_title"
+            android:key="@string/pref_key__render_quality_editor_percent"
+            android:title="@string/pref_title__render_quality_editor_percent"
+            android:summary="@string/pref_summary__picture_quality__percent"
             app:maxValue="100"
             app:minValue="1" />
 

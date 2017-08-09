@@ -70,7 +70,7 @@
     <string name="settings__all_caps">All caps</string>
     <string name="settings__caps_off">Caps off</string>
     <string name="settings__rotate">Rotate</string>
-    <string name="settings__pref_render_quality_title">Render-Quality</string>
+    <string name="pref_title__render_quality_editor_percent">Render-Quality</string>
     <string name="settings__cleanup_thumbnails">Clear thumbnails</string>
     <string name="settings__pref_columns_portrait">Columns portrait</string>
     <string name="settings__pref_columns_landscape">Columns landscape</string>
@@ -88,4 +88,6 @@
     <string name="pref_title__editor">Editor</string>
     <string name="pref_summary__is_statusbar_hidden">Hide the statubar at this view</string>
     <string name="pref_title__is_statusbar_hidden">Hide statusbar</string>
+    <string name="pref_summary__picture_quality__percent">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
 </resources>

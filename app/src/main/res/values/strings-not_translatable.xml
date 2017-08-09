@@ -46,7 +46,7 @@
 
 
     <!-- Pref keys -->
-    <string name="pref_key__render_quality__percent" translatable="false">pref_key__render_quality__percent</string>
+    <string name="pref_key__render_quality_editor_percent" translatable="false">pref_key__render_quality__percent</string>
     <string name="pref_key__cleanup_thumbnails" translatable="false">pref_key__cleanup_thumbnails</string>
     <string name="pref_key__last_selected_font" translatable="false">pref_key__last_selected_font</string>
     <string name="pref_key__meme_favourites" translatable="false">pref_key__meme_favourites</string>
@@ -60,5 +60,6 @@
     <string name="pref_key__is_shuffle_meme_categories" translatable="false">pref_key__is_shuffle_meme_categories</string>
     <string name="pref_key__is_editor_statusbar_hidden" translatable="false">pref_key__is_editor_statusbar_hidden</string>
     <string name="pref_key__is_overview_statusbar_hidden" translatable="false">pref_key__is_overview_statusbar_hidden</string>
+    <string name="pref_key__thumbnail_quality__percent" translatable="false">pref_key__thumbnail_quality__percent</string>
 
 </resources>

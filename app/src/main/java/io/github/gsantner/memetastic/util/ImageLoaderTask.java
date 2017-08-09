@@ -13,27 +13,26 @@ import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
 
 public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
-    public static interface OnImageLoadedListener {
+    public interface OnImageLoadedListener {
         void onImageLoaded(Bitmap bitmap, GridRecycleAdapter.ViewHolder holder);
     }
 
-    private OnImageLoadedListener listener;
-    private GridRecycleAdapter.ViewHolder holder;
-    private AssetManager assetManager;
-    private boolean bThumbnail;
+    private final int _sampleSizeThumbnails;
+    private final OnImageLoadedListener _listener;
+    private final GridRecycleAdapter.ViewHolder _holder;
+    private final AssetManager _assetManager;
+    private final boolean _isThumbnail;
 
-    public ImageLoaderTask(OnImageLoadedListener listener, GridRecycleAdapter.ViewHolder holder, boolean bThumbnail) {
-        this.listener = listener;
-        this.holder = holder;
-        this.bThumbnail = bThumbnail;
-        this.assetManager = null;
+    public ImageLoaderTask(OnImageLoadedListener listener, GridRecycleAdapter.ViewHolder holder, boolean isThumbnail) {
+        this(listener, holder, isThumbnail, null);
     }
 
-    public ImageLoaderTask(OnImageLoadedListener listener, GridRecycleAdapter.ViewHolder holder, boolean bThumbnail, AssetManager assetManager) {
-        this.listener = listener;
-        this.holder = holder;
-        this.bThumbnail = bThumbnail;
-        this.assetManager = assetManager;
+    public ImageLoaderTask(OnImageLoadedListener listener, GridRecycleAdapter.ViewHolder holder, boolean isThumbnail, AssetManager assetManager) {
+        _listener = listener;
+        _holder = holder;
+        _isThumbnail = isThumbnail;
+        _assetManager = assetManager;
+        _sampleSizeThumbnails = AppSettings.get().getThumbnailQualityReal();
     }
 
     private Bitmap loadStorageImage(String imagePath) {
@@ -41,30 +40,30 @@ public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(imagePath, options);
 
-        if (bThumbnail)
-            options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_SHOWCASE_GRID_MAX_IMAGESIZE);
+        if (_isThumbnail)
+            options.inSampleSize = Helpers.get().calculateInSampleSize(options, _sampleSizeThumbnails);
         else
-            options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
+            options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeFile(imagePath, options);
     }
 
-    public Bitmap loadAssetImage(String imagePath) {
+    private Bitmap loadAssetImage(String imagePath) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         InputStream inputStream = null;
         try {
-            inputStream = assetManager.open(imagePath);
+            inputStream = _assetManager.open(imagePath);
             BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
-            if (bThumbnail) {
-                options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_SHOWCASE_GRID_MAX_IMAGESIZE);
+            if (_isThumbnail) {
+                options.inSampleSize = Helpers.get().calculateInSampleSize(options, _sampleSizeThumbnails);
             } else {
-                options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
+                options.inSampleSize = Helpers.get().calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
             }
             if (inputStream != null) {
                 inputStream.close();
             }
-            inputStream = assetManager.open(imagePath);
+            inputStream = _assetManager.open(imagePath);
             options.inJustDecodeBounds = false;
             return BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
         } catch (IOException e) {
@@ -83,7 +82,7 @@ public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected Bitmap doInBackground(String... params) {
-        if (assetManager == null) {
+        if (_assetManager == null) {
             return loadStorageImage(params[0]);
         }
         return loadAssetImage(params[0]);
@@ -92,7 +91,7 @@ public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
     @Override
     protected void onPostExecute(Bitmap bitmap) {
         super.onPostExecute(bitmap);
-        if (this.listener != null)
-            this.listener.onImageLoaded(bitmap, holder);
+        if (_listener != null)
+            _listener.onImageLoaded(bitmap, _holder);
     }
 }

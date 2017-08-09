@@ -84,7 +84,7 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(imagePath, options);
-        options.inSampleSize = calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
+        options.inSampleSize = calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeFile(imagePath, options);
     }

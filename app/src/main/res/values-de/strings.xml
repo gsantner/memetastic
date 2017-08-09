@@ -33,7 +33,7 @@
     <string name="settings__cleanup_thumbnails">Vorschaubilder aufräumen</string>
     <string name="settings__pref_columns_landscape">Spalten Querformat</string>
     <string name="settings__pref_columns_portrait">Spalten Hochformat</string>
-    <string name="settings__pref_render_quality_title">Render-Qualität</string>
+    <string name="pref_title__render_quality_editor_percent">Render-Qualität</string>
     <string name="settings__settings">Einstellungen</string>
     <string name="additional_contact">Mehr Informationen</string>
     <string name="developed_by">Entwickelt von</string>
@@ -75,4 +75,6 @@
     <string name="creator__background">Hintergrund</string>
     <string name="creator__border">Umrandung</string>
     <string name="creator__picture">Bild</string>
+    <string name="pref_title__thumbnail_quality__percent">Vorschaubild Qualität</string>
+    <string name="pref_summary__picture_quality__percent">Qualität und Größe von Bildern. Höhere Werte bedeuten eine erhöhte Ladezeit. Abhängig von Geräte-Hardware und Bildgröße kann die App über einen Wert von 25% nicht wie erwartet funktionieren.</string>
 </resources>

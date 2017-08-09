@@ -58,7 +58,7 @@
     <string name="settings__all_caps">Tylko wielkie litery</string>
     <string name="settings__caps_off">Wyłącz wielkie litery</string>
     <string name="settings__rotate">Obróć</string>
-    <string name="settings__pref_render_quality_title">Jakość obrazu wyjściowego</string>
+    <string name="pref_title__render_quality_editor_percent">Jakość obrazu wyjściowego</string>
     <string name="settings__cleanup_thumbnails">Wyczyść miniatury</string>
     <string name="settings__pref_columns_portrait">Kolumny portretowo</string>
     <string name="settings__pref_columns_landscape">Kolumny horyzontalnie</string>
