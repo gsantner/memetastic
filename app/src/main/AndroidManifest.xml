@@ -15,6 +15,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -47,6 +50,7 @@
             android:name="io.github.gsantner.memetastic.activity.MemeCreateActivity"
             android:label="@string/main__create_meme"
             android:icon="${appIcon}"
+            android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

@@ -12,7 +12,7 @@
 
         <item
             android:id="@+id/action_mode_favs"
-            android:icon="@drawable/ic_star_black_48px"
+            android:icon="@drawable/ic_star_black_32dp"
             android:title="@string/main__mode__favs" />
         <item
             android:id="@+id/action_mode_saved"

@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.gsantner.memetastic.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 @SuppressWarnings("unused")

@@ -39,7 +39,7 @@
     <string name="creator__hint_top_caption">Texte du haut</string>
     <string name="creator__hint_bottom_caption">Sous-titre</string>
     <string name="creator__font">Police</string>
-    <string name="creator__no_keep_editing">Non, continuer l\'édition</string>
+    <string name="creator__keep_editing">Continuer l\'édition</string>
 
     <!-- Info -->
     <string name="about">À propos</string>
@@ -58,7 +58,7 @@
     <string name="settings__all_caps">Tout en majuscules</string>
     <string name="settings__caps_off">Majuscules désactivées</string>
     <string name="settings__rotate">Rotation</string>
-    <string name="settings__pref_render_quality_title">Qualité du Rendu</string>
+    <string name="pref_title__render_quality_editor_percent">Qualité du Rendu</string>
     <string name="settings__cleanup_thumbnails">Effacer les vignettes</string>
     <string name="settings__pref_columns_portrait">Colonnes en portrait</string>
     <string name="settings__pref_columns_landscape">Colonnes en paysage</string>

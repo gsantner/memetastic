@@ -71,4 +71,14 @@ public class MemeOriginAssets implements MemeOriginInterface {
             return false;
         }
     }
+
+    @Override
+    public void shuffleList() {
+        mMemeCategory.shuffleList();
+    }
+
+    @Override
+    public boolean isTemplate() {
+        return true;
+    }
 }

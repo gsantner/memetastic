@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -60,10 +61,19 @@ public class MemeCategory {
         return getFolderPath(true) + imageNames[position];
     }
 
-
     public void shuffleList() {
         List<String> l = new ArrayList<String>(Arrays.asList(imageNames));
         Collections.shuffle(l);
         imageNames = l.toArray(new String[l.size()]);
+    }
+
+    public MemeCategory orderByNameCaseInsensitive() {
+        Arrays.sort(imageNames, new Comparator<String>() {
+            @Override
+            public int compare(String f1, String f2) {
+                return f1.toLowerCase().compareTo(f2.toLowerCase());
+            }
+        });
+        return this;
     }
 }

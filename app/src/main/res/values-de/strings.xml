@@ -33,7 +33,7 @@
     <string name="settings__cleanup_thumbnails">Vorschaubilder aufräumen</string>
     <string name="settings__pref_columns_landscape">Spalten Querformat</string>
     <string name="settings__pref_columns_portrait">Spalten Hochformat</string>
-    <string name="settings__pref_render_quality_title">Render-Qualität</string>
+    <string name="pref_title__render_quality_editor_percent">Render-Qualität</string>
     <string name="settings__settings">Einstellungen</string>
     <string name="additional_contact">Mehr Informationen</string>
     <string name="developed_by">Entwickelt von</string>
@@ -42,7 +42,13 @@
     <string name="licenses">Lizenzen</string>
     <string name="show_licenses">Lizenzen anzeigen</string>
     <string name="main__yes">Ja</string>
-    <string name="creator__no_keep_editing">Nein, weiter bearbeiten</string>
+
+    <string name="main__nodata__favourites">Keine Favoriten.\nBenutze den Stern-Button einer Meme-Vorlage um sie zu favorisieren.</string>
+    <string name="main__nodata__custom_templates">Keine benutzerdefinierten Vorlagen.\nPlatziere eigene Vorlagen hier:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__saved">Keine gespeicherten Memes.\nBenutze den oberen Speicher-Button nach Bearbeitung eines Memes.</string>
+    <string name="main__memecat__custom">Eigene</string>
+
+    <string name="creator__keep_editing">Weiter bearbeiten</string>
     <string name="show_app_license">Show GNU GPLv3 license</string>
     <string name="contributors">Beitragende</string>
     <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
@@ -59,4 +65,16 @@
     <string name="pref_title__auto_save_meme">Speichern bei zurück</string>
     <string name="pref_summary__is_shuffle_meme_categories">Zufällige Anordnung der Memes wählen wenn eine Kategorie ausgewählt wurde</string>
     <string name="pref_title__is_shuffle_meme_categories">Mischen der Meme Liste</string>
+    <string name="creator__padding">Padding</string>
+    <string name="pref_summary__is_statusbar_hidden">Die Statusleiste in dieser Ansicht verstecken</string>
+    <string name="pref_title__editor">Editor</string>
+    <string name="pref_title__is_statusbar_hidden">Statusleiste verstecken</string>
+    <string name="pref_title__overview">Übersicht</string>
+    <string name="creator__text">Text</string>
+    <string name="creator__size">Größe</string>
+    <string name="creator__background">Hintergrund</string>
+    <string name="creator__border">Umrandung</string>
+    <string name="creator__picture">Bild</string>
+    <string name="pref_title__thumbnail_quality__percent">Vorschaubild Qualität</string>
+    <string name="pref_summary__picture_quality__percent">Qualität und Größe von Bildern. Höhere Werte bedeuten eine erhöhte Ladezeit. Abhängig von Geräte-Hardware und Bildgröße kann die App über einen Wert von 25% nicht wie erwartet funktionieren.</string>
 </resources>

@@ -27,16 +27,16 @@ import io.github.gsantner.memetastic.util.ImageLoaderTask;
  * Adapter to show images in a Grid
  */
 public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener {
-    private MemeOriginInterface mMemeObject;
-    private int mShortAnimationDuration;
-    private Activity mActivity;
-    private App app;
+    private MemeOriginInterface _memeObject;
+    private int _shortAnimationDuration;
+    private Activity _activity;
+    private App _app;
 
     public GridRecycleAdapter(MemeOriginInterface memeObject, Activity act) {
-        mMemeObject = memeObject;
-        mShortAnimationDuration = -1;
-        mActivity = act;
-        app = (App) (mActivity.getApplication());
+        _memeObject = memeObject;
+        _shortAnimationDuration = -1;
+        _activity = act;
+        _app = (App) (_activity.getApplication());
     }
 
     @Override
@@ -54,11 +54,11 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
      * @param memeObj        the memes of the grid where the clicked meme is saved in
      */
     private void toggleFavorite(int positionInGrid, ImageView imageButtonFav, MemeOriginInterface memeObj) {
-        if (app.settings.toggleFavorite(memeObj.getFilepath(positionInGrid))) {
+        if (_app.settings.toggleFavorite(memeObj.getFilepath(positionInGrid))) {
             tintFavourite(imageButtonFav, true);
         } else {
-            if (mMemeObject instanceof MemeOriginFavorite) {
-                ((MemeOriginFavorite) mMemeObject).setFiles(app.settings.getFavoriteMemes());
+            if (_memeObject instanceof MemeOriginFavorite) {
+                ((MemeOriginFavorite) _memeObject).setFiles(_app.settings.getFavoriteMemes());
                 notifyDataSetChanged();
             } else {
                 tintFavourite(imageButtonFav, false);
@@ -73,40 +73,40 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
         holder.imageButtonFav.setVisibility(View.INVISIBLE);
         holder.imageView.setVisibility(View.INVISIBLE);
         ImageLoaderTask taskLoadImage;
-        if (mMemeObject instanceof MemeOriginAssets) {
-            taskLoadImage = new ImageLoaderTask(this, holder, true, mActivity.getAssets());
+        if (_memeObject instanceof MemeOriginAssets) {
+            taskLoadImage = new ImageLoaderTask(this, holder, true, _activity.getAssets());
         } else {
             taskLoadImage = new ImageLoaderTask(this, holder, true);
         }
-        taskLoadImage.execute(mMemeObject.getPath(position, true));
-        holder.imageView.setTag(mMemeObject.getFilepath(position));
+        taskLoadImage.execute(_memeObject.getPath(position, true));
+        holder.imageView.setTag(_memeObject.getFilepath(position));
 
-        tintFavourite(holder.imageButtonFav, app.settings.isFavorite(mMemeObject.getFilepath(position)));
+        tintFavourite(holder.imageButtonFav, _app.settings.isFavorite(_memeObject.getFilepath(position)));
 
         holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
             public boolean onLongClick(View v) {
-                onImageLongClicked(position, holder.imageButtonFav, mMemeObject);
+                onImageLongClicked(position, holder.imageButtonFav, _memeObject);
                 return true;
             }
         });
         holder.imageButtonFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toggleFavorite(position, holder.imageButtonFav, mMemeObject);
+                toggleFavorite(position, holder.imageButtonFav, _memeObject);
             }
         });
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mMemeObject instanceof MemeOriginAssets) {
-                    Intent intent = new Intent(mActivity, MemeCreateActivity.class);
-                    intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, mMemeObject.getFilepath(position));
-                    intent.putExtra(MemeCreateActivity.ASSET_IMAGE, mMemeObject.isAsset());
-                    mActivity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
+                if (_memeObject.isTemplate()) {
+                    Intent intent = new Intent(_activity, MemeCreateActivity.class);
+                    intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, _memeObject.getFilepath(position));
+                    intent.putExtra(MemeCreateActivity.ASSET_IMAGE, _memeObject.isAsset());
+                    _activity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
                 } else {
-                    if (mActivity instanceof MainActivity) {
-                        ((MainActivity) mActivity).openImageViewActivityWithImage(mMemeObject.getFilepath(position));
+                    if (_activity instanceof MainActivity) {
+                        ((MainActivity) _activity).openImageViewActivityWithImage(_memeObject.getFilepath(position));
                     }
                 }
             }
@@ -115,24 +115,24 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
 
     private void tintFavourite(ImageView iv, boolean isFav) {
         Helpers.get().setDrawableWithColorToImageView(iv,
-                isFav ? R.drawable.ic_star_black_48px : R.drawable.ic_star_border_black_48px,
+                isFav ? R.drawable.ic_star_black_32dp : R.drawable.ic_star_border_black_32dp,
                 isFav ? R.color.comic_yellow : R.color.comic_blue);
     }
 
     // gets and returns the count of available items in the grid
     @Override
     public int getItemCount() {
-        return mMemeObject.getLength();
+        return _memeObject.getLength();
     }
 
     public void onImageLongClicked(final int position, final ImageView iv, final MemeOriginInterface memeObj) {
         Context context = iv.getContext().getApplicationContext();
-        String pic = mMemeObject.getFilepath(position);
+        String pic = _memeObject.getFilepath(position);
         if (!pic.contains(context.getString(R.string.app_name))) {
             pic = pic.substring(pic.lastIndexOf("_") + 1);
             pic = pic.substring(0, pic.indexOf("."));
         }
-        Snackbar snackbar = Snackbar.make(mActivity.findViewById(android.R.id.content), pic, Snackbar.LENGTH_SHORT);
+        Snackbar snackbar = Snackbar.make(_activity.findViewById(android.R.id.content), pic, Snackbar.LENGTH_SHORT);
         if (memeObj instanceof MemeOriginAssets) {
             snackbar.setAction(R.string.main__mode__favs, new View.OnClickListener() {
                 public void onClick(View v) {
@@ -145,9 +145,9 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
 
     @Override
     public void onImageLoaded(Bitmap bitmap, ViewHolder holder) {
-        Animation animation = AnimationUtils.loadAnimation(mActivity, R.anim.fadeinfast);
+        Animation animation = AnimationUtils.loadAnimation(_activity, R.anim.fadeinfast);
         holder.imageView.startAnimation(animation);
-        if (mMemeObject.showFavButton()) {
+        if (_memeObject.showFavButton()) {
             holder.imageButtonFav.startAnimation(animation);
             holder.imageButtonFav.setVisibility(View.VISIBLE);
         }
@@ -165,8 +165,8 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
             super(itemView);
             imageButtonFav = (ImageView) itemView.findViewById(R.id.item__square_image__image_bottom_end);
             imageView = (ImageView) itemView.findViewById(R.id.item__square_image__image);
-            if (mShortAnimationDuration < 0)
-                mShortAnimationDuration = imageView.getContext().getResources().getInteger(
+            if (_shortAnimationDuration < 0)
+                _shortAnimationDuration = imageView.getContext().getResources().getInteger(
                         android.R.integer.config_shortAnimTime);
         }
     }

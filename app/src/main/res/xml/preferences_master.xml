@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="@string/pref_title__size">
+    <PreferenceCategory android:title="@string/pref_title__overview">
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="3"
@@ -17,9 +17,6 @@
             app:maxValue="20"
             app:minValue="2" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/pref_title__functionality">
         <ListPreference
             android:defaultValue="0"
             android:entries="@array/main_modes"
@@ -30,26 +27,52 @@
 
         <CheckBoxPreference
             android:defaultValue="false"
+            android:key="@string/pref_key__is_shuffle_meme_categories"
+            android:summary="@string/pref_summary__is_shuffle_meme_categories"
+            android:title="@string/pref_title__is_shuffle_meme_categories" />
+
+        <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:defaultValue="24"
+            android:key="@string/pref_key__thumbnail_quality__percent"
+            android:title="@string/pref_title__thumbnail_quality__percent"
+            android:summary="@string/pref_summary__picture_quality__percent"
+            app:maxValue="100"
+            app:minValue="1" />
+
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key__is_overview_statusbar_hidden"
+            android:summary="@string/pref_summary__is_statusbar_hidden"
+            android:title="@string/pref_title__is_statusbar_hidden" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title__editor">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
             android:key="@string/pref_key__auto_save_meme"
             android:summary="@string/pref_summary__auto_save_meme"
             android:title="@string/pref_title__auto_save_meme" />
 
         <CheckBoxPreference
             android:defaultValue="false"
-            android:key="@string/pref_key__is_shuffle_meme_categories"
-            android:summary="@string/pref_summary__is_shuffle_meme_categories"
-            android:title="@string/pref_title__is_shuffle_meme_categories" />
+            android:key="@string/pref_key__is_editor_statusbar_hidden"
+            android:summary="@string/pref_summary__is_statusbar_hidden"
+            android:title="@string/pref_title__is_statusbar_hidden" />
 
+        <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:defaultValue="24"
+            android:key="@string/pref_key__render_quality_editor_percent"
+            android:title="@string/pref_title__render_quality_editor_percent"
+            android:summary="@string/pref_summary__picture_quality__percent"
+            app:maxValue="100"
+            app:minValue="1" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/miscellaneous">
-        <io.github.gsantner.memetastic.ui.NumberPickerPreference
-            android:defaultValue="24"
-            android:key="@string/pref_key__render_quality__percent"
-            android:title="@string/settings__pref_render_quality_title"
-            app:maxValue="100"
-            app:minValue="1" />
 
         <Preference
             android:key="@string/pref_key__cleanup_thumbnails"

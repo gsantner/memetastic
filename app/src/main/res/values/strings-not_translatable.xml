@@ -12,7 +12,7 @@
     <string name="main__ready_to_memetastic" translatable="false">Ready to MemeTastic? Try it now!\n%1$s</string>
 
     <!-- pictures -->
-    <string name="cached_picture_filename" translatable="false">workingPicture.jpg</string>
+    <string name="cached_picture_filename" translatable="false">MemeTastic_meme.jpg</string>
     <string name="dot_thumbnails" translatable="false">.thumbnails</string>
 
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
@@ -46,11 +46,11 @@
 
 
     <!-- Pref keys -->
-    <string name="pref_key__render_quality__percent" translatable="false">pref_key__render_quality__percent</string>
+    <string name="pref_key__render_quality_editor_percent" translatable="false">pref_key__render_quality__percent</string>
     <string name="pref_key__cleanup_thumbnails" translatable="false">pref_key__cleanup_thumbnails</string>
     <string name="pref_key__last_selected_font" translatable="false">pref_key__last_selected_font</string>
     <string name="pref_key__meme_favourites" translatable="false">pref_key__meme_favourites</string>
-    <string name="pref_key__last_selected_category" translatable="false">pref_key__last_selected_category</string>
+    <string name="pref_key__last_selected_tab" translatable="false">pref_key__last_selected_tab</string>
     <string name="pref_key__grid_column_count_portrait" translatable="false">pref_key__grid_column_count_portrait</string>
     <string name="pref_key__grid_column_count_landscape" translatable="false">pref_key__grid_column_count_landscape</string>
     <string name="pref_key__app_first_start" translatable="false">pref_key__app_first_run</string>
@@ -58,5 +58,8 @@
     <string name="pref_key__default_main_mode" translatable="false">pref_key__default_main_mode</string>
     <string name="pref_key__auto_save_meme" translatable="false">pref_key__auto_save_meme</string>
     <string name="pref_key__is_shuffle_meme_categories" translatable="false">pref_key__is_shuffle_meme_categories</string>
+    <string name="pref_key__is_editor_statusbar_hidden" translatable="false">pref_key__is_editor_statusbar_hidden</string>
+    <string name="pref_key__is_overview_statusbar_hidden" translatable="false">pref_key__is_overview_statusbar_hidden</string>
+    <string name="pref_key__thumbnail_quality__percent" translatable="false">pref_key__thumbnail_quality__percent</string>
 
 </resources>

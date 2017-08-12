@@ -16,6 +16,11 @@
     <!-- End colors from Palette -->
 
     <color name="default_activity_bg">#eeeeee</color>
+    <color name="default_activity_bg_dark">#262725</color>
+    <color name="empty_list_background_image">#E1E1E1</color>
+    <color name="empty_list_background_text">#757575</color>
+
+
     <color name="black">#000</color>
     <color name="white">#ffffff</color>
 

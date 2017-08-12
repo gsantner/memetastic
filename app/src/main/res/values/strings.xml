@@ -13,6 +13,7 @@
     <string name="main__memecat__humans">Humans</string>
     <string name="main__memecat__cartoon">Cartoon</string>
     <string name="main__memecat__animals">Animals</string>
+    <string name="main__memecat__custom">Custom</string>
 
     <string name="main__mode__saved">Saved</string>
     <string name="main__mode__favs">Favs</string>
@@ -30,6 +31,10 @@
     <string name="main__exit">Exit</string>
     <string name="main__yes">yes</string>
 
+    <string name="main__nodata__favourites">No favourites yet.\nUse the star button of a meme template to add it to the favourites.</string>
+    <string name="main__nodata__custom_templates">No custom templates yet.\nPlaced template images here:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__saved">No memes saved yet.\nUse the top save button after editing a meme.</string>
+
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Press back again to stop editing this meme. Meme will be lost if it is not already saved.</string>
     <string name="creator__saved_successfully_message">This meme was successfully stored on your device. Do you want to quit editing this meme now?</string>
@@ -40,7 +45,12 @@
     <string name="creator__hint_top_caption">Top caption</string>
     <string name="creator__hint_bottom_caption">Bottom caption</string>
     <string name="creator__font">Font</string>
-    <string name="creator__no_keep_editing">No, keep editing</string>
+    <string name="creator__keep_editing">Keep editing</string>
+    <string name="creator__text">Text</string>
+    <string name="creator__size">Size</string>
+    <string name="creator__background">Background</string>
+    <string name="creator__border">Border</string>
+    <string name="creator__picture">Picture</string>
 
     <!-- Info -->
     <string name="about">About</string>
@@ -60,7 +70,7 @@
     <string name="settings__all_caps">All caps</string>
     <string name="settings__caps_off">Caps off</string>
     <string name="settings__rotate">Rotate</string>
-    <string name="settings__pref_render_quality_title">Render-Quality</string>
+    <string name="pref_title__render_quality_editor_percent">Render-Quality</string>
     <string name="settings__cleanup_thumbnails">Clear thumbnails</string>
     <string name="settings__pref_columns_portrait">Columns portrait</string>
     <string name="settings__pref_columns_landscape">Columns landscape</string>
@@ -73,4 +83,11 @@
     <string name="pref_title__auto_save_meme">Save when pressing back</string>
     <string name="pref_summary__is_shuffle_meme_categories">Shuffle the list of memes after selecting a category</string>
     <string name="pref_title__is_shuffle_meme_categories">Shuffle meme list</string>
+    <string name="creator__padding">Padding</string>
+    <string name="pref_title__overview">Overview</string>
+    <string name="pref_title__editor">Editor</string>
+    <string name="pref_summary__is_statusbar_hidden">Hide the statubar at this view</string>
+    <string name="pref_title__is_statusbar_hidden">Hide statusbar</string>
+    <string name="pref_summary__picture_quality__percent">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
 </resources>

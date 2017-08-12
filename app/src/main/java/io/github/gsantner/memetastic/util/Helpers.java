@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Build;
+import android.os.Environment;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
@@ -17,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import io.github.gsantner.memetastic.App;
+import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 
 public class Helpers extends io.github.gsantner.opoc.util.Helpers {
@@ -82,7 +84,7 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(imagePath, options);
-        options.inSampleSize = calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_IMAGESIZE);
+        options.inSampleSize = calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeFile(imagePath, options);
     }
@@ -138,5 +140,13 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
     public static void setDrawableWithColorToImageView(ImageView imageView, @DrawableRes int drawableResId, @ColorRes int colorResId) {
         imageView.setImageResource(drawableResId);
         imageView.setColorFilter(ContextCompat.getColor(imageView.getContext(), colorResId));
+    }
+
+    public File getPicturesMemetasticFolder() {
+        return new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), _context.getString(R.string.app_name));
+    }
+
+    public File getPicturesMemetasticTemplatesCustomFolder() {
+        return new File(new File(getPicturesMemetasticFolder(), "templates"), "custom");
     }
 }

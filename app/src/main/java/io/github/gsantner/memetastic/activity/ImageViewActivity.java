@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import java.io.File;
@@ -16,6 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.Helpers;
 
 public class ImageViewActivity extends AppCompatActivity {
@@ -41,6 +43,9 @@ public class ImageViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppSettings.get().isOverviewStatusBarHidden()) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
         setContentView(R.layout.imageview__activity);
         ButterKnife.bind(this);
         app = (App) getApplication();

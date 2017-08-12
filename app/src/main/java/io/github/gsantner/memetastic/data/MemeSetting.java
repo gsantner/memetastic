@@ -2,269 +2,214 @@ package io.github.gsantner.memetastic.data;
 
 import android.graphics.Bitmap;
 
-import java.io.Serializable;
-
 /**
  * A memes settings
  */
-public class MemeSetting implements Serializable {
-    public static interface OnMemeSettingChangedListener {
-        void onMemeSettingChanged(MemeSetting memeSetting);
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMemeSettingChangedListener {
+    private MemeElementText _captionTop;
+    private MemeElementText _captionBottom;
+    private MemeElementImage _imageMain;
+
+    public MemeSetting(MemeFont font, Bitmap image) {
+        _captionTop = new MemeElementText(font);
+        _captionBottom = new MemeElementText(font);
+        _imageMain = new MemeElementImage(image);
+
+        _captionTop.setMemeSettingChangedListener(this);
+        _captionBottom.setMemeSettingChangedListener(this);
+        _imageMain.setMemeSettingChangedListener(this);
     }
 
-    private OnMemeSettingChangedListener memeSettingChangedListener;
-    private Bitmap displayImage;
-    private int fontId;
-    private MemeFont font;
-    private Bitmap image;
-    private int rotationDeg = 0;
-
-    private int fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
-    private int textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
-    private int borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
-    private boolean allCaps = true;
-
-    private String captionTop = "";
-    private String captionBottom = "";
-
-    /**
-     * Constructor
-     *
-     * @param font  A font
-     * @param image A image
-     */
-    public MemeSetting(MemeFont font, Bitmap image) {
-        this.image = image;
-        this.font = font;
+    @Override
+    public void onMemeSettingChanged(MemeSettingBase memeSetting) {
+        notifyChangedListener();
     }
 
     @Override
     public String toString() {
-        return captionTop + "\n" + captionBottom;
+        return _captionTop.toString() + "\n" + _captionBottom.toString();
     }
 
-    /**
-     * Notify listeners that ameme changed
-     */
-    public void notifyChangedListener() {
-        if (memeSettingChangedListener != null) {
-            memeSettingChangedListener.onMemeSettingChanged(this);
+    public MemeElementText getCaptionTop() {
+        return _captionTop;
+    }
+
+    public void setCaptionTop(MemeElementText captionTop) {
+        _captionTop = captionTop;
+        notifyChangedListener();
+    }
+
+    public MemeElementText getCaptionBottom() {
+        return _captionBottom;
+    }
+
+    public void setCaptionBottom(MemeElementText captionBottom) {
+        _captionBottom = captionBottom;
+        notifyChangedListener();
+    }
+
+    public MemeElementImage getImageMain() {
+        return _imageMain;
+    }
+
+    public void setImageMain(MemeElementImage imageMain) {
+        _imageMain = imageMain;
+        notifyChangedListener();
+    }
+
+    public static class MemeElementText extends MemeSettingBase {
+        private String _text = "";
+        private int _fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
+        private int _textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
+        private int _borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
+        private boolean _allCaps = true;
+        private MemeFont _font = null;
+        private int _fontId;
+
+        public MemeElementText(MemeFont font) {
+            _font = font;
+            notifyChangedListener();
+        }
+
+        public MemeFont getFont() {
+            return _font;
+        }
+
+        public void setFont(MemeFont font) {
+            _font = font;
+            notifyChangedListener();
+        }
+
+        public int getFontSize() {
+            return _fontSize;
+        }
+
+        public void setFontSize(int fontSize) {
+            _fontSize = fontSize;
+            notifyChangedListener();
+        }
+
+        public int getTextColor() {
+            return _textColor;
+        }
+
+        public void setTextColor(int textColor) {
+            _textColor = textColor;
+            notifyChangedListener();
+        }
+
+        public int getBorderColor() {
+            return _borderColor;
+        }
+
+        public void setBorderColor(int borderColor) {
+            _borderColor = borderColor;
+            notifyChangedListener();
+        }
+
+        public boolean isAllCaps() {
+            return _allCaps;
+        }
+
+        public void setAllCaps(boolean allCaps) {
+            _allCaps = allCaps;
+            notifyChangedListener();
+        }
+
+        public int getFontId() {
+            return _fontId;
+        }
+
+        public void setFontId(int fontId) {
+            _fontId = fontId;
+            notifyChangedListener();
+        }
+
+        public String getText() {
+            return _text;
+        }
+
+        public void setText(String text) {
+            _text = text;
+            notifyChangedListener();
+        }
+
+        @Override
+        public String toString() {
+            return _text;
         }
     }
 
-    /**
-     * Get the memes font
-     *
-     * @return font
-     */
-    public MemeFont getFont() {
-        return font;
+
+    public static class MemeElementImage extends MemeSettingBase {
+        private Bitmap _image = null;
+        private Bitmap _displayImage = null;
+        private int _rotationDeg = 0;
+        private int _padding = 0;
+        private int _paddingColor = MemeLibConfig.MEME_COLORS.WHITE;
+
+        public MemeElementImage(Bitmap image) {
+            _image = image;
+        }
+
+        public Bitmap getImage() {
+            return _image;
+        }
+
+        public void setImage(Bitmap image) {
+            _image = image;
+            notifyChangedListener();
+        }
+
+        public Bitmap getDisplayImage() {
+            return _displayImage;
+        }
+
+        public void setDisplayImage(Bitmap displayImage) {
+            _displayImage = displayImage;
+            notifyChangedListener();
+        }
+
+        public int getRotationDeg() {
+            return _rotationDeg;
+        }
+
+        public void setRotationDeg(int rotationDeg) {
+            _rotationDeg = rotationDeg;
+            notifyChangedListener();
+        }
+
+
+        public int getPadding() {
+            return _padding;
+        }
+
+        /**
+         * Set the _padding of the picture. A value of 10 means the picture is grown by 10
+         * percent (size * 1.1) and the background filled with _paddingColor
+         *
+         * @param padding _padding
+         */
+        public void setPadding(int padding) {
+            _padding = padding;
+            notifyChangedListener();
+        }
+
+        public int getPaddingColor() {
+            return _paddingColor;
+        }
+
+        /**
+         * Set the color to be used for _padding background. See _padding
+         *
+         * @param paddingColor the color
+         */
+        public void setPaddingColor(int paddingColor) {
+            _paddingColor = paddingColor;
+            notifyChangedListener();
+        }
     }
 
-    /**
-     * Set the memes font
-     *
-     * @param font font
-     */
-    public void setFont(MemeFont font) {
-        this.font = font;
-        notifyChangedListener();
-    }
-
-    /**
-     * Gets the memes fontsize
-     *
-     * @return Font size
-     */
-    public int getFontSize() {
-        return fontSize;
-    }
-
-    /**
-     * Set the memes fontSize
-     *
-     * @param fontSize fontSize
-     */
-    public void setFontSize(int fontSize) {
-        this.fontSize = fontSize;
-        notifyChangedListener();
-    }
-
-    /**
-     * Get the texts color
-     *
-     * @return The texts color
-     */
-    public int getTextColor() {
-        return textColor;
-    }
-
-    /**
-     * Set text color
-     *
-     * @param textColor Text color
-     */
-    public void setTextColor(int textColor) {
-        this.textColor = textColor;
-        notifyChangedListener();
-    }
-
-    /**
-     * Get border color
-     *
-     * @return border color
-     */
-    public int getBorderColor() {
-        return borderColor;
-    }
-
-    /**
-     * Sets the border color
-     *
-     * @param borderColor The border color
-     */
-    public void setBorderColor(int borderColor) {
-        this.borderColor = borderColor;
-        notifyChangedListener();
-    }
-
-    /**
-     * Sets the text if all caps
-     *
-     * @return All caps
-     */
-    public boolean isAllCaps() {
-        return allCaps;
-    }
-
-    /**
-     * Sets if all text caps
-     *
-     * @param allCaps All caps
-     */
-    public void setAllCaps(boolean allCaps) {
-        this.allCaps = allCaps;
-        notifyChangedListener();
-    }
-
-    /**
-     * Gets the top text
-     *
-     * @return Top text
-     */
-    public String getCaptionTop() {
-        return captionTop;
-    }
-
-    /**
-     * Sets the top text
-     *
-     * @param captionTop top text
-     */
-    public void setCaptionTop(String captionTop) {
-        this.captionTop = captionTop;
-        notifyChangedListener();
-    }
-
-    /**
-     * Gets the bottom text
-     *
-     * @return Bottom text
-     */
-    public String getCaptionBottom() {
-        return captionBottom;
-    }
-
-    /**
-     * Sets the bottom text
-     *
-     * @param captionBottom bottom text
-     */
-    public void setCaptionBottom(String captionBottom) {
-        this.captionBottom = captionBottom;
-        notifyChangedListener();
-    }
-
-    /**
-     * Gets the font id
-     *
-     * @return Font id
-     */
-    public int getFontId() {
-        return fontId;
-    }
-
-    /**
-     * Sets the fontId
-     *
-     * @param fontId the font id
-     */
-    public void setFontId(int fontId) {
-        this.fontId = fontId;
-        notifyChangedListener();
-    }
-
-    /**
-     * Gets the image to be displayed
-     *
-     * @return the image
-     */
-    public Bitmap getDisplayImage() {
-        return displayImage;
-    }
-
-    /**
-     * Sets the image to be displayed
-     *
-     * @param displayImage the image
-     */
-    public void setDisplayImage(Bitmap displayImage) {
-        this.displayImage = displayImage;
-    }
-
-    /**
-     * Gets the change listener
-     *
-     * @return THe listener
-     */
-    public OnMemeSettingChangedListener getMemeSettingChangedListener() {
-        return memeSettingChangedListener;
-    }
-
-    /**
-     * Sets the change listener
-     *
-     * @param memeSettingChangedListener The listener
-     */
-    public void setMemeSettingChangedListener(OnMemeSettingChangedListener memeSettingChangedListener) {
-        this.memeSettingChangedListener = memeSettingChangedListener;
-    }
-
-    /**
-     * Gets the image
-     *
-     * @return the image
-     */
-    public Bitmap getImage() {
-        return image;
-    }
-
-    /**
-     * Sets the image
-     *
-     * @param image image
-     */
-    public void setImage(Bitmap image) {
-        this.image = image;
-        notifyChangedListener();
-    }
-
-    public int getRotationDeg() {
-        return rotationDeg;
-    }
-
-    public void setRotationDeg(int rotationDeg) {
-        this.rotationDeg = rotationDeg;
-        notifyChangedListener();
-    }
 }
+

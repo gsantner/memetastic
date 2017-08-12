@@ -74,7 +74,7 @@ public class App extends Application {
             this.memeCategories = new ArrayList<MemeCategory>();
 
             for (String memeCat : memeCategories) {
-                this.memeCategories.add(new MemeCategory(memeCat, getAssets().list(IMAGE_FOLDER + memeCat)));
+                this.memeCategories.add(new MemeCategory(memeCat, getAssets().list(IMAGE_FOLDER + memeCat)).orderByNameCaseInsensitive());
             }
         } catch (IOException e) {
             log("Could not load images");

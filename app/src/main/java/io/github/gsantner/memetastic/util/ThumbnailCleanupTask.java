@@ -2,7 +2,6 @@ package io.github.gsantner.memetastic.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Environment;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -15,20 +14,34 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeOriginStorage;
 
 public class ThumbnailCleanupTask extends Thread implements FilenameFilter {
-    private String strres_dotThumbnails, strres_appName;
+    private String strres_dotThumbnails;
 
     public ThumbnailCleanupTask(Context context) {
-        strres_appName = context.getString(R.string.app_name);
         strres_dotThumbnails = context.getString(R.string.dot_thumbnails);
     }
 
     public void run() {
-        File picPath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), strres_appName);
+        Helpers helpers = Helpers.get();
+
+        File picPath = helpers.getPicturesMemetasticFolder();
         File thumbPath = new File(picPath, strres_dotThumbnails);
+        cleanupThumbnails(picPath, thumbPath);
+
+
+        picPath = helpers.getPicturesMemetasticTemplatesCustomFolder();
+        thumbPath = new File(picPath, strres_dotThumbnails);
+        cleanupThumbnails(picPath, thumbPath);
+    }
+
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    private void cleanupThumbnails(File picPath, File thumbPath) {
 
         // Scan for unused Thumbnails
-        List<File> thumbFiles = new LinkedList<File>(Arrays.asList(thumbPath.listFiles(this)));
-        for (File picFile : picPath.listFiles(this)) {
+        File[] tmp = thumbPath.listFiles(this);
+        tmp = tmp != null ? tmp : new File[0];
+        List<File> thumbFiles = new LinkedList<File>(Arrays.asList(tmp));
+        tmp = picPath.listFiles(this);
+        for (File picFile : (tmp == null ? new File[0] : tmp)) {
             String filename = picFile.getName();
             for (int i = 0; i < thumbFiles.size(); i++) {
                 if (thumbFiles.get(i).getName().equals(filename)) {

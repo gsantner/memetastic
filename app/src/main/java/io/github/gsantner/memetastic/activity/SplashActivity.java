@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -16,7 +15,8 @@ import java.io.File;
 
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.memetastic.util.HelpersA;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -70,11 +70,12 @@ public class SplashActivity extends AppCompatActivity {
         Toast.makeText(this, "Cannot start Meme-Creator without Storage Permission.", Toast.LENGTH_LONG).show();
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private void startMemeCreator(boolean skipDelay) {
         // Create MemeCreator directories
         int delay = (skipDelay || BuildConfig.DEBUG) ? 1000 : getResources().getInteger(R.integer.splash_delay);
-        File dirMemeTastic = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), getString(R.string.app_name));
-        new File(dirMemeTastic, getString(R.string.dot_thumbnails)).mkdirs();
+        new File(Helpers.get().getPicturesMemetasticFolder(), getString(R.string.dot_thumbnails)).mkdirs();
+        new File(Helpers.get().getPicturesMemetasticTemplatesCustomFolder(), getString(R.string.dot_thumbnails)).mkdirs();
 
 
         // Start activity and exit splash

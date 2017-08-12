@@ -24,7 +24,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,8 +47,10 @@ import io.github.gsantner.memetastic.data.MemeOriginInterface;
 import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.gsantner.memetastic.util.HelpersA;
+import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final String IMAGE_PATH = "imagePath";
     private static boolean isShowingFullscreenImage = false;
+    private boolean areTabsReady = false;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -71,13 +77,21 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.main__activity__recycler_view)
     RecyclerView recyclerMemeList;
 
+    @BindView(R.id.main__activity__list_empty__layout)
+    LinearLayout emptylistLayout;
+
+    @BindView(R.id.main__activity__list_empty__text)
+    TextView emptylistText;
+
     App app;
-    private MemeCategory mMemeCategory = null;
     private String cameraPictureFilepath = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppSettings.get().isOverviewStatusBarHidden()) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
         setContentView(R.layout.main__activity);
 
         // Bind UI
@@ -98,18 +112,20 @@ public class MainActivity extends AppCompatActivity
                 : app.settings.getGridColumnCountLandscape();
 
         recyclerMemeList.setHasFixedSize(true);
+        recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
+        recyclerMemeList.setDrawingCacheEnabled(true);
+        recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
         RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
         recyclerMemeList.setLayoutManager(recyclerGridLayout);
-        recyclerMemeList.addItemDecoration(new GridDecoration(10));
-
-        mMemeCategory = app.getMemeCategory(MemeLibConfig.MEME_CATEGORIES.ALL[app.settings.getLastSelectedCategory()]);
 
         for (String cat : getResources().getStringArray(R.array.meme_categories)) {
             TabLayout.Tab tab = tabLayout.newTab();
             tab.setText(cat);
             tabLayout.addTab(tab);
         }
-        selectTab(app.settings.getLastSelectedCategory(), app.settings.getDefaultMainMode());
+        areTabsReady = true;
+        selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
 
         //
         // Actions based on build type or version
@@ -139,7 +155,6 @@ public class MainActivity extends AppCompatActivity
         if (BuildConfig.IS_TEST_BUILD) {
             ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__navheader__image)).setImageResource(R.drawable.ic_launcher_test);
         }
-
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -172,6 +187,11 @@ public class MainActivity extends AppCompatActivity
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         }
 
+        if (SettingsActivity.activityRetVal == SettingsActivity.RESULT.CHANGE_RESTART) {
+            SettingsActivity.activityRetVal = SettingsActivity.RESULT.NOCHANGE;
+            recreate();
+        }
+
         try {
             if (new Random().nextInt(10) > 2) {
                 Method m = getClass().getMethod(new String(Base64.decode("Z2V0UGFja2FnZU5hbWU=", Base64.DEFAULT)));
@@ -184,6 +204,7 @@ public class MainActivity extends AppCompatActivity
             }
         } catch (Exception ignored) {
         }
+        new ThumbnailCleanupTask(this).start();
 
         super.onResume();
     }
@@ -224,7 +245,7 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
             case R.id.action_donate_bitcoin: {
-                Helpers.get().showDonateBitcoinRequest();
+                Helpers.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
                 return true;
             }
             case R.id.action_homepage_code: {
@@ -242,17 +263,19 @@ public class MainActivity extends AppCompatActivity
             }
 
             case R.id.action_mode_create: {
-                memeOriginObject = new MemeOriginAssets(mMemeCategory, getAssets());
+                selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
                 toolbar.setTitle(R.string.app_name);
                 break;
             }
             case R.id.action_mode_favs: {
+                emptylistText.setText(R.string.main__nodata__favourites);
                 memeOriginObject = new MemeOriginFavorite(app.settings.getFavoriteMemes(), getAssets());
                 toolbar.setTitle(R.string.main__mode__favs);
                 break;
             }
             case R.id.action_mode_saved: {
-                File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), getString(R.string.app_name));
+                emptylistText.setText(R.string.main__nodata__saved);
+                File filePath = Helpers.get().getPicturesMemetasticFolder();
                 filePath.mkdirs();
                 memeOriginObject = new MemeOriginStorage(filePath, getString(R.string.dot_thumbnails));
                 toolbar.setTitle(R.string.main__mode__saved);
@@ -261,16 +284,23 @@ public class MainActivity extends AppCompatActivity
         }
 
         // Change mode
+        tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
         if (memeOriginObject != null) {
-            tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
             drawer.closeDrawers();
             GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(memeOriginObject, this);
-            recyclerMemeList.setAdapter(recyclerMemeAdapter);
+            setRecyclerMemeListAdapter(recyclerMemeAdapter);
             return true;
         }
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setRecyclerMemeListAdapter(RecyclerView.Adapter adapter) {
+        recyclerMemeList.setAdapter(adapter);
+        boolean isEmpty = adapter.getItemCount() == 0;
+        emptylistLayout.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
+        recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -340,7 +370,6 @@ public class MainActivity extends AppCompatActivity
                 HelpersA.get(this).animateToActivity(takePictureIntent, false, REQUEST_TAKE_CAMERA_PICTURE);
             }
         }
-
     }
 
     public void onImageTemplateWasChosen(String filePath, boolean bIsAsset) {
@@ -361,17 +390,33 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
+        MemeOriginInterface memeOriginObject = null;
         int tabPos = tab.getPosition();
+
+        // Asset tabs
         if (tabPos >= 0 && tabPos < MemeLibConfig.MEME_CATEGORIES.ALL.length) {
-            mMemeCategory = app.getMemeCategory(MemeLibConfig.MEME_CATEGORIES.ALL[tabPos]);
-            if (app.settings.isShuffleMemeCategories()){
-                mMemeCategory.shuffleList();
-            }
-            MemeOriginInterface memeOriginObject = new MemeOriginAssets(mMemeCategory, getAssets());
-            GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(memeOriginObject, this);
-            recyclerMemeList.setAdapter(recyclerMemeAdapter);
-            app.settings.setLastSelectedCategory(MemeLibConfig.getIndexOfCategory(mMemeCategory.getCategoryName()));
+            MemeCategory memeCategory = app.getMemeCategory(MemeLibConfig.MEME_CATEGORIES.ALL[tabPos]);
+            memeOriginObject = new MemeOriginAssets(memeCategory, getAssets());
         }
+
+        // Custom tab
+        if (tabPos >= 0 && tabPos == MemeLibConfig.MEME_CATEGORIES.ALL.length) {
+            File customFolder = Helpers.get().getPicturesMemetasticTemplatesCustomFolder();
+            emptylistText.setText(R.string.main__nodata__custom_templates);
+            memeOriginObject = new MemeOriginStorage(customFolder, getString(R.string.dot_thumbnails));
+            ((MemeOriginStorage) memeOriginObject).setIsTemplate(true);
+        }
+        if (memeOriginObject != null) {
+            if (areTabsReady) {
+                app.settings.setLastSelectedTab(tabPos);
+            }
+            if (app.settings.isShuffleMemeCategories()) {
+                memeOriginObject.shuffleList();
+            }
+            GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(memeOriginObject, this);
+            setRecyclerMemeListAdapter(recyclerMemeAdapter);
+        }
+
     }
 
     private final RectF point = new RectF(0, 0, 0, 0);
@@ -381,15 +426,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         if (!drawer.isDrawerOpen(GravityCompat.START) && !drawer.isDrawerVisible(GravityCompat.START) && tabLayout.getVisibility() == View.VISIBLE) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN && event.getY() > (tabLayout.getY() * 2.2)) {
                 point.set(event.getX(), event.getY(), 0, 0);
             } else if (event.getAction() == MotionEvent.ACTION_UP) {
                 point.set(point.left, point.top, event.getX(), event.getY());
                 if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
-
-                    selectTab(tabLayout.getSelectedTabPosition() + (point.width() > 0 ? -1 : +1) // R->L : L<-R
-                            , 0
-                    );
+                    // R->L : L<-R
+                    selectTab(tabLayout.getSelectedTabPosition() + (point.width() > 0 ? -1 : +1), 0);
                 }
             }
         }
