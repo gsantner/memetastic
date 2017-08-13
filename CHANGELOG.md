@@ -1,4 +1,7 @@
 ### v1.2.1
+- Improve loading speed in overview
+- Added metadata and assets git submodule
+- Move assets to own repo
 - Update opoc
 
 ### v1.2.0
