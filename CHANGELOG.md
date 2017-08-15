@@ -1,4 +1,4 @@
-### v1.2.1
+### v1.2.2
 - Improve loading speed in overview
 - Added metadata and assets git submodule
 - Move assets to own repo
