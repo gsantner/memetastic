@@ -16,6 +16,12 @@ machine:
         ANDROID_HOME: /usr/local/android-sdk-linux
 
 ###################
+checkout:
+  post:
+      - git submodule sync --recursive
+      - git submodule update --recursive --init
+
+###################
 dependencies:
   pre:
     # Android SDK Platform
