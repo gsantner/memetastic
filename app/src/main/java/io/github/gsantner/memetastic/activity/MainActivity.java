@@ -263,6 +263,7 @@ public class MainActivity extends AppCompatActivity
             }
 
             case R.id.action_mode_create: {
+                emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
                 selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
                 toolbar.setTitle(R.string.app_name);
                 break;
@@ -402,7 +403,7 @@ public class MainActivity extends AppCompatActivity
         // Custom tab
         if (tabPos >= 0 && tabPos == MemeLibConfig.MEME_CATEGORIES.ALL.length) {
             File customFolder = Helpers.get().getPicturesMemetasticTemplatesCustomFolder();
-            emptylistText.setText(R.string.main__nodata__custom_templates);
+            emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
             memeOriginObject = new MemeOriginStorage(customFolder, getString(R.string.dot_thumbnails));
             ((MemeOriginStorage) memeOriginObject).setIsTemplate(true);
         }

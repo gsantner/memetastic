@@ -44,7 +44,7 @@
     <string name="main__yes">Ja</string>
 
     <string name="main__nodata__favourites">Keine Favoriten.\nBenutze den Stern-Button einer Meme-Vorlage um sie zu favorisieren.</string>
-    <string name="main__nodata__custom_templates">Keine benutzerdefinierten Vorlagen.\nPlatziere eigene Vorlagen hier:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__custom_templates">Keine benutzerdefinierten Vorlagen.\nPlatziere eigene Vorlagen hier:%1$s</string>
     <string name="main__nodata__saved">Keine gespeicherten Memes.\nBenutze den oberen Speicher-Button nach Bearbeitung eines Memes.</string>
     <string name="main__memecat__custom">Eigene</string>
 

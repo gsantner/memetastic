@@ -33,8 +33,7 @@
     <string name="main__nodata__favourites">Brak ulubionych.\n
  Użyj gwiazdki żeby dodać szablon do ulubionych.</string>
     <string name="main__nodata__custom_templates">Brak niestandardowych szablonów.\n
- Umieść obrazy szablonów tutaj:\n
- » Obrazy » MemeTastic » templates » custom</string>
+ Umieść obrazy szablonów tutaj:%1$s</string>
     <string name="main__nodata__saved">Brak zapisanych memów.\n
  Użyj przycisku zapisu u góry po edycji mema.</string>
 

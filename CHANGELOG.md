@@ -1,3 +1,6 @@
+### v1.2.3
+- Added: Brazilian localization
+
 ### v1.2.2
 - Improve loading speed in overview
 - Added metadata and assets git submodule

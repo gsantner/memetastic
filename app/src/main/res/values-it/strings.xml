@@ -8,7 +8,7 @@
     <string name="main__share_meme">Condividi Meme</string>
     <string name="main__create_meme">Crea un Meme</string>
     <string name="main__delete_meme">Elimina Meme</string>
- 
+
     <string name="main__memecat__humans">Persone</string>
     <string name="main__memecat__cartoon">Fumetti</string>
     <string name="main__memecat__animals">Animali</string>
@@ -31,7 +31,7 @@
     <string name="main__yes">sì</string>
 
     <string name="main__nodata__favourites">Non c\'è ancora nessun favorito.\nUsa il bottone a stella di un modello di meme per aggiungerlo ai favoriti.</string>
-    <string name="main__nodata__custom_templates">Non c\'è ancora nessun modello personale.\nMetti l\'immagine di base qui:\n» Immagini » MemeTastic » modelli » personale</string>
+    <string name="main__nodata__custom_templates">Non c\'è ancora nessun modello personale.\nMetti l\'immagine di base qui:%1$s</string>
     <string name="main__nodata__saved">Non c\'è ancora nessun meme salvato.\nUsa il bottone di salvataggio superiore dopo aver modificato un meme.</string>
 
     <!-- Creator -->

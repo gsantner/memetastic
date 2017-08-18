@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 
 ext {
     version_sdk = [
-        compileSdk : 26,
-        buildTools : "26.0.1",
-        minSdk     : 14,
-        //targetSdk: compileSdk,
+            compileSdk: 26,
+            buildTools: "26.0.1",
+            minSdk    : 14,
+            //targetSdk: compileSdk,
     ]
     version_sdk.targetSdk = version_sdk.compileSdk
     version_lib = [
-        appcompat   : "26.0.0",
-        butterknife : "8.7.0",
+            appcompat  : "26.0.0",
+            butterknife: "8.7.0",
     ]
 }
 
@@ -22,8 +22,8 @@ android {
         minSdkVersion version_sdk.minSdk
         targetSdkVersion version_sdk.targetSdk
 
-        versionCode 32
-        versionName "1.2.2"
+        versionCode 33
+        versionName "1.2.3-dev"
 
         applicationId "io.github.gsantner.memetastic"
         resValue 'string', 'app_name', "MemeTastic"
@@ -66,7 +66,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
 
-
     // Android standard libs
     compile "com.android.support:appcompat-v7:${version_lib.appcompat}"
     compile "com.android.support:design:${version_lib.appcompat}"
@@ -84,8 +83,11 @@ dependencies {
 }
 
 preBuild.doFirst {
-    if (!file("../assets/fonts").exists() || !file("../assets/memes").exists()){
-        throw new GradleException('Error: assets directory not populated. Did you forget to init/update git submodules?')
+    // gradle -Pmyargs=requirepopulatedassets
+    if (project.hasProperty('requirepopulatedassets')) {
+        if (!file("../assets/fonts").exists() || !file("../assets/memes").exists()) {
+            throw new GradleException('Error: assets directory not populated. Did you forget to init/update git submodules?')
+        }
     }
 }
 

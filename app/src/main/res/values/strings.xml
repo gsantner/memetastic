@@ -32,7 +32,7 @@
     <string name="main__yes">yes</string>
 
     <string name="main__nodata__favourites">No favourites yet.\nUse the star button of a meme template to add it to the favourites.</string>
-    <string name="main__nodata__custom_templates">No custom templates yet.\nPlaced template images here:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__custom_templates">No custom templates yet.\nPlaced template images here:%1$s</string>
     <string name="main__nodata__saved">No memes saved yet.\nUse the top save button after editing a meme.</string>
 
     <!-- Creator -->

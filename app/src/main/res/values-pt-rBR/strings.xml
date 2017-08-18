@@ -1,0 +1,90 @@
+<resources>
+    <!-- main -->
+    <string name="main__navdrawer__open">Abrir navegador</string>
+    <string name="main__navdrawer__close">Fechar navegador</string>
+
+    <string name="main__save_meme">Salvar meme</string>
+    <string name="main__share_meme">Compartilhar meme</string>
+    <string name="main__create_meme">Criar meme</string>
+    <string name="main__delete_meme">Apagar meme</string>
+
+    <string name="main__memecat__humans">Humanos</string>
+    <string name="main__memecat__cartoon">Cartum</string>
+    <string name="main__memecat__animals">Animais</string>
+    <string name="main__memecat__custom">Personalizado</string>
+
+    <string name="main__mode__saved">Salvo</string>
+    <string name="main__mode__favs">Favoritos</string>
+    <string name="main__mode__create">Criar</string>
+
+    <string name="main__get_picture_from_gallery">Pegar imagem da galeria</string>
+    <string name="main__get_picture_from_camera">Capturar imagem pela câmera</string>
+    <string name="main__error_camera_cannot_start">Impossível acessar a câmera.</string>
+    <string name="main__error_no_picture_selected">Nenhuma imagem selecionada.</string>
+    <string name="main__share_meme_prompt">Compartilhar via...</string>
+
+    <string name="main__donate">Doar</string>
+    <string name="main__recommend_app">Recomendar</string>
+    <string name="main__changelog">Histórico de atualizações</string>
+    <string name="main__exit">Sair</string>
+    <string name="main__yes">Sim</string>
+
+    <string name="main__nodata__favourites">Ainda sem favoritos.\nUse o botão estrela num modelo para adicionar aos favoritos.</string>
+    <string name="main__nodata__custom_templates">Ainda sem modelos personalizados.\nColoque-os em:%1$s</string>
+    <string name="main__nodata__saved">Sem memes salvos.\nUse o botão salvar no topo após editar um meme.</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">Pressione retornar de novo para encerrar a edição. O meme será perdido se ainda não foi salvo.</string>
+    <string name="creator__saved_successfully_message">O meme foi salvo no seu aparelho. Quer parar sua edição?</string>
+    <string name="creator__text_size">Tamanho do texto</string>
+    <string name="creator__text_color">Cor do texto</string>
+    <string name="creator__border_color">Cor da borda</string>
+    <string name="creator__saved_successfully">Salvo!</string>
+    <string name="creator__hint_top_caption">Capitalização superior</string>
+    <string name="creator__hint_bottom_caption">Capitalização inferior</string>
+    <string name="creator__font">Fonte</string>
+    <string name="creator__keep_editing">Continuar editando</string>
+    <string name="creator__text">Texto</string>
+    <string name="creator__size">Tamanho</string>
+    <string name="creator__background">Fundo</string>
+    <string name="creator__border">Borda</string>
+    <string name="creator__picture">Figura</string>
+
+    <!-- Info -->
+    <string name="about">Sobre</string>
+    <string name="developed_by">Desenvolvido por</string>
+    <string name="additional_contact">Mais informações</string>
+    <string name="licenses">Licenças</string>
+    <string name="show_licenses">Ver licenças</string>
+    <string name="contributors">Colaboradores</string>
+    <string name="more_information">Mais informação</string>
+    <string name="show_app_license">Ver licença GNU GPLv3</string>
+    <string name="show_third_party_licenses">Ver licenças de terceiros</string>
+    <string name="miscellaneous">Diversos</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">Configurações</string>
+    <string name="settings__all_caps">Maiúsculas</string>
+    <string name="settings__caps_off">Minúsculas</string>
+    <string name="settings__rotate">Girar</string>
+    <string name="pref_title__render_quality_editor_percent">Qualidade de imagem</string>
+    <string name="settings__cleanup_thumbnails">Limpar pré-visualizações</string>
+    <string name="settings__pref_columns_portrait">Colunas em retrato</string>
+    <string name="settings__pref_columns_landscape">Colunas horizontais</string>
+    <string name="pref_title__appearance">Aparência</string>
+    <string name="pref_title__size">Tamanho</string>
+    <string name="pref_title__default_main_mode">Modo padrão</string>
+    <string name="pref_summary__default_main_mode">Modo padrão de inicialização (criar, favoritos ou salvo)</string>
+    <string name="pref_title__functionality">Funcionalidade</string>
+    <string name="pref_summary__auto_save_meme">Salvar automaticamente ao pressionar o botão voltar</string>
+    <string name="pref_title__auto_save_meme">Salvar imagem ao pressionar voltar</string>
+    <string name="pref_summary__is_shuffle_meme_categories">Embaralhar memes após selecionar uma categoria</string>
+    <string name="pref_title__is_shuffle_meme_categories">Embaralhar lista de memes</string>
+    <string name="creator__padding">Preencher</string>
+    <string name="pref_title__overview">Visão geral</string>
+    <string name="pref_title__editor">Editor</string>
+    <string name="pref_summary__is_statusbar_hidden">Esconder barra de status nesta visualização</string>
+    <string name="pref_title__is_statusbar_hidden">Esconder barra de status</string>
+    <string name="pref_summary__picture_quality__percent">Qualidade e tamanho. Valores altos causam mais tempo de carregamento. Dependendo do processador e o tamanho da imagem o app pode falhar se o valor extrapolar 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Qualidade da pré-visualização</string>
+</resources>

@@ -32,7 +32,7 @@
     <string name="main__yes">はい</string>
 
     <string name="main__nodata__favourites">まだお気に入りはありません。\nミームテンプレートのスターボタンを使用して、お気に入りを追加してください。</string>
-    <string name="main__nodata__custom_templates">まだカスタムテンプレートはありません。\nテンプレート画像はここ:\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="main__nodata__custom_templates">まだカスタムテンプレートはありません。\nテンプレート画像はここ:%1$s</string>
     <string name="main__nodata__saved">まだミームは保存されていません。\nミームを編集した後に上部の保存ボタンを使用してください。</string>
 
     <!-- Creator -->
