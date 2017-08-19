@@ -50,7 +50,7 @@ public class SimpleMarkdownParser {
     public final static SmpFilter FILTER_ANDROID_TEXTVIEW = new SmpFilter() {
         @Override
         public String filter(String text) {
-            // TextView supports a limited set of _html tags, most notably
+            // TextView supports a limited set of html tags, most notably
             // a href, b, big, font size&color, i, li, small, u
 
             // Don't start new line if 2 empty lines and heading

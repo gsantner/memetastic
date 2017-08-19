@@ -21,6 +21,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -44,7 +45,6 @@ import android.widget.TextView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Field;
 import java.util.Locale;
 
 @SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "SpellCheckingInspection"})
@@ -125,26 +125,19 @@ public class Helpers {
     }
 
     /**
-     * https://stackoverflow.com/a/25267049
-     * Gets a field from the project's BuildConfig. This is useful when, for example, flavors
-     * are used at the project level to set custom fields.
-     *
-     * @param fieldName The name of the field-to-access
-     * @return The value of the field, or {@code null} if the field is not found.
+     * Get field from PackageId.BuildConfig
+     * May be helpful in libraries, where a access to
+     * BuildConfig would only get values of the library
+     * rather than the app ones
      */
     public Object getBuildConfigValue(String fieldName) {
         try {
-            Class<?> clazz = Class.forName(_context.getPackageName() + ".BuildConfig");
-            Field field = clazz.getField(fieldName);
-            return field.get(null);
-        } catch (ClassNotFoundException e) {
+            Class<?> c = Class.forName(_context.getPackageName() + ".BuildConfig");
+            return c.getField(fieldName).get(null);
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public boolean getBuildConfigBoolean(String fieldName, boolean defaultValue) {
@@ -290,13 +283,21 @@ public class Helpers {
         return Locale.getDefault();
     }
 
-    //  "en"/"de"/"de-rAt"; Empty string = default locale
+    //  en/de/de-rAt ; Empty string -> default locale
     public void setAppLanguage(String androidLocaleString) {
         Locale locale = getLocaleByAndroidCode(androidLocaleString);
         Configuration config = _context.getResources().getConfiguration();
         config.locale = locale != null ? locale : Locale.getDefault();
         _context.getResources().updateConfiguration(config, null);
     }
+
+    // Find out if color above the given color should be light or dark. true if light
+    public boolean shouldColorOnTopBeLight(int colorOnBottomInt) {
+        return 186 > (((0.299 * Color.red(colorOnBottomInt))
+                + ((0.587 * Color.green(colorOnBottomInt))
+                + (0.114 * Color.blue(colorOnBottomInt)))));
+    }
+
 
     public float px2dp(final float px) {
         return px / _context.getResources().getDisplayMetrics().density;

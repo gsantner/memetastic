@@ -44,9 +44,9 @@ public class HelpersA extends Helpers {
     /**
      * Animate to specified Activity
      *
-     * @param to                 The class of the _activity
-     * @param finishFromActivity true: Finish the current _activity
-     * @param requestCode        Request code for stating the _activity, not waiting for result if null
+     * @param to                 The class of the activity
+     * @param finishFromActivity true: Finish the current activity
+     * @param requestCode        Request code for stating the activity, not waiting for result if null
      */
     public void animateToActivity(Class to, Boolean finishFromActivity, Integer requestCode) {
         animateToActivity(new Intent(_activity, to), finishFromActivity, requestCode);
@@ -56,9 +56,9 @@ public class HelpersA extends Helpers {
      * Animate to Activity specified in intent
      * Requires animation resources
      *
-     * @param intent             Intent to open start an _activity
-     * @param finishFromActivity true: Finish the current _activity
-     * @param requestCode        Request code for stating the _activity, not waiting for result if null
+     * @param intent             Intent to open start an activity
+     * @param finishFromActivity true: Finish the current activity
+     * @param requestCode        Request code for stating the activity, not waiting for result if null
      */
     public void animateToActivity(Intent intent, Boolean finishFromActivity, Integer requestCode) {
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
