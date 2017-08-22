@@ -26,7 +26,7 @@
 
     <string name="main__donate">Dona</string>
     <string name="main__recommend_app">Raccomanda</string>
-    <string name="main__changelog">Log delle modifiche</string>
+    <string name="changelog">Log delle modifiche</string>
     <string name="main__exit">Esci</string>
     <string name="main__yes">sì</string>
 

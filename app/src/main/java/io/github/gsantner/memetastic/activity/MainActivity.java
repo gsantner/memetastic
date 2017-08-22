@@ -144,8 +144,9 @@ public class MainActivity extends AppCompatActivity
                 HelpersA.get(this).showDialogWithHtmlTextView(R.string.licenses, html);
             } else if (app.settings.isAppCurrentVersionFirstStart()) {
                 mdParser.parse(
-                        getResources().openRawResource(R.raw.changelog), "");
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.main__changelog, mdParser.getHtml());
+                        getResources().openRawResource(R.raw.changelog), "",
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog, mdParser.getHtml());
             }
 
         } catch (IOException e) {

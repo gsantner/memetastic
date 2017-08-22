@@ -38,7 +38,7 @@
     <string name="additional_contact">Mehr Informationen</string>
     <string name="developed_by">Entwickelt von</string>
     <string name="about">Über</string>
-    <string name="main__changelog">Änderungen</string>
+    <string name="changelog">Änderungen</string>
     <string name="licenses">Lizenzen</string>
     <string name="show_licenses">Lizenzen anzeigen</string>
     <string name="main__yes">Ja</string>
