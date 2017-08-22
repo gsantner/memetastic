@@ -118,6 +118,9 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                 if (key.equals(getString(R.string.pref_key__is_overview_statusbar_hidden))) {
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
+                if (key.equals(getString(R.string.pref_key__language))) {
+                    activityRetVal = RESULT.CHANGE_RESTART;
+                }
             }
             return super.onPreferenceTreeClick(screen, preference);
         }

@@ -1,5 +1,9 @@
 ### v1.2.3
+- Added: Option to change app language
 - Added: Brazilian localization
+- Added: Spanish localization
+- Updated: F-Droid: App metadata
+- Added: F-Droid: App screenshots
 
 ### v1.2.2
 - Improve loading speed in overview

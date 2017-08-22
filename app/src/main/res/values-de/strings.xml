@@ -77,4 +77,6 @@
     <string name="creator__picture">Bild</string>
     <string name="pref_title__thumbnail_quality__percent">Vorschaubild Qualität</string>
     <string name="pref_summary__picture_quality__percent">Qualität und Größe von Bildern. Höhere Werte bedeuten eine erhöhte Ladezeit. Abhängig von Geräte-Hardware und Bildgröße kann die App über einen Wert von 25% nicht wie erwartet funktionieren.</string>
+    <string name="pref_desc__language">Sprache der App ändern. Ein Neustart der App ist erforderlich um die Einstellung zu übernehmen</string>
+    <string name="pref_title__language">Sprache</string>
 </resources>

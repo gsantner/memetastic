@@ -22,7 +22,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 
 public class Helpers extends io.github.gsantner.opoc.util.Helpers {
-    protected Helpers(Context context) {
+    public Helpers(Context context) {
         super(context);
     }
 
