@@ -23,7 +23,7 @@ android {
         targetSdkVersion version_sdk.targetSdk
 
         versionCode 33
-        versionName "1.2.3-dev"
+        versionName "1.2.3"
 
         applicationId "io.github.gsantner.memetastic"
         resValue 'string', 'app_name', "MemeTastic"

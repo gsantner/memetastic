@@ -35,6 +35,15 @@
         }
         return langs.toArray(new String[langs.size()])
     }
+
+ * Define element in Preferences-XML:
+    <!--suppress AndroidDomInspection -->
+    <io.github.gsantner.opoc.ui.LanguagePreference
+        android:icon="@drawable/ic_language_black_24dp"
+        android:defaultValue=""
+        android:key="@string/pref_key__language"
+        android:summary="@string/pref_desc__language"
+        android:title="@string/pref_title__language"/>
  */
 package io.github.gsantner.opoc.ui;
 
@@ -80,9 +89,9 @@ public class LanguagePreference extends ListPreference {
 
     @Override
     protected boolean callChangeListener(Object newValue) {
-        if (newValue instanceof String){
+        if (newValue instanceof String) {
             // Does not apply to existing UI, use recreate()
-            new Helpers(getContext()).setAppLanguage((String)newValue);
+            new Helpers(getContext()).setAppLanguage((String) newValue);
         }
         return super.callChangeListener(newValue);
     }
@@ -103,14 +112,16 @@ public class LanguagePreference extends ListPreference {
         Collections.sort(languages);
 
         // Show in UI
-        String[] entries = new String[languages.size() + 1];
-        String[] entryval = new String[languages.size() + 1];
+        String[] entries = new String[languages.size() + 2];
+        String[] entryval = new String[languages.size() + 2];
         for (int i = 0; i < languages.size(); i++) {
-            entries[i + 1] = languages.get(i).split(";")[0];
-            entryval[i + 1] = languages.get(i).split(";")[1];
+            entries[i + 2] = languages.get(i).split(";")[0];
+            entryval[i + 2] = languages.get(i).split(";")[1];
         }
         entries[0] = "System";
         entryval[0] = "";
+        entries[1] = "English";
+        entryval[1] = "en";
 
         setEntries(entries);
         setEntryValues(entryval);
@@ -119,21 +130,18 @@ public class LanguagePreference extends ListPreference {
     // Concat english and localized language name
     // Append country if country specific (e.g. Portuguese Brazil)
     private String summarizeLocale(Locale locale) {
+        String country = locale.getDisplayCountry(locale);
+        String language = locale.getDisplayLanguage(locale);
         return locale.getDisplayLanguage(Locale.ENGLISH)
-                + " ("
-                + locale.getDisplayLanguage(locale).substring(0, 1).toUpperCase()
-                + locale.getDisplayLanguage(locale).substring(1)
-                + (locale.getDisplayCountry(locale).isEmpty()
-                ? "" : (", " + locale.getDisplayCountry(locale)))
+                + " (" + language.substring(0, 1).toUpperCase() + language.substring(1)
+                + ((!country.isEmpty() && !country.toLowerCase().equals(language.toLowerCase())) ? (", " + country) : "")
                 + ")";
     }
 
-    // Add current language to summary.
-    // Display in english, so it might be recognized when some bad
-    // locale is selected currently
+    // Add current language to summary
     @Override
     public CharSequence getSummary() {
-        Locale locale = Locale.getDefault();
-        return super.getSummary() + "\n\nCurrently selected language\n" + summarizeLocale(locale);
+        Locale locale = new Helpers(getContext()).getLocaleByAndroidCode(getValue());
+        return super.getSummary() + "\n\n" + summarizeLocale(locale);
     }
 }
