@@ -1,6 +1,7 @@
 <resources>
 
     <!-- General -->
+    <string name="app_name" translatable="false">MemeTastic</string>
     <string name="app_fileprovider" translatable="false">io.github.gsantner.memetastic.fileprovider</string>
     <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>
 

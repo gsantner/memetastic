@@ -27,10 +27,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash__activity);
 
-        if (BuildConfig.IS_TEST_BUILD) {
-            ((ImageView) findViewById(R.id.splash__activity__icon)).setImageResource(R.drawable.ic_launcher_test);
-        }
-
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();
 

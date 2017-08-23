@@ -152,11 +152,6 @@ public class MainActivity extends AppCompatActivity
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-        if (BuildConfig.IS_TEST_BUILD) {
-            ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__navheader__image)).setImageResource(R.drawable.ic_launcher_test);
-        }
     }
 
     @SuppressWarnings("ConstantConditions")

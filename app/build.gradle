@@ -23,11 +23,9 @@ android {
         targetSdkVersion version_sdk.targetSdk
 
         versionCode 33
-        versionName "1.2.3"
+        versionName "1.2.3+"
 
         applicationId "io.github.gsantner.memetastic"
-        resValue 'string', 'app_name', "MemeTastic"
-        manifestPlaceholders = [appIcon: "@drawable/ic_launcher"]
 
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
@@ -48,8 +46,6 @@ android {
         }
         flavorTest {
             applicationId "io.github.gsantner.memetastic.test"
-            resValue 'string', 'app_name', "MemeTestic"
-            manifestPlaceholders = [appIcon: "@drawable/ic_launcher_test"]
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
             buildConfigField "boolean", "IS_TEST_BUILD", "true"
