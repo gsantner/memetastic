@@ -1,3 +1,6 @@
+### v1.2.4
+- Updated: Readme
+
 ### v1.2.3
 - Added: Option to change app language
 - Added: Brazilian localization
