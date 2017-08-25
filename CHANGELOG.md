@@ -1,5 +1,6 @@
 ### v1.2.4
 - Updated: Readme
+- Fixed: Language list when building outside of project root
 
 ### v1.2.3
 - Added: Option to change app language

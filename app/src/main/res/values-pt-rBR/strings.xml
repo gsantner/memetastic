@@ -87,4 +87,8 @@
     <string name="pref_title__is_statusbar_hidden">Esconder barra de status</string>
     <string name="pref_summary__picture_quality__percent">Qualidade e tamanho. Valores altos causam mais tempo de carregamento. Dependendo do processador e o tamanho da imagem o app pode falhar se o valor extrapolar 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Qualidade da pré-visualização</string>
+
+    <!-- Language -->
+    <string name="pref_title__language">Idioma</string>
+    <string name="pref_desc__language">Muda o idioma do aplicativo. Reinicie o aplicativo para que as alterações entrem em vigor</string>
 </resources>
