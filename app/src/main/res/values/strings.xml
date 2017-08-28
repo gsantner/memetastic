@@ -27,7 +27,7 @@
 
     <string name="main__donate">Donate</string>
     <string name="main__recommend_app">Recommend</string>
-    <string name="main__changelog">Changelog</string>
+    <string name="changelog">Changelog</string>
     <string name="main__exit">Exit</string>
     <string name="main__yes">yes</string>
 
@@ -90,4 +90,8 @@
     <string name="pref_title__is_statusbar_hidden">Hide statusbar</string>
     <string name="pref_summary__picture_quality__percent">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
+
+    <!-- Language -->
+    <string name="pref_title__language">Language</string>
+    <string name="pref_desc__language">Change language of this app. Restart app for changes to take effect</string>
 </resources>

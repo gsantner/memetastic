@@ -1,11 +1,11 @@
 /*
- * ---------------------------------------------------------------------------- *
- * Gregor Santner <gsantner.github.io> wrote this file. You can do whatever
- * you want with this stuff. If we meet some day, and you think this stuff is
- * worth it, you can buy me a coke in return. Provided as is without any kind
- * of warranty. No attribution required.                  - Gregor Santner
+ * ------------------------------------------------------------------------------
+ * Gregor Santner <gsantner.github.io> wrote this. You can do whatever you want
+ * with it. If we meet some day, and you think it is worth it, you can buy me a
+ * coke in return. Provided as is without any kind of warranty. Do not blame or
+ * sue me if something goes wrong. No attribution required.    - Gregor Santner
  *
- * License of this file: Creative Commons Zero (CC0 1.0)
+ * License: Creative Commons Zero (CC0 1.0)
  *  http://creativecommons.org/publicdomain/zero/1.0/
  * ----------------------------------------------------------------------------
  */
@@ -106,6 +106,22 @@ public class SimpleMarkdownParser {
                     .replaceAll("(?m)\\*(.*)\\*", "<i>$1</i>") // italic (DEP: temp star code)
                     .replace("●", "*") // restore escaped star symbol (DEP: b,i)
                     .replaceAll("(?m)  $", "<br/>") // new line (DEP: ul)
+            ;
+            return text;
+        }
+    };
+
+    public final static SmpFilter FILTER_CHANGELOG = new SmpFilter() {
+        @Override
+        public String filter(String text) {
+            text = text
+                    .replace("New:", "<font color='#276230'>New:</font>")
+                    .replace("Added:", "<font color='#276230'>Added:</font>")
+                    .replace("Fixed:", "<font color='#005688'>Fixed:</font>")
+                    .replace("Removed:", "<font color='#C13524'>Removed:</font>")
+                    .replace("Updated:", "<font color='#555555'>Updated:</font>")
+                    .replace("Improved:", "<font color='#555555'>Improved:</font>")
+                    .replace("Modified:", "<font color='#555555'>Modified:</font>")
             ;
             return text;
         }

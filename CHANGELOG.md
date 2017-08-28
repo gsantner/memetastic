@@ -1,28 +1,37 @@
+### v1.2.4
+- Updated: Readme
+- Fixed: Language list when building outside of project root
+
 ### v1.2.3
+- Added: Option to change app language
 - Added: Brazilian localization
+- Added: Spanish localization
+- Added: F-Droid: App screenshots
+- Updated: F-Droid: App metadata
+- Updated: Changelog text and visuals
 
 ### v1.2.2
 - Improve loading speed in overview
-- Added metadata and assets git submodule
+- Added: metadata and assets git submodule
 - Move assets to own repo
-- Update opoc
+- Updated: opoc
 
 ### v1.2.0
-- Empty list: Info text & image
+- Added: Empty list info text & image
 - Complete rework of MemeCreateActivity
-- Custom image templates: `/sdcard/Pictures/MemeTastic/templates/custom/`
-- Shuffle meme list option
-- Moar memes, fonts
-- Update to android-api26
+- Added: Custom image templates: `/sdcard/Pictures/MemeTastic/templates/custom/`
+- Added: Shuffle meme list option
+- Added: Moar memes, fonts
+- Updated: to android-api26
 - Hide statusbar options
-- Updated save dialog
-- Added padding option in MemeCreate
-- Removed BottomSheet library
+- Updated: save dialog
+- Added: padding option in MemeCreate
+- Removed: BottomSheet library
 
 ### v1.1.1
-- Update opoc/SimpleMarkdownParser
-- Update AboutActivity
-- Update license appearance
+- Updated: opoc/SimpleMarkdownParser
+- Updated: AboutActivity
+- Updated: license appearance
 - Rename Activity Info to About
 
 ### v1.1.0
@@ -42,10 +51,10 @@
 - New memes 
 
 ### v0.9.6
-- Update settings
+- Updated: settings
 
 ### v0.9.5
-- Update libs
+- Updated: libs
 
 ### v0.9.4
 - Smaller fontsizes
@@ -64,15 +73,15 @@
 - Introduce minimalistic Markdown Parser
 - Show CHANGELOG after update
 - Convert existing Markup files to Markdown
-- Update existing markdown files
-- Update InfoActivity to use new Parser
+- Updated: existing markdown files
+- Updated: InfoActivity to use new Parser
 - Rewrite AppSettings
 
 ### v0.9.1
-- Added more memes & fonts
+- Added: more memes & fonts
 - Show license dialog on first start
 - Translations added: Japanese
-- Updated about section
+- Updated: about section
 
 ### v0.9.0
 - First MemeTastic Open Source release

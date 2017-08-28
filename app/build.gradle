@@ -23,14 +23,13 @@ android {
         targetSdkVersion version_sdk.targetSdk
 
         versionCode 33
-        versionName "1.2.3-dev"
+        versionName "1.2.3+"
 
         applicationId "io.github.gsantner.memetastic"
-        resValue 'string', 'app_name', "MemeTastic"
-        manifestPlaceholders = [appIcon: "@drawable/ic_launcher"]
 
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
+        buildConfigField("String[]", "APPLICATION_LANGUAGES", '{' + getUsedAndroidLanguages().collect {"\"${it}\""}.join(",")  + '}')
     }
     buildTypes {
         release {
@@ -47,8 +46,6 @@ android {
         }
         flavorTest {
             applicationId "io.github.gsantner.memetastic.test"
-            resValue 'string', 'app_name', "MemeTestic"
-            manifestPlaceholders = [appIcon: "@drawable/ic_launcher_test"]
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
             buildConfigField "boolean", "IS_TEST_BUILD", "true"
@@ -60,6 +57,23 @@ android {
     }
 
     sourceSets { main { assets.srcDirs = ['src/main/assets', '../assets'] } }
+}
+
+@SuppressWarnings(["UnnecessaryQualifiedReference", "SpellCheckingInspection"])
+static String[] getUsedAndroidLanguages() {
+    Set<String> langs = new HashSet<>()
+    new File('.').eachFileRecurse(groovy.io.FileType.DIRECTORIES) {
+        final foldername = it.name
+        if (foldername.startsWith('values-') && !it.canonicalPath.contains("build" + File.separator + "intermediates")) {
+            new File(it.toString()).eachFileRecurse(groovy.io.FileType.FILES) {
+                if (it.name.toLowerCase().endsWith(".xml") && it.getCanonicalFile().getText('UTF-8').contains("<string")) {
+                    langs.add(foldername.replace("values-", ""))
+
+                }
+            }
+        }
+    }
+    return langs.toArray(new String[langs.size()])
 }
 
 dependencies {

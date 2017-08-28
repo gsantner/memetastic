@@ -1,82 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?><!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="@string/pref_title__overview">
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="3"
+            android:icon="@drawable/ic_grid_on_black_24dp"
             android:key="@string/pref_key__grid_column_count_portrait"
             android:title="@string/settings__pref_columns_portrait"
             app:maxValue="15"
-            app:minValue="2" />
+            app:minValue="2"/>
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="5"
+            android:icon="@drawable/ic_grid_on_black_24dp"
             android:key="@string/pref_key__grid_column_count_landscape"
             android:title="@string/settings__pref_columns_landscape"
             app:maxValue="20"
-            app:minValue="2" />
+            app:minValue="2"/>
 
         <ListPreference
+            android:icon="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:defaultValue="0"
             android:entries="@array/main_modes"
             android:entryValues="@array/values__zero_to_two"
             android:key="@string/pref_key__default_main_mode"
             android:summary="@string/pref_summary__default_main_mode"
-            android:title="@string/pref_title__default_main_mode" />
+            android:title="@string/pref_title__default_main_mode"/>
 
         <CheckBoxPreference
+            android:icon="@drawable/ic_autorenew_black_24dp"
             android:defaultValue="false"
             android:key="@string/pref_key__is_shuffle_meme_categories"
             android:summary="@string/pref_summary__is_shuffle_meme_categories"
-            android:title="@string/pref_title__is_shuffle_meme_categories" />
+            android:title="@string/pref_title__is_shuffle_meme_categories"/>
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
+            android:icon="@drawable/ic_high_quality_black_24dp"
             android:defaultValue="24"
             android:key="@string/pref_key__thumbnail_quality__percent"
-            android:title="@string/pref_title__thumbnail_quality__percent"
             android:summary="@string/pref_summary__picture_quality__percent"
+            android:title="@string/pref_title__thumbnail_quality__percent"
             app:maxValue="100"
-            app:minValue="1" />
+            app:minValue="1"/>
 
 
         <CheckBoxPreference
+            android:icon="@drawable/ic_visibility_black_24dp"
             android:defaultValue="false"
             android:key="@string/pref_key__is_overview_statusbar_hidden"
             android:summary="@string/pref_summary__is_statusbar_hidden"
-            android:title="@string/pref_title__is_statusbar_hidden" />
+            android:title="@string/pref_title__is_statusbar_hidden"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_title__editor">
 
         <CheckBoxPreference
+            android:icon="@drawable/ic_save_black_24dp"
             android:defaultValue="false"
             android:key="@string/pref_key__auto_save_meme"
             android:summary="@string/pref_summary__auto_save_meme"
-            android:title="@string/pref_title__auto_save_meme" />
+            android:title="@string/pref_title__auto_save_meme"/>
 
         <CheckBoxPreference
+            android:icon="@drawable/ic_visibility_black_24dp"
             android:defaultValue="false"
             android:key="@string/pref_key__is_editor_statusbar_hidden"
             android:summary="@string/pref_summary__is_statusbar_hidden"
-            android:title="@string/pref_title__is_statusbar_hidden" />
+            android:title="@string/pref_title__is_statusbar_hidden"/>
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="24"
+            android:icon="@drawable/ic_high_quality_black_24dp"
             android:key="@string/pref_key__render_quality_editor_percent"
-            android:title="@string/pref_title__render_quality_editor_percent"
             android:summary="@string/pref_summary__picture_quality__percent"
+            android:title="@string/pref_title__render_quality_editor_percent"
             app:maxValue="100"
-            app:minValue="1" />
+            app:minValue="1"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/miscellaneous">
 
+        <!--suppress AndroidDomInspection -->
+        <io.github.gsantner.opoc.ui.LanguagePreference
+            android:icon="@drawable/ic_language_black_24dp"
+            android:defaultValue=""
+            android:key="@string/pref_key__language"
+            android:summary="@string/pref_desc__language"
+            android:title="@string/pref_title__language"/>
+
+
         <Preference
+            android:icon="@drawable/ic_delete_sweep_black_24dp"
             android:key="@string/pref_key__cleanup_thumbnails"
-            android:title="@string/settings__cleanup_thumbnails" />
+            android:title="@string/settings__cleanup_thumbnails"/>
 
     </PreferenceCategory>
 </PreferenceScreen>

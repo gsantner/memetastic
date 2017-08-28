@@ -88,7 +88,7 @@
     <string name="pref_title__is_statusbar_hidden">Ocultar la barra de estado</string>
     <string name="pref_summary__picture_quality__percent">Calidad y tamaño de las imágenes. Valores altos significan mayor tiempo de carga. Dependiendo del hardware del dispositivo y el tamaño de la imagen, la aplicación puede no funcionar como se espera si el valor supera el 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Calidad de miniatura</string>
-
+  
     <!-- Language -->
     <string name="pref_title__language">Idioma</string>
     <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>

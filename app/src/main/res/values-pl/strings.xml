@@ -26,7 +26,7 @@
 
     <string name="main__donate">Wspomóż</string>
     <string name="main__recommend_app">Poleć</string>
-    <string name="main__changelog">Lista zmian</string>
+    <string name="changelog">Lista zmian</string>
     <string name="main__exit">Wyjdź</string>
     <string name="main__yes">tak</string>
 

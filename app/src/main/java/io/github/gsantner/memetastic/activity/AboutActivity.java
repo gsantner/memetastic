@@ -90,17 +90,20 @@ public class AboutActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.about__activity__text_app_version)
-    public void onVersionClicked(View v) {
-        Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
-    }
-
     @OnClick({R.id.about__activity__text_app_version, R.id.about__activity__button_third_party_licenses, R.id.about__activity__button_app_license})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
         switch (v.getId()) {
             case R.id.about__activity__text_app_version: {
-                HelpersA.get(this).openWebpageInExternalBrowser(getString(R.string.app_www_source));
+                try {
+                    HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog, new SimpleMarkdownParser().parse(
+                            getResources().openRawResource(R.raw.changelog),
+                            "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG
+                            ).getHtml()
+                    );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
             case R.id.about__activity__button_app_license: {

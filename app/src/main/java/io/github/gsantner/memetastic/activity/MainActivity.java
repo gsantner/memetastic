@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Helpers.get().setAppLanguage(AppSettings.get().getLanguage());
         if (AppSettings.get().isOverviewStatusBarHidden()) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
@@ -143,17 +144,13 @@ public class MainActivity extends AppCompatActivity
                 HelpersA.get(this).showDialogWithHtmlTextView(R.string.licenses, html);
             } else if (app.settings.isAppCurrentVersionFirstStart()) {
                 mdParser.parse(
-                        getResources().openRawResource(R.raw.changelog), "");
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.main__changelog, mdParser.getHtml());
+                        getResources().openRawResource(R.raw.changelog), "",
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog, mdParser.getHtml());
             }
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
-
-
-        if (BuildConfig.IS_TEST_BUILD) {
-            ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__navheader__image)).setImageResource(R.drawable.ic_launcher_test);
         }
     }
 
