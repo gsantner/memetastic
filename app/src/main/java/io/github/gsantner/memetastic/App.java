@@ -18,7 +18,7 @@ import io.github.gsantner.memetastic.data.MemeCategory;
 import io.github.gsantner.memetastic.data.MemeFont;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
  * The apps application object
@@ -96,7 +96,7 @@ public class App extends Application {
     }
 
     public void shareBitmapToOtherApp(Bitmap bitmap, Activity activity) {
-        File imageFile = Helpers.get().saveBitmapToFile(getCacheDir().getAbsolutePath(), getString(R.string.cached_picture_filename), bitmap);
+        File imageFile = ContextUtils.get().writeImageToFileJpeg(getCacheDir().getAbsolutePath(), getString(R.string.cached_picture_filename), bitmap);
         if (imageFile != null) {
             Uri imageUri = FileProvider.getUriForFile(this, getString(R.string.app_fileprovider), imageFile);
             if (imageUri != null) {

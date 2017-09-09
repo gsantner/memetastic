@@ -20,7 +20,7 @@ import io.github.gsantner.memetastic.activity.MemeCreateActivity;
 import io.github.gsantner.memetastic.data.MemeOriginAssets;
 import io.github.gsantner.memetastic.data.MemeOriginFavorite;
 import io.github.gsantner.memetastic.data.MemeOriginInterface;
-import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.ImageLoaderTask;
 
 /**
@@ -114,7 +114,7 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
     }
 
     private void tintFavourite(ImageView iv, boolean isFav) {
-        Helpers.get().setDrawableWithColorToImageView(iv,
+        ContextUtils.get().setDrawableWithColorToImageView(iv,
                 isFav ? R.drawable.ic_star_black_32dp : R.drawable.ic_star_border_black_32dp,
                 isFav ? R.color.comic_yellow : R.color.comic_blue);
     }

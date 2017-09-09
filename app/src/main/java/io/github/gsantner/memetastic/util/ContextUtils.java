@@ -21,74 +21,24 @@ import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 
-public class Helpers extends io.github.gsantner.opoc.util.Helpers {
-    public Helpers(Context context) {
+public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
+    public ContextUtils(Context context) {
         super(context);
     }
 
 
-    public static Helpers get() {
-        return new Helpers(App.get());
+    public static ContextUtils get() {
+        return new ContextUtils(App.get());
     }
 
-    /**
-     * Calculates the scaling factor so the bitmap is maximal as big as the reqSize
-     *
-     * @param options Bitmap-options that contain the current dimensions of the bitmap
-     * @param reqSize the maximal size of the Bitmap
-     * @return the scaling factor that needs to be applied to the bitmap
-     */
-    public int calculateInSampleSize(BitmapFactory.Options options, int reqSize) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
 
-        if (Math.max(height, width) > reqSize) {
-            inSampleSize = Math.round(1f * Math.max(height, width) / reqSize);
-        }
-        //Log.i("MEME", "scaleBy::" + inSampleSize);
-        return inSampleSize;
-    }
-
-    public Bitmap createThumbnail(Bitmap bitmap) {
-        int thumbnailSize = 300;
-        int picSize = Math.min(bitmap.getHeight(), bitmap.getWidth());
-        float scale = 1.f * thumbnailSize / picSize;
-        Matrix matrix = new Matrix();
-        matrix.postScale(scale, scale);
-        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-    }
-
-    public File saveBitmapToFile(String pathToFile, String filename, Bitmap bitmapToSave) {
-        new File(pathToFile).mkdirs();
-        File imageFile = new File(pathToFile, filename);
-
-        FileOutputStream stream = null;
-        try {
-            stream = new FileOutputStream(imageFile); // overwrites this image every time
-            bitmapToSave.compress(Bitmap.CompressFormat.JPEG, 95, stream);
-            return imageFile;
-        } catch (FileNotFoundException ignored) {
-        } finally {
-            try {
-                if (stream != null)
-                    stream.close();
-            } catch (IOException ignored) {
-            }
-        }
-        return null;
+    public Bitmap scaleBitmap(Bitmap bitmap) {
+        return scaleBitmap(bitmap, 300);
     }
 
     public Bitmap loadImageFromFilesystem(String imagePath) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(imagePath, options);
-        options.inSampleSize = calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeFile(imagePath, options);
+        return loadImageFromFilesystem(imagePath, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
     }
-
 
     public int getImmersiveUiVisibility() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -135,11 +85,6 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
         int addl = rest >= raster / 2 ? raster - rest : -rest;
 
         return (size + addl) / (fontScaler);
-    }
-
-    public static void setDrawableWithColorToImageView(ImageView imageView, @DrawableRes int drawableResId, @ColorRes int colorResId) {
-        imageView.setImageResource(drawableResId);
-        imageView.setColorFilter(ContextCompat.getColor(imageView.getContext(), colorResId));
     }
 
     public File getPicturesMemetasticFolder() {

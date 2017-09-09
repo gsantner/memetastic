@@ -60,8 +60,8 @@ import io.github.gsantner.memetastic.data.MemeSettingBase;
 import io.github.gsantner.memetastic.ui.FontAdapter;
 import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.memetastic.util.HelpersA;
+import io.github.gsantner.memetastic.util.ContextUtils;
+import io.github.gsantner.memetastic.util.ActivityUtils;
 import uz.shift.colorpicker.LineColorPicker;
 
 /**
@@ -245,7 +245,7 @@ public class MemeCreateActivity extends AppCompatActivity
                 //Scale big images down to avoid "out of memory"
                 InputStream inputStream = getAssets().open(imagePath);
                 BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
-                options.inSampleSize = Helpers.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
+                options.inSampleSize = ContextUtils.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
                 options.inJustDecodeBounds = false;
                 inputStream.close();
                 inputStream = getAssets().open(imagePath);
@@ -257,7 +257,7 @@ public class MemeCreateActivity extends AppCompatActivity
         } else {
             //Scale big images down to avoid "out of memory"
             BitmapFactory.decodeFile(imagePath, options);
-            options.inSampleSize = Helpers.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
+            options.inSampleSize = ContextUtils.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
             options.inJustDecodeBounds = false;
             bitmap = BitmapFactory.decodeFile(imagePath, options);
         }
@@ -308,7 +308,7 @@ public class MemeCreateActivity extends AppCompatActivity
         textEditBottomCaption.clearFocus();
         textEditTopCaption.clearFocus();
         imageEditView.requestFocus();
-        HelpersA.get(this).hideSoftKeyboard();
+        ActivityUtils.get(this).hideSoftKeyboard();
         if (moarControlsContainerVisible) {
             toggleMoarControls(true, false);
         }
@@ -357,7 +357,7 @@ public class MemeCreateActivity extends AppCompatActivity
         }
 
         String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), memeSavetime);
-        boolean wasSaved = Helpers.get().saveBitmapToFile(filepath, filename, lastBitmap) != null && Helpers.get().saveBitmapToFile(thumbnailPath, filename, Helpers.get().createThumbnail(lastBitmap)) != null;
+        boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(filepath, filename, lastBitmap) != null && ContextUtils.get().writeImageToFileJpeg(thumbnailPath, filename, ContextUtils.get().scaleBitmap(lastBitmap)) != null;
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -411,7 +411,7 @@ public class MemeCreateActivity extends AppCompatActivity
     @OnClick(R.id.fab)
     public void onFloatingButtonClicked(View view) {
         toggleMoarControls(false, false);
-        HelpersA.get(this).hideSoftKeyboard();
+        ActivityUtils.get(this).hideSoftKeyboard();
         View focusedView = this.getCurrentFocus();
         if (focusedView != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -536,7 +536,7 @@ public class MemeCreateActivity extends AppCompatActivity
             bitmap = workBmp;
         }
 
-        float scale = Helpers.get().getScalingFactorInPixelsForWritingOnPicture(bitmap.getWidth(), bitmap.getHeight());
+        float scale = ContextUtils.get().getScalingFactorInPixelsForWritingOnPicture(bitmap.getWidth(), bitmap.getHeight());
         float borderScale = scale * memeSetting.getCaptionTop().getFontSize() / MemeLibConfig.FONT_SIZES.DEFAULT;
         Bitmap.Config bitmapConfig = bitmap.getConfig();
         // set default bitmap config if none

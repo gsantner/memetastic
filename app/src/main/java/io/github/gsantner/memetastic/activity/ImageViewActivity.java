@@ -18,7 +18,7 @@ import butterknife.OnClick;
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.Helpers;
+import io.github.gsantner.memetastic.util.ContextUtils;
 
 public class ImageViewActivity extends AppCompatActivity {
     //########################
@@ -49,7 +49,7 @@ public class ImageViewActivity extends AppCompatActivity {
         setContentView(R.layout.imageview__activity);
         ButterKnife.bind(this);
         app = (App) getApplication();
-        //Helpers.get().enableImmersiveMode(getWindow().getDecorView());
+        //ContextUtils.get().enableImmersiveMode(getWindow().getDecorView());
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -66,7 +66,7 @@ public class ImageViewActivity extends AppCompatActivity {
                     ".thumbnails" + File.separator + getString(R.string.app_name) + "_");
         }
 
-        mBitmap = Helpers.get().loadImageFromFilesystem(imagePath);
+        mBitmap = ContextUtils.get().loadImageFromFilesystem(imagePath);
         expandedImageView.setImageBitmap(mBitmap);
     }
 

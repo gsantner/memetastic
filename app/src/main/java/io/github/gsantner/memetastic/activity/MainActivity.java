@@ -48,10 +48,10 @@ import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.memetastic.util.HelpersA;
+import io.github.gsantner.memetastic.util.ContextUtils;
+import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
-import io.github.gsantner.opoc.util.SimpleMarkdownParser;
+import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Helpers.get().setAppLanguage(AppSettings.get().getLanguage());
+        ContextUtils.get().setAppLanguage(AppSettings.get().getLanguage());
         if (AppSettings.get().isOverviewStatusBarHidden()) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setOnTabSelectedListener(this);
 
         // Setup Floating Action Button
-        int gridColumns = Helpers.get().isInPortraitMode()
+        int gridColumns = ContextUtils.get().isInPortraitMode()
                 ? app.settings.getGridColumnCountPortrait()
                 : app.settings.getGridColumnCountLandscape();
 
@@ -141,12 +141,12 @@ public class MainActivity extends AppCompatActivity
                 String html = mdParser.parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"), "").getHtml();
                 html += mdParser.parse(getResources().openRawResource(R.raw.licenses_3rd_party), "").getHtml();
 
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.licenses, html);
+                ActivityUtils.get(this).showDialogWithHtmlTextView(R.string.licenses, html);
             } else if (app.settings.isAppCurrentVersionFirstStart()) {
                 mdParser.parse(
                         getResources().openRawResource(R.raw.changelog), "",
                         SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG);
-                HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog, mdParser.getHtml());
+                ActivityUtils.get(this).showDialogWithHtmlTextView(R.string.changelog, mdParser.getHtml());
             }
 
         } catch (IOException e) {
@@ -222,11 +222,11 @@ public class MainActivity extends AppCompatActivity
 
         switch (item.getItemId()) {
             case R.id.action_about: {
-                HelpersA.get(this).animateToActivity(AboutActivity.class, false, null);
+                ActivityUtils.get(this).animateToActivity(AboutActivity.class, false, null);
                 return true;
             }
             case R.id.action_settings: {
-                HelpersA.get(this).animateToActivity(SettingsActivity.class, false, SettingsActivity.ACTIVITY_ID);
+                ActivityUtils.get(this).animateToActivity(SettingsActivity.class, false, SettingsActivity.ACTIVITY_ID);
                 return true;
             }
             case R.id.action_exit: {
@@ -242,16 +242,16 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
             case R.id.action_donate_bitcoin: {
-                Helpers.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
+                ContextUtils.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
                 return true;
             }
             case R.id.action_homepage_code: {
-                Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
+                ContextUtils.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 return true;
             }
             case R.id.action_picture_from_gallery: {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                HelpersA.get(this).animateToActivity(i, false, REQUEST_LOAD_GALLERY_IMAGE);
+                ActivityUtils.get(this).animateToActivity(i, false, REQUEST_LOAD_GALLERY_IMAGE);
                 return true;
             }
             case R.id.action_picture_from_camera: {
@@ -273,7 +273,7 @@ public class MainActivity extends AppCompatActivity
             }
             case R.id.action_mode_saved: {
                 emptylistText.setText(R.string.main__nodata__saved);
-                File filePath = Helpers.get().getPicturesMemetasticFolder();
+                File filePath = ContextUtils.get().getPicturesMemetasticFolder();
                 filePath.mkdirs();
                 memeOriginObject = new MemeOriginStorage(filePath, getString(R.string.dot_thumbnails));
                 toolbar.setTitle(R.string.main__mode__saved);
@@ -322,7 +322,7 @@ public class MainActivity extends AppCompatActivity
                     onImageTemplateWasChosen(picturePath, false);
                 }
             } else {
-                HelpersA.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
+                ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
             }
         }
 
@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity
             if (resultCode == RESULT_OK) {
                 onImageTemplateWasChosen(cameraPictureFilepath, false);
             } else {
-                HelpersA.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
+                ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
             }
         }
     }
@@ -354,7 +354,7 @@ public class MainActivity extends AppCompatActivity
                 cameraPictureFilepath = photoFile.getAbsolutePath();
 
             } catch (IOException ex) {
-                HelpersA.get(this).showSnackBar(R.string.main__error_camera_cannot_start, false);
+                ActivityUtils.get(this).showSnackBar(R.string.main__error_camera_cannot_start, false);
             }
 
             // Continue only if the File was successfully created
@@ -365,7 +365,7 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
                 }
-                HelpersA.get(this).animateToActivity(takePictureIntent, false, REQUEST_TAKE_CAMERA_PICTURE);
+                ActivityUtils.get(this).animateToActivity(takePictureIntent, false, REQUEST_TAKE_CAMERA_PICTURE);
             }
         }
     }
@@ -374,7 +374,7 @@ public class MainActivity extends AppCompatActivity
         final Intent intent = new Intent(this, MemeCreateActivity.class);
         intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, filePath);
         intent.putExtra(MemeCreateActivity.ASSET_IMAGE, bIsAsset);
-        HelpersA.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
+        ActivityUtils.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
     }
 
     public void openImageViewActivityWithImage(String imagePath) {
@@ -383,7 +383,7 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, ImageViewActivity.class);
         intent.putExtra(IMAGE_PATH, imagePath);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        HelpersA.get(this).animateToActivity(intent, false, null);
+        ActivityUtils.get(this).animateToActivity(intent, false, null);
     }
 
     @Override
@@ -399,7 +399,7 @@ public class MainActivity extends AppCompatActivity
 
         // Custom tab
         if (tabPos >= 0 && tabPos == MemeLibConfig.MEME_CATEGORIES.ALL.length) {
-            File customFolder = Helpers.get().getPicturesMemetasticTemplatesCustomFolder();
+            File customFolder = ContextUtils.get().getPicturesMemetasticTemplatesCustomFolder();
             emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
             memeOriginObject = new MemeOriginStorage(customFolder, getString(R.string.dot_thumbnails));
             ((MemeOriginStorage) memeOriginObject).setIsTemplate(true);

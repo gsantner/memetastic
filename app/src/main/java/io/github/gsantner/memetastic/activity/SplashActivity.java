@@ -15,8 +15,8 @@ import java.io.File;
 
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.memetastic.util.Helpers;
-import io.github.gsantner.memetastic.util.HelpersA;
+import io.github.gsantner.memetastic.util.ContextUtils;
+import io.github.gsantner.memetastic.util.ActivityUtils;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -70,8 +70,8 @@ public class SplashActivity extends AppCompatActivity {
     private void startMemeCreator(boolean skipDelay) {
         // Create MemeCreator directories
         int delay = (skipDelay || BuildConfig.DEBUG) ? 1000 : getResources().getInteger(R.integer.splash_delay);
-        new File(Helpers.get().getPicturesMemetasticFolder(), getString(R.string.dot_thumbnails)).mkdirs();
-        new File(Helpers.get().getPicturesMemetasticTemplatesCustomFolder(), getString(R.string.dot_thumbnails)).mkdirs();
+        new File(ContextUtils.get().getPicturesMemetasticFolder(), getString(R.string.dot_thumbnails)).mkdirs();
+        new File(ContextUtils.get().getPicturesMemetasticTemplatesCustomFolder(), getString(R.string.dot_thumbnails)).mkdirs();
 
 
         // Start activity and exit splash
@@ -80,7 +80,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                HelpersA.get(SplashActivity.this).animateToActivity(MainActivity.class, true, null);
+                ActivityUtils.get(SplashActivity.this).animateToActivity(MainActivity.class, true, null);
             }
         }, delay);
     }

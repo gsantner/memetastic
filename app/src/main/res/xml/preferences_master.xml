@@ -84,7 +84,7 @@
     <PreferenceCategory android:title="@string/miscellaneous">
 
         <!--suppress AndroidDomInspection -->
-        <io.github.gsantner.opoc.ui.LanguagePreference
+        <net.gsantner.opoc.ui.LanguagePreference
             android:icon="@drawable/ic_language_black_24dp"
             android:defaultValue=""
             android:key="@string/pref_key__language"

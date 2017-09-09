@@ -9,7 +9,7 @@ import java.util.List;
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.opoc.util.AppSettingsBase;
+import net.gsantner.opoc.util.AppSettingsBase;
 
 public class AppSettings extends AppSettingsBase {
     private static final int MAX_FAVS = 50;
@@ -146,7 +146,7 @@ public class AppSettings extends AppSettingsBase {
     public int getGridColumnCountPortrait() {
         int count = getInt(R.string.pref_key__grid_column_count_portrait, -1);
         if (count == -1) {
-            count = 3 + (int) Math.max(0, 0.5 * (Helpers.get().getEstimatedScreenSizeInches() - 5.0));
+            count = 3 + (int) Math.max(0, 0.5 * (ContextUtils.get().getEstimatedScreenSizeInches() - 5.0));
             setGridColumnCountPortrait(count);
         }
         return count;

@@ -21,14 +21,14 @@ public class ThumbnailCleanupTask extends Thread implements FilenameFilter {
     }
 
     public void run() {
-        Helpers helpers = Helpers.get();
+        ContextUtils cu = ContextUtils.get();
 
-        File picPath = helpers.getPicturesMemetasticFolder();
+        File picPath = cu.getPicturesMemetasticFolder();
         File thumbPath = new File(picPath, strres_dotThumbnails);
         cleanupThumbnails(picPath, thumbPath);
 
 
-        picPath = helpers.getPicturesMemetasticTemplatesCustomFolder();
+        picPath = cu.getPicturesMemetasticTemplatesCustomFolder();
         thumbPath = new File(picPath, strres_dotThumbnails);
         cleanupThumbnails(picPath, thumbPath);
     }
@@ -60,11 +60,11 @@ public class ThumbnailCleanupTask extends Thread implements FilenameFilter {
         MemeOriginStorage memeOriginStorage = new MemeOriginStorage(picPath, strres_dotThumbnails);
         Map<String, String> missing = memeOriginStorage.getMissingThumbnails();
         for (Map.Entry<String, String> entry : missing.entrySet()) {
-            Bitmap bitmap = Helpers.get().loadImageFromFilesystem(entry.getKey());
+            Bitmap bitmap = ContextUtils.get().loadImageFromFilesystem(entry.getKey());
             if (bitmap != null) {
                 File thumbFp = new File(entry.getValue());
-                bitmap = Helpers.get().createThumbnail(bitmap);
-                Helpers.get().saveBitmapToFile(thumbFp.getParent(), thumbFp.getName(), bitmap);
+                bitmap = ContextUtils.get().scaleBitmap(bitmap);
+                ContextUtils.get().writeImageToFileJpeg(thumbFp.getParent(), thumbFp.getName(), bitmap);
             }
         }
     }
