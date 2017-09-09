@@ -21,6 +21,8 @@ import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 
+import static android.graphics.Bitmap.CompressFormat;
+
 public class Helpers extends io.github.gsantner.opoc.util.Helpers {
     public Helpers(Context context) {
         super(context);
@@ -32,22 +34,21 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
     }
 
     /**
-     * Calculates the scaling factor so the bitmap is maximal as big as the reqSize
+     * Calculates the scaling factor so the bitmap is maximal as big as the maxDimen
      *
-     * @param options Bitmap-options that contain the current dimensions of the bitmap
-     * @param reqSize the maximal size of the Bitmap
+     * @param options  Bitmap-options that contain the current dimensions of the bitmap
+     * @param maxDimen Maximal size of the Bitmap (width or height)
      * @return the scaling factor that needs to be applied to the bitmap
      */
-    public int calculateInSampleSize(BitmapFactory.Options options, int reqSize) {
+    public int calculateInSampleSize(BitmapFactory.Options options, int maxDimen) {
         // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
+        int height = options.outHeight;
+        int width = options.outWidth;
         int inSampleSize = 1;
 
-        if (Math.max(height, width) > reqSize) {
-            inSampleSize = Math.round(1f * Math.max(height, width) / reqSize);
+        if (Math.max(height, width) > maxDimen) {
+            inSampleSize = Math.round(1f * Math.max(height, width) / maxDimen);
         }
-        //Log.i("MEME", "scaleBy::" + inSampleSize);
         return inSampleSize;
     }
 
@@ -60,31 +61,44 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
 
-    public File saveBitmapToFile(String pathToFile, String filename, Bitmap bitmapToSave) {
-        new File(pathToFile).mkdirs();
-        File imageFile = new File(pathToFile, filename);
+    // public File writeImageToFile(String pathToFile)
 
-        FileOutputStream stream = null;
-        try {
-            stream = new FileOutputStream(imageFile); // overwrites this image every time
-            bitmapToSave.compress(Bitmap.CompressFormat.JPEG, 95, stream);
-            return imageFile;
-        } catch (FileNotFoundException ignored) {
-        } finally {
+    public File writeImageToFileJpeg(String path, String filename, Bitmap image) {
+        return writeImageToFile(path, filename, image, Bitmap.CompressFormat.JPEG, 95);
+    }
+
+    public File writeImageToFile(String path, String filename, Bitmap image, CompressFormat format, int quality) {
+        File imageFile = new File(path);
+        if (imageFile.exists() || imageFile.mkdirs()) {
+            imageFile = new File(path, filename);
+
+            FileOutputStream stream = null;
             try {
-                if (stream != null)
-                    stream.close();
-            } catch (IOException ignored) {
+                stream = new FileOutputStream(imageFile); // overwrites this image every time
+                image.compress(format, quality, stream);
+                return imageFile;
+            } catch (FileNotFoundException ignored) {
+            } finally {
+                try {
+                    if (stream != null) {
+                        stream.close();
+                    }
+                } catch (IOException ignored) {
+                }
             }
         }
         return null;
     }
 
     public Bitmap loadImageFromFilesystem(String imagePath) {
+        return loadImageFromFilesystem(imagePath, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
+    }
+
+    public Bitmap loadImageFromFilesystem(String imagePath, int maxDimen) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(imagePath, options);
-        options.inSampleSize = calculateInSampleSize(options, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
+        options.inSampleSize = calculateInSampleSize(options, maxDimen);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeFile(imagePath, options);
     }

@@ -64,7 +64,7 @@ public class ThumbnailCleanupTask extends Thread implements FilenameFilter {
             if (bitmap != null) {
                 File thumbFp = new File(entry.getValue());
                 bitmap = Helpers.get().createThumbnail(bitmap);
-                Helpers.get().saveBitmapToFile(thumbFp.getParent(), thumbFp.getName(), bitmap);
+                Helpers.get().writeImageToFileJpeg(thumbFp.getParent(), thumbFp.getName(), bitmap);
             }
         }
     }

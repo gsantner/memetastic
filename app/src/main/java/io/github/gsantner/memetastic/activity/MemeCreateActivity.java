@@ -357,7 +357,7 @@ public class MemeCreateActivity extends AppCompatActivity
         }
 
         String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), memeSavetime);
-        boolean wasSaved = Helpers.get().saveBitmapToFile(filepath, filename, lastBitmap) != null && Helpers.get().saveBitmapToFile(thumbnailPath, filename, Helpers.get().createThumbnail(lastBitmap)) != null;
+        boolean wasSaved = Helpers.get().writeImageToFileJpeg(filepath, filename, lastBitmap) != null && Helpers.get().writeImageToFileJpeg(thumbnailPath, filename, Helpers.get().createThumbnail(lastBitmap)) != null;
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
