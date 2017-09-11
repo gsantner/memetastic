@@ -1,6 +1,6 @@
-[submodule "metadata"]
-	path = metadata
-	url = https://github.com/gsantner/memetastic-metadata-latest.git
 [submodule "assets"]
 	path = assets
 	url = https://github.com/gsantner/memetastic-assets
+[submodule "metadata"]
+	path = metadata
+	url = https://github.com/gsantner/memetastic-metadata-latest

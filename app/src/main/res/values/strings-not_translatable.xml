@@ -20,6 +20,10 @@
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="ok" translatable="false">@android:string/ok</string>
 
+
+    <string name="main__memecat__rage" translatable="false">Rage</string>
+    <string name="team" translatable="false">Team</string>
+
     <!-- You are NOT allowed to remove parts of the license text below-->
     <string name="copyright_short" translatable="false">
         Copyright © 2016-2017
