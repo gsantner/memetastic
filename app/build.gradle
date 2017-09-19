@@ -22,8 +22,8 @@ android {
         minSdkVersion version_sdk.minSdk
         targetSdkVersion version_sdk.targetSdk
 
-        versionCode 34
-        versionName "1.2.4"
+        versionCode 35
+        versionName "1.2.5"
 
         applicationId "io.github.gsantner.memetastic"
 
