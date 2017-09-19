@@ -137,7 +137,7 @@ public class MemeCreateActivity extends AppCompatActivity
         ButterKnife.bind(this);
         app = (App) getApplication();
 
-        // Set toolbar
+        // Set _toolbar
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

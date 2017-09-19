@@ -2,6 +2,7 @@ package io.github.gsantner.memetastic.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
@@ -11,6 +12,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -25,9 +27,11 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,41 +51,43 @@ import io.github.gsantner.memetastic.data.MemeOriginInterface;
 import io.github.gsantner.memetastic.data.MemeOriginStorage;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
+import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
-import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
-
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final String IMAGE_PATH = "imagePath";
-    private static boolean isShowingFullscreenImage = false;
-    private boolean areTabsReady = false;
+
+    private static boolean _isShowingFullscreenImage = false;
+    private boolean _areTabsReady = false;
 
     @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    Toolbar _toolbar;
 
     @BindView(R.id.drawer_layout)
-    DrawerLayout drawer;
+    DrawerLayout _drawer;
 
     @BindView(R.id.main__activity__navview)
-    NavigationView navigationView;
+    NavigationView _navigationView;
 
     @BindView(R.id.main__tabs)
-    TabLayout tabLayout;
+    TabLayout _tabLayout;
 
     @BindView(R.id.main__activity__recycler_view)
-    RecyclerView recyclerMemeList;
+    RecyclerView _recyclerMemeList;
 
     @BindView(R.id.main__activity__list_empty__layout)
-    LinearLayout emptylistLayout;
+    LinearLayout _emptylistLayout;
 
     @BindView(R.id.main__activity__list_empty__text)
-    TextView emptylistText;
+    TextView _emptylistText;
+
+    @BindView(R.id.main__activity__infobar__progress)
+    ProgressBar _progressBar;
 
     App app;
     private String cameraPictureFilepath = "";
@@ -99,39 +105,41 @@ public class MainActivity extends AppCompatActivity
         app = (App) getApplication();
         ButterKnife.bind(this);
 
-        // Setup toolbar
-        setSupportActionBar(toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.main__navdrawer__open, R.string.main__navdrawer__close);
-        drawer.addDrawerListener(toggle);
+        // Setup _toolbar
+        setSupportActionBar(_toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, _drawer, _toolbar, R.string.main__navdrawer__open, R.string.main__navdrawer__close);
+        _drawer.addDrawerListener(toggle);
         toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        tabLayout.setOnTabSelectedListener(this);
+        _navigationView.setNavigationItemSelectedListener(this);
+        _tabLayout.setOnTabSelectedListener(this);
 
         // Setup Floating Action Button
         int gridColumns = ContextUtils.get().isInPortraitMode()
                 ? app.settings.getGridColumnCountPortrait()
                 : app.settings.getGridColumnCountLandscape();
 
-        recyclerMemeList.setHasFixedSize(true);
-        recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
-        recyclerMemeList.setDrawingCacheEnabled(true);
-        recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
-        recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
+        _recyclerMemeList.setHasFixedSize(true);
+        _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
+        _recyclerMemeList.setDrawingCacheEnabled(true);
+        _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
         RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
-        recyclerMemeList.setLayoutManager(recyclerGridLayout);
+        _recyclerMemeList.setLayoutManager(recyclerGridLayout);
 
         for (String cat : getResources().getStringArray(R.array.meme_categories)) {
-            TabLayout.Tab tab = tabLayout.newTab();
+            TabLayout.Tab tab = _tabLayout.newTab();
             tab.setText(cat);
-            tabLayout.addTab(tab);
+            _tabLayout.addTab(tab);
         }
-        areTabsReady = true;
+        _areTabsReady = true;
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
+
+        _progressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
 
         //
         // Actions based on build type or version
         //
-        navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
+        _navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
 
 
         // Show first start dialog / changelog
@@ -159,28 +167,28 @@ public class MainActivity extends AppCompatActivity
         MenuItem navItem = null;
         switch (mainMode) {
             case 0:
-                pos = pos >= 0 ? pos : tabLayout.getTabCount() - 1;
-                pos = pos < tabLayout.getTabCount() ? pos : 0;
-                tabLayout.getTabAt(pos).select();
+                pos = pos >= 0 ? pos : _tabLayout.getTabCount() - 1;
+                pos = pos < _tabLayout.getTabCount() ? pos : 0;
+                _tabLayout.getTabAt(pos).select();
                 break;
             case 1:
-                navItem = navigationView.getMenu().findItem(R.id.action_mode_favs);
+                navItem = _navigationView.getMenu().findItem(R.id.action_mode_favs);
                 break;
             case 2:
-                navItem = navigationView.getMenu().findItem(R.id.action_mode_saved);
+                navItem = _navigationView.getMenu().findItem(R.id.action_mode_saved);
                 break;
         }
 
         if (navItem != null) {
-            navigationView.setCheckedItem(navItem.getItemId());
+            _navigationView.setCheckedItem(navItem.getItemId());
             onNavigationItemSelected(navItem);
         }
     }
 
     @Override
     protected void onResume() {
-        if (isShowingFullscreenImage) {
-            isShowingFullscreenImage = false;
+        if (_isShowingFullscreenImage) {
+            _isShowingFullscreenImage = false;
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         }
 
@@ -209,8 +217,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (_drawer.isDrawerOpen(GravityCompat.START)) {
+            _drawer.closeDrawer(GravityCompat.START);
             return;
         }
         super.onBackPressed();
@@ -260,45 +268,45 @@ public class MainActivity extends AppCompatActivity
             }
 
             case R.id.action_mode_create: {
-                emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
+                _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
                 selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
-                toolbar.setTitle(R.string.app_name);
+                _toolbar.setTitle(R.string.app_name);
                 break;
             }
             case R.id.action_mode_favs: {
-                emptylistText.setText(R.string.main__nodata__favourites);
+                _emptylistText.setText(R.string.main__nodata__favourites);
                 memeOriginObject = new MemeOriginFavorite(app.settings.getFavoriteMemes(), getAssets());
-                toolbar.setTitle(R.string.main__mode__favs);
+                _toolbar.setTitle(R.string.main__mode__favs);
                 break;
             }
             case R.id.action_mode_saved: {
-                emptylistText.setText(R.string.main__nodata__saved);
+                _emptylistText.setText(R.string.main__nodata__saved);
                 File filePath = ContextUtils.get().getPicturesMemetasticFolder();
                 filePath.mkdirs();
                 memeOriginObject = new MemeOriginStorage(filePath, getString(R.string.dot_thumbnails));
-                toolbar.setTitle(R.string.main__mode__saved);
+                _toolbar.setTitle(R.string.main__mode__saved);
                 break;
             }
         }
 
         // Change mode
-        tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
+        _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
         if (memeOriginObject != null) {
-            drawer.closeDrawers();
+            _drawer.closeDrawers();
             GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(memeOriginObject, this);
             setRecyclerMemeListAdapter(recyclerMemeAdapter);
             return true;
         }
 
-        drawer.closeDrawer(GravityCompat.START);
+        _drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     private void setRecyclerMemeListAdapter(RecyclerView.Adapter adapter) {
-        recyclerMemeList.setAdapter(adapter);
+        _recyclerMemeList.setAdapter(adapter);
         boolean isEmpty = adapter.getItemCount() == 0;
-        emptylistLayout.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
-        recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
+        _emptylistLayout.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
+        _recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -378,7 +386,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void openImageViewActivityWithImage(String imagePath) {
-        isShowingFullscreenImage = true;
+        _isShowingFullscreenImage = true;
 
         Intent intent = new Intent(this, ImageViewActivity.class);
         intent.putExtra(IMAGE_PATH, imagePath);
@@ -400,12 +408,12 @@ public class MainActivity extends AppCompatActivity
         // Custom tab
         if (tabPos >= 0 && tabPos == MemeLibConfig.MEME_CATEGORIES.ALL.length) {
             File customFolder = ContextUtils.get().getPicturesMemetasticTemplatesCustomFolder();
-            emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
+            _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
             memeOriginObject = new MemeOriginStorage(customFolder, getString(R.string.dot_thumbnails));
             ((MemeOriginStorage) memeOriginObject).setIsTemplate(true);
         }
         if (memeOriginObject != null) {
-            if (areTabsReady) {
+            if (_areTabsReady) {
                 app.settings.setLastSelectedTab(tabPos);
             }
             if (app.settings.isShuffleMemeCategories()) {
@@ -423,14 +431,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (!drawer.isDrawerOpen(GravityCompat.START) && !drawer.isDrawerVisible(GravityCompat.START) && tabLayout.getVisibility() == View.VISIBLE) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN && event.getY() > (tabLayout.getY() * 2.2)) {
+        if (!_drawer.isDrawerOpen(GravityCompat.START) && !_drawer.isDrawerVisible(GravityCompat.START) && _tabLayout.getVisibility() == View.VISIBLE) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN && event.getY() > (_tabLayout.getY() * 2.2)) {
                 point.set(event.getX(), event.getY(), 0, 0);
             } else if (event.getAction() == MotionEvent.ACTION_UP) {
                 point.set(point.left, point.top, event.getX(), event.getY());
                 if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
                     // R->L : L<-R
-                    selectTab(tabLayout.getSelectedTabPosition() + (point.width() > 0 ? -1 : +1), 0);
+                    selectTab(_tabLayout.getSelectedTabPosition() + (point.width() > 0 ? -1 : +1), 0);
                 }
             }
         }
