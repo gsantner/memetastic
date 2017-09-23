@@ -254,6 +254,7 @@ public class MainActivity extends AppCompatActivity
         if (PermissionChecker.checkPermissionResult(this, requestCode, permissions, grantResults)) {
             ContextUtils.checkForAssetUpdates(this);
         }
+        new AssetUpdater.LoadAssetsThread(this).start();
         selectTab(_tabLayout.getSelectedTabPosition(), _currentMainMode);
     }
 

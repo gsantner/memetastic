@@ -13,8 +13,6 @@
 package net.gsantner.opoc.util;
 
 
-import android.webkit.MimeTypeMap;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -255,12 +253,6 @@ public class FileUtils {
             ok &= file.delete();
         }
         return ok;
-    }
-
-    public static String getMimeType(String url) {
-        String mime = null;
-        String ext = MimeTypeMap.getFileExtensionFromUrl(url);
-        return ext != null ? MimeTypeMap.getSingleton().getMimeTypeFromExtension(ext) : null;
     }
 
     // Example: Check if this is maybe a conf: (str, "jpg", "png", "jpeg")
