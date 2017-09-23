@@ -88,8 +88,17 @@
     <string name="pref_title__is_statusbar_hidden">Ocultar la barra de estado</string>
     <string name="pref_summary__picture_quality__percent">Calidad y tamaño de las imágenes. Valores altos significan mayor tiempo de carga. Dependiendo del hardware del dispositivo y el tamaño de la imagen, la aplicación puede no funcionar como se espera si el valor supera el 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Calidad de miniatura</string>
-  
+
     <!-- Language -->
     <string name="pref_title__language">Idioma</string>
     <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
+    <string name="error_cannot_create_save_dir">Error: no se puede crear el directorio de guardado</string>
+    <string name="error_storage_permission">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
+    <string name="main__memecat__other">Otros</string>
+    <string name="downloading">Descargando</string>
+    <string name="downloading_failed">Descarga fallida</string>
+    <string name="unzipping">Descomprimiendo</string>
+    <string name="downloading_success">Descarga correcta</string>
+    <string name="download_latest_assets_message">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
+    <string name="download_latest_assets_title">Descargar los últimos elementos</string>
 </resources>
