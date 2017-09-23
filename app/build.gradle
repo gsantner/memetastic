@@ -96,15 +96,6 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${version_lib.butterknife}"
 }
 
-preBuild.doFirst {
-    // gradle -Pmyargs=requirepopulatedassets
-    if (project.hasProperty('requirepopulatedassets')) {
-        if (!file("../assets/fonts").exists() || !file("../assets/memes").exists()) {
-            throw new GradleException('Error: assets directory not populated. Did you forget to init/update git submodules?')
-        }
-    }
-}
-
 final String RAW_DIR = "app/src/main/res/raw"
 final String[] ROOT_TO_RAW_COPYFILES = ["README.md", "LICENSE.txt", "CHANGELOG.md", "CONTRIBUTORS.md"]
 
