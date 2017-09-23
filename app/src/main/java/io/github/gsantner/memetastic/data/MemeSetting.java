@@ -11,7 +11,7 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
     private MemeElementText _captionBottom;
     private MemeElementImage _imageMain;
 
-    public MemeSetting(MemeFont font, Bitmap image) {
+    public MemeSetting(MemeData.Font font, Bitmap image) {
         _captionTop = new MemeElementText(font);
         _captionBottom = new MemeElementText(font);
         _imageMain = new MemeElementImage(image);
@@ -64,19 +64,18 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
         private int _textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
         private int _borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
         private boolean _allCaps = true;
-        private MemeFont _font = null;
-        private int _fontId;
+        private MemeData.Font _font = null;
 
-        public MemeElementText(MemeFont font) {
+        public MemeElementText(MemeData.Font font) {
             _font = font;
             notifyChangedListener();
         }
 
-        public MemeFont getFont() {
+        public MemeData.Font getFont() {
             return _font;
         }
 
-        public void setFont(MemeFont font) {
+        public void setFont(MemeData.Font font) {
             _font = font;
             notifyChangedListener();
         }
@@ -114,15 +113,6 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
 
         public void setAllCaps(boolean allCaps) {
             _allCaps = allCaps;
-            notifyChangedListener();
-        }
-
-        public int getFontId() {
-            return _fontId;
-        }
-
-        public void setFontId(int fontId) {
-            _fontId = fontId;
             notifyChangedListener();
         }
 

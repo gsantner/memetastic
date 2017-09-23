@@ -12,11 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.gsantner.memetastic.R;
+import io.github.gsantner.memetastic.service.AssetUpdater;
+import io.github.gsantner.memetastic.service.ThumbnailCleanupTask;
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.ThumbnailCleanupTask;
+import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     static final int ACTIVITY_ID = 10;
@@ -120,6 +124,16 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                 }
                 if (key.equals(getString(R.string.pref_key__language))) {
                     activityRetVal = RESULT.CHANGE_RESTART;
+                }
+                if (key.equals(getString(R.string.pref_key__download_assets_try))) {
+                    if (PermissionChecker.doIfPermissionGranted(getActivity())) {
+                        Date zero = new Date(0);
+                        settings.setLastArchiveCheckDate(zero);
+                        settings.setLastArchiveDate(zero);
+                        settings.getDefaultPreferences().edit().commit();
+                        new AssetUpdater.UpdateThread(context, true).start();
+                        getActivity().finish();
+                    }
                 }
             }
             return super.onPreferenceTreeClick(screen, preference);

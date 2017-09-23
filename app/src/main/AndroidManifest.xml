@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.gsantner.memetastic"
-    android:installLocation="auto"
-    tools:ignore="GoogleAppIndexingWarning">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="io.github.gsantner.memetastic"
+          android:installLocation="auto"
+          tools:ignore="GoogleAppIndexingWarning">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name="io.github.gsantner.memetastic.App"
@@ -16,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data android:name="android.max_aspect" android:value="2.1" />
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -25,42 +28,38 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
+                android:resource="@xml/filepaths"/>
         </provider>
 
         <!-- Activities -->
         <activity
-            android:name=".activity.SplashActivity"
-            android:icon="@drawable/ic_launcher"
-            android:label="@string/app_name"
-            android:launchMode="singleInstance"
-            android:theme="@style/AppThemeSplash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name="io.github.gsantner.memetastic.activity.MainActivity"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="io.github.gsantner.memetastic.activity.MemeCreateActivity"
-            android:label="@string/main__create_meme"
-            android:icon="@drawable/ic_launcher"
-            android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.gsantner.memetastic.activity.MainActivity" />
 
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="io.github.gsantner.memetastic.activity.MemeCreateActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/main__create_meme"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.github.gsantner.memetastic.activity.MainActivity"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
             </intent-filter>
         </activity>
         <activity
@@ -72,7 +71,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.gsantner.memetastic.activity.MainActivity" />
+                android:value="io.github.gsantner.memetastic.activity.MainActivity"/>
         </activity>
         <activity
             android:name="io.github.gsantner.memetastic.activity.AboutActivity"
@@ -81,7 +80,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.MainActivity" />
+                android:value=".activity.MainActivity"/>
         </activity>
         <activity
             android:name="io.github.gsantner.memetastic.activity.ImageViewActivity"
@@ -89,7 +88,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.gsantner.memetastic.activity.MainActivity" />
+                android:value="io.github.gsantner.memetastic.activity.MainActivity"/>
         </activity>
     </application>
 

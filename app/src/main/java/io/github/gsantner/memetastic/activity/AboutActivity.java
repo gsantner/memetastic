@@ -11,15 +11,16 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
+import net.gsantner.opoc.util.SimpleMarkdownParser;
+
 import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.ActivityUtils;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
+import io.github.gsantner.memetastic.util.ContextUtils;
 
 @SuppressWarnings("unused")
 public class AboutActivity extends AppCompatActivity {

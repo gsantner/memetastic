@@ -2,24 +2,16 @@ package io.github.gsantner.memetastic.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.os.Build;
-import android.os.Environment;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
-import android.widget.ImageView;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.util.Date;
 
 import io.github.gsantner.memetastic.App;
-import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
+import io.github.gsantner.memetastic.service.AssetUpdater;
+import io.github.gsantner.memetastic.service.MigrationThread;
 
 public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
     public ContextUtils(Context context) {
@@ -31,12 +23,20 @@ public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
         return new ContextUtils(App.get());
     }
 
+    public static void checkForAssetUpdates(Context context) {
+        new MigrationThread(context).start();
+        Date fiveDaysAgo = new Date(System.currentTimeMillis() - 5 * 1000 * 60 * 60 * 24);
+        if (AppSettings.get().getLastAssetArchiveCheckDate().before(fiveDaysAgo)) {
+            new AssetUpdater.UpdateThread(context, false).start();
+        }
+    }
+
 
     public Bitmap scaleBitmap(Bitmap bitmap) {
         return scaleBitmap(bitmap, 300);
     }
 
-    public Bitmap loadImageFromFilesystem(String imagePath) {
+    public Bitmap loadImageFromFilesystem(File imagePath) {
         return loadImageFromFilesystem(imagePath, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
     }
 
@@ -69,11 +69,11 @@ public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
     }
 
     /**
-     * Calculates the scaling factor to convert font size to size in pixels
+     * Calculates the scaling factor to convert conf size to size in pixels
      *
      * @param w width of the bitmap where a text should be written on
      * @param h height of the bitmap where a text should be written on
-     * @return the size of the font in pixels
+     * @return the size of the conf in pixels
      */
     public float getScalingFactorInPixelsForWritingOnPicture(int w, int h) {
         final float fontScaler = (float) 133;
@@ -85,13 +85,5 @@ public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
         int addl = rest >= raster / 2 ? raster - rest : -rest;
 
         return (size + addl) / (fontScaler);
-    }
-
-    public File getPicturesMemetasticFolder() {
-        return new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), _context.getString(R.string.app_name));
-    }
-
-    public File getPicturesMemetasticTemplatesCustomFolder() {
-        return new File(new File(getPicturesMemetasticFolder(), "templates"), "custom");
     }
 }
