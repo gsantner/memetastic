@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="meme_categories" translatable="false">
+    <string-array name="meme_tags__titles" translatable="false">
         <item>@string/main__memecat__humans</item>
         <item>@string/main__memecat__animals</item>
         <item>@string/main__memecat__cartoon</item>
         <item>@string/main__memecat__rage</item>
-        <item>@string/main__memecat__custom</item>
+        <item>@string/main__memecat__other</item>
+    </string-array>
+
+    <string-array name="meme_tags__keys" translatable="false">
+        <item>humans</item>
+        <item>animals</item>
+        <item>cartoon</item>
+        <item>rage</item>
+        <item>other</item>
     </string-array>
 
     <string-array name="main_modes" translatable="false">

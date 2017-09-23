@@ -6,9 +6,9 @@
 
 # MemeTastic
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
-<b>Simple Meme Creator</b> which includes most common templates. Completly ad-free,
-works offline and adds no watermarks. Memes can be created from templates included in the app, from pictures shared
-into the app and pictures from gallery & camera.
+<b>Simple Meme Creator</b> which allows to download most common templates. Completly ad-free,
+and adds no watermarks. Memes can be created from templates downloaded from the MemeTastic archive, 
+from pictures shared into the app and pictures from gallery & camera.
 
 <div style="display:flex;" >
 <a href="https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic">
@@ -23,7 +23,7 @@ into the app and pictures from gallery & camera.
 ## Description
 * Ad-Free and no watermarks 
 * Allows you to create memes from
-  * Templates included in the app
+  * Templates from MemeTastic archive
   * Camera pictures
   * Gallery pictures
   * Pictures shared into the app
@@ -37,14 +37,14 @@ into the app and pictures from gallery & camera.
 * Share into any app accepting pictures
 * Share any picture into MemeTastic to create meme
 * Change amount of displayed pictures per row
-* Works completly offline, no connection required
 
 ### Privacy<a name="privacy"></a>
-The app doesn't use your int ernet connection, it's working completly offline. It doesn't share any personal information with other apps or any web-server.
+The app doesn't share any personal information with other apps or any web-server.
 Custom images can be added via camera and gallery. If the user decides to save a meme image it will be stored locally in the device public pictures folder.
+Meme templates can be downloaded from the [memetastic-assets](https://github.com/gsantner/memetastic-assets) archive (zip file).
 
 ## Contributions
-The project is always open for co ntributions and accepts pull requests.
+The project is always open for contributions and accepts pull requests.
 The project uses [AOSP Java Code Style](https://source.android.com/source/code-style#follow-field-naming-conventions), with one exception: private members are `_camelCase` instead of `mBigCamel`. You may use Android Studios _auto reformat feature_ before sending a PR.
 
 Translations can be contributed on GitHub or via [E-Mail](https://gsantner.github.io/#contact). You can use Stringlate ([![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)) to translate the project directly on your Android phone. It allows you to export as E-Mail attachement and to post on GitHub.

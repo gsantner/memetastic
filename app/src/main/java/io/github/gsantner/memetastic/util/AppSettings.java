@@ -1,15 +1,21 @@
 package io.github.gsantner.memetastic.util;
 
 import android.content.Context;
+import android.os.Environment;
 
+import net.gsantner.opoc.util.AppSettingsBase;
+
+import java.io.File;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.opoc.util.AppSettingsBase;
+import io.github.gsantner.memetastic.service.AssetUpdater;
 
 public class AppSettings extends AppSettingsBase {
     private static final int MAX_FAVS = 50;
@@ -84,52 +90,52 @@ public class AppSettings extends AppSettingsBase {
         return (int) (100 + (939 * (val / 100.0)));
     }
 
-    public void setLastSelectedFont(int value) {
-        setInt(R.string.pref_key__last_selected_font, value);
+    public void setLastUsedFont(String value) {
+        setString(R.string.pref_key__last_used_font, value);
     }
 
-    public int getLastSelectedFont() {
-        return getInt(R.string.pref_key__last_selected_font, 0);
+    public String getLastUsedFont() {
+        return getString(R.string.pref_key__last_used_font, "");
     }
 
     public void setFavoriteMemes(String[] value) {
-        setStringArray(R.string.pref_key__meme_favourites, value);
+        setStringArray(R.string.pref_key__favourite_meme_templates, value);
     }
 
-    public String[] getFavoriteMemes() {
-        return getStringArray(R.string.pref_key__meme_favourites);
+    public String[] getFavoriteMemeTemplates() {
+        return getStringArray(R.string.pref_key__favourite_meme_templates);
     }
 
-    public void appendFavoriteMeme(String meme) {
-        String[] memes = insertAndMaximize(getFavoriteMemes(), meme, MAX_FAVS);
+    public void appendFavoriteMeme(String filepath) {
+        String[] memes = insertAndMaximize(getFavoriteMemeTemplates(), filepath, MAX_FAVS);
         setFavoriteMemes(memes);
     }
 
-    public boolean isFavorite(String name) {
-        if (getFavoriteMemes() == null)
+    public boolean isFavorite(String filepath) {
+        if (getFavoriteMemeTemplates() == null)
             return false;
-        for (String s : getFavoriteMemes()) {
-            if (s.equalsIgnoreCase(name))
+        for (String s : getFavoriteMemeTemplates()) {
+            if (s.equals(filepath))
                 return true;
         }
         return false;
     }
 
-    public boolean toggleFavorite(String name) {
-        if (!isFavorite(name)) {
-            appendFavoriteMeme(name);
+    public boolean toggleFavorite(String filepath) {
+        if (!isFavorite(filepath)) {
+            appendFavoriteMeme(filepath);
             return true;
         }
-        removeFavorite(name);
+        removeFavorite(filepath);
         return false;
     }
 
-    public void removeFavorite(String name) {
-        String[] favs = getFavoriteMemes();
+    public void removeFavorite(String filepath) {
+        String[] favs = getFavoriteMemeTemplates();
         ArrayList<String> newFavs = new ArrayList<String>();
 
         for (String fav : favs) {
-            if (!fav.equalsIgnoreCase(name))
+            if (!fav.equals(filepath))
                 newFavs.add(fav);
         }
         setFavoriteMemes(newFavs.toArray(new String[newFavs.size()]));
@@ -146,7 +152,7 @@ public class AppSettings extends AppSettingsBase {
     public int getGridColumnCountPortrait() {
         int count = getInt(R.string.pref_key__grid_column_count_portrait, -1);
         if (count == -1) {
-            count = 3 + (int) Math.max(0, 0.5 * (Helpers.get().getEstimatedScreenSizeInches() - 5.0));
+            count = 3 + (int) Math.max(0, 0.5 * (ContextUtils.get().getEstimatedScreenSizeInches() - 5.0));
             setGridColumnCountPortrait(count);
         }
         return count;
@@ -179,8 +185,12 @@ public class AppSettings extends AppSettingsBase {
 
     public boolean isAppCurrentVersionFirstStart() {
         int value = getInt(R.string.pref_key__app_first_start_current_version, -1);
+        boolean isFirstStart = value != BuildConfig.VERSION_CODE && !BuildConfig.IS_TEST_BUILD;
         setInt(R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
-        return value != BuildConfig.VERSION_CODE && !BuildConfig.IS_TEST_BUILD;
+        if (isFirstStart) {
+            setLastArchiveCheckDate(new Date(0));
+        }
+        return isFirstStart;
     }
 
     public boolean isAutoSaveMeme() {
@@ -191,8 +201,8 @@ public class AppSettings extends AppSettingsBase {
         return getIntOfStringPref(R.string.pref_key__default_main_mode, 0);
     }
 
-    public boolean isShuffleMemeCategories() {
-        return getBool(R.string.pref_key__is_shuffle_meme_categories, false);
+    public boolean isShuffleTagLists() {
+        return getBool(R.string.pref_key__is_shuffle_meme_tags, false);
     }
 
     public boolean isEditorStatusBarHidden() {
@@ -205,5 +215,57 @@ public class AppSettings extends AppSettingsBase {
 
     public String getLanguage() {
         return getString(R.string.pref_key__language, "");
+    }
+
+    public void setSaveDirectory(String value) {
+        setString(R.string.pref_key__save_directory, value);
+    }
+
+    public File getSaveDirectory() {
+        String dir = getString(R.string.pref_key__save_directory, "");
+        if (dir.isEmpty()) {
+
+            dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+                    , rstr(R.string.app_name).toLowerCase())
+                    .getAbsolutePath();
+            setSaveDirectory(dir);
+        }
+        return new File(dir);
+    }
+
+    public Date getLastAssetArchiveDate() throws ParseException {
+        String date = getString(R.string.pref_key__last_asset_archive_date, "");
+        if (date.isEmpty()) {
+            return new Date(0);
+        }
+        return AssetUpdater.FORMAT_RFC3339.parse(date);
+    }
+
+    public void setLastArchiveCheckDate(Date value) {
+        setString(R.string.pref_key__last_asset_archive_check_date, AssetUpdater.FORMAT_RFC3339.format(value));
+    }
+
+    public Date getLastAssetArchiveCheckDate() {
+        String date = getString(R.string.pref_key__last_asset_archive_check_date, "");
+        if (date.isEmpty()) {
+            return new Date(0);
+        }
+        try {
+            return AssetUpdater.FORMAT_RFC3339.parse(date);
+        } catch (ParseException e) {
+            return new Date(0);
+        }
+    }
+
+    public void setLastArchiveDate(Date value) {
+        setString(R.string.pref_key__last_asset_archive_date, AssetUpdater.FORMAT_RFC3339.format(value));
+    }
+
+    public boolean isMigrated() {
+        return getBool(R.string.pref_key__is_migrated, false);
+    }
+
+    public void setMigrated(boolean value) {
+        setBool(R.string.pref_key__is_migrated, value);
     }
 }

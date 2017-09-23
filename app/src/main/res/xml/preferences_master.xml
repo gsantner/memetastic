@@ -20,24 +20,24 @@
             app:minValue="2"/>
 
         <ListPreference
-            android:icon="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:defaultValue="0"
             android:entries="@array/main_modes"
             android:entryValues="@array/values__zero_to_two"
+            android:icon="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:key="@string/pref_key__default_main_mode"
             android:summary="@string/pref_summary__default_main_mode"
             android:title="@string/pref_title__default_main_mode"/>
 
         <CheckBoxPreference
-            android:icon="@drawable/ic_autorenew_black_24dp"
             android:defaultValue="false"
-            android:key="@string/pref_key__is_shuffle_meme_categories"
+            android:icon="@drawable/ic_autorenew_black_24dp"
+            android:key="@string/pref_key__is_shuffle_meme_tags"
             android:summary="@string/pref_summary__is_shuffle_meme_categories"
             android:title="@string/pref_title__is_shuffle_meme_categories"/>
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
-            android:icon="@drawable/ic_high_quality_black_24dp"
             android:defaultValue="24"
+            android:icon="@drawable/ic_high_quality_black_24dp"
             android:key="@string/pref_key__thumbnail_quality__percent"
             android:summary="@string/pref_summary__picture_quality__percent"
             android:title="@string/pref_title__thumbnail_quality__percent"
@@ -46,8 +46,8 @@
 
 
         <CheckBoxPreference
-            android:icon="@drawable/ic_visibility_black_24dp"
             android:defaultValue="false"
+            android:icon="@drawable/ic_visibility_black_24dp"
             android:key="@string/pref_key__is_overview_statusbar_hidden"
             android:summary="@string/pref_summary__is_statusbar_hidden"
             android:title="@string/pref_title__is_statusbar_hidden"/>
@@ -57,15 +57,15 @@
     <PreferenceCategory android:title="@string/pref_title__editor">
 
         <CheckBoxPreference
-            android:icon="@drawable/ic_save_black_24dp"
             android:defaultValue="false"
+            android:icon="@drawable/ic_save_black_24dp"
             android:key="@string/pref_key__auto_save_meme"
             android:summary="@string/pref_summary__auto_save_meme"
             android:title="@string/pref_title__auto_save_meme"/>
 
         <CheckBoxPreference
-            android:icon="@drawable/ic_visibility_black_24dp"
             android:defaultValue="false"
+            android:icon="@drawable/ic_visibility_black_24dp"
             android:key="@string/pref_key__is_editor_statusbar_hidden"
             android:summary="@string/pref_summary__is_statusbar_hidden"
             android:title="@string/pref_title__is_statusbar_hidden"/>
@@ -84,13 +84,18 @@
     <PreferenceCategory android:title="@string/miscellaneous">
 
         <!--suppress AndroidDomInspection -->
-        <io.github.gsantner.opoc.ui.LanguagePreference
-            android:icon="@drawable/ic_language_black_24dp"
+        <net.gsantner.opoc.ui.LanguagePreference
             android:defaultValue=""
+            android:icon="@drawable/ic_language_black_24dp"
             android:key="@string/pref_key__language"
             android:summary="@string/pref_desc__language"
             android:title="@string/pref_title__language"/>
 
+        <Preference
+            android:icon="@drawable/ic_file_download_black_24dp"
+            android:key="@string/pref_key__download_assets_try"
+            android:summary="@string/download_latest_assets_message"
+            android:title="@string/download_latest_assets_title"/>
 
         <Preference
             android:icon="@drawable/ic_delete_sweep_black_24dp"

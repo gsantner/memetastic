@@ -12,15 +12,6 @@ public class MemeLibConfig {
         public static final String MEMES = "memes";
     }
 
-    public static class MEME_CATEGORIES {
-        public static final String RAGE = "rage";
-        public static final String ANIMAL = "animals";
-        public static final String HUMANS = "humans";
-        public static final String CARTOON = "cartoon";
-
-        public static final String[] ALL = {HUMANS, ANIMAL, CARTOON, RAGE};
-    }
-
     public static class FONT_SIZES {
         public static final int DEFAULT = 14;
         public static final int MIN = 4;
@@ -47,16 +38,7 @@ public class MemeLibConfig {
         };
     }
 
-    public static int getIndexOfCategory(String category) {
-        for (int i = 0; i < MEME_CATEGORIES.ALL.length; i++) {
-            if (MEME_CATEGORIES.ALL[i].equals(category)) {
-                return i;
-            }
-        }
-        return 0;
-    }
-
-    public static final int MEME_FULLSCREEN_MAX_IMAGESIZE = 1200;
+    public static final int MEME_FULLSCREEN_MAX_IMAGESIZE = 2000;
 
 
     /**

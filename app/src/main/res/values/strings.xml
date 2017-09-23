@@ -9,7 +9,6 @@
     <string name="main__create_meme">Create Meme</string>
     <string name="main__delete_meme">Delete meme</string>
 
-    <string name="main__memecat__rage" translatable="false">Rage</string>
     <string name="main__memecat__humans">Humans</string>
     <string name="main__memecat__cartoon">Cartoon</string>
     <string name="main__memecat__animals">Animals</string>
@@ -58,7 +57,6 @@
     <string name="additional_contact">More informations</string>
     <string name="licenses">Licenses</string>
     <string name="show_licenses">Show licenses</string>
-    <string name="team" translatable="false">Team</string>
     <string name="contributors">Contributors</string>
     <string name="more_information">More information</string>
     <string name="show_app_license">Show GNU GPLv3 license</string>
@@ -94,4 +92,13 @@
     <!-- Language -->
     <string name="pref_title__language">Language</string>
     <string name="pref_desc__language">Change language of this app. Restart app for changes to take effect</string>
+    <string name="error_cannot_create_save_dir">Error: Cannot create save directory</string>
+    <string name="error_storage_permission">Need permission for storage to save memes and templates</string>
+    <string name="main__memecat__other">Other</string>
+    <string name="downloading">Downloading</string>
+    <string name="downloading_failed">Downloading failed</string>
+    <string name="unzipping">Unzipping</string>
+    <string name="downloading_success">Sucessfully downloaded</string>
+    <string name="download_latest_assets_message">This will download fonts and meme templates (about 20 MB data)</string>
+    <string name="download_latest_assets_title">Download latest assets</string>
 </resources>

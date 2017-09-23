@@ -188,7 +188,7 @@ public class TouchImageView extends AppCompatImageView {
         viewHeight = MeasureSpec.getSize(heightMeasureSpec);
 
         //
-        // Rescales image on rotation
+        // Rescales data on rotation
         //
         if (oldMeasuredHeight == viewWidth && oldMeasuredHeight == viewHeight
                 || viewWidth == 0 || viewHeight == 0)
@@ -212,7 +212,7 @@ public class TouchImageView extends AppCompatImageView {
             scale = Math.min(scaleX, scaleY);
             matrix.setScale(scale, scale);
 
-            // Center the image
+            // Center the data
             float redundantYSpace = (float) viewHeight
                     - (scale * (float) bmHeight);
             float redundantXSpace = (float) viewWidth

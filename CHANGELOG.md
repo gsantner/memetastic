@@ -1,6 +1,17 @@
+### v1.2.6
+- Dont include assets at buildtime (fixes #30)
+- Download assets at runtime (github assets)
+- Allows updating assets
+- Remove builtin assets
+- Allow using without storage permission (share & edit only)
+- Migration for old data
+- Allow templates to be shown in normal tabs
+- Replace categories with tags. A meme can now be e.g. animals and cartoon
+
 ### v1.2.4
 - Updated: Readme
 - Fixed: Language list when building outside of project root
+- Added: Czech translation
 
 ### v1.2.3
 - Added: Option to change app language

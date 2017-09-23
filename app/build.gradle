@@ -22,8 +22,8 @@ android {
         minSdkVersion version_sdk.minSdk
         targetSdkVersion version_sdk.targetSdk
 
-        versionCode 33
-        versionName "1.2.3+"
+        versionCode 36
+        versionName "1.2.6"
 
         applicationId "io.github.gsantner.memetastic"
 
@@ -56,24 +56,7 @@ android {
         disable 'MissingTranslation'
     }
 
-    sourceSets { main { assets.srcDirs = ['src/main/assets', '../assets'] } }
-}
-
-@SuppressWarnings(["UnnecessaryQualifiedReference", "SpellCheckingInspection"])
-static String[] getUsedAndroidLanguages() {
-    Set<String> langs = new HashSet<>()
-    new File('.').eachFileRecurse(groovy.io.FileType.DIRECTORIES) {
-        final foldername = it.name
-        if (foldername.startsWith('values-') && !it.canonicalPath.contains("build" + File.separator + "intermediates")) {
-            new File(it.toString()).eachFileRecurse(groovy.io.FileType.FILES) {
-                if (it.name.toLowerCase().endsWith(".xml") && it.getCanonicalFile().getText('UTF-8').contains("<string")) {
-                    langs.add(foldername.replace("values-", ""))
-
-                }
-            }
-        }
-    }
-    return langs.toArray(new String[langs.size()])
+    sourceSets { main { assets.srcDirs = ['src/main/assets'] } }
 }
 
 dependencies {
@@ -96,13 +79,20 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${version_lib.butterknife}"
 }
 
-preBuild.doFirst {
-    // gradle -Pmyargs=requirepopulatedassets
-    if (project.hasProperty('requirepopulatedassets')) {
-        if (!file("../assets/fonts").exists() || !file("../assets/memes").exists()) {
-            throw new GradleException('Error: assets directory not populated. Did you forget to init/update git submodules?')
+@SuppressWarnings(["UnnecessaryQualifiedReference", "SpellCheckingInspection"])
+static String[] getUsedAndroidLanguages() {
+    Set<String> langs = new HashSet<>()
+    new File('.').eachFileRecurse(groovy.io.FileType.DIRECTORIES) {
+        final foldername = it.name
+        if (foldername.startsWith('values-') && !it.canonicalPath.contains("build" + File.separator + "intermediates")) {
+            new File(it.toString()).eachFileRecurse(groovy.io.FileType.FILES) {
+                if (it.name.toLowerCase().endsWith(".xml") && it.getCanonicalFile().getText('UTF-8').contains("<string")) {
+                    langs.add(foldername.replace("values-", ""))
+                }
+            }
         }
     }
+    return langs.toArray(new String[langs.size()])
 }
 
 final String RAW_DIR = "app/src/main/res/raw"
