@@ -1,6 +1,7 @@
 package io.github.gsantner.memetastic.data;
 
 import android.graphics.Bitmap;
+import android.graphics.PointF;
 
 /**
  * A memes settings
@@ -12,8 +13,8 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
     private MemeElementImage _imageMain;
 
     public MemeSetting(MemeData.Font font, Bitmap image) {
-        _captionTop = new MemeElementText(font);
-        _captionBottom = new MemeElementText(font);
+        _captionTop = new MemeElementText(font, MemeLibConfig.LOCATION_MODE.TOP);
+        _captionBottom = new MemeElementText(font, MemeLibConfig.LOCATION_MODE.BOTTOM);
         _imageMain = new MemeElementImage(image);
 
         _captionTop.setMemeSettingChangedListener(this);
@@ -63,11 +64,21 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
         private int _fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
         private int _textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
         private int _borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
+        private int _locationMode = MemeLibConfig.LOCATION_MODE.CUSTOM;
+        private PointF _location = new PointF(); // (x, y)% for custom location
         private boolean _allCaps = true;
         private MemeData.Font _font = null;
 
-        public MemeElementText(MemeData.Font font) {
+        public MemeElementText(MemeData.Font font, int locationMode) {
             _font = font;
+            _locationMode = locationMode;
+            notifyChangedListener();
+        }
+
+        public MemeElementText(MemeData.Font font, float x, float y) {
+            _font = font;
+            _locationMode = MemeLibConfig.LOCATION_MODE.CUSTOM;
+            _location.set(x, y);
             notifyChangedListener();
         }
 
@@ -87,6 +98,22 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
         public void setFontSize(int fontSize) {
             _fontSize = fontSize;
             notifyChangedListener();
+        }
+
+        public PointF getPositionInCanvas(float width, float height, float textWidth, float textHeight) {
+            switch (_locationMode) {
+                case MemeLibConfig.LOCATION_MODE.CUSTOM:
+                default:
+                    return new PointF(
+                            width * _location.x - textWidth * 0.5f,
+                            height * _location.y - textHeight * 0.5f);
+
+                case MemeLibConfig.LOCATION_MODE.TOP:
+                    return new PointF((width - textWidth) * 0.5f, height / 15f);
+
+                case MemeLibConfig.LOCATION_MODE.BOTTOM:
+                    return new PointF((width - textWidth) * 0.5f, height - textHeight);
+            }
         }
 
         public int getTextColor() {

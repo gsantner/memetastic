@@ -3,7 +3,8 @@ package io.github.gsantner.memetastic.data;
 import java.io.File;
 
 /**
- * Contains colors, fontsizes, categorynames and folders where fonts and memetemplates are saved
+ * Contains colors, fontsizes, locations, categorynames
+ * and folders where fonts and memetemplates are saved
  */
 @SuppressWarnings("WeakerAccess")
 public class MemeLibConfig {
@@ -16,6 +17,12 @@ public class MemeLibConfig {
         public static final int DEFAULT = 14;
         public static final int MIN = 4;
         public static final int MAX = 30;
+    }
+
+    public static class LOCATION_MODE {
+        public static final int CUSTOM = 0;
+        public static final int TOP = 1;
+        public static final int BOTTOM = 2;
     }
 
     public static class MEME_COLORS {

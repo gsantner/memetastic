@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PointF;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
@@ -583,14 +584,12 @@ public class MemeCreateActivity extends AppCompatActivity
         //paint.setStrokeWidth(memeSetting.getFontSize() / 4);
         paint.setStrokeWidth(borderScale);
 
-        String[] textStrings = {memeSetting.getCaptionTop().getText(), memeSetting.getCaptionBottom().getText()};
-        if (memeSetting.getCaptionTop().isAllCaps()) {
-            for (int i = 0; i < textStrings.length; i++) {
-                textStrings[i] = textStrings[i].toUpperCase();
-            }
-        }
+        MemeSetting.MemeElementText[] captions = {memeSetting.getCaptionTop(), memeSetting.getCaptionBottom()};
+        boolean allCaps = memeSetting.getCaptionTop().isAllCaps();
 
-        for (int i = 0; i < textStrings.length; i++) {
+        for (int i = 0; i < captions.length; i++) {
+            String textString = allCaps ? captions[i].getText().toUpperCase() : captions[i].getText();
+
             paint.setColor(memeSetting.getCaptionTop().getBorderColor());
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
 
@@ -599,22 +598,18 @@ public class MemeCreateActivity extends AppCompatActivity
 
             // init StaticLayout for text
             StaticLayout textLayout = new StaticLayout(
-                    textStrings[i], paint, textWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+                    textString, paint, textWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
 
             // get height of multiline text
             int textHeight = textLayout.getHeight();
 
-            // get position of text's top left corner  center: (bitmap.getWidth() - textWidth)/2
-            float x = (bitmap.getWidth() - textWidth) / 2;
-            float y = 0;
-            if (i == 0)
-                y = bitmap.getHeight() / 15;
-            else
-                y = bitmap.getHeight() - textHeight;
+            // get position of text in the canvas, this will depend in its internal location mode
+            PointF where = captions[i].getPositionInCanvas(
+                    bitmap.getWidth(), bitmap.getHeight(), textWidth, textHeight);
 
             // draw text to the Canvas center
             canvas.save();
-            canvas.translate(x, y);
+            canvas.translate(where.x, where.y);
             textLayout.draw(canvas);
 
             // new antialiased Paint
@@ -623,7 +618,7 @@ public class MemeCreateActivity extends AppCompatActivity
 
             // init StaticLayout for text
             textLayout = new StaticLayout(
-                    textStrings[i], paint, textWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+                    textString, paint, textWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
 
             // get height of multiline text
             textHeight = textLayout.getHeight();
