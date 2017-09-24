@@ -238,11 +238,11 @@ public class AppSettings extends AppSettingsBase {
         if (date.isEmpty()) {
             return new Date(0);
         }
-        return AssetUpdater.FORMAT_RFC3339.parse(date);
+        return AssetUpdater.FORMAT_MINUTE.parse(date);
     }
 
     public void setLastArchiveCheckDate(Date value) {
-        setString(R.string.pref_key__last_asset_archive_check_date, AssetUpdater.FORMAT_RFC3339.format(value));
+        setString(R.string.pref_key__last_asset_archive_check_date, AssetUpdater.FORMAT_MINUTE.format(value));
     }
 
     public Date getLastAssetArchiveCheckDate() {
@@ -251,14 +251,14 @@ public class AppSettings extends AppSettingsBase {
             return new Date(0);
         }
         try {
-            return AssetUpdater.FORMAT_RFC3339.parse(date);
+            return AssetUpdater.FORMAT_MINUTE.parse(date);
         } catch (ParseException e) {
             return new Date(0);
         }
     }
 
     public void setLastArchiveDate(Date value) {
-        setString(R.string.pref_key__last_asset_archive_date, AssetUpdater.FORMAT_RFC3339.format(value));
+        setString(R.string.pref_key__last_asset_archive_date, AssetUpdater.FORMAT_MINUTE.format(value));
     }
 
     public boolean isMigrated() {

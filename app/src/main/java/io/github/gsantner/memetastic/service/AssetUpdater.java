@@ -34,7 +34,7 @@ import io.github.gsantner.memetastic.util.PermissionChecker;
 
 @SuppressLint("SimpleDateFormat")
 public class AssetUpdater {
-    public static final SimpleDateFormat FORMAT_RFC3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+    public static final SimpleDateFormat FORMAT_MINUTE = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 
     private static final String URL_ARCHIVE_ZIP = "https://github.com/gsantner/memetastic-assets/archive/master.zip";
     private static final String URL_API = "https://api.github.com/repos/gsantner/memetastic-assets";
@@ -87,7 +87,8 @@ public class AssetUpdater {
                 try {
                     JSONObject apiJson = new JSONObject(apiJsonS);
                     String lastUpdate = apiJson.getString("pushed_at");
-                    Date date = FORMAT_RFC3339.parse(lastUpdate);
+                    int datesubstrindex = lastUpdate.indexOf(":", lastUpdate.indexOf(":") + 1);
+                    Date date = FORMAT_MINUTE.parse(lastUpdate.substring(0, datesubstrindex));
                     if (date.after(_appSettings.getLastAssetArchiveDate())) {
                         _appSettings.setLastArchiveCheckDate(new Date(System.currentTimeMillis()));
                         if (!_doDownload) {
@@ -98,6 +99,8 @@ public class AssetUpdater {
                             new LoadAssetsThread(_context).start();
                             return;
                         }
+                    } else {
+                        return;
                     }
                 } catch (JSONException | ParseException e) {
                     e.printStackTrace();
@@ -120,7 +123,7 @@ public class AssetUpdater {
             FileUtils.deleteRecursive(file);
             boolean ok;
             if (file.mkdirs() && (templatesDir.exists() || templatesDir.mkdirs())) {
-                file = new File(file, FORMAT_RFC3339.format(date) + ".memetastic.zip");
+                file = new File(file, FORMAT_MINUTE.format(date) + ".memetastic.zip");
                 ok = NetworkUtils.downloadFile(URL_ARCHIVE_ZIP, file, new Callback<Float>() {
                     public void onCallback(Float aFloat) {
                         if (_lastPercent != (int) (aFloat * 100)) {
