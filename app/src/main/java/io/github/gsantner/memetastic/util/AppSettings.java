@@ -86,7 +86,7 @@ public class AppSettings extends AppSettingsBase {
         // Additional reduction of quality to ~2/3 is roughly 225
         // 150 is very fast loaded, but blurry, 200 is still a little blurry, 225 seems to be
         // a good tradeoff between quality (400-600) and speed (-125)
-        int val = getInt(R.string.pref_key__thumbnail_quality__percent, 24);
+        int val = getInt(R.string.pref_key__thumbnail_quality__percent, 19);
         return (int) (100 + (939 * (val / 100.0)));
     }
 

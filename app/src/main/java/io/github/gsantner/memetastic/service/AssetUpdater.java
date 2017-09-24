@@ -59,8 +59,9 @@ public class AssetUpdater {
     }
 
     public static class UpdateThread extends Thread {
-        public static final int DOWNLOAD_REQUEST_RESULT__FAILED = -1;
-        public static final int DOWNLOAD_REQUEST_RESULT__DO_DOWNLOAD_ASK = 1;
+        public static final int ASSET_DOWNLOAD_REQUEST__FAILED = -1;
+        public static final int ASSET_DOWNLOAD_REQUEST__CHECKING = 1;
+        public static final int ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK = 2;
         public static final int DOWNLOAD_STATUS__DOWNLOADING = 1;
         public static final int DOWNLOAD_STATUS__UNZIPPING = 2;
         public static final int DOWNLOAD_STATUS__FINISHED = 3;
@@ -83,6 +84,7 @@ public class AssetUpdater {
         @Override
         public void run() {
             if (PermissionChecker.hasExtStoragePerm(_context)) {
+                AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__CHECKING);
                 String apiJsonS = NetworkUtils.performCall(URL_API, NetworkUtils.GET);
                 try {
                     JSONObject apiJson = new JSONObject(apiJsonS);
@@ -92,24 +94,22 @@ public class AssetUpdater {
                     if (date.after(_appSettings.getLastAssetArchiveDate())) {
                         _appSettings.setLastArchiveCheckDate(new Date(System.currentTimeMillis()));
                         if (!_doDownload) {
-                            AppCast.DOWNLOAD_REQUEST_RESULT.send(_context, DOWNLOAD_REQUEST_RESULT__DO_DOWNLOAD_ASK);
-                            return;
+                            AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK);
                         } else {
                             doDownload(date);
                             new LoadAssetsThread(_context).start();
-                            return;
                         }
-                    } else {
-                        return;
                     }
+                    return;
                 } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }
-            AppCast.DOWNLOAD_REQUEST_RESULT.send(_context, DOWNLOAD_REQUEST_RESULT__FAILED);
+            AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__FAILED);
         }
 
 
+        @SuppressWarnings("ResultOfMethodCallIgnored")
         private synchronized void doDownload(Date date) throws ParseException {
             if (_isAlreadyDownloading || date.before(_appSettings.getLastAssetArchiveDate())) {
                 return;
@@ -121,23 +121,32 @@ public class AssetUpdater {
             MemeData.getImages().clear();
             MemeData.clearImagesWithTags();
             FileUtils.deleteRecursive(file);
-            boolean ok;
-            if (file.mkdirs() && (templatesDir.exists() || templatesDir.mkdirs())) {
+            boolean ok = false;
+            if ((file.exists() || file.mkdirs()) && (templatesDir.exists() || templatesDir.mkdirs())) {
+                // Download
+                _lastPercent = -1;
+                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, 0);
                 file = new File(file, FORMAT_MINUTE.format(date) + ".memetastic.zip");
                 ok = NetworkUtils.downloadFile(URL_ARCHIVE_ZIP, file, new Callback<Float>() {
                     public void onCallback(Float aFloat) {
-                        if (_lastPercent != (int) (aFloat * 100)) {
+                        int perc = (int) (aFloat * 100);
+                        if (_lastPercent != perc) {
+                            _lastPercent = (perc);
                             AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, _lastPercent * 3 / 4);
-                            _lastPercent = (int) (aFloat * 100);
                         }
                     }
                 });
+
+                // Unpack
+                _lastPercent = -1;
+                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75);
                 if (ok) {
                     ok = ZipUtils.unzip(file, templatesDir, true, new Callback<Float>() {
                         public void onCallback(Float aFloat) {
-                            if (_lastPercent != (int) (aFloat * 100)) {
-                                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 50 + _lastPercent / 4);
-                                _lastPercent = (int) (aFloat * 100);
+                            int perc = (int) (aFloat * 100);
+                            if (_lastPercent != perc) {
+                                _lastPercent = perc;
+                                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75 + _lastPercent / 4);
                             }
                         }
                     });

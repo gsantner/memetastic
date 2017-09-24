@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity
     private String cameraPictureFilepath = "";
     String[] _tagKeys, _tagValues;
     private int _currentMainMode = 0;
+    private long _lastInfoBarTextShownAt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -502,14 +503,19 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             switch (action) {
-                case AppCast.DOWNLOAD_REQUEST_RESULT.ACTION: {
-                    switch (intent.getIntExtra(AppCast.DOWNLOAD_REQUEST_RESULT.EXTRA_RESULT, AssetUpdater.UpdateThread.DOWNLOAD_REQUEST_RESULT__FAILED)) {
-                        case AssetUpdater.UpdateThread.DOWNLOAD_REQUEST_RESULT__FAILED: {
-                            updateInfoBar(0, R.string.downloading_failed, R.drawable.ic_file_download_white_32dp, 1000);
+                case AppCast.ASSET_DOWNLOAD_REQUEST.ACTION: {
+
+                    switch (intent.getIntExtra(AppCast.ASSET_DOWNLOAD_REQUEST.EXTRA_RESULT, AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__FAILED)) {
+                        case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__CHECKING: {
+                            updateInfoBar(0, R.string.checking_assets_for_update, R.drawable.ic_file_download_white_32dp, false);
                             break;
                         }
-                        case AssetUpdater.UpdateThread.DOWNLOAD_REQUEST_RESULT__DO_DOWNLOAD_ASK: {
-                            updateInfoBar(0, R.string.downloading, R.drawable.ic_file_download_white_32dp, 1);
+                        case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__FAILED: {
+                            updateInfoBar(0, R.string.downloading_failed, R.drawable.ic_file_download_white_32dp, false);
+                            break;
+                        }
+                        case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK: {
+                            updateInfoBar(0, R.string.checking_assets_for_update, R.drawable.ic_file_download_white_32dp, false);
                             showDownloadDialog();
                             break;
                         }
@@ -520,19 +526,19 @@ public class MainActivity extends AppCompatActivity
                     int percent = intent.getIntExtra(AppCast.DOWNLOAD_STATUS.EXTRA_PERCENT, 100);
                     switch (intent.getIntExtra(AppCast.DOWNLOAD_STATUS.EXTRA_STATUS, AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FAILED)) {
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__DOWNLOADING: {
-                            updateInfoBar(percent, R.string.downloading, R.drawable.ic_file_download_white_32dp, -1);
+                            updateInfoBar(percent, R.string.downloading, R.drawable.ic_file_download_white_32dp, true);
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FAILED: {
-                            updateInfoBar(percent, R.string.downloading_failed, R.drawable.ic_mood_bad_black_256dp, 2000);
+                            updateInfoBar(percent, R.string.downloading_failed, R.drawable.ic_mood_bad_black_256dp, false);
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__UNZIPPING: {
-                            updateInfoBar(percent, R.string.unzipping, R.drawable.ic_file_download_white_32dp, -1);
+                            updateInfoBar(percent, R.string.unzipping, R.drawable.ic_file_download_white_32dp, true);
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FINISHED: {
-                            updateInfoBar(percent, R.string.downloading_success, R.drawable.ic_gavel_white_48px, 2000);
+                            updateInfoBar(percent, R.string.downloading_success, R.drawable.ic_gavel_white_48px, false);
                             break;
                         }
                     }
@@ -560,17 +566,18 @@ public class MainActivity extends AppCompatActivity
         dialog.show();
     }
 
-    public void updateInfoBar(Integer percent, @StringRes Integer textResId, @DrawableRes Integer image, int hideInMillis) {
+    public void updateInfoBar(Integer percent, @StringRes Integer textResId, @DrawableRes Integer image, final boolean showlong) {
+        _lastInfoBarTextShownAt = System.currentTimeMillis();
         _infoBar.setVisibility(View.VISIBLE);
-        if (hideInMillis >= 0) {
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if ((System.currentTimeMillis() - _lastInfoBarTextShownAt) > (showlong ? 20 : 2) * 1000) {
                     _infoBar.setVisibility(View.GONE);
                 }
-            }, hideInMillis);
-        }
+            }
+        }, (showlong ? 20 : 2) * 1000 + 100);
         if (percent != null) {
             _infoBarProgressBar.setProgress(percent);
         }

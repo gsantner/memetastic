@@ -21,7 +21,7 @@ public class AppCast {
     public static IntentFilter getLocalBroadcastFilter() {
         IntentFilter intentFilter = new IntentFilter();
         String[] BROADCAST_ACTIONS = {
-                DOWNLOAD_REQUEST_RESULT.ACTION,
+                ASSET_DOWNLOAD_REQUEST.ACTION,
                 DOWNLOAD_STATUS.ACTION,
                 ASSETS_LOADED.ACTION
         };
@@ -34,8 +34,8 @@ public class AppCast {
     //########################
     //## Actions
     //########################
-    public static class DOWNLOAD_REQUEST_RESULT {
-        public static final String ACTION = "DOWNLOAD_REQUEST_RESULT";
+    public static class ASSET_DOWNLOAD_REQUEST {
+        public static final String ACTION = "ASSET_DOWNLOAD_REQUEST";
         public static final String EXTRA_RESULT = "EXTRA_RESULT";
 
         public static void send(Context c, int result) {

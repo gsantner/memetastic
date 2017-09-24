@@ -3,9 +3,11 @@ package io.github.gsantner.memetastic.service;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 
 import java.io.File;
 
+import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
@@ -36,15 +38,19 @@ public class ImageLoaderTask<T> extends AsyncTask<File, Void, Bitmap> {
         File cacheFile = new File(_context.getCacheDir(), pathToImage.getAbsolutePath().substring(1));
         ContextUtils cu = ContextUtils.get();
         Bitmap bitmap;
-        if (_loadThumbnail) {
-            if (cacheFile.exists()) {
-                bitmap = cu.loadImageFromFilesystem(cacheFile, _maxSize);
+        try {
+            if (_loadThumbnail) {
+                if (cacheFile.exists()) {
+                    bitmap = cu.loadImageFromFilesystem(cacheFile, _maxSize);
+                } else {
+                    bitmap = cu.loadImageFromFilesystem(pathToImage, _maxSize);
+                    cu.writeImageToFileDetectFormat(cacheFile, bitmap, 65);
+                }
             } else {
                 bitmap = cu.loadImageFromFilesystem(pathToImage, _maxSize);
-                cu.writeImageToFileDetectFormat(cacheFile, bitmap, 80);
             }
-        } else {
-            bitmap = cu.loadImageFromFilesystem(pathToImage, _maxSize);
+        } catch (NullPointerException nul) {
+            bitmap = cu.drawableToBitmap(ContextCompat.getDrawable(_context, R.drawable.ic_mood_bad_black_256dp));
         }
 
         return bitmap;
