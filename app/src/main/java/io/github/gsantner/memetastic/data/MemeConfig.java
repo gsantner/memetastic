@@ -86,8 +86,8 @@ public class MemeConfig implements Serializable {
     public static class Image implements Serializable {
         public final static String IMAGE_TAG_OTHER = "other";
 
-        private List<String> _tags;
-        private List<ImageText> _imageTexts;
+        private List<String> _tags = new ArrayList<>();
+        private List<Caption> _captions = new ArrayList<>();
         private String _title;
         private String _filename;
 
@@ -105,18 +105,18 @@ public class MemeConfig implements Serializable {
             }
             setTags(tagsList);
 
-            List<ImageText> imageTexts = new ArrayList<>();
-            if (json.has("image_texts")) {
-                jsonArr = json.getJSONArray("image_texts");
+            List<Caption> captions = new ArrayList<>();
+            if (json.has("captions")) {
+                jsonArr = json.getJSONArray("captions");
                 for (int i = 0; i < jsonArr.length(); i++) {
                     try {
-                        ImageText element = new ImageText().fromJson(jsonArr.getJSONObject(i));
-                        imageTexts.add(element);
+                        Caption element = new Caption().fromJson(jsonArr.getJSONObject(i));
+                        captions.add(element);
                     } catch (JSONException ignored) {
                     }
                 }
             }
-            setImageTexts(imageTexts);
+            setCaptions(captions);
 
             return this;
         }
@@ -125,7 +125,18 @@ public class MemeConfig implements Serializable {
             JSONObject root = new JSONObject();
             root.put("title", getTitle());
             root.put("filename", getFilename());
-            root.put("tags", new JSONArray(getTags()));
+
+            if (!_tags.isEmpty()) {
+                root.put("tags", new JSONArray(getTags()));
+            }
+
+            if (!_captions.isEmpty()) {
+                JSONArray jsonArray = new JSONArray();
+                for (Caption caption : _captions) {
+                    jsonArray.put(caption.toJson());
+                }
+                root.put("captions", jsonArray);
+            }
 
             return root;
         }
@@ -161,16 +172,16 @@ public class MemeConfig implements Serializable {
             _tags = tags;
         }
 
-        public List<ImageText> getImageTexts() {
-            return _imageTexts;
+        public List<Caption> getCaptions() {
+            return _captions;
         }
 
-        public void setImageTexts(List<ImageText> imageTexts) {
-            _imageTexts = imageTexts;
+        public void setCaptions(List<Caption> captions) {
+            _captions = captions;
         }
     }
 
-    public static class ImageText implements Serializable {
+    public static class Caption implements Serializable {
         public static final int TYPE_TOP = 1;
         public static final int TYPE_BOTTOM = 2;
         public static final int TYPE_CUSTOM = 9;
@@ -178,16 +189,16 @@ public class MemeConfig implements Serializable {
         private String _text = "";
         private int _positionType;
         private Point _position; // opt ;
-        private Point _size; // opt ; x = width, y = height
+        private Point _captionSize; // opt ; x = width, y = height
 
-        public ImageText fromJson(JSONObject json) throws JSONException {
+        public Caption fromJson(JSONObject json) throws JSONException {
             setPositionType(json.getInt("id"));
             setText(json.getString("text"));
             if (json.has("position")) {
                 _position = new Point().fromJson(json.getJSONObject("position"));
             }
             if (json.has("size")) {
-                _size = new Point().fromJson(json.getJSONObject("size"));
+                _captionSize = new Point().fromJson(json.getJSONObject("size"));
             }
             return this;
         }
@@ -199,8 +210,8 @@ public class MemeConfig implements Serializable {
             if (_position != null) {
                 root.put("position", _position.toJson());
             }
-            if (_size != null) {
-                root.put("size", _size.toJson());
+            if (_captionSize != null) {
+                root.put("size", _captionSize.toJson());
             }
 
             return root;
@@ -214,12 +225,12 @@ public class MemeConfig implements Serializable {
             _position = position;
         }
 
-        public Point getSize() {
-            return _size;
+        public Point getCaptionSize() {
+            return _captionSize;
         }
 
-        public void setSize(Point size) {
-            _size = size;
+        public void setCaptionSize(Point captionSize) {
+            _captionSize = captionSize;
         }
 
         public int getPositionType() {

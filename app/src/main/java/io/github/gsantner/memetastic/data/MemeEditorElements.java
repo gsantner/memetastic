@@ -3,6 +3,8 @@ package io.github.gsantner.memetastic.data;
 import android.graphics.Bitmap;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.github.gsantner.memetastic.data.MemeConfig.Point;
 
@@ -10,60 +12,55 @@ import static io.github.gsantner.memetastic.data.MemeConfig.Point;
  * A memes settings
  */
 @SuppressWarnings({"unused", "WeakerAccess"})
-public class MemeEditorElements extends MemeEditorElementBase implements MemeEditorElementBase.OnMemeEditorObjectChangedListener, Serializable {
-    private ElementText _captionTop;
-    private ElementText _captionBottom;
-    private ElementImage _imageMain;
+public class MemeEditorElements implements Serializable {
+    private List<EditorCaption> _captions;
+    private EditorImage _imageMain; // There MUST be always top and bottom caption
 
     public MemeEditorElements(MemeData.Font font, Bitmap image) {
-        _captionTop = new ElementText(font, MemeConfig.ImageText.TYPE_TOP);
-        _captionBottom = new ElementText(font, MemeConfig.ImageText.TYPE_BOTTOM);
-        _imageMain = new ElementImage(image);
-
-        _captionTop.setChangedListener(this);
-        _captionBottom.setChangedListener(this);
-        _imageMain.setChangedListener(this);
+        _captions = new ArrayList<>();
+        _captions.add(new EditorCaption(font, MemeConfig.Caption.TYPE_TOP));
+        _captions.add(new EditorCaption(font, MemeConfig.Caption.TYPE_BOTTOM));
+        _imageMain = new EditorImage(image);
     }
 
-    @Override
-    public void onMemeEditorObjectChanged(MemeEditorElementBase memeEditorObject) {
-        notifyChangedListener();
-    }
-
-    @Override
-    public String toString() {
-        return _captionTop.toString() + "\n" + _captionBottom.toString();
-    }
-
-    public ElementText getCaptionTop() {
-        return _captionTop;
-    }
-
-    public void setCaptionTop(ElementText captionTop) {
-        _captionTop = captionTop;
-        notifyChangedListener();
-    }
-
-    public ElementText getCaptionBottom() {
-        return _captionBottom;
-    }
-
-    public void setCaptionBottom(ElementText captionBottom) {
-        _captionBottom = captionBottom;
-        notifyChangedListener();
-    }
-
-    public ElementImage getImageMain() {
+    public EditorImage getImageMain() {
         return _imageMain;
     }
 
-    public void setImageMain(ElementImage imageMain) {
+    public void setImageMain(EditorImage imageMain) {
         _imageMain = imageMain;
-        notifyChangedListener();
     }
 
-    public static class ElementText extends MemeEditorElementBase {
-        private MemeConfig.ImageText _imgText;
+    public List<EditorCaption> getCaptions() {
+        return _captions;
+    }
+
+    public EditorCaption getCaptionTop() {
+        for (EditorCaption caption : _captions) {
+            if (caption.getCaptionConf().getPositionType() == MemeConfig.Caption.TYPE_TOP) {
+                return caption;
+            }
+        }
+        return null;
+    }
+
+    public EditorCaption getCaptionBottom() {
+        for (EditorCaption caption : _captions) {
+            if (caption.getCaptionConf().getPositionType() == MemeConfig.Caption.TYPE_BOTTOM) {
+                return caption;
+            }
+        }
+        return null;
+    }
+
+    public void setFontToAll(MemeData.Font font) {
+        for (EditorCaption caption : _captions) {
+            caption.setFont(font);
+        }
+    }
+
+    public static class EditorCaption {
+        private MemeConfig.Caption _captionConf;
         private MemeData.Font _font = null; // !serializable
 
         private int _fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
@@ -71,16 +68,15 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
         private int _borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
         private boolean _allCaps = true;
 
-        public ElementText(MemeData.Font font, int positionType) {
+        public EditorCaption(MemeData.Font font, int positionType) {
             _font = font;
-            _imgText = new MemeConfig.ImageText();
-            notifyChangedListener();
+            _captionConf = new MemeConfig.Caption();
+            _captionConf.setPositionType(positionType);
         }
 
-        public ElementText(MemeData.Font font, MemeConfig.ImageText imgText) {
+        public EditorCaption(MemeData.Font font, MemeConfig.Caption captionConf) {
             _font = font;
-            _imgText = imgText;
-            notifyChangedListener();
+            _captionConf = captionConf;
         }
 
         public MemeData.Font getFont() {
@@ -89,7 +85,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setFont(MemeData.Font font) {
             _font = font;
-            notifyChangedListener();
         }
 
         public int getFontSize() {
@@ -98,14 +93,13 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setFontSize(int fontSize) {
             _fontSize = fontSize;
-            notifyChangedListener();
         }
 
         public Point getPositionInCanvas(float width, float height, float textWidth, float textHeight) {
-            switch (_imgText.getPositionType()) {
-                case MemeConfig.ImageText.TYPE_CUSTOM:
+            switch (_captionConf.getPositionType()) {
+                case MemeConfig.Caption.TYPE_CUSTOM:
                 default: {
-                    Point point = _imgText.getPosition();
+                    Point point = _captionConf.getPosition();
                     if (point == null) {
                         point = new Point(0.5f, 0.5f);
                     }
@@ -114,10 +108,10 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
                             height * point.getY() - textHeight * 0.5f);
                 }
 
-                case MemeConfig.ImageText.TYPE_TOP:
+                case MemeConfig.Caption.TYPE_TOP:
                     return new Point((width - textWidth) * 0.5f, height / 15f);
 
-                case MemeConfig.ImageText.TYPE_BOTTOM:
+                case MemeConfig.Caption.TYPE_BOTTOM:
                     return new Point((width - textWidth) * 0.5f, height - textHeight);
             }
         }
@@ -128,7 +122,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setTextColor(int textColor) {
             _textColor = textColor;
-            notifyChangedListener();
         }
 
         public int getBorderColor() {
@@ -137,7 +130,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setBorderColor(int borderColor) {
             _borderColor = borderColor;
-            notifyChangedListener();
         }
 
         public boolean isAllCaps() {
@@ -146,33 +138,39 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setAllCaps(boolean allCaps) {
             _allCaps = allCaps;
-            notifyChangedListener();
         }
 
         public String getText() {
-            return _imgText.getText();
+            return _captionConf.getText();
         }
 
         public void setText(String text) {
-            _imgText.setText(text);
-            notifyChangedListener();
+            _captionConf.setText(text);
         }
 
         @Override
         public String toString() {
-            return _imgText.getText();
+            return _captionConf.getText();
+        }
+
+        public MemeConfig.Caption getCaptionConf() {
+            return _captionConf;
+        }
+
+        public void setImgText(MemeConfig.Caption captionConf) {
+            _captionConf = captionConf;
         }
     }
 
 
-    public static class ElementImage extends MemeEditorElementBase {
+    public static class EditorImage {
         private Bitmap _image = null;
         private Bitmap _displayImage = null;
         private int _rotationDeg = 0;
         private int _padding = 0;
         private int _paddingColor = MemeLibConfig.MEME_COLORS.WHITE;
 
-        public ElementImage(Bitmap image) {
+        public EditorImage(Bitmap image) {
             _image = image;
         }
 
@@ -182,7 +180,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setImage(Bitmap image) {
             _image = image;
-            notifyChangedListener();
         }
 
         public Bitmap getDisplayImage() {
@@ -191,7 +188,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setDisplayImage(Bitmap displayImage) {
             _displayImage = displayImage;
-            notifyChangedListener();
         }
 
         public int getRotationDeg() {
@@ -200,7 +196,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
         public void setRotationDeg(int rotationDeg) {
             _rotationDeg = rotationDeg;
-            notifyChangedListener();
         }
 
 
@@ -216,7 +211,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
          */
         public void setPadding(int padding) {
             _padding = padding;
-            notifyChangedListener();
         }
 
         public int getPaddingColor() {
@@ -230,7 +224,6 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
          */
         public void setPaddingColor(int paddingColor) {
             _paddingColor = paddingColor;
-            notifyChangedListener();
         }
     }
 

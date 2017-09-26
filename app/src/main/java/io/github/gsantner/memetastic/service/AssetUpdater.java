@@ -363,7 +363,7 @@ public class AssetUpdater {
         }
 
         MemeConfig.Image confImage = new MemeConfig.Image();
-        confImage.setImageTexts(new ArrayList<MemeConfig.ImageText>());
+        confImage.setCaptions(new ArrayList<MemeConfig.Caption>());
         confImage.setFilename(filename);
         confImage.setTags(tags);
         confImage.setTitle(filename.substring(0, filename.lastIndexOf(".")).replace("_", " "));

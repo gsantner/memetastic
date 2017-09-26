@@ -43,8 +43,7 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     // sets up the view of the item at the position in the grid
@@ -90,7 +89,7 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
                 if (image.isTemplate) {
                     Intent intent = new Intent(_activity, MemeCreateActivity.class);
                     intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, image.fullPath.getAbsolutePath());
-                    intent.putExtra(MemeCreateActivity.ASSET_IMAGE, false);
+                    intent.putExtra(MemeCreateActivity.EXTRA_MEMETASTIC_DATA, image);
                     _activity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
                 } else {
                     if (_activity instanceof MainActivity) {

@@ -14,7 +14,7 @@
 
     <!-- pictures -->
     <string name="cached_picture_filename" translatable="false">MemeTastic_meme.jpg</string>
-    <string name="custom_templates_visual" translatable="false">\n» Pictures » MemeTastic » templates » custom</string>
+    <string name="custom_templates_visual" translatable="false">\n» Pictures » MemeTastic » templates</string>
 
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="ok" translatable="false">@android:string/ok</string>

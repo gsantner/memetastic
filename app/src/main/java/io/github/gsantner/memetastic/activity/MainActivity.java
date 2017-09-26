@@ -384,7 +384,7 @@ public class MainActivity extends AppCompatActivity
                     cursor.close();
 
                     // String picturePath contains the path of selected Image
-                    onImageTemplateWasChosen(picturePath, false);
+                    onImageTemplateWasChosen(picturePath);
                 }
             } else {
                 ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
@@ -393,7 +393,7 @@ public class MainActivity extends AppCompatActivity
 
         if (requestCode == REQUEST_TAKE_CAMERA_PICTURE) {
             if (resultCode == RESULT_OK) {
-                onImageTemplateWasChosen(cameraPictureFilepath, false);
+                onImageTemplateWasChosen(cameraPictureFilepath);
             } else {
                 ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
             }
@@ -441,10 +441,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void onImageTemplateWasChosen(String filePath, boolean bIsAsset) {
+    public void onImageTemplateWasChosen(String filePath) {
         final Intent intent = new Intent(this, MemeCreateActivity.class);
         intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, filePath);
-        intent.putExtra(MemeCreateActivity.ASSET_IMAGE, bIsAsset);
         ActivityUtils.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
     }
 
