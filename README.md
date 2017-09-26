@@ -6,8 +6,8 @@
 
 # MemeTastic
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
-<b>Simple Meme Creator</b> which allows to download most common templates. Completly ad-free,
-and adds no watermarks. Memes can be created from templates downloaded from the MemeTastic archive, 
+<b>Simple Meme Creator</b>. Completly ad-free, and adds no watermarks. 
+Memes can be created from templates downloaded from the MemeTastic archive, 
 from pictures shared into the app and pictures from gallery & camera.
 
 <div style="display:flex;" >

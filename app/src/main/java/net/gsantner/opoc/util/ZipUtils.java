@@ -83,7 +83,7 @@ public class ZipUtils {
     }
 
     // TODO Maybe there's a way to avoid reading the zip twice,
-    // but ZipEntry.getSize() may return -1 so we can't just cace the ZipEntries
+    // but ZipEntry.getSize() may return -1 so we can't just cache the ZipEntries
     private static long getZipLength(final File zipFile) {
         int count;
         long totalSize = 0;

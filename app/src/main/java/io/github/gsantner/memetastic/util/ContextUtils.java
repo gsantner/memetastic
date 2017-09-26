@@ -25,8 +25,8 @@ public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
 
     public static void checkForAssetUpdates(Context context) {
         new MigrationThread(context).start();
-        Date fiveDaysAgo = new Date(System.currentTimeMillis() - 5 * 1000 * 60 * 60 * 24);
-        if (AppSettings.get().getLastAssetArchiveCheckDate().before(fiveDaysAgo)) {
+        Date sevenDaysAgo = new Date(System.currentTimeMillis() - 7 * 1000 * 60 * 60 * 24);
+        if (AppSettings.get().getLastAssetArchiveCheckDate().before(sevenDaysAgo)) {
             new AssetUpdater.UpdateThread(context, false).start();
         }
     }

@@ -59,7 +59,7 @@ public class MemeEditorElements implements Serializable {
         }
     }
 
-    public static class EditorCaption {
+    public static class EditorCaption implements Serializable {
         private MemeConfig.Caption _captionConf;
         private MemeData.Font _font = null; // !serializable
 
@@ -163,7 +163,7 @@ public class MemeEditorElements implements Serializable {
     }
 
 
-    public static class EditorImage {
+    public static class EditorImage implements Serializable {
         private Bitmap _image = null;
         private Bitmap _displayImage = null;
         private int _rotationDeg = 0;
