@@ -64,7 +64,7 @@ public class MemeEditorElements extends MemeEditorElementBase implements MemeEdi
 
     public static class ElementText extends MemeEditorElementBase {
         private MemeConfig.ImageText _imgText;
-        private MemeData.Font _font = null;
+        private MemeData.Font _font = null; // !serializable
 
         private int _fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
         private int _textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
