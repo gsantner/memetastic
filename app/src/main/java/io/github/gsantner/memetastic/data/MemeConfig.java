@@ -175,7 +175,7 @@ public class MemeConfig implements Serializable {
         public static final int TYPE_BOTTOM = 2;
         public static final int TYPE_CUSTOM = 9;
 
-        private String _text;
+        private String _text = "";
         private int _positionType;
         private Point _position; // opt ;
         private Point _size; // opt ; x = width, y = height

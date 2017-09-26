@@ -93,7 +93,7 @@ public class MemeData implements Serializable {
         public Typeface typeFace;
     }
 
-    public static class Image {
+    public static class Image implements Serializable {
         public MemeConfig.Image conf;
         public File fullPath;
         public boolean isTemplate;

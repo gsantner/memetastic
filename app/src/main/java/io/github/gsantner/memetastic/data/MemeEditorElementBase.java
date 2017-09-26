@@ -2,13 +2,10 @@ package io.github.gsantner.memetastic.data;
 
 import java.io.Serializable;
 
-/**
- * Created by gregor on 05.08.17.
- */
 @SuppressWarnings("WeakerAccess")
-public class MemeEditorObjectBase implements Serializable {
+public class MemeEditorElementBase implements Serializable {
     public interface OnMemeEditorObjectChangedListener {
-        void onMemeEditorObjectChanged(MemeEditorObjectBase memeEditorObject);
+        void onMemeEditorObjectChanged(MemeEditorElementBase memeEditorObject);
     }
 
     protected OnMemeEditorObjectChangedListener _changedListener;
@@ -17,8 +14,8 @@ public class MemeEditorObjectBase implements Serializable {
         return _changedListener;
     }
 
-    public MemeEditorObjectBase setChangedListener(OnMemeEditorObjectChangedListener _settingChangedListener) {
-        _changedListener = _settingChangedListener;
+    public MemeEditorElementBase setChangedListener(OnMemeEditorObjectChangedListener changedListener) {
+        _changedListener = changedListener;
         return this;
     }
 
