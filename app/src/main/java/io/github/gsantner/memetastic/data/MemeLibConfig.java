@@ -19,12 +19,6 @@ public class MemeLibConfig {
         public static final int MAX = 30;
     }
 
-    public static class LOCATION_MODE {
-        public static final int CUSTOM = 0;
-        public static final int TOP = 1;
-        public static final int BOTTOM = 2;
-    }
-
     public static class MEME_COLORS {
         public static final int BLACK = 0xff000000;
         public static final int WHITE = 0xffFFFFFF;

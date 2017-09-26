@@ -14,7 +14,7 @@ import java.util.List;
 @SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "SpellCheckingInspection", "UnusedReturnValue", "JavaDoc", "FieldCanBeLocal"})
 public class MemeConfig implements Serializable {
 
-    public static class Config {
+    public static class Config implements Serializable {
         private List<Font> _fonts;
         private List<Image> _images;
 
@@ -83,7 +83,7 @@ public class MemeConfig implements Serializable {
         }
     }
 
-    public static class Image {
+    public static class Image implements Serializable {
         public final static String IMAGE_TAG_OTHER = "other";
 
         private List<String> _tags;
@@ -170,30 +170,64 @@ public class MemeConfig implements Serializable {
         }
     }
 
-    public static class ImageText {
-        private int _id; // -1 top, -2 bottom
+    public static class ImageText implements Serializable {
+        public static final int TYPE_TOP = 1;
+        public static final int TYPE_BOTTOM = 2;
+        public static final int TYPE_CUSTOM = 9;
+
         private String _text;
+        private int _positionType;
+        private Point _position; // opt ;
+        private Point _size; // opt ; x = width, y = height
 
         public ImageText fromJson(JSONObject json) throws JSONException {
-            setId(json.getInt("id"));
+            setPositionType(json.getInt("id"));
             setText(json.getString("text"));
+            if (json.has("position")) {
+                _position = new Point().fromJson(json.getJSONObject("position"));
+            }
+            if (json.has("size")) {
+                _size = new Point().fromJson(json.getJSONObject("size"));
+            }
             return this;
         }
 
         public JSONObject toJson() throws JSONException {
             JSONObject root = new JSONObject();
-            root.put("id", getId());
+            root.put("id", getPositionType());
             root.put("text", getText());
+            if (_position != null) {
+                root.put("position", _position.toJson());
+            }
+            if (_size != null) {
+                root.put("size", _size.toJson());
+            }
 
             return root;
         }
 
-        public int getId() {
-            return _id;
+        public Point getPosition() {
+            return _position;
         }
 
-        public void setId(int id) {
-            _id = id;
+        public void setPosition(Point position) {
+            _position = position;
+        }
+
+        public Point getSize() {
+            return _size;
+        }
+
+        public void setSize(Point size) {
+            _size = size;
+        }
+
+        public int getPositionType() {
+            return _positionType;
+        }
+
+        public void setPositionType(int positionType) {
+            _positionType = positionType;
         }
 
         public String getText() {
@@ -205,7 +239,7 @@ public class MemeConfig implements Serializable {
         }
     }
 
-    public static class Font {
+    public static class Font implements Serializable {
         public static final int FONT_TYPE__DEFAULT = 0;
         public static final int FONT_TYPE__COMIC = 1;
 
@@ -255,6 +289,55 @@ public class MemeConfig implements Serializable {
 
         public void setFontType(int fontType) {
             _fontType = fontType;
+        }
+    }
+
+    // For interoperability with PointF use public members
+    public static class Point implements Serializable {
+        public float x;
+        public float y;
+
+        public Point() {
+
+        }
+
+        public Point(float x, float y) {
+            setX(x);
+            setY(y);
+        }
+
+        public Point fromJson(JSONObject json) throws JSONException {
+            setX((float) json.getDouble("x"));
+            setY((float) json.getDouble("y"));
+            return this;
+        }
+
+        public JSONObject toJson() throws JSONException {
+            JSONObject root = new JSONObject();
+            root.put("x", x);
+            root.put("y", y);
+            return root;
+        }
+
+        public void set(float x, float y) {
+            setX(x);
+            setY(y);
+        }
+
+        public float getX() {
+            return x;
+        }
+
+        public void setX(float x) {
+            this.x = x;
+        }
+
+        public float getY() {
+            return y;
+        }
+
+        public void setY(float y) {
+            this.y = y;
         }
     }
 }

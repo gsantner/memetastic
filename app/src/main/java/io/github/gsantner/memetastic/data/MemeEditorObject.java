@@ -1,29 +1,32 @@
 package io.github.gsantner.memetastic.data;
 
 import android.graphics.Bitmap;
-import android.graphics.PointF;
+
+import java.io.Serializable;
+
+import static io.github.gsantner.memetastic.data.MemeConfig.Point;
 
 /**
  * A memes settings
  */
 @SuppressWarnings({"unused", "WeakerAccess"})
-public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMemeSettingChangedListener {
+public class MemeEditorObject extends MemeEditorObjectBase implements MemeEditorObjectBase.OnMemeEditorObjectChangedListener, Serializable {
     private MemeElementText _captionTop;
     private MemeElementText _captionBottom;
     private MemeElementImage _imageMain;
 
-    public MemeSetting(MemeData.Font font, Bitmap image) {
-        _captionTop = new MemeElementText(font, MemeLibConfig.LOCATION_MODE.TOP);
-        _captionBottom = new MemeElementText(font, MemeLibConfig.LOCATION_MODE.BOTTOM);
+    public MemeEditorObject(MemeData.Font font, Bitmap image) {
+        _captionTop = new MemeElementText(font, MemeConfig.ImageText.TYPE_TOP);
+        _captionBottom = new MemeElementText(font, MemeConfig.ImageText.TYPE_BOTTOM);
         _imageMain = new MemeElementImage(image);
 
-        _captionTop.setMemeSettingChangedListener(this);
-        _captionBottom.setMemeSettingChangedListener(this);
-        _imageMain.setMemeSettingChangedListener(this);
+        _captionTop.setChangedListener(this);
+        _captionBottom.setChangedListener(this);
+        _imageMain.setChangedListener(this);
     }
 
     @Override
-    public void onMemeSettingChanged(MemeSettingBase memeSetting) {
+    public void onMemeEditorObjectChanged(MemeEditorObjectBase memeEditorObject) {
         notifyChangedListener();
     }
 
@@ -59,13 +62,13 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
         notifyChangedListener();
     }
 
-    public static class MemeElementText extends MemeSettingBase {
+    public static class MemeElementText extends MemeEditorObjectBase {
         private String _text = "";
         private int _fontSize = MemeLibConfig.FONT_SIZES.DEFAULT;
         private int _textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
         private int _borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
-        private int _locationMode = MemeLibConfig.LOCATION_MODE.CUSTOM;
-        private PointF _location = new PointF(); // (x, y)% for custom location
+        private int _locationMode = MemeConfig.ImageText.TYPE_CUSTOM;
+        private Point _location = new Point(); // (x, y)% for custom location
         private boolean _allCaps = true;
         private MemeData.Font _font = null;
 
@@ -77,7 +80,7 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
 
         public MemeElementText(MemeData.Font font, float x, float y) {
             _font = font;
-            _locationMode = MemeLibConfig.LOCATION_MODE.CUSTOM;
+            _locationMode = MemeConfig.ImageText.TYPE_CUSTOM;
             _location.set(x, y);
             notifyChangedListener();
         }
@@ -100,19 +103,19 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
             notifyChangedListener();
         }
 
-        public PointF getPositionInCanvas(float width, float height, float textWidth, float textHeight) {
+        public Point getPositionInCanvas(float width, float height, float textWidth, float textHeight) {
             switch (_locationMode) {
-                case MemeLibConfig.LOCATION_MODE.CUSTOM:
+                case MemeConfig.ImageText.TYPE_CUSTOM:
                 default:
-                    return new PointF(
-                            width * _location.x - textWidth * 0.5f,
-                            height * _location.y - textHeight * 0.5f);
+                    return new Point(
+                            width * _location.getX() - textWidth * 0.5f,
+                            height * _location.getY() - textHeight * 0.5f);
 
-                case MemeLibConfig.LOCATION_MODE.TOP:
-                    return new PointF((width - textWidth) * 0.5f, height / 15f);
+                case MemeConfig.ImageText.TYPE_TOP:
+                    return new Point((width - textWidth) * 0.5f, height / 15f);
 
-                case MemeLibConfig.LOCATION_MODE.BOTTOM:
-                    return new PointF((width - textWidth) * 0.5f, height - textHeight);
+                case MemeConfig.ImageText.TYPE_BOTTOM:
+                    return new Point((width - textWidth) * 0.5f, height - textHeight);
             }
         }
 
@@ -159,7 +162,7 @@ public class MemeSetting extends MemeSettingBase implements MemeSettingBase.OnMe
     }
 
 
-    public static class MemeElementImage extends MemeSettingBase {
+    public static class MemeElementImage extends MemeEditorObjectBase {
         private Bitmap _image = null;
         private Bitmap _displayImage = null;
         private int _rotationDeg = 0;
