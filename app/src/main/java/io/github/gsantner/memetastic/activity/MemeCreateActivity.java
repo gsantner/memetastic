@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PointF;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
@@ -86,31 +85,31 @@ public class MemeCreateActivity extends AppCompatActivity
     //## UI Binding
     //########################
     @BindView(R.id.fab)
-    FloatingActionButton fab;
+    FloatingActionButton _fab;
 
     @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    Toolbar _toolbar;
 
     @BindView(R.id.memecreate__activity__image)
-    ImageView imageEditView;
+    ImageView _imageEditView;
 
     @BindView(R.id.memecreate__activity__edit_caption_bottom)
-    EditText textEditBottomCaption;
+    EditText _textEditBottomCaption;
 
     @BindView(R.id.memecreate__activity__edit_caption_top)
-    EditText textEditTopCaption;
+    EditText _textEditTopCaption;
 
     //#####################
     //## Members
     //#####################
-    private static boolean doubleBackToExitPressedOnce = false;
-    private Bitmap lastBitmap = null;
-    private long memeSavetime = -1;
-    private App app;
+    private static boolean _doubleBackToExitPressedOnce = false;
+    private Bitmap _lastBitmap = null;
+    private long _memeSavetime = -1;
+    private App _app;
     private MemeEditorObject _memeEditorObject;
-    private boolean bFullscreenImage = true;
-    private Bundle savedInstanceState = null;
-    boolean moarControlsContainerVisible = false;
+    private boolean _bFullscreenImage = true;
+    private Bundle _savedInstanceState = null;
+    boolean _moarControlsContainerVisible = false;
 
     //#####################
     //## Methods
@@ -139,10 +138,10 @@ public class MemeCreateActivity extends AppCompatActivity
 
         // Bind Ui
         ButterKnife.bind(this);
-        app = (App) getApplication();
+        _app = (App) getApplication();
 
         // Set _toolbar
-        setSupportActionBar(toolbar);
+        setSupportActionBar(_toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -151,7 +150,7 @@ public class MemeCreateActivity extends AppCompatActivity
     }
 
     public void initMemeSettings(Bundle savedInstanceState) {
-        MemeData.Font lastUsedFont = getFont(app.settings.getLastUsedFont());
+        MemeData.Font lastUsedFont = getFont(_app.settings.getLastUsedFont());
         Bitmap bitmap = extractBitmapFromIntent(getIntent());
         if (savedInstanceState != null && savedInstanceState.containsKey("memeObj")) {
             _memeEditorObject = (MemeEditorObject) savedInstanceState.getSerializable("memeObj");
@@ -163,8 +162,8 @@ public class MemeCreateActivity extends AppCompatActivity
         }
         _memeEditorObject.getImageMain().setDisplayImage(_memeEditorObject.getImageMain().getImage().copy(Bitmap.Config.RGB_565, false));
 
-        textEditTopCaption.setText(_memeEditorObject.getCaptionTop().getText());
-        textEditBottomCaption.setText(_memeEditorObject.getCaptionBottom().getText());
+        _textEditTopCaption.setText(_memeEditorObject.getCaptionTop().getText());
+        _textEditBottomCaption.setText(_memeEditorObject.getCaptionBottom().getText());
         _memeEditorObject.setChangedListener(this);
         _memeEditorObject.notifyChangedListener();
     }
@@ -182,7 +181,7 @@ public class MemeCreateActivity extends AppCompatActivity
         super.onSaveInstanceState(outState);
         prepareForSaving();
         outState.putSerializable("memeObj", _memeEditorObject);
-        this.savedInstanceState = outState;
+        this._savedInstanceState = outState;
     }
 
     private void prepareForSaving() {
@@ -190,15 +189,15 @@ public class MemeCreateActivity extends AppCompatActivity
             return;
         }
         _memeEditorObject.setChangedListener(null);
-        imageEditView.setImageBitmap(null);
-        if (lastBitmap != null && !lastBitmap.isRecycled())
-            lastBitmap.recycle();
+        _imageEditView.setImageBitmap(null);
+        if (_lastBitmap != null && !_lastBitmap.isRecycled())
+            _lastBitmap.recycle();
         MemeEditorObject.MemeElementImage imageMain = _memeEditorObject.getImageMain();
         if (imageMain.getImage() != null && !imageMain.getImage().isRecycled())
             imageMain.getImage().recycle();
         if (imageMain.getDisplayImage() != null && !imageMain.getDisplayImage().isRecycled())
             imageMain.getDisplayImage().recycle();
-        lastBitmap = null;
+        _lastBitmap = null;
         imageMain.setDisplayImage(null);
         imageMain.setImage(null);
         _memeEditorObject.getCaptionTop().setFont(null);
@@ -215,12 +214,12 @@ public class MemeCreateActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        if (bFullscreenImage) {
-            bFullscreenImage = false;
+        if (_bFullscreenImage) {
+            _bFullscreenImage = false;
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         }
-        if (savedInstanceState != null) {
-            initMemeSettings(savedInstanceState);
+        if (_savedInstanceState != null) {
+            initMemeSettings(_savedInstanceState);
         }
 
 
@@ -259,7 +258,7 @@ public class MemeCreateActivity extends AppCompatActivity
                 //Scale big images down to avoid "out of memory"
                 InputStream inputStream = getAssets().open(imagePath);
                 BitmapFactory.decodeStream(inputStream, new Rect(0, 0, 0, 0), options);
-                options.inSampleSize = ContextUtils.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
+                options.inSampleSize = ContextUtils.get().calculateInSampleSize(options, _app.settings.getRenderQualityReal());
                 options.inJustDecodeBounds = false;
                 inputStream.close();
                 inputStream = getAssets().open(imagePath);
@@ -271,7 +270,7 @@ public class MemeCreateActivity extends AppCompatActivity
         } else {
             //Scale big images down to avoid "out of memory"
             BitmapFactory.decodeFile(imagePath, options);
-            options.inSampleSize = ContextUtils.get().calculateInSampleSize(options, app.settings.getRenderQualityReal());
+            options.inSampleSize = ContextUtils.get().calculateInSampleSize(options, _app.settings.getRenderQualityReal());
             options.inJustDecodeBounds = false;
             bitmap = BitmapFactory.decodeFile(imagePath, options);
         }
@@ -280,16 +279,16 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        boolean hasTextInput = !textEditTopCaption.getText().toString().isEmpty() || !textEditBottomCaption.getText().toString().isEmpty();
+        boolean hasTextInput = !_textEditTopCaption.getText().toString().isEmpty() || !_textEditBottomCaption.getText().toString().isEmpty();
 
         // Close views above
-        if (moarControlsContainerVisible) {
+        if (_moarControlsContainerVisible) {
             toggleMoarControls(true, false);
             return;
         }
 
         // Auto save if option checked
-        if (hasTextInput && app.settings.isAutoSaveMeme()) {
+        if (hasTextInput && _app.settings.isAutoSaveMeme()) {
             if (saveMemeToFilesystem(false)) {
                 finish();
                 return;
@@ -303,27 +302,27 @@ public class MemeCreateActivity extends AppCompatActivity
         }
 
         // Else wait for double back-press
-        if (doubleBackToExitPressedOnce) {
+        if (_doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
         }
-        doubleBackToExitPressedOnce = true;
+        _doubleBackToExitPressedOnce = true;
         Snackbar.make(findViewById(android.R.id.content), R.string.creator__press_back_again_to_exit, Snackbar.LENGTH_SHORT).show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                doubleBackToExitPressedOnce = false;
+                _doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }
 
     @OnTouch(R.id.memecreate__activity__image)
     public boolean onImageTouched(View view) {
-        textEditBottomCaption.clearFocus();
-        textEditTopCaption.clearFocus();
-        imageEditView.requestFocus();
+        _textEditBottomCaption.clearFocus();
+        _textEditTopCaption.clearFocus();
+        _imageEditView.requestFocus();
         ActivityUtils.get(this).hideSoftKeyboard();
-        if (moarControlsContainerVisible) {
+        if (_moarControlsContainerVisible) {
             toggleMoarControls(true, false);
         }
         return true;
@@ -352,7 +351,7 @@ public class MemeCreateActivity extends AppCompatActivity
 
         switch (item.getItemId()) {
             case R.id.action_share: {
-                app.shareBitmapToOtherApp(lastBitmap, this);
+                _app.shareBitmapToOtherApp(_lastBitmap, this);
                 return true;
             }
             case R.id.action_save: {
@@ -369,13 +368,13 @@ public class MemeCreateActivity extends AppCompatActivity
         }
 
         File folder = AssetUpdater.getMemesDir(AppSettings.get());
-        if (memeSavetime < 0) {
-            memeSavetime = System.currentTimeMillis();
+        if (_memeSavetime < 0) {
+            _memeSavetime = System.currentTimeMillis();
         }
 
-        String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), memeSavetime);
+        String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), _memeSavetime);
         File fullpath = new File(folder, filename);
-        boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, lastBitmap) != null;
+        boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, _lastBitmap) != null;
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -384,7 +383,7 @@ public class MemeCreateActivity extends AppCompatActivity
                     .setNegativeButton(R.string.creator__keep_editing, null)
                     .setNeutralButton(R.string.main__share_meme, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            app.shareBitmapToOtherApp(lastBitmap, MemeCreateActivity.this);
+                            _app.shareBitmapToOtherApp(_lastBitmap, MemeCreateActivity.this);
                         }
                     })
                     .setPositiveButton(R.string.main__yes, new DialogInterface.OnClickListener() {
@@ -411,13 +410,13 @@ public class MemeCreateActivity extends AppCompatActivity
     }
 
     public void toggleMoarControls(boolean forceVisibile, boolean visible) {
-        moarControlsContainerVisible = !moarControlsContainerVisible;
+        _moarControlsContainerVisible = !_moarControlsContainerVisible;
         if (forceVisibile) {
-            moarControlsContainerVisible = visible;
+            _moarControlsContainerVisible = visible;
         }
-        textEditBottomCaption.setVisibility(moarControlsContainerVisible ? View.GONE : View.VISIBLE);
-        textEditTopCaption.setVisibility(moarControlsContainerVisible ? View.GONE : View.VISIBLE);
-        toolbar.setVisibility(moarControlsContainerVisible ? View.GONE : View.VISIBLE);
+        _textEditBottomCaption.setVisibility(_moarControlsContainerVisible ? View.GONE : View.VISIBLE);
+        _textEditTopCaption.setVisibility(_moarControlsContainerVisible ? View.GONE : View.VISIBLE);
+        _toolbar.setVisibility(_moarControlsContainerVisible ? View.GONE : View.VISIBLE);
 
         // higher weightRatio means the conf is more wide, so below view can be higher
         // 100 is the max weight, 55 means the below view is a little more weighted
@@ -425,17 +424,17 @@ public class MemeCreateActivity extends AppCompatActivity
         int weight = (int) (55f * (1 + ((curImg.getWidth() / (float) curImg.getHeight()) / 10f)));
         weight = weight > 100 ? 100 : weight;
 
-        // Set weights. If moarControlsContainerVisible == false -> Hide them = 0 weight
+        // Set weights. If _moarControlsContainerVisible == false -> Hide them = 0 weight
         View container = findViewById(R.id.memecreate__activity__image_container);
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) container.getLayoutParams();
         lp.height = 0;
-        lp.weight = moarControlsContainerVisible ? 100 - weight : 100;
+        lp.weight = _moarControlsContainerVisible ? 100 - weight : 100;
         container.setLayoutParams(lp);
         container = findViewById(R.id.memecreate__activity__moar_controls_container);
-        container.setVisibility(moarControlsContainerVisible ? View.VISIBLE : View.GONE);
+        container.setVisibility(_moarControlsContainerVisible ? View.VISIBLE : View.GONE);
         lp = (LinearLayout.LayoutParams) container.getLayoutParams();
         lp.height = 0;
-        lp.weight = moarControlsContainerVisible ? weight : 0;
+        lp.weight = _moarControlsContainerVisible ? weight : 0;
         container.setLayoutParams(lp);
     }
 
@@ -509,7 +508,7 @@ public class MemeCreateActivity extends AppCompatActivity
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 _memeEditorObject.getCaptionTop().setFont((MemeData.Font) parent.getSelectedItem());
                 _memeEditorObject.getCaptionBottom().setFont((MemeData.Font) parent.getSelectedItem());
-                app.settings.setLastUsedFont(((MemeData.Font) parent.getSelectedItem()).fullPath.getAbsolutePath());
+                _app.settings.setLastUsedFont(((MemeData.Font) parent.getSelectedItem()).fullPath.getAbsolutePath());
             }
         });
         SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
@@ -643,12 +642,12 @@ public class MemeCreateActivity extends AppCompatActivity
 
     @Override
     public void onMemeEditorObjectChanged(MemeEditorObjectBase memeEditorObject) {
-        imageEditView.setImageBitmap(null);
-        if (lastBitmap != null)
-            lastBitmap.recycle();
+        _imageEditView.setImageBitmap(null);
+        if (_lastBitmap != null)
+            _lastBitmap.recycle();
         Bitmap bmp = drawMultilineTextToBitmap(this, (MemeEditorObject) memeEditorObject);
-        imageEditView.setImageBitmap(bmp);
-        lastBitmap = bmp;
+        _imageEditView.setImageBitmap(bmp);
+        _lastBitmap = bmp;
     }
 
     @OnClick(R.id.memecreate__moar_controls__layout)
