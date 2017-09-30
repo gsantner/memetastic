@@ -41,13 +41,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -398,13 +397,10 @@ public class MainActivity extends AppCompatActivity
 
                                 // Create temporary file in cache directory
                                 picturePath = File.createTempFile("image", "tmp", getCacheDir()).getAbsolutePath();
-                                FileOutputStream output = new FileOutputStream(picturePath);
-
-                                int read = 0;
-                                byte[] bytes = new byte[4096];
-                                while ((read = input.read(bytes)) != -1) {
-                                    output.write(bytes, 0, read);
-                                }
+                                FileUtils.writeFile(
+                                        new File(picturePath),
+                                        FileUtils.readCloseBinaryStream(input)
+                                );
                             }
                         } catch (IOException e) {
                             // nothing we can do here, null value will be handled below
