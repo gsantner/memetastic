@@ -30,12 +30,9 @@
     <string name="main__exit">Wyjdź</string>
     <string name="main__yes">tak</string>
 
-    <string name="main__nodata__favourites">Brak ulubionych.\n
- Użyj gwiazdki żeby dodać szablon do ulubionych.</string>
-    <string name="main__nodata__custom_templates">Brak niestandardowych szablonów.\n
- Umieść obrazy szablonów tutaj:%1$s</string>
-    <string name="main__nodata__saved">Brak zapisanych memów.\n
- Użyj przycisku zapisu u góry po edycji mema.</string>
+    <string name="main__nodata__favourites">Brak ulubionych.\nUżyj gwiazdki żeby dodać szablon do ulubionych.</string>
+    <string name="main__nodata__custom_templates">Brak niestandardowych szablonów.\nUmieść obrazy szablonów tutaj:%1$s</string>
+    <string name="main__nodata__saved">Brak zapisanych memów.\nUżyj przycisku zapisu u góry po edycji mema.</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Naciśnij wstecz ponownie by przerwać edycję. Jeśli nie zapisałeś mema to go stracisz.</string>
@@ -78,8 +75,7 @@
     <string name="pref_title__appearance">Wygląd</string>
     <string name="pref_title__size">Rozmiar</string>
     <string name="pref_title__default_main_mode">Domyślny tryb</string>
-    <string name="pref_summary__default_main_mode">Domyślny tryb uruchamiamy podczas startu\n
-    (Stwórz, Ulubione lub Zapisane)</string>
+    <string name="pref_summary__default_main_mode">Domyślny tryb uruchamiamy podczas startu\n(Stwórz, Ulubione lub Zapisane)</string>
     <string name="pref_title__functionality">Funkcjonalność</string>
     <string name="pref_summary__auto_save_meme">Automatycznie zapisz mem w przypadku naciśnięcia przycisku powrotu, jeśli wprowadzono jakieś dane</string>
     <string name="pref_title__auto_save_meme">Zapisz w przypadku wciśnięcia wstecz</string>
@@ -92,4 +88,19 @@
     <string name="pref_title__is_statusbar_hidden">Ukryj pasek stanu</string>
     <string name="pref_summary__picture_quality__percent">Jakość i rozmiar zależą od obrazów. Wyższe wartości oznaczają dłuższy czas ładowania. W zależności od urządzenia i rozmiaru obrazu aplikacja może nie działać tak jak powinna jeśli wartość będzie wyższa niż 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Jakość miniatury</string>
+
+    <!-- Language -->
+    <string name="pref_title__language">Język</string>
+    <string name="pref_desc__language">Zmienia język aplikacji. Zrestartuj żeby wprowadzić zmiany</string>
+    <string name="error_cannot_create_save_dir">Błąd: Nie można utworzyć folderu zapisu</string>
+    <string name="error_storage_permission">Aplikacja potrzebuje uprawnień pamięci do zapisania memów i szablonów</string>
+    <string name="main__memecat__other">Inne</string>
+    <string name="downloading">Pobieranie</string>
+    <string name="downloading_failed">Pobieranie nie powiodło się</string>
+    <string name="unzipping">Odpakowywanie</string>
+    <string name="downloading_success">Pobieranie zakończone powodzeniem</string>
+    <string name="download_latest_assets_message">Zostaną pobrane czcionki i szablony memów (ok. 20 MB danych).</string>
+    <string name="download_latest_assets_message_more">Najnowsze pliki możesz też pobrać w ustawieniach.</string>
+    <string name="download_latest_assets_title">Pobierz najnowsze pliki (czcionki i szablony memów)</string>
+    <string name="checking_assets_for_update">Sprawdzanie czy są dostępne nowsze pliki...</string>
 </resources>
