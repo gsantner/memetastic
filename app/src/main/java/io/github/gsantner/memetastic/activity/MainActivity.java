@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -40,9 +41,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -383,8 +387,32 @@ public class MainActivity extends AppCompatActivity
                     String picturePath = cursor.getString(columnIndex);
                     cursor.close();
 
-                    // String picturePath contains the path of selected Image
-                    onImageTemplateWasChosen(picturePath);
+                    if (picturePath == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                        // Retrieve image from Cloud, e.g.: Google Drive, Picasa
+                        try {
+                            ParcelFileDescriptor parcelFileDescriptor = getContentResolver().openFileDescriptor(selectedImage, "r");
+                            if (parcelFileDescriptor != null) {
+                                FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+                                FileInputStream input = new FileInputStream(fileDescriptor);
+
+                                // Create temporary file in cache directory
+                                picturePath = File.createTempFile("image", "tmp", getCacheDir()).getAbsolutePath();
+                                FileUtils.writeFile(
+                                        new File(picturePath),
+                                        FileUtils.readCloseBinaryStream(input)
+                                );
+                            }
+                        } catch (IOException e) {
+                            // nothing we can do here, null value will be handled below
+                        }
+                    }
+
+                    if (picturePath == null) { // All checks fail
+                        ActivityUtils.get(this).showSnackBar(R.string.main__error_fail_retrieve_picture, false);
+                    } else {
+                        // String picturePath contains the path of selected Image
+                        onImageTemplateWasChosen(picturePath);
+                    }
                 }
             } else {
                 ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);

@@ -22,6 +22,7 @@
     <string name="main__get_picture_from_camera">Get picture from Camera</string>
     <string name="main__error_camera_cannot_start">Could not start Camera.</string>
     <string name="main__error_no_picture_selected">No picture was selected.</string>
+    <string name="main__error_fail_retrieve_picture">Could not load picture from storage.</string>
     <string name="main__share_meme_prompt">Share your Meme via…</string>
 
     <string name="main__donate">Donate</string>
