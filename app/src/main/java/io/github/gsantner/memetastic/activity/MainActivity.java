@@ -319,7 +319,6 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.action_mode_create: {
                 _currentMainMode = 0;
-                _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
                 selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
                 _toolbar.setTitle(R.string.app_name);
                 break;
@@ -488,6 +487,7 @@ public class MainActivity extends AppCompatActivity
     public void onTabSelected(TabLayout.Tab tab) {
         int tabPos = tab.getPosition();
         List<MemeData.Image> imageList = new ArrayList<>();
+        _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
 
         if (tabPos >= 0 && tabPos < _tagKeys.length) {
             imageList = MemeData.getImagesWithTag(_tagKeys[tabPos]);
