@@ -21,7 +21,7 @@
     <string name="main__get_picture_from_camera">Capturar imagem pela câmera</string>
     <string name="main__error_camera_cannot_start">Impossível acessar a câmera.</string>
     <string name="main__error_no_picture_selected">Nenhuma imagem selecionada.</string>
-    <string name="main__share_meme_prompt">Compartilhar via...</string>
+    <string name="main__share_meme_prompt">Compartilhar via…</string>
 
     <string name="main__donate">Doar</string>
     <string name="main__recommend_app">Recomendar</string>

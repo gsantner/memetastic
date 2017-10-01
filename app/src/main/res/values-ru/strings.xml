@@ -1,0 +1,94 @@
+<resources>
+  <!-- main -->
+   <string name="main__navdrawer__open">Открыть панель навигации</string>
+   <string name="main__navdrawer__close">Закрыть панель навигации</string>
+
+   <string name="main__save_meme">Сохранить мем</string>
+   <string name="main__share_meme">Поделиться мемом</string>
+   <string name="main__create_meme">Создать мем</string>
+   <string name="main__delete_meme">Удалить мем</string>
+
+   <string name="main__memecat__humans">Люди</string>
+   <string name="main__memecat__cartoon">Мульты</string>
+   <string name="main__memecat__animals">Животные</string>
+   <string name="main__memecat__custom">Пользовательские</string>
+
+   <string name="main__mode__saved">Сохранённые</string>
+   <string name="main__mode__favs">Избранное</string>
+   <string name="main__mode__create">Создать</string>
+
+   <string name="main__get_picture_from_gallery">Изображение из галереи</string>
+   <string name="main__get_picture_from_camera">Изображение с камеры</string>
+   <string name="main__error_camera_cannot_start">Не удалось запустить камеру.</string>
+   <string name="main__error_no_picture_selected">Изображение не выбранно.</string>
+   <string name="main__share_meme_prompt">Поделиться мемом с помощью…</string>
+
+   <string name="main__donate">Поддержать проект</string>
+   <string name="main__recommend_app">Порекомендовать приложение</string>
+   <string name="changelog">Список изменений</string>
+   <string name="main__exit">Выход</string>
+   <string name="main__yes">да</string>
+
+   <string name="main__nodata__favourites">Здесь пока что пусто.\nШаблон мема можно добавить в избранное, нажав на звёздочку.</string>
+   <string name="main__nodata__custom_templates">Здесь пока что пусто.\n Сохранённые шаблоны здесь:%1$s</string>
+   <string name="main__nodata__saved">Здесь пока что пусто.\nЧтбы сохранить мем, нажмите на кнопку сохранения после того, как отредактируете его.</string>
+
+   <!-- Creator -->
+   <string name="creator__press_back_again_to_exit">Нажмите назад ещё раз, чтобы выйти из режима редактирования. Мем будет потерян, если вы его не сохранили.</string>
+   <string name="creator__saved_successfully_message">Мем был успешно сохранён на ваше устройство. Хотите выйти из режима редактирования?</string>
+   <string name="creator__text_size">Размер текста</string>
+   <string name="creator__text_color">Цвет текста</string>
+   <string name="creator__border_color">Цвет границ</string>
+   <string name="creator__saved_successfully">Сохранено!</string>
+   <string name="creator__hint_top_caption">текст сверху</string>
+   <string name="creator__hint_bottom_caption">Текст снизу</string>
+   <string name="creator__font">Шрифт</string>
+   <string name="creator__keep_editing">Продолжить редактирование</string>
+   <string name="creator__text">Текст</string>
+   <string name="creator__size">Размер</string>
+   <string name="creator__background">Фон</string>
+   <string name="creator__border">Границы</string>
+   <string name="creator__picture">Изображение</string>
+
+   <!-- Info -->
+   <string name="about">О программе</string>
+   <string name="developed_by">Разработанно</string>
+   <string name="additional_contact">Больше информации</string>
+   <string name="licenses">Лицензии</string>
+   <string name="show_licenses">Показать лицензии</string>
+   <string name="contributors">Поддержавшие проект</string>
+   <string name="more_information">Больше информации</string>
+   <string name="show_app_license">Показать GNU-GPLv3 лицензию</string>
+   <string name="show_third_party_licenses">Показать сторонние лицензии</string>
+   <string name="miscellaneous">Разное</string>
+
+   <!-- Settings -->
+   <string name="settings__settings">Настройки</string>
+   <string name="settings__all_caps">КАПС ВКЛ</string>
+   <string name="settings__caps_off">капс выкл</string>
+   <string name="settings__rotate">Поворот</string>
+   <string name="pref_title__render_quality_editor_percent">Качество рендеринга</string>
+   <string name="settings__cleanup_thumbnails">Очистить миниатюры</string>
+   <string name="settings__pref_columns_portrait">Столбцы</string>
+   <string name="settings__pref_columns_landscape">Строки</string>
+   <string name="pref_title__appearance">Внешний вид</string>
+   <string name="pref_title__size">Размер</string>
+   <string name="pref_title__default_main_mode">Раздел по умолчанию</string>
+   <string name="pref_summary__default_main_mode">Раздел для открытия при запуске (Сохранённые, Избранное, Создать)</string>
+   <string name="pref_title__functionality">Функциальность</string>
+   <string name="pref_summary__auto_save_meme">Автоматически сохранять редактируемые мемы при нажатии кнопки назад</string>
+   <string name="pref_title__auto_save_meme">Сохранять по нажатию кнопки назад</string>
+   <string name="pref_summary__is_shuffle_meme_categories">После выбора категори отображать мемы в случайном порядке</string>
+   <string name="pref_title__is_shuffle_meme_categories">Список мемов в случайном порядке</string>
+   <string name="creator__padding">Padding</string>
+   <string name="pref_title__overview">Обзор</string>
+   <string name="pref_title__editor">Редактор</string>
+   <string name="pref_summary__is_statusbar_hidden">Скрыть строку состояния в этом режиме</string>
+   <string name="pref_title__is_statusbar_hidden">Скрыть строку состояния</string>
+   <string name="pref_summary__picture_quality__percent">Качество и размер изображений. В зависимости от размера изображения и мощности устройства, производительность приложения может снизиться, если выбранно значение выше 25%.</string>
+   <string name="pref_title__thumbnail_quality__percent">Качество миниатюр</string>
+
+   <!-- Language -->
+   <string name="pref_title__language">Язык</string>
+   <string name="pref_desc__language">Изменить язык приложения. (Необходим перезапуск)</string>
+</resources>
