@@ -23,3 +23,4 @@ Where:
 * **[Luís F.S. Rosa](https://github.com/luisfsr)**<br/>~° Brazilian Portuguese translation
 * **[Laura Arjona Reina](larjona AT larjona DOT net)**<br/>~° Spanish translation
 * **[XzibitusaK]()**<br/>~° Czech translation
+* **[Iskandar Setiadi](https://github.com/freedomofkeima)**<br/>~° Indonesian translation
