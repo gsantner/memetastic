@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 ext {
     version_sdk = [
             compileSdk: 26,
-            buildTools: "26.0.1",
+            buildTools: "26.0.0",
             minSdk    : 14,
             //targetSdk: compileSdk,
     ]
@@ -71,7 +71,8 @@ dependencies {
     compile "com.android.support:recyclerview-v7:${version_lib.appcompat}"
 
     // UI libraries
-    compile 'com.github.DASAR:ShiftColorPicker:v0.5'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.jaredrummler:colorpicker:1.0.1'
 
     // Tool libraries
     compile "com.jakewharton:butterknife:${version_lib.butterknife}"
