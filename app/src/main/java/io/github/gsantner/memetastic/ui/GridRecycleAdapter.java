@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -28,13 +29,15 @@ import io.github.gsantner.memetastic.util.ContextUtils;
  * Adapter to show images in a Grid
  */
 public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<GridRecycleAdapter.ViewHolder> {
-    private List<MemeData.Image> _imageDataList;
+    private List<MemeData.Image> _originalImageDataList;
+    private List<MemeData.Image> _imageDataList; // filtered version
     private int _shortAnimationDuration;
     private Activity _activity;
     private App _app;
 
     public GridRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
-        _imageDataList = imageDataList;
+        _originalImageDataList = imageDataList;
+        _imageDataList = new ArrayList<>(imageDataList);
         _shortAnimationDuration = -1;
         _activity = activity;
         _app = (App) (_activity.getApplication());
@@ -141,6 +144,39 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
                 isFav ? R.color.comic_yellow : R.color.comic_blue);
     }
 
+    public void setFilter(String filter) {
+        _imageDataList.clear();
+        String[] filterTokens = filter.toLowerCase().split("[\\W_]");
+        String[] titleTokens;
+
+        for (MemeData.Image image : _originalImageDataList) {
+            // Tokenize the image title (split by everything that's not a word)
+            if (image.conf != null && image.conf.getTitle() != null && !image.conf.getTitle().isEmpty()) {
+                titleTokens = image.conf.getTitle().toLowerCase().split("[\\W_]");
+            } else {
+                titleTokens = image.fullPath.getName().toLowerCase().split("[\\W_]");
+            }
+
+            boolean allTokensFound = true;
+            for (String filterToken : filterTokens) {
+                boolean foundTokenInTitle = false;
+                for (String titleToken : titleTokens) {
+                    if (titleToken.contains(filterToken)) {
+                        foundTokenInTitle = true;
+                    }
+                }
+                if (!foundTokenInTitle) {
+                    allTokensFound = false;
+                    break;
+                }
+            }
+
+            if (allTokensFound) {
+                _imageDataList.add(image);
+            }
+        }
+        notifyDataSetChanged();
+    }
 
     // contains the conf view for the meme and the favorite button to access them
     public class ViewHolder extends RecyclerView.ViewHolder {

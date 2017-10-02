@@ -1,5 +1,6 @@
 package io.github.gsantner.memetastic.activity;
 
+import android.app.SearchManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -29,6 +30,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.Menu;
@@ -117,6 +119,8 @@ public class MainActivity extends AppCompatActivity
     String[] _tagKeys, _tagValues;
     private int _currentMainMode = 0;
     private long _lastInfoBarTextShownAt = 0;
+    private SearchView _searchView;
+    private MenuItem _searchItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -630,8 +634,43 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.main__menu, menu);
+        _searchItem = menu.findItem(R.id.action_search_meme);
+        _searchView = (SearchView) _searchItem.getActionView();
+
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        _searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        _searchView.setQueryHint(getString(R.string.main__search_meme));
+        if (_searchView != null) {
+            _searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    if (query != null) {
+                        GridRecycleAdapter adapter = (GridRecycleAdapter) _recyclerMemeList.getAdapter();
+                        adapter.setFilter(query);
+                    }
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    if (newText != null) {
+                        GridRecycleAdapter adapter = (GridRecycleAdapter) _recyclerMemeList.getAdapter();
+                        adapter.setFilter(newText);
+                    }
+                    return false;
+                }
+            });
+            _searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus) {
+                        _searchItem.collapseActionView();
+                    }
+                }
+            });
+        }
         return true;
     }
 

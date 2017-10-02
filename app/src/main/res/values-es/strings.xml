@@ -18,6 +18,7 @@
     <string name="main__mode__favs">Favoritos</string>
     <string name="main__mode__create">Crear</string>
 
+    <string name="main__search_meme">Buscar meme</string>
     <string name="main__get_picture_from_gallery">Obtener imagen de la galería</string>
     <string name="main__get_picture_from_camera">Obtener imagen con la cámara</string>
     <string name="main__error_camera_cannot_start">No se pudo iniciar la cámara.</string>
