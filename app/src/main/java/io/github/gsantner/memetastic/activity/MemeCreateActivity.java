@@ -98,13 +98,13 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     EditText _textEditTopCaption;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_text)
-    de.hdodenhof.circleimageview.CircleImageView _textBackgroundColor;
+    io.github.gsantner.memetastic.ui.SquareImageView _textBackgroundColor;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_border)
-    de.hdodenhof.circleimageview.CircleImageView _textBorderColor;
+    io.github.gsantner.memetastic.ui.SquareImageView _textBorderColor;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_padding)
-    de.hdodenhof.circleimageview.CircleImageView _paddingColor;
+    io.github.gsantner.memetastic.ui.SquareImageView _paddingColor;
 
     //#####################
     //## Members
@@ -461,11 +461,11 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             public void onClick(View v) {
                 LinearLayout picker = (LinearLayout) v;
                 if (picker == colorPickerTextBorder) {
-                    ColorPickerDialog.newBuilder().setDialogId(1).setColor(_memeEditorElements.getCaptionTop().getBorderColor()).show(MemeCreateActivity.this);
+                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_border).setColor(_memeEditorElements.getCaptionTop().getBorderColor()).show(MemeCreateActivity.this);
                 } else if (picker == colorPickerTextBackground) {
-                    ColorPickerDialog.newBuilder().setDialogId(2).setColor(_memeEditorElements.getCaptionTop().getTextColor()).show(MemeCreateActivity.this);
+                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_text).setColor(_memeEditorElements.getCaptionTop().getTextColor()).show(MemeCreateActivity.this);
                 } else if (picker == colorPickerPadding) {
-                    ColorPickerDialog.newBuilder().setDialogId(3).setColor(_memeEditorElements.getImageMain().getPaddingColor()).show(MemeCreateActivity.this);
+                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_padding).setColor(_memeEditorElements.getImageMain().getPaddingColor()).show(MemeCreateActivity.this);
                 }
                 onMemeEditorObjectChanged();
             }
@@ -525,17 +525,17 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     @Override
     public void onColorSelected(int id, @ColorInt int i1) {
         switch (id) {
-            case 1: // border color
+            case R.id.memecreate__moar_controls__color_picker_for_border: // border color
                 _memeEditorElements.getCaptionTop().setBorderColor(i1);
                 _memeEditorElements.getCaptionBottom().setBorderColor(i1);
                 _textBorderColor.setColorFilter(i1);
                 break;
-            case 2: // text background color
+            case R.id.memecreate__moar_controls__color_picker_for_text: // text background color
                 _memeEditorElements.getCaptionTop().setTextColor(i1);
                 _memeEditorElements.getCaptionBottom().setTextColor(i1);
                 _textBackgroundColor.setColorFilter(i1);
                 break;
-            case 3: // padding color
+            case R.id.memecreate__moar_controls__color_picker_for_padding: // padding color
                 _memeEditorElements.getImageMain().setPaddingColor(i1);
                 _memeEditorElements.getImageMain().setPaddingColor(i1);
                 _paddingColor.setColorFilter(i1);

@@ -67,12 +67,12 @@
                 android:layout_weight="80"
                 android:text="@string/creator__background" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <io.github.gsantner.memetastic.ui.SquareImageView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_text"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:src="@android:color/darker_gray"
-                android:layout_weight="20"
+                android:layout_weight="15"
                 android:layout_gravity="end"
                 />
         </LinearLayout>
@@ -93,12 +93,12 @@
                 android:layout_weight="80"
                 android:text="@string/creator__border" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <io.github.gsantner.memetastic.ui.SquareImageView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_border"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:src="@android:color/darker_gray"
-                android:layout_weight="20"
+                android:layout_weight="15"
                 android:layout_gravity="end"
                 />
         </LinearLayout>
@@ -197,12 +197,12 @@
                 android:layout_weight="80"
                 android:text="@string/creator__padding" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <io.github.gsantner.memetastic.ui.SquareImageView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_padding"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="20dp"
                 android:src="@android:color/darker_gray"
-                android:layout_weight="20"
+                android:layout_weight="15"
                 android:layout_gravity="end"
                 />
         </LinearLayout>
