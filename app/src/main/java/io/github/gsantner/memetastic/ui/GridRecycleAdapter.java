@@ -146,15 +146,15 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
 
     public void setFilter(String filter) {
         _imageDataList.clear();
-        String[] filterTokens = filter.toLowerCase().split("\\W");
+        String[] filterTokens = filter.toLowerCase().split("[\\W_]");
         String[] titleTokens;
 
         for (MemeData.Image image : _originalImageDataList) {
             // Tokenize the image title (split by everything that's not a word)
             if (image.conf != null && image.conf.getTitle() != null && !image.conf.getTitle().isEmpty()) {
-                titleTokens = image.conf.getTitle().toLowerCase().split("\\W");
+                titleTokens = image.conf.getTitle().toLowerCase().split("[\\W_]");
             } else {
-                titleTokens = image.fullPath.getName().toLowerCase().split("\\W");
+                titleTokens = image.fullPath.getName().toLowerCase().split("[\\W_]");
             }
 
             boolean allTokensFound = true;
