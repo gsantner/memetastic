@@ -1,8 +1,8 @@
 <resources>
 
     <!-- main -->
-    <string name="main__navdrawer__open">Abrir el cajón de navegación</string>
-    <string name="main__navdrawer__close">Cerrar el cajón de navegación</string>
+    <string name="main__navdrawer__open">Abrir el panel de navegación</string>
+    <string name="main__navdrawer__close">Cerrar el panel de navegación</string>
 
     <string name="main__save_meme">Guardar meme</string>
     <string name="main__share_meme">Compartir meme</string>
@@ -21,7 +21,7 @@
     <string name="main__get_picture_from_gallery">Obtener imagen de la galería</string>
     <string name="main__get_picture_from_camera">Obtener imagen con la cámara</string>
     <string name="main__error_camera_cannot_start">No se pudo iniciar la cámara.</string>
-    <string name="main__error_no_picture_selected">No se ha seleccionado imagen.</string>
+    <string name="main__error_no_picture_selected">No se ha seleccionado ninguna imagen.</string>
     <string name="main__share_meme_prompt">Compartir el meme vía...</string>
 
     <string name="main__donate">Donar</string>
@@ -30,21 +30,21 @@
     <string name="main__exit">Salir</string>
     <string name="main__yes">sí</string>
 
-    <string name="main__nodata__favourites">Aún no hay favoritos. Usa el botón de la estrella en una plantilla de meme para agregarla a los favoritos.</string>
+    <string name="main__nodata__favourites">Aún no hay favoritos. Usa el botón de la estrella en una plantilla de meme para agregarla a favoritos.</string>
     <string name="main__nodata__custom_templates">Aún no hay plantillas personalizadas. Coloca las imágenes de plantillas aquí:%1$s</string>
     <string name="main__nodata__saved">Aún no hay memes guardados. Usa el botón superior de guardar tras editar un meme.</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Pulsa atrás de nuevo para dejar de editar este meme. El meme se perderá si no se guardó antes.</string>
-    <string name="creator__saved_successfully_message">Este meme se ha almacenado correctamente en tu dispositivo. ¿Quieres salir de la edición de meme ahora?</string>
+    <string name="creator__saved_successfully_message">Este meme se ha almacenado correctamente en tu dispositivo. ¿Quieres dejar de editar el meme ahora?</string>
     <string name="creator__text_size">Tamaño del texto</string>
     <string name="creator__text_color">Color del texto</string>
     <string name="creator__border_color">Color del borde</string>
     <string name="creator__saved_successfully">¡Guardado correctamente!</string>
-    <string name="creator__hint_top_caption">Nota superior</string>
-    <string name="creator__hint_bottom_caption">Nota inferior</string>
+    <string name="creator__hint_top_caption">Texto superior</string>
+    <string name="creator__hint_bottom_caption">Texto inferior</string>
     <string name="creator__font">Tipo de letra</string>
-    <string name="creator__keep_editing">Seguir editando</string>
+    <string name="creator__keep_editing">Continuar editando</string>
     <string name="creator__text">Texto</string>
     <string name="creator__size">Tamaño</string>
     <string name="creator__background">Fondo</string>
@@ -77,7 +77,7 @@
     <string name="pref_title__default_main_mode">Modo predeterminado</string>
     <string name="pref_summary__default_main_mode">Modo predeterminado que se abre al iniciar (Crear, Favoritos o Guardados)</string>
     <string name="pref_title__functionality">Funcionalidad</string>
-    <string name="pref_summary__auto_save_meme">Grabar meme automáticamente si se presiona \"atrás\" y había algún cambio</string>
+    <string name="pref_summary__auto_save_meme">Guardar meme automáticamente si se presiona \"atrás\" y había algún cambio</string>
     <string name="pref_title__auto_save_meme">Guardar al presionar \"atrás"</string>
     <string name="pref_summary__is_shuffle_meme_categories">Mezclar la lista de memes tras seleccionar una categoría</string>
     <string name="pref_title__is_shuffle_meme_categories">Mezclar la lista de memes</string>
@@ -91,14 +91,15 @@
 
     <!-- Language -->
     <string name="pref_title__language">Idioma</string>
-    <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
+    <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reinicia la aplicación para que se apliquen los cambios</string>
     <string name="error_cannot_create_save_dir">Error: no se puede crear el directorio de guardado</string>
-    <string name="error_storage_permission">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
+    <string name="error_storage_permission">Se necesita el permiso de almacenamiento para guardar memes y plantillas</string>
     <string name="main__memecat__other">Otros</string>
     <string name="downloading">Descargando</string>
     <string name="downloading_failed">Descarga fallida</string>
     <string name="unzipping">Descomprimiendo</string>
     <string name="downloading_success">Descarga correcta</string>
     <string name="download_latest_assets_message">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
-    <string name="download_latest_assets_title">Descargar los últimos elementos</string>
+    <string name="download_latest_assets_title">Descargar las últimos plantillas</string>
+    <string name="checking_assets_for_update">Comprobando si hay plantillas más recientes disponibles</string>
 </resources>
