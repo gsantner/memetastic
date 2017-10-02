@@ -104,4 +104,5 @@
     <string name="download_latest_assets_message_more">In settings you can manually get the latest assets later too.</string>
     <string name="download_latest_assets_title">Download latest assets</string>
     <string name="checking_assets_for_update">Checking if there are more recent assets available</string>
+    <string name="main__search_meme">Search Meme</string>
 </resources>

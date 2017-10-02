@@ -102,4 +102,5 @@
     <string name="download_latest_assets_message">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
     <string name="download_latest_assets_title">Descargar las últimos plantillas</string>
     <string name="checking_assets_for_update">Comprobando si hay plantillas más recientes disponibles</string>
+    <string name="main__search_meme">Buscar meme</string>
 </resources>

@@ -92,4 +92,5 @@
     <!-- Language -->
     <string name="pref_title__language">Jazyk</string>
     <string name="pref_desc__language">Pokud chcete zmìnit jazyk této aplikace, bude vyÂžadován její restart.</string>
+    <string name="main__search_meme"></string>
 </resources>
