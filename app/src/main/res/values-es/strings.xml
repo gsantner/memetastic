@@ -18,6 +18,7 @@
     <string name="main__mode__favs">Favoritos</string>
     <string name="main__mode__create">Crear</string>
 
+    <string name="main__search_meme">Buscar meme</string>
     <string name="main__get_picture_from_gallery">Obtener imagen de la galería</string>
     <string name="main__get_picture_from_camera">Obtener imagen con la cámara</string>
     <string name="main__error_camera_cannot_start">No se pudo iniciar la cámara.</string>
@@ -102,5 +103,4 @@
     <string name="download_latest_assets_message">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
     <string name="download_latest_assets_title">Descargar las últimos plantillas</string>
     <string name="checking_assets_for_update">Comprobando si hay plantillas más recientes disponibles</string>
-    <string name="main__search_meme">Buscar meme</string>
 </resources>
