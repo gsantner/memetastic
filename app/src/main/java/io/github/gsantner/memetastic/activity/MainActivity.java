@@ -665,8 +665,6 @@ public class MainActivity extends AppCompatActivity
             _searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
-                    menu.findItem(R.id.action_picture_from_camera).setVisible(hasFocus);
-                    menu.findItem(R.id.action_picture_from_gallery).setVisible(hasFocus);
                     if (!hasFocus) {
                         _searchItem.collapseActionView();
                     }
