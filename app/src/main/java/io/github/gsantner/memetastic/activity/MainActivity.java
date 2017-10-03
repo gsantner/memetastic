@@ -28,7 +28,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -64,7 +64,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.GridDecoration;
-import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
+import io.github.gsantner.memetastic.ui.LinearRecycleAdapter;
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
-        RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
+        RecyclerView.LayoutManager recyclerGridLayout = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         _recyclerMemeList.setLayoutManager(recyclerGridLayout);
 
         for (String cat : _tagValues) {
@@ -357,7 +357,7 @@ public class MainActivity extends AppCompatActivity
         _drawer.closeDrawers();
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
         if (imageList != null) {
-            GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(imageList, this);
+            LinearRecycleAdapter recyclerMemeAdapter = new LinearRecycleAdapter(imageList, this);
             setRecyclerMemeListAdapter(recyclerMemeAdapter);
             return true;
         }
@@ -504,7 +504,7 @@ public class MainActivity extends AppCompatActivity
             Collections.shuffle(imageList);
         }
 
-        GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(imageList, this);
+        LinearRecycleAdapter recyclerMemeAdapter = new LinearRecycleAdapter(imageList, this);
         setRecyclerMemeListAdapter(recyclerMemeAdapter);
     }
 
@@ -647,7 +647,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     if (query != null) {
-                        GridRecycleAdapter adapter = (GridRecycleAdapter) _recyclerMemeList.getAdapter();
+                        LinearRecycleAdapter adapter = (LinearRecycleAdapter) _recyclerMemeList.getAdapter();
                         adapter.setFilter(query);
                     }
                     return false;
@@ -656,7 +656,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     if (newText != null) {
-                        GridRecycleAdapter adapter = (GridRecycleAdapter) _recyclerMemeList.getAdapter();
+                        LinearRecycleAdapter adapter = (LinearRecycleAdapter) _recyclerMemeList.getAdapter();
                         adapter.setFilter(newText);
                     }
                     return false;
