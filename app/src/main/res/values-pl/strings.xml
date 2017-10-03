@@ -18,10 +18,12 @@
     <string name="main__mode__favs">Ulubione</string>
     <string name="main__mode__create">Stwórz</string>
 
+    <string name="main__search_meme">Wyszukaj Mem</string>
     <string name="main__get_picture_from_gallery">Wybierz obraz z Galerii</string>
     <string name="main__get_picture_from_camera">Zrób zdjęcie aparatem</string>
     <string name="main__error_camera_cannot_start">Nie udało się włączyć aparatu.</string>
     <string name="main__error_no_picture_selected">Nie wybrano żadnego obrazu.</string>
+    <string name="main__error_fail_retrieve_picture">Nie udało się załadować obrazu z pamięci.</string>
     <string name="main__share_meme_prompt">Udostępnij Twój Mem za pomocą...</string>
 
     <string name="main__donate">Wspomóż</string>
@@ -103,4 +105,7 @@
     <string name="download_latest_assets_message_more">Najnowsze pliki możesz też pobrać w ustawieniach.</string>
     <string name="download_latest_assets_title">Pobierz najnowsze pliki (czcionki i szablony memów)</string>
     <string name="checking_assets_for_update">Sprawdzanie czy są dostępne nowsze pliki...</string>
+    <string name="palette_colors">Paleta</string>
+    <string name="preset_colors">Presety</string>
+    <string name="select_color">Wybierz kolor</string>
 </resources>
