@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,7 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +38,9 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
+
+import com.jaredrummler.android.colorpicker.ColorPickerDialog;
+import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,18 +66,18 @@ import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
-import uz.shift.colorpicker.LineColorPicker;
 
 /**
  * Activity for creating memes
  */
-public class MemeCreateActivity extends AppCompatActivity {
+public class MemeCreateActivity extends AppCompatActivity implements ColorPickerDialogListener {
     //########################
     //## Static
     //########################
     public final static int RESULT_MEME_EDITING_FINISHED = 150;
     public final static String EXTRA_IMAGE_PATH = "MemeCreateActivity_EXTRA_IMAGE_PATH";
     public final static String EXTRA_MEMETASTIC_DATA = "MemeCreateActivity_EXTRA_MEMETASTIC_DATA";
+    private static final String TAG = MemeCreateActivity.class.getSimpleName();
 
     //########################
     //## UI Binding
@@ -91,6 +96,15 @@ public class MemeCreateActivity extends AppCompatActivity {
 
     @BindView(R.id.memecreate__activity__edit_caption_top)
     EditText _textEditTopCaption;
+
+    @BindView(R.id.memecreate__moar_controls__color_picker_for_text)
+    io.github.gsantner.memetastic.ui.SquareImageView _textBackgroundColor;
+
+    @BindView(R.id.memecreate__moar_controls__color_picker_for_border)
+    io.github.gsantner.memetastic.ui.SquareImageView _textBorderColor;
+
+    @BindView(R.id.memecreate__moar_controls__color_picker_for_padding)
+    io.github.gsantner.memetastic.ui.SquareImageView _paddingColor;
 
     //#####################
     //## Members
@@ -415,18 +429,14 @@ public class MemeCreateActivity extends AppCompatActivity {
     }
 
     private void initMoarControlsContainer() {
-        final LineColorPicker colorPickerShade = ButterKnife.findById(this, R.id.memecreate__moar_controls__color_picker_for_border);
-        final LineColorPicker colorPickerText = ButterKnife.findById(this, R.id.memecreate__moar_controls__color_picker_for_text);
+        final LinearLayout colorPickerTextBackground = ButterKnife.findById(this, R.id.text_background_color_picker);
+        final LinearLayout colorPickerTextBorder = ButterKnife.findById(this, R.id.text_border_color_picker);
+        final LinearLayout colorPickerPadding = ButterKnife.findById(this, R.id.padding_color_picker);
         final Spinner dropdownFont = ButterKnife.findById(this, R.id.memecreate__moar_controls__dropdown_font);
         final SeekBar seekFontSize = ButterKnife.findById(this, R.id.memecreate__moar_controls__seek_font_size);
         final ToggleButton toggleAllCaps = ButterKnife.findById(this, R.id.memecreate__moar_controls__toggle_all_caps);
         final Button rotateButton = ButterKnife.findById(this, R.id.memecreate__moar_controls__rotate_plus_90deg);
-        final LineColorPicker colorPickerPadding = ButterKnife.findById(this, R.id.memecreate__moar_controls__color_picker_for_padding);
         final SeekBar seekPaddingSize = ButterKnife.findById(this, R.id.memecreate__moar_controls__seek_padding_size);
-
-        colorPickerText.setColors(MemeLibConfig.MEME_COLORS.ALL);
-        colorPickerShade.setColors(MemeLibConfig.MEME_COLORS.ALL);
-        colorPickerPadding.setColors(MemeLibConfig.MEME_COLORS.ALL);
 
         FontAdapter adapter = new FontAdapter(this,
                 android.R.layout.simple_list_item_1, MemeData.getFonts(),
@@ -435,9 +445,9 @@ public class MemeCreateActivity extends AppCompatActivity {
 
 
         // Apply existing settings
-        colorPickerText.setSelectedColor(_memeEditorElements.getCaptionTop().getTextColor());
-        colorPickerShade.setSelectedColor(_memeEditorElements.getCaptionTop().getBorderColor());
-        colorPickerPadding.setSelectedColor(_memeEditorElements.getImageMain().getPaddingColor());
+        _textBackgroundColor.setColorFilter(_memeEditorElements.getCaptionTop().getTextColor());
+        _textBorderColor.setColorFilter(_memeEditorElements.getCaptionTop().getBorderColor());
+        _paddingColor.setColorFilter(_memeEditorElements.getImageMain().getPaddingColor());
         adapter.setSelectedFont(dropdownFont, _memeEditorElements.getCaptionTop().getFont());
         toggleAllCaps.setChecked(_memeEditorElements.getCaptionTop().isAllCaps());
         seekFontSize.setProgress(_memeEditorElements.getCaptionTop().getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
@@ -449,24 +459,22 @@ public class MemeCreateActivity extends AppCompatActivity {
         //
         View.OnClickListener colorListener = new View.OnClickListener() {
             public void onClick(View v) {
-                LineColorPicker picker = (LineColorPicker) v;
-                if (picker == colorPickerShade) {
-                    _memeEditorElements.getCaptionTop().setBorderColor(picker.getColor());
-                    _memeEditorElements.getCaptionBottom().setBorderColor(picker.getColor());
-                } else if (picker == colorPickerText) {
-                    _memeEditorElements.getCaptionTop().setTextColor(picker.getColor());
-                    _memeEditorElements.getCaptionBottom().setTextColor(picker.getColor());
+                LinearLayout picker = (LinearLayout) v;
+                if (picker == colorPickerTextBorder) {
+                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_border).setColor(_memeEditorElements.getCaptionTop().getBorderColor()).show(MemeCreateActivity.this);
+                } else if (picker == colorPickerTextBackground) {
+                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_text).setColor(_memeEditorElements.getCaptionTop().getTextColor()).show(MemeCreateActivity.this);
                 } else if (picker == colorPickerPadding) {
-                    _memeEditorElements.getImageMain().setPaddingColor(picker.getColor());
-                    _memeEditorElements.getImageMain().setPaddingColor(picker.getColor());
+                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_padding).setColor(_memeEditorElements.getImageMain().getPaddingColor()).show(MemeCreateActivity.this);
                 }
                 onMemeEditorObjectChanged();
             }
         };
 
-        colorPickerShade.setOnClickListener(colorListener);
-        colorPickerText.setOnClickListener(colorListener);
+        colorPickerTextBorder.setOnClickListener(colorListener);
+        colorPickerTextBackground.setOnClickListener(colorListener);
         colorPickerPadding.setOnClickListener(colorListener);
+
         dropdownFont.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -511,6 +519,37 @@ public class MemeCreateActivity extends AppCompatActivity {
                 onMemeEditorObjectChanged();
             }
         });
+    }
+
+
+    @Override
+    public void onColorSelected(int id, @ColorInt int i1) {
+        switch (id) {
+            case R.id.memecreate__moar_controls__color_picker_for_border: // border color
+                _memeEditorElements.getCaptionTop().setBorderColor(i1);
+                _memeEditorElements.getCaptionBottom().setBorderColor(i1);
+                _textBorderColor.setColorFilter(i1);
+                break;
+            case R.id.memecreate__moar_controls__color_picker_for_text: // text background color
+                _memeEditorElements.getCaptionTop().setTextColor(i1);
+                _memeEditorElements.getCaptionBottom().setTextColor(i1);
+                _textBackgroundColor.setColorFilter(i1);
+                break;
+            case R.id.memecreate__moar_controls__color_picker_for_padding: // padding color
+                _memeEditorElements.getImageMain().setPaddingColor(i1);
+                _memeEditorElements.getImageMain().setPaddingColor(i1);
+                _paddingColor.setColorFilter(i1);
+                break;
+            default:
+                Log.i(TAG, "Wrong selection");
+                break;
+        }
+        onMemeEditorObjectChanged();
+
+    }
+
+    @Override
+    public void onDialogDismissed(int id) {
     }
 
     public Bitmap makeMemeImageFromElements(Context c, MemeEditorElements memeEditorElements) {
@@ -621,4 +660,5 @@ public class MemeCreateActivity extends AppCompatActivity {
     void onBottomContainerClicked() {
         toggleMoarControls(true, false);
     }
+
 }

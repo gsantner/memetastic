@@ -71,7 +71,7 @@ dependencies {
     compile "com.android.support:recyclerview-v7:${version_lib.appcompat}"
 
     // UI libraries
-    compile 'com.github.DASAR:ShiftColorPicker:v0.5'
+    compile 'com.jaredrummler:colorpicker:1.0.1'
 
     // Tool libraries
     compile "com.jakewharton:butterknife:${version_lib.butterknife}"
