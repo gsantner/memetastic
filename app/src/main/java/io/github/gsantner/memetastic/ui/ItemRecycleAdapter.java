@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,19 +24,21 @@ import io.github.gsantner.memetastic.activity.MainActivity;
 import io.github.gsantner.memetastic.activity.MemeCreateActivity;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.ImageLoaderTask;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
  * Adapter to show images in a Grid
  */
-public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<GridRecycleAdapter.ViewHolder> {
+public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<ItemRecycleAdapter.ViewHolder> {
     private List<MemeData.Image> _originalImageDataList;
     private List<MemeData.Image> _imageDataList; // filtered version
     private int _shortAnimationDuration;
     private Activity _activity;
     private App _app;
 
-    public GridRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
+
+    public ItemRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
         _originalImageDataList = imageDataList;
         _imageDataList = new ArrayList<>(imageDataList);
         _shortAnimationDuration = -1;
@@ -45,25 +48,36 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
+        View v;
+        if(AppSettings.get().getViewType()==MainActivity.VIEW_TYPE_GRID){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
+        }
+        else{
+           v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical_image, parent, false);
+        }
+
         return new ViewHolder(v);
     }
 
-    // sets up the view of the item at the position in the grid
+    // sets up the view of the item
     @Override
     public void onBindViewHolder(final ViewHolder holder, int pos) {
         final MemeData.Image imageData = _imageDataList.get(pos);
         if (imageData == null || imageData.fullPath == null || !imageData.fullPath.exists()) {
             holder.imageView.setImageResource(R.drawable.ic_mood_bad_black_256dp);
             holder.imageButtonFav.setVisibility(View.INVISIBLE);
+            holder.imageTitle.setText("Meme");
             return;
         }
+        holder.imageTitle.setText(imageData.conf.getTitle());
         holder.imageButtonFav.setVisibility(View.INVISIBLE);
         holder.imageView.setVisibility(View.INVISIBLE);
         ImageLoaderTask<ViewHolder> taskLoadImage = new ImageLoaderTask<>(this, _activity, true, holder);
         taskLoadImage.execute(imageData.fullPath);
         holder.imageView.setTag(imageData);
         holder.imageButtonFav.setTag(imageData);
+
+
 
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
 
@@ -83,6 +97,8 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
                 }
             }
         });
+
+
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,6 +201,10 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
 
         @BindView(R.id.item__square_image__image_bottom_end)
         public ImageView imageButtonFav;
+
+        @BindView(R.id.item_square_image_title)
+        public TextView imageTitle;
+
 
         // saves the instance of the conf view of the meme and favorite button to access them later
         public ViewHolder(View itemView) {
