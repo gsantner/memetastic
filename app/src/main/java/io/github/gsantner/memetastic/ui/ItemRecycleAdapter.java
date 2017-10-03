@@ -24,19 +24,21 @@ import io.github.gsantner.memetastic.activity.MainActivity;
 import io.github.gsantner.memetastic.activity.MemeCreateActivity;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.ImageLoaderTask;
+import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
  * Adapter to show images in a Grid
  */
-public class LinearRecycleAdapter extends RecyclerView.Adapter<LinearRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<LinearRecycleAdapter.ViewHolder> {
+public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<ItemRecycleAdapter.ViewHolder> {
     private List<MemeData.Image> _originalImageDataList;
     private List<MemeData.Image> _imageDataList; // filtered version
     private int _shortAnimationDuration;
     private Activity _activity;
     private App _app;
 
-    public LinearRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
+
+    public ItemRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
         _originalImageDataList = imageDataList;
         _imageDataList = new ArrayList<>(imageDataList);
         _shortAnimationDuration = -1;
@@ -46,11 +48,18 @@ public class LinearRecycleAdapter extends RecyclerView.Adapter<LinearRecycleAdap
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
+        View v;
+        if(AppSettings.get().getViewType()==MainActivity.VIEW_TYPE_GRID){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
+        }
+        else{
+           v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical_image, parent, false);
+        }
+
         return new ViewHolder(v);
     }
 
-    // sets up the view of the item at the position in the grid
+    // sets up the view of the item
     @Override
     public void onBindViewHolder(final ViewHolder holder, int pos) {
         final MemeData.Image imageData = _imageDataList.get(pos);
@@ -88,6 +97,8 @@ public class LinearRecycleAdapter extends RecyclerView.Adapter<LinearRecycleAdap
                 }
             }
         });
+
+
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,6 +204,7 @@ public class LinearRecycleAdapter extends RecyclerView.Adapter<LinearRecycleAdap
 
         @BindView(R.id.item_square_image_title)
         public TextView imageTitle;
+
 
         // saves the instance of the conf view of the meme and favorite button to access them later
         public ViewHolder(View itemView) {

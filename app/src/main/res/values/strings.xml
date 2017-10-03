@@ -18,6 +18,9 @@
     <string name="main__mode__favs">Favs</string>
     <string name="main__mode__create">Create</string>
 
+    <string name="view__mode__list">List View</string>
+    <string name="view__mode__grid">Grid View</string>
+
     <string name="main__search_meme">Search Meme</string>
     <string name="main__get_picture_from_gallery">Get picture from Gallery</string>
     <string name="main__get_picture_from_camera">Get picture from Camera</string>
@@ -90,6 +93,9 @@
     <string name="pref_title__is_statusbar_hidden">Hide status bar</string>
     <string name="pref_summary__picture_quality__percent">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
+    <string name="pref_summary__view_type">Toggles view-type (List, Grid)</string>
+    <string name="pref_title__view_type">View Mode</string>
+    <string name="pref_key__view_type">pref_key__view_type</string>
 
     <!-- Language -->
     <string name="pref_title__language">Language</string>
@@ -108,4 +114,5 @@
     <string name="palette_colors">Palette</string>
     <string name="preset_colors">Presets</string>
     <string name="select_color">Select color</string>
+
 </resources>

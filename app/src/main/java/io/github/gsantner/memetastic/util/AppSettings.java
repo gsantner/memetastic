@@ -149,6 +149,8 @@ public class AppSettings extends AppSettingsBase {
         return getInt(R.string.pref_key__last_selected_tab, 0);
     }
 
+    public int getViewType(){return getIntOfStringPref(R.string.pref_key__view_type,0);}
+
     public int getGridColumnCountPortrait() {
         int count = getInt(R.string.pref_key__grid_column_count_portrait, -1);
         if (count == -1) {
