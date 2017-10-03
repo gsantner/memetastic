@@ -88,4 +88,11 @@
     <string name="error_storage_permission">"Benötige Datei-Berichtigung um Memes zu speichern "</string>
     <string name="main__memecat__other">Anderes</string>
     <string name="unzipping">Entpacken</string>
+    <string name="checking_assets_for_update">Überprüfe ob aktuellere Assets verfügbar sind</string>
+    <string name="select_color">Farbe auswählen</string>
+    <string name="preset_colors">Weniger</string>
+    <string name="palette_colors">Palette</string>
+    <string name="main__search_meme">Memes suchen</string>
+    <string name="main__error_fail_retrieve_picture">Konnte Bild nicht vom Speicher laden</string>
+    <string name="download_latest_assets_message_more">In den Einstellungen können Assets später erneut heruntergeladen werden</string>
 </resources>
