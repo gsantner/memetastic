@@ -1,6 +1,7 @@
 package io.github.gsantner.memetastic.data;
 
 import android.graphics.Typeface;
+import android.util.Log;
 
 import java.io.File;
 import java.io.Serializable;
@@ -17,6 +18,27 @@ public class MemeData implements Serializable {
     private static final List<Image> _images = new ArrayList<>();
     private static final List<Image> _createdMemes = new ArrayList<>();
     private static final HashMap<String, List<Image>> _imagesWithTags = new HashMap<>();
+    private static boolean _wasInit = false;
+    private static final Object _wasInitSync = new Object();
+
+    public static boolean isReady() {
+        synchronized (_wasInitSync) {
+            Log.d("XXX", "FONT: " + _fonts.isEmpty());
+            Log.d("XXX", "IMAGES: " + _images.isEmpty());
+            Log.d("XXX", "init: " + _wasInit);
+            return !_fonts.isEmpty() && !_images.isEmpty() && _wasInit;
+        }
+    }
+
+    public static void setWasInit(boolean value) {
+        synchronized (_wasInitSync) {
+            _wasInit = value;
+        }
+    }
+
+    public static boolean wasInit() {
+        return _wasInit;
+    }
 
     public static List<Font> getFonts() {
         return _fonts;

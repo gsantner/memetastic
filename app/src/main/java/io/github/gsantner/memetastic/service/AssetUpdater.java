@@ -181,6 +181,7 @@ public class AssetUpdater {
             List<MemeData.Image> images = MemeData.getImages();
             fonts.clear();
             images.clear();
+            MemeData.setWasInit(false);
 
             boolean permGranted = PermissionChecker.hasExtStoragePerm(_context);
 
@@ -194,8 +195,22 @@ public class AssetUpdater {
                 loadConfigFromFolder(getBundledAssetsDir(_appSettings), fonts, images);
             }
             MemeData.clearImagesWithTags();
+            guessLastUsedFont(fonts);
+
+            MemeData.setWasInit(true);
             _isAlreadyLoading = false;
             AppCast.ASSETS_LOADED.send(_context);
+        }
+
+        private void guessLastUsedFont(final List<MemeData.Font> fonts) {
+            String lastFont = _appSettings.getLastUsedFont();
+            if (lastFont.startsWith(_context.getFilesDir().getAbsolutePath())) {
+                lastFont = "";
+            }
+
+            if (lastFont.isEmpty() || !(new File(lastFont).exists())) {
+                _appSettings.setLastUsedFont(fonts.get(0).fullPath.getAbsolutePath());
+            }
         }
 
         private void loadConfigFromFolder(File folder, List<MemeData.Font> dataFonts, List<MemeData.Image> dataImages) {
@@ -335,6 +350,7 @@ public class AssetUpdater {
             } catch (IOException ignored) {
             }
         }
+
     }
 
     public static MemeConfig.Font generateFontEntry(File folder, String filename) {

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#eeeeee"
-    android:fadeScrollbars="false"
-    android:paddingLeft="@dimen/default_margin_2"
-    android:paddingRight="@dimen/default_margin_2"
-    android:paddingTop="@dimen/default_margin_2"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.github.gsantner.memetastic.activity.MemeCreateActivity">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:fadeScrollbars="false"
+            android:paddingLeft="@dimen/default_margin_2"
+            android:paddingRight="@dimen/default_margin_2"
+            android:paddingTop="@dimen/default_margin_2"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="io.github.gsantner.memetastic.activity.MemeCreateActivity">
 
     <LinearLayout
         android:id="@+id/memecreate__moar_controls__layout"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="@string/creator__text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="@string/creator__size" />
+                android:text="@string/creator__size"/>
 
             <SeekBar
                 android:id="@+id/memecreate__moar_controls__seek_font_size"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="70"
                 android:max="30"
-                android:progress="18" />
+                android:progress="18"/>
         </LinearLayout>
 
         <LinearLayout
@@ -65,15 +65,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
-                android:text="@string/creator__background" />
+                android:text="@string/creator__background"/>
 
             <io.github.gsantner.memetastic.ui.SquareImageView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_text"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:src="@android:color/darker_gray"
-                android:layout_weight="15"
                 android:layout_gravity="end"
+                android:layout_weight="15"
+                android:src="@android:color/darker_gray"
                 />
         </LinearLayout>
 
@@ -91,15 +91,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
-                android:text="@string/creator__border" />
+                android:text="@string/creator__border"/>
 
             <io.github.gsantner.memetastic.ui.SquareImageView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_border"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:src="@android:color/darker_gray"
-                android:layout_weight="15"
                 android:layout_gravity="end"
+                android:layout_weight="15"
+                android:src="@android:color/darker_gray"
                 />
         </LinearLayout>
 
@@ -120,7 +120,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/primary_text"
                 android:textOff="@string/settings__caps_off"
-                android:textOn="@string/settings__all_caps" />
+                android:textOn="@string/settings__all_caps"/>
 
             <Spinner
                 android:id="@+id/memecreate__moar_controls__dropdown_font"
@@ -128,7 +128,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="50"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"/>
 
         </LinearLayout>
 
@@ -140,7 +140,7 @@
             android:layout_marginTop="@dimen/default_margin_2"
             android:text="@string/creator__picture"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
 
         <LinearLayout
@@ -156,7 +156,7 @@
                 android:layout_weight="1"
                 android:text="@string/settings__rotate"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/primary_text" />
+                android:textColor="@color/primary_text"/>
         </LinearLayout>
 
         <LinearLayout
@@ -171,7 +171,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="@string/creator__padding" />
+                android:text="@string/creator__padding"/>
 
             <SeekBar
                 android:id="@+id/memecreate__moar_controls__seek_padding_size"
@@ -179,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="70"
                 android:max="150"
-                android:progress="18" />
+                android:progress="18"/>
         </LinearLayout>
 
         <LinearLayout
@@ -195,15 +195,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
-                android:text="@string/creator__padding" />
+                android:text="@string/creator__padding"/>
 
             <io.github.gsantner.memetastic.ui.SquareImageView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_padding"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
-                android:src="@android:color/darker_gray"
-                android:layout_weight="15"
                 android:layout_gravity="end"
+                android:layout_weight="15"
+                android:src="@android:color/darker_gray"
                 />
         </LinearLayout>
 

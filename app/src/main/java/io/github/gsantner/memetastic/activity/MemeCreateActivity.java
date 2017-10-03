@@ -1,6 +1,7 @@
 package io.github.gsantner.memetastic.activity;
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
@@ -61,8 +63,10 @@ import io.github.gsantner.memetastic.data.MemeEditorElements;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.FontAdapter;
+import io.github.gsantner.memetastic.ui.SquareImageView;
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
+import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
@@ -98,13 +102,13 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     EditText _textEditTopCaption;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_text)
-    io.github.gsantner.memetastic.ui.SquareImageView _textBackgroundColor;
+    SquareImageView _textBackgroundColor;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_border)
-    io.github.gsantner.memetastic.ui.SquareImageView _textBorderColor;
+    SquareImageView _textBorderColor;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_padding)
-    io.github.gsantner.memetastic.ui.SquareImageView _paddingColor;
+    SquareImageView _paddingColor;
 
     //#####################
     //## Members
@@ -142,24 +146,31 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             return;
         }
 
-        // Bind Ui
-        ButterKnife.bind(this);
-        _app = (App) getApplication();
+        // Stop if data is not loaded yet (Try load in onResume, recreate activity in broadcast)
+        if (MemeData.isReady()) {
+            // Bind Ui
+            ButterKnife.bind(this);
+            _app = (App) getApplication();
 
-        // Set _toolbar
-        setSupportActionBar(_toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            // Set _toolbar
+            setSupportActionBar(_toolbar);
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+            initMemeSettings(savedInstanceState);
+            initMoarControlsContainer();
         }
-        initMemeSettings(savedInstanceState);
-        initMoarControlsContainer();
     }
+
 
     public void initMemeSettings(Bundle savedInstanceState) {
         MemeData.Font lastUsedFont = getFont(_app.settings.getLastUsedFont());
         Bitmap bitmap = extractBitmapFromIntent(getIntent());
         if (savedInstanceState != null && savedInstanceState.containsKey("memeObj")) {
             _memeEditorElements = (MemeEditorElements) savedInstanceState.getSerializable("memeObj");
+            if (_memeEditorElements == null) {
+                _memeEditorElements = new MemeEditorElements(lastUsedFont, bitmap);
+            }
             _memeEditorElements.getImageMain().setImage(bitmap);
             _memeEditorElements.setFontToAll(lastUsedFont);
         } else {
@@ -213,8 +224,24 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            // Checking if registered may not work always, therefore try to force it
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(_localBroadcastReceiver);
+        } catch (IllegalArgumentException ignored) {
+        }
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
+        if (!MemeData.isReady()) {
+            LocalBroadcastManager.getInstance(this).registerReceiver(_localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
+            new AssetUpdater.LoadAssetsThread(this).start();
+            return;
+        }
+
         if (_savedInstanceState != null) {
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
             initMemeSettings(_savedInstanceState);
@@ -234,6 +261,20 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         } catch (Exception ignored) {
         }
     }
+
+    private BroadcastReceiver _localBroadcastReceiver = new BroadcastReceiver() {
+        @SuppressWarnings("unchecked")
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            switch (action) {
+                case AppCast.ASSETS_LOADED.ACTION: {
+                    recreate();
+                    return;
+                }
+            }
+        }
+    };
 
     private Bitmap extractBitmapFromIntent(final Intent intent) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
@@ -461,7 +502,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             public void onClick(View v) {
                 LinearLayout picker = (LinearLayout) v;
                 if (picker == colorPickerTextBorder) {
-                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_border).setColor(_memeEditorElements.getCaptionTop().getBorderColor()).show(MemeCreateActivity.this);
+                    showColorDialog(R.id.memecreate__moar_controls__color_picker_for_border, _memeEditorElements.getCaptionTop().getBorderColor());
                 } else if (picker == colorPickerTextBackground) {
                     ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_text).setColor(_memeEditorElements.getCaptionTop().getTextColor()).show(MemeCreateActivity.this);
                 } else if (picker == colorPickerPadding) {
@@ -519,6 +560,16 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 onMemeEditorObjectChanged();
             }
         });
+    }
+
+    private void showColorDialog(int id, @ColorInt int color) {
+        ColorPickerDialog.newBuilder()
+                .setDialogId(id)
+                .setColor(color)
+                .setShowColorShades(false)
+                .setPresets(MemeLibConfig.MEME_COLORS.ALL)
+                .show(this);
+
     }
 
 
