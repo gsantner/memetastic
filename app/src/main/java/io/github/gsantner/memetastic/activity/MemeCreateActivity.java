@@ -41,6 +41,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
 
+import com.jaredrummler.android.colorpicker.ColorPanelView;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
 
@@ -63,7 +64,6 @@ import io.github.gsantner.memetastic.data.MemeEditorElements;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.FontAdapter;
-import io.github.gsantner.memetastic.ui.SquareImageView;
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
 import io.github.gsantner.memetastic.util.AppCast;
@@ -102,13 +102,13 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     EditText _textEditTopCaption;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_text)
-    SquareImageView _textBackgroundColor;
+    ColorPanelView _textBackgroundColor;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_border)
-    SquareImageView _textBorderColor;
+    ColorPanelView _textBorderColor;
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_padding)
-    SquareImageView _paddingColor;
+    ColorPanelView _paddingColor;
 
     //#####################
     //## Members
@@ -486,9 +486,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
 
         // Apply existing settings
-        _textBackgroundColor.setColorFilter(_memeEditorElements.getCaptionTop().getTextColor());
-        _textBorderColor.setColorFilter(_memeEditorElements.getCaptionTop().getBorderColor());
-        _paddingColor.setColorFilter(_memeEditorElements.getImageMain().getPaddingColor());
+        _textBackgroundColor.setColor(_memeEditorElements.getCaptionTop().getTextColor());
+        _textBorderColor.setColor(_memeEditorElements.getCaptionTop().getBorderColor());
+        _paddingColor.setColor(_memeEditorElements.getImageMain().getPaddingColor());
         adapter.setSelectedFont(dropdownFont, _memeEditorElements.getCaptionTop().getFont());
         toggleAllCaps.setChecked(_memeEditorElements.getCaptionTop().isAllCaps());
         seekFontSize.setProgress(_memeEditorElements.getCaptionTop().getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
@@ -504,9 +504,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 if (picker == colorPickerTextBorder) {
                     showColorDialog(R.id.memecreate__moar_controls__color_picker_for_border, _memeEditorElements.getCaptionTop().getBorderColor());
                 } else if (picker == colorPickerTextBackground) {
-                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_text).setColor(_memeEditorElements.getCaptionTop().getTextColor()).show(MemeCreateActivity.this);
+                    showColorDialog(R.id.memecreate__moar_controls__color_picker_for_text, _memeEditorElements.getCaptionTop().getTextColor());
                 } else if (picker == colorPickerPadding) {
-                    ColorPickerDialog.newBuilder().setDialogId(R.id.memecreate__moar_controls__color_picker_for_padding).setColor(_memeEditorElements.getImageMain().getPaddingColor()).show(MemeCreateActivity.this);
+                    showColorDialog(R.id.memecreate__moar_controls__color_picker_for_padding, _memeEditorElements.getImageMain().getPaddingColor());
                 }
                 onMemeEditorObjectChanged();
             }
@@ -566,30 +566,32 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         ColorPickerDialog.newBuilder()
                 .setDialogId(id)
                 .setColor(color)
-                .setShowColorShades(false)
                 .setPresets(MemeLibConfig.MEME_COLORS.ALL)
+                .setCustomButtonText(R.string.palette_colors)
+                .setPresetsButtonText(R.string.preset_colors)
+                .setDialogTitle(R.string.select_color)
+                .setSelectedButtonText(android.R.string.ok)
                 .show(this);
-
     }
 
 
     @Override
-    public void onColorSelected(int id, @ColorInt int i1) {
+    public void onColorSelected(int id, @ColorInt int colorInt) {
         switch (id) {
             case R.id.memecreate__moar_controls__color_picker_for_border: // border color
-                _memeEditorElements.getCaptionTop().setBorderColor(i1);
-                _memeEditorElements.getCaptionBottom().setBorderColor(i1);
-                _textBorderColor.setColorFilter(i1);
+                _memeEditorElements.getCaptionTop().setBorderColor(colorInt);
+                _memeEditorElements.getCaptionBottom().setBorderColor(colorInt);
+                _textBorderColor.setColor(colorInt);
                 break;
             case R.id.memecreate__moar_controls__color_picker_for_text: // text background color
-                _memeEditorElements.getCaptionTop().setTextColor(i1);
-                _memeEditorElements.getCaptionBottom().setTextColor(i1);
-                _textBackgroundColor.setColorFilter(i1);
+                _memeEditorElements.getCaptionTop().setTextColor(colorInt);
+                _memeEditorElements.getCaptionBottom().setTextColor(colorInt);
+                _textBackgroundColor.setColor(colorInt);
                 break;
             case R.id.memecreate__moar_controls__color_picker_for_padding: // padding color
-                _memeEditorElements.getImageMain().setPaddingColor(i1);
-                _memeEditorElements.getImageMain().setPaddingColor(i1);
-                _paddingColor.setColorFilter(i1);
+                _memeEditorElements.getImageMain().setPaddingColor(colorInt);
+                _memeEditorElements.getImageMain().setPaddingColor(colorInt);
+                _paddingColor.setColor(colorInt);
                 break;
             default:
                 Log.i(TAG, "Wrong selection");
