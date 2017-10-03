@@ -71,7 +71,6 @@ dependencies {
     compile "com.android.support:recyclerview-v7:${version_lib.appcompat}"
 
     // UI libraries
-    compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.jaredrummler:colorpicker:1.0.1'
 
     // Tool libraries
