@@ -97,6 +97,6 @@
     <string name="download_latest_assets_message_more">In den Einstellungen können Assets später erneut heruntergeladen werden</string>
     <string name="memelist_view_mode__picture_grid">Bild Gitter</string>
     <string name="memelist_view_mode__rows_with_title">Zeilen mit Titel</string>
-    <string name="pref_title__memelist_view_mode">Ansichtsmodus</string>
-    <string name="pref_summary__memelist_view_mode">Ansichtsmodus ändern (Bild Gitter, Zeilen mit Titel)</string>
+    <string name="pref_title__memelist_view_type">Ansichtstyp</string>
+    <string name="pref_summary__memelist_view_type">Ansichtstyp ändern (Bild Gitter, Zeilen mit Titel)</string>
 </resources>

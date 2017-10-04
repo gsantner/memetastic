@@ -8,9 +8,9 @@
             android:entries="@array/memelist_view_mode"
             android:entryValues="@array/values__zero_to_one"
             android:icon="@drawable/ic_grid_on_black_24dp"
-            android:key="@string/pref_key__memelist_view_mode"
-            android:summary="@string/pref_summary__memelist_view_mode"
-            android:title="@string/pref_title__memelist_view_mode"/>
+            android:key="@string/pref_key__memelist_view_type"
+            android:summary="@string/pref_summary__memelist_view_type"
+            android:title="@string/pref_title__memelist_view_type"/>
 
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="3"

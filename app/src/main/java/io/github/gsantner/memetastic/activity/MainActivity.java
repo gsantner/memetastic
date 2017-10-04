@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
-        if (AppSettings.get().getMemeListViewMode() == MemeItemAdapter.MEMELIST_VIEW_MODE__ROWS_WITH_TITLE) {
+        if (AppSettings.get().getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
             RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
         } else {
@@ -365,7 +365,7 @@ public class MainActivity extends AppCompatActivity
         _drawer.closeDrawers();
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
         if (imageList != null) {
-            MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this);
+            MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
             setRecyclerMemeListAdapter(recyclerMemeAdapter);
             return true;
         }
@@ -512,7 +512,7 @@ public class MainActivity extends AppCompatActivity
             Collections.shuffle(imageList);
         }
 
-        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this);
+        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
         setRecyclerMemeListAdapter(recyclerMemeAdapter);
     }
 

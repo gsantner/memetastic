@@ -150,8 +150,8 @@ public class AppSettings extends AppSettingsBase {
         return getInt(R.string.pref_key__last_selected_tab, 0);
     }
 
-    public int getMemeListViewMode() {
-        return getIntOfStringPref(R.string.pref_key__memelist_view_mode, MemeItemAdapter.MEMELIST_VIEW_MODE__PICTURE_GRID);
+    public int getMemeListViewType() {
+        return getIntOfStringPref(R.string.pref_key__memelist_view_type, MemeItemAdapter.VIEW_TYPE__PICTURE_GRID);
     }
 
     public int getGridColumnCountPortrait() {

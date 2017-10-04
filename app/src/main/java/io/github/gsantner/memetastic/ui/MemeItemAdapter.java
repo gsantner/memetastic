@@ -24,17 +24,16 @@ import io.github.gsantner.memetastic.activity.MainActivity;
 import io.github.gsantner.memetastic.activity.MemeCreateActivity;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.ImageLoaderTask;
-import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
  * Adapter to show images in given view mode
  */
 public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<MemeItemAdapter.ViewHolder> {
-    public static final int MEMELIST_VIEW_MODE__PICTURE_GRID = 0;
-    public static final int MEMELIST_VIEW_MODE__ROWS_WITH_TITLE = 1;
+    public static final int VIEW_TYPE__PICTURE_GRID = 0;
+    public static final int VIEW_TYPE__ROWS_WITH_TITLE = 1;
 
-    private int _viewMode = -1; // TODO: Do implement this as later settable on adapater, instead of using if/else on AppSettings
+    private int _itemViewType = -1; // TODO: Do implement this as later settable on adapter, instead of using if/else on AppSettings
     private List<MemeData.Image> _originalImageDataList; // original data
     private List<MemeData.Image> _imageDataList; // filtered data (use this)
     private int _shortAnimationDuration;
@@ -42,21 +41,29 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
     private App _app;
 
 
-    public MemeItemAdapter(List<MemeData.Image> imageDataList, Activity activity) {
+    public MemeItemAdapter(List<MemeData.Image> imageDataList, Activity activity, int itemViewType) {
         _originalImageDataList = imageDataList;
         _imageDataList = new ArrayList<>(imageDataList);
         _shortAnimationDuration = -1;
         _activity = activity;
         _app = (App) (_activity.getApplication());
+        _itemViewType = itemViewType;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
-        if (AppSettings.get().getMemeListViewMode() == MEMELIST_VIEW_MODE__PICTURE_GRID) {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
-        } else {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical_image, parent, false);
+        switch (_itemViewType) {
+            case VIEW_TYPE__ROWS_WITH_TITLE: {
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_with_title, parent, false);
+                break;
+            }
+
+            case VIEW_TYPE__PICTURE_GRID:
+            default: {
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
+                break;
+            }
         }
 
         return new ViewHolder(v);
