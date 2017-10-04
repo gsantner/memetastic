@@ -15,8 +15,8 @@ import java.util.List;
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import io.github.gsantner.memetastic.activity.MainActivity;
 import io.github.gsantner.memetastic.service.AssetUpdater;
+import io.github.gsantner.memetastic.ui.MemeItemAdapter;
 
 public class AppSettings extends AppSettingsBase {
     private static final int MAX_FAVS = 50;
@@ -151,7 +151,7 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public int getMemeListViewMode() {
-        return getIntOfStringPref(R.string.pref_key__memelist_view_mode, MainActivity.MEMELIST_VIEW_MODE__PICTURE_GRID);
+        return getIntOfStringPref(R.string.pref_key__memelist_view_mode, MemeItemAdapter.MEMELIST_VIEW_MODE__PICTURE_GRID);
     }
 
     public int getGridColumnCountPortrait() {

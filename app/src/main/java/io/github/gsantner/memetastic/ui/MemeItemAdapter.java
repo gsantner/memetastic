@@ -28,17 +28,21 @@ import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
- * Adapter to show images in a Grid
+ * Adapter to show images in given view mode
  */
-public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<ItemRecycleAdapter.ViewHolder> {
-    private List<MemeData.Image> _originalImageDataList;
-    private List<MemeData.Image> _imageDataList; // filtered version
+public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<MemeItemAdapter.ViewHolder> {
+    public static final int MEMELIST_VIEW_MODE__PICTURE_GRID = 0;
+    public static final int MEMELIST_VIEW_MODE__ROWS_WITH_TITLE = 1;
+
+    private int _viewMode = -1; // TODO: Do implement this as later settable on adapater, instead of using if/else on AppSettings
+    private List<MemeData.Image> _originalImageDataList; // original data
+    private List<MemeData.Image> _imageDataList; // filtered data (use this)
     private int _shortAnimationDuration;
     private Activity _activity;
     private App _app;
 
 
-    public ItemRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
+    public MemeItemAdapter(List<MemeData.Image> imageDataList, Activity activity) {
         _originalImageDataList = imageDataList;
         _imageDataList = new ArrayList<>(imageDataList);
         _shortAnimationDuration = -1;
@@ -49,11 +53,10 @@ public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
-        if(AppSettings.get().getMemeListViewMode()==MainActivity.MEMELIST_VIEW_MODE__PICTURE_GRID){
+        if (AppSettings.get().getMemeListViewMode() == MEMELIST_VIEW_MODE__PICTURE_GRID) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
-        }
-        else{
-           v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical_image, parent, false);
+        } else {
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical_image, parent, false);
         }
 
         return new ViewHolder(v);
@@ -78,7 +81,6 @@ public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.
         holder.imageButtonFav.setTag(imageData);
 
 
-
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
 
         holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -97,7 +99,6 @@ public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.
                 }
             }
         });
-
 
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {

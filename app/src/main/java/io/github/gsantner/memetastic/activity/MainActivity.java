@@ -65,7 +65,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.GridDecoration;
-import io.github.gsantner.memetastic.ui.ItemRecycleAdapter;
+import io.github.gsantner.memetastic.ui.MemeItemAdapter;
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -77,8 +77,6 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
-    public static final int MEMELIST_VIEW_MODE__PICTURE_GRID = 0;
-    public static final int MEMELIST_VIEW_MODE__ROWS_WITH_TITLE = 1;
     public static final String IMAGE_PATH = "imagePath";
 
     private static boolean _isShowingFullscreenImage = false;
@@ -158,7 +156,7 @@ public class MainActivity extends AppCompatActivity
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
-        if (AppSettings.get().getMemeListViewMode() == MEMELIST_VIEW_MODE__ROWS_WITH_TITLE) {
+        if (AppSettings.get().getMemeListViewMode() == MemeItemAdapter.MEMELIST_VIEW_MODE__ROWS_WITH_TITLE) {
             RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
         } else {
@@ -367,7 +365,7 @@ public class MainActivity extends AppCompatActivity
         _drawer.closeDrawers();
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
         if (imageList != null) {
-            ItemRecycleAdapter recyclerMemeAdapter = new ItemRecycleAdapter(imageList, this);
+            MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this);
             setRecyclerMemeListAdapter(recyclerMemeAdapter);
             return true;
         }
@@ -514,7 +512,7 @@ public class MainActivity extends AppCompatActivity
             Collections.shuffle(imageList);
         }
 
-        ItemRecycleAdapter recyclerMemeAdapter = new ItemRecycleAdapter(imageList, this);
+        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this);
         setRecyclerMemeListAdapter(recyclerMemeAdapter);
     }
 
@@ -657,7 +655,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     if (query != null) {
-                        ItemRecycleAdapter adapter = (ItemRecycleAdapter) _recyclerMemeList.getAdapter();
+                        MemeItemAdapter adapter = (MemeItemAdapter) _recyclerMemeList.getAdapter();
                         adapter.setFilter(query);
                     }
                     return false;
@@ -666,7 +664,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     if (newText != null) {
-                        ItemRecycleAdapter adapter = (ItemRecycleAdapter) _recyclerMemeList.getAdapter();
+                        MemeItemAdapter adapter = (MemeItemAdapter) _recyclerMemeList.getAdapter();
                         adapter.setFilter(newText);
                     }
                     return false;
