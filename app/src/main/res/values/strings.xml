@@ -13,6 +13,7 @@
     <string name="main__memecat__cartoon">Cartoon</string>
     <string name="main__memecat__animals">Animals</string>
     <string name="main__memecat__custom">Custom</string>
+    <string name="main__memecat__rage">Rage</string>
 
     <string name="memelist_data_mode__saved">Saved</string>
     <string name="memelist_data_mode__favs">Favs</string>
@@ -114,4 +115,5 @@
     <string name="preset_colors">Presets</string>
     <string name="select_color">Select color</string>
 
+    <string name="code">Code</string>
 </resources>

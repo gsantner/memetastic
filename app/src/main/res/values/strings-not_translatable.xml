@@ -7,7 +7,6 @@
 
     <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io\n\nMatthias Ringwald</string>
     <string name="page_additional_contact_text" translatable="false">GitHub\nhttps://github.com/gsantner/memetastic</string>
-    <string name="code" translatable="false">Code</string>
 
     <string name="app_description" translatable="false">much meme. very wow.</string>
     <string name="main__ready_to_memetastic" translatable="false">Ready to MemeTastic? Try it now!\n%1$s</string>
@@ -19,8 +18,6 @@
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="ok" translatable="false">@android:string/ok</string>
 
-
-    <string name="main__memecat__rage" translatable="false">Rage</string>
     <string name="team" translatable="false">Team</string>
 
     <!-- You are NOT allowed to remove parts of the license text below-->
