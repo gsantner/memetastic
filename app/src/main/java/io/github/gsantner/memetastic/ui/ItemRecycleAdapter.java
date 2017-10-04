@@ -49,7 +49,7 @@ public class ItemRecycleAdapter extends RecyclerView.Adapter<ItemRecycleAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
-        if(AppSettings.get().getViewType()==MainActivity.VIEW_TYPE_GRID){
+        if(AppSettings.get().getMemeListViewMode()==MainActivity.MEMELIST_VIEW_MODE__PICTURE_GRID){
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
         }
         else{

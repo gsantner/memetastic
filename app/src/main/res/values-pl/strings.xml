@@ -14,9 +14,9 @@
     <string name="main__memecat__animals">Zwierzęta</string>
     <string name="main__memecat__custom">Niestandardowy</string>
 
-    <string name="main__mode__saved">Zapisane</string>
-    <string name="main__mode__favs">Ulubione</string>
-    <string name="main__mode__create">Stwórz</string>
+    <string name="memelist_data_mode__saved">Zapisane</string>
+    <string name="memelist_data_mode__favs">Ulubione</string>
+    <string name="memelist_data_mode__create">Stwórz</string>
 
     <string name="main__search_meme">Wyszukaj Mem</string>
     <string name="main__get_picture_from_gallery">Wybierz obraz z Galerii</string>
@@ -76,8 +76,8 @@
     <string name="settings__pref_columns_landscape">Kolumny horyzontalnie</string>
     <string name="pref_title__appearance">Wygląd</string>
     <string name="pref_title__size">Rozmiar</string>
-    <string name="pref_title__default_main_mode">Domyślny tryb</string>
-    <string name="pref_summary__default_main_mode">Domyślny tryb uruchamiamy podczas startu\n(Stwórz, Ulubione lub Zapisane)</string>
+    <string name="pref_title__memelist_data_mode">Domyślny tryb</string>
+    <string name="pref_summary__memelist_data_mode">Domyślny tryb uruchamiamy podczas startu\n(Stwórz, Ulubione lub Zapisane)</string>
     <string name="pref_title__functionality">Funkcjonalność</string>
     <string name="pref_summary__auto_save_meme">Automatycznie zapisz mem w przypadku naciśnięcia przycisku powrotu, jeśli wprowadzono jakieś dane</string>
     <string name="pref_title__auto_save_meme">Zapisz w przypadku wciśnięcia wstecz</string>

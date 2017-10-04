@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
-    public static final int VIEW_TYPE_LIST=0;
-    public static final int VIEW_TYPE_GRID=1;
+    public static final int MEMELIST_VIEW_MODE__PICTURE_GRID = 0;
+    public static final int MEMELIST_VIEW_MODE__ROWS_WITH_TITLE = 1;
     public static final String IMAGE_PATH = "imagePath";
 
     private static boolean _isShowingFullscreenImage = false;
@@ -158,14 +158,14 @@ public class MainActivity extends AppCompatActivity
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
-        if(AppSettings.get().getViewType()==VIEW_TYPE_LIST){
-            RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        if (AppSettings.get().getMemeListViewMode() == MEMELIST_VIEW_MODE__ROWS_WITH_TITLE) {
+            RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
-        }else{
+        } else {
             int gridColumns = ContextUtils.get().isInPortraitMode()
                     ? app.settings.getGridColumnCountPortrait()
                     : app.settings.getGridColumnCountLandscape();
-            RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this,gridColumns);
+            RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
             _recyclerMemeList.setLayoutManager(recyclerGridLayout);
         }
 
@@ -347,7 +347,7 @@ public class MainActivity extends AppCompatActivity
                         imageList.add(img);
                     }
                 }
-                _toolbar.setTitle(R.string.main__mode__favs);
+                _toolbar.setTitle(R.string.memelist_data_mode__favs);
                 break;
             }
             case R.id.action_mode_saved: {
@@ -358,7 +358,7 @@ public class MainActivity extends AppCompatActivity
                     folder.mkdirs();
                     imageList = MemeData.getCreatedMemes();
                 }
-                _toolbar.setTitle(R.string.main__mode__saved);
+                _toolbar.setTitle(R.string.memelist_data_mode__saved);
                 break;
             }
         }

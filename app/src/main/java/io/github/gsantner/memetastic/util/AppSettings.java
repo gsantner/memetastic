@@ -15,6 +15,7 @@ import java.util.List;
 import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
+import io.github.gsantner.memetastic.activity.MainActivity;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 
 public class AppSettings extends AppSettingsBase {
@@ -149,7 +150,9 @@ public class AppSettings extends AppSettingsBase {
         return getInt(R.string.pref_key__last_selected_tab, 0);
     }
 
-    public int getViewType(){return getIntOfStringPref(R.string.pref_key__view_type,0);}
+    public int getMemeListViewMode() {
+        return getIntOfStringPref(R.string.pref_key__memelist_view_mode, MainActivity.MEMELIST_VIEW_MODE__PICTURE_GRID);
+    }
 
     public int getGridColumnCountPortrait() {
         int count = getInt(R.string.pref_key__grid_column_count_portrait, -1);

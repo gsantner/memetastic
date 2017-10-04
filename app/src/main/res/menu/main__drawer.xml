@@ -8,16 +8,16 @@
             android:id="@+id/action_mode_create"
             android:checked="true"
             android:icon="@drawable/ic_gavel_white_48px"
-            android:title="@string/main__mode__create" />
+            android:title="@string/memelist_data_mode__create" />
 
         <item
             android:id="@+id/action_mode_favs"
             android:icon="@drawable/ic_star_black_32dp"
-            android:title="@string/main__mode__favs" />
+            android:title="@string/memelist_data_mode__favs" />
         <item
             android:id="@+id/action_mode_saved"
             android:icon="@drawable/ic_save_white_48px"
-            android:title="@string/main__mode__saved" />
+            android:title="@string/memelist_data_mode__saved" />
     </group>
 
     <group

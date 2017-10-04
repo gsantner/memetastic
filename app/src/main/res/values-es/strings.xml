@@ -14,9 +14,9 @@
     <string name="main__memecat__animals">Animales</string>
     <string name="main__memecat__custom">Personalizado</string>
 
-    <string name="main__mode__saved">Guardados</string>
-    <string name="main__mode__favs">Favoritos</string>
-    <string name="main__mode__create">Crear</string>
+    <string name="memelist_data_mode__saved">Guardados</string>
+    <string name="memelist_data_mode__favs">Favoritos</string>
+    <string name="memelist_data_mode__create">Crear</string>
 
     <string name="main__search_meme">Buscar meme</string>
     <string name="main__get_picture_from_gallery">Obtener imagen de la galería</string>
@@ -75,8 +75,8 @@
     <string name="settings__pref_columns_landscape">Columnas en apaisado</string>
     <string name="pref_title__appearance">Apariencia</string>
     <string name="pref_title__size">Tamaño</string>
-    <string name="pref_title__default_main_mode">Modo predeterminado</string>
-    <string name="pref_summary__default_main_mode">Modo predeterminado que se abre al iniciar (Crear, Favoritos o Guardados)</string>
+    <string name="pref_title__memelist_data_mode">Modo predeterminado</string>
+    <string name="pref_summary__memelist_data_mode">Modo predeterminado que se abre al iniciar (Crear, Favoritos o Guardados)</string>
     <string name="pref_title__functionality">Funcionalidad</string>
     <string name="pref_summary__auto_save_meme">Guardar meme automáticamente si se presiona \"atrás\" y había algún cambio</string>
     <string name="pref_title__auto_save_meme">Guardar al presionar \"atrás"</string>
