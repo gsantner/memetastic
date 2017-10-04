@@ -279,9 +279,11 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         if (_drawer.isDrawerOpen(GravityCompat.START)) {
             _drawer.closeDrawer(GravityCompat.START);
-            return;
+        } else if (!_searchView.isIconified()) {
+            _searchView.setIconified(true);
+        } else {
+            super.onBackPressed();
         }
-        super.onBackPressed();
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
