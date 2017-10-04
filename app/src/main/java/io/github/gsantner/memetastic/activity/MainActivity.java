@@ -65,7 +65,9 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.GridDecoration;
-import io.github.gsantner.memetastic.ui.ItemRecycleAdapter;
+
+import io.github.gsantner.memetastic.ui.MemeItemAdapter;
+
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -158,14 +160,16 @@ public class MainActivity extends AppCompatActivity
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
-        if(AppSettings.get().getViewType()==VIEW_TYPE_LIST){
-            RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+
+        if (AppSettings.get().getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
+            RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
-        }else{
+        } else {
             int gridColumns = ContextUtils.get().isInPortraitMode()
                     ? app.settings.getGridColumnCountPortrait()
                     : app.settings.getGridColumnCountLandscape();
-            RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this,gridColumns);
+            RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
+
             _recyclerMemeList.setLayoutManager(recyclerGridLayout);
         }
 
@@ -347,7 +351,7 @@ public class MainActivity extends AppCompatActivity
                         imageList.add(img);
                     }
                 }
-                _toolbar.setTitle(R.string.main__mode__favs);
+                _toolbar.setTitle(R.string.memelist_data_mode__favs);
                 break;
             }
             case R.id.action_mode_saved: {
@@ -358,7 +362,7 @@ public class MainActivity extends AppCompatActivity
                     folder.mkdirs();
                     imageList = MemeData.getCreatedMemes();
                 }
-                _toolbar.setTitle(R.string.main__mode__saved);
+                _toolbar.setTitle(R.string.memelist_data_mode__saved);
                 break;
             }
         }
@@ -367,7 +371,9 @@ public class MainActivity extends AppCompatActivity
         _drawer.closeDrawers();
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
         if (imageList != null) {
-            ItemRecycleAdapter recyclerMemeAdapter = new ItemRecycleAdapter(imageList, this);
+
+            MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
+
             setRecyclerMemeListAdapter(recyclerMemeAdapter);
             return true;
         }
@@ -514,7 +520,9 @@ public class MainActivity extends AppCompatActivity
             Collections.shuffle(imageList);
         }
 
-        ItemRecycleAdapter recyclerMemeAdapter = new ItemRecycleAdapter(imageList, this);
+
+        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
+
         setRecyclerMemeListAdapter(recyclerMemeAdapter);
     }
 
@@ -657,7 +665,9 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     if (query != null) {
-                        ItemRecycleAdapter adapter = (ItemRecycleAdapter) _recyclerMemeList.getAdapter();
+
+                        MemeItemAdapter adapter = (MemeItemAdapter) _recyclerMemeList.getAdapter();
+
                         adapter.setFilter(query);
                     }
                     return false;
@@ -666,7 +676,8 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     if (newText != null) {
-                        ItemRecycleAdapter adapter = (ItemRecycleAdapter) _recyclerMemeList.getAdapter();
+
+                        MemeItemAdapter adapter = (MemeItemAdapter) _recyclerMemeList.getAdapter();
                         adapter.setFilter(newText);
                     }
                     return false;

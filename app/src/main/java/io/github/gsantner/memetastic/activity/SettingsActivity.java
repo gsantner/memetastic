@@ -1,5 +1,6 @@
 package io.github.gsantner.memetastic.activity;
 
+import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -100,7 +101,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
     }
 
     public static class SettingsFragmentMaster extends PreferenceFragment {
-        public static final String TAG = "io.github.gsantner.memetastic.settings.SettingsFragmentMaster";
+        public static final String TAG = "SettingsFragmentMaster";
 
         public void onCreate(Bundle savedInstances) {
             super.onCreate(savedInstances);
@@ -109,13 +110,16 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         }
 
         @Override
+        @SuppressLint("ApplySharedPref")
         public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
             if (isAdded() && preference.hasKey()) {
                 Context context = getActivity().getApplicationContext();
                 AppSettings settings = AppSettings.get();
                 String key = preference.getKey();
 
-                if(key.equals(getString(R.string.pref_key__view_type))){
+
+                if (key.equals(getString(R.string.pref_key__memelist_view_type))) {
+
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
                 if (key.equals(getString(R.string.pref_key__cleanup_thumbnails))) {

@@ -14,9 +14,9 @@
     <string name="main__memecat__animals">Animali</string>
     <string name="main__memecat__custom">Personali</string>
 
-    <string name="main__mode__saved">Salvati</string>
-    <string name="main__mode__favs">Favoriti</string>
-    <string name="main__mode__create">Crea</string>
+    <string name="memelist_data_mode__saved">Salvati</string>
+    <string name="memelist_data_mode__favs">Favoriti</string>
+    <string name="memelist_data_mode__create">Crea</string>
 
     <string name="main__get_picture_from_gallery">Prendi immagine dalla Galleria</string>
     <string name="main__get_picture_from_camera">Scatta foto dalla Camera</string>
@@ -74,8 +74,8 @@
     <string name="settings__pref_columns_landscape">Colonne in orizzontale</string>
     <string name="pref_title__appearance">Aspetto</string>
     <string name="pref_title__size">Grandezza</string>
-    <string name="pref_title__default_main_mode">Modo di default</string>
-    <string name="pref_summary__default_main_mode">Modo di default da aprire all\'avvio (Crea, Favoriti o Salvati)</string>
+    <string name="pref_title__memelist_data_mode">Modo di default</string>
+    <string name="pref_summary__memelist_data_mode">Modo di default da aprire all\'avvio (Crea, Favoriti o Salvati)</string>
     <string name="pref_title__functionality">Funzionalità</string>
     <string name="pref_summary__auto_save_meme">Salva automaticamente il meme quando premi indietro e c\'è qualche modifica</string>
     <string name="pref_title__auto_save_meme">Salva quando premi indietro</string>

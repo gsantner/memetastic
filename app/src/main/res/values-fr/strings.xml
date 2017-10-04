@@ -13,9 +13,9 @@
     <string name="main__memecat__cartoon">Dessin Animé</string>
     <string name="main__memecat__animals">Animaux</string>
 
-    <string name="main__mode__saved">Sauvegardés</string>
-    <string name="main__mode__favs">Favoris</string>
-    <string name="main__mode__create">Créer</string>
+    <string name="memelist_data_mode__saved">Sauvegardés</string>
+    <string name="memelist_data_mode__favs">Favoris</string>
+    <string name="memelist_data_mode__create">Créer</string>
 
     <string name="main__get_picture_from_gallery">Prendre une image de la galerie</string>
     <string name="main__get_picture_from_camera">Prendre une image avec l\'appareil</string>
@@ -64,8 +64,8 @@
     <string name="settings__pref_columns_landscape">Colonnes en paysage</string>
     <string name="pref_title__appearance">Apparence</string>
     <string name="pref_title__size">Taille</string>
-    <string name="pref_title__default_main_mode">Mode par défaut</string>
-    <string name="pref_summary__default_main_mode">Mode par défaut à ouvrir au démarrage (Créer, Favoris ou Sauvegardés)</string>
+    <string name="pref_title__memelist_data_mode">Mode par défaut</string>
+    <string name="pref_summary__memelist_data_mode">Mode par défaut à ouvrir au démarrage (Créer, Favoris ou Sauvegardés)</string>
     <string name="pref_title__functionality">Fonctionnalité</string>
     <string name="pref_summary__auto_save_meme">Sauvegarder automatiquement le Meme si vous appuyez sur retour et que vous aviez écrit qqc</string>
     <string name="pref_title__auto_save_meme">Enregistrer lors de l\'appui sur Retour</string>

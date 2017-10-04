@@ -63,7 +63,7 @@ import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.data.MemeEditorElements;
 import io.github.gsantner.memetastic.data.MemeLibConfig;
 import io.github.gsantner.memetastic.service.AssetUpdater;
-import io.github.gsantner.memetastic.ui.FontAdapter;
+import io.github.gsantner.memetastic.ui.FontItemAdapter;
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AndroidBug5497Workaround;
 import io.github.gsantner.memetastic.util.AppCast;
@@ -479,7 +479,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         final Button rotateButton = ButterKnife.findById(this, R.id.memecreate__moar_controls__rotate_plus_90deg);
         final SeekBar seekPaddingSize = ButterKnife.findById(this, R.id.memecreate__moar_controls__seek_padding_size);
 
-        FontAdapter adapter = new FontAdapter(this,
+        FontItemAdapter adapter = new FontItemAdapter(this,
                 android.R.layout.simple_list_item_1, MemeData.getFonts(),
                 true, getString(R.string.creator__font));
         dropdownFont.setAdapter(adapter);

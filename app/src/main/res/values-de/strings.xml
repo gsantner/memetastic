@@ -11,9 +11,9 @@
     <string name="main__memecat__animals">Tiere</string>
     <string name="main__memecat__cartoon">Cartoon</string>
     <string name="main__memecat__humans">Menschen</string>
-    <string name="main__mode__create">Erstellen</string>
-    <string name="main__mode__favs">Favoriten</string>
-    <string name="main__mode__saved">Gespeichert</string>
+    <string name="memelist_data_mode__create">Erstellen</string>
+    <string name="memelist_data_mode__favs">Favoriten</string>
+    <string name="memelist_data_mode__saved">Gespeichert</string>
     <string name="main__navdrawer__close">NavDrawer schließen</string>
     <string name="main__navdrawer__open">NavDrawer öffnen</string>
     <string name="main__recommend_app">Empfehlen</string>
@@ -58,8 +58,8 @@
     <string name="miscellaneous">Diverses</string>
     <string name="pref_title__appearance">Erscheinungsbild</string>
     <string name="pref_title__size">Größe</string>
-    <string name="pref_title__default_main_mode">Standard Modus</string>
-    <string name="pref_summary__default_main_mode">Standard Modus bei Appstart (Erstellen, Favs, Gespeichert)</string>
+    <string name="pref_title__memelist_data_mode">Standard Modus</string>
+    <string name="pref_summary__memelist_data_mode">Standard Modus bei Appstart (Erstellen, Favs, Gespeichert)</string>
     <string name="pref_title__functionality">Funktionalität</string>
     <string name="pref_summary__auto_save_meme">Meme automatisch speichern wenn zurück gedrückt und Text eingegeben wurde</string>
     <string name="pref_title__auto_save_meme">Speichern bei zurück</string>
@@ -95,4 +95,8 @@
     <string name="main__search_meme">Memes suchen</string>
     <string name="main__error_fail_retrieve_picture">Konnte Bild nicht vom Speicher laden</string>
     <string name="download_latest_assets_message_more">In den Einstellungen können Assets später erneut heruntergeladen werden</string>
+    <string name="memelist_view_mode__picture_grid">Bild Gitter</string>
+    <string name="memelist_view_mode__rows_with_title">Zeilen mit Titel</string>
+    <string name="pref_title__memelist_view_type">Ansichtstyp</string>
+    <string name="pref_summary__memelist_view_type">Ansichtstyp ändern (Bild Gitter, Zeilen mit Titel)</string>
 </resources>

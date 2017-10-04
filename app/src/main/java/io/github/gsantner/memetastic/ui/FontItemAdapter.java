@@ -15,16 +15,16 @@ import io.github.gsantner.memetastic.data.MemeData;
 /**
  * Adapter to show the available fonts rendered in there own style as preview
  */
-public class FontAdapter extends ArrayAdapter<MemeData.Font> {
+public class FontItemAdapter extends ArrayAdapter<MemeData.Font> {
     private boolean _showCustomSelectedText;
     private String _customSelectedText;
     private List<MemeData.Font> _fontList;
 
-    public FontAdapter(Context context, int resource, List<MemeData.Font> fontList) {
+    public FontItemAdapter(Context context, int resource, List<MemeData.Font> fontList) {
         this(context, resource, fontList, false, "");
     }
 
-    public FontAdapter(Context context, int resource, List<MemeData.Font> fontList, boolean showCustomSelectedText, String customSelectedText) {
+    public FontItemAdapter(Context context, int resource, List<MemeData.Font> fontList, boolean showCustomSelectedText, String customSelectedText) {
         super(context, resource, fontList);
         _fontList = fontList;
         _showCustomSelectedText = showCustomSelectedText;

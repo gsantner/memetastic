@@ -14,9 +14,9 @@
     <string name="main__memecat__animals">Hewan</string>
     <string name="main__memecat__custom">Tersuai</string>
 
-    <string name="main__mode__saved">Tersimpan</string>
-    <string name="main__mode__favs">Favorit</string>
-    <string name="main__mode__create">Buat Baru</string>
+    <string name="memelist_data_mode__saved">Tersimpan</string>
+    <string name="memelist_data_mode__favs">Favorit</string>
+    <string name="memelist_data_mode__create">Buat Baru</string>
 
     <string name="main__get_picture_from_gallery">Memilih gambar dari Galeri</string>
     <string name="main__get_picture_from_camera">Memilih gambar dari Kamera</string>
@@ -74,8 +74,8 @@
     <string name="settings__pref_columns_landscape">Kolom landscape</string>
     <string name="pref_title__appearance">Tampilan</string>
     <string name="pref_title__size">Ukuran</string>
-    <string name="pref_title__default_main_mode">Mode Awal</string>
-    <string name="pref_summary__default_main_mode">Mode awal saat membuka aplikasi (Membuat, Favorit atau Tersimpan)</string>
+    <string name="pref_title__memelist_data_mode">Mode Awal</string>
+    <string name="pref_summary__memelist_data_mode">Mode awal saat membuka aplikasi (Membuat, Favorit atau Tersimpan)</string>
     <string name="pref_title__functionality">Fungsionalitas</string>
     <string name="pref_summary__auto_save_meme">Simpan meme secara otomatis apabila tombol kembali ditekan dan meme telah dimodifikasi</string>
     <string name="pref_title__auto_save_meme">Simpan ketika tombol kembali ditekan</string>

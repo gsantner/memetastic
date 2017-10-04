@@ -14,9 +14,12 @@
     <string name="main__memecat__animals">Animals</string>
     <string name="main__memecat__custom">Custom</string>
 
-    <string name="main__mode__saved">Saved</string>
-    <string name="main__mode__favs">Favs</string>
-    <string name="main__mode__create">Create</string>
+    <string name="memelist_data_mode__saved">Saved</string>
+    <string name="memelist_data_mode__favs">Favs</string>
+    <string name="memelist_data_mode__create">Create</string>
+
+    <string name="memelist_view_mode__rows_with_title">Rows with title</string>
+    <string name="memelist_view_mode__picture_grid">Picture Grid</string>
 
     <string name="view__mode__list">List View</string>
     <string name="view__mode__grid">Grid View</string>
@@ -79,8 +82,8 @@
     <string name="settings__pref_columns_landscape">Columns landscape</string>
     <string name="pref_title__appearance">Appearance</string>
     <string name="pref_title__size">Size</string>
-    <string name="pref_title__default_main_mode">Default Mode</string>
-    <string name="pref_summary__default_main_mode">Default Mode to open at startup (Create, Favs or Saved)</string>
+    <string name="pref_title__memelist_data_mode">Default Mode</string>
+    <string name="pref_summary__memelist_data_mode">Default Mode to open at startup (Create, Favs or Saved)</string>
     <string name="pref_title__functionality">Functionality</string>
     <string name="pref_summary__auto_save_meme">Automatically save meme if pressing back and there was some input</string>
     <string name="pref_title__auto_save_meme">Save when pressing back</string>
@@ -93,9 +96,9 @@
     <string name="pref_title__is_statusbar_hidden">Hide status bar</string>
     <string name="pref_summary__picture_quality__percent">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
-    <string name="pref_summary__view_type">Toggles view-type (List, Grid)</string>
-    <string name="pref_title__view_type">View Mode</string>
-    <string name="pref_key__view_type">pref_key__view_type</string>
+    <string name="pref_summary__memelist_view_type">Set view type (Picture grid, Rows with title)</string>
+    <string name="pref_title__memelist_view_type">View Type</string>
+
 
     <!-- Language -->
     <string name="pref_title__language">Language</string>
@@ -106,7 +109,7 @@
     <string name="downloading">Downloading</string>
     <string name="downloading_failed">Downloading failed</string>
     <string name="unzipping">Unzipping</string>
-    <string name="downloading_success">Sucessfully downloaded</string>
+    <string name="downloading_success">Successfully downloaded</string>
     <string name="download_latest_assets_message">This will download fonts and meme templates (about 20 MB data).</string>
     <string name="download_latest_assets_message_more">In settings you can manually get the latest assets later too.</string>
     <string name="download_latest_assets_title">Download latest assets</string>
