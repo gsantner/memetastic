@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity
     private long _lastInfoBarTextShownAt = 0;
     private SearchView _searchView;
     private MenuItem _searchItem;
+    private String _currentSearch = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -281,6 +282,7 @@ public class MainActivity extends AppCompatActivity
             _drawer.closeDrawer(GravityCompat.START);
         } else if (!_searchView.isIconified()) {
             _searchView.setIconified(true);
+            updateSearchFilter("");
         } else {
             super.onBackPressed();
         }
@@ -376,11 +378,17 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void setRecyclerMemeListAdapter(RecyclerView.Adapter adapter) {
+    private void setRecyclerMemeListAdapter(MemeItemAdapter adapter) {
+        adapter.setFilter(_currentSearch);
         _recyclerMemeList.setAdapter(adapter);
         boolean isEmpty = adapter.getItemCount() == 0;
         _emptylistLayout.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
         _recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
+    }
+
+    private void updateSearchFilter(String newFilter) {
+        _currentSearch = newFilter;
+        ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
     }
 
     @Override
@@ -657,8 +665,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     if (query != null) {
-                        MemeItemAdapter adapter = (MemeItemAdapter) _recyclerMemeList.getAdapter();
-                        adapter.setFilter(query);
+                        updateSearchFilter(query);
                     }
                     return false;
                 }
@@ -666,8 +673,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     if (newText != null) {
-                        MemeItemAdapter adapter = (MemeItemAdapter) _recyclerMemeList.getAdapter();
-                        adapter.setFilter(newText);
+                        updateSearchFilter(newText);
                     }
                     return false;
                 }
@@ -677,6 +683,7 @@ public class MainActivity extends AppCompatActivity
                 public void onFocusChange(View v, boolean hasFocus) {
                     if (!hasFocus) {
                         _searchItem.collapseActionView();
+                        updateSearchFilter("");
                     }
                 }
             });
