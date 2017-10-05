@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -21,6 +23,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.service.ThumbnailCleanupTask;
 import io.github.gsantner.memetastic.util.AppSettings;
+import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -138,6 +141,19 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                         settings.getDefaultPreferences().edit().commit();
                         new AssetUpdater.UpdateThread(context, true).start();
                         getActivity().finish();
+                    }
+                }
+                if (key.equals(getString(R.string.pref_key__is_show_in_gallery))) {
+                    boolean showInGallery = settings.getDefaultPreferences().getBoolean(key, true);
+                    File noMediaFile = new File(AssetUpdater.getMemesDir(AppSettings.get()), ".nomedia");
+                    if (showInGallery) {
+                        boolean success = noMediaFile.delete();
+                    } else {
+                        try {
+                            noMediaFile.createNewFile();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
