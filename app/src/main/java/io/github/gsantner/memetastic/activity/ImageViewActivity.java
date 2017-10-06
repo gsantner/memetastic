@@ -70,7 +70,7 @@ public class ImageViewActivity extends AppCompatActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
-        _viewPager.setAdapter(new ImagePagerAdapter(getSupportFragmentManager(), imageList));
+        _viewPager.setAdapter(new ImagePagerAdapter(getSupportFragmentManager()));
 
         _viewPager.setCurrentItem(getIntent().getIntExtra(MainActivity.IMAGE_POS, 0));
 
@@ -151,7 +151,7 @@ public class ImageViewActivity extends AppCompatActivity {
 
     class ImagePagerAdapter extends FragmentStatePagerAdapter {
 
-        public ImagePagerAdapter(FragmentManager fm, List<MemeData.Image> imageList) {
+        public ImagePagerAdapter(FragmentManager fm) {
             super(fm);
 
         }
