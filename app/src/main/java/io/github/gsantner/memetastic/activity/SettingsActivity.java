@@ -124,7 +124,9 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                 AppSettings settings = AppSettings.get();
                 String key = preference.getKey();
 
+
                 if (key.equals(getString(R.string.pref_key__memelist_view_type))) {
+
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
                 if (key.equals(getString(R.string.pref_key__cleanup_thumbnails))) {
