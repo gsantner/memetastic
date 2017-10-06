@@ -12,6 +12,7 @@
             android:summary="@string/pref_summary__memelist_view_type"
             android:title="@string/pref_title__memelist_view_type"/>
 
+
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="3"
             android:icon="@drawable/ic_grid_on_black_24dp"

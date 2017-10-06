@@ -22,6 +22,9 @@
     <string name="memelist_view_mode__rows_with_title">Rows with title</string>
     <string name="memelist_view_mode__picture_grid">Picture Grid</string>
 
+    <string name="view__mode__list">List View</string>
+    <string name="view__mode__grid">Grid View</string>
+
     <string name="main__search_meme">Search Meme</string>
     <string name="main__get_picture_from_gallery">Get picture from Gallery</string>
     <string name="main__get_picture_from_camera">Get picture from Camera</string>
@@ -98,6 +101,7 @@
     <string name="pref_title__memelist_view_type">View Type</string>
     <string name="pref_title__is_show_in_gallery">Show in device gallery</string>
 
+
     <!-- Language -->
     <string name="pref_title__language">Language</string>
     <string name="pref_desc__language">Change language of this app. Restart app for changes to take effect</string>
@@ -117,4 +121,10 @@
     <string name="select_color">Select color</string>
 
     <string name="code">Code</string>
+
+    <string name ="id_1">1</string>
+    <string name ="id_2">2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

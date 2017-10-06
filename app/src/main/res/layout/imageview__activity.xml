@@ -10,28 +10,20 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_toolbar_translucent"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/background_toolbar_translucent"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
-        android:id="@+id/imageview_activity__expanded_image_layout"
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/imageview_activity__view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <io.github.gsantner.memetastic.ui.TouchImageView
-            android:id="@+id/imageview_activity__expanded_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:visibility="visible" />
-    </RelativeLayout>
-
+        android:layout_height="match_parent" />
 </android.support.design.widget.CoordinatorLayout>

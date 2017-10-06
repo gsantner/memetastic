@@ -31,4 +31,5 @@
     <color name="comic_red">#E42E45</color>>
     <color name="comic_vanilla">#FFF3BE</color>>
     <color name="comic_blue">#32576A</color>
+    <color name="black_alpha_40">#90000000</color>
 </resources>

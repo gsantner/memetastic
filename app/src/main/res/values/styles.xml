@@ -22,6 +22,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+
     <style name="AppTheme.MemeCreatorEditTextOnDarkBackground" parent="AppTheme.MemeCreatorEditTextOnLightBackground">
         <item name="android:textColor">@color/white</item>
         <item name="android:textCursorDrawable">@drawable/cursor_accent</item>
