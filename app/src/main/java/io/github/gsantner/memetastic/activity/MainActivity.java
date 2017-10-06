@@ -20,10 +20,12 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -39,6 +41,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -65,7 +68,9 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.GridDecoration;
+
 import io.github.gsantner.memetastic.ui.MemeItemAdapter;
+
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -73,7 +78,7 @@ import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
@@ -93,6 +98,12 @@ public class MainActivity extends AppCompatActivity
 
     @BindView(R.id.main__tabs)
     TabLayout _tabLayout;
+
+    @BindView(R.id.main_activity__place_holder)
+    FrameLayout _placeholder;
+
+    @BindView(R.id.main_activity__view_pager)
+    ViewPager _viewPager;
 
     @BindView(R.id.main__activity__recycler_view)
     RecyclerView _recyclerMemeList;
@@ -143,20 +154,16 @@ public class MainActivity extends AppCompatActivity
         _drawer.addDrawerListener(toggle);
         toggle.syncState();
         _navigationView.setNavigationItemSelectedListener(this);
-        _tabLayout.setOnTabSelectedListener(this);
 
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
-
-
-        // Setup Floating Action Button
-
 
         _recyclerMemeList.setHasFixedSize(true);
         _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
+
         if (AppSettings.get().getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
             RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
@@ -165,6 +172,7 @@ public class MainActivity extends AppCompatActivity
                     ? app.settings.getGridColumnCountPortrait()
                     : app.settings.getGridColumnCountLandscape();
             RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
+
             _recyclerMemeList.setLayoutManager(recyclerGridLayout);
         }
 
@@ -174,6 +182,12 @@ public class MainActivity extends AppCompatActivity
             _tabLayout.addTab(tab);
         }
         _areTabsReady = true;
+
+        _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
+
+        _tabLayout.setupWithViewPager(_viewPager);
+
+
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
 
         _infoBarProgressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
@@ -368,10 +382,22 @@ public class MainActivity extends AppCompatActivity
         // Change mode
         _drawer.closeDrawers();
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
-        if (imageList != null) {
-            MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
-            setRecyclerMemeListAdapter(recyclerMemeAdapter);
-            return true;
+
+
+        if (item.getItemId() != R.id.action_mode_create) {
+            _viewPager.setVisibility(View.GONE);
+            _placeholder.setVisibility(View.VISIBLE);
+            if (imageList != null) {
+
+                MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
+
+                setRecyclerMemeListAdapter(recyclerMemeAdapter);
+                return true;
+            }
+        } else {
+            _viewPager.setVisibility(View.VISIBLE);
+            _placeholder.setVisibility(View.GONE);
+
         }
 
         _drawer.closeDrawer(GravityCompat.START);
@@ -386,9 +412,15 @@ public class MainActivity extends AppCompatActivity
         _recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
     }
 
+
     private void updateSearchFilter(String newFilter) {
-        _currentSearch = newFilter;
-        ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
+        if (_currentMainMode != 0) {
+            _currentSearch = newFilter;
+            ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
+        } else {
+            MemeFragment page = ((MemeFragment) getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.main_activity__view_pager + ":" + _viewPager.getCurrentItem()));
+            ((MemeItemAdapter) page._recyclerMemeList.getAdapter()).setFilter(newFilter);
+        }
     }
 
     @Override
@@ -505,26 +537,6 @@ public class MainActivity extends AppCompatActivity
         ActivityUtils.get(this).animateToActivity(intent, false, REQUEST_SHOW_IMAGE);
     }
 
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        int tabPos = tab.getPosition();
-        List<MemeData.Image> imageList = new ArrayList<>();
-        _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
-
-        if (tabPos >= 0 && tabPos < _tagKeys.length) {
-            imageList = MemeData.getImagesWithTag(_tagKeys[tabPos]);
-        }
-
-        if (_areTabsReady) {
-            app.settings.setLastSelectedTab(tabPos);
-        }
-        if (app.settings.isShuffleTagLists()) {
-            Collections.shuffle(imageList);
-        }
-
-        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
-        setRecyclerMemeListAdapter(recyclerMemeAdapter);
-    }
 
     private final RectF point = new RectF(0, 0, 0, 0);
     private static final int SWIPE_MIN_DX = 150;
@@ -642,14 +654,7 @@ public class MainActivity extends AppCompatActivity
     //########################
     //## Single line overrides
     //########################
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-    }
 
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-        onTabSelected(tab);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
@@ -665,7 +670,9 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     if (query != null) {
+
                         updateSearchFilter(query);
+
                     }
                     return false;
                 }
@@ -673,7 +680,9 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     if (newText != null) {
+
                         updateSearchFilter(newText);
+
                     }
                     return false;
                 }

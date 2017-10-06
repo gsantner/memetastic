@@ -2,23 +2,17 @@ package io.github.gsantner.memetastic.activity;
 
 import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.provider.MediaStore;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -27,7 +21,6 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.service.ThumbnailCleanupTask;
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.MediaStoreUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -124,7 +117,9 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                 AppSettings settings = AppSettings.get();
                 String key = preference.getKey();
 
+
                 if (key.equals(getString(R.string.pref_key__memelist_view_type))) {
+
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
                 if (key.equals(getString(R.string.pref_key__cleanup_thumbnails))) {
@@ -145,27 +140,6 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                         settings.getDefaultPreferences().edit().commit();
                         new AssetUpdater.UpdateThread(context, true).start();
                         getActivity().finish();
-                    }
-                }
-                if (key.equals(getString(R.string.pref_key__is_show_in_gallery))) {
-                    boolean showInGallery = settings.getDefaultPreferences().getBoolean(key, true);
-                    File memeDirectory = AssetUpdater.getMemesDir(AppSettings.get());
-                    File noMediaFile = new File(memeDirectory, ".nomedia");
-                    if (showInGallery) {
-                        noMediaFile.delete();
-                        MediaStoreUtils.deleteFileFromMediaStore(context, noMediaFile);
-                        File[] files = memeDirectory.listFiles();
-                        for (int i = 0; i < files.length; i++) {
-                            MediaStoreUtils.deleteFileFromMediaStore(context, files[i]);
-                            MediaStoreUtils.addFileToMediaStore(context, files[i]);
-                        }
-                    } else {
-                        try {
-                            noMediaFile.createNewFile();
-                            MediaStoreUtils.addFileToMediaStore(context, noMediaFile);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
                     }
                 }
             }
