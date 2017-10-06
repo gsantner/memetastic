@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_relative_layout"
     android:layout_width="wrap_content"
     android:layout_height="80dp"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:id="@+id/item_relative_layout">
+    android:orientation="horizontal">
 
     <io.github.gsantner.memetastic.ui.SquareImageView
         android:id="@+id/item__square_image__image"
@@ -18,25 +18,25 @@
         android:id="@+id/item__square_image__image_bottom_end"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp" />
+
     <TextView
         android:id="@+id/item_square_image_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/item__square_image__image"
-        tools:text="Doggo Tongue"
-        android:layout_toLeftOf="@id/item__square_image__image_bottom_end"
         android:layout_centerVertical="true"
-        android:textSize="24sp"
         android:layout_margin="10dp"
+        android:layout_toLeftOf="@id/item__square_image__image_bottom_end"
+        android:layout_toRightOf="@id/item__square_image__image"
         android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:text="Doggo Tongue"
 
         />
-
 
 
 </RelativeLayout>
