@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity
     public static final int VIEW_TYPE_LIST = 0;
     public static final int VIEW_TYPE_GRID = 1;
     public static final String IMAGE_PATH = "imagePath";
+    public static final String IMAGE_POS ="image_pos";
 
     private static boolean _isShowingFullscreenImage = false;
     private boolean _areTabsReady = false;
@@ -533,11 +534,12 @@ public class MainActivity extends AppCompatActivity
         ActivityUtils.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
     }
 
-    public void openImageViewActivityWithImage(String imagePath) {
+    public void openImageViewActivityWithImage(int pos,String imagePath) {
         _isShowingFullscreenImage = true;
 
         Intent intent = new Intent(this, ImageViewActivity.class);
         intent.putExtra(IMAGE_PATH, imagePath);
+        intent.putExtra(IMAGE_POS,pos);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         ActivityUtils.get(this).animateToActivity(intent, false, REQUEST_SHOW_IMAGE);
     }

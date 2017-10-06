@@ -9,7 +9,7 @@ ext {
     ]
     version_sdk.targetSdk = version_sdk.compileSdk
     version_lib = [
-            appcompat  : "26.1.0",
+            appcompat: "26.1.0",
             butterknife: "8.8.1",
     ]
 }
@@ -29,7 +29,9 @@ android {
 
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
-        buildConfigField("String[]", "APPLICATION_LANGUAGES", '{' + getUsedAndroidLanguages().collect {"\"${it}\""}.join(",")  + '}')
+        buildConfigField("String[]", "APPLICATION_LANGUAGES", '{' + getUsedAndroidLanguages().collect {
+            "\"${it}\""
+        }.join(",") + '}')
     }
     buildTypes {
         release {
