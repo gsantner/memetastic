@@ -78,12 +78,12 @@ import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
-    public static final int VIEW_TYPE_LIST=0;
-    public static final int VIEW_TYPE_GRID=1;
+    public static final int VIEW_TYPE_LIST = 0;
+    public static final int VIEW_TYPE_GRID = 1;
     public static final String IMAGE_PATH = "imagePath";
 
     private static boolean _isShowingFullscreenImage = false;
@@ -162,9 +162,6 @@ public class MainActivity extends AppCompatActivity
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
 
 
-
-
-
         // Setup Floating Action
         _recyclerMemeList.setHasFixedSize(true);
         _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
@@ -191,7 +188,7 @@ public class MainActivity extends AppCompatActivity
         }
         _areTabsReady = true;
 
-        _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(),_tagKeys.length,_tagValues));
+        _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
 
         _tabLayout.setupWithViewPager(_viewPager);
 
@@ -392,7 +389,7 @@ public class MainActivity extends AppCompatActivity
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
 
 
-        if(item.getItemId()!=R.id.action_mode_create){
+        if (item.getItemId() != R.id.action_mode_create) {
             _viewPager.setVisibility(View.GONE);
             _placeholder.setVisibility(View.VISIBLE);
             if (imageList != null) {
@@ -402,7 +399,7 @@ public class MainActivity extends AppCompatActivity
                 setRecyclerMemeListAdapter(recyclerMemeAdapter);
                 return true;
             }
-        }else {
+        } else {
             _viewPager.setVisibility(View.VISIBLE);
             _placeholder.setVisibility(View.GONE);
 
@@ -421,15 +418,12 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
-
-
     private void updateSearchFilter(String newFilter) {
-        if(_currentMainMode!=0) {
+        if (_currentMainMode != 0) {
             _currentSearch = newFilter;
             ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
-        }else{
-            MemeFragment page = ((MemeFragment)getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.main_activity__view_pager + ":" + _viewPager.getCurrentItem()));
+        } else {
+            MemeFragment page = ((MemeFragment) getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.main_activity__view_pager + ":" + _viewPager.getCurrentItem()));
             ((MemeItemAdapter) page._recyclerMemeList.getAdapter()).setFilter(newFilter);
         }
     }
@@ -548,29 +542,6 @@ public class MainActivity extends AppCompatActivity
         ActivityUtils.get(this).animateToActivity(intent, false, REQUEST_SHOW_IMAGE);
     }
 
-//    @Override
-//    public void onTabSelected(TabLayout.Tab tab) {
-//        int tabPos = tab.getPosition();
-//        List<MemeData.Image> imageList = new ArrayList<>();
-//        _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
-//
-//        if (tabPos >= 0 && tabPos < _tagKeys.length) {
-//            imageList = MemeData.getImagesWithTag(_tagKeys[tabPos]);
-//        }
-//
-//        if (_areTabsReady) {
-//            app.settings.setLastSelectedTab(tabPos);
-//        }
-//        if (app.settings.isShuffleTagLists()) {
-//            Collections.shuffle(imageList);
-//        }
-//
-//        _viewPager.setCurrentItem(tab.getPosition());
-//
-//        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
-//
-//        setRecyclerMemeListAdapter(recyclerMemeAdapter);
-//    }
 
     private final RectF point = new RectF(0, 0, 0, 0);
     private static final int SWIPE_MIN_DX = 150;
@@ -689,15 +660,6 @@ public class MainActivity extends AppCompatActivity
     //## Single line overrides
     //########################
 
-
-//    @Override
-//    public void onTabUnselected(TabLayout.Tab tab) {
-//    }
-//
-//    @Override
-//    public void onTabReselected(TabLayout.Tab tab) {
-//        onTabSelected(tab);
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {

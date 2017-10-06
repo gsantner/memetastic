@@ -29,22 +29,18 @@ import io.github.gsantner.memetastic.util.ContextUtils;
 
 
 public class MemeFragment extends Fragment {
-    @BindView(R.id.main__fragment__recycler_view)
+    @BindView(R.id.meme_fragment__recycler_view)
     RecyclerView _recyclerMemeList;
 
-    @BindView(R.id.main__activity__list_empty__layout)
+    @BindView(R.id.meme_fragment__list_empty_layout)
     LinearLayout _emptylistLayout;
 
-    @BindView(R.id.main__activity__list_empty__text)
+    @BindView(R.id.meme_fragment__list_empty_text)
     TextView _emptylistText;
 
     App app;
     int position;
     String[] _tagKeys, _tagValues;
-    private boolean _areTabsReady;
-
-
-
     private Unbinder unbinder;
     private List<MemeData.Image> imageList;
 
@@ -63,19 +59,18 @@ public class MemeFragment extends Fragment {
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         app = (App) getActivity().getApplication();
-        position=getArguments().getInt("pos");
+        position = getArguments().getInt("pos");
 
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
 
         int tabPos = position;
-         imageList = new ArrayList<>();
+        imageList = new ArrayList<>();
 
         if (tabPos >= 0 && tabPos < _tagKeys.length) {
             imageList = MemeData.getImagesWithTag(_tagKeys[tabPos]);
@@ -93,11 +88,11 @@ public class MemeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_blank, container, false);
+        View view = inflater.inflate(R.layout.fragment_meme, container, false);
 
         // Bind UI
 
-        unbinder=ButterKnife.bind(this,view);
+        unbinder = ButterKnife.bind(this, view);
 
         _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
 
