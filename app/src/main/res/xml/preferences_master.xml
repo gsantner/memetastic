@@ -92,6 +92,12 @@
 
     <PreferenceCategory android:title="@string/miscellaneous">
 
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_photo_library_black_24dp"
+            android:key="@string/pref_key__is_show_in_gallery"
+            android:title="@string/pref_title__is_show_in_gallery"/>
+
         <!--suppress AndroidDomInspection -->
         <net.gsantner.opoc.ui.LanguagePreference
             android:defaultValue=""
