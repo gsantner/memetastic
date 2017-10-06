@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,9 +24,6 @@ public class MemeData implements Serializable {
 
     public static boolean isReady() {
         synchronized (_wasInitSync) {
-            Log.d("XXX", "FONT: " + _fonts.isEmpty());
-            Log.d("XXX", "IMAGES: " + _images.isEmpty());
-            Log.d("XXX", "init: " + _wasInit);
             return !_fonts.isEmpty() && !_images.isEmpty() && _wasInit;
         }
     }
@@ -89,24 +87,28 @@ public class MemeData implements Serializable {
     }
 
     public static synchronized List<Image> getImagesWithTag(String tag) {
-        if (_imagesWithTags.containsKey(tag)) {
-            return _imagesWithTags.get(tag);
-        }
-        boolean isOtherTag = tag.equals("other");
-        List<Image> newlist = new ArrayList<>();
-        for (Image image : getImages()) {
-            for (String imgTag : image.conf.getTags()) {
-                if (imgTag.equals(tag)) {
+        try {
+            if (_imagesWithTags.containsKey(tag)) {
+                return _imagesWithTags.get(tag);
+            }
+            boolean isOtherTag = tag.equals("other");
+            List<Image> newlist = new ArrayList<>();
+            for (Image image : getImages()) {
+                for (String imgTag : image.conf.getTags()) {
+                    if (imgTag.equals(tag)) {
+                        newlist.add(image);
+                        break;
+                    }
+                }
+                if (isOtherTag && image.conf.getTags().isEmpty()) {
                     newlist.add(image);
-                    break;
                 }
             }
-            if (isOtherTag && image.conf.getTags().isEmpty()) {
-                newlist.add(image);
-            }
+            _imagesWithTags.put(tag, newlist);
+            return newlist;
+        } catch (ConcurrentModificationException ex) {
+            return new ArrayList<>();
         }
-        _imagesWithTags.put(tag, newlist);
-        return newlist;
     }
 
     public static class Font {

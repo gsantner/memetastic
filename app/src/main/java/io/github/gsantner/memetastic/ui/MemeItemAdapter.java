@@ -50,6 +50,10 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         _itemViewType = itemViewType;
     }
 
+    public void setOriginalImageDataList(List<MemeData.Image> originalImageDataList) {
+        _originalImageDataList = originalImageDataList;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;

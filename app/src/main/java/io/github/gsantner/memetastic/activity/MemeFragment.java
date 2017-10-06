@@ -1,8 +1,12 @@
 package io.github.gsantner.memetastic.activity;
 
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +28,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.ui.GridDecoration;
 import io.github.gsantner.memetastic.ui.MemeItemAdapter;
+import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.ContextUtils;
 
@@ -38,11 +43,12 @@ public class MemeFragment extends Fragment {
     @BindView(R.id.meme_fragment__list_empty_text)
     TextView _emptylistText;
 
-    App app;
-    int position;
+    App _app;
+    int _tabPos;
     String[] _tagKeys, _tagValues;
-    private Unbinder unbinder;
-    private List<MemeData.Image> imageList;
+    private Unbinder _unbinder;
+    private List<MemeData.Image> _imageList;
+    private MemeItemAdapter _recyclerMemeAdapter;
 
 
     public MemeFragment() {
@@ -63,63 +69,60 @@ public class MemeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        app = (App) getActivity().getApplication();
-        position = getArguments().getInt("pos");
+        _app = (App) getActivity().getApplication();
+        _tabPos = getArguments().getInt("pos");
 
+        _imageList = new ArrayList<>();
+
+        _app.settings.setLastSelectedTab(_tabPos);
+    }
+
+    private void reloadAdapter() {
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
-
-        int tabPos = position;
-        imageList = new ArrayList<>();
-
-        if (tabPos >= 0 && tabPos < _tagKeys.length) {
-            imageList = MemeData.getImagesWithTag(_tagKeys[tabPos]);
+        if (_tabPos >= 0 && _tabPos < _tagKeys.length) {
+            _imageList = MemeData.getImagesWithTag(_tagKeys[_tabPos]);
         }
 
-        app.settings.setLastSelectedTab(tabPos);
-
-        if (app.settings.isShuffleTagLists()) {
-            Collections.shuffle(imageList);
+        if (_app.settings.isShuffleTagLists()) {
+            Collections.shuffle(_imageList);
         }
-
+        _recyclerMemeAdapter.setOriginalImageDataList(_imageList);
+        _recyclerMemeAdapter.notifyDataSetChanged();
+        setRecyclerMemeListAdapter(_recyclerMemeAdapter);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_meme, container, false);
-
-        // Bind UI
-
-        unbinder = ButterKnife.bind(this, view);
-
-        _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
+        View root = inflater.inflate(R.layout.fragment_meme, container, false);
+        _unbinder = ButterKnife.bind(this, root);
 
 
         _recyclerMemeList.setHasFixedSize(true);
-        _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
+        _recyclerMemeList.setItemViewCacheSize(_app.settings.getGridColumnCountPortrait() * _app.settings.getGridColumnCountLandscape() * 2);
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
 
+        int a = AppSettings.get().getMemeListViewType();
         if (AppSettings.get().getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
             RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
         } else {
             int gridColumns = ContextUtils.get().isInPortraitMode()
-                    ? app.settings.getGridColumnCountPortrait()
-                    : app.settings.getGridColumnCountLandscape();
+                    ? _app.settings.getGridColumnCountPortrait()
+                    : _app.settings.getGridColumnCountLandscape();
             RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(getActivity(), gridColumns);
 
             _recyclerMemeList.setLayoutManager(recyclerGridLayout);
         }
 
-        MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, getActivity(), AppSettings.get().getMemeListViewType());
+        _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
+        _recyclerMemeAdapter = new MemeItemAdapter(_imageList, getActivity(), AppSettings.get().getMemeListViewType());
+        setRecyclerMemeListAdapter(_recyclerMemeAdapter);
 
-        setRecyclerMemeListAdapter(recyclerMemeAdapter);
-
-        return view;
+        return root;
     }
 
     private void setRecyclerMemeListAdapter(MemeItemAdapter adapter) {
@@ -130,10 +133,39 @@ public class MemeFragment extends Fragment {
         _recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
     }
 
+    private BroadcastReceiver _localBroadcastReceiver = new BroadcastReceiver() {
+        @SuppressWarnings("unchecked")
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            switch (action) {
+                case AppCast.ASSETS_LOADED.ACTION: {
+                    reloadAdapter();
+                    return;
+                }
+            }
+        }
+    };
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(_localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
+        reloadAdapter();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(_localBroadcastReceiver);
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        if (_unbinder != null) {
+            _unbinder.unbind();
+        }
     }
 
 
