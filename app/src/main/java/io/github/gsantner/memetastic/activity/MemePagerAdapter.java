@@ -13,10 +13,12 @@ public class MemePagerAdapter extends FragmentPagerAdapter {
     String[] _pageTitles;
 
 
-    public MemePagerAdapter(FragmentManager fm,int totalCount,String[] pageTitles) {
+
+    public MemePagerAdapter(FragmentManager fm, int totalCount, String[] pageTitles) {
         super(fm);
-        _totalCount=totalCount;
-        _pageTitles=pageTitles;
+        _totalCount = totalCount;
+        _pageTitles = pageTitles;
+
     }
 
     @Override

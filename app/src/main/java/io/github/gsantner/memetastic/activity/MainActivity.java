@@ -56,7 +56,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -157,13 +156,11 @@ public class MainActivity extends AppCompatActivity
         _drawer.addDrawerListener(toggle);
         toggle.syncState();
         _navigationView.setNavigationItemSelectedListener(this);
-        //_tabLayout.setOnTabSelectedListener(this);
 
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
 
 
-        // Setup Floating Action
         _recyclerMemeList.setHasFixedSize(true);
         _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
         _recyclerMemeList.setDrawingCacheEnabled(true);
@@ -544,26 +541,6 @@ public class MainActivity extends AppCompatActivity
         ActivityUtils.get(this).animateToActivity(intent, false, REQUEST_SHOW_IMAGE);
     }
 
-
-    private final RectF point = new RectF(0, 0, 0, 0);
-    private static final int SWIPE_MIN_DX = 150;
-    private static final int SWIPE_MAX_DY = 90;
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        if (!_drawer.isDrawerOpen(GravityCompat.START) && !_drawer.isDrawerVisible(GravityCompat.START) && _tabLayout.getVisibility() == View.VISIBLE) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN && event.getY() > (_tabLayout.getY() * 2.2)) {
-                point.set(event.getX(), event.getY(), 0, 0);
-            } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                point.set(point.left, point.top, event.getX(), event.getY());
-                if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
-                    // R->L : L<-R
-                    selectTab(_tabLayout.getSelectedTabPosition() + (point.width() > 0 ? -1 : +1), 0);
-                }
-            }
-        }
-        return super.dispatchTouchEvent(event);
-    }
 
     private BroadcastReceiver _localBroadcastReceiver = new BroadcastReceiver() {
         @SuppressWarnings("unchecked")
