@@ -248,7 +248,9 @@ public class AssetUpdater {
                 dataFont.fullPath = new File(folder, confFont.getFilename());
                 dataFont.typeFace = Typeface.createFromFile(dataFont.fullPath);
                 if (dataFont.fullPath.exists()) {
-                    dataFonts.add(dataFont);
+                    if (!dataFonts.contains(dataFont)) {
+                        dataFonts.add(dataFont);
+                    }
                 } else {
                     assetsChanged = true;
                 }
@@ -260,7 +262,9 @@ public class AssetUpdater {
                 dataImage.fullPath = new File(folder, confImage.getFilename());
                 dataImage.isTemplate = true;
                 if (dataImage.fullPath.exists()) {
-                    dataImages.add(dataImage);
+                    if (!dataImages.contains(dataImage)) {
+                        dataImages.add(dataImage);
+                    }
                 } else {
                     assetsChanged = true;
                 }

@@ -1,17 +1,19 @@
 package io.github.gsantner.memetastic.activity;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.view.WindowManager;
 
 import java.io.File;
@@ -71,9 +73,15 @@ public class ImageViewActivity extends AppCompatActivity {
         }
 
         _viewPager.setAdapter(new ImagePagerAdapter(getSupportFragmentManager()));
-
         _viewPager.setCurrentItem(getIntent().getIntExtra(MainActivity.IMAGE_POS, 0));
 
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.BLACK);
+        }
 
     }
 
@@ -99,19 +107,19 @@ public class ImageViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        ImageViewFragment page=null;
+        ImageViewFragment page = null;
 
-        if(item.getItemId()==R.id.action_share||item.getItemId()==R.id.action_delete) {
+        if (item.getItemId() == R.id.action_share || item.getItemId() == R.id.action_delete) {
             page = ((ImageViewFragment) _viewPager.getAdapter().instantiateItem(_viewPager, _viewPager.getCurrentItem()));
         }
         switch (item.getItemId()) {
 
-            case android.R.id.home:{
+            case android.R.id.home: {
                 finish();
                 return true;
             }
             case R.id.action_share: {
-                if(page!=null){
+                if (page != null) {
                     _bitmap = page._bitmap;
                     ((App) getApplication()).shareBitmapToOtherApp(_bitmap, this);
                 }
@@ -141,7 +149,6 @@ public class ImageViewActivity extends AppCompatActivity {
     private boolean deleteFile(File file) {
         return file.exists() && file.delete();
     }
-
 
 
     /**

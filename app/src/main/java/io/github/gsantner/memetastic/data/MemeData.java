@@ -1,7 +1,6 @@
 package io.github.gsantner.memetastic.data;
 
 import android.graphics.Typeface;
-import android.util.Log;
 
 import java.io.File;
 import java.io.Serializable;
@@ -115,11 +114,27 @@ public class MemeData implements Serializable {
         public MemeConfig.Font conf;
         public File fullPath;
         public Typeface typeFace;
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof Font) {
+                return fullPath.equals(((Font) obj).fullPath);
+            }
+            return super.equals(obj);
+        }
     }
 
     public static class Image implements Serializable {
         public MemeConfig.Image conf;
         public File fullPath;
         public boolean isTemplate;
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof Image) {
+                return fullPath.equals(((Image) obj).fullPath);
+            }
+            return super.equals(obj);
+        }
     }
 }

@@ -48,6 +48,7 @@ import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
@@ -392,7 +393,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             _memeSavetime = System.currentTimeMillis();
         }
 
-        String filename = String.format(Locale.getDefault(), "%s_%d.jpg", getString(R.string.app_name), _memeSavetime);
+        String filename = String.format(Locale.getDefault(), "%s_%s.jpg", getString(R.string.app_name), AssetUpdater.FORMAT_MINUTE.format(new Date(_memeSavetime)));
         File fullpath = new File(folder, filename);
         boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, _lastBitmap) != null;
         if (wasSaved && showDialog) {

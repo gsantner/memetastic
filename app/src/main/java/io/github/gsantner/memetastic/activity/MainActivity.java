@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.PorterDuff;
-import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.content.LocalBroadcastManager;
@@ -38,7 +36,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -67,9 +64,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.GridDecoration;
-
 import io.github.gsantner.memetastic.ui.MemeItemAdapter;
-
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -82,7 +77,7 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
     public static final String IMAGE_PATH = "imagePath";
-    public static final String IMAGE_POS ="image_pos";
+    public static final String IMAGE_POS = "image_pos";
 
     private static boolean _isShowingFullscreenImage = false;
     private boolean _areTabsReady = false;
@@ -529,12 +524,12 @@ public class MainActivity extends AppCompatActivity
         ActivityUtils.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
     }
 
-    public void openImageViewActivityWithImage(int pos,String imagePath) {
+    public void openImageViewActivityWithImage(int pos, String imagePath) {
         _isShowingFullscreenImage = true;
 
         Intent intent = new Intent(this, ImageViewActivity.class);
         intent.putExtra(IMAGE_PATH, imagePath);
-        intent.putExtra(IMAGE_POS,pos);
+        intent.putExtra(IMAGE_POS, pos);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         ActivityUtils.get(this).animateToActivity(intent, false, REQUEST_SHOW_IMAGE);
     }
