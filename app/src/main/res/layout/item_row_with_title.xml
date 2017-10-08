@@ -24,7 +24,24 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp" />
 
+    <EditText
+        android:visibility="gone"
+        android:padding="10dp"
+        android:id="@+id/item_square_image_title_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:layout_toLeftOf="@id/item__square_image__image_bottom_end"
+        android:layout_toRightOf="@id/item__square_image__image"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="Doggo Tongue"
+        android:maxLines="2"
+        android:imeOptions="actionDone"
+        />
     <TextView
+        android:maxLines="2"
         android:id="@+id/item_square_image_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +52,6 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         tools:text="Doggo Tongue"
-
         />
 
 

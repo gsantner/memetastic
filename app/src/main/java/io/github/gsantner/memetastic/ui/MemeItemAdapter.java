@@ -1,14 +1,21 @@
 package io.github.gsantner.memetastic.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -90,6 +97,8 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         taskLoadImage.execute(imageData.fullPath);
         holder.imageView.setTag(imageData);
         holder.imageButtonFav.setTag(imageData);
+        holder.imageTitle.setTag(imageData);
+
 
 
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
@@ -111,24 +120,57 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
             }
         });
 
+        holder.imageTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleItemClick(v,pos);
+            }
+        });
+
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MemeData.Image image = (MemeData.Image) v.getTag();
-
-                if (image.isTemplate) {
-                    Intent intent = new Intent(_activity, MemeCreateActivity.class);
-                    intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, image.fullPath.getAbsolutePath());
-                    intent.putExtra(MemeCreateActivity.EXTRA_MEMETASTIC_DATA, image);
-                    _activity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
-                } else {
-                    if (_activity instanceof MainActivity) {
-                        ((MainActivity) _activity).openImageViewActivityWithImage(pos, image.fullPath.getAbsolutePath());
-                    }
-                }
+               handleItemClick(v,pos);
             }
         });
+
+        holder.imageTitle.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                MemeData.Image image = (MemeData.Image) view.getTag();
+
+                if(!image.isTemplate){
+                    holder.imageTitleEdit.setVisibility(View.VISIBLE);
+                    holder.imageTitle.setVisibility(View.INVISIBLE);
+                    holder.imageTitleEdit.setText(holder.imageTitle.getText());
+                    holder.imageTitleEdit.requestFocus();
+                    InputMethodManager imm = (InputMethodManager) _activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.showSoftInput(holder.imageTitleEdit, InputMethodManager.SHOW_IMPLICIT);
+                }
+
+                return true;
+            }
+        });
+
+        holder.imageTitleEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                boolean handled=false;
+                if(i== EditorInfo.IME_ACTION_DONE||keyEvent.getKeyCode()==KeyEvent.KEYCODE_ENTER){
+                    holder.imageTitleEdit.setVisibility(View.GONE);
+                    holder.imageTitle.setText(holder.imageTitleEdit.getText());
+                    holder.imageTitle.setVisibility(View.VISIBLE);
+                    holder.imageTitle.requestFocus();
+                    InputMethodManager imm = (InputMethodManager) _activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(holder.imageTitleEdit.getWindowToken(), 0);
+                    handled =true;
+                }
+                return handled;
+            }
+        });
+
+
     }
 
     // gets and returns the count of available items in the grid
@@ -163,6 +205,21 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         int index = _imageDataList.indexOf(dataImage);
         if (index >= 0) {
             notifyItemChanged(index);
+        }
+    }
+
+    public void handleItemClick(View v,int pos){
+        MemeData.Image image = (MemeData.Image) v.getTag();
+
+        if (image.isTemplate) {
+            Intent intent = new Intent(_activity, MemeCreateActivity.class);
+            intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, image.fullPath.getAbsolutePath());
+            intent.putExtra(MemeCreateActivity.EXTRA_MEMETASTIC_DATA, image);
+            _activity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
+        } else {
+            if (_activity instanceof MainActivity) {
+                ((MainActivity) _activity).openImageViewActivityWithImage(pos, image.fullPath.getAbsolutePath());
+            }
         }
     }
 
@@ -217,6 +274,9 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         @BindView(R.id.item_square_image_title)
         public TextView imageTitle;
 
+        @BindView(R.id.item_square_image_title_edit)
+        public EditText imageTitleEdit;
+
 
         // saves the instance of the conf view of the meme and favorite button to access them later
         public ViewHolder(View itemView) {
@@ -225,6 +285,8 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
             if (_shortAnimationDuration < 0)
                 _shortAnimationDuration = imageView.getContext().getResources().getInteger(
                         android.R.integer.config_shortAnimTime);
+
+
         }
     }
 }
