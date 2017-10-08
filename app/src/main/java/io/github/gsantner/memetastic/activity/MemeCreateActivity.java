@@ -660,7 +660,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             // get height of multiline text
             int textHeight = textLayout.getHeight();
 
-            // get _tabPos of text in the canvas, this will depend in its internal location mode
+            // get position of text in the canvas, this will depend in its internal location mode
             MemeConfig.Point where = caption.getPositionInCanvas(
                     bitmap.getWidth(), bitmap.getHeight(), textWidth, textHeight);
 
