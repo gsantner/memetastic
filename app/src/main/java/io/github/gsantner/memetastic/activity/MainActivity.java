@@ -130,6 +130,8 @@ public class MainActivity extends AppCompatActivity
     private MenuItem _searchItem;
     private String _currentSearch = "";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

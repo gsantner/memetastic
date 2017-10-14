@@ -5,10 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.support.v7.widget.ActionMenuView;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -61,6 +66,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         _originalImageDataList = originalImageDataList;
     }
 
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
@@ -100,7 +106,6 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         holder.imageTitle.setTag(imageData);
 
 
-
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
 
         holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -123,7 +128,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         holder.imageTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                handleItemClick(v,pos);
+                handleItemClick(v, pos);
             }
         });
 
@@ -131,24 +136,41 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               handleItemClick(v,pos);
+                handleItemClick(v, pos);
             }
         });
 
         holder.imageTitle.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-                MemeData.Image image = (MemeData.Image) view.getTag();
+            public boolean onLongClick(final View view) {
 
-                if(!image.isTemplate){
-                    holder.imageTitleEdit.setVisibility(View.VISIBLE);
-                    holder.imageTitle.setVisibility(View.INVISIBLE);
-                    holder.imageTitleEdit.setText(holder.imageTitle.getText());
-                    holder.imageTitleEdit.requestFocus();
-                    InputMethodManager imm = (InputMethodManager) _activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.showSoftInput(holder.imageTitleEdit, InputMethodManager.SHOW_IMPLICIT);
-                }
+                PopupMenu popup = new PopupMenu(_activity, holder.imageTitle);
+                //inflating menu from xml resource
+                popup.inflate(R.menu.options_menu);
+                //adding click listener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
 
+                        switch (item.getItemId()) {
+                            case R.id.option_menu_edit:
+
+                                MemeData.Image image = (MemeData.Image) view.getTag();
+                                if (!image.isTemplate) {
+                                    holder.imageTitleEdit.setVisibility(View.VISIBLE);
+                                    holder.imageTitle.setVisibility(View.INVISIBLE);
+                                    holder.imageTitleEdit.setText(holder.imageTitle.getText());
+                                    holder.imageTitleEdit.requestFocus();
+                                    InputMethodManager imm = (InputMethodManager) _activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                                    imm.showSoftInput(holder.imageTitleEdit, InputMethodManager.SHOW_IMPLICIT);
+                                }
+                                break;
+                        }
+                        return true;
+                    }
+                });
+                //displaying the popup
+                popup.show();
                 return true;
             }
         });
@@ -156,15 +178,15 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         holder.imageTitleEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                boolean handled=false;
-                if(i== EditorInfo.IME_ACTION_DONE||keyEvent.getKeyCode()==KeyEvent.KEYCODE_ENTER){
+                boolean handled = false;
+                if (i == EditorInfo.IME_ACTION_DONE || keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     holder.imageTitleEdit.setVisibility(View.GONE);
                     holder.imageTitle.setText(holder.imageTitleEdit.getText());
                     holder.imageTitle.setVisibility(View.VISIBLE);
                     holder.imageTitle.requestFocus();
                     InputMethodManager imm = (InputMethodManager) _activity.getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(holder.imageTitleEdit.getWindowToken(), 0);
-                    handled =true;
+                    handled = true;
                 }
                 return handled;
             }
@@ -208,7 +230,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         }
     }
 
-    public void handleItemClick(View v,int pos){
+    public void handleItemClick(View v, int pos) {
         MemeData.Image image = (MemeData.Image) v.getTag();
 
         if (image.isTemplate) {
@@ -288,5 +310,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
 
 
         }
+
     }
+
 }
