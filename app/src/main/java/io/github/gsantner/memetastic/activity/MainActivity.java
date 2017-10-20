@@ -34,6 +34,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -145,7 +146,15 @@ public class MainActivity extends AppCompatActivity
 
         // Setup _toolbar
         setSupportActionBar(_toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, _drawer, _toolbar, R.string.main__navdrawer__open, R.string.main__navdrawer__close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, _drawer, _toolbar,
+                R.string.main__navdrawer__open, R.string.main__navdrawer__close){
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                toggleHiddenTab();
+            }
+        };
+        toggleHiddenTab();
         _drawer.addDrawerListener(toggle);
         toggle.syncState();
         _navigationView.setNavigationItemSelectedListener(this);
@@ -216,6 +225,25 @@ public class MainActivity extends AppCompatActivity
 
         if (PermissionChecker.doIfPermissionGranted(this)) {
             ContextUtils.checkForAssetUpdates(this);
+        }
+    }
+
+    public void toggleHiddenTab() {
+        MenuItem hiddenItem = _navigationView.getMenu().findItem(R.id.action_mode_hidden);
+
+        List<MemeData.Image> imageList = new ArrayList<>();
+
+        for (String hidden : app.settings.getHiddenMemesTemplate()) {
+            MemeData.Image image = MemeData.findImage(new File(hidden));
+            if (image != null) {
+                imageList.add(image);
+            }
+        }
+
+        if (imageList.isEmpty()){
+            hiddenItem.setVisible(false);
+        }else {
+            hiddenItem.setVisible(true);
         }
     }
 
@@ -379,7 +407,6 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.action_mode_hidden:{
                 _currentMainMode = 3;
-                _emptylistText.setText(R.string.main__nodata__hidden);
                 imageList = new ArrayList<>();
 
                 for (String hidden : app.settings.getHiddenMemesTemplate()) {
@@ -718,5 +745,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onPageScrollStateChanged(int i) {
 
+    }
+
+    public void swapTabs() {
+        MenuItem createItem = _navigationView.getMenu().findItem(R.id.action_mode_create);
+        onNavigationItemSelected(createItem);
+        createItem.setChecked(true);
     }
 }

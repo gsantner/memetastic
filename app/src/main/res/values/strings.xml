@@ -40,7 +40,6 @@
     <string name="main__nodata__favourites">No favourites yet.\nUse the star button of a meme template to add it to the favourites.</string>
     <string name="main__nodata__custom_templates">No custom templates yet.\nPlaced template images here:%1$s</string>
     <string name="main__nodata__saved">No memes saved yet.\nUse the top save button after editing a meme.</string>
-    <string name="main__nodata__hidden">No memes Hidden Yet, Long Press on a meme on hide it</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Press back again to stop editing this meme. Meme will be lost if it is not already saved.</string>
