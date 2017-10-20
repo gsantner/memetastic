@@ -72,7 +72,8 @@ import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        ViewPager.OnPageChangeListener {
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
@@ -80,7 +81,6 @@ public class MainActivity extends AppCompatActivity
     public static final String IMAGE_POS = "image_pos";
 
     private static boolean _isShowingFullscreenImage = false;
-    private boolean _areTabsReady = false;
 
     @BindView(R.id.toolbar)
     Toolbar _toolbar;
@@ -177,12 +177,11 @@ public class MainActivity extends AppCompatActivity
             tab.setText(cat);
             _tabLayout.addTab(tab);
         }
-        _areTabsReady = true;
 
         _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
+        _viewPager.addOnPageChangeListener(this);
 
         _tabLayout.setupWithViewPager(_viewPager);
-
 
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
 
@@ -235,6 +234,9 @@ public class MainActivity extends AppCompatActivity
             case 2:
                 navItem = _navigationView.getMenu().findItem(R.id.action_mode_saved);
                 break;
+            case 3:
+                navItem = _navigationView.getMenu().findItem(R.id.action_mode_hidden);
+                break;
         }
 
         if (navItem != null) {
@@ -275,6 +277,7 @@ public class MainActivity extends AppCompatActivity
     protected void onPause() {
         super.onPause();
         LocalBroadcastManager.getInstance(this).unregisterReceiver(_localBroadcastReceiver);
+        _viewPager.removeOnPageChangeListener(this);
     }
 
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -371,6 +374,21 @@ public class MainActivity extends AppCompatActivity
                     imageList = MemeData.getCreatedMemes();
                 }
                 _toolbar.setTitle(R.string.memelist_data_mode__saved);
+                break;
+            }
+
+            case R.id.action_mode_hidden:{
+                _currentMainMode = 3;
+                _emptylistText.setText(R.string.main__nodata__hidden);
+                imageList = new ArrayList<>();
+
+                for (String hidden : app.settings.getHiddenMemesTemplate()) {
+                    MemeData.Image image = MemeData.findImage(new File(hidden));
+                    if (image != null) {
+                        imageList.add(image);
+                    }
+                }
+                _toolbar.setTitle(R.string.memelist_data_mode__hidden);
                 break;
             }
         }
@@ -687,4 +705,18 @@ public class MainActivity extends AppCompatActivity
         return handleBarClick(item);
     }
 
+    @Override
+    public void onPageScrolled(int i, float v, int i1) {
+
+    }
+
+    @Override
+    public void onPageSelected(int i) {
+        app.settings.setLastSelectedTab(i);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+
+    }
 }

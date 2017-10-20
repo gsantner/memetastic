@@ -142,6 +142,58 @@ public class AppSettings extends AppSettingsBase {
         setFavoriteMemes(newFavs.toArray(new String[newFavs.size()]));
     }
 
+    private void setHiddenMemes(String[] hiddenMemes){
+        setStringArray(R.string.pref_key__hidden_meme_templates, hiddenMemes);
+    }
+
+    public String[] getHiddenMemesTemplate(){
+        return getStringArray(R.string.pref_key__hidden_meme_templates);
+    }
+
+    private void appendHiddenMeme(String filepath){
+        String[] hiddenMeme = insertAndMaximize(getHiddenMemesTemplate(),
+                filepath, MAX_FAVS);
+        setHiddenMemes(hiddenMeme);
+
+    }
+
+    public boolean isHidden(String filePath){
+        String[] hiddenMemes = getHiddenMemesTemplate();
+
+        if (hiddenMemes == null)
+            return false;
+
+        for (String hiddenPath : hiddenMemes) {
+            if (filePath.equals(hiddenPath))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean toggleHiddenMeme(String filePath){
+        if (!isHidden(filePath)){
+            appendHiddenMeme(filePath);
+            return true;
+        }
+
+        removeHiddenMeme(filePath);
+        return false;
+    }
+
+    private void removeHiddenMeme(String filePath){
+        String[] hiddenMeme = getHiddenMemesTemplate();
+
+        List<String> newHiddenMemes = new ArrayList<>();
+
+        for (String hiddenPath :hiddenMeme) {
+            if (!hiddenPath.equals(filePath)){
+                newHiddenMemes.add(hiddenPath);
+            }
+        }
+
+        setHiddenMemes(newHiddenMemes.toArray(new String[newHiddenMemes.size()]));
+    }
+
     public void setLastSelectedTab(int value) {
         setInt(R.string.pref_key__last_selected_tab, value);
     }

@@ -73,8 +73,6 @@ public class MemeFragment extends Fragment {
         _tabPos = getArguments().getInt("pos");
 
         _imageList = new ArrayList<>();
-
-        _app.settings.setLastSelectedTab(_tabPos);
     }
 
     private void reloadAdapter() {
@@ -87,6 +85,14 @@ public class MemeFragment extends Fragment {
         if (_app.settings.isShuffleTagLists()) {
             Collections.shuffle(_imageList);
         }
+
+        List<MemeData.Image> hiddenImages = new ArrayList<>();
+        for (MemeData.Image image : _imageList) {
+            if (_app.settings.isHidden(image.fullPath.getAbsolutePath())){
+                hiddenImages.add(image);
+            }
+        }
+        _imageList.removeAll(hiddenImages);
         _recyclerMemeAdapter.setOriginalImageDataList(_imageList);
         _recyclerMemeAdapter.notifyDataSetChanged();
         setRecyclerMemeListAdapter(_recyclerMemeAdapter);
