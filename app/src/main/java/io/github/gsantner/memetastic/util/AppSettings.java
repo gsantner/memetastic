@@ -16,6 +16,7 @@ import io.github.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.service.AssetUpdater;
+import io.github.gsantner.memetastic.ui.MemeItemAdapter;
 
 public class AppSettings extends AppSettingsBase {
     private static final int MAX_FAVS = 50;
@@ -86,7 +87,7 @@ public class AppSettings extends AppSettingsBase {
         // Additional reduction of quality to ~2/3 is roughly 225
         // 150 is very fast loaded, but blurry, 200 is still a little blurry, 225 seems to be
         // a good tradeoff between quality (400-600) and speed (-125)
-        int val = getInt(R.string.pref_key__thumbnail_quality__percent, 24);
+        int val = getInt(R.string.pref_key__thumbnail_quality__percent, 19);
         return (int) (100 + (939 * (val / 100.0)));
     }
 
@@ -147,6 +148,10 @@ public class AppSettings extends AppSettingsBase {
 
     public int getLastSelectedTab() {
         return getInt(R.string.pref_key__last_selected_tab, 0);
+    }
+
+    public int getMemeListViewType() {
+        return getIntOfStringPref(R.string.pref_key__memelist_view_type, MemeItemAdapter.VIEW_TYPE__PICTURE_GRID);
     }
 
     public int getGridColumnCountPortrait() {
@@ -238,11 +243,11 @@ public class AppSettings extends AppSettingsBase {
         if (date.isEmpty()) {
             return new Date(0);
         }
-        return AssetUpdater.FORMAT_RFC3339.parse(date);
+        return AssetUpdater.FORMAT_MINUTE.parse(date);
     }
 
     public void setLastArchiveCheckDate(Date value) {
-        setString(R.string.pref_key__last_asset_archive_check_date, AssetUpdater.FORMAT_RFC3339.format(value));
+        setString(R.string.pref_key__last_asset_archive_check_date, AssetUpdater.FORMAT_MINUTE.format(value));
     }
 
     public Date getLastAssetArchiveCheckDate() {
@@ -251,14 +256,14 @@ public class AppSettings extends AppSettingsBase {
             return new Date(0);
         }
         try {
-            return AssetUpdater.FORMAT_RFC3339.parse(date);
+            return AssetUpdater.FORMAT_MINUTE.parse(date);
         } catch (ParseException e) {
             return new Date(0);
         }
     }
 
     public void setLastArchiveDate(Date value) {
-        setString(R.string.pref_key__last_asset_archive_date, AssetUpdater.FORMAT_RFC3339.format(value));
+        setString(R.string.pref_key__last_asset_archive_date, AssetUpdater.FORMAT_MINUTE.format(value));
     }
 
     public boolean isMigrated() {

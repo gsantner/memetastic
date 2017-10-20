@@ -34,7 +34,7 @@ import io.github.gsantner.memetastic.util.PermissionChecker;
 
 @SuppressLint("SimpleDateFormat")
 public class AssetUpdater {
-    public static final SimpleDateFormat FORMAT_RFC3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+    public static final SimpleDateFormat FORMAT_MINUTE = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 
     private static final String URL_ARCHIVE_ZIP = "https://github.com/gsantner/memetastic-assets/archive/master.zip";
     private static final String URL_API = "https://api.github.com/repos/gsantner/memetastic-assets";
@@ -59,8 +59,9 @@ public class AssetUpdater {
     }
 
     public static class UpdateThread extends Thread {
-        public static final int DOWNLOAD_REQUEST_RESULT__FAILED = -1;
-        public static final int DOWNLOAD_REQUEST_RESULT__DO_DOWNLOAD_ASK = 1;
+        public static final int ASSET_DOWNLOAD_REQUEST__FAILED = -1;
+        public static final int ASSET_DOWNLOAD_REQUEST__CHECKING = 1;
+        public static final int ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK = 2;
         public static final int DOWNLOAD_STATUS__DOWNLOADING = 1;
         public static final int DOWNLOAD_STATUS__UNZIPPING = 2;
         public static final int DOWNLOAD_STATUS__FINISHED = 3;
@@ -83,30 +84,32 @@ public class AssetUpdater {
         @Override
         public void run() {
             if (PermissionChecker.hasExtStoragePerm(_context)) {
+                AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__CHECKING);
                 String apiJsonS = NetworkUtils.performCall(URL_API, NetworkUtils.GET);
                 try {
                     JSONObject apiJson = new JSONObject(apiJsonS);
                     String lastUpdate = apiJson.getString("pushed_at");
-                    Date date = FORMAT_RFC3339.parse(lastUpdate);
+                    int datesubstrindex = lastUpdate.indexOf(":", lastUpdate.indexOf(":") + 1);
+                    Date date = FORMAT_MINUTE.parse(lastUpdate.substring(0, datesubstrindex));
                     if (date.after(_appSettings.getLastAssetArchiveDate())) {
                         _appSettings.setLastArchiveCheckDate(new Date(System.currentTimeMillis()));
                         if (!_doDownload) {
-                            AppCast.DOWNLOAD_REQUEST_RESULT.send(_context, DOWNLOAD_REQUEST_RESULT__DO_DOWNLOAD_ASK);
-                            return;
+                            AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK);
                         } else {
                             doDownload(date);
                             new LoadAssetsThread(_context).start();
-                            return;
                         }
                     }
+                    return;
                 } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }
-            AppCast.DOWNLOAD_REQUEST_RESULT.send(_context, DOWNLOAD_REQUEST_RESULT__FAILED);
+            AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__FAILED);
         }
 
 
+        @SuppressWarnings("ResultOfMethodCallIgnored")
         private synchronized void doDownload(Date date) throws ParseException {
             if (_isAlreadyDownloading || date.before(_appSettings.getLastAssetArchiveDate())) {
                 return;
@@ -118,23 +121,32 @@ public class AssetUpdater {
             MemeData.getImages().clear();
             MemeData.clearImagesWithTags();
             FileUtils.deleteRecursive(file);
-            boolean ok;
-            if (file.mkdirs() && (templatesDir.exists() || templatesDir.mkdirs())) {
-                file = new File(file, FORMAT_RFC3339.format(date) + ".memetastic.zip");
+            boolean ok = false;
+            if ((file.exists() || file.mkdirs()) && (templatesDir.exists() || templatesDir.mkdirs())) {
+                // Download
+                _lastPercent = -1;
+                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, 0);
+                file = new File(file, FORMAT_MINUTE.format(date) + ".memetastic.zip");
                 ok = NetworkUtils.downloadFile(URL_ARCHIVE_ZIP, file, new Callback<Float>() {
                     public void onCallback(Float aFloat) {
-                        if (_lastPercent != (int) (aFloat * 100)) {
+                        int perc = (int) (aFloat * 100);
+                        if (_lastPercent != perc) {
+                            _lastPercent = (perc);
                             AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, _lastPercent * 3 / 4);
-                            _lastPercent = (int) (aFloat * 100);
                         }
                     }
                 });
+
+                // Unpack
+                _lastPercent = -1;
+                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75);
                 if (ok) {
                     ok = ZipUtils.unzip(file, templatesDir, true, new Callback<Float>() {
                         public void onCallback(Float aFloat) {
-                            if (_lastPercent != (int) (aFloat * 100)) {
-                                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 50 + _lastPercent / 4);
-                                _lastPercent = (int) (aFloat * 100);
+                            int perc = (int) (aFloat * 100);
+                            if (_lastPercent != perc) {
+                                _lastPercent = perc;
+                                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75 + _lastPercent / 4);
                             }
                         }
                     });
@@ -169,6 +181,7 @@ public class AssetUpdater {
             List<MemeData.Image> images = MemeData.getImages();
             fonts.clear();
             images.clear();
+            MemeData.setWasInit(false);
 
             boolean permGranted = PermissionChecker.hasExtStoragePerm(_context);
 
@@ -182,8 +195,22 @@ public class AssetUpdater {
                 loadConfigFromFolder(getBundledAssetsDir(_appSettings), fonts, images);
             }
             MemeData.clearImagesWithTags();
+            guessLastUsedFont(fonts);
+
+            MemeData.setWasInit(true);
             _isAlreadyLoading = false;
             AppCast.ASSETS_LOADED.send(_context);
+        }
+
+        private void guessLastUsedFont(final List<MemeData.Font> fonts) {
+            String lastFont = _appSettings.getLastUsedFont();
+            if (lastFont.startsWith(_context.getFilesDir().getAbsolutePath())) {
+                lastFont = "";
+            }
+
+            if (lastFont.isEmpty() || !(new File(lastFont).exists())) {
+                _appSettings.setLastUsedFont(fonts.get(0).fullPath.getAbsolutePath());
+            }
         }
 
         private void loadConfigFromFolder(File folder, List<MemeData.Font> dataFonts, List<MemeData.Image> dataImages) {
@@ -221,7 +248,9 @@ public class AssetUpdater {
                 dataFont.fullPath = new File(folder, confFont.getFilename());
                 dataFont.typeFace = Typeface.createFromFile(dataFont.fullPath);
                 if (dataFont.fullPath.exists()) {
-                    dataFonts.add(dataFont);
+                    if (!dataFonts.contains(dataFont)) {
+                        dataFonts.add(dataFont);
+                    }
                 } else {
                     assetsChanged = true;
                 }
@@ -233,7 +262,9 @@ public class AssetUpdater {
                 dataImage.fullPath = new File(folder, confImage.getFilename());
                 dataImage.isTemplate = true;
                 if (dataImage.fullPath.exists()) {
-                    dataImages.add(dataImage);
+                    if (!dataImages.contains(dataImage)) {
+                        dataImages.add(dataImage);
+                    }
                 } else {
                     assetsChanged = true;
                 }
@@ -323,6 +354,7 @@ public class AssetUpdater {
             } catch (IOException ignored) {
             }
         }
+
     }
 
     public static MemeConfig.Font generateFontEntry(File folder, String filename) {
@@ -351,7 +383,7 @@ public class AssetUpdater {
         }
 
         MemeConfig.Image confImage = new MemeConfig.Image();
-        confImage.setImageTexts(new ArrayList<MemeConfig.ImageText>());
+        confImage.setCaptions(new ArrayList<MemeConfig.Caption>());
         confImage.setFilename(filename);
         confImage.setTags(tags);
         confImage.setTitle(filename.substring(0, filename.lastIndexOf(".")).replace("_", " "));

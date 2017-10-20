@@ -3,6 +3,15 @@
                   xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="@string/pref_title__overview">
 
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/memelist_view_mode"
+            android:entryValues="@array/values__zero_to_one"
+            android:icon="@drawable/ic_grid_on_black_24dp"
+            android:key="@string/pref_key__memelist_view_type"
+            android:summary="@string/pref_summary__memelist_view_type"
+            android:title="@string/pref_title__memelist_view_type"/>
+
         <io.github.gsantner.memetastic.ui.NumberPickerPreference
             android:defaultValue="3"
             android:icon="@drawable/ic_grid_on_black_24dp"
@@ -21,12 +30,12 @@
 
         <ListPreference
             android:defaultValue="0"
-            android:entries="@array/main_modes"
+            android:entries="@array/memelist_data_mode"
             android:entryValues="@array/values__zero_to_two"
             android:icon="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:key="@string/pref_key__default_main_mode"
-            android:summary="@string/pref_summary__default_main_mode"
-            android:title="@string/pref_title__default_main_mode"/>
+            android:summary="@string/pref_summary__memelist_data_mode"
+            android:title="@string/pref_title__memelist_data_mode"/>
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -82,6 +91,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/miscellaneous">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_photo_library_black_24dp"
+            android:key="@string/pref_key__is_show_in_gallery"
+            android:title="@string/pref_title__is_show_in_gallery"/>
 
         <!--suppress AndroidDomInspection -->
         <net.gsantner.opoc.ui.LanguagePreference

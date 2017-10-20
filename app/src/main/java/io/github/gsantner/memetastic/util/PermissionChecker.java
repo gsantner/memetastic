@@ -29,7 +29,7 @@ public class PermissionChecker {
 
     public static boolean checkPermissionResult(final Activity activity, int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == 123) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 return true;
             }
         }

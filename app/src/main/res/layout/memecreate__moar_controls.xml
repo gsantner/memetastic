@@ -51,6 +51,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/text_background_color_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_margin_1"
@@ -62,23 +63,20 @@
                 style="@style/AppTheme.MemeCreatorCaptionText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="30"
+                android:layout_weight="80"
                 android:text="@string/creator__background" />
 
-            <uz.shift.colorpicker.LineColorPicker
+            <com.jaredrummler.android.colorpicker.ColorPanelView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_text"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="@dimen/default_margin_1"
-                android:layout_marginStart="@dimen/default_margin_1"
-                android:layout_weight="70"
-                app:orientation="horizontal"
-                app:selectedColorIndex="1"
-                tools:background="@drawable/gradient_navbar" />
-
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="15"
+                android:minHeight="20dp" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/text_border_color_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_margin_1"
@@ -90,20 +88,16 @@
                 style="@style/AppTheme.MemeCreatorCaptionText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="30"
+                android:layout_weight="80"
                 android:text="@string/creator__border" />
 
-            <uz.shift.colorpicker.LineColorPicker
+            <com.jaredrummler.android.colorpicker.ColorPanelView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_border"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="@dimen/default_margin_1"
-                android:layout_marginStart="@dimen/default_margin_1"
-                android:layout_weight="70"
-                app:orientation="horizontal"
-                app:selectedColorIndex="0"
-                tools:background="@drawable/gradient_navbar" />
-
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="15"
+                android:minHeight="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,6 +157,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/padding_color_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_margin_1"
@@ -180,35 +175,17 @@
                 android:id="@+id/memecreate__moar_controls__seek_padding_size"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="70"
+                android:layout_weight="55"
                 android:max="150"
                 android:progress="18" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin_1"
-            android:gravity="center_vertical"
-            android:weightSum="100">
-
-            <TextView
-                style="@style/AppTheme.MemeCreatorCaptionText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:text="@string/creator__padding" />
-
-            <uz.shift.colorpicker.LineColorPicker
+            <com.jaredrummler.android.colorpicker.ColorPanelView
                 android:id="@+id/memecreate__moar_controls__color_picker_for_padding"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="@dimen/default_margin_1"
-                android:layout_marginStart="@dimen/default_margin_1"
-                android:layout_weight="70"
-                app:orientation="horizontal"
-                app:selectedColorIndex="1"
-                tools:background="@drawable/gradient_navbar" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="15"
+                android:minHeight="20dp" />
         </LinearLayout>
 
     </LinearLayout>

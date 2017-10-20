@@ -14,9 +14,9 @@
     <string name="main__memecat__animals">Zvíøata</string>
     <string name="main__memecat__custom">Vlastní</string>
 
-    <string name="main__mode__saved">UloÂženo</string>
-    <string name="main__mode__favs">Oblíbené</string>
-    <string name="main__mode__create">Vytvoøit</string>
+    <string name="memelist_data_mode__saved">UloÂženo</string>
+    <string name="memelist_data_mode__favs">Oblíbené</string>
+    <string name="memelist_data_mode__create">Vytvoøit</string>
 
     <string name="main__get_picture_from_gallery">Získat obrázek z galerie</string>
     <string name="main__get_picture_from_camera">Získat obrázek z kamery</string>
@@ -74,8 +74,8 @@
     <string name="settings__pref_columns_landscape">Seznam pozadí</string>
     <string name="pref_title__appearance">Vzhled</string>
     <string name="pref_title__size">Velikost</string>
-    <string name="pref_title__default_main_mode">SpouÂštìcí nastavení</string>
-    <string name="pref_summary__default_main_mode">Zvolení spouÂštìcího nastavení(Tvorba, Oblíbené, nebo UloÂžené)</string>
+    <string name="pref_title__memelist_data_mode">SpouÂštìcí nastavení</string>
+    <string name="pref_summary__memelist_data_mode">Zvolení spouÂštìcího nastavení(Tvorba, Oblíbené, nebo UloÂžené)</string>
     <string name="pref_title__functionality">Funkce</string>
     <string name="pref_summary__auto_save_meme">Automaticky ukláda meme, pokud stisknu tlaèítko zpìt.</string>
     <string name="pref_title__auto_save_meme">Ukládat stisknutím tlaèítka zpìt</string>

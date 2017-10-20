@@ -9,8 +9,8 @@ ext {
     ]
     version_sdk.targetSdk = version_sdk.compileSdk
     version_lib = [
-            appcompat  : "26.0.0",
-            butterknife: "8.7.0",
+            appcompat  : "26.1.0",
+            butterknife: "8.8.1",
     ]
 }
 
@@ -22,8 +22,8 @@ android {
         minSdkVersion version_sdk.minSdk
         targetSdkVersion version_sdk.targetSdk
 
-        versionCode 36
-        versionName "1.2.6"
+        versionCode 38
+        versionName "1.2.8"
 
         applicationId "io.github.gsantner.memetastic"
 
@@ -71,7 +71,7 @@ dependencies {
     compile "com.android.support:recyclerview-v7:${version_lib.appcompat}"
 
     // UI libraries
-    compile 'com.github.DASAR:ShiftColorPicker:v0.5'
+    compile 'com.jaredrummler:colorpicker:1.0.1'
 
     // Tool libraries
     compile "com.jakewharton:butterknife:${version_lib.butterknife}"

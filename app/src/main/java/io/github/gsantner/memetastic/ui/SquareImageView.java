@@ -23,6 +23,7 @@ public class SquareImageView extends AppCompatImageView {
 
     // override to set the height of the Image View to its width
     @Override
+    @SuppressWarnings("SuspiciousNameCombination")
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, widthMeasureSpec);
 

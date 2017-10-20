@@ -13,15 +13,15 @@
     <string name="main__memecat__animals">Animais</string>
     <string name="main__memecat__custom">Personalizado</string>
 
-    <string name="main__mode__saved">Salvo</string>
-    <string name="main__mode__favs">Favoritos</string>
-    <string name="main__mode__create">Criar</string>
+    <string name="memelist_data_mode__saved">Salvo</string>
+    <string name="memelist_data_mode__favs">Favoritos</string>
+    <string name="memelist_data_mode__create">Criar</string>
 
     <string name="main__get_picture_from_gallery">Pegar imagem da galeria</string>
     <string name="main__get_picture_from_camera">Capturar imagem pela câmera</string>
     <string name="main__error_camera_cannot_start">Impossível acessar a câmera.</string>
     <string name="main__error_no_picture_selected">Nenhuma imagem selecionada.</string>
-    <string name="main__share_meme_prompt">Compartilhar via...</string>
+    <string name="main__share_meme_prompt">Compartilhar via…</string>
 
     <string name="main__donate">Doar</string>
     <string name="main__recommend_app">Recomendar</string>
@@ -73,8 +73,8 @@
     <string name="settings__pref_columns_landscape">Colunas horizontais</string>
     <string name="pref_title__appearance">Aparência</string>
     <string name="pref_title__size">Tamanho</string>
-    <string name="pref_title__default_main_mode">Modo padrão</string>
-    <string name="pref_summary__default_main_mode">Modo padrão de inicialização (criar, favoritos ou salvo)</string>
+    <string name="pref_title__memelist_data_mode">Modo padrão</string>
+    <string name="pref_summary__memelist_data_mode">Modo padrão de inicialização (criar, favoritos ou salvo)</string>
     <string name="pref_title__functionality">Funcionalidade</string>
     <string name="pref_summary__auto_save_meme">Salvar automaticamente ao pressionar o botão voltar</string>
     <string name="pref_title__auto_save_meme">Salvar imagem ao pressionar voltar</string>

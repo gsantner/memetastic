@@ -15,9 +15,9 @@
     <string name="main__memecat__animals">動物</string>
     <string name="main__memecat__custom">カスタム</string>
 
-    <string name="main__mode__saved">保存済</string>
-    <string name="main__mode__favs">お気に入り</string>
-    <string name="main__mode__create">作成</string>
+    <string name="memelist_data_mode__saved">保存済</string>
+    <string name="memelist_data_mode__favs">お気に入り</string>
+    <string name="memelist_data_mode__create">作成</string>
 
     <string name="main__get_picture_from_gallery">ギャラリーから画像を取得</string>
     <string name="main__get_picture_from_camera">カメラから画像を取得</string>
@@ -71,8 +71,8 @@
     <string name="settings__pref_columns_landscape">横の項目数</string>
     <string name="pref_title__appearance">外観</string>
     <string name="pref_title__size">サイズ</string>
-    <string name="pref_title__default_main_mode">デフォルトモード</string>
-    <string name="pref_summary__default_main_mode">起動時に開くデフォルトモード (作成、お気に入り、保存済)</string>
+    <string name="pref_title__memelist_data_mode">デフォルトモード</string>
+    <string name="pref_summary__memelist_data_mode">起動時に開くデフォルトモード (作成、お気に入り、保存済)</string>
     <string name="pref_title__functionality">機能</string>
     <string name="pref_summary__auto_save_meme">戻るを押したときに何か入力されている場合はミームを自動的に保存します</string>
     <string name="pref_title__auto_save_meme">戻るを押したときに保存</string>

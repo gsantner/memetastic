@@ -1,4 +1,8 @@
-### v1.2.6
+### v1.2.8
+- Added: Russian, Indonesian translation
+- Fixed: Cloud storage picture source
+
+### v1.2.7
 - Dont include assets at buildtime (fixes #30)
 - Download assets at runtime (github assets)
 - Allows updating assets

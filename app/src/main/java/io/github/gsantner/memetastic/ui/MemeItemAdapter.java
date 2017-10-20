@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,43 +27,70 @@ import io.github.gsantner.memetastic.service.ImageLoaderTask;
 import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
- * Adapter to show images in a Grid
+ * Adapter to show images in given view mode
  */
-public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<GridRecycleAdapter.ViewHolder> {
-    private List<MemeData.Image> _imageDataList;
+public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHolder> implements ImageLoaderTask.OnImageLoadedListener<MemeItemAdapter.ViewHolder> {
+    public static final int VIEW_TYPE__PICTURE_GRID = 0;
+    public static final int VIEW_TYPE__ROWS_WITH_TITLE = 1;
+
+    private int _itemViewType = -1; // TODO: Do implement this as later settable on adapter, instead of using if/else on AppSettings
+    private List<MemeData.Image> _originalImageDataList; // original data
+    private List<MemeData.Image> _imageDataList; // filtered data (use this)
     private int _shortAnimationDuration;
     private Activity _activity;
     private App _app;
 
-    public GridRecycleAdapter(List<MemeData.Image> imageDataList, Activity activity) {
-        _imageDataList = imageDataList;
+
+    public MemeItemAdapter(List<MemeData.Image> imageDataList, Activity activity, int itemViewType) {
+        _originalImageDataList = imageDataList;
+        _imageDataList = new ArrayList<>(imageDataList);
         _shortAnimationDuration = -1;
         _activity = activity;
         _app = (App) (_activity.getApplication());
+        _itemViewType = itemViewType;
+    }
+
+    public void setOriginalImageDataList(List<MemeData.Image> originalImageDataList) {
+        _originalImageDataList = originalImageDataList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        View v;
+        switch (_itemViewType) {
+            case VIEW_TYPE__ROWS_WITH_TITLE: {
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_with_title, parent, false);
+                break;
+            }
+
+            case VIEW_TYPE__PICTURE_GRID:
+            default: {
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item__square_image, parent, false);
+                break;
+            }
+        }
+
+        return new ViewHolder(v);
     }
 
-    // sets up the view of the item at the position in the grid
+    // sets up the view of the item
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int pos) {
+    public void onBindViewHolder(final ViewHolder holder, final int pos) {
         final MemeData.Image imageData = _imageDataList.get(pos);
         if (imageData == null || imageData.fullPath == null || !imageData.fullPath.exists()) {
             holder.imageView.setImageResource(R.drawable.ic_mood_bad_black_256dp);
             holder.imageButtonFav.setVisibility(View.INVISIBLE);
+            holder.imageTitle.setText("Meme");
             return;
         }
+        holder.imageTitle.setText(imageData.conf.getTitle());
         holder.imageButtonFav.setVisibility(View.INVISIBLE);
         holder.imageView.setVisibility(View.INVISIBLE);
         ImageLoaderTask<ViewHolder> taskLoadImage = new ImageLoaderTask<>(this, _activity, true, holder);
         taskLoadImage.execute(imageData.fullPath);
         holder.imageView.setTag(imageData);
         holder.imageButtonFav.setTag(imageData);
+
 
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
 
@@ -82,6 +111,7 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
             }
         });
 
+
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,11 +120,11 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
                 if (image.isTemplate) {
                     Intent intent = new Intent(_activity, MemeCreateActivity.class);
                     intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, image.fullPath.getAbsolutePath());
-                    intent.putExtra(MemeCreateActivity.ASSET_IMAGE, false);
+                    intent.putExtra(MemeCreateActivity.EXTRA_MEMETASTIC_DATA, image);
                     _activity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
                 } else {
                     if (_activity instanceof MainActivity) {
-                        ((MainActivity) _activity).openImageViewActivityWithImage(image.fullPath.getAbsolutePath());
+                        ((MainActivity) _activity).openImageViewActivityWithImage(pos, image.fullPath.getAbsolutePath());
                     }
                 }
             }
@@ -142,6 +172,39 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
                 isFav ? R.color.comic_yellow : R.color.comic_blue);
     }
 
+    public void setFilter(String filter) {
+        _imageDataList.clear();
+        String[] filterTokens = filter.toLowerCase().split("[\\W_]");
+        String[] titleTokens;
+
+        for (MemeData.Image image : _originalImageDataList) {
+            // Tokenize the image title (split by everything that's not a word)
+            if (image.conf != null && image.conf.getTitle() != null && !image.conf.getTitle().isEmpty()) {
+                titleTokens = image.conf.getTitle().toLowerCase().split("[\\W_]");
+            } else {
+                titleTokens = image.fullPath.getName().toLowerCase().split("[\\W_]");
+            }
+
+            boolean allTokensFound = true;
+            for (String filterToken : filterTokens) {
+                boolean foundTokenInTitle = false;
+                for (String titleToken : titleTokens) {
+                    if (titleToken.contains(filterToken)) {
+                        foundTokenInTitle = true;
+                    }
+                }
+                if (!foundTokenInTitle) {
+                    allTokensFound = false;
+                    break;
+                }
+            }
+
+            if (allTokensFound) {
+                _imageDataList.add(image);
+            }
+        }
+        notifyDataSetChanged();
+    }
 
     // contains the conf view for the meme and the favorite button to access them
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -150,6 +213,10 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<GridRecycleAdapter.
 
         @BindView(R.id.item__square_image__image_bottom_end)
         public ImageView imageButtonFav;
+
+        @BindView(R.id.item_square_image_title)
+        public TextView imageTitle;
+
 
         // saves the instance of the conf view of the meme and favorite button to access them later
         public ViewHolder(View itemView) {

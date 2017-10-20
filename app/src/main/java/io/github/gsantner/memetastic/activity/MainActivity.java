@@ -1,17 +1,18 @@
 package io.github.gsantner.memetastic.activity;
 
+import android.app.SearchManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.PorterDuff;
-import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -22,31 +23,36 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -58,7 +64,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.data.MemeData;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.GridDecoration;
-import io.github.gsantner.memetastic.ui.GridRecycleAdapter;
+import io.github.gsantner.memetastic.ui.MemeItemAdapter;
 import io.github.gsantner.memetastic.util.ActivityUtils;
 import io.github.gsantner.memetastic.util.AppCast;
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -66,11 +72,12 @@ import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
     public static final String IMAGE_PATH = "imagePath";
+    public static final String IMAGE_POS = "image_pos";
 
     private static boolean _isShowingFullscreenImage = false;
     private boolean _areTabsReady = false;
@@ -86,6 +93,12 @@ public class MainActivity extends AppCompatActivity
 
     @BindView(R.id.main__tabs)
     TabLayout _tabLayout;
+
+    @BindView(R.id.main_activity__place_holder)
+    FrameLayout _placeholder;
+
+    @BindView(R.id.main_activity__view_pager)
+    ViewPager _viewPager;
 
     @BindView(R.id.main__activity__recycler_view)
     RecyclerView _recyclerMemeList;
@@ -112,6 +125,10 @@ public class MainActivity extends AppCompatActivity
     private String cameraPictureFilepath = "";
     String[] _tagKeys, _tagValues;
     private int _currentMainMode = 0;
+    private long _lastInfoBarTextShownAt = 0;
+    private SearchView _searchView;
+    private MenuItem _searchItem;
+    private String _currentSearch = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,23 +149,28 @@ public class MainActivity extends AppCompatActivity
         _drawer.addDrawerListener(toggle);
         toggle.syncState();
         _navigationView.setNavigationItemSelectedListener(this);
-        _tabLayout.setOnTabSelectedListener(this);
 
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
 
-        // Setup Floating Action Button
-        int gridColumns = ContextUtils.get().isInPortraitMode()
-                ? app.settings.getGridColumnCountPortrait()
-                : app.settings.getGridColumnCountLandscape();
 
         _recyclerMemeList.setHasFixedSize(true);
         _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
-        RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
-        _recyclerMemeList.setLayoutManager(recyclerGridLayout);
+
+        if (AppSettings.get().getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
+            RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
+        } else {
+            int gridColumns = ContextUtils.get().isInPortraitMode()
+                    ? app.settings.getGridColumnCountPortrait()
+                    : app.settings.getGridColumnCountLandscape();
+            RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
+
+            _recyclerMemeList.setLayoutManager(recyclerGridLayout);
+        }
 
         for (String cat : _tagValues) {
             TabLayout.Tab tab = _tabLayout.newTab();
@@ -156,6 +178,12 @@ public class MainActivity extends AppCompatActivity
             _tabLayout.addTab(tab);
         }
         _areTabsReady = true;
+
+        _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
+
+        _tabLayout.setupWithViewPager(_viewPager);
+
+
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
 
         _infoBarProgressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
@@ -262,9 +290,12 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         if (_drawer.isDrawerOpen(GravityCompat.START)) {
             _drawer.closeDrawer(GravityCompat.START);
-            return;
+        } else if (!_searchView.isIconified()) {
+            _searchView.setIconified(true);
+            updateSearchFilter("");
+        } else {
+            super.onBackPressed();
         }
-        super.onBackPressed();
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
@@ -314,7 +345,6 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.action_mode_create: {
                 _currentMainMode = 0;
-                _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
                 selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
                 _toolbar.setTitle(R.string.app_name);
                 break;
@@ -329,7 +359,7 @@ public class MainActivity extends AppCompatActivity
                         imageList.add(img);
                     }
                 }
-                _toolbar.setTitle(R.string.main__mode__favs);
+                _toolbar.setTitle(R.string.memelist_data_mode__favs);
                 break;
             }
             case R.id.action_mode_saved: {
@@ -340,7 +370,7 @@ public class MainActivity extends AppCompatActivity
                     folder.mkdirs();
                     imageList = MemeData.getCreatedMemes();
                 }
-                _toolbar.setTitle(R.string.main__mode__saved);
+                _toolbar.setTitle(R.string.memelist_data_mode__saved);
                 break;
             }
         }
@@ -348,21 +378,45 @@ public class MainActivity extends AppCompatActivity
         // Change mode
         _drawer.closeDrawers();
         _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
-        if (imageList != null) {
-            GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(imageList, this);
-            setRecyclerMemeListAdapter(recyclerMemeAdapter);
-            return true;
+
+
+        if (item.getItemId() != R.id.action_mode_create) {
+            _viewPager.setVisibility(View.GONE);
+            _placeholder.setVisibility(View.VISIBLE);
+            if (imageList != null) {
+
+                MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
+
+                setRecyclerMemeListAdapter(recyclerMemeAdapter);
+                return true;
+            }
+        } else {
+            _viewPager.setVisibility(View.VISIBLE);
+            _placeholder.setVisibility(View.GONE);
+
         }
 
         _drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void setRecyclerMemeListAdapter(RecyclerView.Adapter adapter) {
+    private void setRecyclerMemeListAdapter(MemeItemAdapter adapter) {
+        adapter.setFilter(_currentSearch);
         _recyclerMemeList.setAdapter(adapter);
         boolean isEmpty = adapter.getItemCount() == 0;
         _emptylistLayout.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
         _recyclerMemeList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
+    }
+
+
+    private void updateSearchFilter(String newFilter) {
+        if (_currentMainMode != 0) {
+            _currentSearch = newFilter;
+            ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
+        } else {
+            MemeFragment page = ((MemeFragment) getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.main_activity__view_pager + ":" + _viewPager.getCurrentItem()));
+            ((MemeItemAdapter) page._recyclerMemeList.getAdapter()).setFilter(newFilter);
+        }
     }
 
     @Override
@@ -382,8 +436,32 @@ public class MainActivity extends AppCompatActivity
                     String picturePath = cursor.getString(columnIndex);
                     cursor.close();
 
-                    // String picturePath contains the path of selected Image
-                    onImageTemplateWasChosen(picturePath, false);
+                    if (picturePath == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                        // Retrieve image from Cloud, e.g.: Google Drive, Picasa
+                        try {
+                            ParcelFileDescriptor parcelFileDescriptor = getContentResolver().openFileDescriptor(selectedImage, "r");
+                            if (parcelFileDescriptor != null) {
+                                FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+                                FileInputStream input = new FileInputStream(fileDescriptor);
+
+                                // Create temporary file in cache directory
+                                picturePath = File.createTempFile("image", "tmp", getCacheDir()).getAbsolutePath();
+                                FileUtils.writeFile(
+                                        new File(picturePath),
+                                        FileUtils.readCloseBinaryStream(input)
+                                );
+                            }
+                        } catch (IOException e) {
+                            // nothing we can do here, null value will be handled below
+                        }
+                    }
+
+                    if (picturePath == null) { // All checks fail
+                        ActivityUtils.get(this).showSnackBar(R.string.main__error_fail_retrieve_picture, false);
+                    } else {
+                        // String picturePath contains the path of selected Image
+                        onImageTemplateWasChosen(picturePath);
+                    }
                 }
             } else {
                 ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
@@ -392,7 +470,7 @@ public class MainActivity extends AppCompatActivity
 
         if (requestCode == REQUEST_TAKE_CAMERA_PICTURE) {
             if (resultCode == RESULT_OK) {
-                onImageTemplateWasChosen(cameraPictureFilepath, false);
+                onImageTemplateWasChosen(cameraPictureFilepath);
             } else {
                 ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
             }
@@ -440,61 +518,22 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void onImageTemplateWasChosen(String filePath, boolean bIsAsset) {
+    public void onImageTemplateWasChosen(String filePath) {
         final Intent intent = new Intent(this, MemeCreateActivity.class);
         intent.putExtra(MemeCreateActivity.EXTRA_IMAGE_PATH, filePath);
-        intent.putExtra(MemeCreateActivity.ASSET_IMAGE, bIsAsset);
         ActivityUtils.get(this).animateToActivity(intent, false, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
     }
 
-    public void openImageViewActivityWithImage(String imagePath) {
+    public void openImageViewActivityWithImage(int pos, String imagePath) {
         _isShowingFullscreenImage = true;
 
         Intent intent = new Intent(this, ImageViewActivity.class);
         intent.putExtra(IMAGE_PATH, imagePath);
+        intent.putExtra(IMAGE_POS, pos);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         ActivityUtils.get(this).animateToActivity(intent, false, REQUEST_SHOW_IMAGE);
     }
 
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        int tabPos = tab.getPosition();
-        List<MemeData.Image> imageList = new ArrayList<>();
-
-        if (tabPos >= 0 && tabPos < _tagKeys.length) {
-            imageList = MemeData.getImagesWithTag(_tagKeys[tabPos]);
-        }
-
-        if (_areTabsReady) {
-            app.settings.setLastSelectedTab(tabPos);
-        }
-        if (app.settings.isShuffleTagLists()) {
-            Collections.shuffle(imageList);
-        }
-
-        GridRecycleAdapter recyclerMemeAdapter = new GridRecycleAdapter(imageList, this);
-        setRecyclerMemeListAdapter(recyclerMemeAdapter);
-    }
-
-    private final RectF point = new RectF(0, 0, 0, 0);
-    private static final int SWIPE_MIN_DX = 150;
-    private static final int SWIPE_MAX_DY = 90;
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        if (!_drawer.isDrawerOpen(GravityCompat.START) && !_drawer.isDrawerVisible(GravityCompat.START) && _tabLayout.getVisibility() == View.VISIBLE) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN && event.getY() > (_tabLayout.getY() * 2.2)) {
-                point.set(event.getX(), event.getY(), 0, 0);
-            } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                point.set(point.left, point.top, event.getX(), event.getY());
-                if (Math.abs(point.width()) > SWIPE_MIN_DX && Math.abs(point.height()) < SWIPE_MAX_DY) {
-                    // R->L : L<-R
-                    selectTab(_tabLayout.getSelectedTabPosition() + (point.width() > 0 ? -1 : +1), 0);
-                }
-            }
-        }
-        return super.dispatchTouchEvent(event);
-    }
 
     private BroadcastReceiver _localBroadcastReceiver = new BroadcastReceiver() {
         @SuppressWarnings("unchecked")
@@ -502,14 +541,19 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             switch (action) {
-                case AppCast.DOWNLOAD_REQUEST_RESULT.ACTION: {
-                    switch (intent.getIntExtra(AppCast.DOWNLOAD_REQUEST_RESULT.EXTRA_RESULT, AssetUpdater.UpdateThread.DOWNLOAD_REQUEST_RESULT__FAILED)) {
-                        case AssetUpdater.UpdateThread.DOWNLOAD_REQUEST_RESULT__FAILED: {
-                            updateInfoBar(0, R.string.downloading_failed, R.drawable.ic_file_download_white_32dp, 1000);
+                case AppCast.ASSET_DOWNLOAD_REQUEST.ACTION: {
+
+                    switch (intent.getIntExtra(AppCast.ASSET_DOWNLOAD_REQUEST.EXTRA_RESULT, AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__FAILED)) {
+                        case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__CHECKING: {
+                            updateInfoBar(0, R.string.checking_assets_for_update, R.drawable.ic_file_download_white_32dp, false);
                             break;
                         }
-                        case AssetUpdater.UpdateThread.DOWNLOAD_REQUEST_RESULT__DO_DOWNLOAD_ASK: {
-                            updateInfoBar(0, R.string.downloading, R.drawable.ic_file_download_white_32dp, 1);
+                        case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__FAILED: {
+                            updateInfoBar(0, R.string.downloading_failed, R.drawable.ic_file_download_white_32dp, false);
+                            break;
+                        }
+                        case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK: {
+                            updateInfoBar(0, R.string.checking_assets_for_update, R.drawable.ic_file_download_white_32dp, false);
                             showDownloadDialog();
                             break;
                         }
@@ -520,19 +564,19 @@ public class MainActivity extends AppCompatActivity
                     int percent = intent.getIntExtra(AppCast.DOWNLOAD_STATUS.EXTRA_PERCENT, 100);
                     switch (intent.getIntExtra(AppCast.DOWNLOAD_STATUS.EXTRA_STATUS, AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FAILED)) {
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__DOWNLOADING: {
-                            updateInfoBar(percent, R.string.downloading, R.drawable.ic_file_download_white_32dp, -1);
+                            updateInfoBar(percent, R.string.downloading, R.drawable.ic_file_download_white_32dp, true);
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FAILED: {
-                            updateInfoBar(percent, R.string.downloading_failed, R.drawable.ic_mood_bad_black_256dp, 2000);
+                            updateInfoBar(percent, R.string.downloading_failed, R.drawable.ic_mood_bad_black_256dp, false);
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__UNZIPPING: {
-                            updateInfoBar(percent, R.string.unzipping, R.drawable.ic_file_download_white_32dp, -1);
+                            updateInfoBar(percent, R.string.unzipping, R.drawable.ic_file_download_white_32dp, true);
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FINISHED: {
-                            updateInfoBar(percent, R.string.downloading_success, R.drawable.ic_gavel_white_48px, 2000);
+                            updateInfoBar(percent, R.string.downloading_success, R.drawable.ic_gavel_white_48px, false);
                             break;
                         }
                     }
@@ -560,17 +604,18 @@ public class MainActivity extends AppCompatActivity
         dialog.show();
     }
 
-    public void updateInfoBar(Integer percent, @StringRes Integer textResId, @DrawableRes Integer image, int hideInMillis) {
+    public void updateInfoBar(Integer percent, @StringRes Integer textResId, @DrawableRes Integer image, final boolean showlong) {
+        _lastInfoBarTextShownAt = System.currentTimeMillis();
         _infoBar.setVisibility(View.VISIBLE);
-        if (hideInMillis >= 0) {
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if ((System.currentTimeMillis() - _lastInfoBarTextShownAt) > (showlong ? 20 : 2) * 1000) {
                     _infoBar.setVisibility(View.GONE);
                 }
-            }, hideInMillis);
-        }
+            }
+        }, (showlong ? 20 : 2) * 1000 + 100);
         if (percent != null) {
             _infoBarProgressBar.setProgress(percent);
         }
@@ -586,18 +631,49 @@ public class MainActivity extends AppCompatActivity
     //########################
     //## Single line overrides
     //########################
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-    }
+
 
     @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-        onTabSelected(tab);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.main__menu, menu);
+        _searchItem = menu.findItem(R.id.action_search_meme);
+        _searchView = (SearchView) _searchItem.getActionView();
+
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        _searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        _searchView.setQueryHint(getString(R.string.main__search_meme));
+        if (_searchView != null) {
+            _searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    if (query != null) {
+
+                        updateSearchFilter(query);
+
+                    }
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    if (newText != null) {
+
+                        updateSearchFilter(newText);
+
+                    }
+                    return false;
+                }
+            });
+            _searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus) {
+                        _searchItem.collapseActionView();
+                        updateSearchFilter("");
+                    }
+                }
+            });
+        }
         return true;
     }
 

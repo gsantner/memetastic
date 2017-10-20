@@ -16,10 +16,21 @@
         <item>other</item>
     </string-array>
 
-    <string-array name="main_modes" translatable="false">
-        <item>@string/main__mode__create</item>
-        <item>@string/main__mode__favs</item>
-        <item>@string/main__mode__saved</item>
+    <string-array name="memelist_data_mode" translatable="false">
+        <item>@string/memelist_data_mode__create</item>
+        <item>@string/memelist_data_mode__favs</item>
+        <item>@string/memelist_data_mode__saved</item>
+    </string-array>
+
+    <string-array name="memelist_view_mode" translatable="false">
+        <item>@string/memelist_view_mode__picture_grid</item>
+        <item>@string/memelist_view_mode__rows_with_title</item>
+    </string-array>
+
+    <!-- Stuff without a direct connection -->
+    <string-array name="values__zero_to_one" translatable="false">
+        <item>0</item>
+        <item>1</item>
     </string-array>
 
     <string-array name="values__zero_to_two" translatable="false">
