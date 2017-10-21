@@ -123,4 +123,5 @@
     <string name="meme_options__favourite">Favourite</string>
     <string name="meme_options__title">Title</string>
     <string name="meme_options__hide">Hide</string>
+    <string name="unhide">Unhide</string>
 </resources>

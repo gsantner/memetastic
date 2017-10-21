@@ -34,7 +34,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -147,14 +146,7 @@ public class MainActivity extends AppCompatActivity
         // Setup _toolbar
         setSupportActionBar(_toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, _drawer, _toolbar,
-                R.string.main__navdrawer__open, R.string.main__navdrawer__close){
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                toggleHiddenTab();
-            }
-        };
-        toggleHiddenTab();
+                R.string.main__navdrawer__open, R.string.main__navdrawer__close);
         _drawer.addDrawerListener(toggle);
         toggle.syncState();
         _navigationView.setNavigationItemSelectedListener(this);
@@ -188,7 +180,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
-        _viewPager.addOnPageChangeListener(this);
 
         _tabLayout.setupWithViewPager(_viewPager);
 
@@ -228,7 +219,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void toggleHiddenTab() {
+    public void updateHiddenNavOption() {
         MenuItem hiddenItem = _navigationView.getMenu().findItem(R.id.action_mode_hidden);
 
         List<MemeData.Image> imageList = new ArrayList<>();
@@ -237,14 +228,11 @@ public class MainActivity extends AppCompatActivity
             MemeData.Image image = MemeData.findImage(new File(hidden));
             if (image != null) {
                 imageList.add(image);
+                break;
             }
         }
 
-        if (imageList.isEmpty()){
-            hiddenItem.setVisible(false);
-        }else {
-            hiddenItem.setVisible(true);
-        }
+        hiddenItem.setVisible(!imageList.isEmpty());
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -299,6 +287,7 @@ public class MainActivity extends AppCompatActivity
             }
         } catch (Exception ignored) {
         }
+        _viewPager.addOnPageChangeListener(this);
     }
 
     @Override
@@ -629,7 +618,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 case AppCast.ASSETS_LOADED.ACTION: {
                     selectTab(_tabLayout.getSelectedTabPosition(), _currentMainMode);
-                    return;
+                    updateHiddenNavOption();
                 }
             }
         }
