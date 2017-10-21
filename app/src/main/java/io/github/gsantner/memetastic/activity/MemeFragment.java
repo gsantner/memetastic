@@ -88,7 +88,7 @@ public class MemeFragment extends Fragment {
 
         List<MemeData.Image> hiddenImages = new ArrayList<>();
         for (MemeData.Image image : _imageList) {
-            if (_app.settings.isHidden(image.fullPath.getAbsolutePath())){
+            if (_app.settings.isHidden(image.fullPath.getAbsolutePath())) {
                 hiddenImages.add(image);
             }
         }

@@ -72,8 +72,7 @@ import io.github.gsantner.memetastic.util.ContextUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        ViewPager.OnPageChangeListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
@@ -221,18 +220,14 @@ public class MainActivity extends AppCompatActivity
 
     public void updateHiddenNavOption() {
         MenuItem hiddenItem = _navigationView.getMenu().findItem(R.id.action_mode_hidden);
-
-        List<MemeData.Image> imageList = new ArrayList<>();
-
         for (String hidden : app.settings.getHiddenMemesTemplate()) {
             MemeData.Image image = MemeData.findImage(new File(hidden));
             if (image != null) {
-                imageList.add(image);
-                break;
+                hiddenItem.setVisible(true);
+                return;
             }
         }
-
-        hiddenItem.setVisible(!imageList.isEmpty());
+        hiddenItem.setVisible(false);
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -394,7 +389,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             }
 
-            case R.id.action_mode_hidden:{
+            case R.id.action_mode_hidden: {
                 _currentMainMode = 3;
                 imageList = new ArrayList<>();
 
@@ -619,6 +614,7 @@ public class MainActivity extends AppCompatActivity
                 case AppCast.ASSETS_LOADED.ACTION: {
                     selectTab(_tabLayout.getSelectedTabPosition(), _currentMainMode);
                     updateHiddenNavOption();
+                    break;
                 }
             }
         }
@@ -736,7 +732,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void swapTabs() {
+    public void selectCreateMainMode() {
         MenuItem createItem = _navigationView.getMenu().findItem(R.id.action_mode_create);
         onNavigationItemSelected(createItem);
         createItem.setChecked(true);

@@ -76,7 +76,6 @@ public class ImageViewActivity extends AppCompatActivity {
         _viewPager.setCurrentItem(getIntent().getIntExtra(MainActivity.IMAGE_POS, 0));
 
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

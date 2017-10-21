@@ -144,7 +144,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
             holder.imageButtonFav.setVisibility(View.VISIBLE);
         }
 
-        if (_app.settings.isHidden(dataImage.fullPath.getAbsolutePath())){
+        if (_app.settings.isHidden(dataImage.fullPath.getAbsolutePath())) {
             holder.imageButtonFav.setVisibility(View.INVISIBLE);
             holder.imageView.setOnClickListener(null);
             setViewLongClickListener(holder, true);
@@ -169,21 +169,21 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         }
     }
 
-    private void setViewLongClickListener(final ViewHolder holder, boolean isHidden){
+    private void setViewLongClickListener(final ViewHolder holder, boolean isHidden) {
         final PopupMenu menu = new PopupMenu(_activity, holder.imageView);
         menu.inflate(R.menu.meme_options__menu);
 
         menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.meme_action_fav:
                         toggleFavorite(holder);
                         return true;
                     case R.id.meme_action_hide:
                         int position = holder.getAdapterPosition();
                         toggleHidden(holder, position);
-                        ((MainActivity)_activity).updateHiddenNavOption();
+                        ((MainActivity) _activity).updateHiddenNavOption();
                         return true;
                     case R.id.meme_action_title:
                         showTitleToast(menuItem.getActionView());
@@ -203,12 +203,12 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
 
             case VIEW_TYPE__PICTURE_GRID:
             default: {
-                longClickView =  holder.imageView;
+                longClickView = holder.imageView;
                 break;
             }
         }
 
-        if (isHidden){
+        if (isHidden) {
             longClickView.setOnLongClickListener(new View.OnLongClickListener() {
                 public boolean onLongClick(final View v) {
                     Menu itemMenu = menu.getMenu();
@@ -219,7 +219,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
                     return true;
                 }
             });
-        }else {
+        } else {
             longClickView.setOnLongClickListener(new View.OnLongClickListener() {
                 public boolean onLongClick(final View v) {
                     menu.show();
@@ -229,7 +229,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         }
     }
 
-    private void toggleHidden(ViewHolder holder, int position){
+    private void toggleHidden(ViewHolder holder, int position) {
         MemeData.Image image = (MemeData.Image) holder.imageView.getTag();
         String filePath = image.fullPath.getAbsolutePath();
 
@@ -237,12 +237,12 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         _imageDataList.remove(image);
         notifyItemRemoved(position);
 
-        if (_imageDataList.isEmpty()){
-            ((MainActivity)_activity).swapTabs();
+        if (_imageDataList.isEmpty()) {
+            ((MainActivity) _activity).selectCreateMainMode();
         }
     }
 
-    private void showTitleToast(View v){
+    private void showTitleToast(View v) {
         MemeData.Image image = (MemeData.Image) v.getTag();
         Toast.makeText(v.getContext(), image.conf.getTitle(), Toast.LENGTH_SHORT).show();
     }
