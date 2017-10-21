@@ -13,11 +13,15 @@
     <string name="main__memecat__cartoon">Komiks</string>
     <string name="main__memecat__animals">Zwierzęta</string>
     <string name="main__memecat__custom">Niestandardowy</string>
+    <string name="main__memecat__rage">Rage</string>
 
     <string name="memelist_data_mode__saved">Zapisane</string>
     <string name="memelist_data_mode__favs">Ulubione</string>
     <string name="memelist_data_mode__create">Stwórz</string>
 
+    <string name="memelist_view_mode__rows_with_title">Wiersze z tytułem</string>
+    <string name="memelist_view_mode__picture_grid">Wygląd siatki</string>
+    
     <string name="main__search_meme">Wyszukaj Mem</string>
     <string name="main__get_picture_from_gallery">Wybierz obraz z Galerii</string>
     <string name="main__get_picture_from_camera">Zrób zdjęcie aparatem</string>
@@ -90,6 +94,9 @@
     <string name="pref_title__is_statusbar_hidden">Ukryj pasek stanu</string>
     <string name="pref_summary__picture_quality__percent">Jakość i rozmiar zależą od obrazów. Wyższe wartości oznaczają dłuższy czas ładowania. W zależności od urządzenia i rozmiaru obrazu aplikacja może nie działać tak jak powinna jeśli wartość będzie wyższa niż 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Jakość miniatury</string>
+    <string name="pref_summary__memelist_view_type">Ustaw Typ widoku (Wygląd sitki, listy z tytułem)</string>
+    <string name="pref_title__memelist_view_type">Typ widoku</string>
+    <string name="pref_title__is_show_in_gallery">Pokaż w galerii urządzenia</string>
 
     <!-- Language -->
     <string name="pref_title__language">Język</string>
@@ -108,4 +115,6 @@
     <string name="palette_colors">Paleta</string>
     <string name="preset_colors">Presety</string>
     <string name="select_color">Wybierz kolor</string>
+    
+    <string name="code">Kod</string>
 </resources>
