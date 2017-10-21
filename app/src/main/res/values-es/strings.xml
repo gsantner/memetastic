@@ -13,16 +13,21 @@
     <string name="main__memecat__cartoon">Dibujos animados</string>
     <string name="main__memecat__animals">Animales</string>
     <string name="main__memecat__custom">Personalizado</string>
+    <string name="main__memecat__rage">Rage</string>
 
     <string name="memelist_data_mode__saved">Guardados</string>
     <string name="memelist_data_mode__favs">Favoritos</string>
     <string name="memelist_data_mode__create">Crear</string>
+
+    <string name="memelist_view_mode__rows_with_title">Filas con título</string>
+    <string name="memelist_view_mode__picture_grid">Rejilla de imágenes</string>
 
     <string name="main__search_meme">Buscar meme</string>
     <string name="main__get_picture_from_gallery">Obtener imagen de la galería</string>
     <string name="main__get_picture_from_camera">Obtener imagen con la cámara</string>
     <string name="main__error_camera_cannot_start">No se pudo iniciar la cámara.</string>
     <string name="main__error_no_picture_selected">No se ha seleccionado ninguna imagen.</string>
+    <string name="main__error_fail_retrieve_picture">No se ha podido cargar la imagen desde el almacenamiento.</string>
     <string name="main__share_meme_prompt">Compartir el meme vía...</string>
 
     <string name="main__donate">Donar</string>
@@ -89,18 +94,22 @@
     <string name="pref_title__is_statusbar_hidden">Ocultar la barra de estado</string>
     <string name="pref_summary__picture_quality__percent">Calidad y tamaño de las imágenes. Valores altos significan mayor tiempo de carga. Dependiendo del hardware del dispositivo y el tamaño de la imagen, la aplicación puede no funcionar como se espera si el valor supera el 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Calidad de miniatura</string>
+    <string name="pref_summary__memelist_view_type">Establecer modo de vista (Rejilla de imágenes, Filas con título)</string>
+    <string name="pref_title__memelist_view_type">Tipo de vista</string>
+    <string name="pref_title__is_show_in_gallery">Mostrar en la galería del dispositivo</string>
 
     <!-- Language -->
     <string name="pref_title__language">Idioma</string>
-    <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reinicia la aplicación para que se apliquen los cambios</string>
+    <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
     <string name="error_cannot_create_save_dir">Error: no se puede crear el directorio de guardado</string>
-    <string name="error_storage_permission">Se necesita el permiso de almacenamiento para guardar memes y plantillas</string>
+    <string name="error_storage_permission">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
     <string name="main__memecat__other">Otros</string>
     <string name="downloading">Descargando</string>
     <string name="downloading_failed">Descarga fallida</string>
     <string name="unzipping">Descomprimiendo</string>
     <string name="downloading_success">Descarga correcta</string>
     <string name="download_latest_assets_message">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
-    <string name="download_latest_assets_title">Descargar las últimos plantillas</string>
-    <string name="checking_assets_for_update">Comprobando si hay plantillas más recientes disponibles</string>
+    <string name="download_latest_assets_message_more">También se pueden obtener los últimos elementos manualmente desde Ajustes.</string>
+    <string name="download_latest_assets_title">Descargar los elementos más recientes</string>
+    <string name="checking_assets_for_update">Comprobando si hay elementos más recientes disponibles</string>
 </resources>
