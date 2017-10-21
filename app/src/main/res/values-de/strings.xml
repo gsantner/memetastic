@@ -99,4 +99,14 @@
     <string name="memelist_view_mode__rows_with_title">Zeilen mit Titel</string>
     <string name="pref_title__memelist_view_type">Ansichtstyp</string>
     <string name="pref_summary__memelist_view_type">Ansichtstyp ändern (Bild Gitter, Zeilen mit Titel)</string>
+    <string name="main__memecat__rage">Rage</string>
+    <string name="code">Code</string>
+    <string name="pref_title__is_show_in_gallery">In Gallerie des Geräts anzeigen</string>
+    <string name="memelist_data_mode__hidden">Versteckt</string>
+    <string name="favourite">Favorisieren</string>
+    <string name="remove_favourite">Favorit entfernen</string>
+    <string name="show_title">Titel anzeigen</string>
+    <string name="edit_title">Titel editieren</string>
+    <string name="hide">Verstecken</string>
+    <string name="unhide">Wieder einblenden</string>
 </resources>

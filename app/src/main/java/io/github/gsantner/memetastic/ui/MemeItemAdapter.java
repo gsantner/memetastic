@@ -186,7 +186,8 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
                         ((MainActivity) _activity).updateHiddenNavOption();
                         return true;
                     case R.id.meme_action_title:
-                        showTitleToast(menuItem.getActionView());
+                        MemeData.Image image = (MemeData.Image) holder.imageView.getTag();
+                        Toast.makeText(holder.imageView.getContext(), image.conf.getTitle(), Toast.LENGTH_SHORT).show();
                         return true;
                 }
                 return false;
@@ -242,10 +243,6 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         }
     }
 
-    private void showTitleToast(View v) {
-        MemeData.Image image = (MemeData.Image) v.getTag();
-        Toast.makeText(v.getContext(), image.conf.getTitle(), Toast.LENGTH_SHORT).show();
-    }
 
     private void tintFavouriteImage(ImageView iv, boolean isFav) {
         ContextUtils.setDrawableWithColorToImageView(iv,

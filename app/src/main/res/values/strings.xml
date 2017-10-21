@@ -120,8 +120,10 @@
     <string name="code">Code</string>
 
     <!--Meme pop up menu strings-->
-    <string name="meme_options__favourite">Favourite</string>
-    <string name="meme_options__title">Title</string>
-    <string name="meme_options__hide">Hide</string>
+    <string name="favourite">Favourite</string>
+    <string name="remove_favourite">Remove favourite</string>
+    <string name="show_title">Show title</string>
+    <string name="edit_title">Edit title</string>
+    <string name="hide">Hide</string>
     <string name="unhide">Unhide</string>
 </resources>
