@@ -14,10 +14,16 @@
             android:id="@+id/action_mode_favs"
             android:icon="@drawable/ic_star_black_32dp"
             android:title="@string/memelist_data_mode__favs" />
+
         <item
             android:id="@+id/action_mode_saved"
             android:icon="@drawable/ic_save_white_48px"
             android:title="@string/memelist_data_mode__saved" />
+
+        <item
+            android:id="@+id/action_mode_hidden"
+            android:icon="@drawable/ic_remove_circle_black_24dp"
+            android:title="@string/memelist_data_mode__hidden" />
     </group>
 
     <group

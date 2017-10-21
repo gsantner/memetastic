@@ -3,8 +3,11 @@ package io.github.gsantner.memetastic.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -91,16 +94,10 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         holder.imageView.setTag(imageData);
         holder.imageButtonFav.setTag(imageData);
 
-
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
 
-        holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                MemeData.Image image = (MemeData.Image) v.getTag();
-                Toast.makeText(v.getContext(), image.conf.getTitle(), Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+        setViewLongClickListener(holder, false);
+
         holder.imageButtonFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,13 +135,19 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
     }
 
     @Override
-    public void onImageLoaded(Bitmap bitmap, ViewHolder holder) {
+    public void onImageLoaded(Bitmap bitmap, final ViewHolder holder) {
         MemeData.Image dataImage = (MemeData.Image) holder.imageView.getTag();
         Animation animation = AnimationUtils.loadAnimation(_activity, R.anim.fadeinfast);
         holder.imageView.startAnimation(animation);
         if (dataImage.isTemplate) {
             holder.imageButtonFav.startAnimation(animation);
             holder.imageButtonFav.setVisibility(View.VISIBLE);
+        }
+
+        if (_app.settings.isHidden(dataImage.fullPath.getAbsolutePath())){
+            holder.imageButtonFav.setVisibility(View.INVISIBLE);
+            holder.imageView.setOnClickListener(null);
+            setViewLongClickListener(holder, true);
         }
         holder.imageView.setImageBitmap(bitmap);
         holder.imageView.setVisibility(View.VISIBLE);
@@ -164,6 +167,84 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         if (index >= 0) {
             notifyItemChanged(index);
         }
+    }
+
+    private void setViewLongClickListener(final ViewHolder holder, boolean isHidden){
+        final PopupMenu menu = new PopupMenu(_activity, holder.imageView);
+        menu.inflate(R.menu.meme_options__menu);
+
+        menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.meme_action_fav:
+                        toggleFavorite(holder);
+                        return true;
+                    case R.id.meme_action_hide:
+                        int position = holder.getAdapterPosition();
+                        toggleHidden(holder, position);
+                        ((MainActivity)_activity).updateHiddenNavOption();
+                        return true;
+                    case R.id.meme_action_title:
+                        showTitleToast(menuItem.getActionView());
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        View longClickView;
+
+        switch (_itemViewType) {
+            case VIEW_TYPE__ROWS_WITH_TITLE: {
+                longClickView = holder.itemView;
+                break;
+            }
+
+            case VIEW_TYPE__PICTURE_GRID:
+            default: {
+                longClickView =  holder.imageView;
+                break;
+            }
+        }
+
+        if (isHidden){
+            longClickView.setOnLongClickListener(new View.OnLongClickListener() {
+                public boolean onLongClick(final View v) {
+                    Menu itemMenu = menu.getMenu();
+
+                    itemMenu.findItem(R.id.meme_action_hide).setTitle(R.string.unhide);
+                    itemMenu.removeItem(R.id.meme_action_fav);
+                    menu.show();
+                    return true;
+                }
+            });
+        }else {
+            longClickView.setOnLongClickListener(new View.OnLongClickListener() {
+                public boolean onLongClick(final View v) {
+                    menu.show();
+                    return true;
+                }
+            });
+        }
+    }
+
+    private void toggleHidden(ViewHolder holder, int position){
+        MemeData.Image image = (MemeData.Image) holder.imageView.getTag();
+        String filePath = image.fullPath.getAbsolutePath();
+
+        _app.settings.toggleHiddenMeme(filePath);
+        _imageDataList.remove(image);
+        notifyItemRemoved(position);
+
+        if (_imageDataList.isEmpty()){
+            ((MainActivity)_activity).swapTabs();
+        }
+    }
+
+    private void showTitleToast(View v){
+        MemeData.Image image = (MemeData.Image) v.getTag();
+        Toast.makeText(v.getContext(), image.conf.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     private void tintFavouriteImage(ImageView iv, boolean isFav) {

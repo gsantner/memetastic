@@ -18,6 +18,7 @@
     <string name="memelist_data_mode__saved">Saved</string>
     <string name="memelist_data_mode__favs">Favs</string>
     <string name="memelist_data_mode__create">Create</string>
+    <string name="memelist_data_mode__hidden">Hidden</string>
 
     <string name="memelist_view_mode__rows_with_title">Rows with title</string>
     <string name="memelist_view_mode__picture_grid">Picture Grid</string>
@@ -117,4 +118,10 @@
     <string name="select_color">Select color</string>
 
     <string name="code">Code</string>
+
+    <!--Meme pop up menu strings-->
+    <string name="meme_options__favourite">Favourite</string>
+    <string name="meme_options__title">Title</string>
+    <string name="meme_options__hide">Hide</string>
+    <string name="unhide">Unhide</string>
 </resources>
