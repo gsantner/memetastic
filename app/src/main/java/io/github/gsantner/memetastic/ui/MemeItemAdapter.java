@@ -96,7 +96,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
 
         tintFavouriteImage(holder.imageButtonFav, _app.settings.isFavorite(imageData.fullPath.toString()));
 
-        setViewLongClickListener(holder, false);
+        preparePopupMenu(holder);
 
         holder.imageButtonFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +147,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         if (_app.settings.isHidden(dataImage.fullPath.getAbsolutePath())) {
             holder.imageButtonFav.setVisibility(View.INVISIBLE);
             holder.imageView.setOnClickListener(null);
-            setViewLongClickListener(holder, true);
+            preparePopupMenu(holder);
         }
         holder.imageView.setImageBitmap(bitmap);
         holder.imageView.setVisibility(View.VISIBLE);
@@ -169,23 +169,25 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         }
     }
 
-    private void setViewLongClickListener(final ViewHolder holder, boolean isHidden) {
+    private void preparePopupMenu(final ViewHolder holder) {
+        final MemeData.Image imageData = (MemeData.Image) holder.imageView.getTag();
         final PopupMenu menu = new PopupMenu(_activity, holder.imageView);
-        menu.inflate(R.menu.meme_options__menu);
+        menu.inflate(R.menu.memeitemadapter__popup_menu);
+        ContextUtils.popupMenuEnableIcons(menu);
 
         menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.meme_action_fav:
+                    case R.id.memeitemadapter__popup_menu__action_fav:
                         toggleFavorite(holder);
                         return true;
-                    case R.id.meme_action_hide:
+                    case R.id.memeitemadapter__popup_menu__action_hide:
                         int position = holder.getAdapterPosition();
                         toggleHidden(holder, position);
                         ((MainActivity) _activity).updateHiddenNavOption();
                         return true;
-                    case R.id.meme_action_title:
+                    case R.id.memeitemadapter__popup_menu__action_title:
                         MemeData.Image image = (MemeData.Image) holder.imageView.getTag();
                         Toast.makeText(holder.imageView.getContext(), image.conf.getTitle(), Toast.LENGTH_SHORT).show();
                         return true;
@@ -195,13 +197,11 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         });
 
         View longClickView;
-
         switch (_itemViewType) {
             case VIEW_TYPE__ROWS_WITH_TITLE: {
                 longClickView = holder.itemView;
                 break;
             }
-
             case VIEW_TYPE__PICTURE_GRID:
             default: {
                 longClickView = holder.imageView;
@@ -209,25 +209,24 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
             }
         }
 
-        if (isHidden) {
-            longClickView.setOnLongClickListener(new View.OnLongClickListener() {
-                public boolean onLongClick(final View v) {
-                    Menu itemMenu = menu.getMenu();
+        longClickView.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(final View v) {
+                Menu itemMenu = menu.getMenu();
+                boolean isHidden = _app.settings.isHidden(imageData.fullPath.toString());
+                boolean isFav = _app.settings.isFavorite(imageData.fullPath.toString());
+                boolean isTemplate = imageData.isTemplate;
 
-                    itemMenu.findItem(R.id.meme_action_hide).setTitle(R.string.unhide);
-                    itemMenu.removeItem(R.id.meme_action_fav);
-                    menu.show();
-                    return true;
-                }
-            });
-        } else {
-            longClickView.setOnLongClickListener(new View.OnLongClickListener() {
-                public boolean onLongClick(final View v) {
-                    menu.show();
-                    return true;
-                }
-            });
-        }
+                itemMenu.findItem(R.id.memeitemadapter__popup_menu__action_hide).setVisible(isTemplate)
+                        .setTitle(isHidden ? R.string.unhide : R.string.hide);
+
+                itemMenu.findItem(R.id.memeitemadapter__popup_menu__action_fav).setVisible(isTemplate)
+                        .setTitle(isFav ? R.string.remove_favourite : R.string.favourite);
+
+                menu.show();
+                return true;
+            }
+        });
+
     }
 
     private void toggleHidden(ViewHolder holder, int position) {

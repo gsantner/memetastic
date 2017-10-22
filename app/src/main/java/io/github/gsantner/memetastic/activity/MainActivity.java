@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity
         //
         // Actions based on build type or version
         //
-        _navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
+        _navigationView.getMenu().findItem(R.id.action_donate).setVisible(!BuildConfig.IS_GPLAY_BUILD);
 
 
         // Show first start dialog / changelog
@@ -338,8 +338,8 @@ public class MainActivity extends AppCompatActivity
                 startActivity(Intent.createChooser(i, getString(R.string.main__share_meme)));
                 return true;
             }
-            case R.id.action_donate_bitcoin: {
-                ContextUtils.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
+            case R.id.action_donate: {
+                ContextUtils.get().openWebpageInExternalBrowser(getString(R.string.donate__url));
                 return true;
             }
             case R.id.action_homepage_code: {

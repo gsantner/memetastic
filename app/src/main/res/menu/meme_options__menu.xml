@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/meme_action_fav"
-        android:title="@string/favourite"/>
-    <item android:id="@+id/meme_action_title"
-        android:title="@string/show_title"/>
-    <item android:id="@+id/meme_action_hide"
-        android:title="@string/hide"/>
-</menu>

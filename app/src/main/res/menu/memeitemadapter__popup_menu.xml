@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/memeitemadapter__popup_menu__action_title"
+        android:icon="@drawable/ic_title_black_24dp"
+        android:title="@string/show_title"/>
+    <item
+        android:id="@+id/memeitemadapter__popup_menu__action_fav"
+        android:icon="@drawable/ic_star_border_black_32dp"
+        android:title="@string/favourite"/>
+    <item
+        android:id="@+id/memeitemadapter__popup_menu__action_hide"
+        android:icon="@drawable/ic_visibility_black_24dp"
+        android:title="@string/hide"/>
+</menu>

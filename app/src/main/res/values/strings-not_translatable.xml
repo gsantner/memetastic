@@ -45,6 +45,7 @@
     <string name="donate__bitcoin_amount" translatable="false">0.01</string>
     <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
     <string name="donate__bitcoin_url" translatable="false">https://gsantner.github.io/#donate</string>
+    <string name="donate__url" translatable="false">https://liberapay.com/gsantner/donate</string>
 
 
     <!-- Pref keys -->

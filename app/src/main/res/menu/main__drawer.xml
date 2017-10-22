@@ -54,7 +54,7 @@
             android:icon="@drawable/ic_thumb_up_black_48px"
             android:title="@string/main__recommend_app" />
         <item
-            android:id="@+id/action_donate_bitcoin"
+            android:id="@+id/action_donate"
             android:icon="@drawable/ic_favorite_white_48px"
             android:title="@string/main__donate"
             android:visible="false" />

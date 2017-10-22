@@ -3,9 +3,12 @@ package io.github.gsantner.memetastic.util;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.support.v7.widget.PopupMenu;
 import android.view.View;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Date;
 
 import io.github.gsantner.memetastic.App;
@@ -28,6 +31,24 @@ public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
         Date sevenDaysAgo = new Date(System.currentTimeMillis() - 7 * 1000 * 60 * 60 * 24);
         if (AppSettings.get().getLastAssetArchiveCheckDate().before(sevenDaysAgo)) {
             new AssetUpdater.UpdateThread(context, false).start();
+        }
+    }
+
+    public static void popupMenuEnableIcons(PopupMenu popupMenu) {
+        try {
+            Field[] fields = popupMenu.getClass().getDeclaredFields();
+            for (Field field : fields) {
+                if ("mPopup".equals(field.getName())) {
+                    field.setAccessible(true);
+                    Object menuPopupHelper = field.get(popupMenu);
+                    Class<?> classPopupHelper = Class.forName(menuPopupHelper.getClass().getName());
+                    Method setForceIcons = classPopupHelper.getMethod("setForceShowIcon", boolean.class);
+                    setForceIcons.invoke(menuPopupHelper, true);
+                    break;
+                }
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
     }
 
