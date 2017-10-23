@@ -233,9 +233,14 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
         MemeData.Image image = (MemeData.Image) holder.imageView.getTag();
         String filePath = image.fullPath.getAbsolutePath();
 
-        _app.settings.toggleHiddenMeme(filePath);
-        _imageDataList.remove(image);
-        notifyItemRemoved(position);
+        if (_app.settings.toggleHiddenMeme(filePath)){
+            _imageDataList.remove(image);
+            notifyItemRemoved(position);
+        }else{
+            _imageDataList.remove(image);
+            notifyItemRemoved(position);
+            ((MainActivity)_activity).recreateFragmentsAfterUnhiding();
+        }
 
         if (_imageDataList.isEmpty()) {
             ((MainActivity) _activity).selectCreateMainMode();
