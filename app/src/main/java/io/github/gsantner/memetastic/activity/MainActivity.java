@@ -737,4 +737,8 @@ public class MainActivity extends AppCompatActivity
         onNavigationItemSelected(createItem);
         createItem.setChecked(true);
     }
+
+    public void recreateFragmentsAfterUnhiding(){
+        _viewPager.getAdapter().notifyDataSetChanged();
+    }
 }
