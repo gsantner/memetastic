@@ -11,16 +11,23 @@
     <string name="main__memecat__humans">Humanos</string>
     <string name="main__memecat__cartoon">Cartum</string>
     <string name="main__memecat__animals">Animais</string>
-    <string name="main__memecat__custom">Personalizado</string>
+    <string name="main__memecat__custom">Personalizados</string>
+    <string name="main__memecat__rage">Odiado</string>
 
     <string name="memelist_data_mode__saved">Salvo</string>
     <string name="memelist_data_mode__favs">Favoritos</string>
     <string name="memelist_data_mode__create">Criar</string>
+    <string name="memelist_data_mode__hidden">Oculto</string>
 
+    <string name="memelist_view_mode__rows_with_title">Linhas com título</string>
+    <string name="memelist_view_mode__picture_grid">Grade de imagens</string>
+
+    <string name="main__search_meme">Busca Meme</string>
     <string name="main__get_picture_from_gallery">Pegar imagem da galeria</string>
     <string name="main__get_picture_from_camera">Capturar imagem pela câmera</string>
     <string name="main__error_camera_cannot_start">Impossível acessar a câmera.</string>
     <string name="main__error_no_picture_selected">Nenhuma imagem selecionada.</string>
+    <string name="main__error_fail_retrieve_picture">Não foi possível carregar a imagem do armazenamento.</string>
     <string name="main__share_meme_prompt">Compartilhar via…</string>
 
     <string name="main__donate">Doar</string>
@@ -87,8 +94,35 @@
     <string name="pref_title__is_statusbar_hidden">Esconder barra de status</string>
     <string name="pref_summary__picture_quality__percent">Qualidade e tamanho. Valores altos causam mais tempo de carregamento. Dependendo do processador e o tamanho da imagem o app pode falhar se o valor extrapolar 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Qualidade da pré-visualização</string>
+    <string name="pref_summary__memelist_view_type">Definir tipo de exibição (grade de imagem, linhas com título)</string>
+    <string name="pref_title__memelist_view_type">Tipo de exibição</string>
+    <string name="pref_title__is_show_in_gallery">Mostrar na galeria do dispositivos</string>
 
     <!-- Language -->
     <string name="pref_title__language">Idioma</string>
     <string name="pref_desc__language">Muda o idioma do aplicativo. Reinicie o aplicativo para que as alterações entrem em vigor</string>
+    <string name="error_cannot_create_save_dir">Erro: Não é possível criar a pasta de salvamento</string>
+    <string name="error_storage_permission">Necessário de permissão para fazer o armazenamento de memes e modelos de memes</string>
+    <string name="main__memecat__other">Outros</string>
+    <string name="downloading">Baixando dados</string>
+    <string name="downloading_failed">Falha ao baixa os dados</string>
+    <string name="unzipping">Descompactando</string>
+    <string name="downloading_success">Baixado com êxito</string>
+    <string name="download_latest_assets_message">Isso irá baixar fontes e modelos de memes (cerca de 20 MB de dados)</string>
+    <string name="download_latest_assets_message_more">Também em configurações você pode obter manualmente os últimos elementos.</string>
+    <string name="download_latest_assets_title">Baixar os elementos mais recentes</string>
+    <string name="checking_assets_for_update">Verificando se há novos elementos</string>
+    <string name="palette_colors">Palheta</string>
+    <string name="preset_colors">Predefinições</string>
+    <string name="select_color">Selecionar cor</string>
+
+    <string name="code">Código</string>
+
+    <!--Meme pop up menu strings-->
+    <string name="favourite">Favorito</string>
+    <string name="remove_favourite">Remover favorito</string>
+    <string name="show_title">Mostrar título</string>
+    <string name="edit_title">Editar título</string>
+    <string name="hide">Ocultar</string>
+    <string name="unhide">Reexibir</string>
 </resources>
