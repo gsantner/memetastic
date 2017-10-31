@@ -1,3 +1,13 @@
+### v1.3.0
+- Translated into many more languages
+- Search memes
+- Browse memes in row layout
+- Advanced color picker for editor
+- Hide memes
+- Added context menu on meme list
+- Use paging for image viewer and meme list
+- Updated to Android O / API27
+
 ### v1.2.8
 - Added: Russian, Indonesian translation
 - Fixed: Cloud storage picture source
