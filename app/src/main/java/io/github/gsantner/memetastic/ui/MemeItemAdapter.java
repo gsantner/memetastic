@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -257,20 +258,29 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
     public void setFilter(String filter) {
         _imageDataList.clear();
         String[] filterTokens = filter.toLowerCase().split("[\\W_]");
-        String[] titleTokens;
+        ArrayList<String> contentTokens = new ArrayList<>();
 
         for (MemeData.Image image : _originalImageDataList) {
+            contentTokens.clear();
+
+            // Tokenize filename
+            contentTokens.addAll(Arrays.asList(image.fullPath.getName().toLowerCase().split("[\\W_]")));
+
             // Tokenize the image title (split by everything that's not a word)
             if (image.conf != null && image.conf.getTitle() != null && !image.conf.getTitle().isEmpty()) {
-                titleTokens = image.conf.getTitle().toLowerCase().split("[\\W_]");
-            } else {
-                titleTokens = image.fullPath.getName().toLowerCase().split("[\\W_]");
+                contentTokens.addAll(Arrays.asList(image.conf.getTitle().toLowerCase().split("[\\W_]")));
             }
+
+            // Tokenize tags
+            if (image.conf != null && image.conf.getTags() != null) {
+                contentTokens.addAll(image.conf.getTags());
+            }
+
 
             boolean allTokensFound = true;
             for (String filterToken : filterTokens) {
                 boolean foundTokenInTitle = false;
-                for (String titleToken : titleTokens) {
+                for (String titleToken : contentTokens) {
                     if (titleToken.contains(filterToken)) {
                         foundTokenInTitle = true;
                     }
