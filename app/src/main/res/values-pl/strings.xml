@@ -18,6 +18,7 @@
     <string name="memelist_data_mode__saved">Zapisane</string>
     <string name="memelist_data_mode__favs">Ulubione</string>
     <string name="memelist_data_mode__create">Stwórz</string>
+    <string name="memelist_data_mode__hidden">Ukryte</string>
 
     <string name="memelist_view_mode__rows_with_title">Wiersze z tytułem</string>
     <string name="memelist_view_mode__picture_grid">Wygląd siatki</string>
@@ -117,4 +118,12 @@
     <string name="select_color">Wybierz kolor</string>
     
     <string name="code">Kod</string>
+    
+    <!--Meme pop up menu strings-->
+    <string name="favourite">Ulubiony</string>
+    <string name="remove_favourite">Remove favourite</string>
+    <string name="show_title">Pokaż tytuł</string>
+    <string name="edit_title">Zmień tytuł</string>
+    <string name="hide">Ukryj</string>
+    <string name="unhide">Pokaż</string>
 </resources>

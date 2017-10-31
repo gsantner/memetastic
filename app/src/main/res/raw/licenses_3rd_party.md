@@ -34,13 +34,17 @@ See <https://creativecommons.org/licenses> for full license texts.
 Version 2.0, January 2004  
 
 * **Butterknife**
-~° Copyright 2013 Jake Wharton  
+~° Copyright 2013 Jake Wharton
 
 * **Open Sans**
-~° by [Steve Matteson](https://www.myfonts.com/person/Steve_Matteson/)  
+~° by [Steve Matteson](https://www.myfonts.com/person/Steve_Matteson/)
 
 * **Roboto**
 ~° Font data copyright Google 2012
+
+* **ColorPicker**
+~° Copyright jaredrummler
+ 
 
 `---------------`  
 <small>Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,10 +60,8 @@ See the License for the specific language governing permissions and
 limitations under the License.</small>  
 `---------------`  
 
-
+<!--
 ## The MIT License (MIT)
-* **ShiftColorPicker**
-~° Copyright 2015 Bogdasarov Bogdan  
 
 `---------------`  
 <small>Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -80,7 +82,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</small>  
 `---------------`  
-
+-->
 <!--
 ## The 3-Clause BSD License (BSD)
 * **BottomSheet**

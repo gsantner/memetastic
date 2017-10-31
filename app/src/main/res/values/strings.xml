@@ -92,7 +92,7 @@
     <string name="pref_title__editor">Editor</string>
     <string name="pref_summary__is_statusbar_hidden">Hide the status bar at this view</string>
     <string name="pref_title__is_statusbar_hidden">Hide status bar</string>
-    <string name="pref_summary__picture_quality__percent">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
+    <string name="pref_summary__picture_quality__percent" formatted="false">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
     <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
     <string name="pref_summary__memelist_view_type">Set view type (Picture grid, Rows with title)</string>
     <string name="pref_title__memelist_view_type">View Type</string>

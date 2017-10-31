@@ -1,0 +1,27 @@
+😌 <b>Einfacher Meme Creator</b>. Komplett werbefrei und ohne Wasserzeichen.
+<br/>
+Memes können aus Vorlagen aus dem MemeTastic Archiv, 
+von in die App geteilten Bildern und Bilder aus Gallerie und Kamera erstellt werden.
+<br/>
+Es werden zahlreiche Einstellungsmöglichkeiten angeboten:
+<br/>
+
+<br/>😄 Oberer und Unterer Text
+<br/>😃 Randfarbe und Text-Farbe
+<br/>😁 Text Größe, Schrift und Großschreibung
+<br/>😃 Padding Größe und Farbe
+<br/>😜 Bild drehen
+<br/>
+<br/>
+<b>Mehr Features:</b>
+<br/>👓 Anzeigen von gespeicherten Memes und Favoriten
+<br/>👉 In beliebige App teilen die Bilder akzeptiert
+<br/>
+<br/>
+<b>Projekt unterstützen:</b>
+<br/> ✋ <a href="https://github.com/gsantner/memetastic/issues/1">Vorschlagen von Vorlagen</a>
+<br/> ✋ <a href="https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic">Übersetzen mit Stringlate</a>
+<br/> ✋ <a href="https://matrix.to/#/#memetastic:matrix.org">Diskussion auf Matrix beitreten</a>
+<br/> ✋ <a href="https://github.com/gsantner/memetastic#contributions">Mehr Informationen zu Unterstützungen</a>
+
+

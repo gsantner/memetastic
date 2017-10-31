@@ -78,8 +78,8 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
 
     // sets up the view of the item
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int pos) {
-        final MemeData.Image imageData = _imageDataList.get(pos);
+    public void onBindViewHolder(final ViewHolder holder, int pos) {
+        final MemeData.Image imageData = _imageDataList.get(holder.getAdapterPosition());
         if (imageData == null || imageData.fullPath == null || !imageData.fullPath.exists()) {
             holder.imageView.setImageResource(R.drawable.ic_mood_bad_black_256dp);
             holder.imageButtonFav.setVisibility(View.INVISIBLE);
@@ -121,7 +121,7 @@ public class MemeItemAdapter extends RecyclerView.Adapter<MemeItemAdapter.ViewHo
                     _activity.startActivityForResult(intent, MemeCreateActivity.RESULT_MEME_EDITING_FINISHED);
                 } else {
                     if (_activity instanceof MainActivity) {
-                        ((MainActivity) _activity).openImageViewActivityWithImage(pos, image.fullPath.getAbsolutePath());
+                        ((MainActivity) _activity).openImageViewActivityWithImage(holder.getAdapterPosition(), image.fullPath.getAbsolutePath());
                     }
                 }
             }
