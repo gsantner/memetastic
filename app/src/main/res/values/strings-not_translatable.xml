@@ -5,7 +5,7 @@
     <string name="app_fileprovider" translatable="false">io.github.gsantner.memetastic.fileprovider</string>
     <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>
 
-    <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io\n\nMatthias Ringwald</string>
+    <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.net\n\nMatthias Ringwald</string>
     <string name="page_additional_contact_text" translatable="false">GitHub\nhttps://github.com/gsantner/memetastic</string>
 
     <string name="app_description" translatable="false">much meme. very wow.</string>
@@ -31,7 +31,7 @@
         \n
         \n**Get the official version of MemeTastic:**
         \n
-            [Source code](https://github.com/gsantner/memetastic) | [Homepage](https://gsantner.github.io/#MemeTastic)
+            [Source code](https://github.com/gsantner/memetastic) | [Homepage](http://gsantner.net/#MemeTastic)
         \n[Google Play](https://play.google.com/store/apps/details?id=io.github.gsantner.memetastic)~°| [F-Droid](https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic)
         \n
         \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -44,7 +44,7 @@
     <string name="donate__bitcoin_id" translatable="false">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</string>
     <string name="donate__bitcoin_amount" translatable="false">0.01</string>
     <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
-    <string name="donate__bitcoin_url" translatable="false">https://gsantner.github.io/#donate</string>
+    <string name="donate__bitcoin_url" translatable="false">http://gsantner.net/#donate</string>
     <string name="donate__url" translatable="false">https://liberapay.com/gsantner/donate</string>
 
 

@@ -1,5 +1,5 @@
 [![GitHub release](https://img.shields.io/github/tag/gsantner/memetastic.svg)](https://github.com/gsantner/memetastic/releases)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.github.io/#donate)
+[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](http://gsantner.net/#donate)
 [![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/gsantner/donate)
 [![Build Status](https://travis-ci.org/gsantner/memetastic.svg?branch=master)](https://travis-ci.org/gsantner/memetastic)
 [![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)
@@ -48,7 +48,7 @@ Meme templates can be downloaded from the [memetastic-assets](https://github.com
 The project is always open for contributions and accepts pull requests.
 The project uses [AOSP Java Code Style](https://source.android.com/source/code-style#follow-field-naming-conventions), with one exception: private members are `_camelCase` instead of `mBigCamel`. You may use Android Studios _auto reformat feature_ before sending a PR.
 
-Translations can be contributed on GitHub or via [E-Mail](https://gsantner.github.io/#contact). You can use Stringlate ([![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)) to translate the project directly on your Android phone. It allows you to export as E-Mail attachement and to post on GitHub.
+Translations can be contributed on GitHub or via [E-Mail](http://gsantner.net/#contact). You can use Stringlate ([![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)) to translate the project directly on your Android phone. It allows you to export as E-Mail attachement and to post on GitHub.
 
 Join our IRC or Matrix channel (bridged) and say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=memetastic-anon|?#memetastic)
 
@@ -63,7 +63,7 @@ You can maybe find something suitable here:
 
 
 If you like my work on <b>MemeTastic</b> and many other Open Source projects, consider a small donation to my bitcoin address:
-<a href="https://gsantner.github.io/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
+<a href="http://gsantner.net/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
 
 
 #### Resources
