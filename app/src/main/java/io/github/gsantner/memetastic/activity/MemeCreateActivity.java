@@ -85,7 +85,6 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     public final static String EXTRA_IMAGE_PATH = "MemeCreateActivity_EXTRA_IMAGE_PATH";
     public final static String EXTRA_MEMETASTIC_DATA = "MemeCreateActivity_EXTRA_MEMETASTIC_DATA";
     private static final String TAG = MemeCreateActivity.class.getSimpleName();
-    int count = 0;
     //########################
     //## UI Binding
     //########################
@@ -358,8 +357,8 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
             _isBottom = _position >= 50;
 
-            _create_caption.setText("");
             _editBar.setVisibility(View.VISIBLE);
+            _create_caption.setText("");
             _create_caption.requestFocus();
             ActivityUtils.get(this).hideSoftKeyboard();
             if (_bottomContainerVisible) {
@@ -723,9 +722,6 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     }
 
     public Bitmap makeMemeImageFromElements(Context c, MemeEditorElements memeEditorElements) {
-                Log.d(TAG, "Captions of used to create meme - : Top - " +
-                memeEditorElements.getCaptionTop() + "\n"
-                + "Bottom - " + memeEditorElements.getCaptionBottom() + " Count = " + ++count);
         // prepare canvas
         Bitmap bitmap = memeEditorElements.getImageMain().getDisplayImage();
 

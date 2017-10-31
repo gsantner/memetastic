@@ -13,6 +13,7 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
+    <color name="meme_back">#3d315b</color>
     <!-- End colors from Palette -->
 
     <color name="default_activity_bg">#eeeeee</color>
