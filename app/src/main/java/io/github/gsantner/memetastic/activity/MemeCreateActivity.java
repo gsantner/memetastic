@@ -377,12 +377,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         AlertDialog.Builder Builder = new AlertDialog.Builder(this);
 
-        Builder
-                //hardcoded string
-                .setTitle(R.string.settings__settings)
+        Builder.setTitle(R.string.settings__settings)
                 //dialog _dialogView
                 .setView(_dialogView)
-                //listener, hardcoded OK, replace with android.R....
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
