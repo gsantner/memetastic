@@ -32,7 +32,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -346,8 +345,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     @OnTouch(R.id.memecreate__activity__image)
     public boolean onImageTouched(View view, MotionEvent event) {
-        if (_editBar.getVisibility() == View.VISIBLE){
-            return false;
+        if (_editBar.getVisibility() == View.VISIBLE &&
+                !_create_caption.getText().toString().isEmpty()){
+            onMemeEditorObjectChanged();
         }
         if (event.getAction() == MotionEvent.ACTION_DOWN){
             float _heightOfPic = view.getMeasuredHeight();
@@ -358,9 +358,16 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             _isBottom = _position >= 50;
 
             _editBar.setVisibility(View.VISIBLE);
-            _create_caption.setText("");
+
+            String _areaCaption = _isBottom ?
+                    _memeEditorElements.getCaptionBottom().getText() :
+                    _memeEditorElements.getCaptionTop().getText();
+
+            _create_caption.setText(_areaCaption);
             _create_caption.requestFocus();
-            ActivityUtils.get(this).hideSoftKeyboard();
+
+            ActivityUtils.get(this).showSoftKeyboard();
+
             if (_bottomContainerVisible) {
                 toggleMoarControls(true, false);
             }
@@ -371,6 +378,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     @OnClick(R.id.settings_caption)
     public void openSettingsDialog(){
+        ActivityUtils.get(this).hideSoftKeyboard();
         _dialogView = View.inflate(this, R.layout.text_settings, null);
 
         initDialogViews(_dialogView);
@@ -394,6 +402,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     @OnClick(R.id.done_caption)
     public void settingsDone(){
         _editBar.setVisibility(View.GONE);
+        ActivityUtils.get(this).hideSoftKeyboard();
         onMemeEditorObjectChanged();
     }
 
@@ -513,8 +522,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         ActivityUtils.get(this).hideSoftKeyboard();
         View focusedView = this.getCurrentFocus();
         if (focusedView != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
+            ActivityUtils.get(this).hideSoftKeyboard();
         }
     }
 
@@ -757,6 +765,8 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         for (MemeEditorElements.EditorCaption caption : _memeEditorElements.getCaptions()) {
             String textString = caption.isAllCaps() ? caption.getText().toUpperCase() : caption.getText();
+
+            textString = textString.isEmpty() ? getString(R.string.empty_caption_hint) : textString;
 
             paint.setTextSize((int) (caption.getFontSize() * scale));
             paint.setTypeface(caption.getFont().typeFace);
