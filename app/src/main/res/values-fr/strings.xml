@@ -1,33 +1,48 @@
 <resources>
 
-    <!-- Main -->
+    <!-- main -->
     <string name="main__navdrawer__open">Ouvrir le menu de navigation</string>
     <string name="main__navdrawer__close">Fermer le menu de navigation</string>
 
     <string name="main__save_meme">Sauvegarder le Meme</string>
     <string name="main__share_meme">Partager le Meme</string>
     <string name="main__create_meme">Créer un Meme</string>
-    <string name="main__delete_meme">Effacer un Meme</string>
+    <string name="main__delete_meme">Supprimer un Meme</string>
 
     <string name="main__memecat__humans">Humains</string>
     <string name="main__memecat__cartoon">Dessin Animé</string>
     <string name="main__memecat__animals">Animaux</string>
+    <string name="main__memecat__custom">Personnalisé</string>
+    <string name="main__memecat__rage">Rage</string>
 
     <string name="memelist_data_mode__saved">Sauvegardés</string>
     <string name="memelist_data_mode__favs">Favoris</string>
     <string name="memelist_data_mode__create">Créer</string>
+    <string name="memelist_data_mode__hidden">Masqué</string>
 
+    <string name="memelist_view_mode__rows_with_title">Lignes de titres</string>
+    <string name="memelist_view_mode__picture_grid">Grille d\'images</string>
+
+    <string name="main__search_meme">Chercher un Meme</string>
     <string name="main__get_picture_from_gallery">Prendre une image de la galerie</string>
-    <string name="main__get_picture_from_camera">Prendre une image avec l\'appareil</string>
+    <string name="main__get_picture_from_camera">Prendre une photographie</string>
     <string name="main__error_camera_cannot_start">Impossible de démarrer l\'appareil photo</string>
     <string name="main__error_no_picture_selected">Aucune image n\'a été sélectionnée.</string>
+    <string name="main__error_fail_retrieve_picture">Impossible de charger l\'image depuis le stockage.</string>
     <string name="main__share_meme_prompt">Partager votre Meme via…</string>
 
     <string name="main__donate">Donner</string>
     <string name="main__recommend_app">Recommander</string>
-    <string name="changelog">Changelog</string>
+    <string name="changelog">Nouveautés de l\'application</string>
     <string name="main__exit">Quitter</string>
     <string name="main__yes">oui</string>
+
+    <string name="main__nodata__favourites">Pas encore de favoris.\n
+       Utilisez le bouton étoile sur les modèles de meme pour les ajouter aux favoris.</string>
+    <string name="main__nodata__custom_templates">Aucun modèle personnalisé n\'est disponible.\n
+       Vous pouvez placer les images modèles à cet endroit : %1$s</string>
+    <string name="main__nodata__saved">Aucun Meme enregistré.\n
+ Utilisez le bouton d\'enregistrement dans la barre du haut après modification d\'un Meme.</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Appuyez à nouveau pour quitter l\'édition de ce Meme. Le Meme sera perdu s\'il n\'est pas déjà enregistré.</string>
@@ -35,11 +50,16 @@
     <string name="creator__text_size">Taille du Texte</string>
     <string name="creator__text_color">Couleur du Texte</string>
     <string name="creator__border_color">Couleur de la Bordure</string>
-    <string name="creator__saved_successfully">Sauvegarde réussie!</string>
+    <string name="creator__saved_successfully">Sauvegarde réussie !</string>
     <string name="creator__hint_top_caption">Texte du haut</string>
     <string name="creator__hint_bottom_caption">Sous-titre</string>
     <string name="creator__font">Police</string>
     <string name="creator__keep_editing">Continuer l\'édition</string>
+    <string name="creator__text">Texte</string>
+    <string name="creator__size">Taille</string>
+    <string name="creator__background">Fond</string>
+    <string name="creator__border">Bordure</string>
+    <string name="creator__picture">Image</string>
 
     <!-- Info -->
     <string name="about">À propos</string>
@@ -52,7 +72,7 @@
     <string name="show_app_license">Afficher la licence GNU GPLv3</string>
     <string name="show_third_party_licenses">Montrer les licences tierces</string>
     <string name="miscellaneous">Divers</string>
-    
+
     <!-- Settings -->
     <string name="settings__settings">Préférences</string>
     <string name="settings__all_caps">Tout en majuscules</string>
@@ -69,4 +89,44 @@
     <string name="pref_title__functionality">Fonctionnalité</string>
     <string name="pref_summary__auto_save_meme">Sauvegarder automatiquement le Meme si vous appuyez sur retour et que vous aviez écrit qqc</string>
     <string name="pref_title__auto_save_meme">Enregistrer lors de l\'appui sur Retour</string>
+    <string name="pref_summary__is_shuffle_meme_categories">Mélanger la liste des meme après la sélection d\'une catégorie</string>
+    <string name="pref_title__is_shuffle_meme_categories">Mélanger la liste des Memes</string>
+    <string name="creator__padding">Marge intérieure</string>
+    <string name="pref_title__overview">Aperçu</string>
+    <string name="pref_title__editor">Éditeur</string>
+    <string name="pref_summary__is_statusbar_hidden">L\'application s\'exécute en mode plein écran</string>
+    <string name="pref_title__is_statusbar_hidden">Cacher la barre de statut</string>
+    <string name="pref_summary__picture_quality__percent" formatted="false">Qualité et taille des images. Plus la valeur est importante, plus le temps de chargement sera long. En fonction des capacités de votre appareil et de la taille de l\'image, il est possible que l\'application ne fonctionne pas comme attendu avec une valeur supérieure à 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Qualité de la vignette</string>
+    <string name="pref_summary__memelist_view_type">Choisir le mode d\'affichage (grille d\'images, titres en lignes)</string>
+    <string name="pref_title__memelist_view_type">Mode d\'affichage</string>
+    <string name="pref_title__is_show_in_gallery">Afficher dans la galerie de l\'appareil</string>
+
+    <!-- Language -->
+    <string name="pref_title__language">Langue</string>
+    <string name="pref_desc__language">Changer la langue de l\'interface. Vous devrez redémarrer l\'application pour que ce changement soit pris en compte</string>
+    <string name="error_cannot_create_save_dir">Erreur : Impossible de créer le dossier de sauvegarde</string>
+    <string name="error_storage_permission">L\'application a besoin de votre permission pour accéder au stockage de votre appareil pour enregistrer les Memes et leurs modèles</string>
+    <string name="main__memecat__other">Autre</string>
+    <string name="downloading">Téléchargement</string>
+    <string name="downloading_failed">Téléchargement échoué</string>
+    <string name="unzipping">Décompresser</string>
+    <string name="downloading_success">Téléchargement réussi</string>
+    <string name="download_latest_assets_message">Entraîne le téléchargement des polices de caractères et des modèles de meme (environ 20MB de données).</string>
+    <string name="download_latest_assets_message_more">Vous pourrez également lancer la récupération des dernières ressources depuis les paramètres.</string>
+    <string name="download_latest_assets_title">Télécharger les dernières ressources disponibles</string>
+    <string name="checking_assets_for_update">Vérifier si des ressources plus récentes sont disponibles</string>
+    <string name="palette_colors">Palette</string>
+    <string name="preset_colors">Couleurs par défaut</string>
+    <string name="select_color">Choisir la couleur</string>
+
+    <string name="code">Code</string>
+
+    <!--Meme pop up menu strings-->
+    <string name="favourite">Favoris</string>
+    <string name="remove_favourite">Supprimer le favori</string>
+    <string name="show_title">Afficher le titre</string>
+    <string name="edit_title">Modifier le titre</string>
+    <string name="hide">Cacher</string>
+    <string name="unhide">Révéler</string>
 </resources>
