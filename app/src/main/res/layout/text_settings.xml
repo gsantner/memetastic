@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_1"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/AppTheme.MemeCreatorCaptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:text="@string/creator__size" />
+
+        <SeekBar
+            android:id="@+id/meme_dialog__seek_font_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:max="30"
+            android:progress="18" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/text_background_color_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_1"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/AppTheme.MemeCreatorCaptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="90"
+            android:text="@string/creator__background" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/meme_dialog__color_picker_for_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="10"
+            app:fabSize="mini"
+            app:elevation="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_text_border_color_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_1"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            style="@style/AppTheme.MemeCreatorCaptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="90"
+            android:text="@string/creator__border" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/meme_dialog__color_picker_for_border"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="10"
+            app:fabSize="mini"
+            app:elevation="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_1"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/AppTheme.MemeCreatorCaptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:text="All Caps" />
+
+        <Switch
+            android:id="@+id/meme_dialog__toggle_all_caps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="70"
+            android:checked="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_1"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/AppTheme.MemeCreatorCaptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="Font" />
+
+        <Spinner
+            android:id="@+id/meme_dialog__dropdown_font"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_weight="80"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+</LinearLayout>

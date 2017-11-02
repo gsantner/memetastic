@@ -50,6 +50,7 @@
     <string name="creator__saved_successfully">Successfully saved!</string>
     <string name="creator__hint_top_caption">Top caption</string>
     <string name="creator__hint_bottom_caption">Bottom caption</string>
+    <string name="creator__hint_caption">Enter caption</string>
     <string name="creator__font">Font</string>
     <string name="creator__keep_editing">Keep editing</string>
     <string name="creator__text">Text</string>
@@ -126,4 +127,5 @@
     <string name="edit_title">Edit title</string>
     <string name="hide">Hide</string>
     <string name="unhide">Unhide</string>
+    <string name="empty_caption_hint">Tap Here to add Caption</string>
 </resources>

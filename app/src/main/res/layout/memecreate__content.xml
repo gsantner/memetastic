@@ -23,29 +23,36 @@
             android:orientation="vertical"
             android:paddingBottom="@dimen/default_margin_2">
 
-            <EditText
-                android:id="@+id/memecreate__activity__edit_caption_top"
-                style="@style/AppTheme.MemeCreatorEditTextOnLightBackground"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:layout_marginBottom="5dp"
-                android:hint="@string/creator__hint_top_caption"
-                android:minHeight="16dp"
-                android:paddingBottom="8dp"
-                android:paddingTop="@dimen/default_margin_2" />
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:visibility="gone"
+                android:id="@+id/edit_bar">
 
-            <EditText
-                android:id="@+id/memecreate__activity__edit_caption_bottom"
-                style="@style/AppTheme.MemeCreatorEditTextOnLightBackground"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:layout_marginTop="0dp"
-                android:hint="@string/creator__hint_bottom_caption"
-                android:minHeight="16dp"
-                android:paddingBottom="8dp"
-                android:paddingTop="0dp" />
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/create_caption"
+                    android:layout_weight="8"
+                    android:hint="@string/creator__hint_caption"
+                    style="@style/AppTheme.MemeCreatorEditTextOnLightBackground"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/settings_caption"
+                    android:src="@drawable/ic_settings_white_48px"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/done_caption"
+                    android:src="@drawable/ic_done_all_black_24dp"/>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/memecreate__activity__image"
@@ -56,8 +63,7 @@
                 android:adjustViewBounds="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="0dp"
-                android:scaleType="fitStart" />
+                android:padding="0dp" />
 
         </LinearLayout>
 
