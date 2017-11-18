@@ -1,26 +1,22 @@
 apply plugin: 'com.android.application'
-
-ext {
-    version_sdk = [
-            compileSdk: 27,
-            minSdk    : 14,
-    ]
-    version_lib = [
-            appcompat  : "27.0.0",
-            butterknife: "8.8.1",
-    ]
+if (enable_plugin_kotlin) {
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'kotlin-kapt'
 }
 
+ext.version_setup_minSdk = 14
+
 android {
-    compileSdkVersion version_sdk.compileSdk
+    compileSdkVersion version_setup_compileSdk
     flavorDimensions "default"
 
     defaultConfig {
-        minSdkVersion version_sdk.minSdk
-        targetSdkVersion version_sdk.compileSdk
+        minSdkVersion version_setup_minSdk
+        targetSdkVersion version_setup_targetSdk
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
-        buildConfigField("String[]", "APPLICATION_LANGUAGES", '{' + getUsedAndroidLanguages().collect {"\"${it}\""}.join(",")  + '}')
+        buildConfigField "String[]", "APPLICATION_LANGUAGES", "${getUsedAndroidLanguages()}"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
 
         applicationId "io.github.gsantner.memetastic"
@@ -32,6 +28,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        if (enable_plugin_kotlin) {
+            main.java.srcDirs += 'src/main/kotlin'
         }
     }
 
@@ -62,21 +64,33 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // Testing
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.8.0'
 
     // Android standard libs
-    implementation "com.android.support:appcompat-v7:${version_lib.appcompat}"
-    implementation "com.android.support:design:${version_lib.appcompat}"
-    implementation "com.android.support:support-v4:${version_lib.appcompat}"
-    implementation "com.android.support:cardview-v7:${version_lib.appcompat}"
-    implementation "com.android.support:recyclerview-v7:${version_lib.appcompat}"
+    implementation "com.android.support:appcompat-v7:${version_library_appcompat}"
+    implementation "com.android.support:design:${version_library_appcompat}"
+    implementation "com.android.support:support-v4:${version_library_appcompat}"
+    implementation "com.android.support:cardview-v7:${version_library_appcompat}"
+    implementation "com.android.support:recyclerview-v7:${version_library_appcompat}"
 
     // UI libraries
     implementation 'com.jaredrummler:colorpicker:1.0.1'
 
     // Tool libraries
-    implementation "com.jakewharton:butterknife:${version_lib.butterknife}"
+    implementation "com.jakewharton:butterknife:${version_library_butterknife}"
+    if (enable_plugin_kotlin) {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$version_plugin_kotlin"
+    }
 
-    annotationProcessor "com.jakewharton:butterknife-compiler:${version_lib.butterknife}"
+    // Processors
+    def anpros = ["com.jakewharton:butterknife-compiler:${version_library_butterknife}"]
+    for (anpro in anpros) {
+        if (enable_plugin_kotlin) {
+            kapt anpro
+        } else {
+            annotationProcessor anpro
+        }
+    }
 }
