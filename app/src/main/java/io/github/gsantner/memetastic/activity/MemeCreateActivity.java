@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -393,7 +392,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     @OnClick(R.id.settings_caption)
     public void openSettingsDialog() {
         ActivityUtils.get(this).hideSoftKeyboard();
-        _dialogView = View.inflate(this, R.layout.text_settings, null);
+        _dialogView = View.inflate(this, R.layout.ui__memecreate__text_settings, null);
 
         initDialogViews(_dialogView);
 
@@ -544,24 +543,20 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     private void initDialogViews(View view) {
         SeekBar textSize = view.findViewById(R.id.meme_dialog__seek_font_size);
-        FloatingActionButton textBackGroundColor = view.findViewById
-                (R.id.meme_dialog__color_picker_for_text);
-        FloatingActionButton textBorderColor = view.findViewById
-                (R.id.meme_dialog__color_picker_for_border);
+        View textBackGroundColor = view.findViewById(R.id.meme_dialog__color_picker_for_text);
+        View textBorderColor = view.findViewById(R.id.meme_dialog__color_picker_for_border);
         Switch allCapsSwitch = view.findViewById(R.id.meme_dialog__toggle_all_caps);
         Spinner fontDropDown = view.findViewById(R.id.meme_dialog__dropdown_font);
 
         FontItemAdapter fontAdapter = new FontItemAdapter(this,
                 android.R.layout.simple_list_item_1, MemeData.getFonts(),
-                true, getString(R.string.creator__font));
+                false, getString(R.string.creator__font));
         fontDropDown.setAdapter(fontAdapter);
         fontAdapter.setSelectedFont(fontDropDown, _memeEditorElements.getCaptionTop().getFont());
 
-        textBackGroundColor.setBackgroundTintList(ColorStateList.valueOf
-                (_memeEditorElements.getCaptionTop().getTextColor()));
+        textBackGroundColor.setBackgroundColor(_memeEditorElements.getCaptionTop().getTextColor());
+        textBorderColor.setBackgroundColor(_memeEditorElements.getCaptionTop().getBorderColor());
 
-        textBorderColor.setBackgroundTintList(ColorStateList.valueOf
-                (_memeEditorElements.getCaptionTop().getBorderColor()));
         allCapsSwitch.setChecked(_memeEditorElements.getCaptionTop().isAllCaps());
         textSize.setProgress(_memeEditorElements.getCaptionTop().getFontSize() - MemeLibConfig.FONT_SIZES.MIN);
 
@@ -711,32 +706,36 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     @Override
     public void onColorSelected(int id, @ColorInt int colorInt) {
         switch (id) {
-            case R.id.meme_dialog__color_picker_for_border:// border color
+            case R.id.meme_dialog__color_picker_for_border: {// border color
                 if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setBorderColor(colorInt);
                 } else {
                     _memeEditorElements.getCaptionTop().setBorderColor(colorInt);
                 }
-                FloatingActionButton fab = _dialogView.findViewById(R.id.meme_dialog__color_picker_for_border);
-                fab.setBackgroundTintList(ColorStateList.valueOf(colorInt));
+                View view = _dialogView.findViewById(R.id.meme_dialog__color_picker_for_border);
+                view.setBackgroundColor(colorInt);
                 break;
-            case R.id.meme_dialog__color_picker_for_text:// text background color
+            }
+            case R.id.meme_dialog__color_picker_for_text: {// text background color
                 if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setTextColor(colorInt);
                 } else {
                     _memeEditorElements.getCaptionTop().setTextColor(colorInt);
                 }
-                FloatingActionButton textFab = _dialogView.findViewById(R.id.meme_dialog__color_picker_for_text);
-                textFab.setBackgroundTintList(ColorStateList.valueOf(colorInt));
+                View view = _dialogView.findViewById(R.id.meme_dialog__color_picker_for_text);
+                view.setBackgroundColor(colorInt);
                 break;
-            case R.id.memecreate__moar_controls__color_picker_for_padding: // padding color
+            }
+            case R.id.memecreate__moar_controls__color_picker_for_padding: { // padding color
                 _memeEditorElements.getImageMain().setPaddingColor(colorInt);
                 _memeEditorElements.getImageMain().setPaddingColor(colorInt);
                 _paddingColor.setColor(colorInt);
                 break;
-            default:
+            }
+            default: {
                 Log.i(TAG, "Wrong selection");
                 break;
+            }
         }
         onMemeEditorObjectChanged();
 
