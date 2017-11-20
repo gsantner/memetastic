@@ -33,6 +33,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -456,45 +457,52 @@ public class MainActivity extends AppCompatActivity
             if (resultCode == RESULT_OK && data != null) {
                 Uri selectedImage = data.getData();
                 String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                String picturePath = null;
 
                 Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                if (cursor != null) {
-                    cursor.moveToFirst();
-
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    String picturePath = cursor.getString(columnIndex);
-                    cursor.close();
-
-                    if (picturePath == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                        // Retrieve image from Cloud, e.g.: Google Drive, Picasa
-                        try {
-                            ParcelFileDescriptor parcelFileDescriptor = getContentResolver().openFileDescriptor(selectedImage, "r");
-                            if (parcelFileDescriptor != null) {
-                                FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
-                                FileInputStream input = new FileInputStream(fileDescriptor);
-
-                                // Create temporary file in cache directory
-                                picturePath = File.createTempFile("image", "tmp", getCacheDir()).getAbsolutePath();
-                                FileUtils.writeFile(
-                                        new File(picturePath),
-                                        FileUtils.readCloseBinaryStream(input)
-                                );
-                            }
-                        } catch (IOException e) {
-                            // nothing we can do here, null value will be handled below
+                if (cursor != null && cursor.moveToFirst()) {
+                    for (String column : filePathColumn) {
+                        int curColIndex = cursor.getColumnIndex(column);
+                        if (curColIndex == -1) {
+                            continue;
+                        }
+                        picturePath = cursor.getString(curColIndex);
+                        if (!TextUtils.isEmpty(picturePath)) {
+                            break;
                         }
                     }
+                    cursor.close();
+                }
 
-                    if (picturePath == null) { // All checks fail
-                        ActivityUtils.get(this).showSnackBar(R.string.main__error_fail_retrieve_picture, false);
-                    } else {
-                        // String picturePath contains the path of selected Image
-                        onImageTemplateWasChosen(picturePath);
+                // Retrieve image from file descriptor / Cloud, e.g.: Google Drive, Picasa
+                if (picturePath == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    try {
+                        ParcelFileDescriptor parcelFileDescriptor = getContentResolver().openFileDescriptor(selectedImage, "r");
+                        if (parcelFileDescriptor != null) {
+                            FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+                            FileInputStream input = new FileInputStream(fileDescriptor);
+
+                            // Create temporary file in cache directory
+                            picturePath = File.createTempFile("image", "tmp", getCacheDir()).getAbsolutePath();
+                            FileUtils.writeFile(
+                                    new File(picturePath),
+                                    FileUtils.readCloseBinaryStream(input)
+                            );
+                        }
+                    } catch (IOException e) {
+                        // nothing we can do here, null value will be handled below
                     }
                 }
-            } else {
-                ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
+
+                // Finally check if we got something
+                if (picturePath == null) {
+                    ActivityUtils.get(this).showSnackBar(R.string.main__error_fail_retrieve_picture, false);
+                } else {
+                    onImageTemplateWasChosen(picturePath);
+                }
             }
+        } else {
+            ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
         }
 
         if (requestCode == REQUEST_TAKE_CAMERA_PICTURE) {
@@ -658,9 +666,9 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    //########################
-    //## Single line overrides
-    //########################
+//########################
+//## Single line overrides
+//########################
 
 
     @Override
@@ -738,7 +746,7 @@ public class MainActivity extends AppCompatActivity
         createItem.setChecked(true);
     }
 
-    public void recreateFragmentsAfterUnhiding(){
+    public void recreateFragmentsAfterUnhiding() {
         _viewPager.getAdapter().notifyDataSetChanged();
     }
 }

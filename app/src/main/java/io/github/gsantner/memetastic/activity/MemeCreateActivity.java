@@ -160,7 +160,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         if (savedInstanceState != null
                 && savedInstanceState.containsKey("captionPosition")
                 && savedInstanceState.containsKey("captionEditBar")
-                && savedInstanceState.containsKey("captionText")){
+                && savedInstanceState.containsKey("captionText")) {
             _isBottom = savedInstanceState.getBoolean("captionPosition");
             _editBar.setVisibility(savedInstanceState.getBoolean("captionEditBar") ?
                     View.VISIBLE : View.GONE);
@@ -346,10 +346,10 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     @OnTouch(R.id.memecreate__activity__image)
     public boolean onImageTouched(View view, MotionEvent event) {
         if (_editBar.getVisibility() == View.VISIBLE &&
-                !_create_caption.getText().toString().isEmpty()){
+                !_create_caption.getText().toString().isEmpty()) {
             onMemeEditorObjectChanged();
         }
-        if (event.getAction() == MotionEvent.ACTION_DOWN){
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
             float _heightOfPic = view.getMeasuredHeight();
             float _heightOfEvent = event.getY();
 
@@ -377,7 +377,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     }
 
     @OnClick(R.id.settings_caption)
-    public void openSettingsDialog(){
+    public void openSettingsDialog() {
         ActivityUtils.get(this).hideSoftKeyboard();
         _dialogView = View.inflate(this, R.layout.text_settings, null);
 
@@ -400,7 +400,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     }
 
     @OnClick(R.id.done_caption)
-    public void settingsDone(){
+    public void settingsDone() {
         _editBar.setVisibility(View.GONE);
         ActivityUtils.get(this).hideSoftKeyboard();
         onMemeEditorObjectChanged();
@@ -526,7 +526,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         }
     }
 
-    private void initDialogViews(View view){
+    private void initDialogViews(View view) {
         SeekBar textSize = view.findViewById(R.id.meme_dialog__seek_font_size);
         FloatingActionButton textBackGroundColor = view.findViewById
                 (R.id.meme_dialog__color_picker_for_text);
@@ -555,18 +555,18 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         View.OnClickListener colorListeners = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.meme_dialog__color_picker_for_text:
-                        if (_isBottom){
+                        if (_isBottom) {
                             showColorDialog(view.getId(), _memeEditorElements.getCaptionBottom().getTextColor());
-                        }else {
+                        } else {
                             showColorDialog(view.getId(), _memeEditorElements.getCaptionTop().getTextColor());
                         }
                         break;
                     case R.id.meme_dialog__color_picker_for_border:
-                        if (_isBottom){
+                        if (_isBottom) {
                             showColorDialog(view.getId(), _memeEditorElements.getCaptionBottom().getBorderColor());
-                        }else {
+                        } else {
                             showColorDialog(view.getId(), _memeEditorElements.getCaptionTop().getBorderColor());
                         }
                 }
@@ -580,10 +580,10 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         fontDropDown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (_isBottom){
+                if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setFont((MemeData.Font)
                             parent.getSelectedItem());
-                }else {
+                } else {
                     _memeEditorElements.getCaptionTop().setFont((MemeData.Font)
                             parent.getSelectedItem());
                 }
@@ -601,9 +601,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         textSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (_isBottom){
+                if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
-                }else {
+                } else {
                     _memeEditorElements.getCaptionTop().setFontSize(progress + MemeLibConfig.FONT_SIZES.MIN);
                 }
                 onMemeEditorObjectChanged();
@@ -624,9 +624,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         allCapsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (_isBottom){
+                if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setAllCaps(isChecked);
-                }else {
+                } else {
                     _memeEditorElements.getCaptionTop().setAllCaps(isChecked);
                 }
                 onMemeEditorObjectChanged();
@@ -649,23 +649,27 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         View.OnClickListener colorListener = new View.OnClickListener() {
             public void onClick(View v) {
                 showColorDialog(R.id.memecreate__moar_controls__color_picker_for_padding,
-                                  _memeEditorElements.getImageMain().getPaddingColor());
+                        _memeEditorElements.getImageMain().getPaddingColor());
                 onMemeEditorObjectChanged();
             }
         };
 
         colorPickerPadding.setOnClickListener(colorListener);
 
-        seekPaddingSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-              @Override
-              public void onStartTrackingTouch(SeekBar seekBar){}
-              @Override
-              public void onStopTrackingTouch(SeekBar seekBar){}
-              @Override
-              public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                  _memeEditorElements.getImageMain().setPadding(progress);
-                  onMemeEditorObjectChanged();
-              }
+        seekPaddingSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                _memeEditorElements.getImageMain().setPadding(progress);
+                onMemeEditorObjectChanged();
+            }
         });
         rotateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -692,18 +696,18 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     public void onColorSelected(int id, @ColorInt int colorInt) {
         switch (id) {
             case R.id.meme_dialog__color_picker_for_border:// border color
-                if (_isBottom){
+                if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setBorderColor(colorInt);
-                }else {
+                } else {
                     _memeEditorElements.getCaptionTop().setBorderColor(colorInt);
                 }
                 FloatingActionButton fab = _dialogView.findViewById(R.id.meme_dialog__color_picker_for_border);
                 fab.setBackgroundTintList(ColorStateList.valueOf(colorInt));
                 break;
             case R.id.meme_dialog__color_picker_for_text:// text background color
-                if (_isBottom){
+                if (_isBottom) {
                     _memeEditorElements.getCaptionBottom().setTextColor(colorInt);
-                }else {
+                } else {
                     _memeEditorElements.getCaptionTop().setTextColor(colorInt);
                 }
                 FloatingActionButton textFab = _dialogView.findViewById(R.id.meme_dialog__color_picker_for_text);
@@ -813,9 +817,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     @OnTextChanged(value = R.id.create_caption, callback = OnTextChanged.Callback.TEXT_CHANGED)
     public void onCaptionChanged(CharSequence text) {
-        if (_isBottom){
+        if (_isBottom) {
             _memeEditorElements.getCaptionBottom().setText(text.toString());
-        }else {
+        } else {
             _memeEditorElements.getCaptionTop().setText(text.toString());
         }
         onMemeEditorObjectChanged();
