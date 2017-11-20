@@ -67,11 +67,17 @@ public class MemeEditorElements implements Serializable {
         private int _textColor = MemeLibConfig.MEME_COLORS.DEFAULT_TEXT;
         private int _borderColor = MemeLibConfig.MEME_COLORS.DEFAULT_BORDER;
         private boolean _allCaps = true;
+        private String _text = "";
 
         public EditorCaption(MemeData.Font font, int positionType) {
             _font = font;
+
+            // TODO: Really load this from config if possible
             _captionConf = new MemeConfig.Caption();
             _captionConf.setPositionType(positionType);
+            _captionConf.setText("");
+            // end to-do
+            _text = _captionConf.getText();
         }
 
         public EditorCaption(MemeData.Font font, MemeConfig.Caption captionConf) {
@@ -141,11 +147,11 @@ public class MemeEditorElements implements Serializable {
         }
 
         public String getText() {
-            return _captionConf.getText();
+            return _text;
         }
 
         public void setText(String text) {
-            _captionConf.setText(text);
+            _text = text;
         }
 
         @Override

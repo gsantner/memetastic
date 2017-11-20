@@ -109,4 +109,6 @@
     <string name="edit_title">Titel editieren</string>
     <string name="hide">Verstecken</string>
     <string name="unhide">Wieder einblenden</string>
+    <string name="creator__hint_caption">Text eingeben</string>
+    <string name="empty_caption_hint">Hier tippen um Caption einzufügen</string>
 </resources>

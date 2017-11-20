@@ -18,6 +18,29 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
+            android:text="Font" />
+
+        <Spinner
+            android:id="@+id/meme_dialog__dropdown_font"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_weight="70"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_1"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/AppTheme.MemeCreatorCaptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:text="@string/creator__size" />
 
         <SeekBar
@@ -100,28 +123,5 @@
             android:layout_gravity="end"
             android:layout_weight="70"
             android:checked="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_1"
-        android:gravity="center_vertical"
-        android:weightSum="100">
-
-        <TextView
-            style="@style/AppTheme.MemeCreatorCaptionText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:text="Font" />
-
-        <Spinner
-            android:id="@+id/meme_dialog__dropdown_font"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:layout_weight="80"
-            android:spinnerMode="dropdown" />
     </LinearLayout>
 </LinearLayout>

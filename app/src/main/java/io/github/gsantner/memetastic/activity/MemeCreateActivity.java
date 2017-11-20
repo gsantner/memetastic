@@ -19,12 +19,15 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
@@ -36,6 +39,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -156,6 +160,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             }
             initMemeSettings(savedInstanceState);
             initMoarControlsContainer();
+            initCaptionButtons();
         }
         if (savedInstanceState != null
                 && savedInstanceState.containsKey("captionPosition")
@@ -166,6 +171,13 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                     View.VISIBLE : View.GONE);
             _create_caption.setText(savedInstanceState.getString("captionText"));
         }
+    }
+
+    private void initCaptionButtons() {
+        final ImageButton buttonTextSettings = findViewById(R.id.settings_caption);
+        final ImageButton buttonOk = findViewById(R.id.done_caption);
+        buttonTextSettings.setColorFilter(R.color.black);
+        buttonOk.setColorFilter(R.color.black);
     }
 
 
@@ -314,6 +326,11 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             return;
         }
 
+        if (_editBar.getVisibility() != View.GONE) {
+            settingsDone();
+            return;
+        }
+
         // Auto save if option checked
         if (hasTextInput && _app.settings.isAutoSaveMeme()) {
             if (saveMemeToFilesystem(false)) {
@@ -345,17 +362,16 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     @OnTouch(R.id.memecreate__activity__image)
     public boolean onImageTouched(View view, MotionEvent event) {
-        if (_editBar.getVisibility() == View.VISIBLE &&
-                !_create_caption.getText().toString().isEmpty()) {
+        if (_editBar.getVisibility() == View.VISIBLE && !_create_caption.getText().toString().isEmpty()) {
             onMemeEditorObjectChanged();
         }
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            float _heightOfPic = view.getMeasuredHeight();
-            float _heightOfEvent = event.getY();
+            float heightOfPic = view.getMeasuredHeight();
+            float heightOfEvent = event.getY();
 
-            int _position = (int) (_heightOfEvent / _heightOfPic * 100);
+            int position = (int) (heightOfEvent / heightOfPic * 100);
 
-            _isBottom = _position >= 50;
+            _isBottom = position >= 50;
 
             _editBar.setVisibility(View.VISIBLE);
 
@@ -429,10 +445,12 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         switch (item.getItemId()) {
             case R.id.action_share: {
+                recreateImage(true);
                 _app.shareBitmapToOtherApp(_lastBitmap, this);
                 return true;
             }
             case R.id.action_save: {
+                recreateImage(true);
                 saveMemeToFilesystem(true);
                 return true;
             }
@@ -770,12 +788,19 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         for (MemeEditorElements.EditorCaption caption : _memeEditorElements.getCaptions()) {
             String textString = caption.isAllCaps() ? caption.getText().toUpperCase() : caption.getText();
 
-            textString = textString.isEmpty() ? getString(R.string.empty_caption_hint) : textString;
+            if (TextUtils.isEmpty(textString)) {
+                textString = getString(R.string.empty_caption_hint);
+                paint.setTextSize((int) (scale * caption.getFontSize() * 5 / 8));
+                paint.setTypeface(caption.getFont().typeFace);
+                paint.setColor(caption.getBorderColor());
+                paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            } else {
+                paint.setTextSize((int) (scale * caption.getFontSize()));
+                paint.setTypeface(caption.getFont().typeFace);
+                paint.setColor(caption.getBorderColor());
+                paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            }
 
-            paint.setTextSize((int) (caption.getFontSize() * scale));
-            paint.setTypeface(caption.getFont().typeFace);
-            paint.setColor(caption.getBorderColor());
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
 
             // set text width to canvas width minus 16dp padding
             int textWidth = canvas.getWidth() - (int) (16 * scale);
@@ -832,6 +857,18 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         Bitmap bmp = makeMemeImageFromElements(this, _memeEditorElements);
         _imageEditView.setImageBitmap(bmp);
         _lastBitmap = bmp;
+    }
+
+    // createForSaving == true will make template text elements empty
+    public void recreateImage(boolean createForSaving) {
+        if (createForSaving) {
+            for (MemeEditorElements.EditorCaption caption : _memeEditorElements.getCaptions()) {
+                if (TextUtils.isEmpty(caption.getText())) {
+                    caption.setText(" ");
+                }
+            }
+        }
+        onMemeEditorObjectChanged();
     }
 
     @OnClick(R.id.memecreate__moar_controls__layout)
