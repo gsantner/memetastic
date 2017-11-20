@@ -255,6 +255,7 @@ public class MemeConfig implements Serializable {
         public static final int FONT_TYPE__COMIC = 1;
 
         private String _title;
+        private String _description;
         private String _filename;
         private int _fontType;
 
@@ -262,6 +263,7 @@ public class MemeConfig implements Serializable {
             setTitle(json.getString("title"));
             setFilename(json.getString("filename"));
             setFontType(json.optInt("font_type", 0));
+            setDescription(json.optString("description", ""));
             return this;
         }
 
@@ -271,6 +273,9 @@ public class MemeConfig implements Serializable {
             root.put("filename", getFilename());
             if (getFontType() != 0) {
                 root.put("font_type", getFontType());
+            }
+            if (!TextUtils.isEmpty(getDescription())) {
+                root.put("description", getDescription());
             }
             return root;
         }
@@ -300,6 +305,14 @@ public class MemeConfig implements Serializable {
 
         public void setFontType(int fontType) {
             _fontType = fontType;
+        }
+
+        public String getDescription() {
+            return _description;
+        }
+
+        public void setDescription(String description) {
+            _description = description;
         }
     }
 

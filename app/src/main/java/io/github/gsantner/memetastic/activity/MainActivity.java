@@ -501,8 +501,6 @@ public class MainActivity extends AppCompatActivity
                     onImageTemplateWasChosen(picturePath);
                 }
             }
-        } else {
-            ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
         }
 
         if (requestCode == REQUEST_TAKE_CAMERA_PICTURE) {

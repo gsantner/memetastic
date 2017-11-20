@@ -1,6 +1,16 @@
 package io.github.gsantner.memetastic.ui;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.support.annotation.NonNull;
+import android.text.ParcelableSpan;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
+import android.text.style.TypefaceSpan;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +42,7 @@ public class FontItemAdapter extends ArrayAdapter<MemeData.Font> {
     }
 
     @Override
+    @NonNull
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = getTheView(position, convertView, parent);
         if (_showCustomSelectedText) {
@@ -41,21 +52,43 @@ public class FontItemAdapter extends ArrayAdapter<MemeData.Font> {
     }
 
     @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+    public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
         return getTheView(position, convertView, parent);
     }
 
     // set how the item should look like (rendered in own conf)
     private View getTheView(int position, View convertView, ViewGroup parent) {
-        String fontName = getItem(position).conf.getTitle();
-        if (fontName.contains("_") && !fontName.endsWith("_")) ;
-        fontName = fontName.substring(fontName.indexOf('_') + 1);
+        MemeData.Font item = getItem(position);
+        TextView textview = (TextView) super.getDropDownView(position, convertView, parent);
+        if (item != null && item.conf != null) {
+            String fontName = item.conf.getTitle();
+            String fontDescription = item.conf.getDescription();
 
-        TextView view = (TextView) super.getDropDownView(position, convertView, parent);
-        view.setTypeface(getItem(position).typeFace);
-        view.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
-        view.setText(fontName);
-        return view;
+            if (fontName.contains("_") && !fontName.endsWith("_")) ;
+            fontName = fontName.substring(fontName.indexOf('_') + 1);
+
+            textview.setTypeface(item.typeFace);
+            textview.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+
+            SpannableString spannedText = null;
+            if (TextUtils.isEmpty(fontDescription)) {
+                spannedText = new SpannableString(fontName);
+            } else {
+                fontName += "\n" + fontDescription;
+                spannedText = new SpannableString(fontName);
+                ParcelableSpan[] spanMods = new ParcelableSpan[]{
+                        new RelativeSizeSpan(0.7f),
+                        new ForegroundColorSpan(Color.GRAY),
+                        new StyleSpan(Typeface.NORMAL),
+                        new TypefaceSpan("sans-serif")
+                };
+                for (ParcelableSpan spanMod : spanMods) {
+                    spannedText.setSpan(spanMod, fontName.indexOf("\n"), fontName.length(), 0);
+                }
+            }
+            textview.setText(spannedText);
+        }
+        return textview;
     }
 
     public void setSelectedFont(Spinner spinner, MemeData.Font font) {
