@@ -1,3 +1,9 @@
+### v1.3.1
+- Include tags in search
+- Fix loading from some gallery apps
+- Improved Editor Text-settings usability
+- Add description field to font selection
+
 ### v1.3.0
 - Translated into many more languages
 - Search memes
