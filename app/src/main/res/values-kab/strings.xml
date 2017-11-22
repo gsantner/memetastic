@@ -1,0 +1,132 @@
+<resources>
+
+    <!-- main -->
+    <string name="main__navdrawer__open">Ldi umuɣ n tunigin</string>
+    <string name="main__navdrawer__close">Ffer umuɣ n tunigin</string>
+
+    <string name="main__save_meme">Sekles amemesis</string>
+    <string name="main__share_meme">Bḍu amemesis</string>
+    <string name="main__create_meme">Rnu amemesis</string>
+    <string name="main__delete_meme">Kkes amemesis</string>
+
+    <string name="main__memecat__humans">Amdan</string>
+    <string name="main__memecat__cartoon">Unuɣ yettḥerriken</string>
+    <string name="main__memecat__animals">Iɣersiwen</string>
+    <string name="main__memecat__custom">Udmawan</string>
+    <string name="main__memecat__rage">Ṛṛaj</string>
+
+    <string name="memelist_data_mode__saved">Ttwaskelsen</string>
+    <string name="memelist_data_mode__favs">Inurifen</string>
+    <string name="memelist_data_mode__create">Rnu</string>
+    <string name="memelist_data_mode__hidden">Yeffer</string>
+
+    <string name="memelist_view_mode__rows_with_title">Izirigen n izwal</string>
+    <string name="memelist_view_mode__picture_grid">Iẓiki n tugniwin</string>
+
+    <string name="main__search_meme">Nadi amemesis</string>
+    <string name="main__get_picture_from_gallery">Ddem tugna si timidelt</string>
+    <string name="main__get_picture_from_camera">Ṭef tawlaft</string>
+    <string name="main__error_camera_cannot_start">Urizmir ara ad isenker asagu n tiwlafin</string>
+    <string name="main__error_no_picture_selected">Ula d yiwet n tugna ur tettwafren.</string>
+    <string name="main__error_fail_retrieve_picture">Ur izmir ara ad d-isali tugna seg umḍiq n usekles.</string>
+    <string name="main__share_meme_prompt">Bḍu amemesis-ik s…</string>
+
+    <string name="main__donate">Mudd</string>
+    <string name="main__recommend_app">Welleh</string>
+    <string name="changelog">Amaynut n usnas</string>
+    <string name="main__exit">Ffeɣ</string>
+    <string name="main__yes">ih</string>
+
+    <string name="main__nodata__favourites">Ulac yakan inurifen.\n
+       Seqdec taqeffalt itri ɣef tineɣrufin n umemesis i tmerna-nsen ar inurifen.</string>
+    <string name="main__nodata__custom_templates">Ulac taneɣruft tudmawant.\n
+       Tzemreḍ ad tserseḍ tugniwin tineɣrufin deg umḍiq-agi : %1$s</string>
+    <string name="main__nodata__saved">Ulac imemesisen yettwaskelsen.\n
+ Seqdec taqeffalt n usekles deg ufeggag n ufella seld abeddeln umemesis.</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">Senned tikelt nniḍen akken ad teffɣeḍ si teẓrigtn umemesis-agi. Amemesis ad iṛuḥ ma yella ur yettwasekles ara yakan.</string>
+    <string name="creator__saved_successfully_message">Amemesis-agi yettwasekles akken iwata ɣef yibenk-ik. Tebɣiḍ tura ad teffɣeḍ si teẓregt n wagi?</string>
+    <string name="creator__text_size">Teɣzi n uḍris</string>
+    <string name="creator__text_color">Ini n uḍris</string>
+    <string name="creator__border_color">Ini n rrif</string>
+    <string name="creator__saved_successfully">Asekles yedda !</string>
+    <string name="creator__hint_top_caption">Aḍris n ufella</string>
+    <string name="creator__hint_bottom_caption">Azwel asnawan</string>
+    <string name="creator__font">Tasefsit</string>
+    <string name="creator__keep_editing">Kemmel taẓrigt</string>
+    <string name="creator__text">Aḍris</string>
+    <string name="creator__size">Teɣzi</string>
+    <string name="creator__background">Agilal</string>
+    <string name="creator__border">Rrif</string>
+    <string name="creator__picture">Tugna</string>
+
+    <!-- Info -->
+    <string name="about">Ɣef</string>
+    <string name="developed_by">Yefnefl-it</string>
+    <string name="additional_contact">Ugar n telɣut</string>
+    <string name="licenses">Iselkinen</string>
+    <string name="show_licenses">Sken iselkinen</string>
+    <string name="contributors">Imttekkiyen</string>
+    <string name="more_information">Ugar n telɣut</string>
+    <string name="show_app_license">Sken aselkin GNU GPLv3</string>
+    <string name="show_third_party_licenses">Sken iselkinen nniḍen</string>
+    <string name="miscellaneous">Ayen nniḍen</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">Ismenyifen</string>
+    <string name="settings__all_caps">Akk s usekkil meqqren</string>
+    <string name="settings__caps_off">Isekkilen meqqren nsan</string>
+    <string name="settings__rotate">Tuzya</string>
+    <string name="pref_title__render_quality_editor_percent">Taɣara n tuɣalin</string>
+    <string name="settings__cleanup_thumbnails">Sfeḍ tinfulin</string>
+    <string name="settings__pref_columns_portrait">Tigejda s teɣzi</string>
+    <string name="settings__pref_columns_landscape">Tigejda s tehri</string>
+    <string name="pref_title__appearance">Udem</string>
+    <string name="pref_title__size">Teɣzi</string>
+    <string name="pref_title__memelist_data_mode">Askar amezwer</string>
+    <string name="pref_summary__memelist_data_mode">Askar amezwer ad d-yeldi di tnekra (Rnu, d Anurif neɣ yettwasekles)</string>
+    <string name="pref_title__functionality">Tamahilt</string>
+    <string name="pref_summary__auto_save_meme">Sekles s wudem awurman amemesis ma yella tsenndeḍ ɣef tuɣalin udiɣ yella wayen turiḍ</string>
+    <string name="pref_title__auto_save_meme">Sekles ticki tsendeḍ ɣef Tuɣalin</string>
+    <string name="pref_summary__is_shuffle_meme_categories">Sexleḍ tabdart n imemesisen seld afran n taggayt</string>
+    <string name="pref_title__is_shuffle_meme_categories">Sexleḍ tabdart n imemesisen</string>
+    <string name="creator__padding">Tama tagensant</string>
+    <string name="pref_title__overview">Taskant</string>
+    <string name="pref_title__editor">Amaẓrag</string>
+    <string name="pref_summary__is_statusbar_hidden">Asnas yettwaselkam deg ugdil aččuran</string>
+    <string name="pref_title__is_statusbar_hidden">Ffer afeggag n waddad</string>
+    <string name="pref_summary__picture_quality__percent" formatted="false">Taɣara n teɣzi n tugniwin. Skud azal meqqer, Skud yettawi akud akken ad d-yali. Akken yezmer yibenk akked teɣzi n tugna, yezmer daɣen asnas ur iteddu ara akken tettraǧuḍ s wazal nnig n 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Taɣara n tenfult</string>
+    <string name="pref_summary__memelist_view_type">Fren askar n uskan (iẓiki n tugniwin, izwar s yizirigen)</string>
+    <string name="pref_title__memelist_view_type">Askar n uskan</string>
+    <string name="pref_title__is_show_in_gallery">Sken timidelt n yibenk</string>
+
+    <!-- Language -->
+    <string name="pref_title__language">Tutlayt</string>
+    <string name="pref_desc__language">Beddel isem n tutlayt n ugrudem. Yessefk ad talseḍ tanekra n usnas akken teddu tutlaut tamaynut</string>
+    <string name="error_cannot_create_save_dir">Tuccḍa : Ur izmir ara ad yernu akaram n usekles</string>
+    <string name="error_storage_permission">Asnas yesra tasiregt-ik akken ad yekcem ar uḍiq n usekles n yibenk akken ad isekles imemesisen d tineɣrufin-nsen</string>
+    <string name="main__memecat__other">Wayeḍ</string>
+    <string name="downloading">Asider</string>
+    <string name="downloading_failed">Asider yecceḍ</string>
+    <string name="unzipping">Sefruri</string>
+    <string name="downloading_success">Asider yedda</string>
+    <string name="download_latest_assets_message">Ad d-yeglu s usider n tsefsiyin n isekkilen akked tineɣrufin n imemesisen (azal n  20MAṬ n isefka).</string>
+    <string name="download_latest_assets_message_more">Tzemreḍ daɣen ad tsenkreḍ tiririt n tiɣbula tineggura seg iɣewwaṛen.</string>
+    <string name="download_latest_assets_title">Sider tiɣbula tineggura yellan</string>
+    <string name="checking_assets_for_update">Senqed ma yella tiɣbula tinegguran llant</string>
+    <string name="palette_colors">Agalis n initen</string>
+    <string name="preset_colors">Initen imezwar</string>
+    <string name="select_color">Fren ini</string>
+
+    <string name="code">Tangalt</string>
+
+    <!--Meme pop up menu strings-->
+    <string name="favourite">Inurifen</string>
+    <string name="remove_favourite">Kkes anurif</string>
+    <string name="show_title">Sken azwel</string>
+    <string name="edit_title">Beddelazwel</string>
+    <string name="hide">Ffer</string>
+    <string name="unhide">Sken</string>
+</resources>
