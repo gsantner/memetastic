@@ -44,7 +44,7 @@ public class NetworkUtils {
         return downloadFile(url, out, null);
     }
 
-    public static boolean downloadFile(final String url, final File out, final Callback<Float> progressCallback) {
+    public static boolean downloadFile(final String url, final File out, final Callback.a1<Float> progressCallback) {
         try {
             return downloadFile(new URL(url), out, progressCallback);
         } catch (MalformedURLException e) {
@@ -54,7 +54,7 @@ public class NetworkUtils {
         }
     }
 
-    public static boolean downloadFile(final URL url, final File outFile, final Callback<Float> progressCallback) {
+    public static boolean downloadFile(final URL url, final File outFile, final Callback.a1<Float> progressCallback) {
         InputStream input = null;
         OutputStream output = null;
         HttpURLConnection connection = null;
@@ -77,7 +77,7 @@ public class NetworkUtils {
                 output.write(data, 0, count);
                 if (invLength != -1f && progressCallback != null) {
                     written += count;
-                    progressCallback.onCallback(written * invLength);
+                    progressCallback.callback(written * invLength);
                 }
             }
 

@@ -1,17 +1,17 @@
 package io.github.gsantner.memetastic.activity;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
 import android.support.design.widget.AppBarLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import net.gsantner.opoc.preference.GsPreferenceFragmentCompat;
+import net.gsantner.opoc.util.AppSettingsBase;
 
 import java.util.Date;
 
@@ -23,7 +23,7 @@ import io.github.gsantner.memetastic.service.ThumbnailCleanupTask;
 import io.github.gsantner.memetastic.util.AppSettings;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
-public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class SettingsActivity extends AppCompatActivity {
     static final int ACTIVITY_ID = 10;
 
     static class RESULT {
@@ -58,7 +58,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
     }
 
     protected void showFragment(String tag, boolean addToBackStack) {
-        PreferenceFragment fragment = (PreferenceFragment) getFragmentManager().findFragmentByTag(tag);
+        GsPreferenceFragmentCompat fragment = (GsPreferenceFragmentCompat) getSupportFragmentManager().findFragmentByTag(tag);
         if (fragment == null) {
             switch (tag) {
                 case SettingsFragmentMaster.TAG:
@@ -68,30 +68,11 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                     break;
             }
         }
-        FragmentTransaction t = getFragmentManager().beginTransaction();
+        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
         if (addToBackStack) {
             t.addToBackStack(tag);
         }
         t.replace(R.id.settings__fragment_container, fragment, tag).commit();
-    }
-
-    @Override
-    protected void onResume() {
-        appSettings.registerPreferenceChangedListener(this);
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        appSettings.unregisterPreferenceChangedListener(this);
-        super.onPause();
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (activityRetVal == RESULT.NOCHANGE) {
-            activityRetVal = RESULT.CHANGE;
-        }
     }
 
     @Override
@@ -100,39 +81,56 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         super.onStop();
     }
 
-    public static class SettingsFragmentMaster extends PreferenceFragment {
+    public static class SettingsFragmentMaster extends GsPreferenceFragmentCompat {
         public static final String TAG = "SettingsFragmentMaster";
 
-        public void onCreate(Bundle savedInstances) {
-            super.onCreate(savedInstances);
-            getPreferenceManager().setSharedPreferencesName("app");
-            addPreferencesFromResource(R.xml.preferences_master);
+        @Override
+        protected void onPreferenceChanged(SharedPreferences prefs, String key) {
+            if (activityRetVal == RESULT.NOCHANGE) {
+                activityRetVal = RESULT.CHANGE;
+            }
         }
 
         @Override
+        public int getPreferenceResourceForInflation() {
+            return R.xml.preferences_master;
+        }
+
+        @Override
+        public String getFragmentTag() {
+            return TAG;
+        }
+
+        @Override
+        protected AppSettingsBase getAppSettings(Context context) {
+            return new AppSettings(context);
+        }
+
+
         @SuppressLint("ApplySharedPref")
-        public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
+        @Override
+        public Boolean onPreferenceClicked(android.support.v7.preference.Preference preference) {
             if (isAdded() && preference.hasKey()) {
-                Context context = getActivity().getApplicationContext();
+                Context context = getActivity();
                 AppSettings settings = AppSettings.get();
                 String key = preference.getKey();
 
 
-                if (key.equals(getString(R.string.pref_key__memelist_view_type))) {
+                if (eq(key, R.string.pref_key__memelist_view_type)) {
 
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
-                if (key.equals(getString(R.string.pref_key__cleanup_thumbnails))) {
+                if (eq(key, R.string.pref_key__cleanup_thumbnails)) {
                     new ThumbnailCleanupTask(context).start();
                     return true;
                 }
-                if (key.equals(getString(R.string.pref_key__is_overview_statusbar_hidden))) {
+                if (eq(key, R.string.pref_key__is_overview_statusbar_hidden)) {
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
-                if (key.equals(getString(R.string.pref_key__language))) {
+                if (eq(key, R.string.pref_key__language)){
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
-                if (key.equals(getString(R.string.pref_key__download_assets_try))) {
+                if (eq(key, R.string.pref_key__download_assets_try)) {
                     if (PermissionChecker.doIfPermissionGranted(getActivity())) {
                         Date zero = new Date(0);
                         settings.setLastArchiveCheckDate(zero);
@@ -143,7 +141,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                     }
                 }
             }
-            return super.onPreferenceTreeClick(screen, preference);
+            return null;
         }
     }
 }

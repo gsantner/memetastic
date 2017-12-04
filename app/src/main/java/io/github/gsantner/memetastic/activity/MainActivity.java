@@ -45,8 +45,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 import net.gsantner.opoc.util.FileUtils;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -122,6 +122,8 @@ public class MainActivity extends AppCompatActivity
     TextView _infoBarText;
 
     App app;
+    private AppSettings _appSettings;
+    private ActivityUtils _activityUtils;
     private String cameraPictureFilepath = "";
     String[] _tagKeys, _tagValues;
     private int _currentMainMode = 0;
@@ -133,8 +135,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ContextUtils.get().setAppLanguage(AppSettings.get().getLanguage());
-        if (AppSettings.get().isOverviewStatusBarHidden()) {
+        _appSettings = new AppSettings(this);
+        _activityUtils = new ActivityUtils(this);
+        _activityUtils.setAppLanguage(_appSettings.getLanguage());
+        if (_appSettings.isOverviewStatusBarHidden()) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         setContentView(R.layout.main__activity);
@@ -156,18 +160,18 @@ public class MainActivity extends AppCompatActivity
 
 
         _recyclerMemeList.setHasFixedSize(true);
-        _recyclerMemeList.setItemViewCacheSize(app.settings.getGridColumnCountPortrait() * app.settings.getGridColumnCountLandscape() * 2);
+        _recyclerMemeList.setItemViewCacheSize(_appSettings.getGridColumnCountPortrait() * _appSettings.getGridColumnCountLandscape() * 2);
         _recyclerMemeList.setDrawingCacheEnabled(true);
         _recyclerMemeList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         _recyclerMemeList.addItemDecoration(new GridDecoration(1.7f));
 
-        if (AppSettings.get().getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
+        if (_appSettings.getMemeListViewType() == MemeItemAdapter.VIEW_TYPE__ROWS_WITH_TITLE) {
             RecyclerView.LayoutManager recyclerLinearLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             _recyclerMemeList.setLayoutManager(recyclerLinearLayout);
         } else {
-            int gridColumns = ContextUtils.get().isInPortraitMode()
-                    ? app.settings.getGridColumnCountPortrait()
-                    : app.settings.getGridColumnCountLandscape();
+            int gridColumns = _activityUtils.isInPortraitMode()
+                    ? _appSettings.getGridColumnCountPortrait()
+                    : _appSettings.getGridColumnCountLandscape();
             RecyclerView.LayoutManager recyclerGridLayout = new GridLayoutManager(this, gridColumns);
 
             _recyclerMemeList.setLayoutManager(recyclerGridLayout);
@@ -180,11 +184,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
-
         _tabLayout.setupWithViewPager(_viewPager);
-
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
-
         _infoBarProgressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
 
         //
@@ -195,17 +196,14 @@ public class MainActivity extends AppCompatActivity
 
         // Show first start dialog / changelog
         try {
-            SimpleMarkdownParser mdParser = SimpleMarkdownParser.get().setDefaultSmpFilter(SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW);
-            if (app.settings.isAppFirstStart(true)) {
-                String html = mdParser.parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"), "").getHtml();
-                html += mdParser.parse(getResources().openRawResource(R.raw.licenses_3rd_party), "").getHtml();
+            if (_appSettings.isAppCurrentVersionFirstStart(true)) {
+                SimpleMarkdownParser smp = SimpleMarkdownParser.get().setDefaultSmpFilter(SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW);
+                String html = "";
+                html += smp.parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"), "").getHtml();
+                html += "<br/><br/><br/><big><big>" + getString(R.string.changelog) + "</big></big><br/>" + smp.parse(getResources().openRawResource(R.raw.changelog), "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG);
+                html += "<br/><br/><br/><big><big>" + getString(R.string.licenses) + "</big></big><br/>" + smp.parse(getResources().openRawResource(R.raw.licenses_3rd_party), "").getHtml();
 
-                ActivityUtils.get(this).showDialogWithHtmlTextView(R.string.licenses, html);
-            } else if (app.settings.isAppCurrentVersionFirstStart()) {
-                mdParser.parse(
-                        getResources().openRawResource(R.raw.changelog), "",
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG);
-                ActivityUtils.get(this).showDialogWithHtmlTextView(R.string.changelog, mdParser.getHtml());
+                _activityUtils.showDialogWithHtmlTextView(R.string.licenses, html);
             }
 
         } catch (IOException e) {

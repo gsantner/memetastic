@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 
-import net.gsantner.opoc.util.Callback;
 import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.NetworkUtils;
 import net.gsantner.opoc.util.ZipUtils;
@@ -127,13 +126,11 @@ public class AssetUpdater {
                 _lastPercent = -1;
                 AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, 0);
                 file = new File(file, FORMAT_MINUTE.format(date) + ".memetastic.zip");
-                ok = NetworkUtils.downloadFile(URL_ARCHIVE_ZIP, file, new Callback<Float>() {
-                    public void onCallback(Float aFloat) {
-                        int perc = (int) (aFloat * 100);
-                        if (_lastPercent != perc) {
-                            _lastPercent = (perc);
-                            AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, _lastPercent * 3 / 4);
-                        }
+                ok = NetworkUtils.downloadFile(URL_ARCHIVE_ZIP, file, (aFloat) -> {
+                    int perc = (int) (aFloat * 100);
+                    if (_lastPercent != perc) {
+                        _lastPercent = (perc);
+                        AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, _lastPercent * 3 / 4);
                     }
                 });
 
@@ -141,14 +138,13 @@ public class AssetUpdater {
                 _lastPercent = -1;
                 AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75);
                 if (ok) {
-                    ok = ZipUtils.unzip(file, templatesDir, true, new Callback<Float>() {
-                        public void onCallback(Float aFloat) {
-                            int perc = (int) (aFloat * 100);
-                            if (_lastPercent != perc) {
-                                _lastPercent = perc;
-                                AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75 + _lastPercent / 4);
-                            }
+                    ok = ZipUtils.unzip(file, templatesDir, true, (aFloat) -> {
+                        int perc = (int) (aFloat * 100);
+                        if (_lastPercent != perc) {
+                            _lastPercent = perc;
+                            AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__UNZIPPING, 75 + _lastPercent / 4);
                         }
+
                     });
                 }
                 AppCast.DOWNLOAD_STATUS.send(_context, ok ? DOWNLOAD_STATUS__FINISHED : DOWNLOAD_STATUS__FAILED, 100);

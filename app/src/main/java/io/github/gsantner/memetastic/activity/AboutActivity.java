@@ -11,7 +11,7 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
-import net.gsantner.opoc.util.SimpleMarkdownParser;
+import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 
 import java.io.IOException;
 

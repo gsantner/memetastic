@@ -25,15 +25,10 @@ public class AppSettings extends AppSettingsBase {
     //#####################
     //## Methods
     //#####################
-    private AppSettings(Context context) {
+    public AppSettings(Context context) {
         super(context);
-    }
 
-    public static AppSettings get() {
-        AppSettings appSettings = new AppSettings(App.get());
-
-
-        /*
+         /*
          * Check if a MemeTastic package ID was used to build the app.
          * If you release something based on MemeTastic you will want to remove the lines below.
          * In any case: You MUST release the full source code.
@@ -50,17 +45,20 @@ public class AppSettings extends AppSettingsBase {
          */
         if (!PACKAGE_CHECKED) {
             PACKAGE_CHECKED = true;
-            String pkg = appSettings.getContext().getPackageName();
+            String pkg = _context.getPackageName();
             if (!pkg.equals("io.github.gsantner.memetastic") && !pkg.equals("io.github.gsantner.memetastic.test")) {
                 String message = "\n\n\n" +
                         "++++  WARNING: MemeTastic is licensed GPLv3.\n" +
                         "++++  If you distribute the app you MUST publish the full source code.\n" +
                         "++++  See https://github.com/gsantner/memetastic for more details.\n" +
-                        "++++  This warning is placed in util/AppSettings.java->get()\n\n\n";
+                        "++++  This warning is placed in util/AppSettings.java\n\n\n";
                 throw new RuntimeException(message);
             }
         }
-        return appSettings;
+    }
+
+    public static AppSettings get() {
+        return new AppSettings(App.get());
     }
 
     // Adds a String to a String array and cuts of the last values to match a maximal size
@@ -240,10 +238,12 @@ public class AppSettings extends AppSettingsBase {
         return value;
     }
 
-    public boolean isAppCurrentVersionFirstStart() {
+    public boolean isAppCurrentVersionFirstStart(boolean doSet) {
         int value = getInt(R.string.pref_key__app_first_start_current_version, -1);
         boolean isFirstStart = value != BuildConfig.VERSION_CODE && !BuildConfig.IS_TEST_BUILD;
-        setInt(R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
+        if (doSet) {
+            setInt(R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
+        }
         if (isFirstStart) {
             setLastArchiveCheckDate(new Date(0));
         }

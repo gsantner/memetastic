@@ -32,7 +32,7 @@ public class ZipUtils {
     }
 
     public static boolean unzip(final File zipFile, final File destRootFolder,
-                                final boolean flatten, final Callback<Float> progressCallback) {
+                                final boolean flatten, final Callback.a1<Float> progressCallback) {
         try {
             final float knownLength = progressCallback == null ? -1f : getZipLength(zipFile);
             return unzip(new FileInputStream(zipFile), destRootFolder, flatten, progressCallback, knownLength);
@@ -42,7 +42,7 @@ public class ZipUtils {
     }
 
     public static boolean unzip(final InputStream input, final File destRootFolder,
-                                final boolean flatten, final Callback<Float> progressCallback,
+                                final boolean flatten, final Callback.a1<Float> progressCallback,
                                 final float knownLength) throws IOException {
         String filename;
         final ZipInputStream in = new ZipInputStream(new BufferedInputStream(input));
@@ -70,7 +70,7 @@ public class ZipUtils {
                     out.write(buffer, 0, count);
                     if (invLength != -1f) {
                         written += count;
-                        progressCallback.onCallback(written * invLength);
+                        progressCallback.callback(written * invLength);
                     }
                 }
 
