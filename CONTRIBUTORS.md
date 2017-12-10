@@ -24,3 +24,4 @@ Where:
 * **[Laura Arjona Reina](larjona AT larjona DOT net)**<br/>~° Spanish translation
 * **[XzibitusaK]()**<br/>~° Czech translation
 * **[Iskandar Setiadi](https://github.com/freedomofkeima)**<br/>~° Indonesian translation
+* **[Nikola Perović]()**<br/>~° Serbian (Latin) translation

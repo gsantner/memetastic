@@ -1,0 +1,132 @@
+<resources>
+    <!-- This is the serbian latin variant. As it is only supported by Android 7 or above, latin is used for default serbian till there is a cyrillic translation available too -->
+
+    <!-- main -->
+    <string name="main__navdrawer__open">Otvori navigacioni panel</string>
+    <string name="main__navdrawer__close">Yatvori navigacioni panel</string>
+
+    <string name="main__save_meme">Sacuvaj Meme</string>
+    <string name="main__share_meme">Podeli Meme</string>
+    <string name="main__create_meme">Napravi Meme</string>
+    <string name="main__delete_meme">Izbrisi meme</string>
+
+    <string name="main__memecat__humans">Ljudi</string>
+    <string name="main__memecat__cartoon">Crtani filmovi</string>
+    <string name="main__memecat__animals">Zivotinje</string>
+    <string name="main__memecat__custom">Posebno</string>
+    <string name="main__memecat__rage">Ljutnja</string>
+
+    <string name="memelist_data_mode__saved">Sacuvano</string>
+    <string name="memelist_data_mode__favs">Omiljeni</string>
+    <string name="memelist_data_mode__create">Napravi</string>
+    <string name="memelist_data_mode__hidden">Sakriveno</string>
+
+    <string name="memelist_view_mode__rows_with_title">Redovi sa nazivom</string>
+    <string name="memelist_view_mode__picture_grid">Mapa Slika</string>
+
+    <string name="main__search_meme">Trazi Meme</string>
+    <string name="main__get_picture_from_gallery">Uzmi sliku iz galerije</string>
+    <string name="main__get_picture_from_camera">Uzmi sliku sa Kamere</string>
+    <string name="main__error_camera_cannot_start">Nije moguce pokrenuti kameru.</string>
+    <string name="main__error_no_picture_selected">Nijedna slika nije oznacena.</string>
+    <string name="main__error_fail_retrieve_picture">Ne mogu ucitati sliku iz memorije.</string>
+    <string name="main__share_meme_prompt">Share your Meme via…</string>
+
+    <string name="main__donate">Doniraj</string>
+    <string name="main__recommend_app">Preporuci</string>
+    <string name="changelog">Lista promena</string>
+    <string name="main__exit">Izadji</string>
+    <string name="main__yes">Da</string>
+
+    <string name="main__nodata__favourites">Nema omiljenih.\nKoristi zvezdicu od meme sablon da ga dodas u omiljene.</string>
+    <string name="main__nodata__custom_templates">Nema posebnih sablona jos.\nPostavljeni sablon slike je ovdje:%1$s</string>
+    <string name="main__nodata__saved">Nema sacuvane meme.\nKoristi gornje dugme za cuvanje da sacuvas.</string>
+
+    <!-- Creator -->
+    <string name="creator__press_back_again_to_exit">Klikni nazad ponovo da zaustavis kreiranje meme. Meme ce biti izgubljena ako nije sacuvana.</string>
+    <string name="creator__saved_successfully_message">Ovaj meme je uspjesno sacuvan. Da li zelite da prestanete uredjivanje meme sada?</string>
+    <string name="creator__text_size">Velicina teksta</string>
+    <string name="creator__text_color">Boja teksta</string>
+    <string name="creator__border_color">Boja rubova</string>
+    <string name="creator__saved_successfully">Uspjesno sacuvano!</string>
+    <string name="creator__hint_top_caption">Gornji natpis</string>
+    <string name="creator__hint_bottom_caption">Donji natpis</string>
+    <string name="creator__hint_caption">Unesi natpis</string>
+    <string name="creator__font">Font</string>
+    <string name="creator__keep_editing">Nastavi uredjivanje</string>
+    <string name="creator__text">Tekst</string>
+    <string name="creator__size">Veličina</string>
+    <string name="creator__background">Pozadina</string>
+    <string name="creator__border">Rub</string>
+    <string name="creator__picture">Slika</string>
+
+    <!-- Info -->
+    <string name="about">O ovom</string>
+    <string name="developed_by">Napravio</string>
+    <string name="additional_contact">Vise informacija</string>
+    <string name="licenses">Licence</string>
+    <string name="show_licenses">Prikayi licence</string>
+    <string name="contributors">Pomo\'nici</string>
+    <string name="more_information">Vise informacija</string>
+    <string name="show_app_license">Prikazi GNU GPLv3 licence</string>
+    <string name="show_third_party_licenses">Prikaz licence trecih lica</string>
+    <string name="miscellaneous">Ostalo</string>
+
+    <!-- Settings -->
+    <string name="settings__settings">Podesavanja</string>
+    <string name="settings__all_caps">Velika slova</string>
+    <string name="settings__caps_off">Mala slova</string>
+    <string name="settings__rotate">Rotiraj</string>
+    <string name="pref_title__render_quality_editor_percent">Kvaliter procesovanja</string>
+    <string name="settings__cleanup_thumbnails">Ocisti slicice</string>
+    <string name="settings__pref_columns_portrait">Kolone portretne</string>
+    <string name="settings__pref_columns_landscape">Kolone pejzazne</string>
+    <string name="pref_title__appearance">Izgled</string>
+    <string name="pref_title__size">Velicina</string>
+    <string name="pref_title__memelist_data_mode">Podrazumijevani mod</string>
+    <string name="pref_summary__memelist_data_mode">Podrazumijevani mod na otvaranju programa (Napravi, Omiljeno ili Sacuvano)</string>
+    <string name="pref_title__functionality">Funkcionalnost</string>
+    <string name="pref_summary__auto_save_meme">Automatski sacuvaj meme ako stisnem nazad i ima nekih unosa</string>
+    <string name="pref_title__auto_save_meme">Sačuvaj kad stisneš nazad</string>
+    <string name="pref_summary__is_shuffle_meme_categories">Promiješaj listu mema nakon odabira kategorije</string>
+    <string name="pref_title__is_shuffle_meme_categories">Promiješaj listu mema</string>
+    <string name="creator__padding">Postavljanje</string>
+    <string name="pref_title__overview">Pregled</string>
+    <string name="pref_title__editor">Uređivač</string>
+    <string name="pref_summary__is_statusbar_hidden">Sakrij status na ovom pregledu</string>
+    <string name="pref_title__is_statusbar_hidden">Sakrij status</string>
+    <string name="pref_summary__picture_quality__percent" formatted="false">Kvalitet i veličina slika. Veće veličine trebaju duže vremena da se učitaju. U zavisnosti od hardvera i veličine slike ova aplikacija možda neće raditi očekivano ako je valuta iznad 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Kvalitet sličica</string>
+    <string name="pref_summary__memelist_view_type">Postavi tip pregleda (Mapa slika, Redovi sa nazivima)</string>
+    <string name="pref_title__memelist_view_type">Tip pregleda</string>
+    <string name="pref_title__is_show_in_gallery">Prikaži galeriju uređaja</string>
+
+    <!-- Language -->
+    <string name="pref_title__language">Jezik</string>
+    <string name="pref_desc__language">Promijeni jezik ove aplikacije. Restartuj apikaciju da bi podešavanja dobila efekat.</string>
+    <string name="error_cannot_create_save_dir">Greška: Nemoguće kreirati direktorijum za meme</string>
+    <string name="error_storage_permission">Treba odobrenje da sladišti sacuvane meme i sablone</string>
+    <string name="main__memecat__other">Drugo</string>
+    <string name="downloading">Preuzimanje</string>
+    <string name="downloading_failed">Preuzimanje neuspješno</string>
+    <string name="unzipping">Raspakivanje</string>
+    <string name="downloading_success">Uspjesno preuzeto</string>
+    <string name="download_latest_assets_message">Ovo će preuzeti zadnje sablone (oko 20 MB podataka).</string>
+    <string name="download_latest_assets_message_more">Možes preuzeti zadnja sredstva manuelno u podešavanjima.</string>
+    <string name="download_latest_assets_title">Preuzmi zadnja sredstva</string>
+    <string name="checking_assets_for_update">Provjeravanje skorašnjih sredstava</string>
+    <string name="palette_colors">Paleta</string>
+    <string name="preset_colors">Prepodešavanja</string>
+    <string name="select_color">izaberi boju</string>
+
+    <string name="code">Kod</string>
+
+    <!--Meme pop up menu strings-->
+    <string name="favourite">Omiljeno</string>
+    <string name="remove_favourite">Izbriši omiljeno</string>
+    <string name="show_title">Prikaži naziv</string>
+    <string name="edit_title">Uredi naziv</string>
+    <string name="hide">Sakrij</string>
+    <string name="unhide">Prikaži</string>
+    <string name="empty_caption_hint">Klikni ovdje da dodaš naziv</string>
+</resources>
