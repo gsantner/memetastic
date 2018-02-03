@@ -34,6 +34,7 @@ import io.github.gsantner.memetastic.util.PermissionChecker;
 @SuppressLint("SimpleDateFormat")
 public class AssetUpdater {
     public static final SimpleDateFormat FORMAT_MINUTE = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+    public static final SimpleDateFormat FORMAT_MINUTE_FILE = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm");
 
     private static final String URL_ARCHIVE_ZIP = "https://github.com/gsantner/memetastic-assets/archive/master.zip";
     private static final String URL_API = "https://api.github.com/repos/gsantner/memetastic-assets";
@@ -125,7 +126,7 @@ public class AssetUpdater {
                 // Download
                 _lastPercent = -1;
                 AppCast.DOWNLOAD_STATUS.send(_context, DOWNLOAD_STATUS__DOWNLOADING, 0);
-                file = new File(file, FORMAT_MINUTE.format(date) + ".memetastic.zip");
+                file = new File(file, FORMAT_MINUTE_FILE.format(date) + ".memetastic.zip");
                 ok = NetworkUtils.downloadFile(URL_ARCHIVE_ZIP, file, (aFloat) -> {
                     int perc = (int) (aFloat * 100);
                     if (_lastPercent != perc) {
