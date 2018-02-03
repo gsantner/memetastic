@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (http://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
 <resources>
 
     <!-- main -->
@@ -22,7 +32,7 @@
 
     <string name="memelist_view_mode__rows_with_title">Wiersze z tytułem</string>
     <string name="memelist_view_mode__picture_grid">Wygląd siatki</string>
-    
+
     <string name="main__search_meme">Wyszukaj Mem</string>
     <string name="main__get_picture_from_gallery">Wybierz obraz z Galerii</string>
     <string name="main__get_picture_from_camera">Zrób zdjęcie aparatem</string>
@@ -116,9 +126,9 @@
     <string name="palette_colors">Paleta</string>
     <string name="preset_colors">Presety</string>
     <string name="select_color">Wybierz kolor</string>
-    
+
     <string name="code">Kod</string>
-    
+
     <!--Meme pop up menu strings-->
     <string name="favourite">Ulubiony</string>
     <string name="remove_favourite">Remove favourite</string>
