@@ -1,3 +1,8 @@
+### v1.3.2
+- More support languages
+- New settings screen
+- Fix: Don't include colon in save filename
+
 ### v1.3.1
 - Include tags in search
 - Fix loading from some gallery apps
