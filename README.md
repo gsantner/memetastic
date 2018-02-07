@@ -59,7 +59,7 @@ and if they are in a good image quality (do a quick search before).
 
 You can maybe find something suitable here:  
 * Fonts: [1001fonts](http://www.1001fonts.com) | [Font Squirell](https://www.fontsquirrel.com/fonts/list/find_fonts?filter%5Blicense%5D%5B0%5D=app&filter%5Blicense%5D%5B1%5D=open&sort=hot) | [fontspace](http://www.fontspace.com/) | [Google Fonts](https://fonts.google.com) | [FontMeme](https://fontmeme.com/) | [Identify font](https://www.fontsquirrel.com/matcherator) 
-* Memes: [knowyourmeme.com](http://knowyourmeme.com) | [/r/MemeTemplatesOfficial](https://www.reddit.com/r/MemeTemplatesOfficial)  | [memes.at](http://www.memes.at/) | [ragemaker.net](https://ragemaker.net/images)
+* Meme Templates: [knowyourmeme.com](http://knowyourmeme.com) | [/r/MemeTemplatesOfficial](https://www.reddit.com/r/MemeTemplatesOfficial)  | [memes.at](http://www.memes.at/) | [ragemaker.net](https://ragemaker.net/images)
 
 
 If you like my work on <b>MemeTastic</b> and many other Open Source projects, consider a small donation to my bitcoin address:
