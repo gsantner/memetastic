@@ -1,6 +1,5 @@
 [![GitHub release](https://img.shields.io/github/tag/gsantner/memetastic.svg)](https://github.com/gsantner/memetastic/releases)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](http://gsantner.net/#donate)
-[![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/gsantner/donate)
+[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](http://gsantner.net/supportme)
 [![Build Status](https://travis-ci.org/gsantner/memetastic.svg?branch=master)](https://travis-ci.org/gsantner/memetastic)
 [![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)
 [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=memetastic-anon|?#memetastic)
@@ -62,8 +61,7 @@ You can maybe find something suitable here:
 * Meme Templates: [knowyourmeme.com](http://knowyourmeme.com) | [/r/MemeTemplatesOfficial](https://www.reddit.com/r/MemeTemplatesOfficial)  | [memes.at](http://www.memes.at/) | [ragemaker.net](https://ragemaker.net/images)
 
 
-If you like my work on <b>MemeTastic</b> and many other Open Source projects, consider a small donation to my bitcoin address:
-<a href="http://gsantner.net/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
+If you like @gsantner's work on <b>MemeTastic</b> and many other Open Source projects, consider [supporting him](http://gsantner.net/supportme?ref=memetastic&source=gh_readme)
 
 
 #### Resources
@@ -71,20 +69,15 @@ If you like my work on <b>MemeTastic</b> and many other Open Source projects, co
 * App on F-Droid: [Metadata](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/io.github.gsantner.memetastic.txt) | [Page](https://f-droid.org/packages/io.github.gsantner.memetastic/) | [Wiki](https://f-droid.org/wiki/page/io.github.gsantner.memetastic) | [Build log](https://f-droid.org/wiki/page/io.github.gsantner.memetastic/lastbuild)
  
 ## Licensing
-Co pyright (C) 2016-2017 MemeTastic contributors <https://github.com/gsantner/memetastic>  
+Copyright (C) 2016-2018 Gregor Santner \<[http://gsantner.net](http://gsantner.net?ref=memetastic&source=license)\>  
 The app is licensed GPL v3. Localization files (strings\*.xml) are licensed CC0 1.0.  
 For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).  
-We consider fair use of the included meme templates. (*All trademarks and copyrights belong to their respective owners and are used here under the terms of Fair Use and the Digital Millennium Copyrights Act (DMCA).*)  
-We don't own any of these unless other specified. If one or more meme template (/font) violates copyright laws and 
-you want them to be removed, please send a mail to the maintainer and they will get 
-removed as soon as possible. Note that memes are pretty sure free
-advertisments for what's in the picture (so for you or your company).
 
 If you publish an app based on MemeTastic you MUST 
-* Comply with the terms of [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
-* Keep existing copyright notices in the app and hand out full source code
-* Show that the app is `based on MemeTastic by MemeTastic contributors`. Include a link to https://github.com/gsantner/memetastic
-* Show that the app is not MemeTastic but an modified/custom version, and the original app contributors are not responsible for modified versions or endorse your product
+* Comply with the terms of [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0.html)
+* Keep existing copyright notices in the app and hand out full source code on anybodys request
+* Show that the app is `based on MemeTastic by Gregor Santner`. Include a link to https://github.com/gsantner/memetastic
+* Show that the app is not MemeTastic but an modified/custom version, MemeTastic developers are not responsible for modified versions and not endorse your product
 
 
 ## Screenshots
