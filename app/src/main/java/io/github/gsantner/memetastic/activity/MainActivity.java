@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_SHOW_IMAGE = 52;
     public static final String IMAGE_PATH = "imagePath";
     public static final String IMAGE_POS = "image_pos";
+    private static final int OFFSCREEN_PAGE_LIMIT = 5;
 
     private static boolean _isShowingFullscreenImage = false;
 
@@ -200,6 +201,7 @@ public class MainActivity extends AppCompatActivity
             _tabLayout.addTab(tab);
         }
 
+        _viewPager.setOffscreenPageLimit(OFFSCREEN_PAGE_LIMIT);
         _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
         _tabLayout.setupWithViewPager(_viewPager);
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
