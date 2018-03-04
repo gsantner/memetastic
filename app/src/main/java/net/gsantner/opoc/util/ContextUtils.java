@@ -151,7 +151,11 @@ public class ContextUtils {
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        _context.startActivity(intent);
+        try {
+            _context.startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -333,6 +337,10 @@ public class ContextUtils {
         return result;
     }
 
+    /***
+     * Replace (primary) clipboard contents with given text
+     * @param text Text to be set
+     */
     public void setClipboard(String text) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
             ((android.text.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE)).setText(text);
