@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity
             _tabLayout.addTab(tab);
         }
 
+        _viewPager.setOffscreenPageLimit(5);
         _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
         _tabLayout.setupWithViewPager(_viewPager);
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());

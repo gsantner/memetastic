@@ -108,6 +108,15 @@ public class NetworkUtils {
         return "";
     }
 
+    public static String performCall(final String url, final String method, final String data) {
+        try {
+            return performCall(new URL(url), method, data);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     // URL encoded parameters
     public static String performCall(final String url, final String method, final HashMap<String, String> params) {
         try {

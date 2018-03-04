@@ -30,6 +30,8 @@ import android.view.View;
 import net.gsantner.opoc.preference.GsPreferenceFragmentCompat;
 import net.gsantner.opoc.util.AppSettingsBase;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -38,6 +40,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.service.ThumbnailCleanupTask;
 import io.github.gsantner.memetastic.util.AppSettings;
+import io.github.gsantner.memetastic.util.MediaStoreUtils;
 import io.github.gsantner.memetastic.util.PermissionChecker;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -144,7 +147,7 @@ public class SettingsActivity extends AppCompatActivity {
                 if (eq(key, R.string.pref_key__is_overview_statusbar_hidden)) {
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
-                if (eq(key, R.string.pref_key__language)){
+                if (eq(key, R.string.pref_key__language)) {
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
                 if (eq(key, R.string.pref_key__download_assets_try)) {
@@ -155,6 +158,27 @@ public class SettingsActivity extends AppCompatActivity {
                         settings.getDefaultPreferences().edit().commit();
                         new AssetUpdater.UpdateThread(context, true).start();
                         getActivity().finish();
+                    }
+                }
+                if (eq(key, R.string.pref_key__is_show_in_gallery)) {
+                    boolean showInGallery = settings.getDefaultPreferences().getBoolean(key, true);
+                    File memeDirectory = AssetUpdater.getMemesDir(AppSettings.get());
+                    File noMediaFile = new File(memeDirectory, ".nomedia");
+                    if (showInGallery) {
+                        noMediaFile.delete();
+                        MediaStoreUtils.deleteFileFromMediaStore(context, noMediaFile);
+                        File[] files = memeDirectory.listFiles();
+                        for (int i = 0; i < files.length; i++) {
+                            MediaStoreUtils.deleteFileFromMediaStore(context, files[i]);
+                            MediaStoreUtils.addFileToMediaStore(context, files[i]);
+                        }
+                    } else {
+                        try {
+                            noMediaFile.createNewFile();
+                            MediaStoreUtils.addFileToMediaStore(context, noMediaFile);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
