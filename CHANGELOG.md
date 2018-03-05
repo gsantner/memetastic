@@ -1,3 +1,8 @@
+### v1.4.0
+- New app icon (adaptive)
+- Fix media scan setting option
+- Merge first-start and update dialog
+
 ### v1.3.2
 - More support languages
 - New settings screen
