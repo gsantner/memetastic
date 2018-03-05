@@ -17,8 +17,9 @@ android {
         targetSdkVersion version_setup_targetSdk
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
-        buildConfigField "String[]", "APPLICATION_LANGUAGES", "${getUsedAndroidLanguages()}"
+        buildConfigField "String[]", "DETECTED_ANDROID_LOCALES", "${findUsedAndroidLocales()}"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
+        resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
 
         applicationId "io.github.gsantner.memetastic"
         versionName "1.4.0"
