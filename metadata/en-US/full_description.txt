@@ -1,27 +1,25 @@
-😌 <b>Simple Meme Creator</b> . Completly ad-free and adds no watermarks.<br/>
-<br/>
+😌 <b>Simple Meme Creator</b> - Completly ad-free and adds no watermarks.
+
 Memes can be created from templates downloaded from the MemeTastic archive, 
 from pictures shared into the app and pictures from gallery & camera.
-<br/>
+
 There are many meme customization options available:
-<br/>
 
-<br/>😄 Top & bottom caption
-<br/>😃 Font & border text color
-<br/>😁 Text size, font and capitalization
-<br/>😃 Padding size & color
-<br/>😜 Rotate picture
-<br/>
-<br/>
+
+😄 Top & bottom caption
+😃 Font & border text color
+😁 Text size, font and capitalization
+😃 Padding size & color
+😜 Rotate picture
+
+
 <b>More Features:</b>
-<br/>👓 Show saved memes & favorites
-<br/>👉 Share into any app accepting pictures
-<br/>
-<br/>
+👓 Show saved memes & favorites
+👉 Share into any app accepting pictures
+
+
 <b>Support the project:</b>
-<br/> ✋ <a href="https://github.com/gsantner/memetastic/issues/1">Suggest templates</a>
-<br/> ✋ <a href="https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic">Translate using Stringlate</a>
-<br/> ✋ <a href="https://matrix.to/#/#memetastic:matrix.org">Join discussion on Matrix</a>
-<br/> ✋ <a href="https://github.com/gsantner/memetastic#contributions">More information about contributions</a>
-
-
+ ✋ <a href="https://github.com/gsantner/memetastic/issues/1">Suggest templates</a>
+ ✋ <a href="https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&mail=gro.xobliam@@rentnasg&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic">Translate using Stringlate</a>
+ ✋ <a href="https://matrix.to/#/#memetastic:matrix.org">Join discussion on Matrix</a>
+ ✋ <a href="https://github.com/gsantner/memetastic#contributions">More information about contributions</a>
