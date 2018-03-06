@@ -1,5 +1,5 @@
-### v1.4.0
-- New app icon (adaptive)
+### v1.4.1
+- Adaptive app icon
 - Fix media scan setting option
 - Merge first-start and update dialog
 
