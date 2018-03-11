@@ -25,6 +25,8 @@ import android.net.Uri;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 
+import net.gsantner.opoc.util.ShareUtil;
+
 import java.io.File;
 
 import io.github.gsantner.memetastic.util.AppSettings;
@@ -56,10 +58,13 @@ public class App extends Application {
     }
 
     public void shareBitmapToOtherApp(Bitmap bitmap, Activity activity) {
+        ShareUtil su = new ShareUtil(activity).setFileProviderAuthority(getString(R.string.app_fileprovider));
+        su.setChooserTitle(getString(R.string.main__share_meme_prompt));
+        su.shareImage(bitmap, Bitmap.CompressFormat.JPEG, 65, "MT-meme");
+/*
         File file = new File(getCacheDir(), getString(R.string.cached_picture_filename));
-        File imageFile = ContextUtils.get().writeImageToFileJpeg(file, bitmap);
-        if (imageFile != null) {
-            Uri imageUri = FileProvider.getUriForFile(this, getString(R.string.app_fileprovider), imageFile);
+        if (ContextUtils.get().writeImageToFileJpeg(file, bitmap)) {
+            Uri imageUri = FileProvider.getUriForFile(this, getString(R.string.app_fileprovider), file);
             if (imageUri != null) {
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
@@ -68,7 +73,7 @@ public class App extends Application {
                 shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
                 activity.startActivity(Intent.createChooser(shareIntent, getString(R.string.main__share_meme_prompt)));
             }
-        }
+        }*/
     }
 
     public static void log(String text) {

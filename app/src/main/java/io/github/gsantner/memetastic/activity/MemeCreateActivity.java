@@ -484,7 +484,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         String filename = String.format(Locale.getDefault(), "%s_%s.jpg", getString(R.string.app_name), AssetUpdater.FORMAT_MINUTE_FILE.format(new Date(_memeSavetime)));
         File fullpath = new File(folder, filename);
-        boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, _lastBitmap) != null;
+        boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, _lastBitmap);
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
