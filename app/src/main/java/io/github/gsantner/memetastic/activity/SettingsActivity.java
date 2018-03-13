@@ -28,7 +28,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import net.gsantner.opoc.preference.GsPreferenceFragmentCompat;
-import net.gsantner.opoc.util.AppSettingsBase;
+import net.gsantner.opoc.preference.SharedPreferencesPropertyBackend;
 
 import java.io.File;
 import java.io.IOException;
@@ -122,7 +122,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         @Override
-        protected AppSettingsBase getAppSettings(Context context) {
+        protected SharedPreferencesPropertyBackend getAppSettings(Context context) {
             return new AppSettings(context);
         }
 

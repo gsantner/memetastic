@@ -20,7 +20,7 @@ package io.github.gsantner.memetastic.util;
 import android.content.Context;
 import android.os.Environment;
 
-import net.gsantner.opoc.util.AppSettingsBase;
+import net.gsantner.opoc.preference.SharedPreferencesPropertyBackend;
 
 import java.io.File;
 import java.text.ParseException;
@@ -35,7 +35,7 @@ import io.github.gsantner.memetastic.R;
 import io.github.gsantner.memetastic.service.AssetUpdater;
 import io.github.gsantner.memetastic.ui.MemeItemAdapter;
 
-public class AppSettings extends AppSettingsBase {
+public class AppSettings extends SharedPreferencesPropertyBackend {
     private static final int MAX_FAVS = 50;
     private static boolean PACKAGE_CHECKED = false;
 

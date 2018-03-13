@@ -31,7 +31,7 @@
     }
  */
 
-package net.gsantner.opoc.util;
+package net.gsantner.opoc.preference;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -52,7 +52,7 @@ import java.util.List;
  * Default SharedPreference (_prefApp) will be taken if no SP is specified, else the first one
  */
 @SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection", "SameParameterValue"})
-public class AppSettingsBase implements PropertyBackend<String, AppSettingsBase> {
+public class SharedPreferencesPropertyBackend implements PropertyBackend<String, SharedPreferencesPropertyBackend> {
     protected static final String ARRAY_SEPARATOR = "%%%";
     protected static final String ARRAY_SEPARATOR_SUBSTITUTE = "§§§";
     public static final String SHARED_PREF_APP = "app";
@@ -64,11 +64,11 @@ public class AppSettingsBase implements PropertyBackend<String, AppSettingsBase>
     protected final String _prefAppName;
     protected final Context _context;
 
-    public AppSettingsBase(final Context context) {
+    public SharedPreferencesPropertyBackend(final Context context) {
         this(context, SHARED_PREF_APP);
     }
 
-    public AppSettingsBase(final Context context, final String prefAppName) {
+    public SharedPreferencesPropertyBackend(final Context context, final String prefAppName) {
         _context = context.getApplicationContext();
         _prefAppName = TextUtils.isEmpty(prefAppName) ?
                 _context.getPackageName() + "_preferences" : prefAppName;
@@ -450,49 +450,49 @@ public class AppSettingsBase implements PropertyBackend<String, AppSettingsBase>
     }
 
     @Override
-    public AppSettingsBase setString(String key, String value) {
+    public SharedPreferencesPropertyBackend setString(String key, String value) {
         setString(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setInt(String key, int value) {
+    public SharedPreferencesPropertyBackend setInt(String key, int value) {
         setInt(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setLong(String key, long value) {
+    public SharedPreferencesPropertyBackend setLong(String key, long value) {
         setLong(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setBool(String key, boolean value) {
+    public SharedPreferencesPropertyBackend setBool(String key, boolean value) {
         setBool(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setFloat(String key, float value) {
+    public SharedPreferencesPropertyBackend setFloat(String key, float value) {
         setFloat(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setDouble(String key, double value) {
+    public SharedPreferencesPropertyBackend setDouble(String key, double value) {
         setDouble(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setIntList(String key, List<Integer> value) {
+    public SharedPreferencesPropertyBackend setIntList(String key, List<Integer> value) {
         setIntListOne(key, value, _prefApp);
         return this;
     }
 
     @Override
-    public AppSettingsBase setStringList(String key, List<String> value) {
+    public SharedPreferencesPropertyBackend setStringList(String key, List<String> value) {
         setStringListOne(key, value, _prefApp);
         return this;
     }
