@@ -23,15 +23,22 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main__memecat__cartoon">Fumetti</string>
     <string name="main__memecat__animals">Animali</string>
     <string name="main__memecat__custom">Personali</string>
-
+    <string name="main__memecat__rage">Rage</string>
+    
     <string name="memelist_data_mode__saved">Salvati</string>
-    <string name="memelist_data_mode__favs">Favoriti</string>
+    <string name="memelist_data_mode__favs">Preferiti</string>
     <string name="memelist_data_mode__create">Crea</string>
-
+    <string name="memelist_data_mode__hidden">Nascosti</string>
+    
+    <string name="memelist_view_mode__rows_with_title">Lista con titoli</string>
+    <string name="memelist_view_mode__picture_grid">Griglia</string>
+    
+    <string name="main__search_meme">Cerca Meme</string>
     <string name="main__get_picture_from_gallery">Prendi immagine dalla Galleria</string>
-    <string name="main__get_picture_from_camera">Scatta foto dalla Camera</string>
-    <string name="main__error_camera_cannot_start">Non riesco ad avviare la Camera.</string>
+    <string name="main__get_picture_from_camera">Scatta foto dalla Fotocamera</string>
+    <string name="main__error_camera_cannot_start">Non riesco ad avviare la Fotocamera.</string>
     <string name="main__error_no_picture_selected">Nessuna immagine selezionata.</string>
+    <string name="main__error_fail_retrieve_picture">Could not load picture from storage.</string>
     <string name="main__share_meme_prompt">Condividi il tuo Meme tramite...</string>
 
     <string name="main__donate">Dona</string>
@@ -40,24 +47,24 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main__exit">Esci</string>
     <string name="main__yes">sì</string>
 
-    <string name="main__nodata__favourites">Non c\'è ancora nessun favorito.\nUsa il bottone a stella di un modello di meme per aggiungerlo ai favoriti.</string>
+    <string name="main__nodata__favourites">Non c\'è ancora nessun preferito.\nUsa il bottone a stella di un modello di meme per aggiungerlo ai preferiti.</string>
     <string name="main__nodata__custom_templates">Non c\'è ancora nessun modello personale.\nMetti l\'immagine di base qui:%1$s</string>
     <string name="main__nodata__saved">Non c\'è ancora nessun meme salvato.\nUsa il bottone di salvataggio superiore dopo aver modificato un meme.</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Premi indietro per interrompere le modifiche del meme. Il meme andrà perso se non è stato già salvato.</string>
     <string name="creator__saved_successfully_message">Questo meme è stato salvato nel tuo dispositivo. Vuoi uscire dalle modifiche?</string>
-    >
-    <string name="creator__text_size">Grandezza del testo</string>
+    <string name="creator__text_size">Dimensione del testo</string>
     <string name="creator__text_color">Colore del testo</string>
     <string name="creator__border_color">Colore del bordo</string>
     <string name="creator__saved_successfully">Salvato con successo!</string>
     <string name="creator__hint_top_caption">Didascalia superiore</string>
     <string name="creator__hint_bottom_caption">Didascalia inferiore</string>
+    <string name="creator__hint_caption">Aggiungi didascalia</string>
     <string name="creator__font">Carattere</string>
     <string name="creator__keep_editing">Rimani in modifiche</string>
     <string name="creator__text">Testo</string>
-    <string name="creator__size">Grandezza</string>
+    <string name="creator__size">Spessore</string>
     <string name="creator__background">Sfondo</string>
     <string name="creator__border">Bordo</string>
     <string name="creator__picture">Immagine</string>
@@ -84,9 +91,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="settings__pref_columns_portrait">Colonne in verticale</string>
     <string name="settings__pref_columns_landscape">Colonne in orizzontale</string>
     <string name="pref_title__appearance">Aspetto</string>
-    <string name="pref_title__size">Grandezza</string>
-    <string name="pref_title__memelist_data_mode">Modo di default</string>
-    <string name="pref_summary__memelist_data_mode">Modo di default da aprire all\'avvio (Crea, Favoriti o Salvati)</string>
+    <string name="pref_title__size">Dimensione</string>
+    <string name="pref_title__memelist_data_mode">Modalità predefinita</string>
+    <string name="pref_summary__memelist_data_mode">Modalità predefinita da aprire all\'avvio (Crea, Preferiti o Salvati)</string>
     <string name="pref_title__functionality">Funzionalità</string>
     <string name="pref_summary__auto_save_meme">Salva automaticamente il meme quando premi indietro e c\'è qualche modifica</string>
     <string name="pref_title__auto_save_meme">Salva quando premi indietro</string>
@@ -97,6 +104,38 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="pref_title__editor">Editor</string>
     <string name="pref_summary__is_statusbar_hidden">Nascondi la barra di stato in questa vista</string>
     <string name="pref_title__is_statusbar_hidden">Nascondi la barra di stato</string>
-    <string name="pref_summary__picture_quality__percent">Qualità e grandezza delle immagini. valori maggiori comportano maggior tempo di caricamento. A seconda dell\'hardware del dispositivo e della grandezza dell\'immagine, l\'app potrebbe non funzionare come dovrebbe se il valore è sopra il 25%.</string>
-    <string name="pref_title__thumbnail_quality__percent">Thumbnail quality</string>
+    <string name="pref_summary__picture_quality__percent">Qualità e dimensione delle immagini. Valori maggiori comportano maggior tempo di caricamento. A seconda dell\'hardware del dispositivo e della dimensione dell\'immagine, l\'app potrebbe non funzionare come dovrebbe se il valore è sopra il 25%.</string>
+    <string name="pref_title__thumbnail_quality__percent">Qualità thumbnail</string>
+    <string name="pref_summary__memelist_view_type">Imposta vista (Griglia, Lista con titoli)</string>
+    <string name="pref_title__memelist_view_type">Visualizzazione</string>
+    <string name="pref_title__is_show_in_gallery">Mostra nella galleria</string>
+    
+    <!-- Language -->
+    <string name="pref_title__language">Lingua</string>
+    <string name="pref_desc__language">Cambia lingua dell\'app. Riavvia affinchè le modifiche abbiano effetto</string>
+    <string name="error_cannot_create_save_dir">Error: Cannot create save directory</string>
+    <string name="error_storage_permission">Need permission for storage to save memes and templates</string>
+    <string name="main__memecat__other">Altro</string>
+    <string name="downloading">Download in corso</string>
+    <string name="downloading_failed">Download fallito</string>
+    <string name="unzipping">Estrazione in corso</string>
+    <string name="downloading_success">Download completato</string>
+    <string name="download_latest_assets_message">Verranno scaricati caratteri e sfondi per i meme (circa 20MB).</string>
+    <string name="download_latest_assets_message_more">Puoi anche scaricare le ultime risorse nelle impostazioni.</string>
+    <string name="download_latest_assets_title">Scarica le ultime risorse</string>
+    <string name="checking_assets_for_update">Ricerca di nuove risorse disponibili in corso</string>
+    <string name="palette_colors">Tavolozza</string>
+    <string name="preset_colors">Predefiniti</string>
+    <string name="select_color">Scegli colore</string>
+
+    <string name="code">Codice</string>
+    
+    <!--Meme pop up menu strings-->
+    <string name="favourite">Preferito</string>
+    <string name="remove_favourite">Rimuovi preferito</string>
+    <string name="show_title">Mostra titolo</string>
+    <string name="edit_title">Modifica titolo</string>
+    <string name="hide">Nascondi</string>
+    <string name="unhide">Mostra</string>
+    <string name="empty_caption_hint">Clicca qui per aggiungere una didascalia</string>
 </resources>
