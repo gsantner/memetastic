@@ -1,17 +1,16 @@
-/*
- * ------------------------------------------------------------------------------
- * Gregor Santner <gsantner.net> wrote this. You can do whatever you want
- * with it. If we meet some day, and you think it is worth it, you can buy me a
- * coke in return. Provided as is without any kind of warranty. Do not blame or
- * sue me if something goes wrong. No attribution required.    - Gregor Santner
+/*#######################################################
  *
- * License: Creative Commons Zero (CC0 1.0)
- *  http://creativecommons.org/publicdomain/zero/1.0/
- * ----------------------------------------------------------------------------
- */
-
+ *   Maintained by Gregor Santner, 2017-
+ *   https://gsantner.net/
+ *
+ *   License: Apache 2.0
+ *  https://github.com/gsantner/opoc/#licensing
+ *  https://www.apache.org/licenses/LICENSE-2.0
+ *
+#########################################################*/
 package net.gsantner.opoc.util;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +19,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
@@ -29,6 +29,9 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.FileProvider;
+import android.support.v4.content.pm.ShortcutInfoCompat;
+import android.support.v4.content.pm.ShortcutManagerCompat;
+import android.support.v4.graphics.drawable.IconCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -36,9 +39,23 @@ import android.webkit.WebView;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Random;
 
+/**
+ * A utility class to ease information sharing on Android
+ * Also allows to parse/fetch information out of shared information
+ */
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess", "SameParameterValue", "unused", "deprecation", "ConstantConditions", "ObsoleteSdkInt", "SpellCheckingInspection"})
 public class ShareUtil {
+    public final static String EXTRA_FILEPATH = "real_file_path_2";
+    public final static SimpleDateFormat SDF_RFC3339_ISH = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm", Locale.getDefault());
+    public final static SimpleDateFormat SDF_SHORT = new SimpleDateFormat("yyMMdd-HHmm", Locale.getDefault());
+
+
     protected Context _context;
     protected String _fileProviderAuthority;
     protected String _chooserTitle;
@@ -66,7 +83,6 @@ public class ShareUtil {
         return this;
     }
 
-
     /**
      * Convert a {@link File} to an {@link Uri}
      *
@@ -93,19 +109,47 @@ public class ShareUtil {
      * <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
      * <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
      *
-     * @param shortcutIntent  The intent to be invoked on tap
-     * @param shortcutIconRes Icon resource for the item
-     * @param shortcutTitle   Title of the item
+     * @param intent  The intent to be invoked on tap
+     * @param iconRes Icon resource for the item
+     * @param title   Title of the item
      */
-    public void createLauncherDesktopShortcut(Intent shortcutIntent, @DrawableRes int shortcutIconRes, String shortcutTitle) {
-        shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    public void createLauncherDesktopShortcut(Intent intent, @DrawableRes int iconRes, String title) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        if (intent.getAction() == null) {
+            intent.setAction(Intent.ACTION_VIEW);
+        }
 
-        Intent creationIntent = new Intent();
-        creationIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
-        creationIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, shortcutTitle);
-        creationIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(_context, shortcutIconRes));
-        creationIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(_context, Long.toString(new Random().nextLong()))
+                .setIntent(intent)
+                .setIcon(IconCompat.createWithResource(_context, iconRes))
+                .setShortLabel(title)
+                .setLongLabel(title)
+                .build();
+        ShortcutManagerCompat.requestPinShortcut(_context, shortcut, null);
+    }
+
+    /**
+     * Try to create a new desktop shortcut on the launcher. This will not work on Api > 25. Add permissions:
+     * <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
+     * <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+     *
+     * @param intent  The intent to be invoked on tap
+     * @param iconRes Icon resource for the item
+     * @param title   Title of the item
+     */
+    public void createLauncherDesktopShortcutLegacy(Intent intent, @DrawableRes int iconRes, String title) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        if (intent.getAction() == null) {
+            intent.setAction(Intent.ACTION_VIEW);
+        }
+
+        Intent creationIntent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
+        creationIntent.putExtra("duplicate", true);
+        creationIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
+        creationIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, title);
+        creationIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(_context, iconRes));
         _context.sendBroadcast(creationIntent);
     }
 
@@ -116,8 +160,7 @@ public class ShareUtil {
      * @param mimeType MimeType or null (uses text/plain)
      */
     public void shareText(String text, @Nullable String mimeType) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
+        Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_TEXT, text);
         intent.setType(mimeType != null ? mimeType : "text/plain");
         showChooser(intent, null);
@@ -131,9 +174,9 @@ public class ShareUtil {
      */
     public void shareStream(File file, String mimeType) {
         Uri fileUri = FileProvider.getUriForFile(_context, getFileProviderAuthority(), file);
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
+        Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_STREAM, fileUri);
+        intent.putExtra(EXTRA_FILEPATH, file.getAbsolutePath());
         intent.setType(mimeType);
         showChooser(intent, null);
     }
@@ -141,21 +184,19 @@ public class ShareUtil {
     /**
      * Share the given bitmap with given format
      *
-     * @param bitmap   Image
-     * @param format   A {@link Bitmap.CompressFormat}, supporting JPEG,PNG, WEBP
-     * @param filename Filename without ext., null or nothing supplied will default to SharedFile.
+     * @param bitmap Image
+     * @param format A {@link Bitmap.CompressFormat}, supporting JPEG,PNG,WEBP
      * @return if success, true
      */
     public boolean shareImage(Bitmap bitmap, Bitmap.CompressFormat format) {
         return shareImage(bitmap, format, 95, "SharedImage");
     }
 
-
     /**
      * Share the given bitmap with given format
      *
      * @param bitmap    Image
-     * @param format    A {@link Bitmap.CompressFormat}, supporting JPEG,PNG, WEBP
+     * @param format    A {@link Bitmap.CompressFormat}, supporting JPEG,PNG,WEBP
      * @param imageName Filename without extension
      * @param quality   Quality of the exported image [0-100]
      * @return if success, true
@@ -164,7 +205,7 @@ public class ShareUtil {
         try {
             String ext = format.name().toLowerCase();
             File file = File.createTempFile(imageName, "." + ext.replace("jpeg", "jpg"), _context.getExternalCacheDir());
-            if (bitmap != null && new net.gsantner.opoc.util.ContextUtils(_context).writeImageToFile(file, bitmap, format, quality)) {
+            if (bitmap != null && new ContextUtils(_context).writeImageToFile(file, bitmap, format, quality)) {
                 shareStream(file, "image/" + ext);
                 return true;
             }
@@ -249,11 +290,11 @@ public class ShareUtil {
 
 
     /***
-     * Replace (primary) clipboard contents with given text
+     * Replace (primary) clipboard contents with given {@code text}
      * @param text Text to be set
      */
-    public boolean setClipboard(String text) {
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+    public boolean setClipboard(CharSequence text) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             android.text.ClipboardManager cm = ((android.text.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE));
             if (cm != null) {
                 cm.setText(text);
@@ -268,6 +309,31 @@ public class ShareUtil {
             }
         }
         return false;
+    }
+
+    /**
+     * Get clipboard contents, very failsafe and compat to older android versions
+     */
+    public List<String> getClipboard() {
+        List<String> clipper = new ArrayList<>();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+            android.text.ClipboardManager cm = ((android.text.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE));
+            if (cm != null && !TextUtils.isEmpty(cm.getText())) {
+                clipper.add(cm.getText().toString());
+            }
+        } else {
+            android.content.ClipboardManager cm = ((android.content.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE));
+            if (cm != null && cm.hasPrimaryClip()) {
+                ClipData data = cm.getPrimaryClip();
+                for (int i = 0; data != null && i < data.getItemCount() && i < data.getItemCount(); i++) {
+                    ClipData.Item item = data.getItemAt(i);
+                    if (item != null && !TextUtils.isEmpty(item.getText())) {
+                        clipper.add(data.getItemAt(i).getText().toString());
+                    }
+                }
+            }
+        }
+        return clipper;
     }
 
     /**
@@ -315,5 +381,73 @@ public class ShareUtil {
             intent.putExtra(Intent.EXTRA_EMAIL, to);
         }
         showChooser(intent, null);
+    }
+
+    /**
+     * Try to force extract a absolute filepath from an intent
+     *
+     * @param receivingIntent The intent from {@link Activity#getIntent()}
+     * @return A file or null if extraction did not succeed
+     */
+    public File extractFileFromIntent(Intent receivingIntent) {
+        String action = receivingIntent.getAction();
+        String type = receivingIntent.getType();
+        File tmpf;
+        String tmps;
+        String fileStr;
+
+        if ((Intent.ACTION_VIEW.equals(action) || Intent.ACTION_EDIT.equals(action))) {
+            // Markor, S.M.T FileManager
+            if (receivingIntent.hasExtra((tmps = EXTRA_FILEPATH))) {
+                return new File(receivingIntent.getStringExtra(tmps));
+            }
+
+            // Analyze data/Uri
+            Uri fileUri = receivingIntent.getData();
+            if (fileUri != null && (fileStr = fileUri.toString()) != null) {
+                // Uri contains file
+                if (fileStr.startsWith("file://")) {
+                    return new File(fileUri.getPath());
+                }
+                if (fileStr.startsWith((tmps = "content://"))) {
+                    fileStr = fileStr.substring(tmps.length());
+                    String fileProvider = fileStr.substring(0, fileStr.indexOf("/"));
+                    fileStr = fileStr.substring(fileProvider.length() + 1);
+
+                    // Some file managers dont add leading slash
+                    if (fileStr.startsWith("storage/")) {
+                        fileStr = "/" + fileStr;
+                    }
+                    // Some do add some custom prefix
+                    for (String prefix : new String[]{"file", "document", "root_files"}) {
+                        if (fileStr.startsWith(prefix)) {
+                            fileStr = fileStr.substring(prefix.length());
+                        }
+                    }
+                    // Next/OwnCloud Fileprovider
+                    for (String fp : new String[]{"org.nextcloud.files", "org.nextcloud.beta.files", "org.owncloud.files"}) {
+                        if (fileProvider.equals(fp) && fileStr.startsWith(tmps = "external_files/")) {
+                            return new File(Uri.decode("/storage/" + fileStr.substring(tmps.length())));
+                        }
+                    }
+                    // AOSP File Manager/Documents
+                    if (fileProvider.equals("com.android.externalstorage.documents") && fileStr.startsWith(tmps = "/primary%3A")) {
+                        return new File(Uri.decode(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + fileStr.substring(tmps.length())));
+                    }
+                    // Mi File Explorer
+                    if (fileProvider.equals("com.mi.android.globalFileexplorer.myprovider") && fileStr.startsWith(tmps = "external_files")) {
+                        return new File(Uri.decode(Environment.getExternalStorageDirectory().getAbsolutePath() + fileStr.substring(tmps.length())));
+                    }
+                    // URI Encoded paths with full path after content://package/
+                    if (fileStr.startsWith("/") || fileStr.startsWith("%2F")) {
+                        tmpf = new File(Uri.decode(fileStr));
+                        if (tmpf.exists()) {
+                            return tmpf;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

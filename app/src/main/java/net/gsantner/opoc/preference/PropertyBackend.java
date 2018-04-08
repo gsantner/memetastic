@@ -12,7 +12,7 @@ package net.gsantner.opoc.preference;
 
 import java.util.List;
 
-@SuppressWarnings({"UnusedReturnValue", "SpellCheckingInspection"})
+@SuppressWarnings({"UnusedReturnValue", "SpellCheckingInspection", "unused", "SameParameterValue"})
 public interface PropertyBackend<TKEY, TTHIS> {
     String getString(TKEY key, String defaultValue);
 
