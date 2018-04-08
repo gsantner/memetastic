@@ -1,3 +1,6 @@
+### v1.4.2
+- Add some more bundled assets
+
 ### v1.4.1
 - Adaptive app icon
 - Fix media scan setting option
