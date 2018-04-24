@@ -72,7 +72,7 @@
         <android.support.v7.preference.SeekBarPreference
             android:defaultValue="24"
             android:icon="@drawable/ic_high_quality_black_24dp"
-            android:key="@string/pref_key__render_quality_editor_percent"
+            android:key="@string/pref_key__render_quality__percent"
             android:max="100"
             android:summary="@string/pref_summary__picture_quality__percent"
             android:title="@string/pref_title__render_quality_editor_percent"

@@ -93,7 +93,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public int getRenderQualityReal() {
-        int val = getInt(R.string.pref_key__render_quality_editor_percent, 24);
+        int val = getInt(R.string.pref_key__render_quality__percent, 24);
         return (int) (400 + (2100.0 * (val / 100.0)));
     }
 
@@ -308,7 +308,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public Date getLastAssetArchiveDate() throws ParseException {
-        String date = getString(R.string.pref_key__last_asset_archive_date, "");
+        String date = getString(R.string.pref_key__latest_asset_archive_date, "");
         if (date.isEmpty()) {
             return new Date(0);
         }
@@ -316,11 +316,11 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public void setLastArchiveCheckDate(Date value) {
-        setString(R.string.pref_key__last_asset_archive_check_date, AssetUpdater.FORMAT_MINUTE.format(value));
+        setString(R.string.pref_key__latest_asset_archive_check_date, AssetUpdater.FORMAT_MINUTE.format(value));
     }
 
     public Date getLastAssetArchiveCheckDate() {
-        String date = getString(R.string.pref_key__last_asset_archive_check_date, "");
+        String date = getString(R.string.pref_key__latest_asset_archive_check_date, "");
         if (date.isEmpty()) {
             return new Date(0);
         }
@@ -332,7 +332,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public void setLastArchiveDate(Date value) {
-        setString(R.string.pref_key__last_asset_archive_date, AssetUpdater.FORMAT_MINUTE.format(value));
+        setString(R.string.pref_key__latest_asset_archive_date, AssetUpdater.FORMAT_MINUTE.format(value));
     }
 
     public boolean isMigrated() {
