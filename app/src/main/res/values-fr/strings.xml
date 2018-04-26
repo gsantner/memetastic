@@ -48,11 +48,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main__yes">oui</string>
 
     <string name="main__nodata__favourites">Pas encore de favoris.\n
-       Utilisez le bouton étoile sur les modèles de meme pour les ajouter aux favoris.</string>
+          Utilisez le bouton étoile sur les modèles de meme pour les ajouter aux favoris.</string>
     <string name="main__nodata__custom_templates">Aucun modèle personnalisé n\'est disponible.\n
-       Vous pouvez placer les images modèles à cet endroit : %1$s</string>
+          Vous pouvez placer les images modèles à cet endroit : %1$s</string>
     <string name="main__nodata__saved">Aucun Meme enregistré.\n
- Utilisez le bouton d\'enregistrement dans la barre du haut après modification d\'un Meme.</string>
+    Utilisez le bouton d\'enregistrement dans la barre du haut après modification d\'un Meme.</string>
 
     <!-- Creator -->
     <string name="creator__press_back_again_to_exit">Appuyez à nouveau pour quitter l\'édition de ce Meme. Le Meme sera perdu s\'il n\'est pas déjà enregistré.</string>
@@ -63,6 +63,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="creator__saved_successfully">Sauvegarde réussie !</string>
     <string name="creator__hint_top_caption">Texte du haut</string>
     <string name="creator__hint_bottom_caption">Sous-titre</string>
+    <string name="creator__hint_caption">Entrer une légende</string>
     <string name="creator__font">Police</string>
     <string name="creator__keep_editing">Continuer l\'édition</string>
     <string name="creator__text">Texte</string>
@@ -139,4 +140,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_title">Modifier le titre</string>
     <string name="hide">Cacher</string>
     <string name="unhide">Révéler</string>
+    <string name="empty_caption_hint">Toucher ici pour ajouter une légende</string>
 </resources>
