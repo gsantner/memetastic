@@ -19,10 +19,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main__delete_meme">Apagar meme</string>
 
     <string name="main__memecat__humans">Humanos</string>
-    <string name="main__memecat__cartoon">Cartum</string>
+    <string name="main__memecat__cartoon">Cartoon</string>
     <string name="main__memecat__animals">Animais</string>
     <string name="main__memecat__custom">Personalizados</string>
-    <string name="main__memecat__rage">Odiado</string>
+    <string name="main__memecat__rage">Raiva</string>
 
     <string name="memelist_data_mode__saved">Salvo</string>
     <string name="memelist_data_mode__favs">Favoritos</string>
@@ -32,8 +32,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="memelist_view_mode__rows_with_title">Linhas com título</string>
     <string name="memelist_view_mode__picture_grid">Grade de imagens</string>
 
-    <string name="main__search_meme">Busca Meme</string>
-    <string name="main__get_picture_from_gallery">Pegar imagem da galeria</string>
+    <string name="main__search_meme">Pesquisar meme</string>
+    <string name="main__get_picture_from_gallery">Selecionar imagem da galeria</string>
     <string name="main__get_picture_from_camera">Capturar imagem pela câmera</string>
     <string name="main__error_camera_cannot_start">Impossível acessar a câmera.</string>
     <string name="main__error_no_picture_selected">Nenhuma imagem selecionada.</string>
@@ -51,8 +51,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main__nodata__saved">Sem memes salvos.\nUse o botão salvar no topo após editar um meme.</string>
 
     <!-- Creator -->
-    <string name="creator__press_back_again_to_exit">Pressione retornar de novo para encerrar a edição. O meme será perdido se ainda não foi salvo.</string>
-    <string name="creator__saved_successfully_message">O meme foi salvo no seu aparelho. Quer parar sua edição?</string>
+    <string name="creator__press_back_again_to_exit">Pressione retornar novamente para encerrar a edição. O meme será perdido se ainda não foi salvo.</string>
+    <string name="creator__saved_successfully_message">O meme foi salvo no aparelho. Deseja encerrar a edição?</string>
     <string name="creator__text_size">Tamanho do texto</string>
     <string name="creator__text_color">Cor do texto</string>
     <string name="creator__border_color">Cor da borda</string>
