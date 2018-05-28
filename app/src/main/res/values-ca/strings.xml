@@ -24,20 +24,20 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 	<string name="main__memecat__custom">Personalitzat</string>
 	<string name="main__memecat__rage">Ràbia</string>
 
-	<string name="memelist_data_mode__saved">"S'ha desat"</string>
+	<string name="memelist_data_mode__saved">"S\'ha desat"</string>
 	<string name="memelist_data_mode__favs">Preferits</string>
 	<string name="memelist_data_mode__create">Crea</string>
 	<string name="memelist_data_mode__hidden">Amagat</string>
 
 	<string name="memelist_view_mode__rows_with_title">Files amb títol</string>
-	<string name="memelist_view_mode__picture_grid">"Quadrícula d'imatge"</string>
+	<string name="memelist_view_mode__picture_grid">"Quadrícula d\'imatge"</string>
 
 	<string name="main__search_meme">Cerca memes</string>
 	<string name="main__get_picture_from_gallery">Obtén una imatge de la galeria</string>
 	<string name="main__get_picture_from_camera">Obtén una imatge de la càmera</string>
-	<string name="main__error_camera_cannot_start">"No s'ha pogut iniciar la càmera."</string>
-	<string name="main__error_no_picture_selected">"No s'ha seleccionat cap imatge"</string>
-	<string name="main__error_fail_retrieve_picture">"No s'ha pogut carregar la imatge des de l'emmagatzematge."</string>
+	<string name="main__error_camera_cannot_start">"No s\'ha pogut iniciar la càmera."</string>
+	<string name="main__error_no_picture_selected">"No s\'ha seleccionat cap imatge"</string>
+	<string name="main__error_fail_retrieve_picture">"No s\'ha pogut carregar la imatge des de l\'emmagatzematge."</string>
 	<string name="main__share_meme_prompt">Compartiu el teu meme a través de</string>
 
 	<string name="main__donate">Fes un donatiu</string>
@@ -46,22 +46,22 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 	<string name="main__exit">Surt</string>
 	<string name="main__yes">sí</string>
 
-	<string name="main__nodata__favourites">"Encara no hi ha cap preferit.\nUtilitza el botó de l'estrella d'una plantilla d'un meme per afegir-lo als preferits."</string>
+	<string name="main__nodata__favourites">"Encara no hi ha cap preferit.\nUtilitza el botó de l\'estrella d\'una plantilla d\'un meme per afegir-lo als preferits."</string>
 	<string name="main__nodata__custom_templates">Encara no hi ha cap plantilla personalitzada.\nAquí tens imatges de plantilla: %1$s</string>
-	<string name="main__nodata__saved">"Encara no s'ha desat cap meme.\nUtilitza el botó desa de la part superior després d'editar un meme."</string>
+	<string name="main__nodata__saved">"Encara no s\'ha desat cap meme.\nUtilitza el botó desa de la part superior després d\'editar un meme."</string>
 
 	<!-- Creator -->
-	<string name="creator__press_back_again_to_exit">"Torna a prémer per deixar d'editar aquest meme. Es perdrà el meme si encara no s'ha desat."</string>
-	<string name="creator__saved_successfully_message">"Aquest meme s'ha emmagatzemat correctament al teu dispositiu. Vols deixar d'editar-lo?"</string>
+	<string name="creator__press_back_again_to_exit">"Torna a prémer per deixar d\'editar aquest meme. Es perdrà el meme si encara no s\'ha desat."</string>
+	<string name="creator__saved_successfully_message">"Aquest meme s\'ha emmagatzemat correctament al teu dispositiu. Vols deixar d\'editar-lo?"</string>
 	<string name="creator__text_size">Mida del text</string>
 	<string name="creator__text_color">Color del text</string>
 	<string name="creator__border_color">Color de la vora</string>
-	<string name="creator__saved_successfully">"S'ha desat amb èxit!"</string>
+	<string name="creator__saved_successfully">"S\'ha desat amb èxit!"</string>
 	<string name="creator__hint_top_caption">Títol superior</string>
 	<string name="creator__hint_bottom_caption">Títol inferior</string>
 	<string name="creator__hint_caption">Introdueix el títol</string>
 	<string name="creator__font">Font</string>
-	<string name="creator__keep_editing">"Mantén l'edició"</string>
+	<string name="creator__keep_editing">"Mantén l\'edició"</string>
 	<string name="creator__text">Text</string>
 	<string name="creator__size">Mida</string>
 	<string name="creator__background">Fons</string>
@@ -92,7 +92,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 	<string name="pref_title__appearance">Aparença</string>
 	<string name="pref_title__size">Mida</string>
 	<string name="pref_title__memelist_data_mode">Mode per defecte</string>
-	<string name="pref_summary__memelist_data_mode">"Mode per defecte en obrir-se a l'inici (crea, preferits o desats)"</string>
+	<string name="pref_summary__memelist_data_mode">"Mode per defecte en obrir-se a l\'inici (crea, preferits o desats)"</string>
 	<string name="pref_title__functionality">Funcionalitat</string>
 	<string name="pref_summary__auto_save_meme">Desa el meme automàticament si prems enrere i hi ha alguna entrada</string>
 	<string name="pref_title__auto_save_meme">Desa en prémer cap enrere</string>
@@ -101,28 +101,28 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 	<string name="creator__padding">Farciment</string>
 	<string name="pref_title__overview">Visió general</string>
 	<string name="pref_title__editor">Editor</string>
-	<string name="pref_summary__is_statusbar_hidden">"Amaga la barra d'estat en aquesta vista"</string>
-	<string name="pref_title__is_statusbar_hidden">"Amaga la barra d'estat"</string>
-	<string name="pref_summary__picture_quality__percent" formatted="false">"Qualitat i mida de les imatges. Els valors més alts signifiquen un major temps de càrrega. Segons el maquinari del dispositiu i la mida de la imatge, és possible que l'aplicació no funcioni com s'espera si el valor és superior al 25%."</string>
+	<string name="pref_summary__is_statusbar_hidden">"Amaga la barra d\'estat en aquesta vista"</string>
+	<string name="pref_title__is_statusbar_hidden">"Amaga la barra d\'estat"</string>
+	<string name="pref_summary__picture_quality__percent" formatted="false">"Qualitat i mida de les imatges. Els valors més alts signifiquen un major temps de càrrega. Segons el maquinari del dispositiu i la mida de la imatge, és possible que l\'aplicació no funcioni com s\'espera si el valor és superior al 25%."</string>
 	<string name="pref_title__thumbnail_quality__percent">Qualitat de els miniatures</string>
-	<string name="pref_summary__memelist_view_type">"Estableix el tipus de vista (quadrícula d'imatges, files amb títol)"</string>
+	<string name="pref_summary__memelist_view_type">"Estableix el tipus de vista (quadrícula d\'imatges, files amb títol)"</string>
 	<string name="pref_title__memelist_view_type">Tipus de vista</string>
 	<string name="pref_title__is_show_in_gallery">Mostra-ho en la galeria del dispositiu</string>
 
 	<!-- Language -->
 	<string name="pref_title__language">Idioma</string>
-	<string name="pref_desc__language">"Canvia l'idioma d'aquesta aplicació. Reinicia l'aplicació perquè els canvis tinguin efecte"</string>
+	<string name="pref_desc__language">"Canvia l\'idioma d\'aquesta aplicació. Reinicia l\'aplicació perquè els canvis tinguin efecte"</string>
 	<string name="error_cannot_create_save_dir">Error: no es pot crear la carpeta</string>
 	<string name="error_storage_permission">Necessitem permís per desar memes i plantilles</string>
 	<string name="main__memecat__other">Altres</string>
-	<string name="downloading">"S'està baixant"</string>
+	<string name="downloading">"S\'està baixant"</string>
 	<string name="downloading_failed">La baixada ha fallat</string>
-	<string name="unzipping">"S'està descomprimint"</string>
-	<string name="downloading_success">"S'ha baixat amb èxit"</string>
+	<string name="unzipping">"S\'està descomprimint"</string>
+	<string name="downloading_success">"S\'ha baixat amb èxit"</string>
 	<string name="download_latest_assets_message">Això baixarà les fonts i les plantilles del meme (uns 20 MB).</string>
 	<string name="download_latest_assets_message_more">En la configuració també pots obtenir els actius més recents manualment.</string>
 	<string name="download_latest_assets_title">Baixa els darrers elements</string>
-	<string name="checking_assets_for_update">S'està comprovant si hi ha més elements recents disponibles</string>
+	<string name="checking_assets_for_update">S\'està comprovant si hi ha més elements recents disponibles</string>
 	<string name="palette_colors">Paleta</string>
 	<string name="preset_colors">Per defecte</string>
 	<string name="select_color">Selecciona un color</string>
