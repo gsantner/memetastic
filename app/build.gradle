@@ -22,8 +22,8 @@ android {
         resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
 
         applicationId "io.github.gsantner.memetastic"
-        versionName "1.4.2"
-        versionCode 44
+        versionName "1.4.3"
+        versionCode 45
     }
 
     buildTypes {
