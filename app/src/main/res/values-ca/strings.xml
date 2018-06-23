@@ -9,6 +9,7 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+	
 	<!-- main -->
 	<string name="main__navdrawer__open">Obre el calaix de navegació</string>
 	<string name="main__navdrawer__close">Tanca el calaix de navegació</string>
@@ -24,10 +25,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 	<string name="main__memecat__custom">Personalitzat</string>
 	<string name="main__memecat__rage">Ràbia</string>
 
-	<string name="memelist_data_mode__saved">"S\'ha desat"</string>
+	<string name="memelist_data_mode__saved">"Desats"</string>
 	<string name="memelist_data_mode__favs">Preferits</string>
 	<string name="memelist_data_mode__create">Crea</string>
-	<string name="memelist_data_mode__hidden">Amagat</string>
+	<string name="memelist_data_mode__hidden">Amagats</string>
 
 	<string name="memelist_view_mode__rows_with_title">Files amb títol</string>
 	<string name="memelist_view_mode__picture_grid">"Quadrícula d\'imatge"</string>
@@ -46,13 +47,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 	<string name="main__exit">Surt</string>
 	<string name="main__yes">sí</string>
 
-	<string name="main__nodata__favourites">"Encara no hi ha cap preferit.\nUtilitza el botó de l\'estrella d\'una plantilla d\'un meme per afegir-lo als preferits."</string>
+	<string name="main__nodata__favourites">"Encara no hi ha cap preferit.\nUtilitza el botó estrella d\'una plantilla d\'un meme per afegir-lo als preferits."</string>
 	<string name="main__nodata__custom_templates">Encara no hi ha cap plantilla personalitzada.\nAquí tens imatges de plantilla: %1$s</string>
 	<string name="main__nodata__saved">"Encara no s\'ha desat cap meme.\nUtilitza el botó desa de la part superior després d\'editar un meme."</string>
 
 	<!-- Creator -->
 	<string name="creator__press_back_again_to_exit">"Torna a prémer per deixar d\'editar aquest meme. Es perdrà el meme si encara no s\'ha desat."</string>
-	<string name="creator__saved_successfully_message">"Aquest meme s\'ha emmagatzemat correctament al teu dispositiu. Vols deixar d\'editar-lo?"</string>
+	<string name="creator__saved_successfully_message">"Aquest meme s\'ha emmagatzemat correctament al dispositiu. Vols deixar d\'editar-lo?"</string>
 	<string name="creator__text_size">Mida del text</string>
 	<string name="creator__text_color">Color del text</string>
 	<string name="creator__border_color">Color de la vora</string>

@@ -25,3 +25,4 @@ Where:
 * **[XzibitusaK]()**<br/>~° Czech translation
 * **[Iskandar Setiadi](https://github.com/freedomofkeima)**<br/>~° Indonesian translation
 * **[Nikola Perović]()**<br/>~° Serbian (Latin) translation
+* **[Jaime Muñoz](https://crowdin.com/profile/jmmartin_5)**<br/>~° Catalan translation
