@@ -27,7 +27,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Guardados</string>
     <string name="favs">Favoritos</string>
-    <string name="create">Crear</string>
 
     <string name="rows_with_title">Filas con título</string>
     <string name="picture_grid">Rejilla de imágenes</string>
@@ -36,14 +35,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Obtener imagen de la galería</string>
     <string name="get_picture_from_camera">Obtener imagen con la cámara</string>
     <string name="error_cannot_start_camera">No se pudo iniciar la cámara.</string>
-    <string name="error_picture_selection">No se ha seleccionado ninguna imagen.</string>
     <string name="error_couldnot_load_picture_from_storage">No se ha podido cargar la imagen desde el almacenamiento.</string>
     <string name="share_meme_via__appspecific">Compartir el meme vía...</string>
 
-    <string name="donate">Donar</string>
     <string name="recommend">Recomendar</string>
-    <string name="changelog">Historial de cambios</string>
-    <string name="exit">Salir</string>
     <string name="yes">sí</string>
 
     <string name="no_favourites_description__appspecific">Aún no hay favoritos. Usa el botón de la estrella en una plantilla de meme para agregarla a favoritos.</string>
@@ -62,24 +57,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Tipo de letra</string>
     <string name="keep_editing">Continuar editando</string>
     <string name="text">Texto</string>
-    <string name="size">Tamaño</string>
     <string name="background">Fondo</string>
     <string name="border">Borde</string>
     <string name="picture">Imagen</string>
 
     <!-- Info -->
-    <string name="about">Acerca de</string>
     <string name="developed_by">Desarrollado por</string>
-    <string name="licenses">Licencias</string>
     <string name="show_licenses">Mostrar licencias</string>
-    <string name="contributors">Contribuidores</string>
     <string name="more_information">Más información</string>
-    <string name="gnu_gplv3_license">Mostrar la licencia GNU GPLv3</string>
-    <string name="show_third_party_licenses">Mostrar licencias de terceras partes</string>
-    <string name="miscellaneous">Miscelánea</string>
 
     <!-- Settings -->
-    <string name="settings">Ajustes</string>
     <string name="all_caps">Todo en mayúsculas</string>
     <string name="caps_off">Sin mayúsculas</string>
     <string name="rotate">Rotar</string>
@@ -87,7 +74,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Limpiar miniaturas</string>
     <string name="columns_portrait">Columnas en vertical</string>
     <string name="columns_landscape">Columnas en apaisado</string>
-    <string name="appearance">Apariencia</string>
     <string name="default_mode">Modo predeterminado</string>
     <string name="default_mode_description_description__appspecific">Modo predeterminado que se abre al iniciar (Crear, Favoritos o Guardados)</string>
     <string name="functionality">Funcionalidad</string>
@@ -97,9 +83,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Mezclar la lista de memes</string>
     <string name="padding">Margen</string>
     <string name="overview">Resumen</string>
-    <string name="editor">Editor</string>
-    <string name="hide_statusbar_at_this_view">Ocultar la barra de estado en esta vista</string>
-    <string name="hide_statusbar">Ocultar la barra de estado</string>
     <string name="picture_quality_percent">Calidad y tamaño de las imágenes. Valores altos significan mayor tiempo de carga. Dependiendo del hardware del dispositivo y el tamaño de la imagen, la aplicación puede no funcionar como se espera si el valor supera el 25%.</string>
     <string name="thumbnail_quality">Calidad de miniatura</string>
     <string name="view_type_memelist__appspecific">Establecer modo de vista (Rejilla de imágenes, Filas con título)</string>
@@ -107,8 +90,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Mostrar en la galería del dispositivo</string>
 
     <!-- Language -->
-    <string name="language">Idioma</string>
-    <string name="language_change_restart_description">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
     <string name="error_cannot_create_save_directory">Error: no se puede crear el directorio de guardado</string>
     <string name="error_storage_permission__appspecific">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
     <string name="other">Otros</string>
@@ -120,4 +101,24 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="download_latest_assets_message_description__appspecific">También se pueden obtener los últimos elementos manualmente desde Ajustes.</string>
     <string name="download_latest_assets">Descargar los elementos más recientes</string>
     <string name="download_latest_assets_checking_description">Comprobando si hay elementos más recientes disponibles</string>
+    <string name="miscellaneous">Diverso</string>
+    <string name="gnu_gplv3_license">Licencia GNU GPLv3 +</string>
+    <string name="show_title">Mostrar título</string>
+    <string name="create">Crear</string>
+    <string name="error_picture_selection">No se ha seleccionado ninguna imagen.</string>
+    <string name="donate">Donar</string>
+    <string name="changelog">Historial de cambios</string>
+    <string name="exit">Salir</string>
+    <string name="size">Tamaño</string>
+    <string name="about">Acerca de</string>
+    <string name="licenses">Licencias</string>
+    <string name="contributors">Contribuidores</string>
+    <string name="show_third_party_licenses">Mostrar licencias de terceras partes</string>
+    <string name="settings">Ajustes</string>
+    <string name="appearance">Apariencia</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">Ocultar la barra de estado en esta vista</string>
+    <string name="hide_statusbar">Ocultar la barra de estado</string>
+    <string name="language">Idioma</string>
+    <string name="language_change_restart_description">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
 </resources>

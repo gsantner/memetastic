@@ -10,8 +10,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <!-- main -->
-    <string name="open_navdrawer">Abrir navegador</string>
-    <string name="close_navdrawer">Fechar navegador</string>
 
     <string name="save_meme__appspecific">Salvar meme</string>
     <string name="share_meme__appspecific">Compartilhar meme</string>
@@ -26,7 +24,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Salvo</string>
     <string name="favs">Favoritos</string>
-    <string name="create">Criar</string>
     <string name="hidden">Oculto</string>
 
     <string name="rows_with_title">Linhas com título</string>
@@ -36,14 +33,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Selecionar imagem da galeria</string>
     <string name="get_picture_from_camera">Capturar imagem pela câmera</string>
     <string name="error_cannot_start_camera">Impossível acessar a câmera.</string>
-    <string name="error_picture_selection">Nenhuma imagem selecionada.</string>
     <string name="error_couldnot_load_picture_from_storage">Não foi possível carregar a imagem do armazenamento.</string>
     <string name="share_meme_via__appspecific">Compartilhar via…</string>
 
-    <string name="donate">Doar</string>
     <string name="recommend">Recomendar</string>
-    <string name="changelog">Histórico de atualizações</string>
-    <string name="exit">Sair</string>
     <string name="yes">Sim</string>
 
     <string name="no_favourites_description__appspecific">Ainda sem favoritos.\nUse o botão estrela num modelo para adicionar aos favoritos.</string>
@@ -62,24 +55,17 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Fonte</string>
     <string name="keep_editing">Continuar editando</string>
     <string name="text">Texto</string>
-    <string name="size">Tamanho</string>
     <string name="background">Fundo</string>
     <string name="border">Borda</string>
     <string name="picture">Figura</string>
 
     <!-- Info -->
-    <string name="about">Sobre</string>
     <string name="developed_by">Desenvolvido por</string>
-    <string name="licenses">Licenças</string>
     <string name="show_licenses">Ver licenças</string>
-    <string name="contributors">Colaboradores</string>
     <string name="more_information">Mais informação</string>
     <string name="gnu_gplv3_license">Ver licença GNU GPLv3</string>
-    <string name="show_third_party_licenses">Ver licenças de terceiros</string>
-    <string name="miscellaneous">Diversos</string>
 
     <!-- Settings -->
-    <string name="settings">Configurações</string>
     <string name="all_caps">Maiúsculas</string>
     <string name="caps_off">Minúsculas</string>
     <string name="rotate">Girar</string>
@@ -87,7 +73,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Limpar pré-visualizações</string>
     <string name="columns_portrait">Colunas em retrato</string>
     <string name="columns_landscape">Colunas horizontais</string>
-    <string name="appearance">Aparência</string>
     <string name="default_mode">Modo padrão</string>
     <string name="default_mode_description_description__appspecific">Modo padrão de inicialização (criar, favoritos ou salvo)</string>
     <string name="functionality">Funcionalidade</string>
@@ -97,9 +82,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Embaralhar lista de memes</string>
     <string name="padding">Preencher</string>
     <string name="overview">Visão geral</string>
-    <string name="editor">Editor</string>
-    <string name="hide_statusbar_at_this_view">Esconder barra de status nesta visualização</string>
-    <string name="hide_statusbar">Esconder barra de status</string>
     <string name="picture_quality_percent">Qualidade e tamanho. Valores altos causam mais tempo de carregamento. Dependendo do processador e o tamanho da imagem o app pode falhar se o valor extrapolar 25%.</string>
     <string name="thumbnail_quality">Qualidade da pré-visualização</string>
     <string name="view_type_memelist__appspecific">Definir tipo de exibição (grade de imagem, linhas com título)</string>
@@ -107,8 +89,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Mostrar na galeria do dispositivos</string>
 
     <!-- Language -->
-    <string name="language">Idioma</string>
-    <string name="language_change_restart_description">Muda o idioma do aplicativo. Reinicie o aplicativo para que as alterações entrem em vigor</string>
     <string name="error_cannot_create_save_directory">Erro: Não é possível criar a pasta de salvamento</string>
     <string name="error_storage_permission__appspecific">Necessário de permissão para fazer o armazenamento de memes e modelos de memes</string>
     <string name="other">Outros</string>
@@ -133,4 +113,24 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_title">Editar título</string>
     <string name="hide">Ocultar</string>
     <string name="unhide">Reexibir</string>
+    <string name="open_navdrawer">Abra o painel de navegação</string>
+    <string name="close_navdrawer">Fechar painel de navegação</string>
+    <string name="miscellaneous">Diversos</string>
+    <string name="create">Criar</string>
+    <string name="error_picture_selection">Nenhuma imagem selecionada.</string>
+    <string name="donate">Doar</string>
+    <string name="changelog">Histórico de atualizações</string>
+    <string name="exit">Sair</string>
+    <string name="size">Tamanho</string>
+    <string name="about">Sobre</string>
+    <string name="licenses">Licenças</string>
+    <string name="contributors">Colaboradores</string>
+    <string name="show_third_party_licenses">Ver licenças de terceiros</string>
+    <string name="settings">Configurações</string>
+    <string name="appearance">Aparência</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">Esconder barra de status nesta visualização</string>
+    <string name="hide_statusbar">Esconder barra de status</string>
+    <string name="language">Idioma</string>
+    <string name="language_change_restart_description">Muda o idioma do aplicativo. Reinicie o aplicativo para que as alterações entrem em vigor</string>
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="open_navdrawer">Aberi su pannellu de nàvigu</string>
+    <string name="close_navdrawer">Serra su pannellu de nàvigu</string>
+    <string name="miscellaneous">Vàriu</string>
+    <string name="gnu_gplv3_license">Litzèntzia GNU GPLv3+</string>
+    <string name="show_title">Ammustra tìtulu</string>
+    <string name="changelog">Registru de sas modìficas</string>
+    <string name="about">Informatziones</string>
+    <string name="contributors">Contribuidores</string>
+    <string name="show_third_party_licenses">Librerias de terzas partes</string>
+    <string name="settings">Impostatziones</string>
+    <string name="appearance">Aparèntzia</string>
+    <string name="hide_statusbar">Istichi sa barra de s\'istadu</string>
+    <string name="language">Limba</string>
+    <string name="language_change_restart_description">Càmbia sa limba de custa aplicatzione. Torra·la a allùghere pro fàghere tènnere efetu a su cambiamentu</string>
+</resources>

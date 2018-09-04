@@ -24,18 +24,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">UloÂženo</string>
     <string name="favs">Oblíbené</string>
-    <string name="create">Vytvoøit</string>
 
     <string name="get_picture_from_gallery">Získat obrázek z galerie</string>
     <string name="get_picture_from_camera">Získat obrázek z kamery</string>
     <string name="error_cannot_start_camera">Nepodaøilo se spustit kameru.</string>
-    <string name="error_picture_selection">Nebyl zvolen Âžádný obrázek.</string>
     <string name="share_meme_via__appspecific">Sdílejte svùj Meme skrze…</string>
 
-    <string name="donate">Donate</string>
     <string name="recommend">Doporuèit</string>
-    <string name="changelog">Historie</string>
-    <string name="exit">Odejít</string>
     <string name="yes">Ano</string>
 
     <string name="no_favourites_description__appspecific">Nemáte nic oblíbeného.\nKliknìte na hvìzdièku u meme obrázku, abyste si ho pøidali do svých oblíbených.</string>
@@ -53,22 +48,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Písmo</string>
     <string name="keep_editing">Pokraèovat v editování</string>
     <string name="text">Písmo</string>
-    <string name="size">Velikost</string>
     <string name="background">Pozadí</string>
     <string name="border">Rámeèek</string>
     <string name="picture">Obrázek</string>
 
-    <string name="about">Informace</string>
     <string name="developed_by">Tvùrci</string>
-    <string name="licenses">Licence</string>
     <string name="show_licenses">Zobrazit licence</string>
-    <string name="contributors">Spolupracovníci</string>
     <string name="more_information">Více informací</string>
     <string name="gnu_gplv3_license">Zobrazit GNU GPLv3 licenci</string>
-    <string name="show_third_party_licenses">Zobrazit licence tøetí strany</string>
     <string name="miscellaneous">Ostatní</string>
 
-    <string name="settings">Nastavení</string>
     <string name="all_caps">Velké písmo zapnuto</string>
     <string name="caps_off">Velké písmo vypnuto</string>
     <string name="rotate">Otoèit</string>
@@ -76,7 +65,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Vyèistit Ikony</string>
     <string name="columns_portrait">Seznam portrétù</string>
     <string name="columns_landscape">Seznam pozadí</string>
-    <string name="appearance">Vzhled</string>
     <string name="default_mode">SpouÂštìcí nastavení</string>
     <string name="default_mode_description_description__appspecific">Zvolení spouÂštìcího nastavení(Tvorba, Oblíbené, nebo UloÂžené)</string>
     <string name="functionality">Funkce</string>
@@ -86,12 +74,24 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Zamíchat meme seznam</string>
     <string name="padding">Obal</string>
     <string name="overview">Pøehled</string>
-    <string name="editor">Editor</string>
-    <string name="hide_statusbar_at_this_view">Schovat statusbar</string>
-    <string name="hide_statusbar">Schovat statusbar</string>
     <string name="picture_quality_percent">Kvalita a velikost obrázku. Èím vyÂšÂší èísla, tím delÂší naèítání. VÂše záleÂží na hardwaru a veikosti obrázku. Aplikace mùÂže mít problémy, pokud je hodnota vyÂšÂší, neÂž 25%</string>
     <string name="thumbnail_quality">Kvalita ikony</string>
 
+    <string name="create">Vytvoøit</string>
+    <string name="error_picture_selection">Nebyl zvolen Âžádný obrázek.</string>
+    <string name="donate">Donate</string>
+    <string name="changelog">Historie</string>
+    <string name="exit">Odejít</string>
+    <string name="size">Velikost</string>
+    <string name="about">Informace</string>
+    <string name="licenses">Licence</string>
+    <string name="contributors">Spolupracovníci</string>
+    <string name="show_third_party_licenses">Zobrazit licence tøetí strany</string>
+    <string name="settings">Nastavení</string>
+    <string name="appearance">Vzhled</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">Schovat statusbar</string>
+    <string name="hide_statusbar">Schovat statusbar</string>
     <string name="language">Jazyk</string>
     <string name="language_change_restart_description">Pokud chcete zmìnit jazyk této aplikace, bude vyÂžadován její restart.</string>
 </resources>

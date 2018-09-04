@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="miscellaneous">Diverse</string>
+    <string name="gnu_gplv3_license">GNU GPLv3+</string>
+    <string name="create">Skapa</string>
+    <string name="donate">Donera</string>
+    <string name="changelog">Ändringar</string>
+    <string name="exit">Avsluta</string>
+    <string name="size">Sortera efter storlek</string>
+    <string name="about">Om</string>
+    <string name="licenses">Licenser</string>
+    <string name="contributors">Bidragsgivare</string>
+    <string name="show_third_party_licenses">Tredjepartsbibliotek</string>
+    <string name="settings">Inställningar</string>
+    <string name="appearance">Utseende</string>
+    <string name="editor">Redigerare</string>
+    <string name="hide_statusbar_at_this_view">Dölj statusfältet i den här vyn</string>
+    <string name="hide_statusbar">Dölj statusfältet</string>
+    <string name="language">Språk</string>
+    <string name="language_change_restart_description">Byt språk för appen. Starta om för att fastställa ändringar</string>
+</resources>

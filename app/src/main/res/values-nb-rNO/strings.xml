@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="create">Opprett</string>
+    <string name="donate">Doner</string>
+    <string name="changelog">Endringslogg</string>
+    <string name="exit">Avslutt</string>
+    <string name="size">Etter størrelse</string>
+    <string name="about">Om Markor</string>
+    <string name="licenses">Lisenser</string>
+    <string name="contributors">Bidragsytere</string>
+    <string name="show_third_party_licenses">Vis tredjepartslisenser</string>
+    <string name="settings">Innstillinger</string>
+    <string name="editor">Skriveprogram</string>
+    <string name="hide_statusbar_at_this_view">Skjul statusfelt i denne visningen</string>
+    <string name="hide_statusbar">Skjul statusfelt</string>
+    <string name="language">Språk</string>
+    <string name="language_change_restart_description">Endre programmets språk. Omstart kreves før endringer trer i effekt</string>
+</resources>

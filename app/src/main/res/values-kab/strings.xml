@@ -27,7 +27,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Ttwaskelsen</string>
     <string name="favs">Inurifen</string>
-    <string name="create">Rnu</string>
     <string name="hidden">Yeffer</string>
 
     <string name="rows_with_title">Izirigen n izwal</string>
@@ -37,14 +36,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Ddem tugna si timidelt</string>
     <string name="get_picture_from_camera">Ṭef tawlaft</string>
     <string name="error_cannot_start_camera">Urizmir ara ad isenker asagu n tiwlafin</string>
-    <string name="error_picture_selection">Ula d yiwet n tugna ur tettwafren.</string>
     <string name="error_couldnot_load_picture_from_storage">Ur izmir ara ad d-isali tugna seg umḍiq n usekles.</string>
     <string name="share_meme_via__appspecific">Bḍu amemesis-ik s…</string>
 
-    <string name="donate">Mudd</string>
     <string name="recommend">Welleh</string>
-    <string name="changelog">Amaynut n usnas</string>
-    <string name="exit">Ffeɣ</string>
     <string name="yes">ih</string>
 
     <string name="no_favourites_description__appspecific">Ulac yakan inurifen.\n
@@ -66,24 +61,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Tasefsit</string>
     <string name="keep_editing">Kemmel taẓrigt</string>
     <string name="text">Aḍris</string>
-    <string name="size">Teɣzi</string>
     <string name="background">Agilal</string>
     <string name="border">Rrif</string>
     <string name="picture">Tugna</string>
 
     <!-- Info -->
-    <string name="about">Ɣef</string>
     <string name="developed_by">Yefnefl-it</string>
-    <string name="licenses">Iselkinen</string>
     <string name="show_licenses">Sken iselkinen</string>
-    <string name="contributors">Imttekkiyen</string>
     <string name="more_information">Ugar n telɣut</string>
-    <string name="gnu_gplv3_license">Sken aselkin GNU GPLv3</string>
-    <string name="show_third_party_licenses">Sken iselkinen nniḍen</string>
-    <string name="miscellaneous">Ayen nniḍen</string>
 
     <!-- Settings -->
-    <string name="settings">Ismenyifen</string>
     <string name="all_caps">Akk s usekkil meqqren</string>
     <string name="caps_off">Isekkilen meqqren nsan</string>
     <string name="rotate">Tuzya</string>
@@ -91,7 +78,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Sfeḍ tinfulin</string>
     <string name="columns_portrait">Tigejda s teɣzi</string>
     <string name="columns_landscape">Tigejda s tehri</string>
-    <string name="appearance">Udem</string>
     <string name="default_mode">Askar amezwer</string>
     <string name="default_mode_description_description__appspecific">Askar amezwer ad d-yeldi di tnekra (Rnu, d Anurif neɣ yettwasekles)</string>
     <string name="functionality">Tamahilt</string>
@@ -101,9 +87,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Sexleḍ tabdart n imemesisen</string>
     <string name="padding">Tama tagensant</string>
     <string name="overview">Taskant</string>
-    <string name="editor">Amaẓrag</string>
-    <string name="hide_statusbar_at_this_view">Asnas yettwaselkam deg ugdil aččuran</string>
-    <string name="hide_statusbar">Ffer afeggag n waddad</string>
     <string name="picture_quality_percent" formatted="false">Taɣara n teɣzi n tugniwin. Skud azal meqqer, Skud yettawi akud akken ad d-yali. Akken yezmer yibenk akked teɣzi n tugna, yezmer daɣen asnas ur iteddu ara akken tettraǧuḍ s wazal nnig n 25%.</string>
     <string name="thumbnail_quality">Taɣara n tenfult</string>
     <string name="view_type_memelist__appspecific">Fren askar n uskan (iẓiki n tugniwin, izwar s yizirigen)</string>
@@ -111,8 +94,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Sken timidelt n yibenk</string>
 
     <!-- Language -->
-    <string name="language">Tutlayt</string>
-    <string name="language_change_restart_description">Beddel isem n tutlayt n ugrudem. Yessefk ad talseḍ tanekra n usnas akken teddu tutlaut tamaynut</string>
     <string name="error_cannot_create_save_directory">Tuccḍa : Ur izmir ara ad yernu akaram n usekles</string>
     <string name="error_storage_permission__appspecific">Asnas yesra tasiregt-ik akken ad yekcem ar uḍiq n usekles n yibenk akken ad isekles imemesisen d tineɣrufin-nsen</string>
     <string name="other">Wayeḍ</string>
@@ -137,4 +118,23 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_title">Beddelazwel</string>
     <string name="hide">Ffer</string>
     <string name="unhide">Sken</string>
+    <string name="miscellaneous">Ayen nniḍen</string>
+    <string name="gnu_gplv3_license">Turagt GNU GPLv3+</string>
+    <string name="create">Rnu</string>
+    <string name="error_picture_selection">Ula d yiwet n tugna ur tettwafren.</string>
+    <string name="donate">Mudd</string>
+    <string name="changelog">Amaynut n usnas</string>
+    <string name="exit">Ffeɣ</string>
+    <string name="size">Teɣzi</string>
+    <string name="about">Ɣef</string>
+    <string name="licenses">Iselkinen</string>
+    <string name="contributors">Imttekkiyen</string>
+    <string name="show_third_party_licenses">Sken iselkinen nniḍen</string>
+    <string name="settings">Ismenyifen</string>
+    <string name="appearance">Udem</string>
+    <string name="editor">Amaẓrag</string>
+    <string name="hide_statusbar_at_this_view">Asnas yettwaselkam deg ugdil aččuran</string>
+    <string name="hide_statusbar">Ffer afeggag n waddad</string>
+    <string name="language">Tutlayt</string>
+    <string name="language_change_restart_description">Beddel isem n tutlayt n ugrudem. Yessefk ad talseḍ tanekra n usnas akken teddu tutlaut tamaynut</string>
 </resources>

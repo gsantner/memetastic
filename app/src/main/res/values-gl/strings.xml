@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="open_navdrawer">Abrir cadro de navegación</string>
+    <string name="close_navdrawer">Pechar cadro de navegación</string>
+    <string name="miscellaneous">Varios</string>
+    <string name="gnu_gplv3_license">Licenza GNU GPLv3+</string>
+    <string name="show_title">Mostrar título</string>
+    <string name="changelog">Rexistro de cambios</string>
+    <string name="about">Sobre</string>
+    <string name="contributors">Contribúen</string>
+    <string name="show_third_party_licenses">Código de terceiras partes</string>
+    <string name="settings">Axustes</string>
+    <string name="appearance">Aparencia</string>
+    <string name="hide_statusbar">Agochar barra de estado</string>
+    <string name="language">Idioma</string>
+    <string name="language_change_restart_description">Cambiar o idioma de esta aplicación. Reinicie para que se aplique o troco</string>
+</resources>

@@ -27,7 +27,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Zapisane</string>
     <string name="favs">Ulubione</string>
-    <string name="create">Stwórz</string>
     <string name="hidden">Ukryte</string>
 
     <string name="rows_with_title">Wiersze z tytułem</string>
@@ -37,14 +36,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Wybierz obraz z Galerii</string>
     <string name="get_picture_from_camera">Zrób zdjęcie aparatem</string>
     <string name="error_cannot_start_camera">Nie udało się włączyć aparatu.</string>
-    <string name="error_picture_selection">Nie wybrano żadnego obrazu.</string>
     <string name="error_couldnot_load_picture_from_storage">Nie udało się załadować obrazu z pamięci.</string>
     <string name="share_meme_via__appspecific">Udostępnij Twój Mem za pomocą...</string>
 
-    <string name="donate">Wspomóż</string>
     <string name="recommend">Poleć</string>
-    <string name="changelog">Lista zmian</string>
-    <string name="exit">Wyjdź</string>
     <string name="yes">tak</string>
 
     <string name="no_favourites_description__appspecific">Brak ulubionych.\nUżyj gwiazdki żeby dodać szablon do ulubionych.</string>
@@ -63,24 +58,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Czcionka</string>
     <string name="keep_editing">Edytuję dalej</string>
     <string name="text">Tekst</string>
-    <string name="size">Rozmiar</string>
     <string name="background">Tło</string>
     <string name="border">Krawędź</string>
     <string name="picture">Obraz</string>
 
     <!-- Info -->
-    <string name="about">Informacje</string>
     <string name="developed_by">Stworzone przez</string>
-    <string name="licenses">Licencje</string>
     <string name="show_licenses">Pokaż licencje</string>
-    <string name="contributors">Współautorzy</string>
     <string name="more_information">Więcej informacji</string>
-    <string name="gnu_gplv3_license">Pokaż licencję GNU GPLv3</string>
-    <string name="show_third_party_licenses">Pokaż licencje dzieł osób trzecich</string>
-    <string name="miscellaneous">Różne</string>
 
     <!-- Settings -->
-    <string name="settings">Ustawienia</string>
     <string name="all_caps">Tylko wielkie litery</string>
     <string name="caps_off">Wyłącz wielkie litery</string>
     <string name="rotate">Obróć</string>
@@ -88,7 +75,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Wyczyść miniatury</string>
     <string name="columns_portrait">Kolumny portretowo</string>
     <string name="columns_landscape">Kolumny horyzontalnie</string>
-    <string name="appearance">Wygląd</string>
     <string name="default_mode">Domyślny tryb</string>
     <string name="default_mode_description_description__appspecific">Domyślny tryb uruchamiamy podczas startu\n(Stwórz, Ulubione lub Zapisane)</string>
     <string name="functionality">Funkcjonalność</string>
@@ -98,9 +84,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Pomieszaj listę memów</string>
     <string name="padding">Odstęp</string>
     <string name="overview">Przegląd</string>
-    <string name="editor">Edytor</string>
-    <string name="hide_statusbar_at_this_view">Ukryj pasek stanu</string>
-    <string name="hide_statusbar">Ukryj pasek stanu</string>
     <string name="picture_quality_percent">Jakość i rozmiar zależą od obrazów. Wyższe wartości oznaczają dłuższy czas ładowania. W zależności od urządzenia i rozmiaru obrazu aplikacja może nie działać tak jak powinna jeśli wartość będzie wyższa niż 25%.</string>
     <string name="thumbnail_quality">Jakość miniatury</string>
     <string name="view_type_memelist__appspecific">Ustaw Typ widoku (Wygląd sitki, listy z tytułem)</string>
@@ -108,8 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Pokaż w galerii urządzenia</string>
 
     <!-- Language -->
-    <string name="language">Język</string>
-    <string name="language_change_restart_description">Zmienia język aplikacji. Zrestartuj żeby wprowadzić zmiany</string>
     <string name="error_cannot_create_save_directory">Błąd: Nie można utworzyć folderu zapisu</string>
     <string name="error_storage_permission__appspecific">Aplikacja potrzebuje uprawnień pamięci do zapisania memów i szablonów</string>
     <string name="other">Inne</string>
@@ -134,4 +115,23 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_title">Zmień tytuł</string>
     <string name="hide">Ukryj</string>
     <string name="unhide">Pokaż</string>
+    <string name="miscellaneous">Różne</string>
+    <string name="gnu_gplv3_license">Licencja GNU GPLv3+</string>
+    <string name="create">Stwórz</string>
+    <string name="error_picture_selection">Nie wybrano żadnego obrazu.</string>
+    <string name="donate">Wspomóż</string>
+    <string name="changelog">Lista zmian</string>
+    <string name="exit">Wyjdź</string>
+    <string name="size">Rozmiar</string>
+    <string name="about">Informacje</string>
+    <string name="licenses">Licencje</string>
+    <string name="contributors">Współautorzy</string>
+    <string name="show_third_party_licenses">Pokaż licencje dzieł osób trzecich</string>
+    <string name="settings">Ustawienia</string>
+    <string name="appearance">Wygląd</string>
+    <string name="editor">Edytor</string>
+    <string name="hide_statusbar_at_this_view">Ukryj pasek stanu</string>
+    <string name="hide_statusbar">Ukryj pasek stanu</string>
+    <string name="language">Język</string>
+    <string name="language_change_restart_description">Zmienia język aplikacji. Zrestartuj żeby wprowadzić zmiany</string>
 </resources>

@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Sacuvano</string>
     <string name="favs">Omiljeni</string>
-    <string name="create">Napravi</string>
     <string name="hidden">Sakriveno</string>
 
     <string name="rows_with_title">Redovi sa nazivom</string>
@@ -38,14 +37,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Uzmi sliku iz galerije</string>
     <string name="get_picture_from_camera">Uzmi sliku sa Kamere</string>
     <string name="error_cannot_start_camera">Nije moguce pokrenuti kameru.</string>
-    <string name="error_picture_selection">Nijedna slika nije oznacena.</string>
     <string name="error_couldnot_load_picture_from_storage">Ne mogu ucitati sliku iz memorije.</string>
     <string name="share_meme_via__appspecific">Share your Meme via…</string>
 
-    <string name="donate">Doniraj</string>
     <string name="recommend">Preporuci</string>
-    <string name="changelog">Lista promena</string>
-    <string name="exit">Izadji</string>
     <string name="yes">Da</string>
 
     <string name="no_favourites_description__appspecific">Nema omiljenih.\nKoristi zvezdicu od meme sablon da ga dodas u omiljene.</string>
@@ -65,24 +60,18 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Font</string>
     <string name="keep_editing">Nastavi uredjivanje</string>
     <string name="text">Tekst</string>
-    <string name="size">Veličina</string>
     <string name="background">Pozadina</string>
     <string name="border">Rub</string>
     <string name="picture">Slika</string>
 
     <!-- Info -->
-    <string name="about">O ovom</string>
     <string name="developed_by">Napravio</string>
-    <string name="licenses">Licence</string>
     <string name="show_licenses">Prikayi licence</string>
-    <string name="contributors">Pomo\'nici</string>
     <string name="more_information">Vise informacija</string>
     <string name="gnu_gplv3_license">Prikazi GNU GPLv3 licence</string>
-    <string name="show_third_party_licenses">Prikaz licence trecih lica</string>
     <string name="miscellaneous">Ostalo</string>
 
     <!-- Settings -->
-    <string name="settings">Podesavanja</string>
     <string name="all_caps">Velika slova</string>
     <string name="caps_off">Mala slova</string>
     <string name="rotate">Rotiraj</string>
@@ -90,7 +79,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Ocisti slicice</string>
     <string name="columns_portrait">Kolone portretne</string>
     <string name="columns_landscape">Kolone pejzazne</string>
-    <string name="appearance">Izgled</string>
     <string name="default_mode">Podrazumijevani mod</string>
     <string name="default_mode_description_description__appspecific">Podrazumijevani mod na otvaranju programa (Napravi, Omiljeno ili Sacuvano)</string>
     <string name="functionality">Funkcionalnost</string>
@@ -100,9 +88,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Promiješaj listu mema</string>
     <string name="padding">Postavljanje</string>
     <string name="overview">Pregled</string>
-    <string name="editor">Uređivač</string>
-    <string name="hide_statusbar_at_this_view">Sakrij status na ovom pregledu</string>
-    <string name="hide_statusbar">Sakrij status</string>
     <string name="picture_quality_percent" formatted="false">Kvalitet i veličina slika. Veće veličine trebaju duže vremena da se učitaju. U zavisnosti od hardvera i veličine slike ova aplikacija možda neće raditi očekivano ako je valuta iznad 25%.</string>
     <string name="thumbnail_quality">Kvalitet sličica</string>
     <string name="view_type_memelist__appspecific">Postavi tip pregleda (Mapa slika, Redovi sa nazivima)</string>
@@ -110,8 +95,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Prikaži galeriju uređaja</string>
 
     <!-- Language -->
-    <string name="language">Jezik</string>
-    <string name="language_change_restart_description">Promijeni jezik ove aplikacije. Restartuj apikaciju da bi podešavanja dobila efekat.</string>
     <string name="error_cannot_create_save_directory">Greška: Nemoguće kreirati direktorijum za meme</string>
     <string name="error_storage_permission__appspecific">Treba odobrenje da sladišti sacuvane meme i sablone</string>
     <string name="other">Drugo</string>
@@ -137,4 +120,21 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="hide">Sakrij</string>
     <string name="unhide">Prikaži</string>
     <string name="tap_here_to_add_caption">Klikni ovdje da dodaš naziv</string>
+    <string name="create">Napravi</string>
+    <string name="error_picture_selection">Nijedna slika nije oznacena.</string>
+    <string name="donate">Doniraj</string>
+    <string name="changelog">Lista promena</string>
+    <string name="exit">Izadji</string>
+    <string name="size">Veličina</string>
+    <string name="about">O ovom</string>
+    <string name="licenses">Licence</string>
+    <string name="contributors">Pomo\'nici</string>
+    <string name="show_third_party_licenses">Prikaz licence trecih lica</string>
+    <string name="settings">Podesavanja</string>
+    <string name="appearance">Izgled</string>
+    <string name="editor">Uređivač</string>
+    <string name="hide_statusbar_at_this_view">Sakrij status na ovom pregledu</string>
+    <string name="hide_statusbar">Sakrij status</string>
+    <string name="language">Jezik</string>
+    <string name="language_change_restart_description">Promijeni jezik ove aplikacije. Restartuj apikaciju da bi podešavanja dobila efekat.</string>
 </resources>

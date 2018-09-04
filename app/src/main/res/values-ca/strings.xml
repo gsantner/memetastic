@@ -27,7 +27,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">"Desats"</string>
     <string name="favs">Preferits</string>
-    <string name="create">Crea</string>
     <string name="hidden">Amagats</string>
 
     <string name="rows_with_title">Files amb títol</string>
@@ -37,14 +36,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Obtén una imatge de la galeria</string>
     <string name="get_picture_from_camera">Obtén una imatge de la càmera</string>
     <string name="error_cannot_start_camera">"No s\'ha pogut iniciar la càmera."</string>
-    <string name="error_picture_selection">"No s\'ha seleccionat cap imatge"</string>
     <string name="error_couldnot_load_picture_from_storage">"No s\'ha pogut carregar la imatge des de l\'emmagatzematge."</string>
     <string name="share_meme_via__appspecific">Compartiu el teu meme a través de</string>
 
-    <string name="donate">Fes un donatiu</string>
     <string name="recommend">Recomana</string>
-    <string name="changelog">Novetats</string>
-    <string name="exit">Surt</string>
     <string name="yes">sí</string>
 
     <string name="no_favourites_description__appspecific">"Encara no hi ha cap preferit.\nUtilitza el botó estrella d\'una plantilla d\'un meme per afegir-lo als preferits."</string>
@@ -64,24 +59,18 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Font</string>
     <string name="keep_editing">"Mantén l\'edició"</string>
     <string name="text">Text</string>
-    <string name="size">Mida</string>
     <string name="background">Fons</string>
     <string name="border">Vora</string>
     <string name="picture">Imatge</string>
 
     <!-- Info -->
-    <string name="about">Quant a</string>
     <string name="developed_by">Desenvolupat per</string>
-    <string name="licenses">Llicències</string>
     <string name="show_licenses">Mostra les llicències</string>
-    <string name="contributors">Col·laboradors</string>
     <string name="more_information">Més informació</string>
     <string name="gnu_gplv3_license">Mostra la llicència GNU GPLv3</string>
-    <string name="show_third_party_licenses">Mostra les llicències de tercers</string>
     <string name="miscellaneous">Divers</string>
 
     <!-- Settings -->
-    <string name="settings">Configuració</string>
     <string name="all_caps">Totes les tapes</string>
     <string name="caps_off">Desactiva les tapes</string>
     <string name="rotate">Gira</string>
@@ -89,7 +78,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Esborra les miniatures</string>
     <string name="columns_portrait">Columnes verticals</string>
     <string name="columns_landscape">Columnes horitzontals</string>
-    <string name="appearance">Aparença</string>
     <string name="default_mode">Mode per defecte</string>
     <string name="default_mode_description_description__appspecific">"Mode per defecte en obrir-se a l\'inici (crea, preferits o desats)"</string>
     <string name="functionality">Funcionalitat</string>
@@ -99,9 +87,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Barreja la llista de memes</string>
     <string name="padding">Farciment</string>
     <string name="overview">Visió general</string>
-    <string name="editor">Editor</string>
-    <string name="hide_statusbar_at_this_view">"Amaga la barra d\'estat en aquesta vista"</string>
-    <string name="hide_statusbar">"Amaga la barra d\'estat"</string>
     <string name="picture_quality_percent" formatted="false">"Qualitat i mida de les imatges. Els valors més alts signifiquen un major temps de càrrega. Segons el maquinari del dispositiu i la mida de la imatge, és possible que l\'aplicació no funcioni com s\'espera si el valor és superior al 25%."</string>
     <string name="thumbnail_quality">Qualitat de els miniatures</string>
     <string name="view_type_memelist__appspecific">"Estableix el tipus de vista (quadrícula d\'imatges, files amb títol)"</string>
@@ -109,8 +94,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Mostra-ho en la galeria del dispositiu</string>
 
     <!-- Language -->
-    <string name="language">Idioma</string>
-    <string name="language_change_restart_description">"Canvia l\'idioma d\'aquesta aplicació. Reinicia l\'aplicació perquè els canvis tinguin efecte"</string>
     <string name="error_cannot_create_save_directory">Error: no es pot crear la carpeta</string>
     <string name="error_storage_permission__appspecific">Necessitem permís per desar memes i plantilles</string>
     <string name="other">Altres</string>
@@ -136,4 +119,21 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="hide">Amaga</string>
     <string name="unhide">Mostra</string>
     <string name="tap_here_to_add_caption">Toca aquí per afegir un títol</string>
+    <string name="create">Crea</string>
+    <string name="error_picture_selection">"No s\'ha seleccionat cap imatge"</string>
+    <string name="donate">Fes un donatiu</string>
+    <string name="changelog">Novetats</string>
+    <string name="exit">Surt</string>
+    <string name="size">Mida</string>
+    <string name="about">Quant a</string>
+    <string name="licenses">Llicències</string>
+    <string name="contributors">Col·laboradors</string>
+    <string name="show_third_party_licenses">Mostra les llicències de tercers</string>
+    <string name="settings">Configuració</string>
+    <string name="appearance">Aparença</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">"Amaga la barra d\'estat en aquesta vista"</string>
+    <string name="hide_statusbar">"Amaga la barra d\'estat"</string>
+    <string name="language">Idioma</string>
+    <string name="language_change_restart_description">"Canvia l\'idioma d\'aquesta aplicació. Reinicia l\'aplicació perquè els canvis tinguin efecte"</string>
 </resources>

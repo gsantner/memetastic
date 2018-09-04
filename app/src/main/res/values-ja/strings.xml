@@ -27,7 +27,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">保存済</string>
     <string name="favs">お気に入り</string>
-    <string name="create">作成</string>
     <string name="hidden">非表示</string>
 
     <string name="rows_with_title">タイトル付き行</string>
@@ -37,14 +36,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">ギャラリーから画像を取得</string>
     <string name="get_picture_from_camera">カメラから画像を取得</string>
     <string name="error_cannot_start_camera">カメラを開始できません。</string>
-    <string name="error_picture_selection">画像が選択されていません。</string>
     <string name="error_couldnot_load_picture_from_storage">ストレージから画像を読み込めません。</string>
     <string name="share_meme_via__appspecific">ミームを共有…</string>
 
-    <string name="donate">寄付</string>
     <string name="recommend">おすすめ</string>
-    <string name="changelog">変更履歴</string>
-    <string name="exit">終了</string>
     <string name="yes">はい</string>
 
     <string name="no_favourites_description__appspecific">まだお気に入りはありません。\nミームテンプレートのスターボタンを使用して、お気に入りを追加してください。</string>
@@ -64,24 +59,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">フォント</string>
     <string name="keep_editing">編集を続ける</string>
     <string name="text">テキスト</string>
-    <string name="size">サイズ</string>
     <string name="background">背景</string>
     <string name="border">枠</string>
     <string name="picture">画像</string>
 
     <!-- Info -->
-    <string name="about">情報</string>
     <string name="developed_by">開発者</string>
-    <string name="licenses">ライセンス</string>
     <string name="show_licenses">ライセンスを表示</string>
-    <string name="contributors">貢献者</string>
     <string name="more_information">追加情報</string>
-    <string name="gnu_gplv3_license">GNU GPLv3 ライセンスを表示</string>
-    <string name="show_third_party_licenses">サードパーティライセンスを表示</string>
-    <string name="miscellaneous">その他</string>
 
     <!-- Settings -->
-    <string name="settings">設定</string>
     <string name="all_caps">すべて大文字</string>
     <string name="caps_off">小文字</string>
     <string name="rotate">回転</string>
@@ -89,7 +76,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">サムネイルをクリア</string>
     <string name="columns_portrait">縦の項目数</string>
     <string name="columns_landscape">横の項目数</string>
-    <string name="appearance">外観</string>
     <string name="default_mode">デフォルトモード</string>
     <string name="default_mode_description_description__appspecific">起動時に開くデフォルトモード (作成、お気に入り、保存済)</string>
     <string name="functionality">機能</string>
@@ -99,9 +85,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">ミームリストをシャッフル</string>
     <string name="padding">余白</string>
     <string name="overview">概要</string>
-    <string name="editor">エディター</string>
-    <string name="hide_statusbar_at_this_view">このビューでステータスバーを非表示にします</string>
-    <string name="hide_statusbar">ステータスバーを非表示</string>
     <string name="picture_quality_percent" formatted="false">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
     <string name="thumbnail_quality">サムネイル品質</string>
     <string name="view_type_memelist__appspecific">表示タイプを設定 (画像グリッド、タイトル付き行)</string>
@@ -109,8 +92,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">デバイスのギャラリーで表示</string>
 
     <!-- Language -->
-    <string name="language">言語</string>
-    <string name="language_change_restart_description">このアプリの言語を変更します。 変更を反映するにはアプリを再起動します</string>
     <string name="error_cannot_create_save_directory">エラー: 保存ディレクトリーを作成できません</string>
     <string name="error_storage_permission__appspecific">ミームやテンプレートの保存にはアクセス許可が必要です</string>
     <string name="other">その他</string>
@@ -131,9 +112,28 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <!--Meme pop up menu strings-->
     <string name="favourite">お気に入りに追加</string>
     <string name="remove_favourite">お気に入りから削除</string>
-    <string name="show_title">タイトルを表示</string>
     <string name="edit_title">タイトルを編集</string>
     <string name="hide">非表示</string>
     <string name="unhide">表示</string>
     <string name="tap_here_to_add_caption">ここをタップしてキャプションを追加</string>
+    <string name="miscellaneous">その他</string>
+    <string name="gnu_gplv3_license">GNU GPLv3+ ライセンス</string>
+    <string name="show_title">タイトルを表示</string>
+    <string name="create">作成</string>
+    <string name="error_picture_selection">画像が選択されていません。</string>
+    <string name="donate">寄付</string>
+    <string name="changelog">変更履歴</string>
+    <string name="exit">終了</string>
+    <string name="size">サイズ</string>
+    <string name="about">情報</string>
+    <string name="licenses">ライセンス</string>
+    <string name="contributors">貢献者</string>
+    <string name="show_third_party_licenses">サードパーティライセンスを表示</string>
+    <string name="settings">設定</string>
+    <string name="appearance">外観</string>
+    <string name="editor">エディター</string>
+    <string name="hide_statusbar_at_this_view">このビューでステータスバーを非表示にします</string>
+    <string name="hide_statusbar">ステータスバーを非表示</string>
+    <string name="language">言語</string>
+    <string name="language_change_restart_description">このアプリの言語を変更します。 変更を反映するにはアプリを再起動します</string>
 </resources>

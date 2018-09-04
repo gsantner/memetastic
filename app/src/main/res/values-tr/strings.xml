@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="gnu_gplv3_license">GNU GPLv3+ License</string>
+    <string name="create">Oluştur</string>
+    <string name="donate">Bağış Yap</string>
+    <string name="changelog">Değişiklik Günlüğü</string>
+    <string name="exit">Çık</string>
+    <string name="size">Boyuta göre sırala</string>
+    <string name="about">Markor Hakkında</string>
+    <string name="licenses">Lisanslar</string>
+    <string name="contributors">Katkıda Bulunanlar</string>
+    <string name="show_third_party_licenses">3. parti lisanslarını göster</string>
+    <string name="settings">Ayarlar</string>
+    <string name="appearance">Görünüş</string>
+    <string name="editor">Düzenleyici</string>
+    <string name="hide_statusbar_at_this_view">Bu görünümde durum çubuğunu gizle</string>
+    <string name="hide_statusbar">Durum çubuğunu gizle</string>
+    <string name="language">Dil</string>
+    <string name="language_change_restart_description">Bu uygulamanın dilini değiştir. Değişikliklerin etkili olması için uygulamayı yeniden başlatın</string>
+</resources>

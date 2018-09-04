@@ -26,18 +26,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Tersimpan</string>
     <string name="favs">Favorit</string>
-    <string name="create">Buat Baru</string>
 
     <string name="get_picture_from_gallery">Memilih gambar dari Galeri</string>
     <string name="get_picture_from_camera">Memilih gambar dari Kamera</string>
     <string name="error_cannot_start_camera">Kamera tidak dapat dinyalakan.</string>
-    <string name="error_picture_selection">Tidak ada gambar yang dipilih.</string>
     <string name="share_meme_via__appspecific">Bagikan Meme anda via…</string>
 
-    <string name="donate">Donasi</string>
     <string name="recommend">Rekomendasi</string>
-    <string name="changelog">Catatan Perubahan</string>
-    <string name="exit">Keluar</string>
     <string name="yes">ya</string>
 
     <string name="no_favourites_description__appspecific">Tidak ada favorit.\nGunakan tombol bintang pada template meme untuk menambahkan daftar favorit.</string>
@@ -56,24 +51,18 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Jenis Karakter</string>
     <string name="keep_editing">Lanjutkan modifikasi</string>
     <string name="text">Teks</string>
-    <string name="size">Ukuran</string>
     <string name="background">Latar Belakang</string>
     <string name="border">Kerangka</string>
     <string name="picture">Gambar</string>
 
     <!-- Info -->
-    <string name="about">Tentang Kami</string>
     <string name="developed_by">Dikembangkan oleh</string>
-    <string name="licenses">Lisensi</string>
     <string name="show_licenses">Tampilkan lisensi</string>
-    <string name="contributors">Kontributor</string>
     <string name="more_information">Informasi lebih lanjut</string>
     <string name="gnu_gplv3_license">Tampilkan lisensi GNU GPLv3</string>
-    <string name="show_third_party_licenses">Tampilkan lisensi pihak ketiga</string>
     <string name="miscellaneous">Lain-lain</string>
 
     <!-- Settings -->
-    <string name="settings">Preferensi</string>
     <string name="all_caps">Semua huruf kapital</string>
     <string name="caps_off">Huruf kapital dimatikan</string>
     <string name="rotate">Rotasi</string>
@@ -81,7 +70,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Hapus thumbnail</string>
     <string name="columns_portrait">Kolom portrait</string>
     <string name="columns_landscape">Kolom landscape</string>
-    <string name="appearance">Tampilan</string>
     <string name="default_mode">Mode Awal</string>
     <string name="default_mode_description_description__appspecific">Mode awal saat membuka aplikasi (Membuat, Favorit atau Tersimpan)</string>
     <string name="functionality">Fungsionalitas</string>
@@ -91,15 +79,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Acak daftar meme</string>
     <string name="padding">Padding</string>
     <string name="overview">Ikhtisar</string>
-    <string name="editor">Laman Pengubahan</string>
-    <string name="hide_statusbar_at_this_view">Sembunyikan kolom status pada tampilan ini</string>
-    <string name="hide_statusbar">Sembunyikan kolom status</string>
     <string name="picture_quality_percent">Kualitas dan ukuran gambar. Semakin tinggi nilai akan meningkatkan waktu memuat laman. Tergantung dengan jenis device dan ukuran gambar, aplikasi mungkin tidak dapat bekerja dengan baik apabila nilai yang dispesifikasikan lebih dari 25%.</string>
     <string name="thumbnail_quality">Kualitas thumbnail</string>
 
     <!-- Language -->
-    <string name="language">Bahasa</string>
-    <string name="language_change_restart_description">Mengubah bahasa aplikasi. Buka ulang aplikasi setelah mengubah preferensi bahasa</string>
     <string name="error_cannot_create_save_directory">Error: Tidak dapat membuat direktori penyimpanan</string>
     <string name="error_storage_permission__appspecific">Dibutuhkan izin akses penyimpanan untuk menyimpan meme dan template</string>
     <string name="other">Lainnya</string>
@@ -111,4 +94,21 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="download_latest_assets_message_description__appspecific">Pada preferensi, anda juga dapat mengunduh aset terkini secara manual.</string>
     <string name="download_latest_assets">Unduh aset terkini</string>
     <string name="download_latest_assets_checking_description">Melakukan pengecekan apakah terdapat aset yang terbaharui</string>
+    <string name="create">Buat Baru</string>
+    <string name="error_picture_selection">Tidak ada gambar yang dipilih.</string>
+    <string name="donate">Donasi</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="exit">Keluar</string>
+    <string name="size">Ukuran</string>
+    <string name="about">Tentang Kami</string>
+    <string name="licenses">Lisensi</string>
+    <string name="contributors">Kontributor</string>
+    <string name="show_third_party_licenses">Tampilkan lisensi pihak ketiga</string>
+    <string name="settings">Preferensi</string>
+    <string name="appearance">Tampilan</string>
+    <string name="editor">Laman Pengubahan</string>
+    <string name="hide_statusbar_at_this_view">Sembunyikan kolom status pada tampilan ini</string>
+    <string name="hide_statusbar">Sembunyikan kolom status</string>
+    <string name="language">Bahasa</string>
+    <string name="language_change_restart_description">Mengubah bahasa aplikasi. Buka ulang aplikasi setelah mengubah preferensi bahasa</string>
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="create">新建</string>
+    <string name="donate">捐赠</string>
+    <string name="changelog">更新日志</string>
+    <string name="exit">退出</string>
+    <string name="size">按文件大小排序</string>
+    <string name="about">关于</string>
+    <string name="licenses">开源协议</string>
+    <string name="contributors">贡献者</string>
+    <string name="show_third_party_licenses">第三方许可证</string>
+    <string name="settings">设置</string>
+    <string name="editor">编辑器</string>
+    <string name="hide_statusbar_at_this_view">隐藏状态栏</string>
+    <string name="hide_statusbar">隐藏状态栏</string>
+    <string name="language">语言</string>
+    <string name="language_change_restart_description">更改语言（重启应用后生效）</string>
+</resources>

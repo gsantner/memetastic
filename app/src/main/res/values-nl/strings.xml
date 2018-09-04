@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="miscellaneous">Overige</string>
+    <string name="gnu_gplv3_license">GNU GPLv3 + licentie</string>
+    <string name="create">Aanmaken</string>
+    <string name="donate">Doneer</string>
+    <string name="changelog">Logboekwijzigingen</string>
+    <string name="exit">Afsluiten</string>
+    <string name="size">Sorteer op bestandsgrootte</string>
+    <string name="about">Over</string>
+    <string name="licenses">Licenties</string>
+    <string name="contributors">Bijdragers</string>
+    <string name="show_third_party_licenses">3rd Party Bibliotheken</string>
+    <string name="settings">Instellingen</string>
+    <string name="appearance">Vormgeving</string>
+    <string name="editor">Bewerker</string>
+    <string name="hide_statusbar_at_this_view">Verberg de statusbalk in deze weergave</string>
+    <string name="hide_statusbar">Verberg statusbalk</string>
+    <string name="language">Taal</string>
+    <string name="language_change_restart_description">Taal wijzigen van deze app. Opnieuw opstarten om wijzigingen te activeren</string>
+</resources>

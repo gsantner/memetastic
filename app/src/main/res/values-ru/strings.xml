@@ -25,18 +25,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <string name="saved">Сохранённые</string>
     <string name="favs">Избранное</string>
-    <string name="create">Создать</string>
 
     <string name="get_picture_from_gallery">Изображение из галереи</string>
     <string name="get_picture_from_camera">Изображение с камеры</string>
     <string name="error_cannot_start_camera">Не удалось запустить камеру.</string>
-    <string name="error_picture_selection">Изображение не выбранно.</string>
     <string name="share_meme_via__appspecific">Поделиться мемом с помощью…</string>
 
-    <string name="donate">Поддержать проект</string>
     <string name="recommend">Порекомендовать приложение</string>
-    <string name="changelog">Список изменений</string>
-    <string name="exit">Выход</string>
     <string name="yes">да</string>
 
     <string name="no_favourites_description__appspecific">Здесь пока что пусто.\nШаблон мема можно добавить в избранное, нажав на звёздочку.</string>
@@ -55,24 +50,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Шрифт</string>
     <string name="keep_editing">Продолжить редактирование</string>
     <string name="text">Текст</string>
-    <string name="size">Размер</string>
     <string name="background">Фон</string>
     <string name="border">Границы</string>
     <string name="picture">Изображение</string>
 
     <!-- Info -->
-    <string name="about">О программе</string>
     <string name="developed_by">Разработанно</string>
-    <string name="licenses">Лицензии</string>
     <string name="show_licenses">Показать лицензии</string>
-    <string name="contributors">Поддержавшие проект</string>
     <string name="more_information">Больше информации</string>
-    <string name="gnu_gplv3_license">Показать GNU-GPLv3 лицензию</string>
-    <string name="show_third_party_licenses">Показать сторонние лицензии</string>
-    <string name="miscellaneous">Разное</string>
 
     <!-- Settings -->
-    <string name="settings">Настройки</string>
     <string name="all_caps">КАПС ВКЛ</string>
     <string name="caps_off">капс выкл</string>
     <string name="rotate">Поворот</string>
@@ -80,7 +67,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">Очистить миниатюры</string>
     <string name="columns_portrait">Столбцы</string>
     <string name="columns_landscape">Строки</string>
-    <string name="appearance">Внешний вид</string>
     <string name="default_mode">Раздел по умолчанию</string>
     <string name="default_mode_description_description__appspecific">Раздел для открытия при запуске (Сохранённые, Избранное, Создать)</string>
     <string name="functionality">Функциальность</string>
@@ -90,13 +76,28 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list__appspecific">Список мемов в случайном порядке</string>
     <string name="padding">Padding</string>
     <string name="overview">Обзор</string>
-    <string name="editor">Редактор</string>
-    <string name="hide_statusbar_at_this_view">Скрыть строку состояния в этом режиме</string>
-    <string name="hide_statusbar">Скрыть строку состояния</string>
     <string name="picture_quality_percent">Качество и размер изображений. В зависимости от размера изображения и мощности устройства, производительность приложения может снизиться, если выбранно значение выше 25%.</string>
     <string name="thumbnail_quality">Качество миниатюр</string>
 
     <!-- Language -->
+    <string name="miscellaneous">Прочее</string>
+    <string name="gnu_gplv3_license">Лицензия GNU GPLv3+</string>
+    <string name="show_title">Показывать заголовок</string>
+    <string name="create">Создать</string>
+    <string name="error_picture_selection">Изображение не выбранно.</string>
+    <string name="donate">Поддержать проект</string>
+    <string name="changelog">Список изменений</string>
+    <string name="exit">Выход</string>
+    <string name="size">Размер</string>
+    <string name="about">О программе</string>
+    <string name="licenses">Лицензии</string>
+    <string name="contributors">Поддержавшие проект</string>
+    <string name="show_third_party_licenses">Показать сторонние лицензии</string>
+    <string name="settings">Настройки</string>
+    <string name="appearance">Внешний вид</string>
+    <string name="editor">Редактор</string>
+    <string name="hide_statusbar_at_this_view">Скрыть строку состояния в этом режиме</string>
+    <string name="hide_statusbar">Скрыть строку состояния</string>
     <string name="language">Язык</string>
     <string name="language_change_restart_description">Изменить язык приложения. (Необходим перезапуск)</string>
 </resources>

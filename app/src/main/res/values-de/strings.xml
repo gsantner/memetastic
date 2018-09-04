@@ -11,16 +11,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
     <string name="create_meme__appspecific">Meme erstellen</string>
     <string name="delete_meme__appspecific">Meme löschen</string>
-    <string name="donate">Spenden</string>
     <string name="error_cannot_start_camera">Kamera konnte nicht geladen werden.</string>
-    <string name="error_picture_selection">Kein Bild ausgewählt.</string>
-    <string name="exit">Beenden</string>
     <string name="get_picture_from_camera">Bild von Kamera laden</string>
     <string name="get_picture_from_gallery">Bild aus Galerie laden</string>
     <string name="animals">Tiere</string>
     <string name="cartoon">Cartoon</string>
     <string name="humans">Menschen</string>
-    <string name="create">Erstellen</string>
     <string name="favs">Favoriten</string>
     <string name="saved">Gespeichert</string>
     <string name="close_navdrawer">NavDrawer schließen</string>
@@ -43,11 +39,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="columns_landscape">Spalten Querformat</string>
     <string name="columns_portrait">Spalten Hochformat</string>
     <string name="render_quality">Render-Qualität</string>
-    <string name="settings">Einstellungen</string>
     <string name="developed_by">Entwickelt von</string>
-    <string name="about">Über</string>
-    <string name="changelog">Änderungen</string>
-    <string name="licenses">Lizenzen</string>
     <string name="show_licenses">Lizenzen anzeigen</string>
     <string name="yes">Ja</string>
 
@@ -57,14 +49,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="custom">Eigene</string>
 
     <string name="keep_editing">Weiter bearbeiten</string>
-    <string name="gnu_gplv3_license">Show GNU GPLv3 license</string>
-    <string name="contributors">Beitragende</string>
-    <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
     <string name="more_information">Mehr Informationen</string>
     <string name="caps_off">Caps aus</string>
     <string name="rotate">Drehen</string>
-    <string name="miscellaneous">Diverses</string>
-    <string name="appearance">Erscheinungsbild</string>
     <string name="default_mode">Standard Modus</string>
     <string name="default_mode_description_description__appspecific">Standard Modus bei Appstart (Erstellen, Favs, Gespeichert)</string>
     <string name="functionality">Funktionalität</string>
@@ -73,19 +60,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="shuffle_meme_list_description__appspecific">Zufällige Anordnung der Memes wählen wenn eine Kategorie ausgewählt wurde</string>
     <string name="shuffle_meme_list__appspecific">Mischen der Meme Liste</string>
     <string name="padding">Padding</string>
-    <string name="hide_statusbar_at_this_view">Die Statusleiste in dieser Ansicht verstecken</string>
-    <string name="editor">Editor</string>
-    <string name="hide_statusbar">Statusleiste verstecken</string>
     <string name="overview">Übersicht</string>
     <string name="text">Text</string>
-    <string name="size">Größe</string>
     <string name="background">Hintergrund</string>
     <string name="border">Umrandung</string>
     <string name="picture">Bild</string>
     <string name="thumbnail_quality">Vorschaubild Qualität</string>
     <string name="picture_quality_percent" formatted="false">Qualität und Größe von Bildern. Höhere Werte bedeuten eine erhöhte Ladezeit. Abhängig von Geräte-Hardware und Bildgröße kann die App über einen Wert von 25% nicht wie erwartet funktionieren.</string>
-    <string name="language_change_restart_description">Sprache der App ändern. Ein Neustart der App ist erforderlich um die Einstellung zu übernehmen</string>
-    <string name="language">Sprache</string>
     <string name="download_latest_assets_message__appspecific">Dies wird Schriftarten und Meme Vorlagen (ca. 20 MB) herunterladen</string>
     <string name="download_latest_assets">Aktuellste Zusatzinhalte herunteladen</string>
     <string name="downloading">Lade herunter</string>
@@ -118,4 +99,23 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="unhide">Wieder einblenden</string>
     <string name="enter_caption">Text eingeben</string>
     <string name="tap_here_to_add_caption">Hier tippen um Caption einzufügen</string>
+    <string name="miscellaneous">Verschiedenes</string>
+    <string name="gnu_gplv3_license">GNU GPLv3+ Lizenz</string>
+    <string name="create">Erstellen</string>
+    <string name="error_picture_selection">Kein Bild ausgewählt.</string>
+    <string name="donate">Spenden</string>
+    <string name="changelog">Änderungen</string>
+    <string name="exit">Beenden</string>
+    <string name="size">Größe</string>
+    <string name="about">Über</string>
+    <string name="licenses">Lizenzen</string>
+    <string name="contributors">Beitragende</string>
+    <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="appearance">Erscheinungsbild</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">Die Statusleiste in dieser Ansicht verstecken</string>
+    <string name="hide_statusbar">Statusleiste verstecken</string>
+    <string name="language">Sprache</string>
+    <string name="language_change_restart_description">Sprache der App ändern. Ein Neustart der App ist erforderlich um die Einstellung zu übernehmen</string>
 </resources>

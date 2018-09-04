@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+MemeTastic by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to MemeTastic.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+
+
+    <string name="miscellaneous">Egyéb</string>
+    <string name="gnu_gplv3_license">GNU GPLv3+ Licenc</string>
+    <string name="changelog">Újdonságok</string>
+    <string name="about">Névjegy</string>
+    <string name="contributors">Hozzájárulók</string>
+    <string name="show_third_party_licenses">3. személytől származó könyvtárak</string>
+    <string name="settings">Beállítások</string>
+    <string name="appearance">Megjelenés</string>
+    <string name="language">Nyelv</string>
+    <string name="language_change_restart_description">Az alkalmazás nyelvének megváltoztatása. Indítsd újra az alkalmazást, hogy a módosítások érvénybe lépjenek!</string>
+</resources>
