@@ -28,7 +28,7 @@
             android:id="@+id/meme_fragment__list_empty_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/main__nodata__saved"
+            android:text="@string/no_memes_saved_description__appspecific"
             android:textAlignment="center"
             android:textColor="@color/empty_list_background_text"
             android:textSize="20sp" />

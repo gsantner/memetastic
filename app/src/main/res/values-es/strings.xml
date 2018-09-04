@@ -11,115 +11,113 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
 
     <!-- main -->
-    <string name="main__navdrawer__open">Abrir el panel de navegación</string>
-    <string name="main__navdrawer__close">Cerrar el panel de navegación</string>
+    <string name="open_navdrawer">Abrir el panel de navegación</string>
+    <string name="close_navdrawer">Cerrar el panel de navegación</string>
 
-    <string name="main__save_meme">Guardar meme</string>
-    <string name="main__share_meme">Compartir meme</string>
-    <string name="main__create_meme">Crear meme</string>
-    <string name="main__delete_meme">Borrar meme</string>
+    <string name="save_meme__appspecific">Guardar meme</string>
+    <string name="share_meme__appspecific">Compartir meme</string>
+    <string name="create_meme__appspecific">Crear meme</string>
+    <string name="delete_meme__appspecific">Borrar meme</string>
 
-    <string name="main__memecat__humans">Humanos</string>
-    <string name="main__memecat__cartoon">Dibujos animados</string>
-    <string name="main__memecat__animals">Animales</string>
-    <string name="main__memecat__custom">Personalizado</string>
-    <string name="main__memecat__rage">Rage</string>
+    <string name="humans">Humanos</string>
+    <string name="cartoon">Dibujos animados</string>
+    <string name="animals">Animales</string>
+    <string name="custom">Personalizado</string>
+    <string name="rage">Rage</string>
 
-    <string name="memelist_data_mode__saved">Guardados</string>
-    <string name="memelist_data_mode__favs">Favoritos</string>
-    <string name="memelist_data_mode__create">Crear</string>
+    <string name="saved">Guardados</string>
+    <string name="favs">Favoritos</string>
+    <string name="create">Crear</string>
 
-    <string name="memelist_view_mode__rows_with_title">Filas con título</string>
-    <string name="memelist_view_mode__picture_grid">Rejilla de imágenes</string>
+    <string name="rows_with_title">Filas con título</string>
+    <string name="picture_grid">Rejilla de imágenes</string>
 
-    <string name="main__search_meme">Buscar meme</string>
-    <string name="main__get_picture_from_gallery">Obtener imagen de la galería</string>
-    <string name="main__get_picture_from_camera">Obtener imagen con la cámara</string>
-    <string name="main__error_camera_cannot_start">No se pudo iniciar la cámara.</string>
-    <string name="main__error_no_picture_selected">No se ha seleccionado ninguna imagen.</string>
-    <string name="main__error_fail_retrieve_picture">No se ha podido cargar la imagen desde el almacenamiento.</string>
-    <string name="main__share_meme_prompt">Compartir el meme vía...</string>
+    <string name="search_meme__appspecific">Buscar meme</string>
+    <string name="get_picture_from_gallery">Obtener imagen de la galería</string>
+    <string name="get_picture_from_camera">Obtener imagen con la cámara</string>
+    <string name="error_cannot_start_camera">No se pudo iniciar la cámara.</string>
+    <string name="error_picture_selection">No se ha seleccionado ninguna imagen.</string>
+    <string name="error_couldnot_load_picture_from_storage">No se ha podido cargar la imagen desde el almacenamiento.</string>
+    <string name="share_meme_via__appspecific">Compartir el meme vía...</string>
 
-    <string name="main__donate">Donar</string>
-    <string name="main__recommend_app">Recomendar</string>
+    <string name="donate">Donar</string>
+    <string name="recommend">Recomendar</string>
     <string name="changelog">Historial de cambios</string>
-    <string name="main__exit">Salir</string>
-    <string name="main__yes">sí</string>
+    <string name="exit">Salir</string>
+    <string name="yes">sí</string>
 
-    <string name="main__nodata__favourites">Aún no hay favoritos. Usa el botón de la estrella en una plantilla de meme para agregarla a favoritos.</string>
-    <string name="main__nodata__custom_templates">Aún no hay plantillas personalizadas. Coloca las imágenes de plantillas aquí:%1$s</string>
-    <string name="main__nodata__saved">Aún no hay memes guardados. Usa el botón superior de guardar tras editar un meme.</string>
+    <string name="no_favourites_description__appspecific">Aún no hay favoritos. Usa el botón de la estrella en una plantilla de meme para agregarla a favoritos.</string>
+    <string name="no_custom_templates_description__appspecific">Aún no hay plantillas personalizadas. Coloca las imágenes de plantillas aquí:%1$s</string>
+    <string name="no_memes_saved_description__appspecific">Aún no hay memes guardados. Usa el botón superior de guardar tras editar un meme.</string>
 
     <!-- Creator -->
-    <string name="creator__press_back_again_to_exit">Pulsa atrás de nuevo para dejar de editar este meme. El meme se perderá si no se guardó antes.</string>
-    <string name="creator__saved_successfully_message">Este meme se ha almacenado correctamente en tu dispositivo. ¿Quieres dejar de editar el meme ahora?</string>
-    <string name="creator__text_size">Tamaño del texto</string>
-    <string name="creator__text_color">Color del texto</string>
-    <string name="creator__border_color">Color del borde</string>
-    <string name="creator__saved_successfully">¡Guardado correctamente!</string>
-    <string name="creator__hint_top_caption">Texto superior</string>
-    <string name="creator__hint_bottom_caption">Texto inferior</string>
-    <string name="creator__font">Tipo de letra</string>
-    <string name="creator__keep_editing">Continuar editando</string>
-    <string name="creator__text">Texto</string>
-    <string name="creator__size">Tamaño</string>
-    <string name="creator__background">Fondo</string>
-    <string name="creator__border">Borde</string>
-    <string name="creator__picture">Imagen</string>
+    <string name="press_back_again_to_stop_editing__appspecific">Pulsa atrás de nuevo para dejar de editar este meme. El meme se perderá si no se guardó antes.</string>
+    <string name="saved_meme_successfully__appspecific">Este meme se ha almacenado correctamente en tu dispositivo. ¿Quieres dejar de editar el meme ahora?</string>
+    <string name="text_size">Tamaño del texto</string>
+    <string name="text_color">Color del texto</string>
+    <string name="border_color">Color del borde</string>
+    <string name="successfully_saved">¡Guardado correctamente!</string>
+    <string name="top_caption">Texto superior</string>
+    <string name="bottom_caption">Texto inferior</string>
+    <string name="font">Tipo de letra</string>
+    <string name="keep_editing">Continuar editando</string>
+    <string name="text">Texto</string>
+    <string name="size">Tamaño</string>
+    <string name="background">Fondo</string>
+    <string name="border">Borde</string>
+    <string name="picture">Imagen</string>
 
     <!-- Info -->
     <string name="about">Acerca de</string>
     <string name="developed_by">Desarrollado por</string>
-    <string name="additional_contact">Más información</string>
     <string name="licenses">Licencias</string>
     <string name="show_licenses">Mostrar licencias</string>
     <string name="contributors">Contribuidores</string>
     <string name="more_information">Más información</string>
-    <string name="show_app_license">Mostrar la licencia GNU GPLv3</string>
+    <string name="gnu_gplv3_license">Mostrar la licencia GNU GPLv3</string>
     <string name="show_third_party_licenses">Mostrar licencias de terceras partes</string>
     <string name="miscellaneous">Miscelánea</string>
 
     <!-- Settings -->
-    <string name="settings__settings">Ajustes</string>
-    <string name="settings__all_caps">Todo en mayúsculas</string>
-    <string name="settings__caps_off">Sin mayúsculas</string>
-    <string name="settings__rotate">Rotar</string>
-    <string name="pref_title__render_quality_editor_percent">Calidad de renderizado</string>
-    <string name="settings__cleanup_thumbnails">Limpiar miniaturas</string>
-    <string name="settings__pref_columns_portrait">Columnas en vertical</string>
-    <string name="settings__pref_columns_landscape">Columnas en apaisado</string>
-    <string name="pref_title__appearance">Apariencia</string>
-    <string name="pref_title__size">Tamaño</string>
-    <string name="pref_title__memelist_data_mode">Modo predeterminado</string>
-    <string name="pref_summary__memelist_data_mode">Modo predeterminado que se abre al iniciar (Crear, Favoritos o Guardados)</string>
-    <string name="pref_title__functionality">Funcionalidad</string>
-    <string name="pref_summary__auto_save_meme">Guardar meme automáticamente si se presiona \"atrás\" y había algún cambio</string>
-    <string name="pref_title__auto_save_meme">Guardar al presionar \"atrás"</string>
-    <string name="pref_summary__is_shuffle_meme_categories">Mezclar la lista de memes tras seleccionar una categoría</string>
-    <string name="pref_title__is_shuffle_meme_categories">Mezclar la lista de memes</string>
-    <string name="creator__padding">Margen</string>
-    <string name="pref_title__overview">Resumen</string>
-    <string name="pref_title__editor">Editor</string>
-    <string name="pref_summary__is_statusbar_hidden">Ocultar la barra de estado en esta vista</string>
-    <string name="pref_title__is_statusbar_hidden">Ocultar la barra de estado</string>
-    <string name="pref_summary__picture_quality__percent">Calidad y tamaño de las imágenes. Valores altos significan mayor tiempo de carga. Dependiendo del hardware del dispositivo y el tamaño de la imagen, la aplicación puede no funcionar como se espera si el valor supera el 25%.</string>
-    <string name="pref_title__thumbnail_quality__percent">Calidad de miniatura</string>
-    <string name="pref_summary__memelist_view_type">Establecer modo de vista (Rejilla de imágenes, Filas con título)</string>
-    <string name="pref_title__memelist_view_type">Tipo de vista</string>
-    <string name="pref_title__is_show_in_gallery">Mostrar en la galería del dispositivo</string>
+    <string name="settings">Ajustes</string>
+    <string name="all_caps">Todo en mayúsculas</string>
+    <string name="caps_off">Sin mayúsculas</string>
+    <string name="rotate">Rotar</string>
+    <string name="render_quality">Calidad de renderizado</string>
+    <string name="clear_thumbnails">Limpiar miniaturas</string>
+    <string name="columns_portrait">Columnas en vertical</string>
+    <string name="columns_landscape">Columnas en apaisado</string>
+    <string name="appearance">Apariencia</string>
+    <string name="default_mode">Modo predeterminado</string>
+    <string name="default_mode_description_description__appspecific">Modo predeterminado que se abre al iniciar (Crear, Favoritos o Guardados)</string>
+    <string name="functionality">Funcionalidad</string>
+    <string name="save_when_pressing_back_description__appspecific">Guardar meme automáticamente si se presiona \"atrás\" y había algún cambio</string>
+    <string name="save_when_pressing_back">Guardar al presionar \"atrás"</string>
+    <string name="shuffle_meme_list_description__appspecific">Mezclar la lista de memes tras seleccionar una categoría</string>
+    <string name="shuffle_meme_list__appspecific">Mezclar la lista de memes</string>
+    <string name="padding">Margen</string>
+    <string name="overview">Resumen</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">Ocultar la barra de estado en esta vista</string>
+    <string name="hide_statusbar">Ocultar la barra de estado</string>
+    <string name="picture_quality_percent">Calidad y tamaño de las imágenes. Valores altos significan mayor tiempo de carga. Dependiendo del hardware del dispositivo y el tamaño de la imagen, la aplicación puede no funcionar como se espera si el valor supera el 25%.</string>
+    <string name="thumbnail_quality">Calidad de miniatura</string>
+    <string name="view_type_memelist__appspecific">Establecer modo de vista (Rejilla de imágenes, Filas con título)</string>
+    <string name="view_type">Tipo de vista</string>
+    <string name="show_in_device_gallery">Mostrar en la galería del dispositivo</string>
 
     <!-- Language -->
-    <string name="pref_title__language">Idioma</string>
-    <string name="pref_desc__language">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
-    <string name="error_cannot_create_save_dir">Error: no se puede crear el directorio de guardado</string>
-    <string name="error_storage_permission">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
-    <string name="main__memecat__other">Otros</string>
+    <string name="language">Idioma</string>
+    <string name="language_change_restart_description">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
+    <string name="error_cannot_create_save_directory">Error: no se puede crear el directorio de guardado</string>
+    <string name="error_storage_permission__appspecific">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
+    <string name="other">Otros</string>
     <string name="downloading">Descargando</string>
     <string name="downloading_failed">Descarga fallida</string>
     <string name="unzipping">Descomprimiendo</string>
-    <string name="downloading_success">Descarga correcta</string>
-    <string name="download_latest_assets_message">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
-    <string name="download_latest_assets_message_more">También se pueden obtener los últimos elementos manualmente desde Ajustes.</string>
-    <string name="download_latest_assets_title">Descargar los elementos más recientes</string>
-    <string name="checking_assets_for_update">Comprobando si hay elementos más recientes disponibles</string>
+    <string name="successfully_downloaded">Descarga correcta</string>
+    <string name="download_latest_assets_message__appspecific">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
+    <string name="download_latest_assets_message_description__appspecific">También se pueden obtener los últimos elementos manualmente desde Ajustes.</string>
+    <string name="download_latest_assets">Descargar los elementos más recientes</string>
+    <string name="download_latest_assets_checking_description">Comprobando si hay elementos más recientes disponibles</string>
 </resources>

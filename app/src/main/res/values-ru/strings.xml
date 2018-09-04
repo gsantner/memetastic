@@ -10,95 +10,93 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <!-- main -->
-    <string name="main__navdrawer__open">Открыть панель навигации</string>
-    <string name="main__navdrawer__close">Закрыть панель навигации</string>
+    <string name="open_navdrawer">Открыть панель навигации</string>
+    <string name="close_navdrawer">Закрыть панель навигации</string>
 
-    <string name="main__save_meme">Сохранить мем</string>
-    <string name="main__share_meme">Поделиться мемом</string>
-    <string name="main__create_meme">Создать мем</string>
-    <string name="main__delete_meme">Удалить мем</string>
+    <string name="save_meme__appspecific">Сохранить мем</string>
+    <string name="share_meme__appspecific">Поделиться мемом</string>
+    <string name="create_meme__appspecific">Создать мем</string>
+    <string name="delete_meme__appspecific">Удалить мем</string>
 
-    <string name="main__memecat__humans">Люди</string>
-    <string name="main__memecat__cartoon">Мульты</string>
-    <string name="main__memecat__animals">Животные</string>
-    <string name="main__memecat__custom">Пользовательские</string>
+    <string name="humans">Люди</string>
+    <string name="cartoon">Мульты</string>
+    <string name="animals">Животные</string>
+    <string name="custom">Пользовательские</string>
 
-    <string name="memelist_data_mode__saved">Сохранённые</string>
-    <string name="memelist_data_mode__favs">Избранное</string>
-    <string name="memelist_data_mode__create">Создать</string>
+    <string name="saved">Сохранённые</string>
+    <string name="favs">Избранное</string>
+    <string name="create">Создать</string>
 
-    <string name="main__get_picture_from_gallery">Изображение из галереи</string>
-    <string name="main__get_picture_from_camera">Изображение с камеры</string>
-    <string name="main__error_camera_cannot_start">Не удалось запустить камеру.</string>
-    <string name="main__error_no_picture_selected">Изображение не выбранно.</string>
-    <string name="main__share_meme_prompt">Поделиться мемом с помощью…</string>
+    <string name="get_picture_from_gallery">Изображение из галереи</string>
+    <string name="get_picture_from_camera">Изображение с камеры</string>
+    <string name="error_cannot_start_camera">Не удалось запустить камеру.</string>
+    <string name="error_picture_selection">Изображение не выбранно.</string>
+    <string name="share_meme_via__appspecific">Поделиться мемом с помощью…</string>
 
-    <string name="main__donate">Поддержать проект</string>
-    <string name="main__recommend_app">Порекомендовать приложение</string>
+    <string name="donate">Поддержать проект</string>
+    <string name="recommend">Порекомендовать приложение</string>
     <string name="changelog">Список изменений</string>
-    <string name="main__exit">Выход</string>
-    <string name="main__yes">да</string>
+    <string name="exit">Выход</string>
+    <string name="yes">да</string>
 
-    <string name="main__nodata__favourites">Здесь пока что пусто.\nШаблон мема можно добавить в избранное, нажав на звёздочку.</string>
-    <string name="main__nodata__custom_templates">Здесь пока что пусто.\n Сохранённые шаблоны здесь:%1$s</string>
-    <string name="main__nodata__saved">Здесь пока что пусто.\nЧтбы сохранить мем, нажмите на кнопку сохранения после того, как отредактируете его.</string>
+    <string name="no_favourites_description__appspecific">Здесь пока что пусто.\nШаблон мема можно добавить в избранное, нажав на звёздочку.</string>
+    <string name="no_custom_templates_description__appspecific">Здесь пока что пусто.\n Сохранённые шаблоны здесь:%1$s</string>
+    <string name="no_memes_saved_description__appspecific">Здесь пока что пусто.\nЧтбы сохранить мем, нажмите на кнопку сохранения после того, как отредактируете его.</string>
 
     <!-- Creator -->
-    <string name="creator__press_back_again_to_exit">Нажмите назад ещё раз, чтобы выйти из режима редактирования. Мем будет потерян, если вы его не сохранили.</string>
-    <string name="creator__saved_successfully_message">Мем был успешно сохранён на ваше устройство. Хотите выйти из режима редактирования?</string>
-    <string name="creator__text_size">Размер текста</string>
-    <string name="creator__text_color">Цвет текста</string>
-    <string name="creator__border_color">Цвет границ</string>
-    <string name="creator__saved_successfully">Сохранено!</string>
-    <string name="creator__hint_top_caption">текст сверху</string>
-    <string name="creator__hint_bottom_caption">Текст снизу</string>
-    <string name="creator__font">Шрифт</string>
-    <string name="creator__keep_editing">Продолжить редактирование</string>
-    <string name="creator__text">Текст</string>
-    <string name="creator__size">Размер</string>
-    <string name="creator__background">Фон</string>
-    <string name="creator__border">Границы</string>
-    <string name="creator__picture">Изображение</string>
+    <string name="press_back_again_to_stop_editing__appspecific">Нажмите назад ещё раз, чтобы выйти из режима редактирования. Мем будет потерян, если вы его не сохранили.</string>
+    <string name="saved_meme_successfully__appspecific">Мем был успешно сохранён на ваше устройство. Хотите выйти из режима редактирования?</string>
+    <string name="text_size">Размер текста</string>
+    <string name="text_color">Цвет текста</string>
+    <string name="border_color">Цвет границ</string>
+    <string name="successfully_saved">Сохранено!</string>
+    <string name="top_caption">текст сверху</string>
+    <string name="bottom_caption">Текст снизу</string>
+    <string name="font">Шрифт</string>
+    <string name="keep_editing">Продолжить редактирование</string>
+    <string name="text">Текст</string>
+    <string name="size">Размер</string>
+    <string name="background">Фон</string>
+    <string name="border">Границы</string>
+    <string name="picture">Изображение</string>
 
     <!-- Info -->
     <string name="about">О программе</string>
     <string name="developed_by">Разработанно</string>
-    <string name="additional_contact">Больше информации</string>
     <string name="licenses">Лицензии</string>
     <string name="show_licenses">Показать лицензии</string>
     <string name="contributors">Поддержавшие проект</string>
     <string name="more_information">Больше информации</string>
-    <string name="show_app_license">Показать GNU-GPLv3 лицензию</string>
+    <string name="gnu_gplv3_license">Показать GNU-GPLv3 лицензию</string>
     <string name="show_third_party_licenses">Показать сторонние лицензии</string>
     <string name="miscellaneous">Разное</string>
 
     <!-- Settings -->
-    <string name="settings__settings">Настройки</string>
-    <string name="settings__all_caps">КАПС ВКЛ</string>
-    <string name="settings__caps_off">капс выкл</string>
-    <string name="settings__rotate">Поворот</string>
-    <string name="pref_title__render_quality_editor_percent">Качество рендеринга</string>
-    <string name="settings__cleanup_thumbnails">Очистить миниатюры</string>
-    <string name="settings__pref_columns_portrait">Столбцы</string>
-    <string name="settings__pref_columns_landscape">Строки</string>
-    <string name="pref_title__appearance">Внешний вид</string>
-    <string name="pref_title__size">Размер</string>
-    <string name="pref_title__memelist_data_mode">Раздел по умолчанию</string>
-    <string name="pref_summary__memelist_data_mode">Раздел для открытия при запуске (Сохранённые, Избранное, Создать)</string>
-    <string name="pref_title__functionality">Функциальность</string>
-    <string name="pref_summary__auto_save_meme">Автоматически сохранять редактируемые мемы при нажатии кнопки назад</string>
-    <string name="pref_title__auto_save_meme">Сохранять по нажатию кнопки назад</string>
-    <string name="pref_summary__is_shuffle_meme_categories">После выбора категори отображать мемы в случайном порядке</string>
-    <string name="pref_title__is_shuffle_meme_categories">Список мемов в случайном порядке</string>
-    <string name="creator__padding">Padding</string>
-    <string name="pref_title__overview">Обзор</string>
-    <string name="pref_title__editor">Редактор</string>
-    <string name="pref_summary__is_statusbar_hidden">Скрыть строку состояния в этом режиме</string>
-    <string name="pref_title__is_statusbar_hidden">Скрыть строку состояния</string>
-    <string name="pref_summary__picture_quality__percent">Качество и размер изображений. В зависимости от размера изображения и мощности устройства, производительность приложения может снизиться, если выбранно значение выше 25%.</string>
-    <string name="pref_title__thumbnail_quality__percent">Качество миниатюр</string>
+    <string name="settings">Настройки</string>
+    <string name="all_caps">КАПС ВКЛ</string>
+    <string name="caps_off">капс выкл</string>
+    <string name="rotate">Поворот</string>
+    <string name="render_quality">Качество рендеринга</string>
+    <string name="clear_thumbnails">Очистить миниатюры</string>
+    <string name="columns_portrait">Столбцы</string>
+    <string name="columns_landscape">Строки</string>
+    <string name="appearance">Внешний вид</string>
+    <string name="default_mode">Раздел по умолчанию</string>
+    <string name="default_mode_description_description__appspecific">Раздел для открытия при запуске (Сохранённые, Избранное, Создать)</string>
+    <string name="functionality">Функциальность</string>
+    <string name="save_when_pressing_back_description__appspecific">Автоматически сохранять редактируемые мемы при нажатии кнопки назад</string>
+    <string name="save_when_pressing_back">Сохранять по нажатию кнопки назад</string>
+    <string name="shuffle_meme_list_description__appspecific">После выбора категори отображать мемы в случайном порядке</string>
+    <string name="shuffle_meme_list__appspecific">Список мемов в случайном порядке</string>
+    <string name="padding">Padding</string>
+    <string name="overview">Обзор</string>
+    <string name="editor">Редактор</string>
+    <string name="hide_statusbar_at_this_view">Скрыть строку состояния в этом режиме</string>
+    <string name="hide_statusbar">Скрыть строку состояния</string>
+    <string name="picture_quality_percent">Качество и размер изображений. В зависимости от размера изображения и мощности устройства, производительность приложения может снизиться, если выбранно значение выше 25%.</string>
+    <string name="thumbnail_quality">Качество миниатюр</string>
 
     <!-- Language -->
-    <string name="pref_title__language">Язык</string>
-    <string name="pref_desc__language">Изменить язык приложения. (Необходим перезапуск)</string>
+    <string name="language">Язык</string>
+    <string name="language_change_restart_description">Изменить язык приложения. (Необходим перезапуск)</string>
 </resources>

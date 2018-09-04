@@ -50,14 +50,14 @@ public class PermissionChecker {
                 return true;
             }
         }
-        ActivityUtils.get(activity).showSnackBar(R.string.error_storage_permission, true);
+        ActivityUtils.get(activity).showSnackBar(R.string.error_storage_permission__appspecific, true);
         return false;
     }
 
     public static boolean mkSaveDir(Activity activity) {
         File saveDir = AppSettings.get().getSaveDirectory();
         if (!saveDir.exists() && !saveDir.mkdirs()) {
-            ActivityUtils.get(activity).showSnackBar(R.string.error_cannot_create_save_dir, false);
+            ActivityUtils.get(activity).showSnackBar(R.string.error_cannot_create_save_directory, false);
             return false;
         }
         return true;

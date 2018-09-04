@@ -9,96 +9,89 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-    <!-- main -->
-    <string name="main__navdrawer__open">Otevøít navigaèní panel</string>
-    <string name="main__navdrawer__close">Zavøít navigaèní panel</string>
+    <string name="open_navdrawer">Otevøít navigaèní panel</string>
+    <string name="close_navdrawer">Zavøít navigaèní panel</string>
 
-    <string name="main__save_meme">UloÂžit meme</string>
-    <string name="main__share_meme">Sdílet meme</string>
-    <string name="main__create_meme">Vytvoøit meme</string>
-    <string name="main__delete_meme">Odstranit meme</string>
+    <string name="save_meme__appspecific">UloÂžit meme</string>
+    <string name="share_meme__appspecific">Sdílet meme</string>
+    <string name="create_meme__appspecific">Vytvoøit meme</string>
+    <string name="delete_meme__appspecific">Odstranit meme</string>
 
-    <string name="main__memecat__humans">Osobnosti</string>
-    <string name="main__memecat__cartoon">Kreslené</string>
-    <string name="main__memecat__animals">Zvíøata</string>
-    <string name="main__memecat__custom">Vlastní</string>
+    <string name="humans">Osobnosti</string>
+    <string name="cartoon">Kreslené</string>
+    <string name="animals">Zvíøata</string>
+    <string name="custom">Vlastní</string>
 
-    <string name="memelist_data_mode__saved">UloÂženo</string>
-    <string name="memelist_data_mode__favs">Oblíbené</string>
-    <string name="memelist_data_mode__create">Vytvoøit</string>
+    <string name="saved">UloÂženo</string>
+    <string name="favs">Oblíbené</string>
+    <string name="create">Vytvoøit</string>
 
-    <string name="main__get_picture_from_gallery">Získat obrázek z galerie</string>
-    <string name="main__get_picture_from_camera">Získat obrázek z kamery</string>
-    <string name="main__error_camera_cannot_start">Nepodaøilo se spustit kameru.</string>
-    <string name="main__error_no_picture_selected">Nebyl zvolen Âžádný obrázek.</string>
-    <string name="main__share_meme_prompt">Sdílejte svùj Meme skrze…</string>
+    <string name="get_picture_from_gallery">Získat obrázek z galerie</string>
+    <string name="get_picture_from_camera">Získat obrázek z kamery</string>
+    <string name="error_cannot_start_camera">Nepodaøilo se spustit kameru.</string>
+    <string name="error_picture_selection">Nebyl zvolen Âžádný obrázek.</string>
+    <string name="share_meme_via__appspecific">Sdílejte svùj Meme skrze…</string>
 
-    <string name="main__donate">Donate</string>
-    <string name="main__recommend_app">Doporuèit</string>
+    <string name="donate">Donate</string>
+    <string name="recommend">Doporuèit</string>
     <string name="changelog">Historie</string>
-    <string name="main__exit">Odejít</string>
-    <string name="main__yes">Ano</string>
+    <string name="exit">Odejít</string>
+    <string name="yes">Ano</string>
 
-    <string name="main__nodata__favourites">Nemáte nic oblíbeného.\nKliknìte na hvìzdièku u meme obrázku, abyste si ho pøidali do svých oblíbených.</string>
-    <string name="main__nodata__custom_templates">Nemáte Âžádné vlastní obrázky.\nVámi vytvoøené obrázky naleznete zde:%1$s</string>
-    <string name="main__nodata__saved">Zatím jste neuloÂžili Âžádný meme.\nPro uloÂžení obrázku staèí kliknout v horní liÂštì na tlaèítko s nápisem uloÂžit meme.</string>
+    <string name="no_favourites_description__appspecific">Nemáte nic oblíbeného.\nKliknìte na hvìzdièku u meme obrázku, abyste si ho pøidali do svých oblíbených.</string>
+    <string name="no_custom_templates_description__appspecific">Nemáte Âžádné vlastní obrázky.\nVámi vytvoøené obrázky naleznete zde:%1$s</string>
+    <string name="no_memes_saved_description__appspecific">Zatím jste neuloÂžili Âžádný meme.\nPro uloÂžení obrázku staèí kliknout v horní liÂštì na tlaèítko s nápisem uloÂžit meme.</string>
 
-    <!-- Creator -->
-    <string name="creator__press_back_again_to_exit">Pokud chcete pøestat editovat obrázek, stisknìte zpìt. Meme bude odstranìn, pokud jste jej neuloÂžili.</string>
-    <string name="creator__saved_successfully_message">Právì jste úspìÂšnì uloÂžili tento meme. Pøejete si ukonèit jeho editaci?</string>
-    <string name="creator__text_size">Velikost písma</string>
-    <string name="creator__text_color">Barva písma</string>
-    <string name="creator__border_color">Barva rámeèku</string>
-    <string name="creator__saved_successfully">ÚspìÂšnì uloÂženo!</string>
-    <string name="creator__hint_top_caption">Vrchní nápis</string>
-    <string name="creator__hint_bottom_caption">Spodní nápis</string>
-    <string name="creator__font">Písmo</string>
-    <string name="creator__keep_editing">Pokraèovat v editování</string>
-    <string name="creator__text">Písmo</string>
-    <string name="creator__size">Velikost</string>
-    <string name="creator__background">Pozadí</string>
-    <string name="creator__border">Rámeèek</string>
-    <string name="creator__picture">Obrázek</string>
+    <string name="press_back_again_to_stop_editing__appspecific">Pokud chcete pøestat editovat obrázek, stisknìte zpìt. Meme bude odstranìn, pokud jste jej neuloÂžili.</string>
+    <string name="saved_meme_successfully__appspecific">Právì jste úspìÂšnì uloÂžili tento meme. Pøejete si ukonèit jeho editaci?</string>
+    <string name="text_size">Velikost písma</string>
+    <string name="text_color">Barva písma</string>
+    <string name="border_color">Barva rámeèku</string>
+    <string name="successfully_saved">ÚspìÂšnì uloÂženo!</string>
+    <string name="top_caption">Vrchní nápis</string>
+    <string name="bottom_caption">Spodní nápis</string>
+    <string name="font">Písmo</string>
+    <string name="keep_editing">Pokraèovat v editování</string>
+    <string name="text">Písmo</string>
+    <string name="size">Velikost</string>
+    <string name="background">Pozadí</string>
+    <string name="border">Rámeèek</string>
+    <string name="picture">Obrázek</string>
 
-    <!-- Info -->
     <string name="about">Informace</string>
     <string name="developed_by">Tvùrci</string>
-    <string name="additional_contact">Více informací</string>
     <string name="licenses">Licence</string>
     <string name="show_licenses">Zobrazit licence</string>
     <string name="contributors">Spolupracovníci</string>
     <string name="more_information">Více informací</string>
-    <string name="show_app_license">Zobrazit GNU GPLv3 licenci</string>
+    <string name="gnu_gplv3_license">Zobrazit GNU GPLv3 licenci</string>
     <string name="show_third_party_licenses">Zobrazit licence tøetí strany</string>
     <string name="miscellaneous">Ostatní</string>
 
-    <!-- Settings -->
-    <string name="settings__settings">Nastavení</string>
-    <string name="settings__all_caps">Velké písmo zapnuto</string>
-    <string name="settings__caps_off">Velké písmo vypnuto</string>
-    <string name="settings__rotate">Otoèit</string>
-    <string name="pref_title__render_quality_editor_percent">Kvalita obrázku</string>
-    <string name="settings__cleanup_thumbnails">Vyèistit Ikony</string>
-    <string name="settings__pref_columns_portrait">Seznam portrétù</string>
-    <string name="settings__pref_columns_landscape">Seznam pozadí</string>
-    <string name="pref_title__appearance">Vzhled</string>
-    <string name="pref_title__size">Velikost</string>
-    <string name="pref_title__memelist_data_mode">SpouÂštìcí nastavení</string>
-    <string name="pref_summary__memelist_data_mode">Zvolení spouÂštìcího nastavení(Tvorba, Oblíbené, nebo UloÂžené)</string>
-    <string name="pref_title__functionality">Funkce</string>
-    <string name="pref_summary__auto_save_meme">Automaticky ukláda meme, pokud stisknu tlaèítko zpìt.</string>
-    <string name="pref_title__auto_save_meme">Ukládat stisknutím tlaèítka zpìt</string>
-    <string name="pref_summary__is_shuffle_meme_categories">Zamíchat meme seznam po zvolení kategorie</string>
-    <string name="pref_title__is_shuffle_meme_categories">Zamíchat meme seznam</string>
-    <string name="creator__padding">Obal</string>
-    <string name="pref_title__overview">Pøehled</string>
-    <string name="pref_title__editor">Editor</string>
-    <string name="pref_summary__is_statusbar_hidden">Schovat statusbar</string>
-    <string name="pref_title__is_statusbar_hidden">Schovat statusbar</string>
-    <string name="pref_summary__picture_quality__percent">Kvalita a velikost obrázku. Èím vyÂšÂší èísla, tím delÂší naèítání. VÂše záleÂží na hardwaru a veikosti obrázku. Aplikace mùÂže mít problémy, pokud je hodnota vyÂšÂší, neÂž 25%</string>
-    <string name="pref_title__thumbnail_quality__percent">Kvalita ikony</string>
+    <string name="settings">Nastavení</string>
+    <string name="all_caps">Velké písmo zapnuto</string>
+    <string name="caps_off">Velké písmo vypnuto</string>
+    <string name="rotate">Otoèit</string>
+    <string name="render_quality">Kvalita obrázku</string>
+    <string name="clear_thumbnails">Vyèistit Ikony</string>
+    <string name="columns_portrait">Seznam portrétù</string>
+    <string name="columns_landscape">Seznam pozadí</string>
+    <string name="appearance">Vzhled</string>
+    <string name="default_mode">SpouÂštìcí nastavení</string>
+    <string name="default_mode_description_description__appspecific">Zvolení spouÂštìcího nastavení(Tvorba, Oblíbené, nebo UloÂžené)</string>
+    <string name="functionality">Funkce</string>
+    <string name="save_when_pressing_back_description__appspecific">Automaticky ukláda meme, pokud stisknu tlaèítko zpìt.</string>
+    <string name="save_when_pressing_back">Ukládat stisknutím tlaèítka zpìt</string>
+    <string name="shuffle_meme_list_description__appspecific">Zamíchat meme seznam po zvolení kategorie</string>
+    <string name="shuffle_meme_list__appspecific">Zamíchat meme seznam</string>
+    <string name="padding">Obal</string>
+    <string name="overview">Pøehled</string>
+    <string name="editor">Editor</string>
+    <string name="hide_statusbar_at_this_view">Schovat statusbar</string>
+    <string name="hide_statusbar">Schovat statusbar</string>
+    <string name="picture_quality_percent">Kvalita a velikost obrázku. Èím vyÂšÂší èísla, tím delÂší naèítání. VÂše záleÂží na hardwaru a veikosti obrázku. Aplikace mùÂže mít problémy, pokud je hodnota vyÂšÂší, neÂž 25%</string>
+    <string name="thumbnail_quality">Kvalita ikony</string>
 
-    <!-- Language -->
-    <string name="pref_title__language">Jazyk</string>
-    <string name="pref_desc__language">Pokud chcete zmìnit jazyk této aplikace, bude vyÂžadován její restart.</string>
+    <string name="language">Jazyk</string>
+    <string name="language_change_restart_description">Pokud chcete zmìnit jazyk této aplikace, bude vyÂžadován její restart.</string>
 </resources>

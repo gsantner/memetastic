@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="@string/pref_title__overview">
+    <PreferenceCategory android:title="@string/overview">
 
         <ListPreference
             android:defaultValue="0"
@@ -9,15 +9,15 @@
             android:entryValues="@array/values__zero_to_one"
             android:icon="@drawable/ic_grid_on_black_24dp"
             android:key="@string/pref_key__memelist_view_type"
-            android:summary="@string/pref_summary__memelist_view_type"
-            android:title="@string/pref_title__memelist_view_type" />
+            android:summary="@string/view_type_memelist__appspecific"
+            android:title="@string/view_type" />
 
         <android.support.v7.preference.SeekBarPreference
             android:defaultValue="3"
             android:icon="@drawable/ic_grid_on_black_24dp"
             android:key="@string/pref_key__grid_column_count_portrait"
             android:max="15"
-            android:title="@string/settings__pref_columns_portrait"
+            android:title="@string/columns_portrait"
             app:min="2" />
 
         <android.support.v7.preference.SeekBarPreference
@@ -25,7 +25,7 @@
             android:icon="@drawable/ic_grid_on_black_24dp"
             android:key="@string/pref_key__grid_column_count_landscape"
             android:max="20"
-            android:title="@string/settings__pref_columns_landscape"
+            android:title="@string/columns_landscape"
             app:min="2" />
 
         <ListPreference
@@ -34,48 +34,48 @@
             android:entryValues="@array/values__zero_to_two"
             android:icon="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:key="@string/pref_key__default_main_mode"
-            android:summary="@string/pref_summary__memelist_data_mode"
-            android:title="@string/pref_title__memelist_data_mode" />
+            android:summary="@string/default_mode_description_description__appspecific"
+            android:title="@string/default_mode" />
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:icon="@drawable/ic_autorenew_black_24dp"
             android:key="@string/pref_key__is_shuffle_meme_tags"
-            android:summary="@string/pref_summary__is_shuffle_meme_categories"
-            android:title="@string/pref_title__is_shuffle_meme_categories" />
+            android:summary="@string/shuffle_meme_list_description__appspecific"
+            android:title="@string/shuffle_meme_list__appspecific" />
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:icon="@drawable/ic_visibility_black_24dp"
             android:key="@string/pref_key__is_overview_statusbar_hidden"
-            android:summary="@string/pref_summary__is_statusbar_hidden"
-            android:title="@string/pref_title__is_statusbar_hidden" />
+            android:summary="@string/hide_statusbar_at_this_view"
+            android:title="@string/hide_statusbar" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/pref_title__editor">
+    <PreferenceCategory android:title="@string/editor">
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:icon="@drawable/ic_save_black_24dp"
             android:key="@string/pref_key__auto_save_meme"
-            android:summary="@string/pref_summary__auto_save_meme"
-            android:title="@string/pref_title__auto_save_meme" />
+            android:summary="@string/save_when_pressing_back_description__appspecific"
+            android:title="@string/save_when_pressing_back" />
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:icon="@drawable/ic_visibility_black_24dp"
             android:key="@string/pref_key__is_editor_statusbar_hidden"
-            android:summary="@string/pref_summary__is_statusbar_hidden"
-            android:title="@string/pref_title__is_statusbar_hidden" />
+            android:summary="@string/hide_statusbar_at_this_view"
+            android:title="@string/hide_statusbar" />
 
         <android.support.v7.preference.SeekBarPreference
             android:defaultValue="24"
             android:icon="@drawable/ic_high_quality_black_24dp"
             android:key="@string/pref_key__render_quality__percent"
             android:max="100"
-            android:summary="@string/pref_summary__picture_quality__percent"
-            android:title="@string/pref_title__render_quality_editor_percent"
+            android:summary="@string/picture_quality_percent"
+            android:title="@string/render_quality"
             app:min="1" />
     </PreferenceCategory>
 
@@ -85,26 +85,26 @@
             android:defaultValue="true"
             android:icon="@drawable/ic_photo_library_black_24dp"
             android:key="@string/pref_key__is_show_in_gallery"
-            android:title="@string/pref_title__is_show_in_gallery" />
+            android:title="@string/show_in_device_gallery" />
 
         <!--suppress AndroidDomInspection -->
         <net.gsantner.opoc.preference.LanguagePreferenceCompat
             android:defaultValue=""
             android:icon="@drawable/ic_language_black_24dp"
             android:key="@string/pref_key__language"
-            android:summary="@string/pref_desc__language"
-            android:title="@string/pref_title__language" />
+            android:summary="@string/language"
+            android:title="@string/language" />
 
         <Preference
             android:icon="@drawable/ic_file_download_black_24dp"
             android:key="@string/pref_key__download_assets_try"
-            android:summary="@string/download_latest_assets_message"
-            android:title="@string/download_latest_assets_title" />
+            android:summary="@string/download_latest_assets_message__appspecific"
+            android:title="@string/download_latest_assets" />
 
         <Preference
             android:icon="@drawable/ic_delete_sweep_black_24dp"
             android:key="@string/pref_key__cleanup_thumbnails"
-            android:title="@string/settings__cleanup_thumbnails" />
+            android:title="@string/clear_thumbnails" />
 
     </PreferenceCategory>
 </PreferenceScreen>

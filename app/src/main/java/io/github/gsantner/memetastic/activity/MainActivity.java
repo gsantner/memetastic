@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity
         // Setup _toolbar
         setSupportActionBar(_toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, _drawer, _toolbar,
-                R.string.main__navdrawer__open, R.string.main__navdrawer__close);
+                R.string.open_navdrawer, R.string.close_navdrawer);
         _drawer.addDrawerListener(toggle);
         toggle.syncState();
         _navigationView.setNavigationItemSelectedListener(this);
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
                 i.putExtra(Intent.EXTRA_TEXT, getString(R.string.main__ready_to_memetastic, getString(R.string.app_www_source)));
-                startActivity(Intent.createChooser(i, getString(R.string.main__share_meme)));
+                startActivity(Intent.createChooser(i, getString(R.string.share_meme__appspecific)));
                 return true;
             }
             case R.id.action_donate: {
@@ -384,25 +384,25 @@ public class MainActivity extends AppCompatActivity
             case R.id.action_mode_favs: {
                 _currentMainMode = 1;
                 imageList = new ArrayList<>();
-                _emptylistText.setText(R.string.main__nodata__favourites);
+                _emptylistText.setText(R.string.no_favourites_description__appspecific);
                 for (String fav : app.settings.getFavoriteMemeTemplates()) {
                     MemeData.Image img = MemeData.findImage(new File(fav));
                     if (img != null) {
                         imageList.add(img);
                     }
                 }
-                _toolbar.setTitle(R.string.memelist_data_mode__favs);
+                _toolbar.setTitle(R.string.favs);
                 break;
             }
             case R.id.action_mode_saved: {
                 _currentMainMode = 2;
-                _emptylistText.setText(R.string.main__nodata__saved);
+                _emptylistText.setText(R.string.no_memes_saved_description__appspecific);
                 if (PermissionChecker.hasExtStoragePerm(this)) {
                     File folder = AssetUpdater.getMemesDir(AppSettings.get());
                     folder.mkdirs();
                     imageList = MemeData.getCreatedMemes();
                 }
-                _toolbar.setTitle(R.string.memelist_data_mode__saved);
+                _toolbar.setTitle(R.string.saved);
                 break;
             }
 
@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity
                         imageList.add(image);
                     }
                 }
-                _toolbar.setTitle(R.string.memelist_data_mode__hidden);
+                _toolbar.setTitle(R.string.hidden);
                 break;
             }
         }
@@ -512,7 +512,7 @@ public class MainActivity extends AppCompatActivity
 
                 // Finally check if we got something
                 if (picturePath == null) {
-                    ActivityUtils.get(this).showSnackBar(R.string.main__error_fail_retrieve_picture, false);
+                    ActivityUtils.get(this).showSnackBar(R.string.error_couldnot_load_picture_from_storage, false);
                 } else {
                     onImageTemplateWasChosen(picturePath);
                 }
@@ -523,7 +523,7 @@ public class MainActivity extends AppCompatActivity
             if (resultCode == RESULT_OK) {
                 onImageTemplateWasChosen(cameraPictureFilepath);
             } else {
-                ActivityUtils.get(this).showSnackBar(R.string.main__error_no_picture_selected, false);
+                ActivityUtils.get(this).showSnackBar(R.string.error_picture_selection, false);
             }
         }
         if (requestCode == REQUEST_SHOW_IMAGE) {
@@ -553,7 +553,7 @@ public class MainActivity extends AppCompatActivity
                 cameraPictureFilepath = photoFile.getAbsolutePath();
 
             } catch (IOException ex) {
-                ActivityUtils.get(this).showSnackBar(R.string.main__error_camera_cannot_start, false);
+                ActivityUtils.get(this).showSnackBar(R.string.error_cannot_start_camera, false);
             }
 
             // Continue only if the File was successfully created
@@ -596,7 +596,7 @@ public class MainActivity extends AppCompatActivity
 
                     switch (intent.getIntExtra(AppCast.ASSET_DOWNLOAD_REQUEST.EXTRA_RESULT, AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__FAILED)) {
                         case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__CHECKING: {
-                            updateInfoBar(0, R.string.checking_assets_for_update, R.drawable.ic_file_download_white_32dp, false);
+                            updateInfoBar(0, R.string.download_latest_assets_checking_description, R.drawable.ic_file_download_white_32dp, false);
                             break;
                         }
                         case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__FAILED: {
@@ -604,7 +604,7 @@ public class MainActivity extends AppCompatActivity
                             break;
                         }
                         case AssetUpdater.UpdateThread.ASSET_DOWNLOAD_REQUEST__DO_DOWNLOAD_ASK: {
-                            updateInfoBar(0, R.string.checking_assets_for_update, R.drawable.ic_file_download_white_32dp, false);
+                            updateInfoBar(0, R.string.download_latest_assets_checking_description, R.drawable.ic_file_download_white_32dp, false);
                             showDownloadDialog();
                             break;
                         }
@@ -627,7 +627,7 @@ public class MainActivity extends AppCompatActivity
                             break;
                         }
                         case AssetUpdater.UpdateThread.DOWNLOAD_STATUS__FINISHED: {
-                            updateInfoBar(percent, R.string.downloading_success, R.drawable.ic_gavel_white_48px, false);
+                            updateInfoBar(percent, R.string.successfully_downloaded, R.drawable.ic_gavel_white_48px, false);
                             break;
                         }
                     }
@@ -644,8 +644,8 @@ public class MainActivity extends AppCompatActivity
 
     private void showDownloadDialog() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this)
-                .setTitle(R.string.download_latest_assets_title)
-                .setMessage(R.string.download_latest_assets_message)
+                .setTitle(R.string.download_latest_assets)
+                .setMessage(R.string.download_latest_assets_message__appspecific)
                 .setNegativeButton(android.R.string.cancel, null)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
@@ -693,7 +693,7 @@ public class MainActivity extends AppCompatActivity
 
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
         _searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        _searchView.setQueryHint(getString(R.string.main__search_meme));
+        _searchView.setQueryHint(getString(R.string.search_meme__appspecific));
         if (_searchView != null) {
             _searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override

@@ -8,22 +8,22 @@
             android:id="@+id/action_mode_create"
             android:checked="true"
             android:icon="@drawable/ic_gavel_white_48px"
-            android:title="@string/memelist_data_mode__create" />
+            android:title="@string/create" />
 
         <item
             android:id="@+id/action_mode_favs"
             android:icon="@drawable/ic_star_black_32dp"
-            android:title="@string/memelist_data_mode__favs" />
+            android:title="@string/favs" />
 
         <item
             android:id="@+id/action_mode_saved"
             android:icon="@drawable/ic_save_white_48px"
-            android:title="@string/memelist_data_mode__saved" />
+            android:title="@string/saved" />
 
         <item
             android:id="@+id/action_mode_hidden"
             android:icon="@drawable/ic_remove_circle_black_24dp"
-            android:title="@string/memelist_data_mode__hidden" />
+            android:title="@string/hidden" />
     </group>
 
     <group
@@ -37,12 +37,12 @@
         <item
             android:id="@+id/action_settings"
             android:icon="@drawable/ic_settings_white_48px"
-            android:title="@string/settings__settings" />
+            android:title="@string/settings" />
 
         <item
             android:id="@+id/action_exit"
             android:icon="@drawable/ic_cancel_black_48px"
-            android:title="@string/main__exit" />
+            android:title="@string/exit" />
     </group>
 
 
@@ -52,11 +52,11 @@
         <item
             android:id="@+id/action_recommend"
             android:icon="@drawable/ic_thumb_up_black_48px"
-            android:title="@string/main__recommend_app" />
+            android:title="@string/recommend" />
         <item
             android:id="@+id/action_donate"
             android:icon="@drawable/ic_favorite_white_48px"
-            android:title="@string/main__donate"
+            android:title="@string/donate"
             android:visible="false" />
 
         <item

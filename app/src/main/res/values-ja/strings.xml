@@ -11,121 +11,119 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
 
     <!-- main -->
-    <string name="main__navdrawer__open">ナビゲーションドロワーを開く</string>
-    <string name="main__navdrawer__close">ナビゲーションドロワーを閉じる</string>
+    <string name="open_navdrawer">ナビゲーションドロワーを開く</string>
+    <string name="close_navdrawer">ナビゲーションドロワーを閉じる</string>
 
-    <string name="main__save_meme">ミームを保存</string>
-    <string name="main__share_meme">ミームを共有</string>
-    <string name="main__create_meme">ミームを作成</string>
-    <string name="main__delete_meme">ミームを削除</string>
+    <string name="save_meme__appspecific">ミームを保存</string>
+    <string name="share_meme__appspecific">ミームを共有</string>
+    <string name="create_meme__appspecific">ミームを作成</string>
+    <string name="delete_meme__appspecific">ミームを削除</string>
 
-    <string name="main__memecat__humans">人</string>
-    <string name="main__memecat__cartoon">漫画</string>
-    <string name="main__memecat__animals">動物</string>
-    <string name="main__memecat__custom">カスタム</string>
-    <string name="main__memecat__rage">怒り</string>
+    <string name="humans">人</string>
+    <string name="cartoon">漫画</string>
+    <string name="animals">動物</string>
+    <string name="custom">カスタム</string>
+    <string name="rage">怒り</string>
 
-    <string name="memelist_data_mode__saved">保存済</string>
-    <string name="memelist_data_mode__favs">お気に入り</string>
-    <string name="memelist_data_mode__create">作成</string>
-    <string name="memelist_data_mode__hidden">非表示</string>
+    <string name="saved">保存済</string>
+    <string name="favs">お気に入り</string>
+    <string name="create">作成</string>
+    <string name="hidden">非表示</string>
 
-    <string name="memelist_view_mode__rows_with_title">タイトル付き行</string>
-    <string name="memelist_view_mode__picture_grid">画像グリッド</string>
+    <string name="rows_with_title">タイトル付き行</string>
+    <string name="picture_grid">画像グリッド</string>
 
-    <string name="main__search_meme">ミームを検索</string>
-    <string name="main__get_picture_from_gallery">ギャラリーから画像を取得</string>
-    <string name="main__get_picture_from_camera">カメラから画像を取得</string>
-    <string name="main__error_camera_cannot_start">カメラを開始できません。</string>
-    <string name="main__error_no_picture_selected">画像が選択されていません。</string>
-    <string name="main__error_fail_retrieve_picture">ストレージから画像を読み込めません。</string>
-    <string name="main__share_meme_prompt">ミームを共有…</string>
+    <string name="search_meme__appspecific">ミームを検索</string>
+    <string name="get_picture_from_gallery">ギャラリーから画像を取得</string>
+    <string name="get_picture_from_camera">カメラから画像を取得</string>
+    <string name="error_cannot_start_camera">カメラを開始できません。</string>
+    <string name="error_picture_selection">画像が選択されていません。</string>
+    <string name="error_couldnot_load_picture_from_storage">ストレージから画像を読み込めません。</string>
+    <string name="share_meme_via__appspecific">ミームを共有…</string>
 
-    <string name="main__donate">寄付</string>
-    <string name="main__recommend_app">おすすめ</string>
+    <string name="donate">寄付</string>
+    <string name="recommend">おすすめ</string>
     <string name="changelog">変更履歴</string>
-    <string name="main__exit">終了</string>
-    <string name="main__yes">はい</string>
+    <string name="exit">終了</string>
+    <string name="yes">はい</string>
 
-    <string name="main__nodata__favourites">まだお気に入りはありません。\nミームテンプレートのスターボタンを使用して、お気に入りを追加してください。</string>
-    <string name="main__nodata__custom_templates">まだカスタムテンプレートはありません。\nテンプレート画像はここ:%1$s</string>
-    <string name="main__nodata__saved">まだミームは保存されていません。\nミームを編集した後に上部の保存ボタンを使用してください。</string>
+    <string name="no_favourites_description__appspecific">まだお気に入りはありません。\nミームテンプレートのスターボタンを使用して、お気に入りを追加してください。</string>
+    <string name="no_custom_templates_description__appspecific">まだカスタムテンプレートはありません。\nテンプレート画像はここ:%1$s</string>
+    <string name="no_memes_saved_description__appspecific">まだミームは保存されていません。\nミームを編集した後に上部の保存ボタンを使用してください。</string>
 
     <!-- Creator -->
-    <string name="creator__press_back_again_to_exit">もう一度戻るを押すと、このミームの編集を終了します。 まだ保存していない場合、ミームは失われます。</string>
-    <string name="creator__saved_successfully_message">このミームはお使いのデバイスに保存されました。 このミームの編集を終了してもよろしいですか?</string>
-    <string name="creator__text_size">文字のサイズ</string>
-    <string name="creator__text_color">文字の色</string>
-    <string name="creator__border_color">ボーダーの色</string>
-    <string name="creator__saved_successfully">正常に保存しました!</string>
-    <string name="creator__hint_top_caption">上部のキャプション</string>
-    <string name="creator__hint_bottom_caption">下部のキャプション</string>
-    <string name="creator__hint_caption">キャプションを入力</string>
-    <string name="creator__font">フォント</string>
-    <string name="creator__keep_editing">編集を続ける</string>
-    <string name="creator__text">テキスト</string>
-    <string name="creator__size">サイズ</string>
-    <string name="creator__background">背景</string>
-    <string name="creator__border">枠</string>
-    <string name="creator__picture">画像</string>
+    <string name="press_back_again_to_stop_editing__appspecific">もう一度戻るを押すと、このミームの編集を終了します。 まだ保存していない場合、ミームは失われます。</string>
+    <string name="saved_meme_successfully__appspecific">このミームはお使いのデバイスに保存されました。 このミームの編集を終了してもよろしいですか?</string>
+    <string name="text_size">文字のサイズ</string>
+    <string name="text_color">文字の色</string>
+    <string name="border_color">ボーダーの色</string>
+    <string name="successfully_saved">正常に保存しました!</string>
+    <string name="top_caption">上部のキャプション</string>
+    <string name="bottom_caption">下部のキャプション</string>
+    <string name="enter_caption">キャプションを入力</string>
+    <string name="font">フォント</string>
+    <string name="keep_editing">編集を続ける</string>
+    <string name="text">テキスト</string>
+    <string name="size">サイズ</string>
+    <string name="background">背景</string>
+    <string name="border">枠</string>
+    <string name="picture">画像</string>
 
     <!-- Info -->
     <string name="about">情報</string>
     <string name="developed_by">開発者</string>
-    <string name="additional_contact">詳細情報</string>
     <string name="licenses">ライセンス</string>
     <string name="show_licenses">ライセンスを表示</string>
     <string name="contributors">貢献者</string>
     <string name="more_information">追加情報</string>
-    <string name="show_app_license">GNU GPLv3 ライセンスを表示</string>
+    <string name="gnu_gplv3_license">GNU GPLv3 ライセンスを表示</string>
     <string name="show_third_party_licenses">サードパーティライセンスを表示</string>
     <string name="miscellaneous">その他</string>
 
     <!-- Settings -->
-    <string name="settings__settings">設定</string>
-    <string name="settings__all_caps">すべて大文字</string>
-    <string name="settings__caps_off">小文字</string>
-    <string name="settings__rotate">回転</string>
-    <string name="pref_title__render_quality_editor_percent">描画品質</string>
-    <string name="settings__cleanup_thumbnails">サムネイルをクリア</string>
-    <string name="settings__pref_columns_portrait">縦の項目数</string>
-    <string name="settings__pref_columns_landscape">横の項目数</string>
-    <string name="pref_title__appearance">外観</string>
-    <string name="pref_title__size">サイズ</string>
-    <string name="pref_title__memelist_data_mode">デフォルトモード</string>
-    <string name="pref_summary__memelist_data_mode">起動時に開くデフォルトモード (作成、お気に入り、保存済)</string>
-    <string name="pref_title__functionality">機能</string>
-    <string name="pref_summary__auto_save_meme">戻るを押したときに何か入力されている場合はミームを自動的に保存します</string>
-    <string name="pref_title__auto_save_meme">戻るを押したときに保存</string>
-    <string name="pref_summary__is_shuffle_meme_categories">カテゴリーを選んだ後、ミームのリストをシャッフルします</string>
-    <string name="pref_title__is_shuffle_meme_categories">ミームリストをシャッフル</string>
-    <string name="creator__padding">余白</string>
-    <string name="pref_title__overview">概要</string>
-    <string name="pref_title__editor">エディター</string>
-    <string name="pref_summary__is_statusbar_hidden">このビューでステータスバーを非表示にします</string>
-    <string name="pref_title__is_statusbar_hidden">ステータスバーを非表示</string>
-    <string name="pref_summary__picture_quality__percent" formatted="false">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
-    <string name="pref_title__thumbnail_quality__percent">サムネイル品質</string>
-    <string name="pref_summary__memelist_view_type">表示タイプを設定 (画像グリッド、タイトル付き行)</string>
-    <string name="pref_title__memelist_view_type">表示タイプ</string>
-    <string name="pref_title__is_show_in_gallery">デバイスのギャラリーで表示</string>
+    <string name="settings">設定</string>
+    <string name="all_caps">すべて大文字</string>
+    <string name="caps_off">小文字</string>
+    <string name="rotate">回転</string>
+    <string name="render_quality">描画品質</string>
+    <string name="clear_thumbnails">サムネイルをクリア</string>
+    <string name="columns_portrait">縦の項目数</string>
+    <string name="columns_landscape">横の項目数</string>
+    <string name="appearance">外観</string>
+    <string name="default_mode">デフォルトモード</string>
+    <string name="default_mode_description_description__appspecific">起動時に開くデフォルトモード (作成、お気に入り、保存済)</string>
+    <string name="functionality">機能</string>
+    <string name="save_when_pressing_back_description__appspecific">戻るを押したときに何か入力されている場合はミームを自動的に保存します</string>
+    <string name="save_when_pressing_back">戻るを押したときに保存</string>
+    <string name="shuffle_meme_list_description__appspecific">カテゴリーを選んだ後、ミームのリストをシャッフルします</string>
+    <string name="shuffle_meme_list__appspecific">ミームリストをシャッフル</string>
+    <string name="padding">余白</string>
+    <string name="overview">概要</string>
+    <string name="editor">エディター</string>
+    <string name="hide_statusbar_at_this_view">このビューでステータスバーを非表示にします</string>
+    <string name="hide_statusbar">ステータスバーを非表示</string>
+    <string name="picture_quality_percent" formatted="false">Quality and size of pictures. Higher values mean a longer load time. Depending on device hardware and picture size  the app may not work as expected if the value is above 25%.</string>
+    <string name="thumbnail_quality">サムネイル品質</string>
+    <string name="view_type_memelist__appspecific">表示タイプを設定 (画像グリッド、タイトル付き行)</string>
+    <string name="view_type">表示タイプ</string>
+    <string name="show_in_device_gallery">デバイスのギャラリーで表示</string>
 
     <!-- Language -->
-    <string name="pref_title__language">言語</string>
-    <string name="pref_desc__language">このアプリの言語を変更します。 変更を反映するにはアプリを再起動します</string>
-    <string name="error_cannot_create_save_dir">エラー: 保存ディレクトリーを作成できません</string>
-    <string name="error_storage_permission">ミームやテンプレートの保存にはアクセス許可が必要です</string>
-    <string name="main__memecat__other">その他</string>
+    <string name="language">言語</string>
+    <string name="language_change_restart_description">このアプリの言語を変更します。 変更を反映するにはアプリを再起動します</string>
+    <string name="error_cannot_create_save_directory">エラー: 保存ディレクトリーを作成できません</string>
+    <string name="error_storage_permission__appspecific">ミームやテンプレートの保存にはアクセス許可が必要です</string>
+    <string name="other">その他</string>
     <string name="downloading">ダウンロード中</string>
     <string name="downloading_failed">ダウンロードに失敗しました</string>
     <string name="unzipping">ZIP 解凍中</string>
-    <string name="downloading_success">ダウンロードが完了しました</string>
-    <string name="download_latest_assets_message">これはフォントやミームテンプレートをダウンロードします (約 20 MB のデータ)。</string>
-    <string name="download_latest_assets_message_more">設定で、後で最新の素材をダウンロードすることもできます。</string>
-    <string name="download_latest_assets_title">最新の素材をダウンロード</string>
-    <string name="checking_assets_for_update">最新の素材が利用可能かチェック中</string>
-    <string name="palette_colors">パレット</string>
-    <string name="preset_colors">プリセット</string>
+    <string name="successfully_downloaded">ダウンロードが完了しました</string>
+    <string name="download_latest_assets_message__appspecific">これはフォントやミームテンプレートをダウンロードします (約 20 MB のデータ)。</string>
+    <string name="download_latest_assets_message_description__appspecific">設定で、後で最新の素材をダウンロードすることもできます。</string>
+    <string name="download_latest_assets">最新の素材をダウンロード</string>
+    <string name="download_latest_assets_checking_description">最新の素材が利用可能かチェック中</string>
+    <string name="palette">パレット</string>
+    <string name="presets">プリセット</string>
     <string name="select_color">色の選択</string>
 
     <string name="code">コード</string>
@@ -137,5 +135,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_title">タイトルを編集</string>
     <string name="hide">非表示</string>
     <string name="unhide">表示</string>
-    <string name="empty_caption_hint">ここをタップしてキャプションを追加</string>
+    <string name="tap_here_to_add_caption">ここをタップしてキャプションを追加</string>
 </resources>

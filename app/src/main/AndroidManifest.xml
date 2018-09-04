@@ -48,7 +48,7 @@
         <activity
             android:name="io.github.gsantner.memetastic.activity.MemeCreateActivity"
             android:icon="@drawable/ic_launcher"
-            android:label="@string/main__create_meme"
+            android:label="@string/create_meme__appspecific"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
@@ -64,7 +64,7 @@
         </activity>
         <activity
             android:name="io.github.gsantner.memetastic.activity.SettingsActivity"
-            android:label="@string/settings__settings"
+            android:label="@string/settings"
             android:launchMode="singleInstance"
             android:parentActivityName="io.github.gsantner.memetastic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"

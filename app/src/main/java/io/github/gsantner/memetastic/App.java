@@ -19,18 +19,12 @@ package io.github.gsantner.memetastic;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.support.v4.content.FileProvider;
 import android.util.Log;
 
 import net.gsantner.opoc.util.ShareUtil;
 
-import java.io.File;
-
 import io.github.gsantner.memetastic.util.AppSettings;
-import io.github.gsantner.memetastic.util.ContextUtils;
 
 /**
  * The apps application object
@@ -59,7 +53,7 @@ public class App extends Application {
 
     public void shareBitmapToOtherApp(Bitmap bitmap, Activity activity) {
         ShareUtil su = new ShareUtil(activity).setFileProviderAuthority(getString(R.string.app_fileprovider));
-        su.setChooserTitle(getString(R.string.main__share_meme_prompt));
+        su.setChooserTitle(getString(R.string.share_meme_via__appspecific));
         su.shareImage(bitmap, Bitmap.CompressFormat.JPEG, 65, "MT-meme");
 /*
         File file = new File(getCacheDir(), getString(R.string.cached_picture_filename));

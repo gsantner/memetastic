@@ -140,7 +140,7 @@ public class MemeFragment extends Fragment {
             _recyclerMemeList.setLayoutManager(recyclerGridLayout);
         }
 
-        _emptylistText.setText(getString(R.string.main__nodata__custom_templates, getString(R.string.custom_templates_visual)));
+        _emptylistText.setText(getString(R.string.no_custom_templates_description__appspecific, getString(R.string.custom_templates_visual)));
         _recyclerMemeAdapter = new MemeItemAdapter(_imageList, getActivity(), AppSettings.get().getMemeListViewType());
         setRecyclerMemeListAdapter(_recyclerMemeAdapter);
 

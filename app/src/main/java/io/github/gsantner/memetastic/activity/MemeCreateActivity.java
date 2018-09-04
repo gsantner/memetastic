@@ -365,7 +365,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             return;
         }
         _doubleBackToExitPressedOnce = true;
-        Snackbar.make(findViewById(android.R.id.content), R.string.creator__press_back_again_to_exit, Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(findViewById(android.R.id.content), R.string.press_back_again_to_stop_editing__appspecific, Snackbar.LENGTH_SHORT).show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -415,7 +415,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         AlertDialog.Builder Builder = new AlertDialog.Builder(this);
 
-        Builder.setTitle(R.string.settings__settings)
+        Builder.setTitle(R.string.settings)
                 //dialog _dialogView
                 .setView(_dialogView)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -488,15 +488,15 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-            dialog.setTitle(R.string.creator__saved_successfully)
-                    .setMessage(R.string.creator__saved_successfully_message)
-                    .setNegativeButton(R.string.creator__keep_editing, null)
-                    .setNeutralButton(R.string.main__share_meme, new DialogInterface.OnClickListener() {
+            dialog.setTitle(R.string.successfully_saved)
+                    .setMessage(R.string.saved_meme_successfully__appspecific)
+                    .setNegativeButton(R.string.keep_editing, null)
+                    .setNeutralButton(R.string.share_meme__appspecific, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialogInterface, int i) {
                             _app.shareBitmapToOtherApp(_lastBitmap, MemeCreateActivity.this);
                         }
                     })
-                    .setPositiveButton(R.string.main__yes, new DialogInterface.OnClickListener() {
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             finish();
                         }
@@ -567,7 +567,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         FontItemAdapter fontAdapter = new FontItemAdapter(this,
                 android.R.layout.simple_list_item_1, MemeData.getFonts(),
-                false, getString(R.string.creator__font));
+                false, getString(R.string.font));
         fontDropDown.setAdapter(fontAdapter);
         fontAdapter.setSelectedFont(fontDropDown, _memeEditorElements.getCaptionTop().getFont());
 
@@ -712,8 +712,8 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 .setDialogId(id)
                 .setColor(color)
                 .setPresets(MemeLibConfig.MEME_COLORS.ALL)
-                .setCustomButtonText(R.string.palette_colors)
-                .setPresetsButtonText(R.string.preset_colors)
+                .setCustomButtonText(R.string.palette)
+                .setPresetsButtonText(R.string.presets)
                 .setDialogTitle(R.string.select_color)
                 .setSelectedButtonText(android.R.string.ok)
                 .show(this);
@@ -803,7 +803,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             String textString = caption.isAllCaps() ? caption.getText().toUpperCase() : caption.getText();
 
             if (TextUtils.isEmpty(textString)) {
-                textString = getString(R.string.empty_caption_hint);
+                textString = getString(R.string.tap_here_to_add_caption);
                 paint.setTextSize((int) (scale * caption.getFontSize() * 5 / 8));
                 paint.setTypeface(caption.getFont().typeFace);
                 paint.setColor(caption.getBorderColor());

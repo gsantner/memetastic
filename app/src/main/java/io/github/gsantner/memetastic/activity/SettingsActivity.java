@@ -64,7 +64,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(b);
         setContentView(R.layout.settings__activity);
         ButterKnife.bind(this);
-        toolbar.setTitle(R.string.settings__settings);
+        toolbar.setTitle(R.string.settings);
         setSupportActionBar(toolbar);
         appSettings = AppSettings.get();
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_white_48px));
@@ -84,7 +84,7 @@ public class SettingsActivity extends AppCompatActivity {
                 case SettingsFragmentMaster.TAG:
                 default:
                     fragment = new SettingsFragmentMaster();
-                    toolbar.setTitle(R.string.settings__settings);
+                    toolbar.setTitle(R.string.settings);
                     break;
             }
         }

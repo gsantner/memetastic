@@ -45,7 +45,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     public AppSettings(Context context) {
         super(context);
 
-         /*
+        /*
          * Check if a MemeTastic package ID was used to build the app.
          * If you release something based on MemeTastic you will want to remove the lines below.
          * In any case: You MUST release the full source code.

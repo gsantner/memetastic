@@ -7,18 +7,18 @@
     <item
         android:id="@+id/action_search_meme"
         android:icon="@drawable/ic_search_white_48px"
-        android:title="@string/main__search_meme"
+        android:title="@string/search_meme__appspecific"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_picture_from_camera"
         android:icon="@drawable/ic_add_a_photo_white_48px"
-        android:title="@string/main__get_picture_from_camera"
+        android:title="@string/get_picture_from_camera"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_picture_from_gallery"
         android:icon="@drawable/ic_insert_photo_white_48px"
-        android:title="@string/main__get_picture_from_gallery"
+        android:title="@string/get_picture_from_gallery"
         app:showAsAction="always" />
 
 </menu>

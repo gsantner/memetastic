@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/create_caption"
                     android:layout_weight="8"
-                    android:hint="@string/creator__hint_caption"
+                    android:hint="@string/enter_caption"
                     style="@style/AppTheme.MemeCreatorEditTextOnLightBackground"/>
 
                 <ImageButton

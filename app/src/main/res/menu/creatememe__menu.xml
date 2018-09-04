@@ -4,12 +4,12 @@
     <item
         android:id="@+id/action_share"
         android:icon="@drawable/ic_share_white_48px"
-        android:title="@string/main__share_meme"
+        android:title="@string/share_meme__appspecific"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_save"
         android:icon="@drawable/ic_save_white_48px"
-        android:title="@string/main__save_meme"
+        android:title="@string/save_meme__appspecific"
         app:showAsAction="always" />
 </menu>
