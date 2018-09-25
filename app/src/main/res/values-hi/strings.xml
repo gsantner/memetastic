@@ -10,4 +10,25 @@ to MemeTastic.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+  <string name="create">बनाये</string>
+  <string name="error_picture_selection">कोई चित्र नहीं चुना गया था</string>
+  <string name="donate">दान करें</string>
+  <string name="changelog">बदलाव लॉग</string>
+  <string name="exit">बाहर जाएं</string>
+  <string name="size">आकार</string>
+  <string name="about">जानकारी</string>
+  <string name="licenses">लाइसेंस</string>
+  <string name="show_licenses">लायसेंस दिखाएं</string>
+  <string name="contributors">योगदान कर्ता</string>
+  <string name="more_information">अधिक जानकारी</string>
+  <string name="show_third_party_licenses">तृतीय पार्टी के लाइसेंस दिखाएं</string>
+  <string name="miscellaneous">कई तरह का</string>
+  <string name="gnu_gplv3_license">एप का लाइसेंस दिखाएं</string>
+  <string name="settings">सेटिंग्स</string>
+  <string name="appearance">दिखावट</string>
+  <string name="editor">संपादक</string>
+  <string name="language">भाषा</string>
+  <string name="language_change_restart_description">इस ऐप की भाषा बदलें परिवर्तन प्रभावी होने के लिए ऐप को पुन: प्रारंभ करें</string>
+  <string name="other">अन्य</string>
+</resources>
