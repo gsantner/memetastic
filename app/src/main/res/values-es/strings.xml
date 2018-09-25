@@ -17,11 +17,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="cartoon">Dibujos animados</string>
   <string name="animals">Animales</string>
   <string name="custom">Personalizado</string>
-  <string name="rage">Rage</string>
   <string name="saved">Guardados</string>
   <string name="favs">Favoritos</string>
   <string name="create">Crear</string>
-  <string name="hidden">Hidden</string>
   <string name="rows_with_title">Filas con título</string>
   <string name="picture_grid">Rejilla de imágenes</string>
   <string name="get_picture_from_gallery">Obtener imagen de la galería</string>
@@ -40,7 +38,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_saved">¡Guardado correctamente!</string>
   <string name="top_caption">Texto superior</string>
   <string name="bottom_caption">Texto inferior</string>
-  <string name="enter_caption">Enter caption</string>
   <string name="font">Tipo de letra</string>
   <string name="keep_editing">Continuar editando</string>
   <string name="text">Texto</string>
@@ -72,7 +69,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back">Guardar al presionar \"atrás\"</string>
   <string name="padding">Margen</string>
   <string name="overview">Resumen</string>
-  <string name="editor">Editor</string>
   <string name="hide_statusbar_at_this_view">Ocultar la barra de estado en esta vista</string>
   <string name="hide_statusbar">Ocultar la barra de estado</string>
   <string name="thumbnail_quality">Calidad de miniatura</string>
@@ -88,17 +84,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_downloaded">Descarga correcta</string>
   <string name="download_latest_assets">Descargar los elementos más recientes</string>
   <string name="download_latest_assets_checking_description">Comprobando si hay elementos más recientes disponibles</string>
-  <string name="palette">Palette</string>
-  <string name="presets">Presets</string>
-  <string name="select_color">Select color</string>
-  <string name="code">Code</string>
-  <string name="favourite">Favourite</string>
-  <string name="remove_favourite">Remove favourite</string>
   <string name="show_title">Mostrar título</string>
-  <string name="edit_title">Edit title</string>
-  <string name="hide">Hide</string>
-  <string name="unhide">Unhide</string>
-  <string name="tap_here_to_add_caption">Tap Here to add Caption</string>
   <string name="search_meme__appspecific">Buscar meme</string>
   <string name="share_meme_via__appspecific">Compartir el meme vía...</string>
   <string name="save_meme__appspecific">Guardar meme</string>
