@@ -15,7 +15,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="close_navdrawer">Serra su pannellu de nàvigu</string>
   <string name="changelog">Registru de sas modìficas</string>
   <string name="about">Informatziones</string>
+  <string name="show_licenses">Ammustra sas litzèntzias</string>
   <string name="contributors">Contribuidores</string>
+  <string name="more_information">Àteras informatziones</string>
   <string name="show_third_party_licenses">Librerias de terzas partes</string>
   <string name="miscellaneous">Vàriu</string>
   <string name="gnu_gplv3_license">Litzèntzia GNU GPLv3+</string>
