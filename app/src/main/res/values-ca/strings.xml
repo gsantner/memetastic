@@ -13,7 +13,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
   <string name="open_navdrawer">Obre el calaix de navegació</string>
   <string name="close_navdrawer">Tanca el calaix de navegació</string>
+  <string name="humans">Humans</string>
   <string name="cartoon">Dibuixos</string>
+  <string name="animals">Animals</string>
   <string name="custom">Personalitzat</string>
   <string name="rage">Ràbia</string>
   <string name="saved">Desats</string>
@@ -39,7 +41,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="top_caption">Títol superior</string>
   <string name="bottom_caption">Títol inferior</string>
   <string name="enter_caption">Introdueix el títol</string>
+  <string name="font">Tipus de lletra</string>
   <string name="keep_editing">Mantén l\'edició</string>
+  <string name="text">Text</string>
   <string name="size">Mida</string>
   <string name="background">Fons</string>
   <string name="border">Vora</string>
@@ -68,6 +72,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back">Desa en prémer cap enrere</string>
   <string name="padding">Farciment</string>
   <string name="overview">Visió general</string>
+  <string name="editor">Editor</string>
   <string name="hide_statusbar_at_this_view">Amaga la barra d\'estat en aquesta vista</string>
   <string name="hide_statusbar">Amaga la barra d\'estat</string>
   <string name="thumbnail_quality">Qualitat de els miniatures</string>
