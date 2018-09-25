@@ -18,7 +18,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="size">Розмір</string>
   <string name="about">Про Markor</string>
   <string name="licenses">Ліцензії</string>
+  <string name="show_licenses">Показати ліцензії</string>
   <string name="contributors">Автори</string>
+  <string name="more_information">Докладніше</string>
   <string name="show_third_party_licenses">Показати ліцензії сторонніх компонентів</string>
   <string name="miscellaneous">Різне</string>
   <string name="gnu_gplv3_license">Ліцензія GNU GPLv3+</string>
