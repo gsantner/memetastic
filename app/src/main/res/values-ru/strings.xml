@@ -71,6 +71,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="thumbnail_quality">Качество миниатюр</string>
   <string name="language">Язык</string>
   <string name="language_change_restart_description">Изменить язык приложения. (Необходим перезапуск)</string>
+  <string name="other">Другое</string>
   <string name="show_title">Показывать заголовок</string>
   <string name="share_meme_via__appspecific">Поделиться мемом с помощью…</string>
   <string name="save_meme__appspecific">Сохранить мем</string>
