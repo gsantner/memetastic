@@ -40,7 +40,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_saved">Asekles yedda !</string>
   <string name="top_caption">Aḍris n ufella</string>
   <string name="bottom_caption">Azwel asnawan</string>
-  <string name="enter_caption">Enter caption</string>
   <string name="font">Tasefsit</string>
   <string name="keep_editing">Kemmel taẓrigt</string>
   <string name="text">Aḍris</string>
@@ -98,7 +97,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">Beddelazwel</string>
   <string name="hide">Ffer</string>
   <string name="unhide">Sken</string>
-  <string name="tap_here_to_add_caption">Tap Here to add Caption</string>
   <string name="search_meme__appspecific">Nadi amemesis</string>
   <string name="share_meme_via__appspecific">Bḍu amemesis-ik s…</string>
   <string name="save_meme__appspecific">Sekles amemesis</string>
