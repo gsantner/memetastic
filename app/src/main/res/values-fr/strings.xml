@@ -17,7 +17,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="cartoon">Dessin Animé</string>
   <string name="animals">Animaux</string>
   <string name="custom">Personnalisé</string>
-  <string name="rage">Rage</string>
   <string name="saved">Sauvegardés</string>
   <string name="favs">Favoris</string>
   <string name="create">Créer</string>
@@ -88,10 +87,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_downloaded">Téléchargement réussi</string>
   <string name="download_latest_assets">Télécharger les dernières ressources disponibles</string>
   <string name="download_latest_assets_checking_description">Vérifier si des ressources plus récentes sont disponibles</string>
-  <string name="palette">Palette</string>
   <string name="presets">Couleurs par défaut</string>
   <string name="select_color">Choisir la couleur</string>
-  <string name="code">Code</string>
   <string name="favourite">Favoris</string>
   <string name="remove_favourite">Supprimer le favori</string>
   <string name="show_title">Afficher le titre</string>
