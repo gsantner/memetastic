@@ -39,6 +39,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_saved">Zapisano pomyślnie!</string>
   <string name="top_caption">Górny napis</string>
   <string name="bottom_caption">Dolny napis</string>
+  <string name="enter_caption">Dodaj napis</string>
   <string name="font">Czcionka</string>
   <string name="keep_editing">Edytuję dalej</string>
   <string name="text">Tekst</string>
@@ -91,10 +92,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="select_color">Wybierz kolor</string>
   <string name="code">Kod</string>
   <string name="favourite">Ulubiony</string>
+  <string name="remove_favourite">Usuń ulubione</string>
   <string name="show_title">Pokaż tytuł</string>
   <string name="edit_title">Zmień tytuł</string>
   <string name="hide">Ukryj</string>
   <string name="unhide">Pokaż</string>
+  <string name="tap_here_to_add_caption">Naciśnij tutaj, aby dodać napis</string>
   <string name="search_meme__appspecific">Wyszukaj Mem</string>
   <string name="share_meme_via__appspecific">Udostępnij Twój Mem za pomocą...</string>
   <string name="save_meme__appspecific">Zapisz mem</string>
