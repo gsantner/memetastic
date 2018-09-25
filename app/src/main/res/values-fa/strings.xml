@@ -19,6 +19,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="about">درباره مارکور</string>
   <string name="licenses">مجوزها</string>
   <string name="contributors">همکاران</string>
+  <string name="gnu_gplv3_license">نمایش مجوز این برنامه</string>
   <string name="settings">تنظیمات</string>
   <string name="editor">ویرایش‌گر</string>
   <string name="hide_statusbar_at_this_view">مخفی کردن نوار وضعیت در این نمایش</string>
