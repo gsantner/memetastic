@@ -10,4 +10,15 @@ to MemeTastic.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+  <string name="changelog">Дневник измена</string>
+  <string name="about">О програму</string>
+  <string name="show_licenses">Прикажи лиценце</string>
+  <string name="contributors">Сарадници</string>
+  <string name="more_information">Више информација</string>
+  <string name="show_third_party_licenses">Прикажи лиценце треће стране</string>
+  <string name="miscellaneous">разно</string>
+  <string name="settings">Поставке</string>
+  <string name="language">Језик</string>
+  <string name="language_change_restart_description">Промените језик апликације. Поново покрените након тога</string>
+</resources>
