@@ -10,4 +10,6 @@ to MemeTastic.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+  <string name="settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+</resources>
