@@ -18,6 +18,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="rage">Raseri</string>
   <string name="saved">Sparades</string>
   <string name="create">Skapa</string>
+  <string name="hidden">Gömd</string>
+  <string name="rows_with_title">Rader med titel</string>
   <string name="donate">Donera</string>
   <string name="changelog">Ändringar</string>
   <string name="exit">Avsluta</string>
