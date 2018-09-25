@@ -80,6 +80,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="show_in_device_gallery">Mostra nella galleria</string>
   <string name="language">Lingua</string>
   <string name="language_change_restart_description">Cambia lingua dell\'app. Riavvia affinchè le modifiche abbiano effetto</string>
+  <string name="error_cannot_create_save_directory">Errore: impossibile creare una cartella di salvataggio</string>
   <string name="other">Altro</string>
   <string name="downloading">Download in corso</string>
   <string name="downloading_failed">Download fallito</string>
