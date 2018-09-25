@@ -17,6 +17,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="cartoon">Fumetti</string>
   <string name="animals">Animali</string>
   <string name="custom">Personali</string>
+  <string name="rage">Rabbia</string>
   <string name="saved">Salvati</string>
   <string name="favs">Preferiti</string>
   <string name="create">Crea</string>
@@ -27,6 +28,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="get_picture_from_camera">Scatta foto dalla Fotocamera</string>
   <string name="error_cannot_start_camera">Non riesco ad avviare la Fotocamera.</string>
   <string name="error_picture_selection">Nessuna immagine selezionata.</string>
+  <string name="error_couldnot_load_picture_from_storage">Impossibile caricare foto dall\'archivio.</string>
   <string name="donate">Dona</string>
   <string name="recommend">Raccomanda</string>
   <string name="changelog">Log delle modifiche</string>
@@ -70,6 +72,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back">Salva quando premi indietro</string>
   <string name="padding">Distanza</string>
   <string name="overview">Panoramica</string>
+  <string name="editor">Modifica</string>
   <string name="hide_statusbar_at_this_view">Nascondi la barra di stato in questa vista</string>
   <string name="hide_statusbar">Nascondi la barra di stato</string>
   <string name="thumbnail_quality">Qualità thumbnail</string>
@@ -111,6 +114,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="shuffle_meme_list_description__appspecific">Rimescola la lista dei meme dopo aver selezionato una categoria</string>
   <string name="shuffle_meme_list__appspecific">Rimescola la lista dei meme</string>
   <string name="view_type_memelist__appspecific">Imposta vista (Griglia, Lista con titoli)</string>
+  <string name="error_storage_permission__appspecific">Sono necessari i permessi di archiviazione per salvare memes e modelli</string>
   <string name="download_latest_assets_message__appspecific">Verranno scaricati caratteri e sfondi per i meme (circa 20MB).</string>
   <string name="download_latest_assets_message_description__appspecific">Puoi anche scaricare le ultime risorse nelle impostazioni.</string>
 </resources>
