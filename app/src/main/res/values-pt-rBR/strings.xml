@@ -14,7 +14,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="open_navdrawer">Abra o painel de navegação</string>
   <string name="close_navdrawer">Fechar painel de navegação</string>
   <string name="humans">Humanos</string>
-  <string name="cartoon">Cartoon</string>
   <string name="animals">Animais</string>
   <string name="custom">Personalizados</string>
   <string name="rage">Raiva</string>
@@ -40,7 +39,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_saved">Salvo!</string>
   <string name="top_caption">Capitalização superior</string>
   <string name="bottom_caption">Capitalização inferior</string>
-  <string name="enter_caption">Enter caption</string>
   <string name="font">Fonte</string>
   <string name="keep_editing">Continuar editando</string>
   <string name="text">Texto</string>
@@ -72,7 +70,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back">Salvar imagem ao pressionar voltar</string>
   <string name="padding">Preencher</string>
   <string name="overview">Visão geral</string>
-  <string name="editor">Editor</string>
   <string name="hide_statusbar_at_this_view">Esconder barra de status nesta visualização</string>
   <string name="hide_statusbar">Esconder barra de status</string>
   <string name="thumbnail_quality">Qualidade da pré-visualização</string>
@@ -98,7 +95,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">Editar título</string>
   <string name="hide">Ocultar</string>
   <string name="unhide">Reexibir</string>
-  <string name="tap_here_to_add_caption">Tap Here to add Caption</string>
   <string name="search_meme__appspecific">Pesquisar meme</string>
   <string name="share_meme_via__appspecific">Compartilhar via…</string>
   <string name="save_meme__appspecific">Salvar meme</string>
