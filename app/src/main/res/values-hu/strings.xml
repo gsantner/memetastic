@@ -13,7 +13,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
   <string name="changelog">Újdonságok</string>
   <string name="about">Névjegy</string>
+  <string name="show_licenses">Licencek mutatása</string>
   <string name="contributors">Hozzájárulók</string>
+  <string name="more_information">További információ</string>
   <string name="show_third_party_licenses">3. személytől származó könyvtárak</string>
   <string name="miscellaneous">Egyéb</string>
   <string name="gnu_gplv3_license">GNU GPLv3+ Licenc</string>
