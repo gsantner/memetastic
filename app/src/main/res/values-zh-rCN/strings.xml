@@ -69,4 +69,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="download_latest_assets_checking_description">检查最新素材</string>
   <string name="select_color">选择颜色</string>
   <string name="code">源代码</string>
+  <string name="favourite">收藏</string>
+  <string name="remove_favourite">从收藏中删除</string>
+  <string name="show_title">显示标题</string>
+  <string name="edit_title">编辑标题</string>
+  <string name="hide">隐藏</string>
+  <string name="unhide">取消隐藏</string>
 </resources>
