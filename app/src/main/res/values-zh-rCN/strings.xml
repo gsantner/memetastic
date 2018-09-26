@@ -16,6 +16,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="humans">人</string>
   <string name="cartoon">卡通</string>
   <string name="animals">动物</string>
+  <string name="custom">自定义</string>
   <string name="saved">已保存</string>
   <string name="favs">收藏</string>
   <string name="create">新建</string>
@@ -50,9 +51,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="gnu_gplv3_license">许可证</string>
   <string name="settings">设置</string>
   <string name="rotate">旋转</string>
+  <string name="render_quality">渲染质量</string>
   <string name="clear_thumbnails">清除缩略图</string>
   <string name="appearance">外观</string>
   <string name="default_mode">默认模式</string>
+  <string name="save_when_pressing_back">在按返回键时保存</string>
   <string name="editor">编辑器</string>
   <string name="hide_statusbar_at_this_view">隐藏状态栏</string>
   <string name="hide_statusbar">隐藏状态栏</string>
@@ -75,4 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">编辑标题</string>
   <string name="hide">隐藏</string>
   <string name="unhide">取消隐藏</string>
+  <string name="tap_here_to_add_caption">点击此处添加标题</string>
+  <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
+  <string name="download_latest_assets_message_description__appspecific">您也可以在设置中可以手动下载最新的素材库。</string>
 </resources>
