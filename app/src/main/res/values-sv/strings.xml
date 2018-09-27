@@ -21,6 +21,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="hidden">Gömd</string>
   <string name="rows_with_title">Rader med titel</string>
   <string name="donate">Donera</string>
+  <string name="recommend">Rekommendera</string>
   <string name="changelog">Ändringar</string>
   <string name="exit">Avsluta</string>
   <string name="yes">ja</string>
@@ -55,5 +56,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="show_in_device_gallery">Visa i enhetens galleri</string>
   <string name="language">Språk</string>
   <string name="language_change_restart_description">Byt språk för appen. Starta om för att fastställa ändringar</string>
+  <string name="error_cannot_create_save_directory">Fel: Kan inte spara katalog</string>
+  <string name="downloading">Laddar ner</string>
+  <string name="downloading_failed">Nerladdningen misslyckades</string>
+  <string name="unzipping">Packar upp</string>
+  <string name="successfully_downloaded">Nerladdningen lyckades</string>
+  <string name="palette">Palett</string>
   <string name="show_title">Visa titel</string>
 </resources>
