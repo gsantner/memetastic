@@ -48,9 +48,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="appearance">Utseende</string>
   <string name="default_mode">Standardläge</string>
   <string name="functionality">Funktionalitet</string>
+  <string name="overview">Översikt</string>
   <string name="editor">Redigerare</string>
   <string name="hide_statusbar_at_this_view">Dölj statusfältet i den här vyn</string>
   <string name="hide_statusbar">Dölj statusfältet</string>
+  <string name="show_in_device_gallery">Visa i enhetens galleri</string>
   <string name="language">Språk</string>
   <string name="language_change_restart_description">Byt språk för appen. Starta om för att fastställa ändringar</string>
   <string name="show_title">Visa titel</string>
