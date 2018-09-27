@@ -61,8 +61,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="downloading_failed">Nerladdningen misslyckades</string>
   <string name="unzipping">Packar upp</string>
   <string name="successfully_downloaded">Nerladdningen lyckades</string>
+  <string name="download_latest_assets">Ladda ner senaste tillgångar</string>
   <string name="palette">Palett</string>
   <string name="code">Kod</string>
   <string name="favourite">Favorit</string>
+  <string name="remove_favourite">Ta bort favorit</string>
   <string name="show_title">Visa titel</string>
+  <string name="edit_title">Redigera titel</string>
+  <string name="hide">Göm</string>
+  <string name="unhide">Visa</string>
 </resources>
