@@ -107,4 +107,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="delete_meme__appspecific">Radera meme</string>
   <string name="no_favourites_description__appspecific">Inga favoriter än.\nAnvänd stjärnknappen vid en mememall för att favorisera.</string>
   <string name="no_custom_templates_description__appspecific">Ingen egen mall än.\nPlacera mallbilden här:%1$s</string>
+  <string name="no_memes_saved_description__appspecific">Inga memer sparade än.\nAnvänd övre sparknappen efter att du redigerat en meme.</string>
+  <string name="default_mode_description_description__appspecific">Standardläge öppnar vid uppstart (skapa, favoriter eller sparade)</string>
 </resources>
