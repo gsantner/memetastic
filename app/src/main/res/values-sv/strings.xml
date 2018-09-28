@@ -90,6 +90,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="download_latest_assets_checking_description">Kontrollera om det finns nya resurser tillgängliga</string>
   <string name="palette">Palett</string>
   <string name="presets">Förinställningar</string>
+  <string name="select_color">Välj färg</string>
   <string name="code">Kod</string>
   <string name="favourite">Favorit</string>
   <string name="remove_favourite">Ta bort favorit</string>
@@ -97,4 +98,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">Redigera titel</string>
   <string name="hide">Göm</string>
   <string name="unhide">Visa</string>
+  <string name="tap_here_to_add_caption">Peta här för att lägga till bildtext</string>
+  <string name="search_meme__appspecific">Sök meme</string>
+  <string name="share_meme_via__appspecific">Dela din meme via…</string>
+  <string name="save_meme__appspecific">Spara meme</string>
 </resources>
