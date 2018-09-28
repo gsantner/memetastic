@@ -11,15 +11,21 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+  <string name="open_navdrawer">Öppna navigeringsmenyn</string>
+  <string name="close_navdrawer">Stäng navigeringsmenyn</string>
   <string name="humans">Människor</string>
   <string name="cartoon">Teknat</string>
   <string name="animals">Djur</string>
   <string name="custom">Anpassad</string>
   <string name="rage">Raseri</string>
   <string name="saved">Sparades</string>
+  <string name="favs">Favoriter</string>
   <string name="create">Skapa</string>
   <string name="hidden">Gömd</string>
   <string name="rows_with_title">Rader med titel</string>
+  <string name="picture_grid">Bildrutnät</string>
+  <string name="get_picture_from_gallery">Hämta bild från galleri</string>
+  <string name="get_picture_from_camera">Hämta bild från kamera</string>
   <string name="donate">Donera</string>
   <string name="recommend">Rekommendera</string>
   <string name="changelog">Ändringar</string>
