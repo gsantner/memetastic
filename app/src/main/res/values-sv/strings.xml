@@ -50,6 +50,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="picture">Bild</string>
   <string name="about">Om</string>
   <string name="developed_by">Utvecklad av</string>
+  <string name="create">Skapa</string>
+  <string name="hidden">Gömd</string>
+  <string name="rows_with_title">Rader med titel</string>
+  <string name="donate">Donera</string>
+  <string name="changelog">Ändringar</string>
+  <string name="exit">Avsluta</string>
+  <string name="size">Sortera efter storlek</string>
+  <string name="about">Om</string>
   <string name="licenses">Licenser</string>
   <string name="show_licenses">Visa licenser</string>
   <string name="contributors">Bidragsgivare</string>
@@ -109,4 +117,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="no_custom_templates_description__appspecific">Ingen egen mall än.\nPlacera mallbilden här:%1$s</string>
   <string name="no_memes_saved_description__appspecific">Inga memer sparade än.\nAnvänd övre sparknappen efter att du redigerat en meme.</string>
   <string name="default_mode_description_description__appspecific">Standardläge öppnar vid uppstart (skapa, favoriter eller sparade)</string>
+  <string name="appearance">Utseende</string>
+  <string name="editor">Redigerare</string>
+  <string name="hide_statusbar_at_this_view">Dölj statusfältet i den här vyn</string>
+  <string name="hide_statusbar">Dölj statusfältet</string>
+  <string name="language">Språk</string>
+  <string name="language_change_restart_description">Byt språk för appen. Starta om för att fastställa ändringar</string>
+  <string name="show_title">Visa titel</string>
 </resources>
