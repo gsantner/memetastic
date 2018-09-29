@@ -109,4 +109,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="no_custom_templates_description__appspecific">Ingen egen mall än.\nPlacera mallbilden här:%1$s</string>
   <string name="no_memes_saved_description__appspecific">Inga memer sparade än.\nAnvänd övre sparknappen efter att du redigerat en meme.</string>
   <string name="default_mode_description_description__appspecific">Standardläge öppnar vid uppstart (skapa, favoriter eller sparade)</string>
+  <string name="press_back_again_to_stop_editing__appspecific">Tryck back igen för att avsluta ändring av denna meme. Memen går förlorad om den inte sparats.</string>
+  <string name="saved_meme_successfully__appspecific">Denna meme sparades på din enhet. Vill du inte längre redigera denna meme nu?</string>
+  <string name="save_when_pressing_back_description__appspecific">Spara meme automatiskt när du backar och input fanns</string>
+  <string name="shuffle_meme_list_description__appspecific">Blanda memelistan efter att du valt kategori</string>
+  <string name="shuffle_meme_list__appspecific">Blanda memelista</string>
+  <string name="view_type_memelist__appspecific">Välj vytyp (bildnät, titelrader)</string>
+  <string name="error_storage_permission__appspecific">Behöver åtkomst till lagringmedium för att spara memer och mallar</string>
+  <string name="download_latest_assets_message__appspecific">Detta ladda ned fonter och mememallar (ca. 20 MB data).</string>
+  <string name="download_latest_assets_message_description__appspecific">Bland inställningarna kan du manuellt få de senaste kompononterna senare också.</string>
 </resources>
