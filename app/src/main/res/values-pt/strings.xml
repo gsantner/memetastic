@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Tem que conceder o acesso ao armazenamento para guardar imagens e modelos</string>
   <string name="download_latest_assets_message__appspecific">Irá descarregar os tipos de letras e os memes (cerca de 20 MB).</string>
   <string name="download_latest_assets_message_description__appspecific">Também é possível obter os dados mais recentes nas definições.</string>
+  <string name="main_view">Vista principal</string>
+  <string name="edit_picture">Editar imagem</string>
+  <string name="general">Geral</string>
 </resources>
