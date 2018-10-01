@@ -93,4 +93,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back_description__appspecific">Автоматически сохранять редактируемые мемы при нажатии кнопки назад</string>
   <string name="shuffle_meme_list_description__appspecific">После выбора категори отображать мемы в случайном порядке</string>
   <string name="shuffle_meme_list__appspecific">Список мемов в случайном порядке</string>
+  <string name="main_view">Главный экран</string>
+  <string name="edit_picture">Изменить изображение</string>
+  <string name="general">Общие</string>
 </resources>

@@ -119,4 +119,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Asnas yesra tasiregt-ik akken ad yekcem ar uḍiq n usekles n yibenk akken ad isekles imemesisen d tineɣrufin-nsen</string>
   <string name="download_latest_assets_message__appspecific">Ad d-yeglu s usider n tsefsiyin n isekkilen akked tineɣrufin n imemesisen (azal n  20MAṬ n isefka).</string>
   <string name="download_latest_assets_message_description__appspecific">Tzemreḍ daɣen ad tsenkreḍ tiririt n tiɣbula tineggura seg iɣewwaṛen.</string>
+  <string name="general">Amatu</string>
 </resources>

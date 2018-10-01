@@ -112,4 +112,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Benötige Datei-Berichtigung um Memes zu speichern </string>
   <string name="download_latest_assets_message__appspecific">Dies wird Schriftarten und Meme Vorlagen (ca. 20 MB) herunterladen</string>
   <string name="download_latest_assets_message_description__appspecific">In den Einstellungen können Assets später erneut heruntergeladen werden</string>
+  <string name="main_view">Hauptansicht</string>
+  <string name="edit_picture">Bild bearbeiten</string>
+  <string name="general">Allgemeines</string>
 </resources>

@@ -26,4 +26,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="hide_statusbar">مخفی کردن نوار وضعیت</string>
   <string name="language">زبان</string>
   <string name="language_change_restart_description">تغییر زبان برنامه. لازم است برنامه را از نو اجرا کنید تا تغییرات را ببینید</string>
+  <string name="main_view">نمای اصلی</string>
+  <string name="general">عمومی</string>
 </resources>
