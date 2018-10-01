@@ -81,4 +81,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="tap_here_to_add_caption">点击此处添加标题</string>
   <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
   <string name="download_latest_assets_message_description__appspecific">您也可以在设置中可以手动下载最新的素材库。</string>
+  <string name="main_view">主界面</string>
+  <string name="edit_picture">编辑图片</string>
+  <string name="general">通用</string>
 </resources>

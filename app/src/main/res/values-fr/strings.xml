@@ -121,4 +121,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">L\'application a besoin de votre permission pour accéder au stockage de votre appareil pour enregistrer les Memes et leurs modèles</string>
   <string name="download_latest_assets_message__appspecific">Entraîne le téléchargement des polices de caractères et des modèles de meme (environ 20MB de données).</string>
   <string name="download_latest_assets_message_description__appspecific">Vous pourrez également lancer la récupération des dernières ressources depuis les paramètres.</string>
+  <string name="main_view">Vue principale</string>
+  <string name="edit_picture">Éditer l\'image</string>
+  <string name="general">Général</string>
 </resources>

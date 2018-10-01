@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Sono necessari i permessi di archiviazione per salvare memes e modelli</string>
   <string name="download_latest_assets_message__appspecific">Verranno scaricati caratteri e sfondi per i meme (circa 20MB).</string>
   <string name="download_latest_assets_message_description__appspecific">Puoi anche scaricare le ultime risorse nelle impostazioni.</string>
+  <string name="main_view">Visualizzazione principale</string>
+  <string name="edit_picture">Modifica immagine</string>
+  <string name="general">Generali</string>
 </resources>
