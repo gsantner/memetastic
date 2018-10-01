@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Palette</string>
   <string name="presets">Weniger</string>
   <string name="select_color">Farbe auswählen</string>
-  <string name="code">Quellcode</string>
   <string name="favourite">Favorisieren</string>
   <string name="remove_favourite">Favorit entfernen</string>
   <string name="show_title">Titel anzeigen</string>
@@ -143,6 +142,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="contributors_public_add_yourself_description">Zeige Informationen über Mitwirkende. Mitwirkende können Informationen bereitstellen die hier angezeigt werden (Opt-in), nach der Mitwirkung.</string>
   <string name="help">Hilfe</string>
   <string name="more">Mehr</string>
-  <string name="community">Community</string>
   <string name="contribute">Beitragen</string>
 </resources>
