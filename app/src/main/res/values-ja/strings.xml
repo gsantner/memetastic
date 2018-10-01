@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">ミームやテンプレートの保存にはアクセス許可が必要です</string>
   <string name="download_latest_assets_message__appspecific">これはフォントやミームテンプレートをダウンロードします (約 20 MB のデータ)。</string>
   <string name="download_latest_assets_message_description__appspecific">設定で、後で最新の素材をダウンロードすることもできます。</string>
+  <string name="main_view">メインビュー</string>
+  <string name="edit_picture">画像を編集</string>
+  <string name="general">一般</string>
 </resources>
