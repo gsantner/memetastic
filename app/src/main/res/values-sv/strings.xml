@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Behöver åtkomst till lagringmedium för att spara memer och mallar</string>
   <string name="download_latest_assets_message__appspecific">Detta ladda ned fonter och mememallar (ca. 20 MB data).</string>
   <string name="download_latest_assets_message_description__appspecific">Bland inställningarna kan du manuellt få de senaste kompononterna senare också.</string>
+  <string name="main_view">Huvudvy</string>
+  <string name="edit_picture">Ändra bild</string>
+  <string name="general">Generella</string>
 </resources>
