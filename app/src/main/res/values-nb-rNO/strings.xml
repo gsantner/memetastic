@@ -120,4 +120,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Trenger lagringstilgang for å lagre internettfenomen og maler</string>
   <string name="download_latest_assets_message__appspecific">Dette laster ned skrifter og internettfenomenmaler (omtrent 20 MB data).</string>
   <string name="download_latest_assets_message_description__appspecific">I \"Innstillinger\" kan du også hente de siste elementene manuelt.</string>
+  <string name="main_view">Hovedvisning</string>
+  <string name="edit_picture">Rediger bilde</string>
+  <string name="general">Hovedinnstillinger</string>
 </resources>
