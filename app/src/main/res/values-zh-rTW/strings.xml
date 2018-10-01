@@ -30,4 +30,27 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="language">語言</string>
   <string name="language_change_restart_description">更改應用程式使用的語言。要重新開啟應用程式才會生效</string>
   <string name="show_title">顯示標題列</string>
+  <string name="main_view">主頁</string>
+  <string name="general">平常</string>
+  <string name="open_source_licenses">開源許可</string>
+  <string name="rate_this_app">評價這個App</string>
+  <string name="translate">翻譯</string>
+  <string name="more_info_and_help">更多關於這個App的資訊和幫助</string>
+  <string name="report_bugs">回報臭蟲</string>
+  <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">更多贊助或其它支援這個專案的訊息</string>
+  <string name="android_contribution_guide">Android 貢獻指南</string>
+  <string name="more_info_on_how_to_contribute_to_foss_android_projects">更多貢獻於開源專案的訊息，特別是Android App的</string>
+  <string name="join_community">加入社團</string>
+  <string name="bug_reports_suggest_improvements">提供回饋，回報臭蟲或改善建議</string>
+  <string name="help_translating_this_app">翻譯這個Apo的語文界面</string>
+  <string name="source_code">原始碼</string>
+  <string name="project_license">專案許可證</string>
+  <string name="project_contribution_info">專案貢獻資訊</string>
+  <string name="more_info_on_how_to_contribute_to_this_project">更多如何貢獻給這個專案的訊息</string>
+  <string name="contribute_code_to_this_project_anybody_welcome">歡迎每個人都來提供程式碼</string>
+  <string name="project_team">專案團隊</string>
+  <string name="contributors_public_add_yourself_description">顯示 貢獻者的資訊，貢獻者在提供所有後可在此留下訊息（選項）</string>
+  <string name="help">幫助</string>
+  <string name="more">再來</string>
+  <string name="contribute">貢獻</string>
 </resources>
