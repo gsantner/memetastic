@@ -84,4 +84,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back_description__appspecific">Automaticky ukláda meme, pokud stisknu tlaèítko zpìt.</string>
   <string name="shuffle_meme_list_description__appspecific">Zamíchat meme seznam po zvolení kategorie</string>
   <string name="shuffle_meme_list__appspecific">Zamíchat meme seznam</string>
+  <string name="general">Obecné</string>
+  <string name="translate">Přeložit</string>
+  <string name="more">Více</string>
 </resources>

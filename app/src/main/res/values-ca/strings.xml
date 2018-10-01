@@ -118,4 +118,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Necessitem permís per desar memes i plantilles</string>
   <string name="download_latest_assets_message__appspecific">Això baixarà les fonts i les plantilles del meme (uns 20 MB).</string>
   <string name="download_latest_assets_message_description__appspecific">En la configuració també pots obtenir els actius més recents manualment.</string>
+  <string name="main_view">Vista principal</string>
+  <string name="general">General</string>
+  <string name="rate_this_app">Valoreu l\'aplicació</string>
+  <string name="translate">Tradueix</string>
+  <string name="source_code">Codi font</string>
+  <string name="project_license">Llicència del projecte</string>
+  <string name="help">Ajuda</string>
+  <string name="more">Més</string>
+  <string name="contribute">Contribueix</string>
 </resources>

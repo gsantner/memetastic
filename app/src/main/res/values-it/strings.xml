@@ -118,4 +118,30 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Sono necessari i permessi di archiviazione per salvare memes e modelli</string>
   <string name="download_latest_assets_message__appspecific">Verranno scaricati caratteri e sfondi per i meme (circa 20MB).</string>
   <string name="download_latest_assets_message_description__appspecific">Puoi anche scaricare le ultime risorse nelle impostazioni.</string>
+  <string name="main_view">Visualizzazione principale</string>
+  <string name="edit_picture">Modifica immagine</string>
+  <string name="general">Generali</string>
+  <string name="open_source_licenses">Licenze Open Source</string>
+  <string name="rate_this_app">Valuta l\'app</string>
+  <string name="translate">Traduci</string>
+  <string name="more_info_and_help">Più informazioni e aiuto</string>
+  <string name="report_bugs">Segnala un bug</string>
+  <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Più informazioni su come donare o su come supportare questo progetto</string>
+  <string name="android_contribution_guide">Guida alla contribuzione Android</string>
+  <string name="more_info_on_how_to_contribute_to_foss_android_projects">Più informazioni su come contribuire a progetti Open Source, soprattutto applicazioni Android</string>
+  <string name="join_community">Unisciti alla comunità</string>
+  <string name="bug_reports_suggest_improvements">Dai un riscontro, segnala bug o suggerisci miglioramenti</string>
+  <string name="help_translating_this_app">Traduci l\'applicazoine in altre lingue</string>
+  <string name="source_code">Codice sorgente</string>
+  <string name="project_license">Licenza del progetto</string>
+  <string name="project_contribution_info">Informazioni di contribuzione al progetto</string>
+  <string name="more_info_on_how_to_contribute_to_this_project">Più informazioni su come contribuire a questo progetto</string>
+  <string name="contribute_code_to_this_project_anybody_welcome">Contribuisci al codice del progetto. Tutti sono invitati a farlo, anche i nuovi arrivati</string>
+  <string name="project_team">Team del progetto</string>
+  <string name="contributors_public_add_yourself_description">Mostra informazioni sui contributori.
+
+  I contributori possono fornire informazioni per essere mostrati qui (opt-in) dopo aver contribuito</string>
+  <string name="help">Aiuto</string>
+  <string name="more">Altro</string>
+  <string name="contribute">Contribuire</string>
 </resources>
