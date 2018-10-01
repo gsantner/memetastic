@@ -118,4 +118,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Aplikacja potrzebuje uprawnień pamięci do zapisania memów i szablonów</string>
   <string name="download_latest_assets_message__appspecific">Zostaną pobrane czcionki i szablony memów (ok. 20 MB danych).</string>
   <string name="download_latest_assets_message_description__appspecific">Najnowsze pliki możesz też pobrać w ustawieniach.</string>
+  <string name="main_view">Główny Widok</string>
+  <string name="general">Ogólne</string>
 </resources>
