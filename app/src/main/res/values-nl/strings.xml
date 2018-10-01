@@ -29,4 +29,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="hide_statusbar">Verberg statusbalk</string>
   <string name="language">Taal</string>
   <string name="language_change_restart_description">Taal wijzigen van deze app. Opnieuw opstarten om wijzigingen te activeren</string>
+  <string name="main_view">Hoofdweergave</string>
+  <string name="general">Algemeen</string>
 </resources>
