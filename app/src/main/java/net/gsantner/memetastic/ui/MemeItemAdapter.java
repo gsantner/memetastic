@@ -36,19 +36,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import net.gsantner.memetastic.App;
+import net.gsantner.memetastic.activity.MainActivity;
+import net.gsantner.memetastic.activity.MemeCreateActivity;
+import net.gsantner.memetastic.data.MemeData;
+import net.gsantner.memetastic.service.ImageLoaderTask;
+import net.gsantner.memetastic.util.ContextUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import net.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.activity.MainActivity;
-import net.gsantner.memetastic.activity.MemeCreateActivity;
-import net.gsantner.memetastic.data.MemeData;
-import net.gsantner.memetastic.service.ImageLoaderTask;
-import net.gsantner.memetastic.util.ContextUtils;
 
 /**
  * Adapter to show images in given view mode

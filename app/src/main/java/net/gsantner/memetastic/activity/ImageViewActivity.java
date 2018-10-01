@@ -36,17 +36,18 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import net.gsantner.memetastic.App;
+import net.gsantner.memetastic.data.MemeData;
+import net.gsantner.memetastic.service.AssetUpdater;
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.PermissionChecker;
+
 import java.io.File;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import net.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.data.MemeData;
-import net.gsantner.memetastic.service.AssetUpdater;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 public class ImageViewActivity extends AppCompatActivity {
     //########################

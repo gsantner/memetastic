@@ -33,6 +33,11 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 
+import net.gsantner.memetastic.service.AssetUpdater;
+import net.gsantner.memetastic.service.ThumbnailCleanupTask;
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.MediaStoreUtils;
+import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.preference.GsPreferenceFragmentCompat;
 import net.gsantner.opoc.preference.SharedPreferencesPropertyBackend;
 
@@ -43,11 +48,6 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.service.AssetUpdater;
-import net.gsantner.memetastic.service.ThumbnailCleanupTask;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.MediaStoreUtils;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 public class SettingsActivity extends AppCompatActivity {
     static final int ACTIVITY_ID = 10;

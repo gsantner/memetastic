@@ -94,7 +94,7 @@
                 android:value="net.gsantner.memetastic.activity.MainActivity"/>
         </activity>
         <activity
-            android:name="net.gsantner.memetastic.activity.AboutActivity"
+            android:name="net.gsantner.memetastic.activity.MoreInfoActivity"
             android:launchMode="singleInstance"
             android:parentActivityName="net.gsantner.memetastic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

@@ -35,6 +35,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import net.gsantner.memetastic.App;
+import net.gsantner.memetastic.data.MemeData;
+import net.gsantner.memetastic.ui.GridDecoration;
+import net.gsantner.memetastic.ui.MemeItemAdapter;
+import net.gsantner.memetastic.util.AppCast;
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.ContextUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -42,14 +50,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import net.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.data.MemeData;
-import net.gsantner.memetastic.ui.GridDecoration;
-import net.gsantner.memetastic.ui.MemeItemAdapter;
-import net.gsantner.memetastic.util.AppCast;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.ContextUtils;
 
 
 public class MemeFragment extends Fragment {

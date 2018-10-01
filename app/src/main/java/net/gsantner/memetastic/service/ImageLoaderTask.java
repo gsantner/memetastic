@@ -25,12 +25,13 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 
-import java.io.File;
-
-import io.github.gsantner.memetastic.R;
 import net.gsantner.memetastic.data.MemeLibConfig;
 import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.memetastic.util.ContextUtils;
+
+import java.io.File;
+
+import io.github.gsantner.memetastic.R;
 
 public class ImageLoaderTask<T> extends AsyncTask<File, Void, Bitmap> {
     private final static int MAX_DIMENSION = 5000;
