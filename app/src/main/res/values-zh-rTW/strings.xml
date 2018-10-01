@@ -30,4 +30,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="language">語言</string>
   <string name="language_change_restart_description">更改應用程式使用的語言。要重新開啟應用程式才會生效</string>
   <string name="show_title">顯示標題列</string>
+  <string name="main_view">主頁</string>
+  <string name="general">平常</string>
 </resources>
