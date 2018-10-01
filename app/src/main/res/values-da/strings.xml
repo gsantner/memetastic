@@ -21,4 +21,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="settings">Indstillinger</string>
   <string name="language">Sprog</string>
   <string name="language_change_restart_description">Ændre applikationens sprog. Genstart for at ændringen træder i kraft</string>
+  <string name="translate">Oversæt</string>
+  <string name="report_bugs">Rapporter fejl</string>
+  <string name="more">Mere</string>
 </resources>
