@@ -22,4 +22,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="appearance">Utseende</string>
   <string name="language">Språk</string>
   <string name="language_change_restart_description">Bytt språket for denne appen og omstart slik at endringen kan ta sted</string>
+  <string name="general">Generelt</string>
+  <string name="translate">Oversett</string>
+  <string name="more">Mer</string>
 </resources>
