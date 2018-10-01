@@ -67,6 +67,19 @@ import com.jaredrummler.android.colorpicker.ColorPanelView;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
 
+import net.gsantner.memetastic.App;
+import net.gsantner.memetastic.data.MemeConfig;
+import net.gsantner.memetastic.data.MemeData;
+import net.gsantner.memetastic.data.MemeEditorElements;
+import net.gsantner.memetastic.data.MemeLibConfig;
+import net.gsantner.memetastic.service.AssetUpdater;
+import net.gsantner.memetastic.ui.FontItemAdapter;
+import net.gsantner.memetastic.util.ActivityUtils;
+import net.gsantner.memetastic.util.AppCast;
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.ContextUtils;
+import net.gsantner.memetastic.util.PermissionChecker;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -79,20 +92,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import butterknife.OnTouch;
-import net.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.data.MemeConfig;
-import net.gsantner.memetastic.data.MemeData;
-import net.gsantner.memetastic.data.MemeEditorElements;
-import net.gsantner.memetastic.data.MemeLibConfig;
-import net.gsantner.memetastic.service.AssetUpdater;
-import net.gsantner.memetastic.ui.FontItemAdapter;
-import net.gsantner.memetastic.util.ActivityUtils;
 import other.so.AndroidBug5497Workaround;
-import net.gsantner.memetastic.util.AppCast;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.ContextUtils;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 /**
  * Activity for creating memes

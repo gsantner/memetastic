@@ -25,11 +25,11 @@ import android.app.Application;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.opoc.util.ShareUtil;
 
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.util.AppSettings;
 
 /**
  * The apps application object

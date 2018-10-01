@@ -26,6 +26,11 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 
+import net.gsantner.memetastic.data.MemeConfig;
+import net.gsantner.memetastic.data.MemeData;
+import net.gsantner.memetastic.util.AppCast;
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.NetworkUtils;
 import net.gsantner.opoc.util.ZipUtils;
@@ -45,11 +50,6 @@ import java.util.Date;
 import java.util.List;
 
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.data.MemeConfig;
-import net.gsantner.memetastic.data.MemeData;
-import net.gsantner.memetastic.util.AppCast;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 @SuppressLint("SimpleDateFormat")
 public class AssetUpdater {

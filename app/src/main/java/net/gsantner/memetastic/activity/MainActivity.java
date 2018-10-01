@@ -65,6 +65,16 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import net.gsantner.memetastic.App;
+import net.gsantner.memetastic.data.MemeData;
+import net.gsantner.memetastic.service.AssetUpdater;
+import net.gsantner.memetastic.ui.GridDecoration;
+import net.gsantner.memetastic.ui.MemeItemAdapter;
+import net.gsantner.memetastic.util.ActivityUtils;
+import net.gsantner.memetastic.util.AppCast;
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.ContextUtils;
+import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 import net.gsantner.opoc.util.FileUtils;
 
@@ -79,18 +89,8 @@ import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import net.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.data.MemeData;
-import net.gsantner.memetastic.service.AssetUpdater;
-import net.gsantner.memetastic.ui.GridDecoration;
-import net.gsantner.memetastic.ui.MemeItemAdapter;
-import net.gsantner.memetastic.util.ActivityUtils;
-import net.gsantner.memetastic.util.AppCast;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.ContextUtils;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (item.getItemId()) {
             case R.id.action_about: {
-                ActivityUtils.get(this).animateToActivity(AboutActivity.class, false, null);
+                ActivityUtils.get(this).animateToActivity(MoreInfoActivity.class, false, null);
                 return true;
             }
             case R.id.action_settings: {

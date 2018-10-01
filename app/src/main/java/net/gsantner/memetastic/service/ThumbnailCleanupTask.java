@@ -22,11 +22,10 @@ package net.gsantner.memetastic.service;
 
 import android.content.Context;
 
+import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.opoc.util.FileUtils;
 
 import java.io.File;
-
-import net.gsantner.memetastic.util.AppSettings;
 
 public class ThumbnailCleanupTask extends Thread {
     private Context _context;

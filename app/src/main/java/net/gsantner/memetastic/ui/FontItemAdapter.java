@@ -38,9 +38,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.List;
-
 import net.gsantner.memetastic.data.MemeData;
+
+import java.util.List;
 
 /**
  * Adapter to show the available fonts rendered in there own style as preview

@@ -23,13 +23,13 @@ package net.gsantner.memetastic.service;
 import android.content.Context;
 import android.os.Environment;
 
+import net.gsantner.memetastic.util.AppSettings;
+import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.util.FileUtils;
 
 import java.io.File;
 
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.util.AppSettings;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 public class MigrationThread extends Thread {
     private final Context _context;

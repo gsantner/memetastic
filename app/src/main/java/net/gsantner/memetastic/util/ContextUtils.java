@@ -26,15 +26,15 @@ import android.os.Build;
 import android.support.v7.widget.PopupMenu;
 import android.view.View;
 
-import java.io.File;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Date;
-
 import net.gsantner.memetastic.App;
 import net.gsantner.memetastic.data.MemeLibConfig;
 import net.gsantner.memetastic.service.AssetUpdater;
 import net.gsantner.memetastic.service.MigrationThread;
+
+import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Date;
 
 public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
     public ContextUtils(Context context) {

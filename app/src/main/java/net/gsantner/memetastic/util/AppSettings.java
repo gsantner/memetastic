@@ -23,6 +23,9 @@ package net.gsantner.memetastic.util;
 import android.content.Context;
 import android.os.Environment;
 
+import net.gsantner.memetastic.App;
+import net.gsantner.memetastic.service.AssetUpdater;
+import net.gsantner.memetastic.ui.MemeItemAdapter;
 import net.gsantner.opoc.preference.SharedPreferencesPropertyBackend;
 
 import java.io.File;
@@ -32,11 +35,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import net.gsantner.memetastic.App;
 import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.service.AssetUpdater;
-import net.gsantner.memetastic.ui.MemeItemAdapter;
 
 public class AppSettings extends SharedPreferencesPropertyBackend {
     private static final int MAX_FAVS = 50;

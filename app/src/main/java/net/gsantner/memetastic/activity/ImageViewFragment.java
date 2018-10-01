@@ -30,14 +30,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import net.gsantner.memetastic.util.ContextUtils;
+import net.gsantner.memetastic.util.PermissionChecker;
+
 import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.gsantner.memetastic.R;
-import net.gsantner.memetastic.util.ContextUtils;
-import net.gsantner.memetastic.util.PermissionChecker;
 
 
 public class ImageViewFragment extends Fragment {
