@@ -19,4 +19,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="appearance">모양</string>
   <string name="language">언어</string>
   <string name="language_change_restart_description">언어 변경하기. 재시작이 필요합니다.</string>
+  <string name="general">기본 설정</string>
+  <string name="more">더 보기</string>
 </resources>
