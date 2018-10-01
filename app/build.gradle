@@ -43,7 +43,7 @@ android {
 
         applicationId "io.github.gsantner.memetastic"
         versionName "1.4.4"
-        versionCode 46
+        versionCode 47
     }
 
     buildTypes {
