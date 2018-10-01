@@ -14,8 +14,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="open_navdrawer">NavDrawer öffnen</string>
   <string name="close_navdrawer">NavDrawer schließen</string>
   <string name="humans">Menschen</string>
+  <string name="cartoon">Cartoon</string>
   <string name="animals">Tiere</string>
   <string name="custom">Eigene</string>
+  <string name="rage">Rage</string>
   <string name="saved">Gespeichert</string>
   <string name="favs">Favoriten</string>
   <string name="create">Erstellen</string>
@@ -41,6 +43,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="enter_caption">Text eingeben</string>
   <string name="font">Schriftart</string>
   <string name="keep_editing">Weiter bearbeiten</string>
+  <string name="text">Text</string>
   <string name="size">Größe</string>
   <string name="background">Hintergrund</string>
   <string name="border">Umrandung</string>
@@ -67,6 +70,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="default_mode">Standard Modus</string>
   <string name="functionality">Funktionalität</string>
   <string name="save_when_pressing_back">Speichern bei zurück</string>
+  <string name="padding">Padding</string>
   <string name="overview">Übersicht</string>
   <string name="editor">Editor</string>
   <string name="hide_statusbar_at_this_view">Die Statusleiste in dieser Ansicht verstecken</string>
@@ -84,6 +88,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_downloaded">Herunterladen erfolgreich</string>
   <string name="download_latest_assets">Aktuellste Zusatzinhalte herunteladen</string>
   <string name="download_latest_assets_checking_description">Überprüfe ob aktuellere Assets verfügbar sind</string>
+  <string name="palette">Palette</string>
   <string name="presets">Weniger</string>
   <string name="select_color">Farbe auswählen</string>
   <string name="favourite">Favorisieren</string>
@@ -115,6 +120,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="main_view">Hauptansicht</string>
   <string name="edit_picture">Bild bearbeiten</string>
   <string name="general">Allgemeines</string>
+  <string name="picture_viewer">Bildbetrachter</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Angezeigte Bilder in der Gallery und dieser App</string>
   <string name="open_source_licenses">Open Source Lizenzen</string>
   <string name="rate_this_app">App bewerten</string>
   <string name="translate">Übersetzen</string>
