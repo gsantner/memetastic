@@ -3,7 +3,7 @@
  *   Maintained by Gregor Santner, 2016-
  *   https://gsantner.net/
  *
- *   License: Apache 2.0
+ *   License: Apache 2.0 / Commercial
  *  https://github.com/gsantner/opoc/#licensing
  *  https://www.apache.org/licenses/LICENSE-2.0
  *
@@ -44,6 +44,7 @@ import android.text.TextUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -209,7 +210,7 @@ public class SharedPreferencesPropertyBackend implements PropertyBackend<String,
         String value = pref
                 .getString(key, ARRAY_SEPARATOR)
                 .replace(ARRAY_SEPARATOR_SUBSTITUTE, ARRAY_SEPARATOR);
-        if (value.equals(ARRAY_SEPARATOR)) {
+        if (value.equals(ARRAY_SEPARATOR) || TextUtils.isEmpty(value)) {
             return ret;
         }
         ret.addAll(Arrays.asList(value.split(ARRAY_SEPARATOR)));
@@ -511,5 +512,16 @@ public class SharedPreferencesPropertyBackend implements PropertyBackend<String,
     public SharedPreferencesPropertyBackend setStringList(String key, List<String> value) {
         setStringListOne(key, value, _prefApp);
         return this;
+    }
+
+    /**
+     * A method to determine if current hour is between begin and end.
+     * This is especially useful for time-based light/dark mode
+     */
+    public boolean isCurrentHourOfDayBetween(int begin, int end) {
+        begin = (begin >= 23 || begin < 0) ? 0 : begin;
+        end = (end >= 23 || end < 0) ? 0 : end;
+        int h = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        return h >= begin && h <= end;
     }
 }

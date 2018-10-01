@@ -3,9 +3,9 @@
  *   Maintained by Gregor Santner, 2017-
  *   https://gsantner.net/
  *
- *   License: Apache 2.0
- *  https://github.com/gsantner/opoc/#licensing
- *  https://www.apache.org/licenses/LICENSE-2.0
+ *   License of this file: Apache 2.0 (Commercial upon request)
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *     https://github.com/gsantner/opoc/#licensing
  *
 #########################################################*/
 package net.gsantner.opoc.util;
@@ -397,7 +397,8 @@ public class FileUtils {
     }
 
     public static boolean isTextFile(File file) {
-        return getMimeType(file).startsWith("text/");
+        String mime = getMimeType(file);
+        return mime != null && mime.startsWith("text/");
     }
 
     /**

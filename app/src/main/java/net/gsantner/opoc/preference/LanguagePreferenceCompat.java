@@ -1,9 +1,9 @@
 /*#######################################################
  *
- *   Maintained by Gregor Santner, 2017-
+ *   Maintained by Gregor Santner, 2018-
  *   https://gsantner.net/
  *
- *   License: Apache 2.0
+ *   License: Apache 2.0 / Commercial
  *  https://github.com/gsantner/opoc/#licensing
  *  https://www.apache.org/licenses/LICENSE-2.0
  *
@@ -154,6 +154,10 @@ public class LanguagePreferenceCompat extends ListPreference {
             ret = ret.substring(0, ret.indexOf(" ") + 1) + "Simplified" + ret.substring(ret.indexOf(" "));
         } else if (localeAndroidCode.equals("zh-rTW")) {
             ret = ret.substring(0, ret.indexOf(" ") + 1) + "Traditional" + ret.substring(ret.indexOf(" "));
+        } else if (localeAndroidCode.equals("sr-rRS")) {
+            ret = ret.substring(0, ret.indexOf(" ") + 1) + "Latin" + ret.substring(ret.indexOf(" "));
+        } else if (localeAndroidCode.startsWith("sr")) {
+            ret = ret.substring(0, ret.indexOf(" ") + 1) + "Cyrillic" + ret.substring(ret.indexOf(" "));
         }
 
         return ret;
