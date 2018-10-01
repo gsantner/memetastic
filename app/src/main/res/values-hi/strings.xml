@@ -108,4 +108,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">मीम और टेम्पलेट्स को सहेजने के लिए संग्रहण की अनुमति की आवश्यकता है</string>
   <string name="download_latest_assets_message__appspecific">यह फोंट और मीम टेम्प्लेट डाउनलोड करेगा (लगभग 20 एमबी डेटा)</string>
   <string name="download_latest_assets_message_description__appspecific">सेटिंग्स में आप मैन्युअल रूप से नवीनतम आस्तियों को बाद में भी प्राप्त कर सकते हैं।</string>
+  <string name="translate">अनुवाद करें</string>
+  <string name="help">मदद</string>
+  <string name="more">अधिक</string>
+  <string name="contribute">योगदान</string>
 </resources>
