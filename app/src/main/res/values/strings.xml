@@ -118,4 +118,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_storage_permission__appspecific">Need permission for storage to save memes and templates</string>
     <string name="download_latest_assets_message__appspecific">This will download fonts and meme templates (about 20 MB data).</string>
     <string name="download_latest_assets_message_description__appspecific">In settings you can manually get the latest assets later too.</string>
+    <string name="main_view">Main View</string>
+    <string name="edit_picture">Edit picture</string>
+    <string name="general">General</string>
+    <string name="picture_viewer">Picture viewer</string>
+    <string name="pictures_shown_in_gallery_and_this_app">Pictures shown in gallery and this app</string>
 </resources>

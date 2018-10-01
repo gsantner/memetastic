@@ -27,7 +27,10 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceFragmentCompat;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 
 import net.gsantner.opoc.preference.GsPreferenceFragmentCompat;
@@ -78,6 +81,16 @@ public class SettingsActivity extends AppCompatActivity {
         });
         activityRetVal = RESULT.NOCHANGE;
         showFragment(SettingsFragmentMaster.TAG, false);
+    }
+
+    @Override
+    public void onBackPressed() {
+        GsPreferenceFragmentCompat prefFrag = (GsPreferenceFragmentCompat) getSupportFragmentManager().findFragmentByTag(SettingsFragmentMaster.TAG);
+        if (prefFrag != null && prefFrag.canGoBack()) {
+            prefFrag.goBack();
+            return;
+        }
+        super.onBackPressed();
     }
 
     protected void showFragment(String tag, boolean addToBackStack) {
@@ -140,7 +153,6 @@ public class SettingsActivity extends AppCompatActivity {
 
 
                 if (eq(key, R.string.pref_key__memelist_view_type)) {
-
                     activityRetVal = RESULT.CHANGE_RESTART;
                 }
                 if (eq(key, R.string.pref_key__cleanup_thumbnails)) {
@@ -186,6 +198,17 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
             return null;
+        }
+
+        @Override
+        protected void onPreferenceScreenChanged(PreferenceFragmentCompat preferenceFragmentCompat, PreferenceScreen preferenceScreen) {
+            super.onPreferenceScreenChanged(preferenceFragmentCompat, preferenceScreen);
+            if (!TextUtils.isEmpty(preferenceScreen.getTitle())) {
+                SettingsActivity a = (SettingsActivity) getActivity();
+                if (a != null) {
+                    a.toolbar.setTitle(preferenceScreen.getTitle());
+                }
+            }
         }
     }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*#######################################################
+ *
+ *   Maintained by Gregor Santner, 2017-
+ *   https://gsantner.net/
+ *
+ *   License of this file: Apache 2.0 (Commercial upon request)
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://github.com/gsantner/opoc/#licensing
+ *
+#########################################################*/
+-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:textAllCaps="false"
+    android:textColor="@color/colorAccent"
+    android:textSize="14sp"
+    android:textStyle="bold" />
+
+    <!--style="?android:attr/listSeparatorTextViewStyle" -->
