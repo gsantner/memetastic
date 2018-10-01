@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Se necesita permiso de almacenamiento para guardar memes y plantillas</string>
   <string name="download_latest_assets_message__appspecific">Esto descargará tipos de letra y plantillas de meme (en torno a 20 MB de datos)</string>
   <string name="download_latest_assets_message_description__appspecific">También se pueden obtener los últimos elementos manualmente desde Ajustes.</string>
+  <string name="main_view">Vista principal</string>
+  <string name="edit_picture">Editar imagen</string>
+  <string name="general">General</string>
 </resources>
