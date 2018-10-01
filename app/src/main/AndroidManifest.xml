@@ -1,5 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--
+/*#######################################################
+ *
+ *   Maintained by Gregor Santner, 2016-
+ *   https://gsantner.net/
+ *
+ *   License of this file: GNU GPLv3 (Commercial upon request)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+#########################################################*/
+--><manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="io.github.gsantner.memetastic"
           android:installLocation="auto"
@@ -10,7 +30,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
-        android:name="io.github.gsantner.memetastic.App"
+        android:name="net.gsantner.memetastic.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -33,7 +53,7 @@
 
         <!-- Activities -->
         <activity
-            android:name="io.github.gsantner.memetastic.activity.MainActivity"
+            android:name="net.gsantner.memetastic.activity.MainActivity"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -46,15 +66,15 @@
 
 
         <activity
-            android:name="io.github.gsantner.memetastic.activity.MemeCreateActivity"
+            android:name="net.gsantner.memetastic.activity.MemeCreateActivity"
             android:icon="@drawable/ic_launcher"
             android:label="@string/create_meme__appspecific"
-            android:parentActivityName=".activity.MainActivity"
+            android:parentActivityName="net.gsantner.memetastic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity"/>
 
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
@@ -63,32 +83,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="io.github.gsantner.memetastic.activity.SettingsActivity"
+            android:name="net.gsantner.memetastic.activity.SettingsActivity"
             android:label="@string/settings"
             android:launchMode="singleInstance"
-            android:parentActivityName="io.github.gsantner.memetastic.activity.MainActivity"
+            android:parentActivityName="net.gsantner.memetastic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity"/>
         </activity>
         <activity
-            android:name="io.github.gsantner.memetastic.activity.AboutActivity"
+            android:name="net.gsantner.memetastic.activity.AboutActivity"
             android:launchMode="singleInstance"
-            android:parentActivityName=".activity.MainActivity"
+            android:parentActivityName="net.gsantner.memetastic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity"/>
         </activity>
         <activity
-            android:name="io.github.gsantner.memetastic.activity.ImageViewActivity"
-            android:parentActivityName=".activity.MainActivity"
+            android:name="net.gsantner.memetastic.activity.ImageViewActivity"
+            android:parentActivityName="net.gsantner.memetastic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity"/>
         </activity>
     </application>
 

@@ -2,18 +2,21 @@
 
 <!--
  *
- * Gregor Santner <gsantner.net> wrote this file. You can do whatever
- * you want with this file. If we meet some day, and you think this stuff is
- * worth it, you can buy me a coke in return. Provided as is without any kind
- * of warranty. No attribution required.                  - Gregor Santner
+/*#######################################################
  *
- * License: Creative Commons Zero (CC0 1.0)
- *  http://creativecommons.org/publicdomain/zero/1.0/
+ *   Maintained by Gregor Santner, 2017-
+ *   https://gsantner.net/
+ *
+ *   License of this file: Apache 2.0 (Commercial upon request)
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *     https://github.com/gsantner/opoc/#licensing
+ *
  *
  * A simple activity to show information about the app.
  * Intended to use together: SimpleMarkdownParser, SettingsActivity and it's xml-layout.
  *
  * Source: https://github.com/gsantner/onePieceOfCode/blob/master/java/aboutActivity/about__activity.xml
+ * #########################################################*/
 -->
 
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,7 +25,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activity.AboutActivity">
+    tools:context="net.gsantner.memetastic.activity.AboutActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
