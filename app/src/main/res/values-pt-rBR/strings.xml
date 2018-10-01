@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Necessário de permissão para fazer o armazenamento de memes e modelos de memes</string>
   <string name="download_latest_assets_message__appspecific">Isso irá baixar fontes e modelos de memes (cerca de 20 MB de dados)</string>
   <string name="download_latest_assets_message_description__appspecific">Também em configurações você pode obter manualmente os últimos elementos.</string>
+  <string name="main_view">Tela principal</string>
+  <string name="edit_picture">Editar imagem</string>
+  <string name="general">Geral</string>
 </resources>
