@@ -118,4 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Meme\'leri ve şablonları kaydetmek için depolama izni vermeniz gerekiyor</string>
   <string name="download_latest_assets_message__appspecific">Bu, yazı tiplerini ve meme şablonlarını indirecek (yaklaşık 20 MB).</string>
   <string name="download_latest_assets_message_description__appspecific">Ayarlardan en yeni şablonları daha sonra indirebilirsiniz.</string>
+  <string name="main_view">Ana Görünüm</string>
+  <string name="edit_picture">Resmi düzenle</string>
+  <string name="general">Genel</string>
 </resources>
