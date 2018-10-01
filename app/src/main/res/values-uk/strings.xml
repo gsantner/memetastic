@@ -27,8 +27,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="gnu_gplv3_license">Ліцензія GNU GPLv3+</string>
   <string name="settings">Налаштування</string>
   <string name="appearance">Вигляд</string>
+  <string name="editor">Редактор</string>
   <string name="hide_statusbar_at_this_view">Приховувати рядок статусу</string>
   <string name="hide_statusbar">Сховати рядок статусу</string>
   <string name="language">Мова</string>
   <string name="language_change_restart_description">Змінити мову додатку. Перезапустіть додаток для застосування змін.</string>
+  <string name="other">Інше</string>
+  <string name="main_view">Головний екран</string>
+  <string name="edit_picture">Редагувати зображення</string>
+  <string name="general">Загальне</string>
 </resources>
