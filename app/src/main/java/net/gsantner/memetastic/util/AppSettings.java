@@ -279,7 +279,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public boolean isShuffleTagLists() {
-        return getBool(R.string.pref_key__is_shuffle_meme_tags, false);
+        return getBool(R.string.pref_key__is_shuffle_meme_tags, true);
     }
 
     public boolean isEditorStatusBarHidden() {

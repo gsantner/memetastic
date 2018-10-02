@@ -62,7 +62,7 @@
             android:title="@string/default_mode" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:icon="@drawable/ic_autorenew_black_24dp"
             android:key="@string/pref_key__is_shuffle_meme_tags"
             android:summary="@string/shuffle_meme_list_description__appspecific"
