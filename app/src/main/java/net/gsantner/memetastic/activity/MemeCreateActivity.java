@@ -62,6 +62,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.jaredrummler.android.colorpicker.ColorPanelView;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
@@ -79,6 +80,7 @@ import net.gsantner.memetastic.util.AppCast;
 import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
+import net.gsantner.opoc.util.ShareUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -133,6 +135,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     private static boolean _doubleBackToExitPressedOnce = false;
     private Bitmap _lastBitmap = null;
     private long _memeSavetime = -1;
+    private File _predefinedTargetFile = null;
     private App _app;
     private MemeEditorElements _memeEditorElements;
     private Bundle _savedInstanceState = null;
@@ -160,7 +163,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         String action = intent.getAction();
         String type = intent.getType();
         if (!(Intent.ACTION_SEND.equals(action) && type.startsWith("image/")) &&
-                (!getIntent().hasExtra(EXTRA_IMAGE_PATH))) {
+                (!getIntent().hasExtra(EXTRA_IMAGE_PATH)) && !(Intent.ACTION_EDIT.equals(action) && type.startsWith("image/"))) {
             finish();
             return;
         }
@@ -176,7 +179,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
-            initMemeSettings(savedInstanceState);
+            if (!initMemeSettings(savedInstanceState)) {
+                return;
+            }
             initMoarControlsContainer();
             initCaptionButtons();
         }
@@ -199,9 +204,13 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     }
 
 
-    public void initMemeSettings(Bundle savedInstanceState) {
+    public boolean initMemeSettings(Bundle savedInstanceState) {
         MemeData.Font lastUsedFont = getFont(_app.settings.getLastUsedFont());
         Bitmap bitmap = extractBitmapFromIntent(getIntent());
+        if (bitmap == null) {
+            finish();
+            return false;
+        }
         if (savedInstanceState != null && savedInstanceState.containsKey("memeObj")) {
             _memeEditorElements = (MemeEditorElements) savedInstanceState.getSerializable("memeObj");
             if (_memeEditorElements == null) {
@@ -214,6 +223,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         }
         _memeEditorElements.getImageMain().setDisplayImage(_memeEditorElements.getImageMain().getImage().copy(Bitmap.Config.RGB_565, false));
         onMemeEditorObjectChanged();
+        return true;
     }
 
     public MemeData.Font getFont(String filepath) {
@@ -280,9 +290,10 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         if (_savedInstanceState != null) {
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-            initMemeSettings(_savedInstanceState);
+            if (!initMemeSettings(_savedInstanceState)) {
+                return;
+            }
         }
-
 
         try {
             if (new Random().nextInt(10) > 2) {
@@ -315,7 +326,6 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         Bitmap bitmap = null;
-        String imagePath = getIntent().getStringExtra(EXTRA_IMAGE_PATH);
         if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_SEND) && intent.getType().startsWith("image/")) {
             Uri imageURI = intent.getParcelableExtra(Intent.EXTRA_STREAM);
             if (imageURI != null) {
@@ -326,7 +336,16 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                     e.printStackTrace();
                 }
             }
+        } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_EDIT) && intent.getType().startsWith("image/")) {
+            ShareUtil shu = new ShareUtil(this);
+            _predefinedTargetFile = shu.extractFileFromIntent(intent);
+            if (_predefinedTargetFile == null) {
+                Toast.makeText(this, R.string.the_file_could_not_be_loaded, Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            bitmap = ContextUtils.get().loadImageFromFilesystem(_predefinedTargetFile, _app.settings.getRenderQualityReal());
         } else {
+            String imagePath = getIntent().getStringExtra(EXTRA_IMAGE_PATH);
             bitmap = ContextUtils.get().loadImageFromFilesystem(new File(imagePath), _app.settings.getRenderQualityReal());
         }
         return bitmap;
@@ -487,7 +506,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         }
 
         String filename = String.format(Locale.getDefault(), "%s_%s.jpg", getString(R.string.app_name), AssetUpdater.FORMAT_MINUTE_FILE.format(new Date(_memeSavetime)));
-        File fullpath = new File(folder, filename);
+        File fullpath = _predefinedTargetFile != null ? _predefinedTargetFile : new File(folder, filename);
         boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, _lastBitmap);
         if (wasSaved && showDialog) {
 

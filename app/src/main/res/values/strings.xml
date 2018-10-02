@@ -147,5 +147,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more">More</string>
     <string name="community">Community</string>
     <string name="contribute">Contribute</string>
+    <string name="the_file_could_not_be_loaded">The file could not be loaded.</string>
 
 </resources>
