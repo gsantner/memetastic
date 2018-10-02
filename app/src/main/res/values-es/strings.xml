@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Paleta</string>
   <string name="presets">Preajustes</string>
   <string name="select_color">Seleccionar el color</string>
-  <string name="code">Código</string>
   <string name="favourite">Favorito</string>
   <string name="remove_favourite">Eliminar favorito</string>
   <string name="show_title">Mostrar título</string>
@@ -121,11 +120,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="main_view">Vista principal</string>
   <string name="edit_picture">Editar imagen</string>
   <string name="general">General</string>
+  <string name="picture_viewer">Visor de imágenes</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Imágenes mostradas en la galería y esta aplicación</string>
   <string name="open_source_licenses">Licencias de código abierto</string>
   <string name="rate_this_app">Califica esta aplicación</string>
   <string name="translate">Traducir</string>
   <string name="more_info_and_help">Ayuda y más información sobre esta aplicación</string>
-  <string name="report_bugs">Reporte de errores</string>
+  <string name="report_bugs">Informar de fallos</string>
   <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Más sobre donaciones u otras formas de apoyar a este proyecto</string>
   <string name="android_contribution_guide">Guía de colaboración Android</string>
   <string name="more_info_on_how_to_contribute_to_foss_android_projects">Más sobre la colaboración en proyectos de código abierto, especialmente aplicaciones de Android</string>
