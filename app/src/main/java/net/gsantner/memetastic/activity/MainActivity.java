@@ -150,9 +150,14 @@ public class MainActivity extends AppCompatActivity
     private MenuItem _searchItem;
     private String _currentSearch = "";
 
+    private static final String BOTTOM_NAV_POSITION = "bottom_nav_position";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            _currentMainMode = savedInstanceState.getInt(BOTTOM_NAV_POSITION);
+        }
         _appSettings = new AppSettings(this);
         _activityUtils = new ActivityUtils(this);
         _activityUtils.setAppLanguage(_appSettings.getLanguage());
@@ -733,5 +738,11 @@ public class MainActivity extends AppCompatActivity
 
     public void recreateFragmentsAfterUnhiding() {
         _viewPager.getAdapter().notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(BOTTOM_NAV_POSITION, _currentMainMode);
+        super.onSaveInstanceState(outState);
     }
 }
