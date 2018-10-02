@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Tavolozza</string>
   <string name="presets">Predefiniti</string>
   <string name="select_color">Scegli colore</string>
-  <string name="code">Codice</string>
   <string name="favourite">Preferito</string>
   <string name="remove_favourite">Rimuovi preferito</string>
   <string name="show_title">Mostra titolo</string>
