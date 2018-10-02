@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Palet</string>
   <string name="presets">Hazır ayarlar</string>
   <string name="select_color">Renk seçin</string>
-  <string name="code">Kod Yaz</string>
   <string name="favourite">Favorilere ekle</string>
   <string name="remove_favourite">Favorilerden kaldır</string>
   <string name="show_title">Başlığı göster</string>

@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">パレット</string>
   <string name="presets">プリセット</string>
   <string name="select_color">色の選択</string>
-  <string name="code">コード</string>
   <string name="favourite">お気に入りに追加</string>
   <string name="remove_favourite">お気に入りから削除</string>
   <string name="show_title">タイトルを表示</string>

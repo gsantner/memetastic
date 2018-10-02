@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Palheta</string>
   <string name="presets">Predefinições</string>
   <string name="select_color">Selecionar cor</string>
-  <string name="code">Código</string>
   <string name="favourite">Favorito</string>
   <string name="remove_favourite">Remover favorito</string>
   <string name="show_title">Mostrar título</string>
@@ -121,6 +120,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="main_view">Tela principal</string>
   <string name="edit_picture">Editar imagem</string>
   <string name="general">Geral</string>
+  <string name="picture_viewer">Visualizador de fotos</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Imagens mostradas na galeria e neste aplicativo</string>
   <string name="open_source_licenses">Licenças Open Source</string>
   <string name="rate_this_app">Avalie este aplicativo</string>
   <string name="translate">Traduzir</string>
