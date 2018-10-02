@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*#######################################################
+ *
+ *   Maintained by Gregor Santner, 2017-
+ *   https://gsantner.net/
+ *
+ *   License of this file: Apache 2.0 (Commercial upon request)
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+#########################################################*/
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.gsantner.markor.activity.MainActivity">
+
+    <item
+        android:id="@+id/nav_mode_create"
+        android:checked="true"
+        android:icon="@drawable/ic_gavel_white_48px"
+        android:title="@string/create" />
+
+    <item
+        android:id="@+id/nav_mode_favs"
+        android:icon="@drawable/ic_star_black_32dp"
+        android:title="@string/favs" />
+
+    <item
+        android:id="@+id/nav_mode_saved"
+        android:icon="@drawable/ic_save_white_48px"
+        android:title="@string/saved" />
+
+    <item
+        android:id="@+id/nav_mode_hidden"
+        android:icon="@drawable/ic_remove_circle_black_24dp"
+        android:title="@string/hidden" />
+
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="@string/more" />
+</menu>

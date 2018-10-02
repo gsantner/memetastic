@@ -28,7 +28,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="net.gsantner.memetastic.activity.MainActivity"
-    tools:showIn="@layout/main__activity__appbar">
+    tools:showIn="@layout/main__activity">
 
 
     <FrameLayout
@@ -85,12 +85,44 @@
         android:id="@+id/main_activity__view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/main__activity__infobar"
+        android:layout_above="@+id/bottom_navigation_bar"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:id="@+id/main__more_info_fragment_container"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <fragment
+            android:id="@+id/main__more_info_fragment"
+            android:name="net.gsantner.memetastic.activity.MoreInfoFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/primary"
+        app:itemBackground="@color/primary"
+        app:itemIconTint="@drawable/bottomnav_color_selector"
+        app:itemTextColor="@drawable/bottomnav_color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/main__bottom_nav"
+        tools:elevation="2dp" />
 
     <LinearLayout
         android:id="@+id/main__activity__infobar"

@@ -37,15 +37,13 @@ import android.provider.MediaStore;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -89,11 +87,10 @@ import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.gsantner.memetastic.BuildConfig;
 import io.github.gsantner.memetastic.R;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener {
     public static final int REQUEST_LOAD_GALLERY_IMAGE = 50;
     public static final int REQUEST_TAKE_CAMERA_PICTURE = 51;
     public static final int REQUEST_SHOW_IMAGE = 52;
@@ -105,14 +102,15 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.toolbar)
     Toolbar _toolbar;
 
-    @BindView(R.id.drawer_layout)
-    DrawerLayout _drawer;
-
-    @BindView(R.id.main__activity__navview)
-    NavigationView _navigationView;
+    @BindView(R.id.bottom_navigation_bar)
+    BottomNavigationView _bottomNav;
+    private MenuItem _lastBottomMenuItem;
 
     @BindView(R.id.main__tabs)
     TabLayout _tabLayout;
+
+    @BindView(R.id.main__more_info_fragment_container)
+    LinearLayout _moreInfoContainer;
 
     @BindView(R.id.main_activity__place_holder)
     FrameLayout _placeholder;
@@ -169,11 +167,6 @@ public class MainActivity extends AppCompatActivity
 
         // Setup _toolbar
         setSupportActionBar(_toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, _drawer, _toolbar,
-                R.string.open_navdrawer, R.string.close_navdrawer);
-        _drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        _navigationView.setNavigationItemSelectedListener(this);
 
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
@@ -209,11 +202,6 @@ public class MainActivity extends AppCompatActivity
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
         _infoBarProgressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
 
-        //
-        // Actions based on build type or version
-        //
-        _navigationView.getMenu().findItem(R.id.action_donate).setVisible(!BuildConfig.IS_GPLAY_BUILD);
-
 
         // Show first start dialog / changelog
         try {
@@ -236,10 +224,12 @@ public class MainActivity extends AppCompatActivity
         if (PermissionChecker.doIfPermissionGranted(this)) {
             ContextUtils.checkForAssetUpdates(this);
         }
+
+        _bottomNav.setOnNavigationItemSelectedListener(this);
     }
 
     public void updateHiddenNavOption() {
-        MenuItem hiddenItem = _navigationView.getMenu().findItem(R.id.action_mode_hidden);
+        MenuItem hiddenItem = _bottomNav.getMenu().findItem(R.id.nav_mode_hidden);
         for (String hidden : app.settings.getHiddenMemesTemplate()) {
             MemeData.Image image = MemeData.findImage(new File(hidden));
             if (image != null) {
@@ -260,18 +250,21 @@ public class MainActivity extends AppCompatActivity
                 _tabLayout.getTabAt(pos).select();
                 break;
             case 1:
-                navItem = _navigationView.getMenu().findItem(R.id.action_mode_favs);
+                navItem = _bottomNav.getMenu().findItem(R.id.nav_mode_favs);
                 break;
             case 2:
-                navItem = _navigationView.getMenu().findItem(R.id.action_mode_saved);
+                navItem = _bottomNav.getMenu().findItem(R.id.nav_mode_saved);
                 break;
             case 3:
-                navItem = _navigationView.getMenu().findItem(R.id.action_mode_hidden);
+                navItem = _bottomNav.getMenu().findItem(R.id.nav_mode_hidden);
+                break;
+            case 4:
+                navItem = _bottomNav.getMenu().findItem(R.id.nav_more);
                 break;
         }
 
         if (navItem != null) {
-            _navigationView.setCheckedItem(navItem.getItemId());
+            navItem.setChecked(true);
             onNavigationItemSelected(navItem);
         }
     }
@@ -323,9 +316,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        if (_drawer.isDrawerOpen(GravityCompat.START)) {
-            _drawer.closeDrawer(GravityCompat.START);
-        } else if (!_searchView.isIconified()) {
+        if (!_searchView.isIconified()) {
             _searchView.setIconified(true);
             updateSearchFilter("");
         } else {
@@ -338,34 +329,6 @@ public class MainActivity extends AppCompatActivity
         List<MemeData.Image> imageList = null;
 
         switch (item.getItemId()) {
-            case R.id.action_about: {
-                ActivityUtils.get(this).animateToActivity(MoreInfoActivity.class, false, null);
-                return true;
-            }
-            case R.id.action_settings: {
-                ActivityUtils.get(this).animateToActivity(SettingsActivity.class, false, SettingsActivity.ACTIVITY_ID);
-                return true;
-            }
-            case R.id.action_exit: {
-                finish();
-                return true;
-            }
-            case R.id.action_recommend: {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-                i.putExtra(Intent.EXTRA_TEXT, getString(R.string.main__ready_to_memetastic, getString(R.string.app_www_source)));
-                startActivity(Intent.createChooser(i, getString(R.string.share_meme__appspecific)));
-                return true;
-            }
-            case R.id.action_donate: {
-                ContextUtils.get().openWebpageInExternalBrowser(getString(R.string.donate__url));
-                return true;
-            }
-            case R.id.action_homepage_code: {
-                ContextUtils.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
-                return true;
-            }
             case R.id.action_picture_from_gallery: {
                 if (PermissionChecker.doIfPermissionGranted(this)) {
                     Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -378,13 +341,13 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
 
-            case R.id.action_mode_create: {
+            case R.id.nav_mode_create: {
                 _currentMainMode = 0;
                 selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
                 _toolbar.setTitle(R.string.app_name);
                 break;
             }
-            case R.id.action_mode_favs: {
+            case R.id.nav_mode_favs: {
                 _currentMainMode = 1;
                 imageList = new ArrayList<>();
                 _emptylistText.setText(R.string.no_favourites_description__appspecific);
@@ -397,7 +360,7 @@ public class MainActivity extends AppCompatActivity
                 _toolbar.setTitle(R.string.favs);
                 break;
             }
-            case R.id.action_mode_saved: {
+            case R.id.nav_mode_saved: {
                 _currentMainMode = 2;
                 _emptylistText.setText(R.string.no_memes_saved_description__appspecific);
                 if (PermissionChecker.hasExtStoragePerm(this)) {
@@ -409,7 +372,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             }
 
-            case R.id.action_mode_hidden: {
+            case R.id.nav_mode_hidden: {
                 _currentMainMode = 3;
                 imageList = new ArrayList<>();
 
@@ -422,30 +385,35 @@ public class MainActivity extends AppCompatActivity
                 _toolbar.setTitle(R.string.hidden);
                 break;
             }
+            case R.id.nav_more: {
+                _currentMainMode = 4;
+                _toolbar.setTitle(R.string.more);
+                break;
+            }
         }
 
         // Change mode
-        _drawer.closeDrawers();
-        _tabLayout.setVisibility(item.getItemId() == R.id.action_mode_create ? View.VISIBLE : View.GONE);
+        _tabLayout.setVisibility(item.getItemId() == R.id.nav_mode_create ? View.VISIBLE : View.GONE);
 
 
-        if (item.getItemId() != R.id.action_mode_create) {
+        _moreInfoContainer.setVisibility(View.GONE);
+        if (item.getItemId() == R.id.nav_more) {
+            _placeholder.setVisibility(View.GONE);
+            _viewPager.setVisibility(View.GONE);
+            _moreInfoContainer.setVisibility(View.VISIBLE);
+        } else if (item.getItemId() != R.id.nav_mode_create) {
             _viewPager.setVisibility(View.GONE);
             _placeholder.setVisibility(View.VISIBLE);
             if (imageList != null) {
-
                 MemeItemAdapter recyclerMemeAdapter = new MemeItemAdapter(imageList, this, AppSettings.get().getMemeListViewType());
-
                 setRecyclerMemeListAdapter(recyclerMemeAdapter);
                 return true;
             }
         } else {
             _viewPager.setVisibility(View.VISIBLE);
             _placeholder.setVisibility(View.GONE);
-
         }
 
-        _drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -758,7 +726,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void selectCreateMainMode() {
-        MenuItem createItem = _navigationView.getMenu().findItem(R.id.action_mode_create);
+        MenuItem createItem = _bottomNav.getMenu().findItem(R.id.nav_mode_create);
         onNavigationItemSelected(createItem);
         createItem.setChecked(true);
     }
