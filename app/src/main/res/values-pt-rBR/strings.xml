@@ -121,6 +121,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="main_view">Tela principal</string>
   <string name="edit_picture">Editar imagem</string>
   <string name="general">Geral</string>
+  <string name="picture_viewer">Visualizador de fotos</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Imagens mostradas na galeria e neste aplicativo</string>
   <string name="open_source_licenses">Licenças Open Source</string>
   <string name="rate_this_app">Avalie este aplicativo</string>
   <string name="translate">Traduzir</string>
@@ -141,5 +143,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="contributors_public_add_yourself_description">Mostrar informações sobre colaboradores. Os colaboradores podem fornecer informação a ser mostrada aqui (opt-in) após a contribuição.</string>
   <string name="help">Ajuda</string>
   <string name="more">Mais</string>
+  <string name="community">Comunidade</string>
   <string name="contribute">Contribuir</string>
+  <string name="the_file_could_not_be_loaded">O arquivo não pôde ser carregado.</string>
 </resources>
