@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Palette</string>
   <string name="presets">Couleurs par défaut</string>
   <string name="select_color">Choisir la couleur</string>
-  <string name="code">Code</string>
   <string name="favourite">Favoris</string>
   <string name="remove_favourite">Supprimer le favori</string>
   <string name="show_title">Afficher le titre</string>
@@ -146,7 +145,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="contributors_public_add_yourself_description">Informations sur les contributeurs. Les contributeurs peuvent fournir des informations qui s\'afficheront ici (option) après contribution</string>
   <string name="help">Aide</string>
   <string name="more">Plus</string>
-  <string name="community">Communauté</string>
   <string name="contribute">Contribuer</string>
-  <string name="the_file_could_not_be_loaded">Le fichier n\'a pas pu être chargé.</string>
 </resources>
