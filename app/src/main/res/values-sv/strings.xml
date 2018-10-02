@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Palett</string>
   <string name="presets">Förinställningar</string>
   <string name="select_color">Välj färg</string>
-  <string name="code">Kod</string>
   <string name="favourite">Favorit</string>
   <string name="remove_favourite">Ta bort favorit</string>
   <string name="show_title">Visa titel</string>
