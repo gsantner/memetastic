@@ -91,7 +91,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="palette">Paleta</string>
   <string name="presets">Per defecte</string>
   <string name="select_color">Selecciona un color</string>
-  <string name="code">Codi</string>
   <string name="favourite">Preferit</string>
   <string name="remove_favourite">Elimina el preferit</string>
   <string name="show_title">Mostra el títol</string>
@@ -143,7 +142,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="contributors_public_add_yourself_description">Mostra informació sobre els col·laboradors. Aquests poden decidir si la seva informació ha de ser inclosa amb les seves col·laboracions</string>
   <string name="help">Ajuda</string>
   <string name="more">Més</string>
-  <string name="community">Comunitat</string>
   <string name="contribute">Contribueix</string>
-  <string name="the_file_could_not_be_loaded">No s\'ha pogut carregar el fitxer.</string>
 </resources>
