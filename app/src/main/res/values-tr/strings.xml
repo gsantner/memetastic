@@ -120,6 +120,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="main_view">Ana Görünüm</string>
   <string name="edit_picture">Resmi düzenle</string>
   <string name="general">Genel</string>
+  <string name="picture_viewer">Resim görüntüleyici</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Galeride ve bu uygulamada gösterilen resimler</string>
   <string name="open_source_licenses">Açık Kaynak Lisansları</string>
   <string name="rate_this_app">Bu uygulamayı değerlendir</string>
   <string name="translate">Çeviri</string>
