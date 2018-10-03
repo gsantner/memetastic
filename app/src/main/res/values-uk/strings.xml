@@ -11,11 +11,33 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+  <string name="open_navdrawer">Відкрити панель навігації</string>
+  <string name="close_navdrawer">Закрити панель навігації</string>
+  <string name="humans">Люди</string>
+  <string name="cartoon">Мультфільм</string>
+  <string name="animals">Тварини</string>
+  <string name="custom">Власний</string>
+  <string name="rage">Лють</string>
+  <string name="saved">Збережено</string>
+  <string name="favs">Улюблене</string>
   <string name="create">Створити</string>
+  <string name="hidden">Прихований</string>
+  <string name="rows_with_title">Рядки з назвою</string>
+  <string name="picture_grid">Сітка зображень</string>
+  <string name="get_picture_from_gallery">Зображення з «Галереї»</string>
+  <string name="get_picture_from_camera">Зображення з камери</string>
+  <string name="error_cannot_start_camera">Не вдалося запустити камеру.</string>
   <string name="error_picture_selection">Зображення не вибрано.</string>
+  <string name="error_couldnot_load_picture_from_storage">Не вдається завантажити зображення зі сховища.</string>
   <string name="donate">Пожертвувати</string>
+  <string name="recommend">Рекомендовані</string>
   <string name="changelog">Перелік змін</string>
   <string name="exit">Вийти</string>
+  <string name="yes">так</string>
+  <string name="text_size">Розмір шрифту</string>
+  <string name="text_color">Колір тексту</string>
+  <string name="border_color">Колір рамки</string>
+  <string name="successfully_saved">Успішно збережено!</string>
   <string name="size">Розмір</string>
   <string name="about">Про Markor</string>
   <string name="licenses">Ліцензії</string>
