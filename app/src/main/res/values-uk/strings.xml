@@ -96,9 +96,15 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="hide">Сховати</string>
   <string name="unhide">Показати</string>
   <string name="tap_here_to_add_caption">Натисніть тут, щоб додати підпис</string>
+  <string name="search_meme__appspecific">Пошук мему</string>
+  <string name="save_meme__appspecific">Зберегти мем</string>
+  <string name="share_meme__appspecific">Поширити мем</string>
+  <string name="create_meme__appspecific">Створити мем</string>
+  <string name="delete_meme__appspecific">Видалити мем</string>
   <string name="main_view">Головний екран</string>
   <string name="edit_picture">Редагувати зображення</string>
   <string name="general">Загальне</string>
+  <string name="picture_viewer">Програма перегляду зображень</string>
   <string name="open_source_licenses">Ліцензії з відкритим кодом</string>
   <string name="rate_this_app">Оцініть додаток</string>
   <string name="translate">Перекласти</string>
