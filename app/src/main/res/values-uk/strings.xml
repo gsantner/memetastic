@@ -86,6 +86,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="unzipping">Розпакування</string>
   <string name="successfully_downloaded">Завантажено успішно</string>
   <string name="download_latest_assets">Завантажте останні файли (шрифти та шаблони для мемів)</string>
+  <string name="download_latest_assets_checking_description">Перевірка наявності нових файлів</string>
   <string name="palette">Палітра</string>
   <string name="presets">Шаблони</string>
   <string name="select_color">Обрати колір</string>
@@ -97,6 +98,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="unhide">Показати</string>
   <string name="tap_here_to_add_caption">Натисніть тут, щоб додати підпис</string>
   <string name="search_meme__appspecific">Пошук мему</string>
+  <string name="share_meme_via__appspecific">Поділитися мемом через…</string>
   <string name="save_meme__appspecific">Зберегти мем</string>
   <string name="share_meme__appspecific">Поширити мем</string>
   <string name="create_meme__appspecific">Створити мем</string>
