@@ -32,25 +32,17 @@
 
 
     <FrameLayout
-        android:id="@+id/main_activity__place_holder"
+        android:id="@+id/main_activity__placeholder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/main__activity__infobar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true">
+        android:layout_above="@+id/bottom_navigation_bar">
 
-        <LinearLayout
+        <net.gsantner.opoc.ui.LinearSplitLayout
             android:id="@+id/main__activity__list_empty__layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginRight="40dp"
-            android:gravity="center"
+            android:layout_margin="32dp"
+            android:gravity="center_horizontal|top"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -58,19 +50,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
+                android:scaleType="fitEnd"
                 android:src="@drawable/meme__computer_guy__light" />
 
             <TextView
                 android:id="@+id/main__activity__list_empty__text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="top"
+                android:layout_weight="1"
                 android:text="@string/no_memes_saved_description__appspecific"
                 android:textAlignment="center"
                 android:textColor="@color/empty_list_background_text"
                 android:textSize="20sp" />
-        </LinearLayout>
+        </net.gsantner.opoc.ui.LinearSplitLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/main__activity__recycler_view"

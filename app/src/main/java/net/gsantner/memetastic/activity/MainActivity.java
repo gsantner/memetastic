@@ -74,6 +74,7 @@ import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
+import net.gsantner.opoc.ui.LinearSplitLayout;
 import net.gsantner.opoc.util.FileUtils;
 
 import java.io.File;
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.main__more_info_fragment_container)
     LinearLayout _moreInfoContainer;
 
-    @BindView(R.id.main_activity__place_holder)
+    @BindView(R.id.main_activity__placeholder)
     FrameLayout _placeholder;
 
     @BindView(R.id.main_activity__view_pager)
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity
     RecyclerView _recyclerMemeList;
 
     @BindView(R.id.main__activity__list_empty__layout)
-    LinearLayout _emptylistLayout;
+    LinearSplitLayout _emptylistLayout;
 
     @BindView(R.id.main__activity__list_empty__text)
     TextView _emptylistText;
