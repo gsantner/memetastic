@@ -71,7 +71,7 @@ android {
             buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
         }
         flavorTest {
-            applicationId "io.github.gsantner.memetastic.test"
+            applicationId "net.gsantner.memetastic_test"
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
             buildConfigField "boolean", "IS_TEST_BUILD", "true"

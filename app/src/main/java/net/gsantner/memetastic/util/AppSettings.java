@@ -66,7 +66,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
         if (!PACKAGE_CHECKED) {
             PACKAGE_CHECKED = true;
             String pkg = _context.getPackageName();
-            if (!pkg.equals("io.github.gsantner.memetastic") && !pkg.equals("io.github.gsantner.memetastic.test")) {
+            if (!pkg.startsWith("io.github.gsantner.") && !pkg.startsWith("net.gsantner.")) {
                 String message = "\n\n\n" +
                         "++++  WARNING: MemeTastic is licensed GPLv3.\n" +
                         "++++  If you distribute the app you MUST publish the full source code.\n" +
