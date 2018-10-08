@@ -44,6 +44,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">تعديل العنوان</string>
   <string name="hide">إخفاء</string>
   <string name="unhide">إظهار</string>
+  <string name="rate_this_app">قيّم هذا التطبيق</string>
   <string name="translate">ترجمة</string>
+  <string name="report_bugs">إبلاغ عن علة</string>
+  <string name="join_community">إنضم إلى المجتمع</string>
+  <string name="help_translating_this_app">ساهم في ترجمة هذا التطبيق إلى لغات أخرى</string>
   <string name="more">المزيد</string>
 </resources>
