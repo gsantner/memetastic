@@ -26,3 +26,4 @@ Where:
 * **[Iskandar Setiadi](https://github.com/freedomofkeima)**<br/>~° Indonesian translation
 * **[Nikola Perović]()**<br/>~° Serbian (Latin) translation
 * **[Jaime Muñoz](https://crowdin.com/profile/jmmartin_5)**<br/>~° Catalan translation
+* **[Billchenchina](https://github.com/billchenchina)**<br/>~° Simplified Chinese translation
