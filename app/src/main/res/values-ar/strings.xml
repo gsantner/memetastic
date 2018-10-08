@@ -11,7 +11,39 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+  <string name="exit">خروج</string>
+  <string name="yes">نعم</string>
+  <string name="text_size">حجم النص</string>
+  <string name="text_color">لون النص</string>
+  <string name="successfully_saved">تم الحفظ بنجاح!</string>
+  <string name="font">الخط</string>
+  <string name="keep_editing">متابعة التعديل</string>
+  <string name="text">النص</string>
+  <string name="size">الحجم</string>
+  <string name="background">الخلفية</string>
+  <string name="border">الإطار</string>
+  <string name="picture">الصورة</string>
+  <string name="about">عن التطبيق</string>
+  <string name="developed_by">طُوّر مِن طرف</string>
+  <string name="licenses">التراخيص</string>
+  <string name="show_licenses">عرض التراخيص</string>
+  <string name="contributors">المساهمون</string>
+  <string name="more_information">المزيد من المعلومات</string>
+  <string name="gnu_gplv3_license">إظهار رخصة التطبيق</string>
   <string name="settings">إعدادات</string>
+  <string name="rotate">تدوير</string>
+  <string name="downloading">جاري التنزيل</string>
+  <string name="downloading_failed">فشل التنزيل</string>
+  <string name="unzipping">فك الضغط</string>
+  <string name="successfully_downloaded">تم التنزيل بنجاح</string>
+  <string name="palette">لوحة الألوان</string>
+  <string name="select_color">اختيار اللون</string>
+  <string name="favourite">المفضلة</string>
+  <string name="remove_favourite">حذف من المفضلة</string>
+  <string name="show_title">إظهار العنوان</string>
+  <string name="edit_title">تعديل العنوان</string>
+  <string name="hide">إخفاء</string>
+  <string name="unhide">إظهار</string>
   <string name="translate">ترجمة</string>
   <string name="more">المزيد</string>
 </resources>
