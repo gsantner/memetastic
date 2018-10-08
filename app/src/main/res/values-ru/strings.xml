@@ -97,7 +97,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">Изменить заголовок</string>
   <string name="hide">Спрятать</string>
   <string name="unhide">Показать</string>
-  <string name="tap_here_to_add_caption">Нажмите здесь, для добавления Надписи</string>
+  <string name="tap_here_to_add_caption">Нажмите Здесь, для добавления Надписи</string>
   <string name="search_meme__appspecific">Поиск Мем</string>
   <string name="share_meme_via__appspecific">Поделиться мемом с помощью…</string>
   <string name="save_meme__appspecific">Сохранить мем</string>
