@@ -86,6 +86,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="downloading_failed">Не удалось загрузить</string>
   <string name="unzipping">Распаковка</string>
   <string name="successfully_downloaded">Успешно загружены</string>
+  <string name="download_latest_assets">Загрузить последние шаблоны</string>
+  <string name="download_latest_assets_checking_description">Проверка на более поздние шаблоны</string>
   <string name="palette">Палитра</string>
   <string name="presets">Параметры</string>
   <string name="select_color">Выбрать цвет</string>
@@ -95,7 +97,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">Изменить заголовок</string>
   <string name="hide">Спрятать</string>
   <string name="unhide">Показать</string>
-  <string name="tap_here_to_add_caption">Нажмите здесь, для добавления Надписи</string>
+  <string name="tap_here_to_add_caption">Нажмите Здесь, для добавления Надписи</string>
   <string name="search_meme__appspecific">Поиск Мем</string>
   <string name="share_meme_via__appspecific">Поделиться мемом с помощью…</string>
   <string name="save_meme__appspecific">Сохранить мем</string>
@@ -114,6 +116,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="view_type_memelist__appspecific">Задать тип отображения (Изображение сетки, Строки с названием)</string>
   <string name="error_storage_permission__appspecific">Нужно разрешение на запись, чтобы сохранять memes и шаблоны</string>
   <string name="download_latest_assets_message__appspecific">Это позволит загрузить шрифты и шаблоны meme (≈ 20 МБ данных).</string>
+  <string name="download_latest_assets_message_description__appspecific">В настройках вы также можете вручную получать последние шаблоны.</string>
   <string name="main_view">Главный экран</string>
   <string name="edit_picture">Изменить изображение</string>
   <string name="general">Общие</string>
