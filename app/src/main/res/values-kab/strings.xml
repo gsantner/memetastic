@@ -40,6 +40,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_saved">Asekles yedda !</string>
   <string name="top_caption">Aḍris n ufella</string>
   <string name="bottom_caption">Azwel asnawan</string>
+  <string name="enter_caption">Sekcem isem</string>
   <string name="font">Tasefsit</string>
   <string name="keep_editing">Kemmel taẓrigt</string>
   <string name="text">Aḍris</string>
@@ -96,6 +97,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">Beddelazwel</string>
   <string name="hide">Ffer</string>
   <string name="unhide">Sken</string>
+  <string name="tap_here_to_add_caption">Nnel d-agi i tmerniwt n yisem</string>
   <string name="search_meme__appspecific">Nadi amemesis</string>
   <string name="share_meme_via__appspecific">Bḍu amemesis-ik s…</string>
   <string name="save_meme__appspecific">Sekles amemesis</string>
@@ -118,6 +120,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="error_storage_permission__appspecific">Asnas yesra tasiregt-ik akken ad yekcem ar uḍiq n usekles n yibenk akken ad isekles imemesisen d tineɣrufin-nsen</string>
   <string name="download_latest_assets_message__appspecific">Ad d-yeglu s usider n tsefsiyin n isekkilen akked tineɣrufin n imemesisen (azal n  20MAṬ n isefka).</string>
   <string name="download_latest_assets_message_description__appspecific">Tzemreḍ daɣen ad tsenkreḍ tiririt n tiɣbula tineggura seg iɣewwaṛen.</string>
+  <string name="main_view">Iẓri agejdan</string>
+  <string name="edit_picture">Ẓreg tugna </string>
   <string name="general">Amatu</string>
   <string name="translate">Asuqel</string>
   <string name="report_bugs">Azen ibugen</string>
