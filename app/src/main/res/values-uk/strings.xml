@@ -106,6 +106,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="delete_meme__appspecific">Видалити мем</string>
   <string name="no_favourites_description__appspecific">Тут поки що порожньо. \n Шаблон мема можна позначити як улюблене, натиснувши на зірочку.</string>
   <string name="no_custom_templates_description__appspecific">Тут поки що порожньо. \n Збережені шаблони тут: %1$s</string>
+  <string name="no_memes_saved_description__appspecific">Тут поки що порожньо. \n Щоб зберегти мем, натисніть на кнопку збереження після того, як відредагуєте його.</string>
+  <string name="default_mode_description_description__appspecific">Розділ для відкриття при запуску (Створити, Улюблені, Збережені)</string>
+  <string name="press_back_again_to_stop_editing__appspecific">Натисніть тому ще раз, щоб вийти з режиму редагування. Мем буде втрачено, якщо ви його не зберегли.</string>
+  <string name="saved_meme_successfully__appspecific">Мем успішно збережений на ваш пристрій. Хочете вийти з режиму редагування?</string>
+  <string name="save_when_pressing_back_description__appspecific">Автоматично зберігати редаговані меми при натисканні кнопки назад</string>
+  <string name="shuffle_meme_list_description__appspecific">Перетасувати список мемів після вибору категорії</string>
   <string name="shuffle_meme_list__appspecific">Список мемів у випадковому порядку</string>
   <string name="view_type_memelist__appspecific">Встановити тип подання (Сітка зображень, Рядки з назвою)</string>
   <string name="error_storage_permission__appspecific">Потрібен дозвіл на запис для збереження мемів та шаблонів</string>
