@@ -62,6 +62,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="caps_off">Великі вимк.</string>
   <string name="rotate">Повернути</string>
   <string name="render_quality">Якість рендера</string>
+  <string name="picture_quality_percent" formatted="false">Якість і розмір зображень. Залежно від розміру зображення і потужності пристрою, продуктивність програми може знизитися, якщо вибрати значення вище 25%.</string>
   <string name="clear_thumbnails">Очистити мініатюри</string>
   <string name="columns_portrait">Стовпці (портрет)</string>
   <string name="columns_landscape">Рядки (альбомна орієнтація)</string>
@@ -86,7 +87,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="unzipping">Розпакування</string>
   <string name="successfully_downloaded">Завантажено успішно</string>
   <string name="download_latest_assets">Завантажте останні файли (шрифти та шаблони для мемів)</string>
-  <string name="download_latest_assets_checking_description">Перевірка наявності нових файлів</string>
+  <string name="download_latest_assets_checking_description">Перевірка наявності нових шаблонів</string>
   <string name="palette">Палітра</string>
   <string name="presets">Шаблони</string>
   <string name="select_color">Обрати колір</string>
@@ -103,16 +104,25 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="share_meme__appspecific">Поширити мем</string>
   <string name="create_meme__appspecific">Створити мем</string>
   <string name="delete_meme__appspecific">Видалити мем</string>
+  <string name="no_favourites_description__appspecific">Тут поки що порожньо. \n Шаблон мема можна позначити як улюблене, натиснувши на зірочку.</string>
+  <string name="shuffle_meme_list__appspecific">Список мемів у випадковому порядку</string>
+  <string name="view_type_memelist__appspecific">Встановити тип подання (Сітка зображень, Рядки з назвою)</string>
+  <string name="error_storage_permission__appspecific">Потрібен дозвіл на запис для збереження мемів та шаблонів</string>
+  <string name="download_latest_assets_message__appspecific">Це дозволить завантажити шрифти й шаблони мемів (≈ 20 МБ даних).</string>
+  <string name="download_latest_assets_message_description__appspecific">В налаштуваннях ви також можете вручну отримувати останні шаблони.</string>
   <string name="main_view">Головний екран</string>
   <string name="edit_picture">Редагувати зображення</string>
   <string name="general">Загальне</string>
   <string name="picture_viewer">Програма перегляду зображень</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Зображення, які показуватимуться в галереї і в цьому додатку</string>
   <string name="open_source_licenses">Ліцензії з відкритим кодом</string>
   <string name="rate_this_app">Оцініть додаток</string>
   <string name="translate">Перекласти</string>
   <string name="more_info_and_help">Додаткова інформація та допомога</string>
   <string name="report_bugs">Повідомити про помилку</string>
   <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Детальніше про пожертви або підтримку проекту</string>
+  <string name="android_contribution_guide">Порадник із участі у проектах для Android</string>
+  <string name="more_info_on_how_to_contribute_to_foss_android_projects">Більше інформації про участь у проектах з відкритим кодом, особливо для Android</string>
   <string name="join_community">Приєднатися до спільноти</string>
   <string name="bug_reports_suggest_improvements">Залиште відгук, повідомте про помилки або запропонуйте покращення</string>
   <string name="help_translating_this_app">Перекласти цей додаток на інші мови</string>
