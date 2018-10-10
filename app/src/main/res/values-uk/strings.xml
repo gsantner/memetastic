@@ -105,6 +105,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="create_meme__appspecific">Створити мем</string>
   <string name="delete_meme__appspecific">Видалити мем</string>
   <string name="no_favourites_description__appspecific">Тут поки що порожньо. \n Шаблон мема можна позначити як улюблене, натиснувши на зірочку.</string>
+  <string name="no_custom_templates_description__appspecific">Тут поки що порожньо. \n Збережені шаблони тут: %1$s</string>
   <string name="shuffle_meme_list__appspecific">Список мемів у випадковому порядку</string>
   <string name="view_type_memelist__appspecific">Встановити тип подання (Сітка зображень, Рядки з назвою)</string>
   <string name="error_storage_permission__appspecific">Потрібен дозвіл на запис для збереження мемів та шаблонів</string>
