@@ -11,6 +11,10 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+  <string name="humans">الأشخاص</string>
+  <string name="cartoon">رسوم متحركة</string>
+  <string name="animals">حيوانات</string>
+  <string name="custom">مخصص</string>
   <string name="exit">خروج</string>
   <string name="yes">نعم</string>
   <string name="text_size">حجم النص</string>
@@ -32,6 +36,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="gnu_gplv3_license">إظهار رخصة التطبيق</string>
   <string name="settings">إعدادات</string>
   <string name="rotate">تدوير</string>
+  <string name="language">اللّغة</string>
   <string name="downloading">جاري التنزيل</string>
   <string name="downloading_failed">فشل التنزيل</string>
   <string name="unzipping">فك الضغط</string>
@@ -44,10 +49,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="edit_title">تعديل العنوان</string>
   <string name="hide">إخفاء</string>
   <string name="unhide">إظهار</string>
+  <string name="edit_picture">تعديل الصورة</string>
   <string name="rate_this_app">قيّم هذا التطبيق</string>
   <string name="translate">ترجمة</string>
   <string name="report_bugs">إبلاغ عن علة</string>
   <string name="join_community">إنضم إلى المجتمع</string>
   <string name="help_translating_this_app">ساهم في ترجمة هذا التطبيق إلى لغات أخرى</string>
+  <string name="source_code">الشفرة المصدرية</string>
+  <string name="project_license">رخصة المشروع</string>
   <string name="more">المزيد</string>
 </resources>
