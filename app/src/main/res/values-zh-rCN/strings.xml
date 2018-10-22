@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="cartoon">卡通</string>
   <string name="animals">动物</string>
   <string name="custom">自定义</string>
-  <string name="rage">愤怒</string>
+  <string name="rage">暴走漫画</string>
   <string name="saved">已保存</string>
   <string name="favs">收藏</string>
   <string name="create">新建</string>
@@ -64,6 +64,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="render_quality">渲染质量</string>
   <string name="picture_quality_percent" formatted="false">图片的质量和大小，更高值将需要更长的加载时间。根据设备的硬件水平和图片大小，应用可能会在数值超过25%时无法运行。</string>
   <string name="clear_thumbnails">清除缩略图</string>
+  <string name="columns_portrait">横排模板排列数</string>
+  <string name="columns_landscape">纵列模板排列数</string>
   <string name="appearance">外观</string>
   <string name="default_mode">默认模式</string>
   <string name="save_when_pressing_back">在按返回键时保存</string>
@@ -71,6 +73,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="editor">编辑器</string>
   <string name="hide_statusbar_at_this_view">隐藏状态栏</string>
   <string name="hide_statusbar">隐藏状态栏</string>
+  <string name="view_type">视图类型</string>
   <string name="show_in_device_gallery">在图库中显示</string>
   <string name="language">语言</string>
   <string name="language_change_restart_description">更改语言（重启应用后生效）</string>
@@ -82,6 +85,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="successfully_downloaded">下载完成</string>
   <string name="download_latest_assets">下载最新的素材</string>
   <string name="download_latest_assets_checking_description">检查最新素材</string>
+  <string name="palette">调色板</string>
   <string name="select_color">选择颜色</string>
   <string name="favourite">收藏</string>
   <string name="remove_favourite">从收藏中删除</string>
@@ -104,6 +108,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="save_when_pressing_back_description__appspecific">图中已有文字时按返回键将会自动保存</string>
   <string name="shuffle_meme_list_description__appspecific">进入一模板列表时刷新该列表内容</string>
   <string name="shuffle_meme_list__appspecific">刷新模板列表</string>
+  <string name="view_type_memelist__appspecific">设置图片布局（格状平铺、带名称横铺）</string>
+  <string name="error_storage_permission__appspecific">需要获取存储权限来保存作品和模板</string>
   <string name="download_latest_assets_message__appspecific">下载字体和模板数据（大约20MB）</string>
   <string name="download_latest_assets_message_description__appspecific">您也可以在设置中可以手动下载最新的素材库。</string>
   <string name="main_view">主界面</string>
