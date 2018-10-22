@@ -100,10 +100,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
   <string name="press_back_again_to_stop_editing__appspecific">再次按退出键以退出本次编辑，未保存的编辑成果将会丢失。</string>
   <string name="saved_meme_successfully__appspecific">作品已保存，是否放弃继续编辑？</string>
+  <string name="download_latest_assets_message__appspecific">下载字体和模板数据（大约20MB）</string>
   <string name="download_latest_assets_message_description__appspecific">您也可以在设置中可以手动下载最新的素材库。</string>
   <string name="main_view">主界面</string>
   <string name="edit_picture">编辑图片</string>
   <string name="general">通用</string>
+  <string name="picture_viewer">图片查看器</string>
   <string name="open_source_licenses">开源协议</string>
   <string name="rate_this_app">评价本应用</string>
   <string name="translate">翻译</string>
