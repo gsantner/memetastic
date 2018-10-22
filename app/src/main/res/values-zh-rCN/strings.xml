@@ -22,7 +22,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="favs">收藏</string>
   <string name="create">新建</string>
   <string name="hidden">已隐藏</string>
-  <string name="rows_with_title">横铺（带名称）</string>
+  <string name="rows_with_title">带名称横铺</string>
   <string name="picture_grid">格状平铺</string>
   <string name="get_picture_from_gallery">从图库选取相片</string>
   <string name="get_picture_from_camera">从相机拍照</string>
@@ -62,6 +62,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="caps_off">取消大写</string>
   <string name="rotate">旋转</string>
   <string name="render_quality">渲染质量</string>
+  <string name="picture_quality_percent" formatted="false">图片的质量和大小，更高值将需要更长的加载时间。根据设备的硬件水平和图片大小，应用可能会在数值超过25%时无法运行。</string>
   <string name="clear_thumbnails">清除缩略图</string>
   <string name="appearance">外观</string>
   <string name="default_mode">默认模式</string>
@@ -100,6 +101,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
   <string name="press_back_again_to_stop_editing__appspecific">再次按退出键以退出本次编辑，未保存的编辑成果将会丢失。</string>
   <string name="saved_meme_successfully__appspecific">作品已保存，是否放弃继续编辑？</string>
+  <string name="save_when_pressing_back_description__appspecific">图中已有文字时按返回键将会自动保存</string>
+  <string name="shuffle_meme_list_description__appspecific">进入一模板列表时刷新该列表内容</string>
+  <string name="shuffle_meme_list__appspecific">刷新模板列表</string>
   <string name="download_latest_assets_message__appspecific">下载字体和模板数据（大约20MB）</string>
   <string name="download_latest_assets_message_description__appspecific">您也可以在设置中可以手动下载最新的素材库。</string>
   <string name="main_view">主界面</string>
