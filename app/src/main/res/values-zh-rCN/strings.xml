@@ -69,10 +69,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="appearance">外观</string>
   <string name="default_mode">默认模式</string>
   <string name="save_when_pressing_back">在按返回键时保存</string>
+  <string name="padding">衬距</string>
   <string name="overview">主界面</string>
   <string name="editor">编辑器</string>
   <string name="hide_statusbar_at_this_view">隐藏状态栏</string>
   <string name="hide_statusbar">隐藏状态栏</string>
+  <string name="thumbnail_quality">缩略图质量</string>
   <string name="view_type">视图类型</string>
   <string name="show_in_device_gallery">在图库中显示</string>
   <string name="language">语言</string>
@@ -86,6 +88,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="download_latest_assets">下载最新的素材</string>
   <string name="download_latest_assets_checking_description">检查最新素材</string>
   <string name="palette">调色板</string>
+  <string name="presets">预设</string>
   <string name="select_color">选择颜色</string>
   <string name="favourite">收藏</string>
   <string name="remove_favourite">从收藏中删除</string>
