@@ -106,8 +106,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="delete_meme__appspecific">Удалить мем</string>
   <string name="no_favourites_description__appspecific">Пока нет избранных.\nШаблон мема можно добавить в избранное, нажав на звёздочку.</string>
   <string name="no_custom_templates_description__appspecific">Пока нет пользовательских шаблонов.\n Сохранённые шаблоны здесь:%1$s</string>
-  <string name="no_memes_saved_description__appspecific">Здесь пока что пусто.\nЧтбы сохранить мем, нажмите на кнопку сохранения после того, как отредактируете его.</string>
-  <string name="default_mode_description_description__appspecific">Раздел для открытия при запуске (Сохранённые, Избранное, Создать)</string>
+  <string name="no_memes_saved_description__appspecific">Нет сохраненных мемов.\nЧтбы сохранить мем, нажмите на кнопку сохранения после того, как отредактируете его.</string>
+  <string name="default_mode_description_description__appspecific">Режим по умолчанию для открытия при запуске (Сохранённые, Избранное, Создать)</string>
   <string name="press_back_again_to_stop_editing__appspecific">Нажмите назад ещё раз, чтобы выйти из режима редактирования. Мем будет потерян, если вы его не сохранили.</string>
   <string name="saved_meme_successfully__appspecific">Мем был успешно сохранён на ваше устройство. Хотите выйти из режима редактирования?</string>
   <string name="save_when_pressing_back_description__appspecific">Автоматически сохранять редактируемые мемы при нажатии кнопки назад</string>
