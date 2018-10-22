@@ -68,6 +68,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="columns_landscape">纵列模板排列数</string>
   <string name="appearance">外观</string>
   <string name="default_mode">默认模式</string>
+  <string name="functionality">性能</string>
   <string name="save_when_pressing_back">在按返回键时保存</string>
   <string name="padding">衬距</string>
   <string name="overview">主界面</string>
