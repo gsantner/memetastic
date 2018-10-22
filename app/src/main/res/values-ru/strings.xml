@@ -53,18 +53,18 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="licenses">Лицензии</string>
   <string name="show_licenses">Показать лицензии</string>
   <string name="contributors">Поддержавшие проект</string>
-  <string name="more_information">Больше информации</string>
+  <string name="more_information">Дополнительная информация</string>
   <string name="show_third_party_licenses">Показать сторонние лицензии</string>
   <string name="miscellaneous">Прочее</string>
   <string name="gnu_gplv3_license">Лицензия GNU GPLv3+</string>
   <string name="settings">Настройки</string>
   <string name="all_caps">КАПС ВКЛ</string>
-  <string name="caps_off">капс выкл</string>
+  <string name="caps_off">Функция заглавной буквы (\"Caps Lock\") отключена</string>
   <string name="rotate">Поворот</string>
   <string name="render_quality">Качество рендеринга</string>
-  <string name="picture_quality_percent" formatted="false">Качество и размер изображений. В зависимости от размера изображения и мощности устройства, производительность приложения может снизиться, если выбранно значение выше 25%.</string>
+  <string name="picture_quality_percent" formatted="false">Качество и размер изображений. В зависимости от размера изображения и мощности устройства, производительность приложения может снизиться, если выбрано значение выше 25%.</string>
   <string name="clear_thumbnails">Очистить миниатюры</string>
-  <string name="columns_portrait">Столбцы</string>
+  <string name="columns_portrait">Колонки (портретный режим)</string>
   <string name="columns_landscape">Строки</string>
   <string name="appearance">Внешний вид</string>
   <string name="default_mode">Раздел по умолчанию</string>
