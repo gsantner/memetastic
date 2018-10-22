@@ -17,9 +17,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="cartoon">卡通</string>
   <string name="animals">动物</string>
   <string name="custom">自定义</string>
+  <string name="rage">愤怒</string>
   <string name="saved">已保存</string>
   <string name="favs">收藏</string>
   <string name="create">新建</string>
+  <string name="rows_with_title">横铺（带名称）</string>
   <string name="get_picture_from_gallery">从图库选取相片</string>
   <string name="get_picture_from_camera">从相机拍照</string>
   <string name="error_cannot_start_camera">无法启动相机。</string>
@@ -56,6 +58,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="appearance">外观</string>
   <string name="default_mode">默认模式</string>
   <string name="save_when_pressing_back">在按返回键时保存</string>
+  <string name="overview">主界面</string>
   <string name="editor">编辑器</string>
   <string name="hide_statusbar_at_this_view">隐藏状态栏</string>
   <string name="hide_statusbar">隐藏状态栏</string>
@@ -78,6 +81,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="hide">隐藏</string>
   <string name="unhide">取消隐藏</string>
   <string name="tap_here_to_add_caption">点击此处添加标题</string>
+  <string name="no_favourites_description__appspecific">暂无已收藏作品\n您可以通过点击模板中的星形按钮来将其加入收藏夹中</string>
+  <string name="no_memes_saved_description__appspecific">暂无已保存作品\n作品编辑完成后可通过右上方保存按钮保存</string>
   <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
   <string name="download_latest_assets_message_description__appspecific">您也可以在设置中可以手动下载最新的素材库。</string>
   <string name="main_view">主界面</string>
