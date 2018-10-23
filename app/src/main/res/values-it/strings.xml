@@ -120,6 +120,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   <string name="main_view">Visualizzazione principale</string>
   <string name="edit_picture">Modifica immagine</string>
   <string name="general">Generali</string>
+  <string name="picture_viewer">Visualizzatore di immagini</string>
+  <string name="pictures_shown_in_gallery_and_this_app">Immagini mostrate in galleria e su questa app</string>
   <string name="open_source_licenses">Licenze Open Source</string>
   <string name="rate_this_app">Valuta l\'app</string>
   <string name="translate">Traduci</string>
