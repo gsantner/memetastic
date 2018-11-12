@@ -56,7 +56,6 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -99,6 +98,7 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_SHOW_IMAGE = 52;
     public static final String IMAGE_PATH = "imagePath";
     public static final String IMAGE_POS = "image_pos";
+    public static final boolean LOCAL_ONLY_MODE = true;
 
     private static boolean _isShowingFullscreenImage = false;
 
@@ -180,6 +180,12 @@ public class MainActivity extends AppCompatActivity
         _tagKeys = getResources().getStringArray(R.array.meme_tags__keys);
         _tagValues = getResources().getStringArray(R.array.meme_tags__titles);
 
+        if (MainActivity.LOCAL_ONLY_MODE) {
+            for (int i = 0; i < _tagKeys.length; i++) {
+                _tagKeys[i] = "other";
+            }
+        }
+
 
         _recyclerMemeList.setHasFixedSize(true);
         _recyclerMemeList.setItemViewCacheSize(_appSettings.getGridColumnCountPortrait() * _appSettings.getGridColumnCountLandscape() * 2);
@@ -206,9 +212,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         // Basically enable "other" only mode
-        _tabLayout.setVisibility(View.GONE);
-        for (int i=0; i < _tagKeys.length; i++){
-            _tagKeys[i] = "other";
+        if (MainActivity.LOCAL_ONLY_MODE) {
+            _tabLayout.setVisibility(View.GONE);
         }
         // END
 
@@ -217,7 +222,6 @@ public class MainActivity extends AppCompatActivity
         _tabLayout.setupWithViewPager(_viewPager);
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
         _infoBarProgressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
-
 
 
         // Show first start dialog / changelog
@@ -289,6 +293,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
+        if (MainActivity.LOCAL_ONLY_MODE) {
+            _tabLayout.setVisibility(View.GONE);
+        }
         if (_isShowingFullscreenImage) {
             _isShowingFullscreenImage = false;
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
@@ -409,7 +416,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         // Change mode
-        _tabLayout.setVisibility(item.getItemId() == R.id.nav_mode_create ? View.VISIBLE : View.GONE);
+        //_tabLayout.setVisibility(item.getItemId() == R.id.nav_mode_create ? View.VISIBLE : View.GONE);
 
 
         _moreInfoContainer.setVisibility(View.GONE);

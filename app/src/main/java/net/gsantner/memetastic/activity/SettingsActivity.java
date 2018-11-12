@@ -210,5 +210,11 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
         }
+
+        @Override
+        public synchronized void doUpdatePreferences() {
+            super.doUpdatePreferences();
+            setPreferenceVisible(R.string.pref_key__download_assets_try, false);
+        }
     }
 }

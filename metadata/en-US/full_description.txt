@@ -1,7 +1,8 @@
 😌 <b>Simple Meme Creator</b> - Completly ad-free and adds no watermarks.
 
-Memes can be created from templates downloaded from the MemeTastic archive, 
-from pictures shared into the app and pictures from gallery & camera.
+Memes can be created from image templates in MemeTastic pictures folder, 
+from pictures shared into the app and pictures from gallery & camera. 
+No internet connection required or used.
 
 There are many meme customization options available:
 
@@ -19,7 +20,6 @@ There are many meme customization options available:
 
 
 <b>Support the project:</b>
- ✋ <a href="https://github.com/gsantner/memetastic/issues/1">Suggest templates</a>
  ✋ <a href="https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&mail=gro.xobliam@@rentnasg&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic">Translate using Stringlate</a>
  ✋ <a href="https://matrix.to/#/#memetastic:matrix.org">Join discussion on Matrix</a>
  ✋ <a href="https://github.com/gsantner/memetastic#contributions">More information about contributions</a>

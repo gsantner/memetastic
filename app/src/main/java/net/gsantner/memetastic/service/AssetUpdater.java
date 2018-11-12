@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 
+import net.gsantner.memetastic.activity.MainActivity;
 import net.gsantner.memetastic.data.MemeConfig;
 import net.gsantner.memetastic.data.MemeData;
 import net.gsantner.memetastic.util.AppCast;
@@ -104,6 +105,9 @@ public class AssetUpdater {
         @Override
         public void run() {
             if (PermissionChecker.hasExtStoragePerm(_context)) {
+                if (MainActivity.LOCAL_ONLY_MODE) {
+                    return;
+                }
                 AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__CHECKING);
                 String apiJsonS = NetworkUtils.performCall(URL_API, NetworkUtils.GET);
                 try {

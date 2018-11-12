@@ -7,8 +7,9 @@
 # MemeTastic
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
 <b>Simple Meme Creator</b>. Completly ad-free, and adds no watermarks. 
-Memes can be created from templates downloaded from the MemeTastic archive, 
-from pictures shared into the app and pictures from gallery & camera.
+Memes can be created from image templates in MemeTastic pictures folder, 
+from pictures shared into the app and pictures from gallery & camera. 
+No internet connection required or used.
 
 <div style="display:flex;" >
 <a href="https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic">
@@ -23,7 +24,7 @@ from pictures shared into the app and pictures from gallery & camera.
 ## Description
 * Ad-Free and no watermarks 
 * Allows you to create memes from
-  * Templates from MemeTastic archive
+  * Templates from MemeTastic picture folder
   * Camera pictures
   * Gallery pictures
   * Pictures shared into the app
@@ -41,7 +42,6 @@ from pictures shared into the app and pictures from gallery & camera.
 ### Privacy<a name="privacy"></a>
 The app doesn't share any personal information with other apps or any web-server.
 Custom images can be added via camera and gallery. If the user decides to save a meme image it will be stored locally in the device public pictures folder.
-Meme templates can be downloaded from the [memetastic-assets](https://github.com/gsantner/memetastic-assets) archive (zip file).
 
 ## Contributions
 The project is always open for contributions and accepts pull requests.
@@ -52,7 +52,7 @@ Translations can be contributed on GitHub or via [E-Mail](http://gsantner.net/#c
 Join our IRC or Matrix channel (bridged) and say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=memetastic-anon|?#memetastic)
 
 For inclusion of new fonts or memes visit [issue #1](https://github.com/gsantner/memetastic/issues/1).
-Please only post stuff you own, is allowed to redistribute, or to be considered fair use.
+Please only post stuff under free license (/or created yourself) and is allowed to be freely redistributed.
 Meme templates will only get added if there are no existing watermarks (of e.g. other meme creators) 
 and if they are in a good image quality (do a quick search before).
 
