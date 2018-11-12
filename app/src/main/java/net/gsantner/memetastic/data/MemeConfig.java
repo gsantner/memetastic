@@ -123,6 +123,9 @@ public class MemeConfig implements Serializable {
                     tagsList.add(jsonArr.getString(i));
                 }
             }
+            if (!tagsList.contains("other")) {
+                tagsList.add("other");
+            }
             setTags(tagsList);
 
             List<Caption> captions = new ArrayList<>();

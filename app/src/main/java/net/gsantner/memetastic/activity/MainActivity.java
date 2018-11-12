@@ -20,6 +20,7 @@
 #########################################################*/
 package net.gsantner.memetastic.activity;
 
+import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -55,6 +56,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -153,6 +155,7 @@ public class MainActivity extends AppCompatActivity
 
     private static final String BOTTOM_NAV_POSITION = "bottom_nav_position";
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -202,11 +205,19 @@ public class MainActivity extends AppCompatActivity
             _tabLayout.addTab(tab);
         }
 
+        // Basically enable "other" only mode
+        _tabLayout.setVisibility(View.GONE);
+        for (int i=0; i < _tagKeys.length; i++){
+            _tagKeys[i] = "other";
+        }
+        // END
+
         _viewPager.setOffscreenPageLimit(5);
         _viewPager.setAdapter(new MemePagerAdapter(getSupportFragmentManager(), _tagKeys.length, _tagValues));
         _tabLayout.setupWithViewPager(_viewPager);
         selectTab(app.settings.getLastSelectedTab(), app.settings.getDefaultMainMode());
         _infoBarProgressBar.getProgressDrawable().setColorFilter(ContextCompat.getColor(this, R.color.accent), PorterDuff.Mode.SRC_IN);
+
 
 
         // Show first start dialog / changelog
