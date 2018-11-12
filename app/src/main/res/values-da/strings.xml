@@ -11,17 +11,17 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-  <string name="changelog">Ændringslog</string>
-  <string name="about">Om</string>
-  <string name="show_licenses">Vis licens</string>
-  <string name="contributors">Bidragsydere</string>
-  <string name="more_information">Yderligere information</string>
-  <string name="show_third_party_licenses">Vis tredjeparts-licenser</string>
-  <string name="miscellaneous">Diverse</string>
-  <string name="settings">Indstillinger</string>
-  <string name="language">Sprog</string>
-  <string name="language_change_restart_description">Ændre applikationens sprog. Genstart for at ændringen træder i kraft</string>
-  <string name="translate">Oversæt</string>
-  <string name="report_bugs">Rapporter fejl</string>
-  <string name="more">Mere</string>
+    <string name="changelog">Ændringslog</string>
+    <string name="about">Om</string>
+    <string name="show_licenses">Vis licens</string>
+    <string name="contributors">Bidragsydere</string>
+    <string name="more_information">Yderligere information</string>
+    <string name="show_third_party_licenses">Vis tredjeparts-licenser</string>
+    <string name="miscellaneous">Diverse</string>
+    <string name="settings">Indstillinger</string>
+    <string name="language">Sprog</string>
+    <string name="language_change_restart_description">Ændre applikationens sprog. Genstart for at ændringen træder i kraft</string>
+    <string name="translate">Oversæt</string>
+    <string name="report_bugs">Rapporter fejl</string>
+    <string name="more">Mere</string>
 </resources>

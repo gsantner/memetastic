@@ -11,16 +11,16 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-  <string name="changelog">Jurnalul modificărilor</string>
-  <string name="about">Despre</string>
-  <string name="show_licenses">Afişează licenţa</string>
-  <string name="contributors">Contribuitori</string>
-  <string name="more_information">Mai multe informaţii</string>
-  <string name="show_third_party_licenses">Afișează licenţe terţi</string>
-  <string name="miscellaneous">Diverse</string>
-  <string name="settings">Setări</string>
-  <string name="language">Limbă</string>
-  <string name="language_change_restart_description">Schimbă limba acestei aplicații. Restartează aplicația pentru ca schimbările să ia efect</string>
-  <string name="translate">Traducere</string>
-  <string name="more">Mai multe</string>
+    <string name="changelog">Jurnalul modificărilor</string>
+    <string name="about">Despre</string>
+    <string name="show_licenses">Afişează licenţa</string>
+    <string name="contributors">Contribuitori</string>
+    <string name="more_information">Mai multe informaţii</string>
+    <string name="show_third_party_licenses">Afișează licenţe terţi</string>
+    <string name="miscellaneous">Diverse</string>
+    <string name="settings">Setări</string>
+    <string name="language">Limbă</string>
+    <string name="language_change_restart_description">Schimbă limba acestei aplicații. Restartează aplicația pentru ca schimbările să ia efect</string>
+    <string name="translate">Traducere</string>
+    <string name="more">Mai multe</string>
 </resources>
