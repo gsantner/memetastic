@@ -1,3 +1,9 @@
+### v1.5.0
+- Back to roots with small amount of templates inside projects
+- Targeted at user added templates in local folder
+- No more downloads from MemeTastic archive
+- Removed Interned permission, internet access completly disable
+
 ### v1.4.2
 - Add some more bundled assets
 
