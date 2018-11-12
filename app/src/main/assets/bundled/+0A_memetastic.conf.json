@@ -1,2 +1,115 @@
-{"images": [{"title":"Barack Obama with Artistic Gymnastic McKayla Maroney","filename":"Barack-Obama-With-Artistic-Gymnastic-McKayla-Maroney-2-(cc0)-300px.jpg","tags":["humans"]},{"title":"Derpina","filename":"Derpina-300px.png","tags":["rage"]},{"title":"YaoMing","filename":"YaoMing-meme-300px.png","tags":["rage"]},{"title":"memelines-blue","filename":"memelines-blue.png","tags":["cartoon"]},{"title":"potato-01","filename":"potato-01.jpg","tags":["other"]},{"title":"memelines-yellow-orange","filename":"memelines-yellow-orange.png","tags":["cartoon"]},{"title":"freedom-sunflower-kid","filename":"freedom-sunflower-kid.png","tags":["animals"]}
-],"fonts":[{"title":"Pressuru","filename":"00_Pressuru.otf"}]}
+
+
+{
+  "images": [
+    {
+      "title": "Barack Obama with Artistic Gymnastic McKayla Maroney",
+      "filename": "Barack-Obama-With-Artistic-Gymnastic-McKayla-Maroney-2-(cc0)-300px.jpg",
+      "tags": [
+        "humans"
+      ]
+    },
+    {
+      "title": "Derpina",
+      "filename": "Derpina-300px.png",
+      "tags": [
+        "rage"
+      ]
+    },
+    {
+      "title": "YaoMing",
+      "filename": "YaoMing-meme-300px.png",
+      "tags": [
+        "rage"
+      ]
+    },
+    {
+      "title": "memelines-blue",
+      "filename": "memelines-blue.png",
+      "tags": [
+        "cartoon"
+      ]
+    },
+    {
+      "title": "potato-01",
+      "filename": "potato-01.jpg",
+      "tags": [
+        "other"
+      ]
+    },
+    {
+      "title": "memelines-yellow-orange",
+      "filename": "memelines-yellow-orange.png",
+      "tags": [
+        "cartoon"
+      ]
+    },
+    {
+      "title": "freedom-sunflower-kid",
+      "filename": "freedom-sunflower-kid.png",
+      "tags": [
+        "animals"
+      ]
+    }
+  ],
+    "fonts": [{
+        "title": "Pressuru",
+        "filename": "00_Pressuru.otf",
+        "description": "general, default"
+    }, {
+        "title": "OpenSans",
+        "filename": "OpenSans.ttf",
+        "description": "general"
+    }, {
+        "title": "Aileron (Light)",
+        "filename": "Aileron-Light.otf",
+        "description": "general, long text"
+    }, {
+        "title": "ComicRelief",
+        "filename": "01_ComicRelief.ttf",
+        "description": "comic, doge"
+    }, {
+        "title": "DogeSans-Regular",
+        "filename": "DogeSans-Regular.otf",
+        "description": "comic, doge"
+    }, {
+        "title": "UCU Charles Script",
+        "filename": "UCU Charles Script.ttf",
+        "description": "just girly things"
+    }, {
+        "title": "DroidSerif",
+        "filename": "DroidSerif.ttf",
+        "description": "android"
+    }, {
+        "title": "Eenvoudige Batik",
+        "filename": "Eenvoudige Batik.ttf"
+    }, {
+        "title": "Geometric Sans Serif",
+        "filename": "Geometric Sans Serif.otf"
+    }, {
+        "title": "Halo3",
+        "filename": "Halo3.ttf"
+    }, {
+        "title": "Inconsolata",
+        "filename": "Inconsolata.otf"
+    }, {
+        "title": "NoContrast Serif",
+        "filename": "NoContrast Serif.otf"
+    }, {
+        "title": "PixelFlag",
+        "filename": "PixelFlag.ttf"
+    }, {
+        "title": "PressStart2P",
+        "filename": "PressStart2P.ttf"
+    }, {
+        "title": "Roboto Bold",
+        "filename": "Roboto Bold.ttf",
+        "description": "android"
+    }, {
+        "title": "SourceSans Pro",
+        "filename": "SourceSans Pro.otf"
+    }, {
+        "title": "The Godfather",
+        "filename": "The Godfather.ttf"
+    }]
+}
