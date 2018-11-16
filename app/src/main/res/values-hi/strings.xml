@@ -39,6 +39,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="successfully_saved">सफलतापूर्वक संचित कर लिया गया है</string>
     <string name="top_caption">शीर्ष कैप्शन</string>
     <string name="bottom_caption">नीचे कैप्शन</string>
+    <string name="enter_caption">कैप्शन दर्ज करें</string>
     <string name="font">फ़ॉन्ट</string>
     <string name="keep_editing">संपादन रखें</string>
     <string name="text">टेक्स्ट</string>
@@ -75,6 +76,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="hide_statusbar">स्थिति पट्टी छुपाएँ</string>
     <string name="thumbnail_quality">थंबनेल गुणवत्ता</string>
     <string name="view_type">द्रष्टि प्रकार</string>
+    <string name="show_in_device_gallery">डिवाइस गैलरी में दिखाएं</string>
     <string name="language">भाषा</string>
     <string name="language_change_restart_description">इस ऐप की भाषा बदलें परिवर्तन प्रभावी होने के लिए ऐप को पुन: प्रारंभ करें</string>
     <string name="error_cannot_create_save_directory">त्रुटि: निर्देशिका को सहेज नहीं सका</string>
@@ -88,6 +90,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">पैलेट</string>
     <string name="presets">प्रीसेट</string>
     <string name="select_color">रंग चुनें</string>
+    <string name="favourite">पसंदीदा</string>
+    <string name="remove_favourite">हटाउन पर्ने</string>
+    <string name="show_title">शीर्षक दिखाएं</string>
+    <string name="edit_title">शीर्षक संपादित करें</string>
+    <string name="hide">छिपाने</string>
+    <string name="unhide">सामने लाएँ</string>
     <string name="search_meme__appspecific">मीम खोजें</string>
     <string name="share_meme_via__appspecific">के माध्यम से बाँटे</string>
     <string name="save_meme__appspecific">मीम सुरक्षित करें</string>
