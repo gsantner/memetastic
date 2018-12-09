@@ -108,7 +108,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="no_memes_saved_description__appspecific">暂无已保存作品\n作品编辑完成后可通过右上方保存按钮保存</string>
     <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
     <string name="press_back_again_to_stop_editing__appspecific">再次按退出键以退出本次编辑，未保存的编辑成果将会丢失。</string>
-    <string name="saved_meme_successfully__appspecific">作品已保存，是否放弃继续编辑？</string>
+    <string name="saved_meme_successfully__appspecific">作品已保存，是否结束编辑？</string>
     <string name="save_when_pressing_back_description__appspecific">图中已有文字时按返回键将会自动保存</string>
     <string name="shuffle_meme_list_description__appspecific">进入一模板列表时刷新该列表内容</string>
     <string name="shuffle_meme_list__appspecific">刷新模板列表</string>
