@@ -25,25 +25,22 @@ if (enable_plugin_kotlin) {
     apply plugin: 'kotlin-kapt'
 }
 
-ext.version_setup_minSdk = 14
-
 android {
-    buildToolsVersion version_setup_buildTools
-    compileSdkVersion version_setup_compileSdk
-    flavorDimensions "default"
+    compileSdkVersion rootProject.ext.version_compileSdk
+    buildToolsVersion rootProject.ext.version_buildTools
 
     defaultConfig {
-        minSdkVersion version_setup_minSdk
-        targetSdkVersion version_setup_targetSdk
+        applicationId "io.github.gsantner.memetastic"
+        minSdkVersion 14
+        targetSdkVersion rootProject.ext.version_compileSdk
+        versionName "1.5.0"
+        versionCode 50
+
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
         buildConfigField "String[]", "DETECTED_ANDROID_LOCALES", "${findUsedAndroidLocales()}"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
-
-        applicationId "io.github.gsantner.memetastic"
-        versionName "1.5.0"
-        versionCode 50
     }
 
     buildTypes {
@@ -54,16 +51,14 @@ android {
     }
 
     sourceSets {
+        main { assets.srcDirs = ['src/main/assets'] }
+
         if (enable_plugin_kotlin) {
             main.java.srcDirs += 'src/main/kotlin'
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
+    flavorDimensions "default"
     productFlavors {
         flavorDefault {
         }
@@ -71,41 +66,47 @@ android {
             buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
         }
         flavorTest {
-            applicationId "net.gsantner.memetastic_test"
+            applicationIdSuffix ".test"
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
             buildConfigField "boolean", "IS_TEST_BUILD", "true"
         }
     }
 
-    lintOptions {
-        disable 'MissingTranslation'
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    sourceSets { main { assets.srcDirs = ['src/main/assets'] } }
+    lintOptions {
+        disable 'MissingTranslation'
+        abortOnError false
+    }
 }
 
 dependencies {
     // Testing
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.assertj:assertj-core:3.8.0'
+    testImplementation 'junit:junit:4.13-beta-1'
+    testImplementation 'org.assertj:assertj-core:3.11.1'
 
     // Android standard libs
-    implementation "com.android.support:appcompat-v7:${version_library_appcompat}"
     implementation "com.android.support:design:${version_library_appcompat}"
     implementation "com.android.support:support-v4:${version_library_appcompat}"
+    implementation "com.android.support:appcompat-v7:${version_library_appcompat}"
     implementation "com.android.support:cardview-v7:${version_library_appcompat}"
-    implementation "com.android.support:recyclerview-v7:${version_library_appcompat}"
     implementation "com.android.support:preference-v7:${version_library_appcompat}"
+    implementation "com.android.support:recyclerview-v7:${version_library_appcompat}"
     implementation "com.android.support:preference-v14:${version_library_appcompat}"
 
     // UI libraries
-    implementation 'com.jaredrummler:colorpicker:1.0.1'
+    implementation 'com.jaredrummler:colorpicker:1.0.5'
 
     // Tool libraries
     implementation "com.jakewharton:butterknife:${version_library_butterknife}"
+
     if (enable_plugin_kotlin) {
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$version_plugin_kotlin"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${version_plugin_kotlin}"
     }
 
     // Processors
