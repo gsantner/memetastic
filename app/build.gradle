@@ -25,45 +25,27 @@ if (enable_plugin_kotlin) {
     apply plugin: 'kotlin-kapt'
 }
 
-ext.version_setup_minSdk = 14
+rootProject.ext.version_setup_minSdk = 14
 
 android {
-    buildToolsVersion version_setup_buildTools
-    compileSdkVersion version_setup_compileSdk
-    flavorDimensions "default"
+    buildToolsVersion rootProject.ext.version_buildTools
+    compileSdkVersion rootProject.ext.version_compileSdk
 
     defaultConfig {
-        minSdkVersion version_setup_minSdk
-        targetSdkVersion version_setup_targetSdk
+        minSdkVersion rootProject.ext.version_setup_minSdk
+        targetSdkVersion rootProject.ext.version_compileSdk
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
         buildConfigField "String[]", "DETECTED_ANDROID_LOCALES", "${findUsedAndroidLocales()}"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
-        resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
 
+        resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
         applicationId "io.github.gsantner.memetastic"
         versionName "1.5.0"
         versionCode 50
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    sourceSets {
-        if (enable_plugin_kotlin) {
-            main.java.srcDirs += 'src/main/kotlin'
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
+    flavorDimensions "default"
     productFlavors {
         flavorDefault {
         }
@@ -78,11 +60,49 @@ android {
         }
     }
 
-    lintOptions {
-        disable 'MissingTranslation'
+    sourceSets {
+        main { assets.srcDirs = ['src/main/assets'] }
+
+        if (enable_plugin_kotlin) {
+            main.java.srcDirs += 'src/main/kotlin'
+        }
     }
 
-    sourceSets { main { assets.srcDirs = ['src/main/assets'] } }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.group == 'com.android.support') {
+                    if (details.requested.name != 'multidex' && details.requested.name != 'multidex-instrumentation') {
+                        details.useVersion "${rootProject.ext.version_library_appcompat}"
+                    }
+                }
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE-LGPL-2.1.txt'
+        exclude 'META-INF/LICENSE-LGPL-3.txt'
+        exclude 'META-INF/LICENSE-W3C-TEST'
+    }
+
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -91,21 +111,22 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.8.0'
 
     // Android standard libs
-    implementation "com.android.support:appcompat-v7:${version_library_appcompat}"
     implementation "com.android.support:design:${version_library_appcompat}"
     implementation "com.android.support:support-v4:${version_library_appcompat}"
-    implementation "com.android.support:cardview-v7:${version_library_appcompat}"
+    implementation "com.android.support:appcompat-v7:${version_library_appcompat}"
     implementation "com.android.support:recyclerview-v7:${version_library_appcompat}"
     implementation "com.android.support:preference-v7:${version_library_appcompat}"
     implementation "com.android.support:preference-v14:${version_library_appcompat}"
+    implementation "com.android.support:cardview-v7:${version_library_appcompat}"
 
     // UI libraries
-    implementation 'com.jaredrummler:colorpicker:1.0.1'
+    implementation 'com.jaredrummler:colorpicker:1.0.5'
 
     // Tool libraries
     implementation "com.jakewharton:butterknife:${version_library_butterknife}"
+
     if (enable_plugin_kotlin) {
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$version_plugin_kotlin"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${version_plugin_kotlin}"
     }
 
     // Processors
