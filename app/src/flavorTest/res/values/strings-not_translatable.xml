@@ -10,5 +10,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <!-- General -->
-    <string name="app_name" translatable="false">MemeTESTic</string>
+    <string name="app_name" translatable="false">MemeTEstic</string>
 </resources>
