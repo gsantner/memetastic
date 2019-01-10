@@ -11,8 +11,8 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-    <string name="open_navdrawer">Öppna navigeringsmenyn</string>
-    <string name="close_navdrawer">Stäng navigeringsmenyn</string>
+    <string name="open_navdrawer">Öppna navigeringslådan</string>
+    <string name="close_navdrawer">Stäng navigeringslådan</string>
     <string name="humans">Människor</string>
     <string name="cartoon">Tecknad serie</string>
     <string name="animals">Djur</string>
@@ -23,7 +23,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="create">Skapa</string>
     <string name="hidden">Dold</string>
     <string name="rows_with_title">Rader med titel</string>
-    <string name="picture_grid">Bildrutnät</string>
+    <string name="picture_grid">Bild rutnät</string>
     <string name="get_picture_from_gallery">Hämta bild från galleri</string>
     <string name="get_picture_from_camera">Hämta bild från kamera</string>
     <string name="error_cannot_start_camera">Kunde inte sätta på kameran.</string>
