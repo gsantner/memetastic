@@ -10,4 +10,47 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="create">צור</string>
+    <string name="error_picture_selection">אף תמונה לא נבחרה, נלקחה או נשמרה.</string>
+    <string name="donate">תרום</string>
+    <string name="changelog">רשימת שינויים</string>
+    <string name="exit">יציאה</string>
+    <string name="font">גופן</string>
+    <string name="size">גודל</string>
+    <string name="background">רקע</string>
+    <string name="about">אודות</string>
+    <string name="licenses">רשיונות</string>
+    <string name="contributors">תורמים</string>
+    <string name="show_third_party_licenses">הצג רשיונות צד שלישי</string>
+    <string name="miscellaneous">שונות</string>
+    <string name="gnu_gplv3_license">הצג את הרשיון של האפליקציה</string>
+    <string name="settings">הגדרות</string>
+    <string name="appearance">מראה</string>
+    <string name="editor">עורך</string>
+    <string name="language">שפה</string>
+    <string name="language_change_restart_description">שנה את שפת האפליקציה. אתחל את האפליקציה בכדי שהשינויים יכנסו לתוקף</string>
+    <string name="other">אחר</string>
+    <string name="main_view">תצוגה ראשית</string>
+    <string name="edit_picture">ערוך תמונה</string>
+    <string name="general">כללי</string>
+    <string name="open_source_licenses">רישיונות קוד פתוח</string>
+    <string name="rate_this_app">דרג את היישום הזה</string>
+    <string name="translate">תרגם</string>
+    <string name="more_info_and_help">מידע נוסף ועזרה</string>
+    <string name="report_bugs">דווח על באגים</string>
+    <string name="android_contribution_guide">מדריך התנדבות (תרומה) לאנדרואיד</string>
+    <string name="join_community">הצטרף לקהילה</string>
+    <string name="bug_reports_suggest_improvements">תן משוב, דווח על שגיאות או הצע שיפורים</string>
+    <string name="help_translating_this_app">תרגם ישום זה לשפות אחרות</string>
+    <string name="source_code">קוד מקור</string>
+    <string name="project_license">רישיון הפרויקט</string>
+    <string name="project_contribution_info">מידע על תרומה לפרויקט</string>
+    <string name="more_info_on_how_to_contribute_to_this_project">מידע נוסף על איך לתרום לפרוייקט זה</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">לתרום קוד לפרוייקט. כולם מוזמנים לעשות כן, לרבות מתחילים</string>
+    <string name="project_team">צוות הפרויקט</string>
+    <string name="contributors_public_add_yourself_description">הצג פרטי המתנדב. הבא זאת להצגה כאן על בסיס הסכמה מראש לאחר תרומה</string>
+    <string name="help">עזרה</string>
+    <string name="more">עוד</string>
+    <string name="contribute">עזור לנו</string>
+</resources>
