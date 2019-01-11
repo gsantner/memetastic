@@ -65,6 +65,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="save_when_pressing_back">Ukládat stisknutím tlaèítka zpìt</string>
     <string name="padding">Obal</string>
     <string name="overview">Pøehled</string>
+    <string name="editor">Editor</string>
     <string name="hide_statusbar_at_this_view">Schovat statusbar</string>
     <string name="hide_statusbar">Schovat statusbar</string>
     <string name="thumbnail_quality">Kvalita ikony</string>
