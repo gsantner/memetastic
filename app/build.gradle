@@ -25,14 +25,14 @@ if (enable_plugin_kotlin) {
     apply plugin: 'kotlin-kapt'
 }
 
-rootProject.ext.version_setup_minSdk = 14
+rootProject.ext.version_minSdk = 14
 
 android {
     buildToolsVersion rootProject.ext.version_buildTools
     compileSdkVersion rootProject.ext.version_compileSdk
 
     defaultConfig {
-        minSdkVersion rootProject.ext.version_setup_minSdk
+        minSdkVersion rootProject.ext.version_minSdk
         targetSdkVersion rootProject.ext.version_compileSdk
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"

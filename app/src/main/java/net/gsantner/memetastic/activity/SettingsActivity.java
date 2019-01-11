@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.widget.Toolbar;
@@ -142,14 +143,12 @@ public class SettingsActivity extends AppCompatActivity {
             return new AppSettings(context);
         }
 
-
         @SuppressLint("ApplySharedPref")
         @Override
-        public Boolean onPreferenceClicked(android.support.v7.preference.Preference preference) {
+        public Boolean onPreferenceClicked(Preference preference, String key, int keyResId) {
             if (isAdded() && preference.hasKey()) {
                 Context context = getActivity();
                 AppSettings settings = AppSettings.get();
-                String key = preference.getKey();
 
 
                 if (eq(key, R.string.pref_key__memelist_view_type)) {

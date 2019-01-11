@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -37,6 +38,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
@@ -47,6 +49,7 @@ import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.Html;
+import android.text.InputFilter;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -55,6 +58,9 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -67,6 +73,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
@@ -510,6 +517,17 @@ public class ContextUtils {
     }
 
     /**
+     * Get the private directory for the current package (usually /data/data/package.name/)
+     */
+    public String getAppDataDir() {
+        try {
+            return _context.getPackageManager().getPackageInfo(getPackageIdReal(), 0).applicationInfo.dataDir;
+        } catch (PackageManager.NameNotFoundException e) {
+            return _context.getFilesDir().getParent();
+        }
+    }
+
+    /**
      * Request the givens paths to be scanned by MediaScanner
      *
      * @param files Files and folders to scan
@@ -738,4 +756,104 @@ public class ContextUtils {
             }
         }
     }
+
+
+    public String getLocalizedDateFormat() {
+        return ((SimpleDateFormat) android.text.format.DateFormat.getDateFormat(_context)).toPattern();
+    }
+
+    public String getLocalizedTimeFormat() {
+        return ((SimpleDateFormat) android.text.format.DateFormat.getTimeFormat(_context)).toPattern();
+    }
+
+    public String getLocalizedDateTimeFormat() {
+        return getLocalizedDateFormat() + " " + getLocalizedTimeFormat();
+    }
+
+    /**
+     * A {@link InputFilter} for filenames
+     */
+    @SuppressWarnings("Convert2Lambda")
+    public static final InputFilter INPUTFILTER_FILENAME = new InputFilter() {
+        public CharSequence filter(CharSequence src, int start, int end, Spanned dest, int dstart, int dend) {
+            if (src.length() < 1) return null;
+            char last = src.charAt(src.length() - 1);
+            String illegal = "|\\?*<\":>+[]/'";
+            if (illegal.indexOf(last) > -1) return src.subSequence(0, src.length() - 1);
+            return null;
+        }
+    };
+
+    /**
+     * A simple {@link Runnable} which does a touch event on a view.
+     * This pops up e.g. the keyboard on a {@link android.widget.EditText}
+     * <p>
+     * Example: new Handler().postDelayed(new DoTouchView(editView), 200);
+     */
+    public static class DoTouchView implements Runnable {
+        View _view;
+
+        public DoTouchView(View view) {
+            _view = view;
+        }
+
+        @Override
+        public void run() {
+            _view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0, 0, 0));
+            _view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0, 0, 0));
+        }
+    }
+
+
+    public String getMimeType(File file) {
+        return getMimeType(Uri.fromFile(file));
+    }
+
+    /**
+     * Detect MimeType of given file
+     * Android/Java's own MimeType map is very very small and detection barely works at all
+     * Hence use custom map for some file extensions
+     */
+    public String getMimeType(Uri uri) {
+        String mimeType = null;
+        if (ContentResolver.SCHEME_CONTENT.equals(uri.getScheme())) {
+            ContentResolver cr = _context.getContentResolver();
+            mimeType = cr.getType(uri);
+        } else {
+            String ext = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
+            mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(ext.toLowerCase());
+
+            // Try to guess if the recommended methods fail
+            if (TextUtils.isEmpty(mimeType)) {
+                switch (ext) {
+                    case "md":
+                    case "markdown":
+                    case "mkd":
+                    case "mdown":
+                    case "mkdn":
+                    case "mdwn":
+                    case "rmd":
+                        mimeType = "text/markdown";
+                        break;
+                    case "yaml":
+                    case "yml":
+                        mimeType = "text/yaml";
+                        break;
+                    case "json":
+                        mimeType = "text/json";
+                        break;
+                    case "txt":
+                        mimeType = "text/plain";
+                        break;
+                }
+            }
+        }
+
+        if (TextUtils.isEmpty(mimeType)) {
+            mimeType = "*/*";
+        }
+        return mimeType;
+    }
 }
+
+
