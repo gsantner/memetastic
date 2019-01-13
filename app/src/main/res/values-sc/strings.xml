@@ -88,6 +88,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="successfully_downloaded">Iscarrigamentu resissidu</string>
     <string name="download_latest_assets">Iscàrriga sas ùrtimas risursas</string>
     <string name="download_latest_assets_checking_description">Verifichende si bi sunt risursas prus noas disponìbiles</string>
+    <string name="palette">Tauledda de pintore</string>
     <string name="presets">Predefinitziones</string>
     <string name="select_color">Ischerta su colore</string>
     <string name="favourite">Preferidu</string>
@@ -107,7 +108,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="no_custom_templates_description__appspecific">Non b\'at galu perunu preferidu.\nPone sas immàgines de modellu inoghe:%1$s</string>
     <string name="no_memes_saved_description__appspecific">Non b\'at galu perunu meme sarvadu.\nImprea su butone de sarvamentu in pitzos a pustis de àere modificadu unu meme.</string>
     <string name="default_mode_description_description__appspecific">Modalidade predefinida de abèrrere a s\'allughìngiu (Crea, Preferidos o Sarvados)</string>
+    <string name="press_back_again_to_stop_editing__appspecific">Incarca torra \"in segus\" pro acabare de modificare custu meme. Su meme s\'at a pèrdere si no est istadu giai sarvadu.</string>
+    <string name="saved_meme_successfully__appspecific">Custu meme est istadu sarvadu in su dispositivu tuo. Cheres acabare de lu modificare?</string>
     <string name="save_when_pressing_back_description__appspecific">Sarva su meme automaticamente cando incarcas \"in segus\" e si b\'at carchi modìfica</string>
+    <string name="shuffle_meme_list_description__appspecific">Iscupa sa lista de memes a pustis de àere ischertadu una categoria</string>
+    <string name="shuffle_meme_list__appspecific">Iscupa sa lista de memes</string>
+    <string name="view_type_memelist__appspecific">Imposta sa casta de vista (grìllia de immàgines, rigas cun tìtulos)</string>
     <string name="error_storage_permission__appspecific">Tenet bisòngiu de su permissu pro s\'atzessu a sa memòria pro sarvare memes e modellos</string>
     <string name="download_latest_assets_message__appspecific">Custu at a iscarrigare caràteres e modellos de meme (pagu prus o mancu 20MB de datos).</string>
     <string name="download_latest_assets_message_description__appspecific">In sas impostatziones podes iscarrigare sas ùrtimas risorsas fintzas prus a tardu.</string>
