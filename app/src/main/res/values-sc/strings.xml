@@ -62,13 +62,22 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="caps_off">Maiùscolas istudadas</string>
     <string name="rotate">Ròdia</string>
     <string name="render_quality">Calidade de sa renderizatzione</string>
+    <string name="picture_quality_percent" formatted="false">Calidade e mannària de sas immàgines. Valores prus artos causant tempos de carrigamentu prus longos. A segunda de sas prestatziones de su dispositivu e de sa mannària de sas immàgines s\'aplicatzione diat pòdere non funtzionare comente si tocat si su valore est prus mannu de su 25%.</string>
+    <string name="clear_thumbnails">Iscantzella sas miniaturas</string>
+    <string name="columns_portrait">Colunnas in verticale</string>
+    <string name="columns_landscape">Colunnas in orizontale</string>
     <string name="appearance">Aparèntzia</string>
     <string name="default_mode">Modalidade predefinida</string>
     <string name="functionality">Funtzionalidade</string>
+    <string name="save_when_pressing_back">Sarva incarchende \"in segus\"</string>
+    <string name="padding">Distàntzia</string>
+    <string name="overview">Resumu</string>
     <string name="editor">Editore</string>
     <string name="hide_statusbar_at_this_view">Istichi sa barra de istadu in custa vista</string>
     <string name="hide_statusbar">Istichi sa barra de s\'istadu</string>
     <string name="thumbnail_quality">Calidade de sa miniatura</string>
+    <string name="view_type">Casta de vista</string>
+    <string name="show_in_device_gallery">Ammustra in sa galleria de su dispositivu</string>
     <string name="language">Limba</string>
     <string name="language_change_restart_description">Càmbia sa limba de custa aplicatzione. Torra·la a allùghere pro fàghere tènnere efetu a su cambiamentu</string>
     <string name="other">Àteru</string>
@@ -94,6 +103,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_picture">Èdita s\'immàgine</string>
     <string name="general">Generales</string>
     <string name="picture_viewer">Ammustradore de immàgines</string>
+    <string name="pictures_shown_in_gallery_and_this_app">Immàgines ammustradas in sa galleria e in custa aplicatzione</string>
     <string name="open_source_licenses">Litzèntzias a mitza aberta</string>
     <string name="rate_this_app">Valuta custa aplicatzione</string>
     <string name="translate">Tradui</string>
