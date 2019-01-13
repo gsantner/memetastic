@@ -108,6 +108,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="no_memes_saved_description__appspecific">Non b\'at galu perunu meme sarvadu.\nImprea su butone de sarvamentu in pitzos a pustis de àere modificadu unu meme.</string>
     <string name="default_mode_description_description__appspecific">Modalidade predefinida de abèrrere a s\'allughìngiu (Crea, Preferidos o Sarvados)</string>
     <string name="save_when_pressing_back_description__appspecific">Sarva su meme automaticamente cando incarcas \"in segus\" e si b\'at carchi modìfica</string>
+    <string name="error_storage_permission__appspecific">Tenet bisòngiu de su permissu pro s\'atzessu a sa memòria pro sarvare memes e modellos</string>
     <string name="download_latest_assets_message__appspecific">Custu at a iscarrigare caràteres e modellos de meme (pagu prus o mancu 20MB de datos).</string>
     <string name="download_latest_assets_message_description__appspecific">In sas impostatziones podes iscarrigare sas ùrtimas risorsas fintzas prus a tardu.</string>
     <string name="main_view">Vista printzipale</string>
