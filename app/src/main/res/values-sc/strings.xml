@@ -25,7 +25,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="rows_with_title">Rigas cun tìtulu</string>
     <string name="picture_grid">Grìllia de immàgines</string>
     <string name="get_picture_from_gallery">Piga un\'immàgine dae sa galleria</string>
+    <string name="get_picture_from_camera">Faghe una fotografia cun sa fotocàmera</string>
+    <string name="error_cannot_start_camera">Allughidura de sa fotocàmera fallida.</string>
     <string name="error_picture_selection">Peruna immàgine ischertada, iscatada o sarvada.</string>
+    <string name="error_couldnot_load_picture_from_storage">Carrigamentu de s\'immàgine dae s\'archìviu fallidu.</string>
     <string name="donate">Dona</string>
     <string name="recommend">Racumanda</string>
     <string name="changelog">Registru de sas modìficas</string>
@@ -90,6 +93,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main_view">Vista printzipale</string>
     <string name="edit_picture">Èdita s\'immàgine</string>
     <string name="general">Generales</string>
+    <string name="picture_viewer">Ammustradore de immàgines</string>
     <string name="open_source_licenses">Litzèntzias a mitza aberta</string>
     <string name="rate_this_app">Valuta custa aplicatzione</string>
     <string name="translate">Tradui</string>
