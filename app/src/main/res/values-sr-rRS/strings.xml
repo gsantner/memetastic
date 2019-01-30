@@ -55,7 +55,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more_information">Vise informacija</string>
     <string name="show_third_party_licenses">Prikaz licence trecih lica</string>
     <string name="miscellaneous">Ostalo</string>
-    <string name="gnu_gplv3_license">Prikazi GNU GPLv3 licence</string>
+    <string name="gnu_gplv3_license">Prikazi app licence</string>
     <string name="settings">Podesavanja</string>
     <string name="all_caps">Velika slova</string>
     <string name="caps_off">Mala slova</string>
