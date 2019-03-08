@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_SHOW_IMAGE = 52;
     public static final String IMAGE_PATH = "imagePath";
     public static final String IMAGE_POS = "image_pos";
-    public static final boolean LOCAL_ONLY_MODE = true;
+    public static final boolean LOCAL_ONLY_MODE = false;
 
     private static boolean _isShowingFullscreenImage = false;
 
@@ -419,7 +419,6 @@ public class MainActivity extends AppCompatActivity
 
         // Change mode
         //_tabLayout.setVisibility(item.getItemId() == R.id.nav_mode_create ? View.VISIBLE : View.GONE);
-
 
         _moreInfoContainer.setVisibility(View.GONE);
         if (item.getItemId() == R.id.nav_more) {
