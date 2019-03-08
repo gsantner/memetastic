@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">调色板</string>
     <string name="presets">预设</string>
     <string name="select_color">选择颜色</string>
+    <string name="code">源代码</string>
     <string name="favourite">收藏</string>
     <string name="remove_favourite">从收藏中删除</string>
     <string name="show_title">显示标题</string>
@@ -105,6 +106,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="create_meme__appspecific">新建</string>
     <string name="delete_meme__appspecific">删除</string>
     <string name="no_favourites_description__appspecific">暂无已收藏作品\n您可以通过点击模板中的星形按钮来将其加入收藏夹中</string>
+    <string name="no_custom_templates_description__appspecific">还没有自定义模板。\n在这里放置模板图像：%1$s</string>
     <string name="no_memes_saved_description__appspecific">暂无已保存作品\n作品编辑完成后可通过右上方保存按钮保存</string>
     <string name="default_mode_description_description__appspecific">在启动时打开的默认模式 (新建模式、收藏夹模式或已保存)</string>
     <string name="press_back_again_to_stop_editing__appspecific">再次按退出键以退出本次编辑，未保存的编辑成果将会丢失。</string>
@@ -120,6 +122,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_picture">编辑图片</string>
     <string name="general">通用</string>
     <string name="picture_viewer">图片查看器</string>
+    <string name="pictures_shown_in_gallery_and_this_app">图片显示在画廊和该应用程序</string>
     <string name="open_source_licenses">开源协议</string>
     <string name="rate_this_app">评价本应用</string>
     <string name="translate">翻译</string>
@@ -140,5 +143,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">显示贡献者信息。贡献者可自行选择是否被添加到这里。</string>
     <string name="help">帮助</string>
     <string name="more">更多</string>
+    <string name="community">社区</string>
     <string name="contribute">贡献</string>
+    <string name="the_file_could_not_be_loaded">无法加载文件。</string>
+    <string name="close">关闭</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">你喜欢这个项目吗？你想要它得到改善并解决问题吗？\n\n开发应用并撰写相关博客文章需要花费大量时间！如果你想要帮助项目继续进行，请考虑小额捐赠！\n\n这个项目是在闲暇时间开发的，完全免费且没有任何广告！</string>
 </resources>
