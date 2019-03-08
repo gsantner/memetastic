@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Paleta</string>
     <string name="presets">Preajustes</string>
     <string name="select_color">Seleccionar el color</string>
+    <string name="code">Código</string>
     <string name="favourite">Favorito</string>
     <string name="remove_favourite">Eliminar favorito</string>
     <string name="show_title">Mostrar título</string>
@@ -142,5 +143,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">Muestra información pública sobre los colaboradores. Estos pueden decidir si su información debe ser incluida con sus colaboraciones</string>
     <string name="help">Ayuda</string>
     <string name="more">Más</string>
+    <string name="community">Comunidad</string>
     <string name="contribute">Contribuir</string>
+    <string name="the_file_could_not_be_loaded">No se pudo cargar el archivo.</string>
+    <string name="close">Cerrar</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">¿Te gusta este proyecto? ¿Quieres que se mejore y se corrijan problemas?\n\nEl desarrollo de aplicaciones y la escritura de entradas relacionadas del blog cuesta mucho tiempo. Si quieres ayudar a que el proyecto pueda continuar, por favor considera una pequeña donación!\n\nEste proyecto se desarrolla en tiempo de ocio, completamente gratis y sin publicidad!</string>
 </resources>
