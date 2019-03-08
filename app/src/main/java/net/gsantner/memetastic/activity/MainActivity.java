@@ -76,6 +76,7 @@ import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 import net.gsantner.opoc.ui.LinearSplitLayout;
+import net.gsantner.opoc.util.AndroidSupportMeWrapper;
 import net.gsantner.opoc.util.FileUtils;
 
 import java.io.File;
@@ -293,6 +294,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
+        new AndroidSupportMeWrapper(this).mainOnResume();
         if (MainActivity.LOCAL_ONLY_MODE) {
             _tabLayout.setVisibility(View.GONE);
         }
