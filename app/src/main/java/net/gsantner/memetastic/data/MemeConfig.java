@@ -123,8 +123,8 @@ public class MemeConfig implements Serializable {
                     tagsList.add(jsonArr.getString(i));
                 }
             }
-            if (!tagsList.contains("other")) {
-                tagsList.add("other");
+            if (!tagsList.contains("all")) {
+                tagsList.add("all");
             }
             setTags(tagsList);
 
