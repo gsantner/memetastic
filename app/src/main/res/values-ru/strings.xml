@@ -147,4 +147,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Внести свой вклад</string>
     <string name="the_file_could_not_be_loaded">Файл не может быть загружен.</string>
     <string name="close">Закрыть</string>
+    <string name="all">Все</string>
 </resources>
