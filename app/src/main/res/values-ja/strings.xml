@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">パレット</string>
     <string name="presets">プリセット</string>
     <string name="select_color">色の選択</string>
+    <string name="code">コード</string>
     <string name="favourite">お気に入りに追加</string>
     <string name="remove_favourite">お気に入りから削除</string>
     <string name="show_title">タイトルを表示</string>
@@ -141,4 +142,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">ヘルプ</string>
     <string name="more">さらに</string>
     <string name="contribute">貢献する</string>
+    <string name="close">閉じる</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">このプロジェクトを気に入っていただけましたか? 改善したい、あるいは問題を修正したいですか?\n\nアプリの開発や、関連するブログの記事を書くに多くの時間がかかります! プロジェクトを進めるために、支援をしていただける場合は、少しの寄付をご検討ください!\n\nこのプロジェクトは余暇に開発していて、完全に無料で、広告はありません!</string>
+    <string name="all">すべて</string>
 </resources>
