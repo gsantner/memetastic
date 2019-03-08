@@ -54,4 +54,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">Hjælp</string>
     <string name="more">Mere</string>
     <string name="contribute">Giv en hånd med</string>
+    <string name="all">Alle</string>
 </resources>
