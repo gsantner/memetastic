@@ -11,10 +11,12 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="create">പുതിയത് ഉണ്ടാക്കുക</string>
     <string name="changelog">അടയാളപ്പെടുത്തിയ മാറ്റങ്ങൾ</string>
     <string name="about">കുറിച്ച്</string>
     <string name="settings">ക്രമീകരണങ്ങൾ</string>
     <string name="appearance">രൂപം</string>
+    <string name="editor">എഡിറ്റർ</string>
     <string name="language">ഭാഷ</string>
     <string name="language_change_restart_description">ആപ്പിന്റെ ഭാഷ മാറ്റുക. മാറ്റം ഫലപ്രദമാകുവാൻ ആപ്പ് വീണ്ടും തുറക്കുക</string>
     <string name="general">പൊതു</string>
