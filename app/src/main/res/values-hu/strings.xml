@@ -41,4 +41,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">Segítség</string>
     <string name="more">Egyebek</string>
     <string name="contribute">Közreműködés</string>
+    <string name="all">Mind</string>
 </resources>
