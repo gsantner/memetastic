@@ -41,8 +41,8 @@ android {
 
         resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
         applicationId "io.github.gsantner.memetastic"
-        versionName "1.5.1"
-        versionCode 51
+        versionName "1.5.2"
+        versionCode 52
     }
 
     flavorDimensions "default"

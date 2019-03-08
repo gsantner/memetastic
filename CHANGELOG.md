@@ -1,3 +1,7 @@
+### v1.5.1
+- Add 'all' category  
+- Move 'other' category back to previous location  
+
 ### v1.5.0
 - Back to roots with small amount of templates inside projects
 - Targeted at user added templates in local folder
