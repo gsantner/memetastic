@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Tavolozza</string>
     <string name="presets">Predefiniti</string>
     <string name="select_color">Scegli colore</string>
+    <string name="code">Codice</string>
     <string name="favourite">Preferito</string>
     <string name="remove_favourite">Rimuovi preferito</string>
     <string name="show_title">Mostra titolo</string>
@@ -144,5 +145,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
   I contributori possono fornire informazioni per essere mostrati qui (opt-in) dopo aver contribuito</string>
     <string name="help">Aiuto</string>
     <string name="more">Altro</string>
+    <string name="community">Comunità</string>
     <string name="contribute">Contribuire</string>
+    <string name="the_file_could_not_be_loaded">Il file non può essere caricato.</string>
+    <string name="close">Chiudi</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Ti piace questo progetto? Vuoi vederlo ancora migliore e con i problemi risolti?\n\nSviluppare applicazioni e documentarle sul blog costa un sacco di tempo! Se vuoi aiutare lo sviluppo del progetto, puoi fare una piccola donazione!\n\nQuesto progetto è sviluppato nel tempo libero, completamente gratis e senza alcuna pubblicità!</string>
+    <string name="all">Tutto</string>
 </resources>
