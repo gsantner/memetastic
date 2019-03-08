@@ -25,4 +25,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="general">Generelt</string>
     <string name="translate">Oversett</string>
     <string name="more">Mer</string>
+    <string name="all">Alt</string>
 </resources>
