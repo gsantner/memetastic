@@ -147,4 +147,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Přispět</string>
     <string name="the_file_could_not_be_loaded">Soubor nemohl být nahrán.</string>
     <string name="close">Konec</string>
+    <string name="all">Všechny</string>
 </resources>
