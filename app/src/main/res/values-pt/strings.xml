@@ -148,4 +148,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="the_file_could_not_be_loaded">O arquivo não pôde ser carregado.</string>
     <string name="close">Fechar</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Gosta deste projeto? Deseja ajudar a melhorar a aplicação e a corrigir erros?\n\nO desenvolvimento de aplicações custa-me imenso tempo! Se quiser ajudar a manter o projeto, por favor considere a hipótese de um donativo!\n\nEsta aplicação é desenvolvida durante o meu tempo livre, é completamente livre e não tem anúncios!</string>
+    <string name="all">Todos</string>
 </resources>
