@@ -147,4 +147,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Bijdragen</string>
     <string name="the_file_could_not_be_loaded">Het bestand kon niet worden geladen.</string>
     <string name="close">Sluit</string>
+    <string name="all">Alle</string>
 </resources>
