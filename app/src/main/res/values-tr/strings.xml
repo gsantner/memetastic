@@ -143,7 +143,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">Katkıda bulunanlarla ilgili bilgileri gösterin. Katkıda bulunanlar, katkıdan bulunduktan sonra burada gösterilmeleri için bilgilerini sağlayabilir</string>
     <string name="help">Yardım</string>
     <string name="more">Dahası</string>
+    <string name="community">Topluluk</string>
     <string name="contribute">Katkıda Bulun</string>
+    <string name="the_file_could_not_be_loaded">Dosya yüklenemedi.</string>
     <string name="close">Kapat</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Bu projeyi beğendiniz mi? Projenin iyileştirilmesini ve sorunların çözülmesini istiyor musunuz?\n\nUygulama geliştirmek ve onunla ilgili blog gönderileri yazmak çok zaman alıyor! Projenin devam edebilmesi için yardım etmek istiyorsanız, lütfen küçük bir bağış yapmayı düşünün!\n\nBu proje boş zamanlarımda, tamamen ücretsiz ve reklamsız olarak geliştirilmiştir!</string>
     <string name="all">Tümü</string>
