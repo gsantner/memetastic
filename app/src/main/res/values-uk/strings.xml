@@ -94,7 +94,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="code">Код</string>
     <string name="favourite">Улюблене</string>
     <string name="remove_favourite">Видалити з улюбленого</string>
-    <string name="show_title">Показувати заголовок</string>
+    <string name="show_title">Показати заголовок</string>
     <string name="edit_title">Редагувати заголовок</string>
     <string name="hide">Сховати</string>
     <string name="unhide">Показати</string>
