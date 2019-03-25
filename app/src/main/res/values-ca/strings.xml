@@ -79,7 +79,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Tipus de vista</string>
     <string name="show_in_device_gallery">Mostra-ho en la galeria del dispositiu</string>
     <string name="language">Idioma</string>
-    <string name="language_change_restart_description">Canvia l\'idioma d\'aquesta aplicació. Reinicia l\'aplicació perquè els canvis tinguin efecte</string>
+    <string name="language_change_restart_description">Canvieu l\'idioma d\'aquesta aplicació. Reinicieu l\'aplicació perquè els canvis tinguin efecte</string>
     <string name="error_cannot_create_save_directory">Error: no es pot crear la carpeta</string>
     <string name="other">Altres</string>
     <string name="downloading">S\'està baixant</string>
