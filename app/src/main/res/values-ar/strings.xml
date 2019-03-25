@@ -34,7 +34,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">الخلفية</string>
     <string name="border">الإطار</string>
     <string name="picture">الصورة</string>
-    <string name="about">عن التطبيق</string>
+    <string name="about">حول التطبيق</string>
     <string name="developed_by">طُوّر مِن طرف</string>
     <string name="licenses">التراخيص</string>
     <string name="show_licenses">عرض التراخيص</string>
@@ -49,7 +49,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="default_mode">الوضع المبدئي</string>
     <string name="overview">نظرة عامة</string>
     <string name="editor">المحرر</string>
-    <string name="language">اللّغة</string>
+    <string name="language">اللغة</string>
     <string name="language_change_restart_description">تغيير لغة التطبيق. اعد فتح التطبيق لتفعيل التغيير</string>
     <string name="other">أخرى</string>
     <string name="downloading">جاري التنزيل</string>
@@ -84,8 +84,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more_info_on_how_to_contribute_to_this_project">مزيد من المعلومات حول كيفية المساهمة في هذا المشروع</string>
     <string name="contribute_code_to_this_project_anybody_welcome">ساهم في برمجة المشروع. الجميع مرحب به، وحتى المبتدأين</string>
     <string name="project_team">فريق المشروع</string>
-    <string name="help">المساعدة</string>
+    <string name="help">مساعدة</string>
     <string name="more">المزيد</string>
-    <string name="contribute">المساهمة</string>
+    <string name="contribute">ساهم</string>
     <string name="all">الكل</string>
 </resources>
