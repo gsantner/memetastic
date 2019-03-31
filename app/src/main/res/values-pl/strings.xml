@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Paleta</string>
     <string name="presets">Presety</string>
     <string name="select_color">Wybierz kolor</string>
+    <string name="code">Kod</string>
     <string name="favourite">Ulubiony</string>
     <string name="remove_favourite">Usuń ulubione</string>
     <string name="show_title">Pokaż tytuł</string>
@@ -138,5 +139,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="project_team">Zespół Projektu</string>
     <string name="help">Pomoc</string>
     <string name="more">Więcej</string>
+    <string name="community">Społeczność</string>
     <string name="contribute">Przyłącz się do projektu</string>
+    <string name="the_file_could_not_be_loaded">Plik nie mógł zostać załadowany.</string>
+    <string name="close">Zamknij</string>
+    <string name="all">Wszystko</string>
 </resources>

@@ -91,9 +91,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Палітра</string>
     <string name="presets">Шаблони</string>
     <string name="select_color">Обрати колір</string>
+    <string name="code">Код</string>
     <string name="favourite">Улюблене</string>
     <string name="remove_favourite">Видалити з улюбленого</string>
-    <string name="show_title">Показувати заголовок</string>
+    <string name="show_title">Показати заголовок</string>
     <string name="edit_title">Редагувати заголовок</string>
     <string name="hide">Сховати</string>
     <string name="unhide">Показати</string>
@@ -142,5 +143,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">Показати інформацію про учасників проекту, що зробили внесок та побажали бути доданими до цього списку</string>
     <string name="help">Допомога</string>
     <string name="more">Ще</string>
+    <string name="community">Спільнота</string>
     <string name="contribute">Допомогти вдосконалити</string>
+    <string name="the_file_could_not_be_loaded">Не вдалося завантажити файл.</string>
+    <string name="close">Закрити</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Вам подобається цей проект? Бажаєте, щоб він покращувався та виправлялися помилки? \n\nРозробка додатків та написання пов\'язаних статей у блозі займає багато часу! Якщо ви хочете допомогти цьому проекту розвиватися далі — зробіть маленьке пожертвування!\n\nЦей проект розроблений у вільний час, не містить реклами та є абсолютно безкоштовним!</string>
+    <string name="all">Усе</string>
 </resources>

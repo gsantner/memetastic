@@ -32,4 +32,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="other">Drugo</string>
     <string name="translate">Преводите</string>
     <string name="more">још</string>
+    <string name="all">Све</string>
 </resources>

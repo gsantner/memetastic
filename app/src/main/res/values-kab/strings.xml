@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Agalis n initen</string>
     <string name="presets">Initen imezwar</string>
     <string name="select_color">Fren ini</string>
+    <string name="code">Tangalt</string>
     <string name="favourite">Inurifen</string>
     <string name="remove_favourite">Kkes anurif</string>
     <string name="show_title">Sken azwel</string>
@@ -123,9 +124,17 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main_view">Iẓri agejdan</string>
     <string name="edit_picture">Ẓreg tugna </string>
     <string name="general">Amatu</string>
+    <string name="open_source_licenses">Turagin Open Source</string>
+    <string name="rate_this_app">Skazel asnas‑a</string>
     <string name="translate">Asuqel</string>
+    <string name="more_info_and_help">Ugar n isallan akked tallalt</string>
     <string name="report_bugs">Azen ibugen</string>
+    <string name="help_translating_this_app">Suqqel asnas-agi ɣer tutlayin-nniḍen</string>
+    <string name="source_code">Tangalt taɣbalut</string>
+    <string name="project_license">Turagt n usenfaṛ</string>
+    <string name="project_team">Tarbaɛt n usenfaṛ</string>
     <string name="help">Aide</string>
     <string name="more">Ugar</string>
     <string name="contribute">Ttekki</string>
+    <string name="all">Meṛṛa</string>
 </resources>

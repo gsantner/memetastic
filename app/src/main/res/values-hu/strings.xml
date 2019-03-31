@@ -11,8 +11,14 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="create">Létrehoz</string>
+    <string name="donate">Adományozás</string>
     <string name="changelog">Újdonságok</string>
+    <string name="exit">Kilépés</string>
+    <string name="font">Betűtípus</string>
+    <string name="size">Méret</string>
     <string name="about">Névjegy</string>
+    <string name="licenses">Licenszek</string>
     <string name="show_licenses">Licencek mutatása</string>
     <string name="contributors">Hozzájárulók</string>
     <string name="more_information">További információ</string>
@@ -21,10 +27,19 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="gnu_gplv3_license">GNU GPLv3+ Licenc</string>
     <string name="settings">Beállítások</string>
     <string name="appearance">Megjelenés</string>
+    <string name="editor">Szerkesztő</string>
     <string name="language">Nyelv</string>
     <string name="language_change_restart_description">Az alkalmazás nyelvének megváltoztatása. Indítsd újra az alkalmazást, hogy a módosítások érvénybe lépjenek!</string>
     <string name="general">Általános</string>
+    <string name="rate_this_app">Értékeld az alkalmazást</string>
     <string name="translate">Fordít</string>
     <string name="report_bugs">Hibajelentés</string>
+    <string name="join_community">Csatlakozzon a közösséghez</string>
+    <string name="source_code">Forráskód</string>
+    <string name="project_license">Projekt licensz</string>
+    <string name="project_team">Projekt csapat</string>
+    <string name="help">Segítség</string>
     <string name="more">Egyebek</string>
+    <string name="contribute">Közreműködés</string>
+    <string name="all">Mind</string>
 </resources>

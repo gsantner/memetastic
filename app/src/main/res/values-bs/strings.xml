@@ -10,4 +10,73 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="open_navdrawer">Otvori navigacijsku ladicu</string>
+    <string name="close_navdrawer">Zatvorite navigacijsku ladicu</string>
+    <string name="humans">Ljudi</string>
+    <string name="cartoon">Crtani film</string>
+    <string name="animals">Životinje</string>
+    <string name="rage">Bijes</string>
+    <string name="saved">Sačuvan</string>
+    <string name="favs">Najdraži</string>
+    <string name="create">Kreiraj</string>
+    <string name="hidden">Skriveni</string>
+    <string name="rows_with_title">Redovi s naslovom</string>
+    <string name="picture_grid">Mreža slike</string>
+    <string name="get_picture_from_gallery">Dobij sliku iz galerije</string>
+    <string name="get_picture_from_camera">Dobij sliku iz kamere</string>
+    <string name="error_cannot_start_camera">Nije moguće pokrenuti kameru.</string>
+    <string name="error_picture_selection">Nijedna slika nije označena, uslikana niti pohranjena.</string>
+    <string name="error_couldnot_load_picture_from_storage">Nije moguće učitati sliku iz skladišta.</string>
+    <string name="donate">Doniraj</string>
+    <string name="recommend">Preporučiti</string>
+    <string name="changelog">Popis izmjena</string>
+    <string name="exit">Izlaz</string>
+    <string name="yes">da</string>
+    <string name="text_size">Veličina teksta</string>
+    <string name="text_color">Boja teksta</string>
+    <string name="border_color">Boja okvira</string>
+    <string name="successfully_saved">Uspješno spremljen!</string>
+    <string name="top_caption">Gornji opis</string>
+    <string name="bottom_caption">Donji opis</string>
+    <string name="enter_caption">Unesite opis</string>
+    <string name="font">Pismo</string>
+    <string name="size">Veličina</string>
+    <string name="background">Pozadina</string>
+    <string name="about">O programu</string>
+    <string name="licenses">Licence</string>
+    <string name="contributors">Saradnici</string>
+    <string name="show_third_party_licenses">Prikaži ostale licence</string>
+    <string name="miscellaneous">Razno</string>
+    <string name="gnu_gplv3_license">Prikaži licencu programa</string>
+    <string name="settings">Podešavanja</string>
+    <string name="appearance">Izgled</string>
+    <string name="editor">Uređivač</string>
+    <string name="language">Jezik</string>
+    <string name="language_change_restart_description">Promijeni jezik programa. Iznova pokrenite program da aktivirate promjenu</string>
+    <string name="other">Ostalo</string>
+    <string name="main_view">Glavni prikaz</string>
+    <string name="edit_picture">Obradi sliku</string>
+    <string name="general">Opće</string>
+    <string name="open_source_licenses">Open Source licence</string>
+    <string name="rate_this_app">Ocijenite ovaj program</string>
+    <string name="translate">Prevedi</string>
+    <string name="more_info_and_help">Više informacija i pomoć</string>
+    <string name="report_bugs">Prijavite greške i propuste</string>
+    <string name="android_contribution_guide">Android uputstvo za sudjelovanje</string>
+    <string name="join_community">Postanite član zajednice</string>
+    <string name="bug_reports_suggest_improvements">Kažite nam Vaše utiske, prijavite greške i propuste ili predložite kako možemo poboljšati program</string>
+    <string name="help_translating_this_app">Prevedite ovaj program na druge jezike</string>
+    <string name="source_code">Izvorni kōd</string>
+    <string name="project_license">Licenca projekta</string>
+    <string name="project_contribution_info">Informacije o sudjelovanju u projektu</string>
+    <string name="more_info_on_how_to_contribute_to_this_project">Više informacija o sudjelovanju u ovom projektu</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">Doprinesite projektu vlastitim kōdom. Svačiji je doprinos dobrodošao.</string>
+    <string name="project_team">Tim</string>
+    <string name="contributors_public_add_yourself_description">Prikaži informacije o saradnicima. Priložite informacije o sebi ako želite da budu prikazane ovdje nakon Vašeg doprinosa</string>
+    <string name="help">Pomoć</string>
+    <string name="more">Više</string>
+    <string name="contribute">Sudjeluj</string>
+    <string name="close">Zatvori</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Sviđa li Vam se ovaj projekat? Želite li da napreduje a problemi budu otklonjeni?\n\nRazvijanje aplikacija i pisanje članaka o njima uzima puno vremena! Ako biste voljeli pomoći da projekat opstane, molimo Vas da razmislite o skromnoj donaciji!\n\nRad na ovom projektu odvija se u slobodno vrijeme, a program je besplatan i ne sadrži nikakav vid reklama!</string>
+</resources>

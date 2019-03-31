@@ -23,4 +23,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="language_change_restart_description">Schimbă limba acestei aplicații. Restartează aplicația pentru ca schimbările să ia efect</string>
     <string name="translate">Traducere</string>
     <string name="more">Mai multe</string>
+    <string name="all">Toate</string>
 </resources>

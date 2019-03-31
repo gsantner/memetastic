@@ -13,6 +13,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
     <string name="open_navdrawer">Abrir cadro de navegación</string>
     <string name="close_navdrawer">Pechar cadro de navegación</string>
+    <string name="create">Crear</string>
+    <string name="donate">Doar</string>
     <string name="changelog">Rexistro de cambios</string>
     <string name="about">Sobre</string>
     <string name="contributors">Contribúen</string>
@@ -21,6 +23,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="gnu_gplv3_license">Licenza GNU GPLv3+</string>
     <string name="settings">Axustes</string>
     <string name="appearance">Aparencia</string>
+    <string name="editor">Editor</string>
     <string name="hide_statusbar">Agochar barra de estado</string>
     <string name="language">Idioma</string>
     <string name="language_change_restart_description">Cambiar o idioma de esta aplicación. Reinicie para que se aplique o troco</string>
@@ -28,4 +31,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="general">Xeral</string>
     <string name="report_bugs">Reporte erros</string>
     <string name="more">Máis</string>
+    <string name="close">Pechar</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Gústache este proxecto? Queres que siga mellorando e resolvendo os problemas?\n\nDesenvolver aplicacións e escribir a documentación leva moito tempo! Se queres apoiar ao proxecto para que continúe, por favor, considera facer unha pequena doazón!\n\nEste proxecto desenvólvese no tempo libre, ofrécese libre e gratuitamente e sen publicidade!</string>
 </resources>

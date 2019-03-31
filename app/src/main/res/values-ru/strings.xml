@@ -91,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Палитра</string>
     <string name="presets">Пресеты</string>
     <string name="select_color">Выбрать цвет</string>
+    <string name="code">Код</string>
     <string name="favourite">Избранное</string>
     <string name="remove_favourite">Удалить из избранного</string>
     <string name="show_title">Показать заголовок</string>
@@ -142,5 +143,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">Показ информации об участниках. Позволить показать здесь список учасников успевших внести свой вклад.</string>
     <string name="help">Помощь</string>
     <string name="more">Ещё</string>
+    <string name="community">Сообщество</string>
     <string name="contribute">Внести свой вклад</string>
+    <string name="the_file_could_not_be_loaded">Файл не может быть загружен.</string>
+    <string name="close">Закрыть</string>
+    <string name="all">Все</string>
 </resources>
