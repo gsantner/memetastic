@@ -38,6 +38,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.os.SystemClock;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
@@ -48,6 +49,7 @@ import android.support.annotation.StringRes;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.util.Pair;
 import android.text.Html;
 import android.text.InputFilter;
 import android.text.SpannableString;
@@ -74,6 +76,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
@@ -94,6 +98,9 @@ public class ContextUtils {
         return _context;
     }
 
+    public void freeContextRef() {
+        _context = null;
+    }
 
     //
     // Class Methods
@@ -171,15 +178,23 @@ public class ContextUtils {
         return String.format(a ? "#%08X" : "#%06X", (a ? 0xFFFFFFFF : 0xFFFFFF) & intColor);
     }
 
+    public String getAndroidVersion() {
+        return Build.VERSION.RELEASE + " (" + Build.VERSION.SDK_INT + ")";
+    }
+
     public String getAppVersionName() {
+        PackageManager manager = _context.getPackageManager();
         try {
-            PackageManager manager = _context.getPackageManager();
             PackageInfo info = manager.getPackageInfo(getPackageIdManifest(), 0);
             return info.versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-            return "?";
+            try {
+                PackageInfo info = manager.getPackageInfo(getPackageIdReal(), 0);
+                return info.versionName;
+            } catch (PackageManager.NameNotFoundException ignored) {
+            }
         }
+        return "?";
     }
 
     public String getAppInstallationSource() {
@@ -519,12 +534,76 @@ public class ContextUtils {
     /**
      * Get the private directory for the current package (usually /data/data/package.name/)
      */
-    public String getAppDataDir() {
+    @SuppressWarnings("StatementWithEmptyBody")
+    public File getAppDataPrivateDir() {
+        File filesDir;
         try {
-            return _context.getPackageManager().getPackageInfo(getPackageIdReal(), 0).applicationInfo.dataDir;
+            filesDir = new File(new File(_context.getPackageManager().getPackageInfo(getPackageIdReal(), 0).applicationInfo.dataDir), "files");
         } catch (PackageManager.NameNotFoundException e) {
-            return _context.getFilesDir().getParent();
+            filesDir = _context.getFilesDir();
         }
+        if (!filesDir.exists() && filesDir.mkdirs()) ;
+        return filesDir;
+    }
+
+    /**
+     * Get public (accessible) appdata folders
+     */
+    @SuppressWarnings("StatementWithEmptyBody")
+    public List<Pair<File, String>> getAppDataPublicDirs(boolean internalStorageFolder, boolean sdcardFolders, boolean storageNameWithoutType) {
+        List<Pair<File, String>> dirs = new ArrayList<>();
+        for (File externalFileDir : ContextCompat.getExternalFilesDirs(_context, null)) {
+            if (externalFileDir == null || Environment.getExternalStorageDirectory() == null) {
+                continue;
+            }
+            boolean isInt = externalFileDir.getAbsolutePath().startsWith(Environment.getExternalStorageDirectory().getAbsolutePath());
+            boolean add = (internalStorageFolder && isInt) || (sdcardFolders && !isInt);
+            if (add) {
+                dirs.add(new Pair<>(externalFileDir, getStorageName(externalFileDir, storageNameWithoutType)));
+                if (!externalFileDir.exists() && externalFileDir.mkdirs()) ;
+            }
+        }
+        return dirs;
+    }
+
+    public String getStorageName(File externalFileDir, boolean storageNameWithoutType) {
+        boolean isInt = externalFileDir.getAbsolutePath().startsWith(Environment.getExternalStorageDirectory().getAbsolutePath());
+
+        String[] split = externalFileDir.getAbsolutePath().split("/");
+        if (split.length > 2) {
+            return isInt ? (storageNameWithoutType ? "Internal Storage" : "") : (storageNameWithoutType ? split[2] : ("SD Card (" + split[2] + ")"));
+        } else {
+            return "Storage";
+        }
+    }
+
+    public List<Pair<File, String>> getStorages(boolean internalStorageFolder, boolean sdcardFolders) {
+        List<Pair<File, String>> storages = new ArrayList<>();
+        for (Pair<File, String> pair : getAppDataPublicDirs(internalStorageFolder, sdcardFolders, true)) {
+            if (pair.first != null && pair.first.getAbsolutePath().lastIndexOf("/Android/data") > 0) {
+                try {
+                    storages.add(new Pair<>(new File(pair.first.getCanonicalPath().replaceFirst("/Android/data.*", "")), pair.second));
+                } catch (IOException ignored) {
+                }
+            }
+        }
+        return storages;
+    }
+
+    public File getStorageRootFolder(File file) {
+        String filepath;
+        try {
+            filepath = file.getCanonicalPath();
+        } catch (Exception ignored) {
+            return null;
+        }
+        for (Pair<File, String> storage : getStorages(false, true)) {
+            //noinspection ConstantConditions
+            if (filepath.startsWith(storage.first.getAbsolutePath())) {
+                return storage.first;
+            }
+        }
+        return null;
     }
 
     /**
@@ -854,6 +933,18 @@ public class ContextUtils {
         }
         return mimeType;
     }
+
+    public Integer parseColor(String colorstr) {
+        if (colorstr == null || colorstr.trim().isEmpty()) {
+            return null;
+        }
+        try {
+            return Color.parseColor(colorstr);
+        } catch (IllegalArgumentException ignored) {
+            return null;
+        }
+    }
+
 }
 
 

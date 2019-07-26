@@ -13,8 +13,8 @@ import java.text.SimpleDateFormat
 
 buildscript {
     ext {
-        version_gradle_tools = "3.2.1"
-        version_plugin_kotlin = "1.3.11"
+        version_gradle_tools = "3.4.2"
+        version_plugin_kotlin = "1.3.41"
         enable_plugin_kotlin = false
 
         version_compileSdk = 28
@@ -79,7 +79,7 @@ static String findUsedAndroidLocales() {
     Set<String> langs = new HashSet<>()
     new File('.').eachFileRecurse(groovy.io.FileType.DIRECTORIES) {
         final foldername = it.name
-        if (foldername.startsWith('values-') && !it.canonicalPath.contains("build" + File.separator + "intermediates")) {
+        if (foldername.startsWith('values-') && !it.canonicalPath.contains("build" + File.separator + "intermediates") && !it.canonicalPath.contains("gradle" + File.separator + "daemon")) {
             new File(it.toString()).eachFileRecurse(groovy.io.FileType.FILES) {
                 if (it.name.toLowerCase().endsWith(".xml") && it.getCanonicalFile().getText('UTF-8').contains("<string")) {
                     langs.add(foldername.replace("values-", ""))

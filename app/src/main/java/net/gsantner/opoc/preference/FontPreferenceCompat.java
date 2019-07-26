@@ -24,7 +24,9 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.preference.ListPreference;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -36,7 +38,6 @@ import android.util.AttributeSet;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -108,7 +109,7 @@ public class FontPreferenceCompat extends ListPreference {
             }
         }
 
-        for (File file : getCustomFonts()) {
+        for (File file : getAdditionalFonts()) {
             _fontNames = appendToArray(_fontNames, file.getName().replace(".ttf", "").replace(".TTF", ""));
             _fontValues = appendToArray(_fontValues, file.getAbsolutePath());
         }
@@ -178,27 +179,52 @@ public class FontPreferenceCompat extends ListPreference {
 
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    public List<File> getCustomFonts() {
-        final ArrayList<File> files = new ArrayList<>();
-        File dir = new File(getContext().getFilesDir(), ".app/fonts");
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-        if (dir.exists()) {
-            files.addAll(Arrays.asList(dir.listFiles(FONT_FILENAME_FILTER)));
-        }
-        if (additionalyCheckedFolder != null && additionalyCheckedFolder.exists()) {
-            files.addAll(Arrays.asList(additionalyCheckedFolder.listFiles(FONT_FILENAME_FILTER)));
-        }
+    public List<File> getAdditionalFonts() {
+        final ArrayList<File> additionalFonts = new ArrayList<>();
 
+        // Bundled fonts
         try {
+            //noinspection ConstantConditions
             for (String filename : getContext().getAssets().list("fonts")) {
-                files.add(new File(ANDROID_ASSET_DIR + "fonts", filename));
+                additionalFonts.add(new File(ANDROID_ASSET_DIR + "fonts", filename));
             }
-        } catch (IOException ignored) {
+        } catch (Exception ignored) {
         }
 
-        return files;
+        // Directories that are additionally checked out for fonts
+        final List<File> checkedDirs = new ArrayList<>(Arrays.asList(
+                new File(getContext().getFilesDir(), ".app/fonts"),
+                new File(getContext().getFilesDir(), ".app/Fonts"),
+                additionalyCheckedFolder,
+                new File(Environment.getExternalStorageDirectory(), "fonts"),
+                new File(Environment.getExternalStorageDirectory(), "Fonts")
+        ));
+
+        // Also check external storage directories, at the respective root and data directory
+        for (File externalFileDir : ContextCompat.getExternalFilesDirs(getContext(), null)) {
+            if (externalFileDir == null || externalFileDir.getAbsolutePath() == null) {
+                continue;
+            }
+            checkedDirs.add(new File(externalFileDir.getAbsolutePath().replaceFirst("/Android/data/.*$", "/fonts")));
+            checkedDirs.add(new File(externalFileDir.getAbsolutePath().replaceFirst("/Android/data/.*$", "/Fonts")));
+            checkedDirs.add(new File(externalFileDir.getAbsolutePath(), "/fonts"));
+            checkedDirs.add(new File(externalFileDir.getAbsolutePath(), "/Fonts"));
+        }
+        // Check all directories for fonts
+        for (File checkedDir : checkedDirs) {
+            if (checkedDir != null && checkedDir.exists()) {
+                File[] checkedDirFiles = checkedDir.listFiles(FONT_FILENAME_FILTER);
+                if (checkedDirFiles != null) {
+                    for (File font : checkedDirFiles) {
+                        if (!additionalFonts.contains(new File(font.getAbsolutePath().replace("/Fonts/", "/fonts/")))) {
+                            additionalFonts.add(font);
+                        }
+                    }
+                }
+            }
+        }
+
+        return additionalFonts;
     }
 
     private static String[] appendToArray(String[] arr, String append) {

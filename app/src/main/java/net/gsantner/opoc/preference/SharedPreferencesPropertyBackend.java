@@ -532,7 +532,7 @@ public class SharedPreferencesPropertyBackend implements PropertyBackend<String,
      * A method to determine if current hour is between begin and end.
      * This is especially useful for time-based light/dark mode
      */
-    public boolean isCurrentHourOfDayBetween(int begin, int end) {
+    public static boolean isCurrentHourOfDayBetween(int begin, int end) {
         begin = (begin >= 23 || begin < 0) ? 0 : begin;
         end = (end >= 23 || end < 0) ? 0 : end;
         int h = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
@@ -559,7 +559,7 @@ public class SharedPreferencesPropertyBackend implements PropertyBackend<String,
     public boolean afterDaysTrue(String key, int daysSinceLastTime, int firstTime, final SharedPreferences... pref) {
         Date d = new Date(System.currentTimeMillis());
         if (!contains(key)) {
-            d = getDateOfDaysAgo(daysSinceLastTime-firstTime);
+            d = getDateOfDaysAgo(daysSinceLastTime - firstTime);
             setLong(key, d.getTime());
             return firstTime < 1;
         } else {
