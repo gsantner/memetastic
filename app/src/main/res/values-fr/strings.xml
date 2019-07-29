@@ -57,7 +57,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_third_party_licenses">Montrer les licences tierces</string>
     <string name="miscellaneous">Divers</string>
     <string name="gnu_gplv3_license">Licence GNU GPLv3+</string>
-    <string name="settings">Préférences</string>
+    <string name="settings">Paramètres</string>
     <string name="all_caps">Tout en majuscules</string>
     <string name="caps_off">Majuscules désactivées</string>
     <string name="rotate">Rotation</string>
