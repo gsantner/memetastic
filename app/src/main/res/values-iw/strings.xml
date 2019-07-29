@@ -53,4 +53,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">עזרה</string>
     <string name="more">עוד</string>
     <string name="contribute">עזור לנו</string>
+    <string name="close">סגירה</string>
 </resources>
