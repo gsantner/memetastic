@@ -13,9 +13,15 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
     <string name="open_navdrawer">Maak navigasie balk oop</string>
     <string name="close_navdrawer">Sluit navigasie balk</string>
+    <string name="donate">Skenk</string>
     <string name="changelog">Verandering-log</string>
     <string name="about">Omtrent</string>
     <string name="miscellaneous">Diverse</string>
     <string name="settings">Instellings</string>
+    <string name="appearance">Voorkoms</string>
+    <string name="language">Taal</string>
+    <string name="show_title">Wys titel</string>
+    <string name="general">Algemeen</string>
     <string name="more">Meer</string>
+    <string name="close">Sluit</string>
 </resources>
