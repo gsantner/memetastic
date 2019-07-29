@@ -147,5 +147,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Bijdragen</string>
     <string name="the_file_could_not_be_loaded">Het bestand kon niet worden geladen.</string>
     <string name="close">Sluit</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Vind je dit project leuk? Wil je dat het verbeterd wordt en problemen opgelost worden?\n\nOntwikkelende apps en het schrijven van gerelateerde blogposts kost veel tijd! Als je wilt helpen om het project door te gaan, denk dan aan een kleine donatie!\n\nDit project is ontwikkeld in vrije tijd, volledig gratis en zonder advertenties!</string>
     <string name="all">Alle</string>
+    <string name="global_text_settings">Algemene tekstinstellingen</string>
 </resources>
