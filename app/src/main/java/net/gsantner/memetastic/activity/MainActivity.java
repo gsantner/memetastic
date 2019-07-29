@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_SHOW_IMAGE = 52;
     public static final String IMAGE_PATH = "imagePath";
     public static final String IMAGE_POS = "image_pos";
-    public static final boolean LOCAL_ONLY_MODE = false;
+    public static final boolean LOCAL_ONLY_MODE = true;
+    public static final boolean DISABLE_ONLINE_ASSETS = true;
 
     private static boolean _isShowingFullscreenImage = false;
 
@@ -185,6 +186,8 @@ public class MainActivity extends AppCompatActivity
             for (int i = 0; i < _tagKeys.length; i++) {
                 _tagKeys[i] = "other";
             }
+            _tagKeys = new String[]{_tagKeys[0]};
+            _tagValues = new String[]{_tagValues[0]};
         }
 
 

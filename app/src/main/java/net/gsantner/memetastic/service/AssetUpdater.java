@@ -105,7 +105,7 @@ public class AssetUpdater {
         @Override
         public void run() {
             if (PermissionChecker.hasExtStoragePerm(_context)) {
-                if (MainActivity.LOCAL_ONLY_MODE) {
+                if (MainActivity.LOCAL_ONLY_MODE || MainActivity.DISABLE_ONLINE_ASSETS) {
                     return;
                 }
                 AppCast.ASSET_DOWNLOAD_REQUEST.send(_context, ASSET_DOWNLOAD_REQUEST__CHECKING);

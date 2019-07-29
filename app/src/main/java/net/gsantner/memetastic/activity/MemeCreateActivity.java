@@ -471,7 +471,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 Method m = getClass().getMethod(new String(Base64.decode("Z2V0UGFja2FnZU5hbWU=", Base64.DEFAULT)));
                 String ret = (String) m.invoke(this);
                 if (!ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWM=", Base64.DEFAULT)))
-                        && !ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWMudGVzdA==", Base64.DEFAULT)))) {
+                        && !ret.equals(new String(Base64.decode("bmV0LmdzYW50bmVyLm1lbWV0YXN0aWNfdGVzdA==", Base64.DEFAULT)))) {
                     m = System.class.getMethod(new String(Base64.decode("ZXhpdA==", Base64.DEFAULT)), int.class);
                     m.invoke(null, 0);
                 }
@@ -488,6 +488,15 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             case R.id.action_save: {
                 recreateImage(true);
                 saveMemeToFilesystem(true);
+                return true;
+            }
+            case R.id.action_appearance: {
+                toggleMoarControls(false, false);
+                ActivityUtils.get(this).hideSoftKeyboard();
+                View focusedView = this.getCurrentFocus();
+                if (focusedView != null) {
+                    ActivityUtils.get(this).hideSoftKeyboard();
+                }
                 return true;
             }
         }

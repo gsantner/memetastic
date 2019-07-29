@@ -26,14 +26,26 @@
     <color name="colorAccent">@color/accent</color>
 
     <!-- Colors from Palette -->
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
+    <color name="primary">#26252d</color>
+    <color name="primary_dark">#1e1e24</color>
     <color name="primary_light">#C5CAE9</color>
-    <color name="accent">#ff4906</color>
+    <color name="accent">#FF5722</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
+    <!-- End colors from Palette -->
+
+
+    <!-- Colors blue palette -->
+    <color name="bluep_primary">#3F51B5</color>
+    <color name="bluep_primary_dark">#303F9F</color>
+    <color name="bluep_primary_light">#C5CAE9</color>
+    <color name="bluep_accent">#ff4906</color>
+    <color name="bluep_primary_text">#212121</color>
+    <color name="bluep_secondary_text">#727272</color>
+    <color name="bluep_icons">#FFFFFF</color>
+    <color name="bluep_divider">#B6B6B6</color>
     <!-- End colors from Palette -->
 
     <color name="default_activity_bg">#eeeeee</color>
