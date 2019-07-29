@@ -148,4 +148,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="the_file_could_not_be_loaded">Soubor nemohl být nahrán.</string>
     <string name="close">Konec</string>
     <string name="all">Všechny</string>
+    <string name="global_text_settings">Globální textová nastavení</string>
 </resources>
