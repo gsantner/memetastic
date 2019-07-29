@@ -52,6 +52,7 @@
         android:layout_margin="16dp"
         android:minHeight="32dp"
         android:src="@drawable/ic_color_lens_white_48dp"
+        android:visibility="gone"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp" />
 

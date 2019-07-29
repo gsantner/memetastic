@@ -19,14 +19,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 #########################################################*/
---><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="io.github.gsantner.memetastic"
-          android:installLocation="auto"
-          tools:ignore="GoogleAppIndexingWarning">
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.github.gsantner.memetastic"
+    android:installLocation="auto"
+    tools:ignore="GoogleAppIndexingWarning">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="net.gsantner.memetastic.App"
@@ -38,7 +39,7 @@
 
         <meta-data
             android:name="android.max_aspect"
-            android:value="2.1"/>
+            android:value="2.1" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -47,7 +48,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths"/>
+                android:resource="@xml/filepaths" />
         </provider>
 
         <!-- Activities -->
@@ -58,8 +59,8 @@
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -73,13 +74,13 @@
             android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="net.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity" />
 
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <action android:name="android.intent.action.EDIT"/>
-                <data android:mimeType="image/*"/>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.EDIT" />
+                <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
         <activity
@@ -91,7 +92,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="net.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity" />
         </activity>
         <activity
             android:name="net.gsantner.memetastic.activity.MoreInfoActivity"
@@ -100,7 +101,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="net.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity" />
         </activity>
         <activity
             android:name="net.gsantner.memetastic.activity.ImageViewActivity"
@@ -108,7 +109,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="net.gsantner.memetastic.activity.MainActivity"/>
+                android:value="net.gsantner.memetastic.activity.MainActivity" />
         </activity>
     </application>
 

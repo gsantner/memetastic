@@ -192,6 +192,7 @@ public class MemeEditorElements implements Serializable {
     public static class EditorImage implements Serializable {
         private Bitmap _image = null;
         private Bitmap _displayImage = null;
+        private boolean _isTextSettingsGlobal = true;
         private int _rotationDeg = 0;
         private int _padding = 0;
         private int _paddingColor = MemeLibConfig.MEME_COLORS.WHITE;
@@ -224,6 +225,13 @@ public class MemeEditorElements implements Serializable {
             _rotationDeg = rotationDeg;
         }
 
+        public boolean isTextSettingsGlobal() {
+            return _isTextSettingsGlobal;
+        }
+
+        public void setTextSettingsGlobal(boolean v) {
+            _isTextSettingsGlobal = v;
+        }
 
         public int getPadding() {
             return _padding;

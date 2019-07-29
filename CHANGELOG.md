@@ -1,9 +1,12 @@
 ![](https://test.gsantner.net/matomo/piwik.php?action_name=inapp_changelog&idsite=2&rec=1&urlref=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FCHANGELOG.md&_cvar=%7B%221%22%3A%5B%22source%22%2C%22changelog%22%5D%2C%222%22%3A%5B%22project%22%2C%22memetastic%22%5D%2C%223%22%3A%5B%22packageid%22%2C%22io.github.gsantner.memetastic%22%5D%2C%224%22%3A%5B%22referrer%22%2C%22https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FCHANGELOG.md%22%5D%7D)
 
 
-### v1.5.1
-- Add 'all' category  
-- Move 'other' category back to previous location  
+### v1.6 (in progress)
+- Make app simpler to use
+- Change primary color brown-black to improve readability
+- Add caption option (in creator) to apply text appearance changes to all captions
+- Works completly offline, no internet permission requested
+- Remove tabbar from main view to see all images immediatly, less clutter
 
 ### v1.5.0
 - Back to roots with small amount of templates inside projects

@@ -28,8 +28,8 @@
     android:background="#eeeeee"
     android:fadeScrollbars="false"
     android:paddingLeft="@dimen/default_margin_2"
-    android:paddingRight="@dimen/default_margin_2"
     android:paddingTop="@dimen/default_margin_2"
+    android:paddingRight="@dimen/default_margin_2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="net.gsantner.memetastic.activity.MemeCreateActivity">
 
@@ -99,6 +99,13 @@
                 android:layout_weight="15"
                 android:minHeight="20dp" />
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/memecreate__moar_controls__global_text_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/global_text_settings" />
 
     </LinearLayout>
 </ScrollView>
