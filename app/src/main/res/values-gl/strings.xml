@@ -17,6 +17,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="donate">Doar</string>
     <string name="changelog">Rexistro de cambios</string>
     <string name="about">Sobre</string>
+    <string name="licenses">Licenzas</string>
     <string name="contributors">Contribúen</string>
     <string name="show_third_party_licenses">Código de terceiras partes</string>
     <string name="miscellaneous">Varios</string>
