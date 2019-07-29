@@ -461,11 +461,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                             _app.shareBitmapToOtherApp(_lastBitmap, MemeCreateActivity.this);
                         }
                     })
-                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    });
+                    .setPositiveButton(R.string.close, (dialog1, which) -> finish());
             dialog.show();
         }
         if (wasSaved) {
