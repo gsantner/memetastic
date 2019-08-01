@@ -686,6 +686,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.main__menu, menu);
+        updateSearchFilter("");
+        boolean isCreateTab = _bottomNav.getSelectedItemId() == R.id.nav_mode_create;
+        menu.findItem(R.id.action_picture_from_camera).setVisible(isCreateTab);
+        menu.findItem(R.id.action_picture_from_gallery).setVisible(isCreateTab);
+        menu.findItem(R.id.action_search_meme).setVisible(isCreateTab);
+
         _searchItem = menu.findItem(R.id.action_search_meme);
         _searchView = (SearchView) _searchItem.getActionView();
 
@@ -697,9 +703,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     if (query != null) {
-
                         updateSearchFilter(query);
-
                     }
                     return false;
                 }
@@ -707,20 +711,15 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     if (newText != null) {
-
                         updateSearchFilter(newText);
-
                     }
                     return false;
                 }
             });
-            _searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    if (!hasFocus) {
-                        _searchItem.collapseActionView();
-                        updateSearchFilter("");
-                    }
+            _searchView.setOnQueryTextFocusChangeListener((v, hasFocus) -> {
+                if (!hasFocus) {
+                    _searchItem.collapseActionView();
+                    updateSearchFilter("");
                 }
             });
         }
@@ -729,6 +728,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        invalidateOptionsMenu();
         return handleBarClick(item);
     }
 
