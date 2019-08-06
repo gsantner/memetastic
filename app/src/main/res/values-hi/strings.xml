@@ -97,6 +97,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_title">शीर्षक संपादित करें</string>
     <string name="hide">छिपाने</string>
     <string name="unhide">सामने लाएँ</string>
+    <string name="tap_here_to_add_caption">कैप्शन जोड़ने के लिए यहां टैप करें</string>
     <string name="search_meme__appspecific">मीम खोजें</string>
     <string name="share_meme_via__appspecific">के माध्यम से बाँटे</string>
     <string name="save_meme__appspecific">मीम सुरक्षित करें</string>
@@ -116,6 +117,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_storage_permission__appspecific">मीम और टेम्पलेट्स को सहेजने के लिए संग्रहण की अनुमति की आवश्यकता है</string>
     <string name="download_latest_assets_message__appspecific">यह फोंट और मीम टेम्प्लेट डाउनलोड करेगा (लगभग 20 एमबी डेटा)</string>
     <string name="download_latest_assets_message_description__appspecific">सेटिंग्स में आप मैन्युअल रूप से नवीनतम आस्तियों को बाद में भी प्राप्त कर सकते हैं।</string>
+    <string name="main_view">प्रमुख राय</string>
+    <string name="edit_picture">चित्र संपादित करें</string>
     <string name="translate">अनुवाद करें</string>
     <string name="help">मदद</string>
     <string name="more">अधिक</string>
