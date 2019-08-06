@@ -21,6 +21,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="saved">सुरक्षित</string>
     <string name="favs">पसंदीदा</string>
     <string name="create">बनाये</string>
+    <string name="hidden">छिपा हुआ</string>
     <string name="rows_with_title">शीर्षक के साथ पंक्तियाँ</string>
     <string name="picture_grid">चित्र ग्रिड</string>
     <string name="get_picture_from_gallery">गैलरी से चित्र प्राप्त करें</string>
