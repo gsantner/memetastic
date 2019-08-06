@@ -120,7 +120,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="download_latest_assets_message_description__appspecific">सेटिंग्स में आप मैन्युअल रूप से नवीनतम आस्तियों को बाद में भी प्राप्त कर सकते हैं।</string>
     <string name="main_view">प्रमुख राय</string>
     <string name="edit_picture">चित्र संपादित करें</string>
+    <string name="open_source_licenses">खुला स्रोत लाइसेंस</string>
+    <string name="rate_this_app">इस ऐप्लिकेशन को रेट करे</string>
     <string name="translate">अनुवाद करें</string>
+    <string name="report_bugs">रिपोर्ट बग</string>
+    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">इस परियोजना के दान या समर्थन के बारे में अधिक जानकारी</string>
     <string name="help">मदद</string>
     <string name="more">अधिक</string>
     <string name="contribute">योगदान</string>
