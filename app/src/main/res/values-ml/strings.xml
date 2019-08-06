@@ -19,6 +19,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="editor">എഡിറ്റർ</string>
     <string name="language">ഭാഷ</string>
     <string name="language_change_restart_description">ആപ്പിന്റെ ഭാഷ മാറ്റുക. മാറ്റം ഫലപ്രദമാകുവാൻ ആപ്പ് വീണ്ടും തുറക്കുക</string>
-    <string name="general">പൊതു</string>
+    <string name="general">പൊതുവായിട്ടുള്ളത്</string>
     <string name="more">കൂടുതൽ</string>
 </resources>

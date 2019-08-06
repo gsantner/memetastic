@@ -28,7 +28,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Nije moguće pokrenuti kameru.</string>
     <string name="error_picture_selection">Nijedna slika nije označena, uslikana niti pohranjena.</string>
     <string name="error_couldnot_load_picture_from_storage">Nije moguće učitati sliku iz skladišta.</string>
-    <string name="donate">Doniraj</string>
+    <string name="donate">Donirajte</string>
     <string name="recommend">Preporučiti</string>
     <string name="changelog">Popis izmjena</string>
     <string name="exit">Izlaz</string>
@@ -59,14 +59,15 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="appearance">Izgled</string>
     <string name="editor">Uređivač</string>
     <string name="language">Jezik</string>
-    <string name="language_change_restart_description">Promijeni jezik programa. Iznova pokrenite program da aktivirate promjenu</string>
+    <string name="language_change_restart_description">Promijenite jezik programa. Iznova pokrenite program da aktivirate promjenu</string>
     <string name="other">Ostalo</string>
+    <string name="favourite">Favorit</string>
     <string name="main_view">Glavni prikaz</string>
     <string name="edit_picture">Obradi sliku</string>
     <string name="general">Opće</string>
     <string name="open_source_licenses">Open Source licence</string>
     <string name="rate_this_app">Ocijenite ovaj program</string>
-    <string name="translate">Prevedi</string>
+    <string name="translate">Prevedite</string>
     <string name="more_info_and_help">Više informacija i pomoć</string>
     <string name="report_bugs">Prijavite greške i propuste</string>
     <string name="android_contribution_guide">Android uputstvo za sudjelovanje</string>

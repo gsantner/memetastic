@@ -87,5 +87,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">مساعدة</string>
     <string name="more">المزيد</string>
     <string name="contribute">ساهم</string>
+    <string name="close">إغلاق</string>
     <string name="all">الكل</string>
 </resources>

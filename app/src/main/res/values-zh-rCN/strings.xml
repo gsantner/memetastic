@@ -44,7 +44,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">字体</string>
     <string name="keep_editing">继续编辑</string>
     <string name="text">文本</string>
-    <string name="size">按文件大小排序</string>
+    <string name="size">文件大小</string>
     <string name="background">背景</string>
     <string name="border">边框</string>
     <string name="picture">图片</string>
@@ -127,7 +127,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="rate_this_app">评价本应用</string>
     <string name="translate">翻译</string>
     <string name="more_info_and_help">更多信息与帮助</string>
-    <string name="report_bugs">报告 bug</string>
+    <string name="report_bugs">报告错误</string>
     <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">更多关于捐赠或支持这个项目的信息</string>
     <string name="android_contribution_guide">Android 平台通用贡献指南</string>
     <string name="more_info_on_how_to_contribute_to_foss_android_projects">更多关于如何为开源项目做贡献的信息，尤其是 Android 应用。</string>
@@ -149,4 +149,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="close">关闭</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">你喜欢这个项目吗？你想要它得到改善并解决问题吗？\n\n开发应用并撰写相关博客文章需要花费大量时间！如果你想要帮助项目继续进行，请考虑小额捐赠！\n\n这个项目是在闲暇时间开发的，完全免费且没有任何广告！</string>
     <string name="all">全部</string>
+    <string name="global_text_settings">全局文本设置</string>
 </resources>

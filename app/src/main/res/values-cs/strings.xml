@@ -29,7 +29,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Nepodaøilo se spustit kameru.</string>
     <string name="error_picture_selection">Nebyl zvolen Âžádný obrázek.</string>
     <string name="error_couldnot_load_picture_from_storage">Nemohl by nahrát obrázek ze skladu.</string>
-    <string name="donate">Krátce</string>
+    <string name="donate">Darovat</string>
     <string name="recommend">Doporuèit</string>
     <string name="changelog">Historie</string>
     <string name="exit">Odejít</string>
@@ -79,9 +79,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Zobrazit typ</string>
     <string name="show_in_device_gallery">Zobrazit v galerii zařízení</string>
     <string name="language">Jazyk</string>
-    <string name="language_change_restart_description">Pokud chcete zmìnit jazyk této aplikace, bude vyÂžadován její restart.</string>
+    <string name="language_change_restart_description">Pokud chcete změnit jazyk této aplikace, bude vyžadován její restart</string>
     <string name="error_cannot_create_save_directory">Error: Nebude vytvářet adresář pro uložení adresáře</string>
-    <string name="other">Další</string>
+    <string name="other">Ostatní</string>
     <string name="downloading">Nahrazení</string>
     <string name="downloading_failed">Stahování selhalo</string>
     <string name="unzipping">Jak uniknout</string>
@@ -92,7 +92,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="presets">Prezentace</string>
     <string name="select_color">Vyberte barvu</string>
     <string name="code">Kodex</string>
-    <string name="favourite">Potencie</string>
+    <string name="favourite">Oblíbené</string>
     <string name="remove_favourite">Odstraňte přízeň</string>
     <string name="show_title">Zobrazit titul</string>
     <string name="edit_title">Upravit titul</string>
@@ -141,11 +141,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute_code_to_this_project_anybody_welcome">Přispět k projektu kódem, který každý přivítá, včetně nově příchozích.</string>
     <string name="project_team">Tým projektu</string>
     <string name="contributors_public_add_yourself_description">Předložte informace o přispěvateli, které zde budou zobrazeny na základě opt-in po příspěvku</string>
-    <string name="help">Pomoc</string>
+    <string name="help">Nápověda</string>
     <string name="more">Více</string>
     <string name="community">Společenství</string>
     <string name="contribute">Přispět</string>
     <string name="the_file_could_not_be_loaded">Soubor nemohl být nahrán.</string>
     <string name="close">Konec</string>
     <string name="all">Všechny</string>
+    <string name="global_text_settings">Globální textová nastavení</string>
 </resources>

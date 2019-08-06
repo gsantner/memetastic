@@ -19,13 +19,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="about">درباره مارکور</string>
     <string name="licenses">مجوزها</string>
     <string name="contributors">همکاران</string>
+    <string name="show_third_party_licenses">نمایش مجوزهای شخص ثالث</string>
     <string name="gnu_gplv3_license">نمایش مجوز این برنامه</string>
     <string name="settings">تنظیمات</string>
+    <string name="appearance">ظاهر</string>
     <string name="editor">ویرایش‌گر</string>
     <string name="hide_statusbar_at_this_view">مخفی کردن نوار وضعیت در این نمایش</string>
     <string name="hide_statusbar">مخفی کردن نوار وضعیت</string>
     <string name="language">زبان</string>
     <string name="language_change_restart_description">تغییر زبان برنامه. لازم است برنامه را از نو اجرا کنید تا تغییرات را ببینید</string>
+    <string name="other">سایر موارد</string>
     <string name="main_view">نمای اصلی</string>
     <string name="general">عمومی</string>
     <string name="help">راهنما</string>

@@ -16,7 +16,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="donate">Donér</string>
     <string name="changelog">Ændringslog</string>
     <string name="exit">Afslut</string>
+    <string name="font">Skrifttype</string>
     <string name="size">Størrelse</string>
+    <string name="background">Baggrund</string>
     <string name="about">Om</string>
     <string name="licenses">Licenser</string>
     <string name="show_licenses">Vis licens</string>
@@ -27,6 +29,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="gnu_gplv3_license">Vis programmets licens</string>
     <string name="settings">Indstillinger</string>
     <string name="appearance">Udseende</string>
+    <string name="editor">Editor</string>
     <string name="language">Sprog</string>
     <string name="language_change_restart_description">Ændre applikationens sprog. Genstart for at ændringen træder i kraft</string>
     <string name="other">Andet</string>
@@ -54,5 +57,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">Hjælp</string>
     <string name="more">Mere</string>
     <string name="contribute">Giv en hånd med</string>
+    <string name="close">Luk</string>
     <string name="all">Alle</string>
 </resources>
