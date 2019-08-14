@@ -41,8 +41,9 @@ android {
 
         resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
         applicationId "io.github.gsantner.memetastic"
-        versionName "1.6.0"
-        versionCode 60
+        versionName "1.6.1"
+        versionCode 61
+        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "-" + versionName)
     }
 
     flavorDimensions "default"
