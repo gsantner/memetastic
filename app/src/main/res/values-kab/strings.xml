@@ -135,6 +135,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="project_team">Tarbaɛt n usenfaṛ</string>
     <string name="help">Aide</string>
     <string name="more">Ugar</string>
+    <string name="community">Tamezdagnut</string>
     <string name="contribute">Ttekki</string>
+    <string name="close">Mdel</string>
     <string name="all">Meṛṛa</string>
 </resources>

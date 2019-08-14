@@ -150,4 +150,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="do_you_like_this_project_want_donate_to_keep_alive">你喜欢这个项目吗？你想要它得到改善并解决问题吗？\n\n开发应用并撰写相关博客文章需要花费大量时间！如果你想要帮助项目继续进行，请考虑小额捐赠！\n\n这个项目是在闲暇时间开发的，完全免费且没有任何广告！</string>
     <string name="all">全部</string>
     <string name="global_text_settings">全局文本设置</string>
+    <string name="show_image">显示图像</string>
+    <string name="show_edited_image">显示编辑的图像</string>
 </resources>
