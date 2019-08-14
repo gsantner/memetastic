@@ -11,7 +11,48 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="create">Gumawa</string>
+    <string name="error_picture_selection">Walang larawang napili, nakunan or na-save.</string>
+    <string name="donate">Mag-donate</string>
+    <string name="changelog">Mga Pagbabago</string>
+    <string name="exit">Umalis</string>
+    <string name="font">Titik</string>
+    <string name="size">Laki</string>
+    <string name="background">Likuran</string>
+    <string name="about">Tungkol sa</string>
+    <string name="licenses">Mga Lisensiya</string>
+    <string name="contributors">Mga Nag-ambag</string>
+    <string name="show_third_party_licenses">Ipakita ang mga lisensiya ng mga ika-3 partido</string>
+    <string name="miscellaneous">Sari-sari</string>
+    <string name="gnu_gplv3_license">Ipakita ang lisensiya ng app</string>
     <string name="settings">Mga Tanawin</string>
-    <string name="appearance">Ayos</string>
+    <string name="appearance">Hitsura</string>
     <string name="editor">Editor</string>
+    <string name="language">Wika</string>
+    <string name="language_change_restart_description">Baguhin ang wika ng app. I-restart ang app para umepekto ang mga pagbabago</string>
+    <string name="other">Iba pa</string>
+    <string name="favourite">Paborito</string>
+    <string name="main_view">Pangunahing View</string>
+    <string name="edit_picture">Isaayos ang larawan</string>
+    <string name="general">Kabuuan</string>
+    <string name="open_source_licenses">Mga Malayang-Bukas na Lisensiya</string>
+    <string name="rate_this_app">I-rate itong app</string>
+    <string name="translate">Magsalin</string>
+    <string name="more_info_and_help">Karagdagang impormasyon at tulong</string>
+    <string name="report_bugs">Mag-ulat ng mga bug</string>
+    <string name="android_contribution_guide">Gabay sa pag-aambag sa Android</string>
+    <string name="join_community">Sumali sa Komunidad</string>
+    <string name="bug_reports_suggest_improvements">Magbigay ng feedback, mag-ulat ng mga bug o mag-suggest ng mga pagpapahusay</string>
+    <string name="help_translating_this_app">Isalin itong app sa ibang mga wika</string>
+    <string name="source_code">Source Code</string>
+    <string name="project_license">Lisensiya ng Proyekto</string>
+    <string name="project_contribution_info">Impormasyon sa ambagan ng proyekto</string>
+    <string name="more_info_on_how_to_contribute_to_this_project">Karagdagang impormasyon kung paano mag-ambag sa proyektong ito</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">Mag-ambag ng code sa proyekto. Maaring gawin ito ng kahit sinuman, pati na ang mga bagong-pasok</string>
+    <string name="project_team">Project Team</string>
+    <string name="contributors_public_add_yourself_description">Ipakita ang impormasyon ng mga nag-ambag. Nasa opt-in basis ang pagpapakita dito matapos mag-ambag</string>
+    <string name="help">Tulong</string>
+    <string name="more">Karagdagan</string>
+    <string name="contribute">Mag-ambag</string>
+    <string name="close">Isara</string>
 </resources>
