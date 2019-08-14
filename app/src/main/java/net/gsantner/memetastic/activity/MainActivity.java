@@ -456,10 +456,14 @@ public class MainActivity extends AppCompatActivity
     private void updateSearchFilter(String newFilter) {
         if (_currentMainMode != 0) {
             _currentSearch = newFilter;
-            ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
+            if (_recyclerMemeList.getAdapter() != null) {
+                ((MemeItemAdapter) _recyclerMemeList.getAdapter()).setFilter(newFilter);
+            }
         } else {
             MemeFragment page = ((MemeFragment) getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.main_activity__view_pager + ":" + _viewPager.getCurrentItem()));
-            ((MemeItemAdapter) page._recyclerMemeList.getAdapter()).setFilter(newFilter);
+            if (page != null && page._recyclerMemeList.getAdapter() != null) {
+                ((MemeItemAdapter) page._recyclerMemeList.getAdapter()).setFilter(newFilter);
+            }
         }
     }
 

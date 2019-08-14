@@ -74,7 +74,7 @@ public class MoreInfoFragment extends GsPreferenceFragmentCompat<AppSettings> {
                     return true;
                 }
                 case R.string.pref_key__more_info__help: {
-                    au.showDialogWithHtmlTextView(R.string.help, _cu.loadMarkdownForTextViewFromRaw(R.raw.resources, ""));
+                    au.showDialogWithHtmlTextView(0, _cu.loadMarkdownForTextViewFromRaw(R.raw.resources, ""));
                     return true;
                 }
                 case R.string.pref_key__more_info__donate: {
