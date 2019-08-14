@@ -25,7 +25,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <net.gsantner.memetastic.ui.SquareImageView
+    <net.gsantner.opoc.ui.SquareImageView
         android:id="@+id/item__square_image__image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -41,4 +41,15 @@
         android:icon="@drawable/ic_save_white_48px"
         android:title="@string/save_meme__appspecific"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_show_original_image"
+        android:icon="@drawable/ic_image_black_24dp"
+        android:title="@string/show_image"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_show_edited_image"
+        android:icon="@drawable/ic_image_black_24dp"
+        android:title="@string/show_edited_image"
+        app:showAsAction="never" />
 </menu>

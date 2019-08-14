@@ -81,6 +81,7 @@ import net.gsantner.memetastic.util.AppCast;
 import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
+import net.gsantner.opoc.ui.TouchImageView;
 import net.gsantner.opoc.util.ShareUtil;
 
 import java.io.File;
@@ -93,6 +94,7 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 import butterknife.OnTextChanged;
 import butterknife.OnTouch;
 import io.github.gsantner.memetastic.R;
@@ -129,6 +131,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     @BindView(R.id.memecreate__moar_controls__color_picker_for_padding)
     ColorPanelView _paddingColor;
+
+    @BindView(R.id.memecreate__activity__fullscreen_image)
+    TouchImageView _fullscreenImageView;
 
     //#####################
     //## Members
@@ -195,7 +200,12 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                     View.VISIBLE : View.GONE);
             _create_caption.setText(savedInstanceState.getString("captionText"));
         }
-        _imageEditView.postDelayed(this::touchTopElement, 30);
+        try {
+            if (!ActivityUtils.get(this).isInSplitScreenMode()) {
+                _imageEditView.postDelayed(this::touchTopElement, 40);
+            }
+        } catch (Exception ignored) {
+        }
     }
 
     private void initCaptionButtons() {
@@ -433,6 +443,19 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 }
                 return true;
             }
+            case R.id.action_show_original_image: {
+                _fullscreenImageView.setImageBitmap(_memeEditorElements.getImageMain().getDisplayImage());
+                _fullscreenImageView.setVisibility(View.VISIBLE);
+                toggleMoarControls(true, true);
+                return true;
+            }
+            case R.id.action_show_edited_image: {
+                recreateImage(true);
+                _fullscreenImageView.setImageBitmap(_lastBitmap);
+                _fullscreenImageView.setVisibility(View.VISIBLE);
+                toggleMoarControls(true, true);
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -666,6 +689,19 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 .show(this);
     }
 
+    @OnClick(R.id.memecreate__activity__fullscreen_image)
+    public void onFullScreenImageClicked() {
+        _fullscreenImageView.setVisibility(View.INVISIBLE);
+        recreateImage(false);
+        toggleMoarControls(true, false);
+    }
+
+    @OnLongClick(R.id.memecreate__activity__fullscreen_image)
+    public boolean onFullScreenImageLongClicked() {
+        _fullscreenImageView.setRotation((_fullscreenImageView.getRotation() + 90) % 360);
+        return true;
+    }
+
 
     @Override
     public void onColorSelected(int id, @ColorInt int colorInt) {
@@ -856,6 +892,12 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
         boolean hasTextInput = !_create_caption.getText().toString().isEmpty() ||
                 !_memeEditorElements.getCaptionBottom().getText().isEmpty() ||
                 !_memeEditorElements.getCaptionTop().getText().isEmpty();
+
+        if (_fullscreenImageView.getVisibility() == View.VISIBLE) {
+            _fullscreenImageView.setVisibility(View.INVISIBLE);
+            toggleMoarControls(true, false);
+            return;
+        }
 
         // Close views above
         if (_bottomContainerVisible) {

@@ -28,7 +28,7 @@
     android:background="@color/black"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <net.gsantner.memetastic.ui.TouchImageView
+    <net.gsantner.opoc.ui.TouchImageView
         android:id="@+id/imageview_fragment__expanded_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

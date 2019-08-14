@@ -41,39 +41,39 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="100"
-            android:orientation="vertical"
             android:clickable="true"
+            android:orientation="vertical"
             android:paddingBottom="@dimen/default_margin_2">
 
             <LinearLayout
+                android:id="@+id/edit_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="10"
                 android:visibility="gone"
-                android:id="@+id/edit_bar">
+                android:weightSum="10">
 
                 <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:id="@+id/create_caption"
+                    style="@style/AppTheme.MemeCreatorEditTextOnLightBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="8"
-                    android:hint="@string/enter_caption"
-                    style="@style/AppTheme.MemeCreatorEditTextOnLightBackground"/>
+                    android:hint="@string/enter_caption" />
 
                 <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:id="@+id/settings_caption"
-                    android:src="@drawable/ic_settings_white_48px"/>
-
-                <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:src="@drawable/ic_settings_white_48px" />
+
+                <ImageButton
                     android:id="@+id/done_caption"
-                    android:src="@drawable/ic_done_all_black_24dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_done_all_black_24dp" />
             </LinearLayout>
 
             <ImageView
@@ -99,7 +99,14 @@
 
             <include layout="@layout/memecreate__moar_controls" />
 
-
         </LinearLayout>
     </LinearLayout>
+
+    <net.gsantner.opoc.ui.TouchImageView
+        android:id="@+id/memecreate__activity__fullscreen_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:longClickable="true"
+        android:visibility="invisible" />
 </FrameLayout>

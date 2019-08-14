@@ -27,7 +27,7 @@
     android:layout_height="80dp"
     android:orientation="horizontal">
 
-    <net.gsantner.memetastic.ui.SquareImageView
+    <net.gsantner.opoc.ui.SquareImageView
         android:id="@+id/item__square_image__image"
         android:layout_width="80dp"
         android:layout_height="match_parent"

@@ -281,4 +281,14 @@ public class ActivityUtils extends net.gsantner.opoc.util.ContextUtils {
         _activity.startActivity(intent);
         return this;
     }
+
+    /**
+     * Detect if the activity is currently in splitscreen/multiwindow mode
+     */
+    public boolean isInSplitScreenMode() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return _activity.isInMultiWindowMode();
+        }
+        return false;
+    }
 }
