@@ -89,4 +89,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">ساهم</string>
     <string name="close">إغلاق</string>
     <string name="all">الكل</string>
+    <string name="show_image">اظهر الصورة</string>
+    <string name="show_edited_image">اظهر الصورة المعدَّلة</string>
 </resources>
