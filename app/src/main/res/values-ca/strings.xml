@@ -150,4 +150,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Us agrada aquest projecte? Voleu que encara sigui millor i es solucionin els problemes?\n\nDesenvolupar aplicacions i escriure publicacions relacionades als blogs costa molt de temps! Si voleu ajudar perquè el projecte pugui continuar, considereu aportar una petita donació!\n\nAquest projecte es desenvolupa durant el temps lliure, completament gratis i sense publicitat!</string>
     <string name="all">Tots</string>
     <string name="global_text_settings">Configuració general</string>
+    <string name="show_image">Mostra la imatge</string>
+    <string name="show_edited_image">Mostra la imatge editada</string>
 </resources>
