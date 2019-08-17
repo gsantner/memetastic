@@ -21,12 +21,12 @@ Website: <https://www.reddit.com/r/MemeTemplatesOfficial/.compact>
 * [9GAG](https://9gag.com)
 
 ### Reddit
-* [/r/memes](https://www.reddit.com/r/memes/.compact>)
-* [/r/funny](https://www.reddit.com/r/funny/.compact>)
-* [/r/gifs](https://www.reddit.com/r/gifs/.compact>)
-* [/r/AdviceAnimals](https://www.reddit.com/r/AdviceAnimals/.compact>)
-* [/r/BikiniBottomTwitter](https://www.reddit.com/r/BikiniBottomTwitter/.compact>)
-* [/r/wowmemes](https://www.reddit.com/r/wowmemes/.compact>)
-* [/r/de](https://www.reddit.com/r/de/.compact>)
+* [/r/memes](https://www.reddit.com/r/memes/.compact)
+* [/r/funny](https://www.reddit.com/r/funny/.compact)
+* [/r/gifs](https://www.reddit.com/r/gifs/.compact)
+* [/r/AdviceAnimals](https://www.reddit.com/r/AdviceAnimals/.compact)
+* [/r/BikiniBottomTwitter](https://www.reddit.com/r/BikiniBottomTwitter/.compact)
+* [/r/wowmemes](https://www.reddit.com/r/wowmemes/.compact)
+* [/r/de](https://www.reddit.com/r/de/.compact)
 
 
