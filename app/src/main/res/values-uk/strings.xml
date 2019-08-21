@@ -150,4 +150,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Вам подобається цей проект? Бажаєте, щоб він покращувався та виправлялися помилки? \n\nРозробка додатків та написання пов\'язаних статей у блозі займає багато часу! Якщо ви хочете допомогти цьому проекту розвиватися далі — зробіть маленьке пожертвування!\n\nЦей проект розроблений у вільний час, не містить реклами та є абсолютно безкоштовним!</string>
     <string name="all">Усе</string>
     <string name="global_text_settings">Глобальні налаштування тексту</string>
+    <string name="show_image">Показувати зображення</string>
+    <string name="show_edited_image">Показати змінене зображення</string>
 </resources>

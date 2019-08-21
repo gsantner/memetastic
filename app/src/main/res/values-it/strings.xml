@@ -11,8 +11,8 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-    <string name="open_navdrawer">Apri barra di navigazione</string>
-    <string name="close_navdrawer">Chiudi barra di navigazione</string>
+    <string name="open_navdrawer">Apri la barra di navigazione</string>
+    <string name="close_navdrawer">Chiudi la barra di navigazione</string>
     <string name="humans">Persone</string>
     <string name="cartoon">Fumetti</string>
     <string name="animals">Animali</string>
