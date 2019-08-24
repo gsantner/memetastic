@@ -53,7 +53,7 @@ android {
         flavorGplay {
             buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
         }
-        flavorTest {
+        flavorAtest {
             applicationId "net.gsantner.memetastic_test"
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
