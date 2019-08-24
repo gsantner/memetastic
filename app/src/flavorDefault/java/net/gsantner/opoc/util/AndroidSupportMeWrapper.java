@@ -66,7 +66,7 @@ public class AndroidSupportMeWrapper extends ActivityUtils {
         }
 
         public boolean all14dRequest() {
-            return afterDaysTrue("all14dRequest", 14, 3);
+            return afterDaysTrue("all14dRequest", 31, 3);
         }
     }
 }
