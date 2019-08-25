@@ -152,4 +152,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Configuració global de text</string>
     <string name="show_image">Mostra la imatge</string>
     <string name="show_edited_image">Mostra la imatge editada</string>
+    <string name="save_as_template">Desa com a plantilla</string>
 </resources>
