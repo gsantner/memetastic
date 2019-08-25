@@ -152,4 +152,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Impostazioni di testo globali</string>
     <string name="show_image">Mostra immagine</string>
     <string name="show_edited_image">Mostra immagine modificata</string>
+    <string name="save_as_template">Salva come modello</string>
 </resources>
