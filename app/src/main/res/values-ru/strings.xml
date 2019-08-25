@@ -152,4 +152,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Глобальные настройки текста</string>
     <string name="show_image">Показать изображение</string>
     <string name="show_edited_image">Показать отредактированное изображение</string>
+    <string name="save_as_template">Сохранить как шаблон</string>
 </resources>
