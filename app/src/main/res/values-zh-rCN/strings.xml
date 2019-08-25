@@ -152,4 +152,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">全局文本设置</string>
     <string name="show_image">显示图像</string>
     <string name="show_edited_image">显示编辑的图像</string>
+    <string name="save_as_template">保存为模板</string>
 </resources>
