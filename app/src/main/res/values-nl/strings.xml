@@ -152,4 +152,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Algemene tekstinstellingen</string>
     <string name="show_image">Toon afbeelding</string>
     <string name="show_edited_image">Toon bewerkte afbeelding</string>
+    <string name="save_as_template">Opslaan als sjabloon</string>
 </resources>
