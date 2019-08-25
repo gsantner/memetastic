@@ -31,6 +31,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="language">שפה</string>
     <string name="language_change_restart_description">שנה את שפת האפליקציה. אתחל את האפליקציה בכדי שהשינויים יכנסו לתוקף</string>
     <string name="other">אחר</string>
+    <string name="favourite">מועדף</string>
     <string name="main_view">תצוגה ראשית</string>
     <string name="edit_picture">ערוך תמונה</string>
     <string name="general">כללי</string>
