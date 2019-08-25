@@ -9,7 +9,8 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-    <string name="app_name" translatable="false">MemeTastic</string>
+    <string name="app_name_real">MemeTastic</string>
+    <string name="app_name" translatable="false">@string/app_name_real</string>
     <string name="app_license_name" translatable="false">GNU General Public License, Version 3.0</string>
     <string name="app_community_url" translatable="false">https://matrix.to/#/#memetastic:matrix.org</string>
     <string name="app_bugreport_url" translatable="false">https://github.com/gsantner/memetastic/issues</string>
