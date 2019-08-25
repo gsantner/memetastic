@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.net.Uri;
@@ -82,6 +83,7 @@ import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.ui.TouchImageView;
+import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.ShareUtil;
 
 import java.io.File;
@@ -103,6 +105,7 @@ import other.so.AndroidBug5497Workaround;
 /**
  * Activity for creating memes
  */
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class MemeCreateActivity extends AppCompatActivity implements ColorPickerDialogListener {
     //########################
     //## Static
@@ -148,6 +151,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     boolean _bottomContainerVisible = false;
     private boolean _isBottom;
     private View _dialogView;
+    private boolean _savedAsMemeTemplate = false;
 
     //#####################
     //## Methods
@@ -405,6 +409,9 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.creatememe__menu, menu);
+        ContextUtils cu = new ContextUtils(getApplicationContext());
+        cu.tintMenuItems(menu, true, Color.WHITE);
+        cu.setSubMenuIconsVisiblity(menu, true);
         return true;
     }
 
@@ -432,6 +439,16 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             case R.id.action_save: {
                 recreateImage(true);
                 saveMemeToFilesystem(true);
+                return true;
+            }
+            case R.id.action_save_as_template: {
+                if (!_savedAsMemeTemplate) {
+                    File folder = AssetUpdater.getCustomAssetsDir(AppSettings.get());
+                    String filename = String.format(Locale.getDefault(), "%s_%s.jpg", getString(R.string.app_name), AssetUpdater.FORMAT_MINUTE_FILE.format(new Date(_memeSavetime)));
+                    File fullpath = new File(folder, filename);
+                    folder.mkdirs();
+                    _savedAsMemeTemplate = ContextUtils.get().writeImageToFileJpeg(fullpath, _memeEditorElements.getImageMain().getDisplayImage());
+                }
                 return true;
             }
             case R.id.action_appearance: {

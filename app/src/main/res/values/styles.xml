@@ -81,5 +81,15 @@
     <style name="AppTheme.PreferenceTheme.CategoryStyle" parent="Preference.Category">
         <item name="android:layout">@layout/opoc_pref_category_text</item>
     </style>
+    <style name="LightTextToolbarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:actionModeBackground">@color/primary_dark</item>
+        <item name="actionModeBackground">@color/primary_dark</item>
+
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+
 
 </resources>

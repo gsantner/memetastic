@@ -52,4 +52,10 @@
         android:icon="@drawable/ic_image_black_24dp"
         android:title="@string/show_edited_image"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_save_as_template"
+        android:icon="@drawable/ic_save_white_48px"
+        android:title="@string/save_as_template"
+        app:showAsAction="never" />
 </menu>

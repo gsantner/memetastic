@@ -155,5 +155,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Global text settings</string>
     <string name="show_image">Show image</string>
     <string name="show_edited_image">Show edited image</string>
+    <string name="save_as_template">Save as template</string>
 
 </resources>
