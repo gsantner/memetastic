@@ -152,4 +152,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Impostatziones globales pro su testu</string>
     <string name="show_image">Ammustra s\'immàgine</string>
     <string name="show_edited_image">Ammustra s\'immàgine modificada</string>
+    <string name="save_as_template">Sarva comente modellu</string>
 </resources>
