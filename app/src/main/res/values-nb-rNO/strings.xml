@@ -129,8 +129,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more_info_and_help">Mer informasjon om dette programmet</string>
     <string name="report_bugs">Rapporter feil</string>
     <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Mer info om donering eller annen støtte av prosjektet</string>
-    <string name="android_contribution_guide">Android-bidragsyterguide</string>
-    <string name="more_info_on_how_to_contribute_to_foss_android_projects">Mer info om bidragsytelser til friprog-prosjekter, spesielt Android-programmer</string>
+
+
     <string name="join_community">Ta del i gemenskapen</string>
     <string name="bug_reports_suggest_improvements">Gi tilbakemelding, rapporter feil eller foreslå forbedringer</string>
     <string name="help_translating_this_app">Oversett dette programmet til andre språk</string>

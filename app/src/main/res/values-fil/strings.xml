@@ -40,7 +40,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Magsalin</string>
     <string name="more_info_and_help">Karagdagang impormasyon at tulong</string>
     <string name="report_bugs">Mag-ulat ng mga bug</string>
-    <string name="android_contribution_guide">Gabay sa pag-aambag sa Android</string>
+
     <string name="join_community">Sumali sa Komunidad</string>
     <string name="bug_reports_suggest_improvements">Magbigay ng feedback, mag-ulat ng mga bug o mag-suggest ng mga pagpapahusay</string>
     <string name="help_translating_this_app">Isalin itong app sa ibang mga wika</string>
