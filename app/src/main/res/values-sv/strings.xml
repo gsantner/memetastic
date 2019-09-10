@@ -69,7 +69,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="appearance">Utseende</string>
     <string name="default_mode">Standardläge</string>
     <string name="functionality">Funktionalitet</string>
-    <string name="save_when_pressing_back">Spara när du går tillbaka</string>
+    <string name="save_when_pressing_back">Spara när du trycker tillbaka</string>
     <string name="padding">Utfyllnad</string>
     <string name="overview">Översikt</string>
     <string name="editor">Redaktör</string>
@@ -143,8 +143,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more">Mer</string>
     <string name="community">Gemenskap</string>
     <string name="contribute">Bidra</string>
-    <string name="the_file_could_not_be_loaded">Filen kunde inte läsas.</string>
+    <string name="the_file_could_not_be_loaded">Filen kunde inte laddas.</string>
     <string name="close">Avsluta</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Gillar du detta projektet? Vill du att det förbättras och att buggar åtgärdas snabbt?\n\nAtt utveckla appar och skriva relaterade blogginlägg tar mycket tid! Om du vill hjälpa till så att projektet kan fortgå så kan du överväga att ge en liten donation!\n\nDetta projektet utvecklas av volontärer på fritiden och är helt utan reklam!</string>
     <string name="all">Alla</string>
+    <string name="global_text_settings">Globala textinställningar</string>
+    <string name="show_image">Visa bild</string>
+    <string name="show_edited_image">Visa redigerad bild</string>
+    <string name="save_as_template">Spara som mall</string>
 </resources>
