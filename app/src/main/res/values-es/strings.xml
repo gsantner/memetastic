@@ -129,8 +129,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more_info_and_help">Ayuda y más información sobre esta aplicación</string>
     <string name="report_bugs">Informar de fallos</string>
     <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Más sobre donaciones u otras formas de apoyar a este proyecto</string>
-
-
     <string name="join_community">Únete a la comunidad</string>
     <string name="bug_reports_suggest_improvements">Da tu opinión, reporta errores o sugiere mejoras</string>
     <string name="help_translating_this_app">Traduce esta aplicación a otros idiomas</string>
@@ -152,4 +150,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Ajustes globales de texto</string>
     <string name="show_image">Mostrar imagen</string>
     <string name="show_edited_image">Mostrar imagen editada</string>
+    <string name="save_as_template">Guardar como plantilla</string>
 </resources>
