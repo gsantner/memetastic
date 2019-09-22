@@ -13,6 +13,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
     <string name="open_navdrawer">Abrir cadro de navegación</string>
     <string name="close_navdrawer">Pechar cadro de navegación</string>
+    <string name="humans">Humanos</string>
+    <string name="animals">Animais</string>
+    <string name="custom">Persoalizado</string>
     <string name="create">Crear</string>
     <string name="donate">Doar</string>
     <string name="changelog">Rexistro de cambios</string>
