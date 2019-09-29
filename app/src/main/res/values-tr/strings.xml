@@ -148,6 +148,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Bu projeyi beğendiniz mi? Projenin iyileştirilmesini ve sorunların çözülmesini istiyor musunuz?\n\nUygulama geliştirmek ve onunla ilgili blog gönderileri yazmak çok zaman alıyor! Projenin devam edebilmesi için yardım etmek istiyorsanız, lütfen küçük bir bağış yapmayı düşünün!\n\nBu proje boş zamanlarımda, tamamen ücretsiz ve reklamsız olarak geliştirilmiştir!</string>
     <string name="all">Tümü</string>
     <string name="global_text_settings">Genel metin ayarları</string>
-    <string name="show_image">Görüntü göster</string>
+    <string name="show_image">Görüntüyü göster</string>
     <string name="show_edited_image">Düzenlenmiş görüntüyü göster</string>
+    <string name="save_as_template">Şablon olarak kaydet</string>
 </resources>
