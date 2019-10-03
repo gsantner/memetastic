@@ -150,4 +150,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="global_text_settings">Глобальні налаштування тексту</string>
     <string name="show_image">Показувати зображення</string>
     <string name="show_edited_image">Показати змінене зображення</string>
+    <string name="save_as_template">Зберегти як шаблон</string>
 </resources>
