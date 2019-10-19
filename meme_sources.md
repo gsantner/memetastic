@@ -2,34 +2,34 @@
 
 * 9GAG
   **Categories:**
-    * Funny
-    * Memes
+    * [Funny](https://9gag.com/funny)
+    * [Memes](https://9gag.com/memes)
 
 * Reddit
   **Categories:**
-    * r/Memes
-    * r/MemeTemplatesOfficial
-    * r/funny
-    * r/Animemes
-    * r/PewDiePieSubmissions
-    * r/moviememes
-    * r/teenagers
-    * r/iamverysmart
-    * r/FunnyAnimals
-    * r/Work
+    * [r/Memes](https://www.reddit.com/r/memes/)
+    * [r/MemeTemplatesOfficial](https://www.reddit.com/r/MemeTemplatesOfficial/)
+    * [r/funny](https://www.reddit.com/r/funny/)
+    * [r/Animemes](https://www.reddit.com/r/Animemes/)
+    * [r/PewDiePieSubmissions](https://www.reddit.com/r/PewDiePieSubmissions/)
+    * [r/moviememes](https://www.reddit.com/r/moviememes/)
+    * [r/teenagers](https://www.reddit.com/r/teenagers/)
+    * [r/iamverysmart](https://www.reddit.com/r/iamverysmart/)
+    * [r/FunnyAnimals](https://www.reddit.com/r/FunnyAnimals/)
+    * [r/Work](https://www.reddit.com/r/Work/)
 
-* iFunny
+* [iFunny](https://ifunny.co/)
 
-* Memedroid
+* [Memedroid](https://www.memedroid.com)
 
-* tumblr
+* [tumblr](https://www.tumblr.com/search/memes)
 
-* lefunny
+* [lefunny](https://lefunny.net/funny-jokes/)
 
-* Cheezburger
+* [Cheezburger](https://memebase.cheezburger.com/)
 
-* Me.Me
+* [Me.Me](https://me.me/)
 
-* KnowYourMeme
+* [KnowYourMeme](https://knowyourmeme.com/)
 
 
