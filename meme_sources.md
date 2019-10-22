@@ -4,6 +4,8 @@
   **Categories:**
     * [Funny](https://9gag.com/funny)
     * [Memes](https://9gag.com/memes)
+    * [Animals](https://9gag.com/animals)
+    * [Sport](https://9gag.com/sport)
 
 * Reddit
   **Categories:**
@@ -16,7 +18,14 @@
     * [r/teenagers](https://www.reddit.com/r/teenagers/)
     * [r/iamverysmart](https://www.reddit.com/r/iamverysmart/)
     * [r/FunnyAnimals](https://www.reddit.com/r/FunnyAnimals/)
+    * [r/AnimalMemes](https://www.reddit.com/r/AnimalMemes/)
+    * [r/AdviceAnimals](https://www.reddit.com/r/AdviceAnimals/)
     * [r/Work](https://www.reddit.com/r/Work/)
+    * [r/Catmemes](https://www.reddit.com/r/Catmemes/)
+    * [r/dankmemes](r/dankmemes)
+    * [r/Animemes](https://www.reddit.com/r/Animemes/)
+    * [r/RageComic](https://www.reddit.com/r/fffffffuuuuuuuuuuuu/)
+    * [r/SportsMemes](https://www.reddit.com/r/SportsMemes/)
 
 * [iFunny](https://ifunny.co/)
 
@@ -32,4 +41,8 @@
 
 * [KnowYourMeme](https://knowyourmeme.com/)
 
+* [Manch](https://manch.app/hi)
 
+* [Memestori](https://memestori.com/)
+
+* [memecenter](https://www.memecenter.com)
