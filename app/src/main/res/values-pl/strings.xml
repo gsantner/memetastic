@@ -143,4 +143,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="the_file_could_not_be_loaded">Plik nie mógł zostać załadowany.</string>
     <string name="close">Zamknij</string>
     <string name="all">Wszystko</string>
+    <string name="global_text_settings">Globalne ustawienia tekstu</string>
+    <string name="show_image">Pokaż obraz</string>
+    <string name="show_edited_image">Pokaż edytowany obrazek</string>
+    <string name="save_as_template">Zapisz jako szablon</string>
 </resources>
