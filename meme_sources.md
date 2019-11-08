@@ -26,23 +26,14 @@
     * [r/Animemes](https://www.reddit.com/r/Animemes/)
     * [r/RageComic](https://www.reddit.com/r/fffffffuuuuuuuuuuuu/)
     * [r/SportsMemes](https://www.reddit.com/r/SportsMemes/)
-
-* [iFunny](https://ifunny.co/)
-
-* [Memedroid](https://www.memedroid.com)
-
-* [tumblr](https://www.tumblr.com/search/memes)
-
-* [lefunny](https://lefunny.net/funny-jokes/)
-
-* [Cheezburger](https://memebase.cheezburger.com/)
-
-* [Me.Me](https://me.me/)
-
-* [KnowYourMeme](https://knowyourmeme.com/)
-
-* [Manch](https://manch.app/hi)
-
-* [Memestori](https://memestori.com/)
-
-* [memecenter](https://www.memecenter.com)
+* More
+    * [iFunny](https://ifunny.co/)
+    * [Memedroid](https://www.memedroid.com)
+    * [tumblr](https://www.tumblr.com/search/memes)
+    * [lefunny](https://lefunny.net/funny-jokes/)
+    * [Cheezburger](https://memebase.cheezburger.com/)
+    * [Me.Me](https://me.me/)
+    * [KnowYourMeme](https://knowyourmeme.com/)
+    * [Manch](https://manch.app/hi)
+    * [Memestori](https://memestori.com/)
+    * [memecenter](https://www.memecenter.com)
