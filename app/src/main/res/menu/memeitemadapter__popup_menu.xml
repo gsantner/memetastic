@@ -27,7 +27,7 @@
         android:title="@string/show_title"/>
     <item
         android:id="@+id/memeitemadapter__popup_menu__action_fav"
-        android:icon="@drawable/ic_star_border_black_32dp"
+        android:icon="@drawable/ic_star_border_black_24dp"
         android:title="@string/favourite"/>
     <item
         android:id="@+id/memeitemadapter__popup_menu__action_hide"
