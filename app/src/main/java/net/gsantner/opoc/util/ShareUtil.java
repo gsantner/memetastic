@@ -360,18 +360,23 @@ public class ShareUtil {
      */
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @SuppressWarnings("deprecation")
-    public PrintJob print(WebView webview, String jobName) {
+    public PrintJob print(final WebView webview, final String jobName, final boolean... landscape) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            PrintDocumentAdapter printAdapter;
-            PrintManager printManager = (PrintManager) _context.getSystemService(Context.PRINT_SERVICE);
+            final PrintDocumentAdapter printAdapter;
+            final PrintManager printManager = (PrintManager) _context.getSystemService(Context.PRINT_SERVICE);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 printAdapter = webview.createPrintDocumentAdapter(jobName);
             } else {
                 printAdapter = webview.createPrintDocumentAdapter();
             }
+            final PrintAttributes.Builder attrib = new PrintAttributes.Builder();
+            if (landscape != null && landscape.length > 0 && landscape[0]) {
+                attrib.setMediaSize(new PrintAttributes.MediaSize("ISO_A4", "android", 11690, 8270));
+                attrib.setMinMargins(new PrintAttributes.Margins(0, 0, 0, 0));
+            }
             if (printManager != null) {
                 try {
-                    return printManager.print(jobName, printAdapter, new PrintAttributes.Builder().build());
+                    return printManager.print(jobName, printAdapter, attrib.build());
                 } catch (Exception ignored) {
                 }
             }
@@ -572,6 +577,14 @@ public class ShareUtil {
                         }
                     }
 
+                    // media/ prefix for External storage
+                    if (fileStr.startsWith((tmps = "media/"))) {
+                        File f = new File(Uri.decode(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + fileStr.substring(tmps.length())));
+                        if (f.exists()) {
+                            return f;
+                        }
+                    }
+
                     // Next/OwnCloud Fileprovider
                     for (String fp : new String[]{"org.nextcloud.files", "org.nextcloud.beta.files", "org.owncloud.files"}) {
                         if (fileProvider.equals(fp) && fileStr.startsWith(tmps = "external_files/")) {
@@ -585,6 +598,16 @@ public class ShareUtil {
                     // Mi File Explorer
                     if (fileProvider.equals("com.mi.android.globalFileexplorer.myprovider") && fileStr.startsWith(tmps = "external_files")) {
                         return new File(Uri.decode(Environment.getExternalStorageDirectory().getAbsolutePath() + fileStr.substring(tmps.length())));
+                    }
+
+                    if (fileStr.startsWith(tmps = "external_files/")) {
+                        for (String prefix : new String[]{Environment.getExternalStorageDirectory().getAbsolutePath(), "/storage", ""}) {
+                            File f = new File(Uri.decode(prefix + "/" + fileStr.substring(tmps.length())));
+                            if (f.exists()) {
+                                return f;
+                            }
+                        }
+
                     }
 
                     // URI Encoded paths with full path after content://package/
@@ -624,6 +647,11 @@ public class ShareUtil {
         }
     }
 
+    public String extractFileFromIntentStr(Intent receivingIntent) {
+        File f = extractFileFromIntent(receivingIntent);
+        return f != null ? f.getAbsolutePath() : null;
+    }
+
     /**
      * Request a picture from camera-like apps
      * Result ({@link String}) will be available from {@link Activity#onActivityResult(int, int, Intent)}.
@@ -647,7 +675,7 @@ public class ShareUtil {
                 if (target != null && !target.isDirectory()) {
                     photoFile = target;
                 } else {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm-ss", Locale.getDefault());
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm-ss", Locale.ENGLISH);
                     File storageDir = target != null ? target : new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "Camera");
                     String imageFileName = ((new ContextUtils(_context).rstr("app_name")).replaceAll("[^a-zA-Z0-9\\.\\-]", "_") + "_").replace("__", "_") + sdf.format(new Date());
                     photoFile = new File(storageDir, imageFileName + ".jpg");
@@ -716,6 +744,10 @@ public class ShareUtil {
                         }
                         cursor.close();
                     }
+
+                    // Try to grab via file extraction method
+                    data.setAction(Intent.ACTION_VIEW);
+                    picturePath = picturePath != null ? picturePath : extractFileFromIntentStr(data);
 
                     // Retrieve image from file descriptor / Cloud, e.g.: Google Drive, Picasa
                     if (picturePath == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -999,7 +1031,8 @@ public class ShareUtil {
     public boolean canWriteFile(File file, boolean isDir) {
         if (file == null) {
             return false;
-        } else if (file.getAbsolutePath().startsWith(Environment.getExternalStorageDirectory().getAbsolutePath())) {
+        } else if (file.getAbsolutePath().startsWith(Environment.getExternalStorageDirectory().getAbsolutePath())
+                || file.getAbsolutePath().startsWith(_context.getFilesDir().getAbsolutePath())) {
             boolean s1 = isDir && file.getParentFile().canWrite();
             return !isDir && file.getParentFile() != null ? file.getParentFile().canWrite() : file.canWrite();
         } else {
@@ -1087,11 +1120,12 @@ public class ShareUtil {
         dialogi.show();
     }
 
+    @SuppressWarnings({"ResultOfMethodCallIgnored", "StatementWithEmptyBody"})
     public void writeFile(File file, boolean isDirectory, Callback.a2<Boolean, FileOutputStream> writeFileCallback) {
         try {
             FileOutputStream fileOutputStream = null;
             ParcelFileDescriptor pfd = null;
-            if (file.canWrite()) {
+            if (file.canWrite() || (!file.exists() && file.getParentFile().canWrite())) {
                 if (isDirectory) {
                     file.mkdirs();
                 } else {
@@ -1112,7 +1146,10 @@ public class ShareUtil {
                 writeFileCallback.callback(fileOutputStream != null || (isDirectory && file.exists()), fileOutputStream);
             }
             if (fileOutputStream != null) {
-                fileOutputStream.close();
+                try {
+                    fileOutputStream.close();
+                } catch (Exception ignored) {
+                }
             }
             if (pfd != null) {
                 pfd.close();

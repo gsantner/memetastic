@@ -29,6 +29,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -221,6 +222,30 @@ public class FileUtils {
             try {
                 is = new FileInputStream(src);
                 os = new FileOutputStream(dst);
+                byte[] buf = new byte[BUFFER_SIZE];
+                int len;
+                while ((len = is.read(buf)) > 0) {
+                    os.write(buf, 0, len);
+                }
+                return true;
+            } finally {
+                if (is != null) {
+                    is.close();
+                }
+                if (os != null) {
+                    os.close();
+                }
+            }
+        } catch (IOException ex) {
+            return false;
+        }
+    }
+
+    public static boolean copyFile(final File src, final FileOutputStream os) {
+        InputStream is = null;
+        try {
+            try {
+                is = new FileInputStream(src);
                 byte[] buf = new byte[BUFFER_SIZE];
                 int len;
                 while ((len = is.read(buf)) > 0) {
@@ -452,7 +477,15 @@ public class FileUtils {
         }
         String[] units = abbreviation ? new String[]{"B", "kB", "MB", "GB", "TB"} : new String[]{"Bytes", "Kilobytes", "Megabytes", "Gigabytes", "Terabytes"};
         int unit = (int) (Math.log10(size) / Math.log10(1024));
-        return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, unit))
-                + " " + units[unit];
+        return new DecimalFormat("#,##0.#", DecimalFormatSymbols.getInstance(Locale.ENGLISH)).format(size / Math.pow(1024, unit)) + " " + units[unit];
+    }
+
+    public static int[] getTimeDiffHMS(long now, long past) {
+        int[] ret = new int[3];
+        long diff = Math.abs(now - past);
+        ret[0] = (int) (diff / (1000 * 60 * 60)); // hours
+        ret[1] = (int) (diff / (1000 * 60)) % 60; // min
+        ret[2] = (int) (diff / 1000) % 60; // sec
+        return ret;
     }
 }

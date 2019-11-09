@@ -1,5 +1,6 @@
-![](https://test.gsantner.net/matomo/piwik.php?action_name=inapp_changelog&idsite=2&rec=1&urlref=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FCHANGELOG.md&_cvar=%7B%221%22%3A%5B%22source%22%2C%22changelog%22%5D%2C%222%22%3A%5B%22project%22%2C%22memetastic%22%5D%2C%223%22%3A%5B%22packageid%22%2C%22io.github.gsantner.memetastic%22%5D%2C%224%22%3A%5B%22referrer%22%2C%22https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FCHANGELOG.md%22%5D%7D)
-
+### v1.7 (In progress)
+- Add more languages for translation
+- Make favourite icon in popup smaller
 
 ### v1.6 [Blog post](https://gsantner.net/blog/2019/08/15/memetastic-v1.6-offline-meme-templates-funny-sites.html?source=inapp_changelog&project=memetastic)  
 - Simplify overall app usage

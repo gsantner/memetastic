@@ -41,6 +41,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.SystemClock;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
@@ -51,7 +53,9 @@ import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.ActivityManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.text.TextUtilsCompat;
 import android.support.v4.util.Pair;
+import android.support.v4.view.ViewCompat;
 import android.text.Html;
 import android.text.InputFilter;
 import android.text.SpannableString;
@@ -82,6 +86,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static android.content.Context.VIBRATOR_SERVICE;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static android.graphics.Bitmap.CompressFormat;
 
@@ -150,6 +155,10 @@ public class ContextUtils {
      * Get color by given color ressource id
      */
     public int rcolor(@ColorRes int resId) {
+        if (resId == 0) {
+            Log.e(getClass().getName(), "ContextUtils::rcolor: resId is 0!");
+            return Color.BLACK;
+        }
         return ContextCompat.getColor(_context, resId);
     }
 
@@ -175,12 +184,12 @@ public class ContextUtils {
      * @param intColor  The color coded in int
      * @param withAlpha Optional; Set first bool parameter to true to also include alpha value
      */
-    public String colorToHexString(int intColor, boolean... withAlpha) {
+    public static String colorToHexString(int intColor, boolean... withAlpha) {
         boolean a = withAlpha != null && withAlpha.length >= 1 && withAlpha[0];
         return String.format(a ? "#%08X" : "#%06X", (a ? 0xFFFFFFFF : 0xFFFFFF) & intColor);
     }
 
-    public String getAndroidVersion() {
+    public static String getAndroidVersion() {
         return Build.VERSION.RELEASE + " (" + Build.VERSION.SDK_INT + ")";
     }
 
@@ -286,7 +295,7 @@ public class ContextUtils {
      */
     public Boolean bcbool(String fieldName, Boolean defaultValue) {
         Object field = getBuildConfigValue(fieldName);
-        if (field != null && field instanceof Boolean) {
+        if (field instanceof Boolean) {
             return (Boolean) field;
         }
         return defaultValue;
@@ -297,7 +306,7 @@ public class ContextUtils {
      */
     public String bcstr(String fieldName, String defaultValue) {
         Object field = getBuildConfigValue(fieldName);
-        if (field != null && field instanceof String) {
+        if (field instanceof String) {
             return (String) field;
         }
         return defaultValue;
@@ -308,7 +317,7 @@ public class ContextUtils {
      */
     public Integer bcint(String fieldName, int defaultValue) {
         Object field = getBuildConfigValue(fieldName);
-        if (field != null && field instanceof Integer) {
+        if (field instanceof Integer) {
             return (Integer) field;
         }
         return defaultValue;
@@ -490,10 +499,16 @@ public class ContextUtils {
      */
     public void setAppLanguage(String androidLC) {
         Locale locale = getLocaleByAndroidCode(androidLC);
+        locale = (locale != null && !androidLC.isEmpty()) ? locale : Resources.getSystem().getConfiguration().locale;
+        setLocale(locale);
+    }
+
+    public ContextUtils setLocale(Locale locale) {
         Configuration config = _context.getResources().getConfiguration();
-        config.locale = (locale != null && !androidLC.isEmpty())
-                ? locale : Resources.getSystem().getConfiguration().locale;
+        config.locale = (locale != null ? locale : Resources.getSystem().getConfiguration().locale);
         _context.getResources().updateConfiguration(config, null);
+        Locale.setDefault(locale);
+        return this;
     }
 
     /**
@@ -827,6 +842,9 @@ public class ContextUtils {
      * This may not work on some devices and it maybe won't work on future android updates
      */
     public void setSubMenuIconsVisiblity(Menu menu, boolean visible) {
+        if (TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_RTL) {
+            return;
+        }
         if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
             try {
                 @SuppressLint("PrivateApi") Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
@@ -955,6 +973,22 @@ public class ContextUtils {
                     activityManager.getMemoryClass() >= 128;
         } catch (Exception ignored) {
             return true;
+        }
+    }
+
+    // Vibrate device one time by given amount of time, defaulting to 50ms
+    // Requires <uses-permission android:name="android.permission.VIBRATE" /> in AndroidManifest to work
+    @SuppressWarnings("UnnecessaryReturnStatement")
+    @SuppressLint("MissingPermission")
+    public void vibrate(int... ms) {
+        int ms_v = ms != null && ms.length > 0 ? ms[0] : 50;
+        Vibrator vibrator = ((Vibrator) _context.getSystemService(VIBRATOR_SERVICE));
+        if (vibrator == null) {
+            return;
+        } else if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(ms_v, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            vibrator.vibrate(ms_v);
         }
     }
 }
