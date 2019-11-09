@@ -1,5 +1,4 @@
 /*#######################################################
- *
  *   Maintained by Gregor Santner, 2016-
  *   https://gsantner.net/
  *
@@ -42,7 +41,7 @@ android {
         resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
         applicationId "io.github.gsantner.memetastic"
         versionName "1.6.3"
-        versionCode 63
+        versionCode 64
         setProperty("archivesBaseName", applicationId + "-v" + versionCode + "-" + versionName)
     }
 
