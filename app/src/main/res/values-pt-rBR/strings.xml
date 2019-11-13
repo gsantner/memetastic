@@ -147,4 +147,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="close">Fechar</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">Você gosta deste projeto? Você quer que ele fica melhor e com problemas corrigidos?\n\nDesenvolver aplicativos e escrever postagens relacionado em blog custa muito tempo! Se você quiser ajudar na continuação do projeto, por favor considere uma pequena doação!\n\nEsse projeto é desenvolvido durante o tempo de lazer, totalmente gratuito e sem propagandas!</string>
     <string name="all">Tudo</string>
+    <string name="global_text_settings">Definições globais de texto</string>
+    <string name="show_image">Mostrar imagem</string>
+    <string name="show_edited_image">Mostrar imagem editada</string>
+    <string name="save_as_template">Guardar como modelo</string>
 </resources>
