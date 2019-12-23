@@ -11,12 +11,12 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-    <string name="open_navdrawer">Abra o painel de navegação</string>
+    <string name="open_navdrawer">Abrir menu de navegação</string>
     <string name="close_navdrawer">Fechar painel de navegação</string>
     <string name="humans">Humanos</string>
     <string name="cartoon">Desenhos</string>
     <string name="animals">Animais</string>
-    <string name="custom">Personalizados</string>
+    <string name="custom">Personalizado</string>
     <string name="rage">Raiva</string>
     <string name="saved">Salvo</string>
     <string name="favs">Favoritos</string>
