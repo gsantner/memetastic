@@ -58,7 +58,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="miscellaneous">Divers</string>
     <string name="gnu_gplv3_license">Mostra la llicència GNU GPLv3</string>
     <string name="settings">Configuració</string>
-    <string name="all_caps">Totes les tapes</string>
+    <string name="all_caps">Tot majúscules</string>
     <string name="caps_off">Desactiva les tapes</string>
     <string name="rotate">Gira</string>
     <string name="render_quality">Qualitat de renderitzat</string>
