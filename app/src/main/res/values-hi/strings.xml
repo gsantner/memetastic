@@ -21,7 +21,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="saved">सुरक्षित</string>
     <string name="favs">पसंदीदा</string>
     <string name="create">बनाये</string>
-    <string name="hidden">छिपा हुआ</string>
+    <string name="hidden">छुपा हुआ</string>
     <string name="rows_with_title">शीर्षक के साथ पंक्तियाँ</string>
     <string name="picture_grid">चित्र ग्रिड</string>
     <string name="get_picture_from_gallery">गैलरी से चित्र प्राप्त करें</string>
@@ -120,13 +120,17 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="download_latest_assets_message_description__appspecific">सेटिंग्स में आप मैन्युअल रूप से नवीनतम आस्तियों को बाद में भी प्राप्त कर सकते हैं।</string>
     <string name="main_view">प्रमुख राय</string>
     <string name="edit_picture">चित्र संपादित करें</string>
+    <string name="general">सामान्य</string>
     <string name="open_source_licenses">खुला स्रोत लाइसेंस</string>
     <string name="rate_this_app">इस ऐप्लिकेशन को रेट करे</string>
     <string name="translate">अनुवाद करें</string>
     <string name="report_bugs">रिपोर्ट बग</string>
     <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">इस परियोजना के दान या समर्थन के बारे में अधिक जानकारी</string>
+    <string name="source_code">सोर्स कोड</string>
     <string name="help">मदद</string>
     <string name="more">अधिक</string>
+    <string name="community">Community</string>
     <string name="contribute">योगदान</string>
+    <string name="close">बंद</string>
     <string name="all">सब</string>
 </resources>
