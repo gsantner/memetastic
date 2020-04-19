@@ -56,6 +56,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="gnu_gplv3_license">അപ്പ്ലിക്കേഷന്റെ അനുമതിപത്രം കാണിക്കുക</string>
     <string name="settings">ക്രമീകരണങ്ങൾ</string>
     <string name="rotate">തിരിക്കുക</string>
+    <string name="render_quality">റെൻഡർ ചെയ്യുന്നതിന്റെ ഗുണമേന്മ</string>
+    <string name="picture_quality_percent" formatted="false">ചിത്രത്തിന്റെ ഗുണമേന്മയും വലുപ്പവും. ഉയർന്ന മൂല്യം നൽകിയാൽ, ലോഡു് ചെയ്യാൻ കൂടുതൽ സമയം എടുക്കാം. 25% ൽ അധികമാണു് വില നൽകുന്നതെങ്കിൽ, ചിത്രത്തെയും ഉപകരണത്തെയും ആശ്രയിച്ചുാവും പ്രവർത്തിയ്ക്കുക.</string>
+    <string name="clear_thumbnails">ലഘുചിത്രം മായ്‌ക്കുക</string>
+    <string name="columns_portrait">ഛായാചിത്രം നിരകളായി</string>
     <string name="appearance">രൂപം</string>
     <string name="editor">എഡിറ്റർ</string>
     <string name="language">ഭാഷ</string>
