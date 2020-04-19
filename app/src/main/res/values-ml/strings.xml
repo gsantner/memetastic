@@ -94,6 +94,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">സംഭാവന</string>
     <string name="the_file_could_not_be_loaded">ഫയൽ ലോഡുചെയ്യാനായില്ല.</string>
     <string name="close">അടയ്ക്കുക</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">ഈ പ്രോജക്റ്റ് ഇഷ്ടമായോ? ഇത് മെച്ചപ്പെടുത്തണമെന്നും പ്രശ്നങ്ങൾ പരിഹരിക്കണമെന്നും നിങ്ങൾ ആഗ്രഹിക്കുന്നോ?\n\nഅപ്ലിക്കേഷനുകൾ വികസിപ്പിക്കുന്നതും അനുബന്ധമായി ബ്ലോഗുകള്‍ എഴുതുന്നതിനും ധാരാളം സമയം ചിലവാകും! പ്രോജക്റ്റ് തുടരുന്നതിന് നിങ്ങൾക്ക് സഹായിക്കാൻ താൽപ്പര്യമുണ്ടെങ്കിൽ, ദയവായി ഒരു ചെറിയ സംഭാവന നൽകുന്ന കാര്യം പരിഗണിക്കുക!\n\nഈ പ്രോജക്റ്റ് ഒഴിവുസമയങ്ങള്‍ വിനിയോഗിച്ചു് വികസിപ്പിച്ചെടുത്തതാണു് കൂടാതെ, പൂർണ്ണമായും സജന്യവും പരസ്യങ്ങളില്ലാതെയും!</string>
     <string name="all">എല്ലാം</string>
     <string name="global_text_settings">ആഗോള ടെക്സ്റ്റ് ക്രമീകരണങ്ങൾ</string>
     <string name="show_image">ചിത്രം കാണിയ്ക്കുക</string>
