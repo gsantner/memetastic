@@ -1,5 +1,5 @@
 [![GitHub release](https://img.shields.io/github/tag/gsantner/memetastic.svg)](https://github.com/gsantner/memetastic/releases)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](http://gsantner.net/supportme)
+[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.net/page/supportme.html?project=memetastic&source=gh_readme)
 [![Build Status](https://travis-ci.org/gsantner/memetastic.svg?branch=master)](https://travis-ci.org/gsantner/memetastic)
 [![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)
 [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=memetastic-anon|?#memetastic) ![](https://r.gsantner.net/matomo/piwik.php?action_name=readme&idsite=2&rec=1&urlref=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FREADME.md&_cvar=%7B%221%22%3A%5B%22source%22%2C%22readme%22%5D%2C%222%22%3A%5B%22project%22%2C%22memetastic%22%5D%2C%223%22%3A%5B%22packageid%22%2C%22io.github.gsantner.memetastic%22%5D%2C%224%22%3A%5B%22referrer%22%2C%22https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FREADME.md%22%5D%7D)
@@ -63,7 +63,7 @@ You can maybe find something suitable here:
 * Meme Templates: [knowyourmeme.com](http://knowyourmeme.com) | [/r/MemeTemplatesOfficial](https://www.reddit.com/r/MemeTemplatesOfficial)  | [memes.at](http://www.memes.at/) | [ragemaker.net](https://ragemaker.net/images)
 
 
-If you like @gsantner's work on <b>MemeTastic</b> and many other Open Source projects, consider [supporting him](http://gsantner.net/supportme?ref=memetastic&source=gh_readme)
+If you like @gsantner's work on <b>MemeTastic</b> and many other Open Source projects, consider [supporting him](https://gsantner.net/page/supportme.html?project=memetastic&source=gh_readme)
 
 
 #### Resources
