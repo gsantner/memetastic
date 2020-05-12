@@ -39,9 +39,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="successfully_saved">Sikeresen mentve!</string>
     <string name="top_caption">Felső szöveg</string>
     <string name="bottom_caption">Alsó szöveg</string>
+    <string name="enter_caption">Írd be a szöveget</string>
     <string name="font">Betűtípus</string>
+    <string name="keep_editing">Szerkesztés folytatása</string>
+    <string name="text">Szöveg</string>
     <string name="size">Méret</string>
+    <string name="background">Háttér</string>
+    <string name="border">Keret</string>
+    <string name="picture">Kép</string>
     <string name="about">Névjegy</string>
+    <string name="developed_by">Fejlesztő:</string>
     <string name="licenses">Licenszek</string>
     <string name="show_licenses">Licencek mutatása</string>
     <string name="contributors">Hozzájárulók</string>
@@ -50,8 +57,25 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="miscellaneous">Egyéb</string>
     <string name="gnu_gplv3_license">GNU GPLv3+ Licenc</string>
     <string name="settings">Beállítások</string>
+    <string name="all_caps">Mind nagybetű</string>
+    <string name="caps_off">Nagybetűk ki</string>
+    <string name="rotate">Elforgatás</string>
+    <string name="picture_quality_percent" formatted="false">A képek minősége és mérete. A magasabb értékek hosszabb töltési időt jelentenek. A készülék hardwarétől és a képmérettől függően az alkalmazás nem működhet megfelelően ha az érték 25% felett van.</string>
+    <string name="clear_thumbnails">Indexkép tisztítása</string>
+    <string name="columns_portrait">Álló oszlopok</string>
+    <string name="columns_landscape">Fekvő oszlopok</string>
     <string name="appearance">Megjelenés</string>
+    <string name="default_mode">Alapértelmezett mód</string>
+    <string name="functionality">Funkciók</string>
+    <string name="save_when_pressing_back">Mentés, amikor visszalépsz</string>
+    <string name="padding">Kitöltés</string>
+    <string name="overview">Áttekintés</string>
     <string name="editor">Szerkesztő</string>
+    <string name="hide_statusbar_at_this_view">Státuszsor elrejtése ebben a nézetben</string>
+    <string name="hide_statusbar">Státuszsor elrejtése</string>
+    <string name="thumbnail_quality">Indexkép minősége</string>
+    <string name="view_type">Nézettípus</string>
+    <string name="show_in_device_gallery">Mutassa meg a készülék galériájában</string>
     <string name="language">Nyelv</string>
     <string name="language_change_restart_description">Az alkalmazás nyelvének megváltoztatása. Indítsd újra az alkalmazást, hogy a módosítások érvénybe lépjenek!</string>
     <string name="general">Általános</string>
@@ -64,6 +88,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="project_team">Projekt csapat</string>
     <string name="help">Segítség</string>
     <string name="more">Egyebek</string>
+    <string name="community">Közösség</string>
     <string name="contribute">Közreműködés</string>
+    <string name="the_file_could_not_be_loaded">Nem lehetett betölteni a fájlt.</string>
+    <string name="close">Bezárás</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Tetszik ez a projekt? Szeretnéd, ha fejlesztenék és megoldanák a problémákat?\n\nAz alkalmazások fejlesztése és a hozzá kapcsolódó blog posztok megírása rengeteg időbe kerül! Ha szeretnél segíteni, hogy a projekt tovább folytatódjon, kérlek fontolj meg egy kis adományozást!\n\nEzt a projektet a szabadidőnkben csináljuk, teljesen ingyen és bármiféle hirdetés nélkül!</string>
     <string name="all">Mind</string>
+    <string name="global_text_settings">Globális szöveg beállítások</string>
+    <string name="show_image">Kép megjelenítése</string>
+    <string name="show_edited_image">Szerkesztett kép megjelenítése</string>
+    <string name="save_as_template">Mentés sablonként</string>
 </resources>
