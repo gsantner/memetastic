@@ -85,7 +85,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="join_community">Csatlakozzon a közösséghez</string>
     <string name="source_code">Forráskód</string>
     <string name="project_license">Projekt licensz</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">Adja meg a kódot a projekthez. Mindenkit szívesen látunk, az újonnan jövőket is beleértve.</string>
     <string name="project_team">Projekt csapat</string>
+    <string name="contributors_public_add_yourself_description">A közreműködő információk megjelenítése. Add meg, hogy megjelenjen a közreműködés után, egy beleegyezés alapú módon.</string>
     <string name="help">Segítség</string>
     <string name="more">Egyebek</string>
     <string name="community">Közösség</string>
