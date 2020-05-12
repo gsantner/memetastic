@@ -10,10 +10,35 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="open_navdrawer">Navigációs menü megnyitása</string>
+    <string name="close_navdrawer">Navigációs menü bezárása</string>
+    <string name="humans">Emberek</string>
+    <string name="cartoon">Rajzfilmek</string>
+    <string name="animals">Állatok</string>
+    <string name="custom">Egyéni</string>
+    <string name="rage">Harag</string>
+    <string name="saved">Mentve</string>
+    <string name="favs">Kedvencek</string>
     <string name="create">Létrehoz</string>
+    <string name="hidden">Rejtett</string>
+    <string name="rows_with_title">Címmel rendelkező sor</string>
+    <string name="picture_grid">Képrács</string>
+    <string name="get_picture_from_gallery">Kép betöltése a galériából</string>
+    <string name="get_picture_from_camera">Kép betöltése a kamerából</string>
+    <string name="error_cannot_start_camera">Nem lehetett elindítani a kamerát.</string>
+    <string name="error_picture_selection">Nincs kiválasztott, készített vagy mentett kép.</string>
+    <string name="error_couldnot_load_picture_from_storage">Nem lehetett betölteni a képet a tárhelyből.</string>
     <string name="donate">Adományozás</string>
+    <string name="recommend">Ajánlás</string>
     <string name="changelog">Újdonságok</string>
     <string name="exit">Kilépés</string>
+    <string name="yes">Igen</string>
+    <string name="text_size">Szövegméret</string>
+    <string name="text_color">Szövegszín</string>
+    <string name="border_color">Keretszín</string>
+    <string name="successfully_saved">Sikeresen mentve!</string>
+    <string name="top_caption">Felső szöveg</string>
+    <string name="bottom_caption">Alsó szöveg</string>
     <string name="font">Betűtípus</string>
     <string name="size">Méret</string>
     <string name="about">Névjegy</string>
