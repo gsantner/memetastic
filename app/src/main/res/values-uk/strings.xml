@@ -90,7 +90,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="palette">Палітра</string>
     <string name="presets">Шаблони</string>
     <string name="select_color">Обрати колір</string>
-    <string name="code">Код</string>
+    <string name="code">Вихідний код </string>
     <string name="favourite">Улюблене</string>
     <string name="remove_favourite">Видалити з улюбленого</string>
     <string name="show_title">Показати заголовок</string>
