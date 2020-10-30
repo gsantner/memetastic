@@ -1,6 +1,6 @@
-### v1.7 (In progress)
-- Add more languages for translation  
-- Make favourite icon in popup smaller  
+### Ongoing
+- Translate app into more languages
+- Make favourite icon in popup smaller
 
 ### v1.6 [Blog post](https://gsantner.net/blog/2019/08/15/memetastic-v1.6-offline-meme-templates-funny-sites.html?source=inapp_changelog&project=memetastic)  
 - Simplify overall app usage
