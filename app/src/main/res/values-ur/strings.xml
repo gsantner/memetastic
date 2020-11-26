@@ -73,4 +73,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="overview">جائزہ</string>
     <string name="editor">ایڈیٹر</string>
     <string name="hide_statusbar_at_this_view">اس منظر میں اسٹیٹس بار چھپائیں</string>
+    <string name="hide_statusbar">اسٹیٹس بار چھپائیں</string>
+    <string name="thumbnail_quality">تھمب نیل کی کوالٹی</string>
+    <string name="view_type">دیکھنے کا انداز</string>
+    <string name="show_in_device_gallery">ڈیوائس گیلری میں دکھائیں</string>
+    <string name="language">زبان</string>
+    <string name="language_change_restart_description">ایپ کی زبان تبدیل کریں. یہ تبدیلی دیکھنے کیلئے ایپ ری سٹارٹ کریں</string>
+    <string name="error_cannot_create_save_directory">غلطی: سیو ڈائریکٹری نہیں بن سکی</string>
+    <string name="other">دیگر</string>
+    <string name="downloading">ڈاؤن لوڈ رہو رہا</string>
+    <string name="downloading_failed">ڈاؤن لوڈ ناکام</string>
+    <string name="unzipping">کھول رہا ہے</string>
+    <string name="successfully_downloaded">کامیابی کے ساتھ ڈاؤنلوڈ ہو گیا</string>
 </resources>
