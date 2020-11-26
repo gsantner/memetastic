@@ -37,4 +37,18 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="text_color">متن کا رنگ</string>
     <string name="border_color">بارڈر کا رنگ</string>
     <string name="successfully_saved">کامیابی سے محفوظ ہو گیا!</string>
+    <string name="top_caption">اوپر والی کیپشن</string>
+    <string name="bottom_caption">نیچے والی کیپشن</string>
+    <string name="enter_caption">کیپشن لکھیں</string>
+    <string name="font">فونٹ</string>
+    <string name="keep_editing">ترمیم جاری رکھیں</string>
+    <string name="text">ٹیکسٹ</string>
+    <string name="size">سائز</string>
+    <string name="background">پس منظر</string>
+    <string name="border">بارڈر</string>
+    <string name="picture">تصویر</string>
+    <string name="about">کے بارے میں</string>
+    <string name="developed_by">کی طرف سے تیار کردہ</string>
+    <string name="licenses">لائسینسز</string>
+    <string name="show_licenses">لائسینسز دکھائیں</string>
 </resources>
