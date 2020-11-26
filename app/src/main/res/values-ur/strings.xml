@@ -61,4 +61,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="caps_off">کیپس ختم</string>
     <string name="rotate">گھمائیں</string>
     <string name="render_quality">رینڈر کی کوالٹی</string>
+    <string name="picture_quality_percent" formatted="false">تصاویر کی کوالٹی اور سائز. ہائی کوالٹی کا مطلب ہے زیادہ لوڈ ٹائم. اگر ویلیو 25 فیصد سے زیادہ تو شاید ایپ کام نہ کرے لیکن یہ ڈیوائس کے ہارڈ اور تصویر کے سائز پر منحصر ہے.</string>
+    <string name="clear_thumbnails">تھمب نیل کلئیر کریں</string>
+    <string name="columns_portrait">کالمز عمودی</string>
+    <string name="columns_landscape">کالمز افقی</string>
+    <string name="appearance">شکل و صورت</string>
+    <string name="default_mode">ڈیفالٹ موڈ</string>
+    <string name="functionality">فعالیت</string>
+    <string name="save_when_pressing_back">پیچھے جاتے ہوئے محفوظ کریں</string>
+    <string name="padding">پیڈنگ</string>
+    <string name="overview">جائزہ</string>
+    <string name="editor">ایڈیٹر</string>
+    <string name="hide_statusbar_at_this_view">اس منظر میں اسٹیٹس بار چھپائیں</string>
 </resources>
