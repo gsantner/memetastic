@@ -17,4 +17,24 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="animals">جانور</string>
     <string name="custom">کسٹم</string>
     <string name="rage">غصہ</string>
+    <string name="saved">محفوظ</string>
+    <string name="favs">فیورٹ</string>
+    <string name="create">بنائیں</string>
+    <string name="hidden">پوشیدہ</string>
+    <string name="rows_with_title">عنوان والی قطاریں</string>
+    <string name="picture_grid">تصویر کی گرڈ</string>
+    <string name="get_picture_from_gallery">گیلری سے تصویر لیں</string>
+    <string name="get_picture_from_camera">گیلری سے تصویر لیں</string>
+    <string name="error_cannot_start_camera">کیمرا شروع نہیں ہو سکا.</string>
+    <string name="error_picture_selection">کوئی تصویر سیلیکٹ، کھنچی یا محفوظ نہیں کی گئی.</string>
+    <string name="error_couldnot_load_picture_from_storage">گیلری سے تصویر لوڈ نہیں ہو سکی.</string>
+    <string name="donate">عطیہ کریں</string>
+    <string name="recommend">تجویز کریں</string>
+    <string name="changelog">لاگ تبدیل کریں</string>
+    <string name="exit">بند کریں</string>
+    <string name="yes">ہاں</string>
+    <string name="text_size">متن کا سائز</string>
+    <string name="text_color">متن کا رنگ</string>
+    <string name="border_color">بارڈر کا رنگ</string>
+    <string name="successfully_saved">کامیابی سے محفوظ ہو گیا!</string>
 </resources>
