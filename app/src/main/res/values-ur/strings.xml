@@ -85,4 +85,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="downloading_failed">ڈاؤن لوڈ ناکام</string>
     <string name="unzipping">کھول رہا ہے</string>
     <string name="successfully_downloaded">کامیابی کے ساتھ ڈاؤنلوڈ ہو گیا</string>
+    <string name="download_latest_assets">تازہ ترین اثاثے ڈاؤنلوڈ کریں</string>
 </resources>
