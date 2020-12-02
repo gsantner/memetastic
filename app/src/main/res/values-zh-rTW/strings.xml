@@ -48,6 +48,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">開發者 ：</string>
     <string name="licenses">許可證</string>
     <string name="contributors">貢獻人</string>
+    <string name="more_information">更多資訊</string>
     <string name="show_third_party_licenses">第三方程式庫</string>
     <string name="miscellaneous">其他</string>
     <string name="gnu_gplv3_license">GNU GPLv3+ 授權條款</string>
@@ -59,6 +60,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="columns_landscape">列數 （橫向螢幕時）</string>
     <string name="appearance">外觀</string>
     <string name="default_mode">預設模式</string>
+    <string name="save_when_pressing_back">返回時自動儲存</string>
     <string name="padding">圖片留邊</string>
     <string name="overview">介面設定</string>
     <string name="editor">編輯器</string>
@@ -68,6 +70,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">在裝置圖片庫中顯示</string>
     <string name="language">語言</string>
     <string name="language_change_restart_description">更改應用程式使用的語言。要重新開啟應用程式才會生效</string>
+    <string name="error_cannot_create_save_directory">錯誤：無法建立儲存目錄</string>
     <string name="other">其他</string>
     <string name="downloading">正在下載...</string>
     <string name="downloading_failed">下載失敗</string>
@@ -88,6 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="share_meme__appspecific">分享Meme</string>
     <string name="create_meme__appspecific">建立Meme</string>
     <string name="delete_meme__appspecific">刪除Meme</string>
+    <string name="no_favourites_description__appspecific">尚未儲存最愛圖片。\n點擊迷因圖右下角的星形按鈕以儲存至我的最愛</string>
     <string name="no_custom_templates_description__appspecific">無自訂模板。\n在此放置模板圖片：%1$s</string>
     <string name="default_mode_description_description__appspecific">程式啟動時預設開啟的模式(建立、我的最愛或已儲存)</string>
     <string name="press_back_again_to_stop_editing__appspecific">再次返回以結束編輯此meme。若尚未儲存Meme內容將會丟失。</string>
