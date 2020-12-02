@@ -12,10 +12,19 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 <resources>
     <string name="open_navdrawer">開啟側邊導覽選單</string>
     <string name="close_navdrawer">關閉側邊導覽選單</string>
+    <string name="humans">人類</string>
+    <string name="cartoon">卡通</string>
+    <string name="animals">動物</string>
+    <string name="custom">自訂</string>
+    <string name="saved">已儲存</string>
+    <string name="favs">我的最愛</string>
     <string name="create">建立</string>
     <string name="donate">贊助</string>
     <string name="changelog">更新紀錄</string>
     <string name="exit">離開</string>
+    <string name="text_size">字體大小</string>
+    <string name="text_color">文字顔色</string>
+    <string name="successfully_saved">儲存成功！</string>
     <string name="size">依大小排列</string>
     <string name="background">背景</string>
     <string name="about">說明</string>
