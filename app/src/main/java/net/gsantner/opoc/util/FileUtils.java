@@ -409,9 +409,10 @@ public class FileUtils {
 
             if (guess == null || guess.isEmpty()) {
                 guess = "*/*";
-                int dot = file.getName().lastIndexOf(".") + 1;
-                if (dot > 0 && dot < file.getName().length()) {
-                    switch (file.getName().substring(dot)) {
+                String filename = file.getName().replace(".jenc", "");
+                int dot = filename.lastIndexOf(".") + 1;
+                if (dot > 0 && dot < filename.length()) {
+                    switch (filename.substring(dot)) {
                         case "md":
                         case "markdown":
                         case "mkd":
@@ -487,5 +488,17 @@ public class FileUtils {
         ret[1] = (int) (diff / (1000 * 60)) % 60; // min
         ret[2] = (int) (diff / 1000) % 60; // sec
         return ret;
+    }
+
+    public static String getHumanReadableByteCountSI(final long bytes) {
+        if (bytes < 1000) {
+            return String.format(Locale.getDefault(), "%d%s", bytes, "B");
+        } else if (bytes < 1000000) {
+            return String.format(Locale.getDefault(), "%.2f%s", (bytes / 1000f), "KB");
+        } else if (bytes < 1000000000) {
+            return String.format(Locale.getDefault(), "%.2f%s", (bytes / 1000000f), "GB");
+        } else {
+            return String.format(Locale.getDefault(), "%.2f%s", (bytes / 1000000000f), "TB");
+        }
     }
 }

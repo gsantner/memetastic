@@ -78,7 +78,7 @@ import static android.app.Activity.RESULT_OK;
  * Also allows to parse/fetch information out of shared information.
  * (M)Permissions are not checked, wrap ShareUtils methods if neccessary
  */
-@SuppressWarnings({"UnusedReturnValue", "WeakerAccess", "SameParameterValue", "unused", "deprecation", "ConstantConditions", "ObsoleteSdkInt", "SpellCheckingInspection", "JavadocReference"})
+@SuppressWarnings({"UnusedReturnValue", "WeakerAccess", "SameParameterValue", "unused", "deprecation", "ConstantConditions", "ObsoleteSdkInt", "SpellCheckingInspection", "JavadocReference", "ConstantLocale"})
 public class ShareUtil {
     public final static String EXTRA_FILEPATH = "real_file_path_2";
     public final static SimpleDateFormat SDF_RFC3339_ISH = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm-ss", Locale.getDefault());
@@ -89,6 +89,8 @@ public class ShareUtil {
     public final static int REQUEST_CAMERA_PICTURE = 50001;
     public final static int REQUEST_PICK_PICTURE = 50002;
     public final static int REQUEST_SAF = 50003;
+
+    public final static int MIN_OVERWRITE_LENGTH = 5;
 
     protected static String _lastCameraPictureFilepath;
 
@@ -1132,7 +1134,9 @@ public class ShareUtil {
         try {
             FileOutputStream fileOutputStream = null;
             ParcelFileDescriptor pfd = null;
-            if (file.canWrite() || (!file.exists() && file.getParentFile().canWrite())) {
+            final boolean existingEmptyFile = file.canWrite() && file.length() < MIN_OVERWRITE_LENGTH;
+            final boolean nonExistingCreatableFile = !file.exists() && file.getParentFile().canWrite();
+            if (existingEmptyFile || nonExistingCreatableFile) {
                 if (isDirectory) {
                     file.mkdirs();
                 } else {
@@ -1144,7 +1148,7 @@ public class ShareUtil {
                     if (isDirectory) {
                         // Nothing to do
                     } else {
-                        pfd = _context.getContentResolver().openFileDescriptor(dof.getUri(), "w");
+                        pfd = _context.getContentResolver().openFileDescriptor(dof.getUri(), "rw");
                         fileOutputStream = new FileOutputStream(pfd.getFileDescriptor());
                     }
                 }
