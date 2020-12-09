@@ -22,5 +22,5 @@
   If a crash is happening a log is needed. Screenshots or demonstration videos are always helpful too.
 
   About logging:
-  https://gsantner.net/blog/2018/03/19/android-contribution-guide.html?packageid=io.github.gsantner.memetastic&name=MemeTastic&web=https://github.com/gsantner/memetastic#logcat
+  https://gsantner.net/blog/2018/03/19/android-contribution-guide.html?packageid=net.gsantner.markor&project=markor&web=https://github.com/gsantner/markor#logcat
 -->
