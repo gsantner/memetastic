@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*#######################################################
+ *
+ *   Maintained by Gregor Santner, 2016-
+ *   https://gsantner.net/
+ *
+ *   License of this file: GNU GPLv3 (Commercial upon request)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+#########################################################*/
+-->
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="preferenceTheme">@style/AppTheme.PreferenceTheme</item>
+        <item name="android:windowBackground">@color/default_activity_bg_dark</item>
+    </style>
+
+    <style name="AppTheme.MemeCreatorEditTextOnLightBackground" parent="AppTheme.MemeCreatorEditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textCursorDrawable">@color/white</item>
+        <item name="android:textColorHint">@color/secondary_text</item>
+        <item name="colorControlNormal">@color/secondary_text</item>
+        <item name="colorControlActivated">@color/white</item>
+
+    </style>
+</resources>

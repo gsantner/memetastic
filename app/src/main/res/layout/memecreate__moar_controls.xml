@@ -25,7 +25,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eeeeee"
+    android:background="@color/default_activity_bg"
     android:fadeScrollbars="false"
     android:paddingLeft="@dimen/default_margin_2"
     android:paddingTop="@dimen/default_margin_2"
