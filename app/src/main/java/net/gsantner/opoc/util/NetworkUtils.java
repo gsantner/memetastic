@@ -24,7 +24,6 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -221,5 +220,15 @@ public class NetworkUtils {
         }
 
         return result;
+    }
+
+    public static void httpGetAsync(final String url, final Callback.a1<String> callback) {
+        new Thread(() -> {
+            try {
+                String c = NetworkUtils.performCall(url, GET);
+                callback.callback(c);
+            } catch (Exception ignored) {
+            }
+        }).start();
     }
 }

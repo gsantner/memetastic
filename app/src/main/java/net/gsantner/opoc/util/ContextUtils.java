@@ -67,7 +67,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -90,7 +92,7 @@ import static android.content.Context.VIBRATOR_SERVICE;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static android.graphics.Bitmap.CompressFormat;
 
-@SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "ObsoleteSdkInt", "deprecation", "SpellCheckingInspection", "TryFinallyCanBeTryWithResources", "UnusedAssignment"})
+@SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "ObsoleteSdkInt", "deprecation", "SpellCheckingInspection", "TryFinallyCanBeTryWithResources", "UnusedAssignment", "UnusedReturnValue"})
 public class ContextUtils {
     //
     // Members, Constructors
@@ -257,7 +259,7 @@ public class ContextUtils {
      * Send a {@link Intent#ACTION_VIEW} Intent with given paramter
      * If the parameter is an string a browser will get triggered
      */
-    public void openWebpageInExternalBrowser(final String url) {
+    public ContextUtils openWebpageInExternalBrowser(final String url) {
         try {
             Uri uri = Uri.parse(url);
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -266,6 +268,7 @@ public class ContextUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return this;
     }
 
     /**
@@ -1010,6 +1013,25 @@ public class ContextUtils {
         } else {
             vibrator.vibrate(ms_v);
         }
+    }
+
+    /*
+    Check if Wifi is connected. Requires these permissions in AndroidManifest:
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+     */
+    @SuppressLint("MissingPermission")
+    public boolean isWifiConnected(boolean... enabledOnly) {
+        final boolean doEnabledCheckOnly = enabledOnly != null && enabledOnly.length > 0 && enabledOnly[0];
+        final ConnectivityManager connectivityManager = (ConnectivityManager) _context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo wifiInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        return wifiInfo != null && (doEnabledCheckOnly ? wifiInfo.isAvailable() : wifiInfo.isConnected());
+    }
+
+    // Returns if the device is currently in portrait orientation (landscape=false)
+    public boolean isDeviceOrientationPortrait() {
+        final int rotation = ((WindowManager) _context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getOrientation();
+        return (rotation == Surface.ROTATION_0) || (rotation == Surface.ROTATION_180);
     }
 }
 
