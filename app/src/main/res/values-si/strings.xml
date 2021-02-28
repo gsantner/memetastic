@@ -20,6 +20,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="settings">සැකසුම්</string>
     <string name="language">භාෂාව</string>
     <string name="other">වෙනත්</string>
+    <string name="downloading">බාගත වෙමින්</string>
+    <string name="downloading_failed">බාගැනීම අසාර්ථකයි</string>
+    <string name="favourite">ප්‍රියතම</string>
     <string name="hide">සඟවන්න</string>
     <string name="translate">පරිවර්තනය</string>
     <string name="report_bugs">දෝෂ වාර්තා කරන්න</string>
