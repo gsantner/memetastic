@@ -14,7 +14,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="animals">සතුන්</string>
     <string name="create">සාදන්න</string>
     <string name="donate">පරිත්‍යාග</string>
+    <string name="exit">පිටවෙන්න</string>
+    <string name="yes">ඔව්</string>
+    <string name="font">මුද්‍රණ අකුර</string>
     <string name="size">ප්‍රමාණය</string>
+    <string name="background">පසුබිම</string>
+    <string name="picture">ඡායාරූපය</string>
     <string name="about">පිලිබඳව</string>
     <string name="licenses">බලපත්‍ර</string>
     <string name="settings">සැකසුම්</string>
