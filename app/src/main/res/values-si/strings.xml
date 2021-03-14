@@ -22,6 +22,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="picture">ඡායාරූපය</string>
     <string name="about">පිලිබඳව</string>
     <string name="licenses">බලපත්‍ර</string>
+    <string name="contributors">සහදායකයින්</string>
     <string name="settings">සැකසුම්</string>
     <string name="language">භාෂාව</string>
     <string name="other">වෙනත්</string>
