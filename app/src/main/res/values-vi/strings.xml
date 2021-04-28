@@ -10,7 +10,21 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="open_navdrawer">Mở ngăn điều hướng</string>
+    <string name="close_navdrawer">Đóng ngăn điều hướng</string>
+    <string name="humans">Con người</string>
+    <string name="cartoon">Hoạt hình</string>
+    <string name="animals">Động vật</string>
+    <string name="custom">Tùy chỉnh</string>
+    <string name="saved">Đã lưu</string>
+    <string name="favs">Yêu thích</string>
     <string name="create">Tạo ra</string>
+    <string name="hidden">Ẩn</string>
+    <string name="rows_with_title">Hàng có tiêu đề</string>
+    <string name="picture_grid">Ảnh xếp dạng lưới</string>
+    <string name="get_picture_from_gallery">Lấy ảnh từ thư viện</string>
+    <string name="get_picture_from_camera">Lấy ảnh từ máy ảnh</string>
+    <string name="error_cannot_start_camera">Không thể khởi động máy ảnh.</string>
     <string name="about">Trong khoảng</string>
     <string name="licenses">Giấy phép</string>
     <string name="contributors">Những người đóng góp</string>
