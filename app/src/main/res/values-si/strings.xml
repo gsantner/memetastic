@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Project by Gregor Santner (https://gsantner.net)
+
+To the extent possible under law, the person who associated CC0 with
+this file has waived all copyright and related or neighboring rights
+to the public domain.
+
+You should have received a copy of the CC0 legalcode along with this
+work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<resources>
+    <string name="humans">මනුෂ්‍යයින්</string>
+    <string name="animals">සතුන්</string>
+    <string name="create">සාදන්න</string>
+    <string name="donate">පරිත්‍යාග</string>
+    <string name="exit">පිටවෙන්න</string>
+    <string name="yes">ඔව්</string>
+    <string name="font">මුද්‍රණ අකුර</string>
+    <string name="size">ප්‍රමාණය</string>
+    <string name="background">පසුබිම</string>
+    <string name="picture">ඡායාරූපය</string>
+    <string name="about">පිලිබඳව</string>
+    <string name="licenses">බලපත්‍ර</string>
+    <string name="contributors">සහදායකයින්</string>
+    <string name="settings">සැකසුම්</string>
+    <string name="language">භාෂාව</string>
+    <string name="other">වෙනත්</string>
+    <string name="downloading">බාගත වෙමින්</string>
+    <string name="downloading_failed">බාගැනීම අසාර්ථකයි</string>
+    <string name="favourite">ප්‍රියතම</string>
+    <string name="hide">සඟවන්න</string>
+    <string name="translate">පරිවර්තනය</string>
+    <string name="report_bugs">දෝෂ වාර්තා කරන්න</string>
+    <string name="help">උපකාර</string>
+    <string name="close">වසන්න</string>
+    <string name="all">සියල්ල</string>
+</resources>
