@@ -16,6 +16,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="cartoon">Hoạt hình</string>
     <string name="animals">Động vật</string>
     <string name="custom">Tùy chỉnh</string>
+    <string name="rage">Rage</string>
     <string name="saved">Đã lưu</string>
     <string name="favs">Yêu thích</string>
     <string name="create">Tạo ra</string>
@@ -136,6 +137,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more_info_on_how_to_contribute_to_this_project">Nhiều thông tin hơn về cách đóng góp vào dự án này</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Đóng góp mã vào dự án. Mọi người đều được làm vậy, kể cả những người mới vào</string>
     <string name="project_team">Nhóm dự án</string>
+    <string name="contributors_public_add_yourself_description">Hiển thị thông tin người đóng góp. Hãy chủ động cung cấp thông tin để được hiện ở đây sau khi đóng góp</string>
+    <string name="help">Trợ giúp</string>
+    <string name="more">Thêm</string>
     <string name="community">Cộng đồng</string>
     <string name="contribute">Đóng góp</string>
     <string name="the_file_could_not_be_loaded">Không thể tải tệp.</string>
