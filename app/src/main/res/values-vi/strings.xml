@@ -110,6 +110,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="press_back_again_to_stop_editing__appspecific">Nhấn Quay lại lần nữa để dừng chỉnh sửa ảnh chế này. Ảnh chế sẽ bị mất nếu chưa được lưu.</string>
     <string name="saved_meme_successfully__appspecific">Đã lưu trữ ảnh chế này vào thiết bị thành công. Bạn có muốn thoát việc chỉnh sửa ảnh chế này ngay bây giờ không?</string>
     <string name="save_when_pressing_back_description__appspecific">Tự động lưu ảnh chế nếu nhấn Quay lại và đã có đầu vào</string>
+    <string name="shuffle_meme_list_description__appspecific">Xáo trộn danh sách ảnh chế sau khi chọn thể loại</string>
     <string name="community">Cộng đồng</string>
     <string name="contribute">Đóng góp</string>
     <string name="the_file_could_not_be_loaded">Không thể tải tệp.</string>
