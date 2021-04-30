@@ -128,6 +128,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="report_bugs">Báo cáo lỗi</string>
     <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Nhiều thông tin hơn về việc quyên góp hoặc hỗ trợ dự án này</string>
     <string name="join_community">Tham gia cộng đồng</string>
+    <string name="bug_reports_suggest_improvements">Phản hồi, báo cáo lỗi hoặc đề xuất sự cải thiện</string>
+    <string name="help_translating_this_app">Dịch ứng dụng này ra các ngôn ngữ khác</string>
+    <string name="source_code">Mã nguồn</string>
+    <string name="project_license">Giấy phép dự án</string>
+    <string name="project_contribution_info">Thông tin về việc đóng góp vào dự án</string>
+    <string name="more_info_on_how_to_contribute_to_this_project">Nhiều thông tin hơn về cách đóng góp vào dự án này</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">Đóng góp mã vào dự án. Mọi người đều được làm vậy, kể cả những người mới vào</string>
+    <string name="project_team">Nhóm dự án</string>
     <string name="community">Cộng đồng</string>
     <string name="contribute">Đóng góp</string>
     <string name="the_file_could_not_be_loaded">Không thể tải tệp.</string>
