@@ -35,6 +35,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="text_size">Cỡ chữ</string>
     <string name="text_color">Màu chữ</string>
     <string name="border_color">Màu viền</string>
+    <string name="successfully_saved">Đã lưu thành công!</string>
     <string name="about">Trong khoảng</string>
     <string name="licenses">Giấy phép</string>
     <string name="contributors">Những người đóng góp</string>
