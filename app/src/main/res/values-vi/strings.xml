@@ -94,4 +94,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Đóng góp</string>
     <string name="the_file_could_not_be_loaded">Không thể tải tệp.</string>
     <string name="close">Đóng</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Bạn có thích dự án này không? Bạn có muốn nó được cải thiện và những vấn đề của nó được sửa không?\n\nViệc phát triển các ứng dụng và viết các bài đăng blog có liên quan tốn rất nhiều thời gian! Nếu bạn muốn giúp đỡ để cho dự án được tiếp tục, thì hãy vui lòng cân nhắc việc quyên góp một khoản nhỏ!\n\nDự án này được phát triển trong thời gian rảnh, hoàn toàn miễn phí và không có quảng cáo!</string>
+    <string name="all">Tất cả</string>
+    <string name="global_text_settings">Cài đặt văn bản toàn ứng dụng</string>
+    <string name="show_image">Hiện hình ảnh</string>
+    <string name="show_edited_image">Hiện hình ảnh đã chỉnh sửa</string>
+    <string name="save_as_template">Lưu dưới dạng mẫu</string>
 </resources>
