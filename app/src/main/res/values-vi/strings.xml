@@ -84,4 +84,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="downloading_failed">Tải xuống thất bại</string>
     <string name="unzipping">Đang giải nén zip</string>
     <string name="successfully_downloaded">Tải xuống thành công</string>
+    <string name="download_latest_assets">Tải xuống các phần mới nhất</string>
+    <string name="download_latest_assets_checking_description">Đang kiểm tra xem có các phần gần đây hơn không</string>
+    <string name="palette">Bảng màu</string>
+    <string name="presets">Thiết lập có sẵn</string>
+    <string name="select_color">Chọn màu</string>
+    <string name="code">Mã</string>
+    <string name="community">Cộng đồng</string>
+    <string name="contribute">Đóng góp</string>
+    <string name="the_file_could_not_be_loaded">Không thể tải tệp.</string>
+    <string name="close">Đóng</string>
 </resources>
