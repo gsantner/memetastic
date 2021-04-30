@@ -62,6 +62,26 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="render_quality">Chất lượng kết xuất hình ảnh</string>
     <string name="picture_quality_percent" formatted="false">Chất lượng và kích cỡ của hình ảnh. Giá trị cao hơn có nghĩa là thời gian tải dài hơn. Tuỳ vào phần cứng thiết bị và kích cỡ hình ảnh, ứng dụng có thể sẽ không hoạt động như ý muốn nếu giá trị này lớn hơn 25%.</string>
     <string name="clear_thumbnails">Xoá hình thu nhỏ</string>
+    <string name="columns_portrait">Số cột ở hướng dọc</string>
+    <string name="columns_landscape">Số cột ở hướng ngang</string>
     <string name="appearance">Xuất hiện</string>
+    <string name="default_mode">Chế độ mặc định</string>
+    <string name="functionality">Chức năng</string>
+    <string name="save_when_pressing_back">Lưu khi nhấn Quay lại</string>
+    <string name="padding">Khoảng cách</string>
+    <string name="overview">Tổng quan</string>
     <string name="editor">Biên tập viên</string>
+    <string name="hide_statusbar_at_this_view">Ẩn thanh trạng thái tại mục hiển thị này</string>
+    <string name="hide_statusbar">Ẩn thanh trạng thái</string>
+    <string name="thumbnail_quality">Chất lượng hình thu nhỏ</string>
+    <string name="view_type">Dạng hiển thị</string>
+    <string name="show_in_device_gallery">Hiện trong thư viện thiết bị</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="language_change_restart_description">Thay đổi ngôn ngữ của ứng dụng. Khởi động lại ứng dụng để các thay đổi có hiệu lực</string>
+    <string name="error_cannot_create_save_directory">Lỗi: Không thể tạo thư mục lưu</string>
+    <string name="other">Khác</string>
+    <string name="downloading">Đang tải xuống</string>
+    <string name="downloading_failed">Tải xuống thất bại</string>
+    <string name="unzipping">Đang giải nén zip</string>
+    <string name="successfully_downloaded">Tải xuống thành công</string>
 </resources>
