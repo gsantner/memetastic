@@ -10,8 +10,23 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="humans">Oameni</string>
+    <string name="cartoon">Desen animat</string>
+    <string name="animals">Animale</string>
+    <string name="custom">Personalizat</string>
+    <string name="rage">Furie</string>
+    <string name="saved">Salvat</string>
+    <string name="favs">Favorite</string>
     <string name="create">Creează</string>
+    <string name="hidden">Ascuns</string>
+    <string name="rows_with_title">Rânduri cu titlu</string>
+    <string name="picture_grid">Grilă imagine</string>
+    <string name="get_picture_from_gallery">Selectaţi imaginea din Galerie</string>
+    <string name="donate">Donează</string>
+    <string name="recommend">Recomandă</string>
     <string name="changelog">Jurnalul modificărilor</string>
+    <string name="exit">Ieşire</string>
+    <string name="yes">da</string>
     <string name="about">Despre</string>
     <string name="show_licenses">Afişează licenţa</string>
     <string name="contributors">Contribuitori</string>
@@ -20,6 +35,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="miscellaneous">Diverse</string>
     <string name="settings">Setări</string>
     <string name="appearance">Aspect</string>
+    <string name="padding">Spațiere</string>
     <string name="editor">Editor</string>
     <string name="language">Limbă</string>
     <string name="language_change_restart_description">Schimbă limba acestei aplicații. Restartează aplicația pentru ca schimbările să ia efect</string>
