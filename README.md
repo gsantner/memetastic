@@ -1,10 +1,8 @@
-[![GitHub release](https://img.shields.io/github/tag/gsantner/memetastic.svg)](https://github.com/gsantner/memetastic/releases)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.net/page/supportme.html?project=memetastic&source=gh_readme)
-[![Build Status](https://travis-ci.org/gsantner/memetastic.svg?branch=master)](https://travis-ci.org/gsantner/memetastic)
-[![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)
-[![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=memetastic-anon|?#memetastic) ![](https://r.gsantner.net/matomo/piwik.php?action_name=readme&idsite=2&rec=1&urlref=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FREADME.md&_cvar=%7B%221%22%3A%5B%22source%22%2C%22readme%22%5D%2C%222%22%3A%5B%22project%22%2C%22memetastic%22%5D%2C%223%22%3A%5B%22packageid%22%2C%22io.github.gsantner.memetastic%22%5D%2C%224%22%3A%5B%22referrer%22%2C%22https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic%2FREADME.md%22%5D%7D)
-
-
+[![GitHub releases](https://img.shields.io/github/tag/gsantner/memetastic.svg)](https://github.com/gsantner/memetastic/releases)
+[![GitHub downloads](https://img.shields.io/github/downloads/gsantner/memetastic/total.svg?logo=github&logoColor=lime)](https://github.com/gsantner/memetastic/releases)
+[![Donate - say thanks](https://img.shields.io/badge/donate-say%20thanks-red.svg)](https://gsantner.net/page/supportme.html?project=memetastic&source=readme)
+[![Chat on Matrix](https://img.shields.io/badge/chat-matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org)
+[![GitHub CI](https://github.com/gsantner/memetastic/workflows/CI/badge.svg)](https://github.com/gsantner/memetastic/actions)
 
 # MemeTastic
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
@@ -51,7 +49,7 @@ The project uses [AOSP Java Code Style](https://source.android.com/source/code-s
 
 Translations can be contributed on GitHub or via [E-Mail](http://gsantner.net/#contact). You can use Stringlate ([![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic)) to translate the project directly on your Android phone. It allows you to export as E-Mail attachment and to post on GitHub.
 
-Join our IRC or Matrix channel (bridged) and say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=memetastic-anon|?#memetastic)
+Join our Matrix channel & say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org)  
 
 For inclusion of new fonts or memes visit [issue #1](https://github.com/gsantner/memetastic/issues/1).
 Please only post stuff under free license (/or created yourself) and is allowed to be freely redistributed.
@@ -98,4 +96,3 @@ If you publish an app based on MemeTastic you MUST
 	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/09.png" width="19%" style="margin-left:10px;" >
 </div>
 
-### Notice
