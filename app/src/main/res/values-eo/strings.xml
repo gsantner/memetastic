@@ -9,4 +9,27 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="humans">Homoj</string>
+    <string name="cartoon">Kartuno</string>
+    <string name="animals">Bestoj</string>
+    <string name="custom">Propraj</string>
+    <string name="saved">Konservita</string>
+    <string name="favs">Plej ŝatataj</string>
+    <string name="create">Krei</string>
+    <string name="hidden">Kaŝitaj</string>
+    <string name="rows_with_title">Vicoj kun titolo</string>
+    <string name="picture_grid">Bilda krado</string>
+    <string name="error_cannot_start_camera">Ne povas lanĉi fotilon.</string>
+    <string name="recommend">Rekomendi</string>
+    <string name="changelog">Ŝanĝoprotokolo</string>
+    <string name="exit">Eliri</string>
+    <string name="yes">jes</string>
+    <string name="text_size">Teksto grando</string>
+    <string name="text_color">Teksta koloro</string>
+    <string name="border_color">Koloro de bordo</string>
+    <string name="successfully_saved">Sukcese konservita!</string>
+    <string name="top_caption">Supra teksto</string>
+    <string name="bottom_caption">Malsupra teksto</string>
+    <string name="enter_caption">Enigu tekston</string>
+</resources>
