@@ -133,7 +133,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">Přeložte tuto aplikaci do jiných jazyků</string>
     <string name="source_code">Zdrojový kodex</string>
     <string name="project_license">Licence projektu</string>
-    <string name="project_contribution_info">Informace o příspěvku projektu</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Více informací o tom, jak přispět k tomuto projektu</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Přispět k projektu kódem, který každý přivítá, včetně nově příchozích.</string>
     <string name="project_team">Tým projektu</string>

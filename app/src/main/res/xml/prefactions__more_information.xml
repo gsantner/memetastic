@@ -61,12 +61,6 @@
             android:summary="@string/help_translating_this_app"
             android:title="@string/translate" />
 
-        <Preference
-            android:icon="@drawable/ic_info_black_24dp"
-            android:key="@string/pref_key__more_info__project_contribution_info"
-            android:summary="@string/more_info_on_how_to_contribute_to_this_project"
-            android:title="@string/project_contribution_info" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -102,13 +96,6 @@
             android:icon="@drawable/ic_copyright_black_24dp"
             android:key="@string/pref_key__more_info__open_source_licenses"
             android:title="@string/open_source_licenses" />
-
-        <Preference
-            android:icon="@drawable/ic_code_black_24dp"
-            android:key="@string/pref_key__more_info__source_code"
-            android:summary="@string/contribute_code_to_this_project_anybody_welcome"
-            android:title="@string/source_code" />
-
 
         <Preference
             android:icon="@drawable/ic_code_black_24dp"
