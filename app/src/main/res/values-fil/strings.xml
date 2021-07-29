@@ -24,7 +24,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_third_party_licenses">Ipakita ang mga lisensiya ng mga ika-3 partido</string>
     <string name="miscellaneous">Sari-sari</string>
     <string name="gnu_gplv3_license">Ipakita ang lisensiya ng app</string>
-    <string name="settings">Mga Tanawin</string>
+    <string name="settings">Pagsasaayos</string>
     <string name="appearance">Hitsura</string>
     <string name="editor">Editor</string>
     <string name="language">Wika</string>
@@ -44,7 +44,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">Isalin itong app sa ibang mga wika</string>
     <string name="source_code">Source Code</string>
     <string name="project_license">Lisensiya ng Proyekto</string>
-    <string name="project_contribution_info">Impormasyon sa ambagan ng proyekto</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Karagdagang impormasyon kung paano mag-ambag sa proyektong ito</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Mag-ambag ng code sa proyekto. Maaring gawin ito ng kahit sinuman, pati na ang mga bagong-pasok</string>
     <string name="project_team">Project Team</string>
