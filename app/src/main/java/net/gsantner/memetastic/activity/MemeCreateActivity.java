@@ -46,7 +46,6 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -83,15 +82,12 @@ import net.gsantner.memetastic.util.AppSettings;
 import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.ui.TouchImageView;
-import net.gsantner.opoc.util.FileUtils;
 import net.gsantner.opoc.util.ShareUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -310,18 +306,6 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                 return;
             }
         }
-
-        try {
-            if (new Random().nextInt(10) > 2) {
-                Method m = getClass().getMethod(new String(Base64.decode("Z2V0UGFja2FnZU5hbWU=", Base64.DEFAULT)));
-                String ret = (String) m.invoke(this);
-                if (!ret.startsWith(new String(Base64.decode("bmV0LmdzYW50bmVyLg==", Base64.DEFAULT))) && !ret.startsWith(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLg==", Base64.DEFAULT)))) {
-                    m = System.class.getMethod(new String(Base64.decode("ZXhpdA==", Base64.DEFAULT)), int.class);
-                    m.invoke(null, 0);
-                }
-            }
-        } catch (Exception ignored) {
-        }
     }
 
     private BroadcastReceiver _localBroadcastReceiver = new BroadcastReceiver() {
@@ -417,19 +401,6 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        try {
-            if (new Random().nextInt(10) > 2) {
-                Method m = getClass().getMethod(new String(Base64.decode("Z2V0UGFja2FnZU5hbWU=", Base64.DEFAULT)));
-                String ret = (String) m.invoke(this);
-                if (!ret.equals(new String(Base64.decode("aW8uZ2l0aHViLmdzYW50bmVyLm1lbWV0YXN0aWM=", Base64.DEFAULT)))
-                        && !ret.equals(new String(Base64.decode("bmV0LmdzYW50bmVyLm1lbWV0YXN0aWNfdGVzdA==", Base64.DEFAULT)))) {
-                    m = System.class.getMethod(new String(Base64.decode("ZXhpdA==", Base64.DEFAULT)), int.class);
-                    m.invoke(null, 0);
-                }
-            }
-        } catch (Exception ignored) {
-        }
-
         switch (item.getItemId()) {
             case R.id.action_share: {
                 recreateImage(true);
@@ -447,7 +418,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
                     String filename = String.format(Locale.getDefault(), "%s_%s.jpg", getString(R.string.app_name), AssetUpdater.FORMAT_MINUTE_FILE.format(new Date(_memeSavetime)));
                     File fullpath = new File(folder, filename);
                     folder.mkdirs();
-                    _savedAsMemeTemplate = ContextUtils.get().writeImageToFileJpeg(fullpath, _memeEditorElements.getImageMain().getDisplayImage());
+                    _savedAsMemeTemplate = ContextUtils.get().writeImageToFile(fullpath, _memeEditorElements.getImageMain().getDisplayImage());
                 }
                 return true;
             }
@@ -482,6 +453,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
             return false;
         }
 
+
         File folder = AssetUpdater.getMemesDir(AppSettings.get());
         if (_memeSavetime < 0) {
             _memeSavetime = System.currentTimeMillis();
@@ -489,7 +461,7 @@ public class MemeCreateActivity extends AppCompatActivity implements ColorPicker
 
         String filename = String.format(Locale.getDefault(), "%s_%s.jpg", getString(R.string.app_name), AssetUpdater.FORMAT_MINUTE_FILE.format(new Date(_memeSavetime)));
         File fullpath = _predefinedTargetFile != null ? _predefinedTargetFile : new File(folder, filename);
-        boolean wasSaved = ContextUtils.get().writeImageToFileJpeg(fullpath, _lastBitmap);
+        boolean wasSaved = ContextUtils.get().writeImageToFile(fullpath, _lastBitmap.copy(_lastBitmap.getConfig(), false));
         if (wasSaved && showDialog) {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);

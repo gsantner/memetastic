@@ -54,12 +54,14 @@ public class App extends Application {
             settings.setGridColumnCountPortrait(settings.getGridColumnCountPortrait());
             settings.setGridColumnCountLandscape(settings.getGridColumnCountLandscape());
         }
+
+        ShareUtil.setFileProviderAuthority(getString(R.string.app_fileprovider));
     }
 
     public void shareBitmapToOtherApp(Bitmap bitmap, Activity activity) {
-        ShareUtil su = new ShareUtil(activity).setFileProviderAuthority(getString(R.string.app_fileprovider));
+        ShareUtil su = new ShareUtil(activity);
         su.setChooserTitle(getString(R.string.share_meme_via__appspecific));
-        su.shareImage(bitmap, Bitmap.CompressFormat.JPEG, 65, "MT-meme");
+        su.shareImage(bitmap.copy(bitmap.getConfig(), false), 65);
 /*
         File file = new File(getCacheDir(), getString(R.string.cached_picture_filename));
         if (ContextUtils.get().writeImageToFileJpeg(file, bitmap)) {

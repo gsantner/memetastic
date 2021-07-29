@@ -65,7 +65,7 @@ public class ImageLoaderTask<T> extends AsyncTask<File, Void, Bitmap> {
                     bitmap = cu.loadImageFromFilesystem(cacheFile, _maxSize);
                 } else {
                     bitmap = cu.loadImageFromFilesystem(pathToImage, _maxSize);
-                    cu.writeImageToFile(cacheFile, bitmap, Bitmap.CompressFormat.JPEG, 65);
+                    cu.writeImageToFile(cacheFile, bitmap.copy(bitmap.getConfig(), false), 65);
                 }
             } else {
                 bitmap = cu.loadImageFromFilesystem(pathToImage, _maxSize);

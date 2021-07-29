@@ -78,10 +78,10 @@ import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -146,11 +146,11 @@ public class ContextUtils {
     /**
      * Get String by given string ressource identifier (textual)
      */
-    public String rstr(final String strResKey) {
+    public String rstr(final String strResKey, Object... a0getResKeyAsFallback) {
         try {
             return rstr(getResId(ResType.STRING, strResKey));
         } catch (Resources.NotFoundException e) {
-            return null;
+            return a0getResKeyAsFallback != null && a0getResKeyAsFallback.length > 0 ? strResKey : null;
         }
     }
 
@@ -295,14 +295,27 @@ public class ContextUtils {
      * Falls back to applicationId of the app which may differ from manifest.
      */
     public Object getBuildConfigValue(final String fieldName) {
-        String pkg = getPackageIdManifest() + ".BuildConfig";
+        final String pkg = getPackageIdManifest() + ".BuildConfig";
         try {
             Class<?> c = Class.forName(pkg);
             return c.getField(fieldName).get(null);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
+    }
+
+    public List<String> getBuildConfigFields() {
+        final String pkg = getPackageIdManifest() + ".BuildConfig";
+        final List<String> fields = new ArrayList<>();
+        try {
+            for (Field f : Class.forName(pkg).getFields()) {
+                fields.add(f.getName());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return fields;
     }
 
     /**
@@ -746,43 +759,26 @@ public class ContextUtils {
     }
 
     /**
-     * Write the given {@link Bitmap} to {@code imageFile}, in {@link CompressFormat#JPEG} format
-     */
-    public boolean writeImageToFileJpeg(final File imageFile, final Bitmap image) {
-        return writeImageToFile(imageFile, image, Bitmap.CompressFormat.JPEG, 95);
-    }
-
-    /**
      * Write the given {@link Bitmap} to filesystem
      *
      * @param targetFile The file to be written in
-     * @param image      The image as android {@link Bitmap}
-     * @param format     One format of {@link CompressFormat}, null will determine based on filename
-     * @param quality    Quality level, defaults to 95
+     * @param image      Android {@link Bitmap}
      * @return True if writing was successful
      */
-    public boolean writeImageToFile(final File targetFile, final Bitmap image, CompressFormat format, Integer quality) {
+    public boolean writeImageToFile(final File targetFile, final Bitmap image, Integer... a0quality) {
+        final int quality = (a0quality != null && a0quality.length > 0 && a0quality[0] >= 0 && a0quality[0] <= 100) ? a0quality[0] : 70;
+        final String lc = targetFile.getAbsolutePath().toLowerCase(Locale.ROOT);
+        final CompressFormat format = lc.endsWith(".webp") ? CompressFormat.WEBP : (lc.endsWith(".png") ? CompressFormat.PNG : CompressFormat.JPEG);
+
+        boolean ok = false;
         File folder = new File(targetFile.getParent());
-        if (quality == null || quality < 0 || quality > 100) {
-            quality = 95;
-        }
-        if (format == null) {
-            format = CompressFormat.JPEG;
-            String lc = targetFile.getAbsolutePath().toLowerCase(Locale.ROOT);
-            if (lc.endsWith(".png")) {
-                format = CompressFormat.PNG;
-            }
-            if (lc.endsWith(".webp")) {
-                format = CompressFormat.WEBP;
-            }
-        }
         if (folder.exists() || folder.mkdirs()) {
             FileOutputStream stream = null;
             try {
-                stream = new FileOutputStream(targetFile); // overwrites this image every time
+                stream = new FileOutputStream(targetFile);
                 image.compress(format, quality, stream);
-                return true;
-            } catch (FileNotFoundException ignored) {
+                ok = true;
+            } catch (Exception ignored) {
             } finally {
                 try {
                     if (stream != null) {
@@ -792,7 +788,11 @@ public class ContextUtils {
                 }
             }
         }
-        return false;
+        try {
+            image.recycle();
+        } catch (Exception ignored) {
+        }
+        return ok;
     }
 
     /**

@@ -76,7 +76,6 @@ import net.gsantner.memetastic.util.ContextUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
 import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 import net.gsantner.opoc.ui.LinearSplitLayout;
-import net.gsantner.opoc.util.AndroidSupportMeWrapper;
 import net.gsantner.opoc.util.FileUtils;
 
 import java.io.File;
