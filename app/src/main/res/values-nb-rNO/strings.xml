@@ -122,6 +122,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main_view">Hovedvisning</string>
     <string name="edit_picture">Rediger bilde</string>
     <string name="general">Hovedinnstillinger</string>
+    <string name="picture_viewer">Bilde tilskuer</string>
+    <string name="pictures_shown_in_gallery_and_this_app">Bilder vist i galleriet og denne appen</string>
     <string name="open_source_licenses">Åpen kildekode-lisenser</string>
     <string name="rate_this_app">Ranger denne appen</string>
     <string name="translate">Oversett</string>
@@ -139,5 +141,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">Vis info om bidragsytere. De kan valgfritt bidra med info til visning her etter bidrag.</string>
     <string name="help">Hjelp</string>
     <string name="more">Mer</string>
+    <string name="community">Fellesskap</string>
     <string name="contribute">Bidra</string>
+    <string name="the_file_could_not_be_loaded">Kan ikke laste filen.</string>
+    <string name="close">Lukk</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Liker du dette prosjektet? Vil du at det blir forbedret og problemer fikset?\n\nUtvikle apper og skrive relaterte blogginnlegg koster mye tid! Hvis du vil hjelpe så at prosjektet kan gå videre, kan du vurdere en liten donasjon!\n\nDette prosjektet er utviklet på fritid, helt gratis og uten reklamer!</string>
+    <string name="all">Alle</string>
+    <string name="global_text_settings">Globale tekstinnstillinger</string>
+    <string name="show_image">Vis bilde</string>
+    <string name="show_edited_image">Vis redigert bilde</string>
+    <string name="save_as_template">Lagre som mal</string>
 </resources>
