@@ -11,14 +11,18 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <string name="create">ایجاد</string>
+    <string name="error_picture_selection">No picture selected, taken or saved.</string>
     <string name="donate">کمک مالی</string>
     <string name="changelog">لاگ تغییرات</string>
     <string name="exit">خروج</string>
+    <string name="font">Font</string>
     <string name="size">مرتب‌سازی بر اساس اندازه</string>
+    <string name="background">Background</string>
     <string name="about">درباره مارکور</string>
     <string name="licenses">مجوزها</string>
     <string name="contributors">همکاران</string>
     <string name="show_third_party_licenses">نمایش مجوزهای شخص ثالث</string>
+    <string name="miscellaneous">متفرقه</string>
     <string name="gnu_gplv3_license">نمایش مجوز این برنامه</string>
     <string name="settings">تنظیمات</string>
     <string name="appearance">ظاهر</string>
@@ -28,9 +32,25 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="language">زبان</string>
     <string name="language_change_restart_description">تغییر زبان برنامه. لازم است برنامه را از نو اجرا کنید تا تغییرات را ببینید</string>
     <string name="other">سایر موارد</string>
+    <string name="favourite">علاقه‌مندی</string>
     <string name="main_view">نمای اصلی</string>
+    <string name="edit_picture">امکان مسلح کردن وجود ندارد</string>
     <string name="general">عمومی</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="rate_this_app">به این برنامه امتیاز دهید</string>
+    <string name="translate">ترجمه</string>
+    <string name="more_info_and_help">اطّلاعات بیش‌تر و راهنمایی</string>
+    <string name="report_bugs">گزارش اشکالات</string>
+    <string name="join_community">Приєднатися до спільноти</string>
+    <string name="bug_reports_suggest_improvements">இந்த செயலி குறித்த கருத்துக்கள் மற்றும் பிழைகளை தெரிவிக்கவும் அல்லது மேம்படுத்தத்தல்களை பரிந்துரைக்கவும்</string>
+    <string name="help_translating_this_app">மற்ற மொழிகளில் இந்த செயலியை மொழிபெயர்க்கவும்</string>
+    <string name="source_code">کُد منبع</string>
+    <string name="project_license">项目开源协议</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">Contribute code to the project. Everybody is welcome to do so, including newcomers</string>
+    <string name="project_team">فريق المشروع</string>
+    <string name="contributors_public_add_yourself_description">Show contributor info. Provide it to be shown here on an opt-in basis after contributing</string>
     <string name="help">راهنما</string>
     <string name="more">بیشتر</string>
     <string name="contribute">همکاری</string>
+    <string name="close">Close</string>
 </resources>
