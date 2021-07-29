@@ -78,7 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Mode d\'affichage</string>
     <string name="show_in_device_gallery">Afficher dans la galerie de l\'appareil</string>
     <string name="language">Langue</string>
-    <string name="language_change_restart_description">Changer la langue de l\'interface. Vous devrez redémarrer l\'application pour que ce changement soit pris en compte</string>
+    <string name="language_change_restart_description">Change la langue de l\'application. Redémarrez l\'application pour que les changements prennent effet</string>
     <string name="error_cannot_create_save_directory">Erreur : Impossible de créer le dossier de sauvegarde</string>
     <string name="other">Autre</string>
     <string name="downloading">Téléchargement</string>
@@ -136,7 +136,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">Traduire cette application</string>
     <string name="source_code">Code source</string>
     <string name="project_license">Licence du projet</string>
-    <string name="project_contribution_info">Informations sur la contribution au projet</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Plus d\'informations sur les façons de contribuer à ce projet</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Contribuer au code. Tout le monde est le bienvenu, même les débutants</string>
     <string name="project_team">Équipe</string>
