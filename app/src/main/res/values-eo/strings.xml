@@ -35,7 +35,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Tiparo</string>
     <string name="keep_editing">Daŭre konservi</string>
     <string name="text">Teksto</string>
-    <string name="size">Grandeco</string>
+    <string name="size">Grando</string>
     <string name="background">Fono</string>
     <string name="border">Bordo</string>
     <string name="picture">Bildo</string>
@@ -50,11 +50,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="settings">Agordoj</string>
     <string name="all_caps">Ĉiuj majusklaj</string>
     <string name="rotate">Rotaci</string>
+    <string name="appearance">Aspekto</string>
+    <string name="editor">Redaktilo</string>
+    <string name="language">Lingvo</string>
+    <string name="other">Aliaj</string>
+    <string name="favourite">Plej ŝatata</string>
     <string name="save_meme__appspecific">Konservi memeon</string>
     <string name="share_meme__appspecific">Konigi memeon</string>
     <string name="create_meme__appspecific">Krei memeon</string>
     <string name="delete_meme__appspecific">Forigi memeon</string>
-    <string name="main_view">Ĉefa vido</string>
+    <string name="main_view">Ĉefa Vido</string>
     <string name="edit_picture">Redakti bildon</string>
     <string name="general">Ĝeneralaj</string>
     <string name="picture_viewer">Bildvidilo</string>
