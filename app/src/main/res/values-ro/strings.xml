@@ -27,6 +27,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="changelog">Jurnalul modificărilor</string>
     <string name="exit">Ieşire</string>
     <string name="yes">da</string>
+    <string name="background">Fundal</string>
     <string name="about">Despre</string>
     <string name="show_licenses">Afişează licenţa</string>
     <string name="contributors">Contribuitori</string>
