@@ -47,7 +47,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">배경</string>
     <string name="border">테두리</string>
     <string name="picture">사진</string>
-    <string name="about">이 앱에 대해서..</string>
+    <string name="about">앱 정보</string>
     <string name="developed_by">개발자:</string>
     <string name="licenses">라이선스</string>
     <string name="show_licenses">저작권 표시</string>
@@ -65,9 +65,15 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="clear_thumbnails">썸네일 지우기</string>
     <string name="columns_portrait">행 (세로 모드)</string>
     <string name="columns_landscape">행 (가로 모드)</string>
-    <string name="appearance">모양</string>
+    <string name="appearance">외관</string>
+    <string name="editor">편집기</string>
+    <string name="hide_statusbar">상태 표시줄 숨기기</string>
     <string name="language">언어</string>
     <string name="language_change_restart_description">언어 변경하기. 재시작이 필요합니다.</string>
+    <string name="other">기타</string>
+    <string name="favourite">즐겨찾기</string>
+    <string name="main_view">기본 화면</string>
+    <string name="edit_picture">이미지 편집</string>
     <string name="general">기본 설정</string>
     <string name="picture_viewer">사진 뷰어</string>
     <string name="pictures_shown_in_gallery_and_this_app">갤러리와 이 앱에 보여진 사진</string>
@@ -82,7 +88,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">이 앱을 다른 언어로 번역하기</string>
     <string name="source_code">소스 코드</string>
     <string name="project_license">프로젝트 저작권</string>
-    <string name="project_contribution_info">프로젝트 기여 정보</string>
     <string name="more_info_on_how_to_contribute_to_this_project">프로젝트 기여를 위한 자세한 정보</string>
     <string name="contribute_code_to_this_project_anybody_welcome">코드에 기여하세요. 누구나 환영합니다. 신참도 포함해서요!</string>
     <string name="project_team">프로젝트 팀</string>
@@ -90,4 +95,5 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help">도움말</string>
     <string name="more">더 보기</string>
     <string name="contribute">기여</string>
+    <string name="close">닫기</string>
 </resources>
