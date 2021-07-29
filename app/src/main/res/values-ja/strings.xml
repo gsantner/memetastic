@@ -78,7 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">表示タイプ</string>
     <string name="show_in_device_gallery">デバイスのギャラリーで表示</string>
     <string name="language">言語</string>
-    <string name="language_change_restart_description">このアプリの言語を変更します。 変更を反映するにはアプリを再起動します</string>
+    <string name="language_change_restart_description">このアプリの言語を変更します。アプリを再起動すると変更を反映します</string>
     <string name="error_cannot_create_save_directory">エラー: 保存ディレクトリーを作成できません</string>
     <string name="other">その他</string>
     <string name="downloading">ダウンロード中</string>
@@ -120,6 +120,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main_view">メインビュー</string>
     <string name="edit_picture">画像を編集</string>
     <string name="general">一般</string>
+    <string name="picture_viewer">画像ビューアー</string>
+    <string name="pictures_shown_in_gallery_and_this_app">ギャラリーとこのアプリに表示される写真</string>
     <string name="open_source_licenses">オープンソースライセンス</string>
     <string name="rate_this_app">このアプリを評価</string>
     <string name="translate">翻訳</string>
@@ -131,15 +133,20 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">このアプリを他の言語に翻訳してください</string>
     <string name="source_code">ソースコード</string>
     <string name="project_license">プロジェクトライセンス</string>
-    <string name="project_contribution_info">プロジェクト貢献情報</string>
     <string name="more_info_on_how_to_contribute_to_this_project">このプロジェクトに貢献する方法についての詳細情報</string>
     <string name="contribute_code_to_this_project_anybody_welcome">プロジェクトにコードを貢献してください。新規参画者を含めて誰でも歓迎します</string>
     <string name="project_team">プロジェクトチーム</string>
     <string name="contributors_public_add_yourself_description">貢献者の情報を表示します。貢献後にオプトインした方法でここに表示されます</string>
     <string name="help">ヘルプ</string>
     <string name="more">さらに</string>
+    <string name="community">コミュニティ</string>
     <string name="contribute">貢献する</string>
+    <string name="the_file_could_not_be_loaded">ファイルを読み込めませんでした。</string>
     <string name="close">閉じる</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">このプロジェクトを気に入っていただけましたか? 改善したい、あるいは問題を修正したいですか?\n\nアプリの開発や、関連するブログの記事を書くに多くの時間がかかります! プロジェクトを進めるために、支援をしていただける場合は、少しの寄付をご検討ください!\n\nこのプロジェクトは余暇に開発していて、完全に無料で、広告はありません!</string>
     <string name="all">すべて</string>
+    <string name="global_text_settings">グローバルテキスト設定</string>
+    <string name="show_image">画像を表示</string>
+    <string name="show_edited_image">編集した画像を表示</string>
+    <string name="save_as_template">テンプレートとして保存</string>
 </resources>
