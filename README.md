@@ -69,7 +69,7 @@ If you like @gsantner's work on <b>MemeTastic</b> and many other Open Source pro
 * App on F-Droid: [Metadata](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/io.github.gsantner.memetastic.txt) | [Page](https://f-droid.org/packages/io.github.gsantner.memetastic/) | [Wiki](https://f-droid.org/wiki/page/io.github.gsantner.memetastic) | [Build log](https://f-droid.org/wiki/page/io.github.gsantner.memetastic/lastbuild)
 
 ## Licensing
-Copyright (C) 2016-2018 Gregor Santner \<[http://gsantner.net](http://gsantner.net?ref=memetastic&source=license)\>
+Copyright (C) 2016-2021 Gregor Santner \<[http://gsantner.net](http://gsantner.net?ref=memetastic&source=license)\>
 The app is licensed GPL v3. Localization files (strings\*.xml) are licensed CC0 1.0.
 For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).
 

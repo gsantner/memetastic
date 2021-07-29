@@ -45,10 +45,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <!-- You are NOT allowed to remove parts of the license text below-->
     <string name="copyright_short" translatable="false">
         MemeTastic by Gregor Santner (http://gsantner.net)
-        \nCopyright © 2016-2018
+        \nCopyright © 2016-2021
     </string>
     <string name="copyright_license_text_official" translatable="false"><![CDATA[
-        ### Copyright © 2016-2018
+        ### Copyright © 2016-2021
         \n**MemeTastic by [Gregor Santner](http://gsantner.net)**
         \n
         \n**Get the official version of MemeTastic:**
