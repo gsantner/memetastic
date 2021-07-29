@@ -78,7 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Tipo de vista</string>
     <string name="show_in_device_gallery">Mostrar en la galería del dispositivo</string>
     <string name="language">Idioma</string>
-    <string name="language_change_restart_description">Cambiar el idioma de esta aplicación. Reiniciar la aplicación para que se apliquen los cambios</string>
+    <string name="language_change_restart_description">Cambiar el idioma de esta aplicación. Reinicie la aplicación para que los cambios surtan efecto</string>
     <string name="error_cannot_create_save_directory">Error: no se puede crear el directorio de guardado</string>
     <string name="other">Otros</string>
     <string name="downloading">Descargando</string>
@@ -133,7 +133,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">Traduce esta aplicación a otros idiomas</string>
     <string name="source_code">Código fuente</string>
     <string name="project_license">Licencia del proyecto</string>
-    <string name="project_contribution_info">Información de colaboraciones al proyecto</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Más sobre cómo participar en este proyecto</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Colabora con el proyecto. Cualquiera puede hacerlo, incluso los que usan la aplicación desde hace poco</string>
     <string name="project_team">El equipo tras el proyecto</string>
