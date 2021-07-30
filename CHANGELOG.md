@@ -1,6 +1,13 @@
 ### Ongoing
+- See [Discussions](https://github.com/gsantner/memetastic/discussions), [Issues](https://github.com/gsantner/memetastic/issues) and [Project website](https://gsantner.net/) to see what is going on.
+
+### v1.7 [Blog post](https://gsantner.net/blog/2021/07/30/memetastic-v1.7-offline-meme-templates-funny-sites.html?source=inapp_changelog&project=memetastic)  
 - Translate app into more languages
-- Make favourite icon in popup smaller
+- Make favourite icon in popup smaller, by @gsantner
+- Disable menu button when not in selection at "create page", fixes #149, by @gsantner
+- Add rotation gesture to ImageViewer, by @gsantner
+- Update list of links to memes & meme templates
+- Replace CI/CD with GitHub Actions
 
 ### v1.6 [Blog post](https://gsantner.net/blog/2019/08/15/memetastic-v1.6-offline-meme-templates-funny-sites.html?source=inapp_changelog&project=memetastic)  
 - Simplify overall app usage
