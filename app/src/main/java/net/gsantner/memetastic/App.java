@@ -46,35 +46,19 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         app = this;
-
-        settings = AppSettings.get();
+        settings = new AppSettings(this);
 
         if (settings.isAppFirstStart(false)) {
             // Set default values (calculated in getters)
             settings.setGridColumnCountPortrait(settings.getGridColumnCountPortrait());
             settings.setGridColumnCountLandscape(settings.getGridColumnCountLandscape());
         }
-
-        ShareUtil.setFileProviderAuthority(getString(R.string.app_fileprovider));
     }
 
     public void shareBitmapToOtherApp(Bitmap bitmap, Activity activity) {
         ShareUtil su = new ShareUtil(activity);
         su.setChooserTitle(getString(R.string.share_meme_via__appspecific));
         su.shareImage(bitmap.copy(bitmap.getConfig(), false), 65);
-/*
-        File file = new File(getCacheDir(), getString(R.string.cached_picture_filename));
-        if (ContextUtils.get().writeImageToFileJpeg(file, bitmap)) {
-            Uri imageUri = FileProvider.getUriForFile(this, getString(R.string.app_fileprovider), file);
-            if (imageUri != null) {
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                shareIntent.setDataAndType(imageUri, getContentResolver().getType(imageUri));
-                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-                activity.startActivity(Intent.createChooser(shareIntent, getString(R.string.main__share_meme_prompt)));
-            }
-        }*/
     }
 
     public static void log(String text) {

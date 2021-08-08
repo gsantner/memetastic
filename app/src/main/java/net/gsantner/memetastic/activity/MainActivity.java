@@ -560,7 +560,7 @@ public class MainActivity extends AppCompatActivity
             // Continue only if the File was successfully created
             if (photoFile != null) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    Uri uri = FileProvider.getUriForFile(this, getString(R.string.app_fileprovider), photoFile);
+                    Uri uri = FileProvider.getUriForFile(this, _activityUtils.getFileProvider(), photoFile);
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 } else {
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));

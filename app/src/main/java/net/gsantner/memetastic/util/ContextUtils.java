@@ -21,17 +21,14 @@
 package net.gsantner.memetastic.util;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.v7.widget.PopupMenu;
 import android.view.View;
 
 import net.gsantner.memetastic.App;
-import net.gsantner.memetastic.data.MemeLibConfig;
 import net.gsantner.memetastic.service.AssetUpdater;
 import net.gsantner.memetastic.service.MigrationThread;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Date;
@@ -70,15 +67,6 @@ public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
         } catch (Throwable e) {
             e.printStackTrace();
         }
-    }
-
-
-    public Bitmap scaleBitmap(Bitmap bitmap) {
-        return scaleBitmap(bitmap, 300);
-    }
-
-    public Bitmap loadImageFromFilesystem(File imagePath) {
-        return loadImageFromFilesystem(imagePath, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
     }
 
     public int getImmersiveUiVisibility() {

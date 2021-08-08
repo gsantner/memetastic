@@ -30,39 +30,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import net.gsantner.memetastic.util.ContextUtils;
+import net.gsantner.memetastic.data.MemeLibConfig;
+import net.gsantner.memetastic.util.ActivityUtils;
 import net.gsantner.memetastic.util.PermissionChecker;
 
 import java.io.File;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.github.gsantner.memetastic.R;
 
 
+@SuppressWarnings("ConstantConditions")
 public class ImageViewFragment extends Fragment {
-
-
-    @BindView(R.id.imageview_fragment__expanded_image)
-    ImageView _expandedImageView;
-
-
     private static final String ARG_PARAM__POS = "pos";
     private static final String ARG_PARAM__IMAGE_PATH = "param2";
 
+    private ImageView _expandedImageView;
 
     private int _position;
     public String _imagePath;
     public File _imageFile;
 
     public Bitmap _bitmap;
+    private ActivityUtils _activityUtils;
 
 
     public ImageViewFragment() {
-        // Required empty public constructor
     }
-
 
     public static ImageViewFragment newInstance(int position, String param2) {
         ImageViewFragment fragment = new ImageViewFragment();
@@ -81,43 +74,39 @@ public class ImageViewFragment extends Fragment {
             _position = getArguments().getInt(ARG_PARAM__POS);
             _imagePath = getArguments().getString(ARG_PARAM__IMAGE_PATH);
         }
+        _activityUtils = new ActivityUtils(getActivity());
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_image_view, container, false);
-
-        ButterKnife.bind(this, view);
-
+        _expandedImageView = view.findViewById(R.id.imageview_fragment__expanded_image);
 
         _imageFile = new File(_imagePath);
         if (PermissionChecker.hasExtStoragePerm(getActivity()) && _imageFile.exists()) {
-            _bitmap = ContextUtils.get().loadImageFromFilesystem(_imageFile);
+            _bitmap = _activityUtils.loadImageFromFilesystem(_imageFile, MemeLibConfig.MEME_FULLSCREEN_MAX_IMAGESIZE);
         }
         if (_bitmap == null) {
             _imageFile = null;
-            _bitmap = ContextUtils.get().drawableToBitmap(
-                    ContextCompat.getDrawable(getActivity(), R.drawable.ic_mood_bad_black_256dp));
+            _bitmap = _activityUtils.drawableToBitmap(ContextCompat.getDrawable(getActivity(), R.drawable.ic_mood_bad_black_256dp));
         }
-        _expandedImageView.setImageBitmap(_bitmap);
 
+        _expandedImageView.setImageBitmap(_bitmap);
+        _expandedImageView.setOnClickListener(v -> getActivity().finish());
         return view;
     }
 
     @Override
     public void onDestroy() {
         _expandedImageView.setImageBitmap(null);
-        if (_bitmap != null && !_bitmap.isRecycled())
+        if (_bitmap != null && !_bitmap.isRecycled()) {
             _bitmap.recycle();
+        }
+        _activityUtils.freeContextRef();
+        _activityUtils = null;
+        _expandedImageView = null;
+        _bitmap = null;
         super.onDestroy();
     }
-
-    @OnClick(R.id.imageview_fragment__expanded_image)
-    public void onImageClicked() {
-        getActivity().finish();
-    }
-
 }

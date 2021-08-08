@@ -23,7 +23,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 
     <!-- General -->
-    <string name="app_fileprovider" translatable="false">io.github.gsantner.memetastic.fileprovider</string>
     <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>
 
     <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.net\n\nMatthias Ringwald</string>
