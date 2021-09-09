@@ -27,6 +27,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="settings">הגדרות</string>
     <string name="appearance">מראה</string>
     <string name="editor">עורך</string>
+    <string name="hide_statusbar">הסתר את סרגל המצב</string>
     <string name="language">שפה</string>
     <string name="language_change_restart_description">שנה את שפת האפליקציה. אתחל את האפליקציה בכדי שהשינויים יכנסו לתוקף</string>
     <string name="other">אחר</string>
