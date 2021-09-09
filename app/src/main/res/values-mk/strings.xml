@@ -9,4 +9,27 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="create">Создади</string>
+    <string name="donate">Донирај</string>
+    <string name="changelog">Листа на промени</string>
+    <string name="exit">Излез</string>
+    <string name="size">Големина</string>
+    <string name="about">За</string>
+    <string name="licenses">Лиценци</string>
+    <string name="contributors">Соработници</string>
+    <string name="show_third_party_licenses">Покажи лиценци од трети лица</string>
+    <string name="gnu_gplv3_license">Покажи лиценца на апликацијата</string>
+    <string name="settings">Подесувања</string>
+    <string name="appearance">Изглед</string>
+    <string name="editor">Едитор</string>
+    <string name="hide_statusbar">Сокриј ја лентата за статус</string>
+    <string name="language">Јазик</string>
+    <string name="language_change_restart_description">Смени јазик на апликацијата. Рестартирај ја апликацијата за промените да се видат</string>
+    <string name="other">Друго</string>
+    <string name="main_view">Главен приказ</string>
+    <string name="general">Општо</string>
+    <string name="help">Помош</string>
+    <string name="more">Повеќе</string>
+    <string name="contribute">Придонеси</string>
+</resources>
