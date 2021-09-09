@@ -33,6 +33,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">පරිවර්තනය</string>
     <string name="report_bugs">දෝෂ වාර්තා කරන්න</string>
     <string name="help">උපකාර</string>
+    <string name="more">තව</string>
     <string name="close">වසන්න</string>
     <string name="all">සියල්ල</string>
 </resources>
