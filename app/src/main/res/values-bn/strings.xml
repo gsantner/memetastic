@@ -9,4 +9,23 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="create">তৈরি</string>
+    <string name="donate">দান করুন</string>
+    <string name="changelog">পরিবর্তনসূচী</string>
+    <string name="exit">প্রস্থান</string>
+    <string name="size">আকার</string>
+    <string name="about">সম্পর্কে</string>
+    <string name="licenses">অনুমতিপত্র সমূহ</string>
+    <string name="contributors">অবদানকারীরা</string>
+    <string name="show_third_party_licenses">৩য় পক্ষের অনুমতিপত্র দেখান</string>
+    <string name="gnu_gplv3_license">অ্যাপের অনুমতিপত্র দেখান</string>
+    <string name="settings">সেটিংস</string>
+    <string name="appearance">আকার</string>
+    <string name="editor">সম্পাদক</string>
+    <string name="hide_statusbar">স্ট্যাটাস বার লোকাও</string>
+    <string name="language">ভাষা</string>
+    <string name="help">সাহায্য</string>
+    <string name="more">আরো</string>
+    <string name="contribute">অবদান</string>
+</resources>
