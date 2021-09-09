@@ -57,6 +57,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="rotate">Rotiraj</string>
     <string name="appearance">Izgled</string>
     <string name="editor">Uređivač</string>
+    <string name="hide_statusbar">Sakrij statusnu traku</string>
     <string name="language">Jezik</string>
     <string name="language_change_restart_description">Promijenite jezik programa. Iznova pokrenite program da aktivirate promjenu</string>
     <string name="other">Ostalo</string>
