@@ -58,6 +58,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_picture">ଛବି ସମ୍ପାଦନା</string>
     <string name="general">ସାଧାରଣ</string>
     <string name="picture_viewer">ଛବି ଦର୍ଶନକାରୀ</string>
+    <string name="pictures_shown_in_gallery_and_this_app">ଛବିଗୁଡ଼ିକ ଗ୍ୟାଲେରୀ ଏବଂ ଏହି ଆପରେ ଦେଖାଯାଇଛି</string>
     <string name="open_source_licenses">ଖୋଲା ଉତ୍ସ ଲାଇସେନ୍ସଗୁଡ଼ିକ</string>
     <string name="rate_this_app">ଏହି ଆପକୁ ମୂଲ୍ୟାଙ୍କନ କରନ୍ତୁ</string>
     <string name="translate">ଅନୁବାଦ କରନ୍ତୁ</string>
@@ -68,6 +69,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="help_translating_this_app">ଏହି ଆପକୁ ଅନ୍ୟ ଭାଷାରେ ଅନୁବାଦ କରନ୍ତୁ</string>
     <string name="help">ସହାୟତା</string>
     <string name="more">ଅଧିକ</string>
+    <string name="community">ସମ୍ପ୍ରଦାୟ</string>
+    <string name="contribute">ଯୋଗଦାନ କରନ୍ତୁ</string>
+    <string name="the_file_could_not_be_loaded">ଫାଇଲ୍ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ।</string>
     <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="all">ସମସ୍ତ</string>
     <string name="show_image">ପ୍ରତିଛବି ଦେଖାନ୍ତୁ</string>
