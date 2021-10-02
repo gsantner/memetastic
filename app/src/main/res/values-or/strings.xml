@@ -9,4 +9,12 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="yes">ହଁ</string>
+    <string name="settings">ସେଟିଂସମୂହ</string>
+    <string name="appearance">ରୂପ</string>
+    <string name="editor">ସମ୍ପାଦକ</string>
+    <string name="general">ସାଧାରଣ</string>
+    <string name="help">ସହାୟତା</string>
+    <string name="more">ଅଧିକ</string>
+</resources>
