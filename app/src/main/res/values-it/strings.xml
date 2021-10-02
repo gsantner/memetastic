@@ -51,7 +51,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">Sviluppato da</string>
     <string name="licenses">Licenze</string>
     <string name="show_licenses">Mostra licenze</string>
-    <string name="contributors">Collaboratori</string>
+    <string name="contributors">Contributori</string>
     <string name="more_information">Altre informazioni</string>
     <string name="show_third_party_licenses">Mostra licenze di terze parti</string>
     <string name="miscellaneous">Varie</string>
@@ -78,7 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Visualizzazione</string>
     <string name="show_in_device_gallery">Mostra nella galleria</string>
     <string name="language">Lingua</string>
-    <string name="language_change_restart_description">Cambia la lingua dell\'applicazione. È richiesto un ravvio affinchè le modifiche abbiano effetto</string>
+    <string name="language_change_restart_description">Cambia la lingua di questa app. Riavvia l\'app per rendere effettive le modifiche</string>
     <string name="error_cannot_create_save_directory">Errore: impossibile creare una cartella di salvataggio</string>
     <string name="other">Altro</string>
     <string name="downloading">Download in corso</string>

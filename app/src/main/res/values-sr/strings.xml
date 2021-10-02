@@ -10,7 +10,7 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
-    <string name="create">Napravi</string>
+    <string name="create">Направи</string>
     <string name="error_picture_selection">Nijedna slika nije oznacena.</string>
     <string name="donate">Doniraj</string>
     <string name="changelog">Дневник измена</string>
@@ -25,7 +25,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="miscellaneous">разно</string>
     <string name="settings">Поставке</string>
     <string name="appearance">Izgled</string>
-    <string name="editor">Uređivač</string>
+    <string name="editor">Уређивач</string>
     <string name="language">Језик</string>
     <string name="language_change_restart_description">Промените језик апликације. Поново покрените након тога</string>
     <string name="other">Drugo</string>

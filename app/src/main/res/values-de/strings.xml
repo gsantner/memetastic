@@ -51,9 +51,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">Entwickelt von</string>
     <string name="licenses">Lizenzen</string>
     <string name="show_licenses">Lizenzen anzeigen</string>
-    <string name="contributors">Beitragende</string>
+    <string name="contributors">Mitwirkende</string>
     <string name="more_information">Mehr Informationen</string>
-    <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
+    <string name="show_third_party_licenses">Drittanbieter-Lizenzen anzeigen</string>
     <string name="miscellaneous">Verschiedenes</string>
     <string name="gnu_gplv3_license">GNU GPLv3+ Lizenz</string>
     <string name="settings">Einstellungen</string>
@@ -122,7 +122,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="general">Allgemeines</string>
     <string name="picture_viewer">Bildbetrachter</string>
     <string name="pictures_shown_in_gallery_and_this_app">Angezeigte Bilder in der Gallery und dieser App</string>
-    <string name="open_source_licenses">Open Source Lizenzen</string>
+    <string name="open_source_licenses">Open-Source-Lizenzen</string>
     <string name="rate_this_app">App bewerten</string>
     <string name="translate">Übersetzen</string>
     <string name="more_info_and_help">Mehr Infos und Hilfe zu dieser App</string>
@@ -132,7 +132,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="bug_reports_suggest_improvements">Feedback geben, Fehler melden, Verbesserungen vorschlagen</string>
     <string name="help_translating_this_app">Übersetzen dieser App in andere Sprachen</string>
     <string name="source_code">Quellcode</string>
-    <string name="project_license">Projekt Lizenz</string>
+    <string name="project_license">Projektlizenz</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Weitere Informationen dazu, wie dieses Projekt unterstützt werden kann</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Projekt mit Code unterstützen. Alle sind eingeladen das zu tun, auch Newcomer</string>
     <string name="project_team">Projekt Team</string>

@@ -9,4 +9,72 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="humans">Homoj</string>
+    <string name="cartoon">Kartuno</string>
+    <string name="animals">Bestoj</string>
+    <string name="custom">Propraj</string>
+    <string name="saved">Konservita</string>
+    <string name="favs">Plej ŝatataj</string>
+    <string name="create">Krei</string>
+    <string name="hidden">Kaŝitaj</string>
+    <string name="rows_with_title">Vicoj kun titolo</string>
+    <string name="picture_grid">Bilda krado</string>
+    <string name="error_cannot_start_camera">Ne povas lanĉi fotilon.</string>
+    <string name="recommend">Rekomendi</string>
+    <string name="changelog">Ŝanĝoprotokolo</string>
+    <string name="exit">Eliri</string>
+    <string name="yes">jes</string>
+    <string name="text_size">Teksto grando</string>
+    <string name="text_color">Teksta koloro</string>
+    <string name="border_color">Koloro de bordo</string>
+    <string name="successfully_saved">Sukcese konservita!</string>
+    <string name="top_caption">Supra teksto</string>
+    <string name="bottom_caption">Malsupra teksto</string>
+    <string name="enter_caption">Enigu tekston</string>
+    <string name="font">Tiparo</string>
+    <string name="keep_editing">Daŭre konservi</string>
+    <string name="text">Teksto</string>
+    <string name="size">Grando</string>
+    <string name="background">Fono</string>
+    <string name="border">Bordo</string>
+    <string name="picture">Bildo</string>
+    <string name="about">Pri</string>
+    <string name="developed_by">Programita de</string>
+    <string name="licenses">Permesiloj</string>
+    <string name="show_licenses">Montri permesilojn</string>
+    <string name="contributors">Kontribuantoj</string>
+    <string name="more_information">Pli da informo</string>
+    <string name="miscellaneous">Aliaĵoj</string>
+    <string name="gnu_gplv3_license">Montri permesilon de la apo</string>
+    <string name="settings">Agordoj</string>
+    <string name="all_caps">Ĉiuj majusklaj</string>
+    <string name="rotate">Rotaci</string>
+    <string name="appearance">Aspekto</string>
+    <string name="editor">Redaktilo</string>
+    <string name="language">Lingvo</string>
+    <string name="other">Aliaj</string>
+    <string name="favourite">Plej ŝatata</string>
+    <string name="save_meme__appspecific">Konservi memeon</string>
+    <string name="share_meme__appspecific">Konigi memeon</string>
+    <string name="create_meme__appspecific">Krei memeon</string>
+    <string name="delete_meme__appspecific">Forigi memeon</string>
+    <string name="main_view">Ĉefa Vido</string>
+    <string name="edit_picture">Redakti bildon</string>
+    <string name="general">Ĝeneralaj</string>
+    <string name="picture_viewer">Bildvidilo</string>
+    <string name="open_source_licenses">Malfermitkodaj permesiloj</string>
+    <string name="rate_this_app">Taksi ĉi tiun apon</string>
+    <string name="translate">Traduku</string>
+    <string name="more_info_and_help">Pli da informo kaj helpo</string>
+    <string name="join_community">Aliĝi la komunumon</string>
+    <string name="help_translating_this_app">Traduku ĉi tiun apon al aliaj lingvoj</string>
+    <string name="source_code">Fontkodo</string>
+    <string name="project_license">Projekta permesilo</string>
+    <string name="project_team">Projekta teamo</string>
+    <string name="help">Helpo</string>
+    <string name="more">Pli</string>
+    <string name="community">Komunumo</string>
+    <string name="contribute">Kontribui</string>
+    <string name="close">Fermi</string>
+</resources>

@@ -51,7 +51,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">Stworzone przez</string>
     <string name="licenses">Licencje</string>
     <string name="show_licenses">Pokaż licencje</string>
-    <string name="contributors">Współautorzy</string>
+    <string name="contributors">Wnieśli wkład</string>
     <string name="more_information">Więcej informacji</string>
     <string name="show_third_party_licenses">Pokaż licencje dzieł osób trzecich</string>
     <string name="miscellaneous">Różne</string>
@@ -121,6 +121,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="edit_picture">Edytuj obrazek</string>
     <string name="general">Ogólne</string>
     <string name="picture_viewer">Picture viewer</string>
+    <string name="pictures_shown_in_gallery_and_this_app">Zdjęcia wyświetlane w galerii i tej aplikacji</string>
     <string name="open_source_licenses">Otwarto Źródłowo Bibloteki</string>
     <string name="rate_this_app">Oceń tę aplikację</string>
     <string name="translate">Przetłumacz</string>
@@ -135,12 +136,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="more_info_on_how_to_contribute_to_this_project">Więcej informacji o tym, jak współtworzyć ten projekt</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Współtwórz kod projektu. Każdy może to zrobić w tym nowicjusze</string>
     <string name="project_team">Zespół Projektu</string>
+    <string name="contributors_public_add_yourself_description">Pokaż informacje o współtwórcy. Podaj je tutaj na zasadzie \"opt-in\" po wniesieniu wkładu</string>
     <string name="help">Pomoc</string>
     <string name="more">Więcej</string>
     <string name="community">Społeczność</string>
     <string name="contribute">Przyłącz się do projektu</string>
     <string name="the_file_could_not_be_loaded">Plik nie mógł zostać załadowany.</string>
     <string name="close">Zamknij</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">Czy podoba Ci się ten projekt? Chcesz go ulepszyć i naprawić problemy?\n\nTworzenie aplikacji i pisanie powiązanych wpisów na blogu kosztuje dużo czasu! Jeśli chcesz pomóc, aby projekt mógł być kontynuowany, rozważ małą dotację!\n\nTen projekt jest rozwijany w czasie wolnym, całkowicie za darmo i bez reklam!</string>
     <string name="all">Wszystko</string>
     <string name="global_text_settings">Globalne ustawienia tekstu</string>
     <string name="show_image">Pokaż obraz</string>
