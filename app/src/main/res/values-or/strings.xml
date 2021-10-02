@@ -10,6 +10,17 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="open_navdrawer">ନେଭିଗେସନ୍ ଡ୍ରୟର୍ ଖୋଲନ୍ତୁ</string>
+    <string name="close_navdrawer">ନେଭିଗେସନ୍ ଡ୍ରୟର୍ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="humans">ମନୁଷ୍ୟ</string>
+    <string name="cartoon">କାର୍ଟୁନ୍</string>
+    <string name="animals">ପଶୁ</string>
+    <string name="custom">କଷ୍ଟମ୍</string>
+    <string name="rage">କ୍ରୋଧ</string>
+    <string name="saved">ସଞ୍ଚିତ ହୋ‌ଇଛି</string>
+    <string name="favs">ପସନ୍ଦିତା</string>
+    <string name="create">ସୃଷ୍ଟି କରନ୍ତୁ</string>
+    <string name="hidden">ଲୁକ୍କାୟିତ</string>
     <string name="yes">ହଁ</string>
     <string name="settings">ସେଟିଂସମୂହ</string>
     <string name="appearance">ରୂପ</string>
