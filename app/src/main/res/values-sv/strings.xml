@@ -56,7 +56,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_third_party_licenses">Visa tredjeparts-licenser</string>
     <string name="miscellaneous">Diverse</string>
     <string name="gnu_gplv3_license">Visa licens för appen</string>
-    <string name="settings">Inställningar</string>
+    <string name="settings">Inställning</string>
     <string name="all_caps">Endast versaler</string>
     <string name="caps_off">Versaler bort</string>
     <string name="rotate">Rotera</string>

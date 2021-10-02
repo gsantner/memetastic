@@ -95,4 +95,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_storage_permission__appspecific">Dibutuhkan izin akses penyimpanan untuk menyimpan meme dan template</string>
     <string name="download_latest_assets_message__appspecific">Pilihan ini akan mengunduh jenis karakter dan template meme (sekitar 20 MB).</string>
     <string name="download_latest_assets_message_description__appspecific">Pada preferensi, anda juga dapat mengunduh aset terkini secara manual.</string>
+    <string name="general">Umum</string>
+    <string name="translate">Terjemahan</string>
+    <string name="report_bugs">Laporkan Bug</string>
+    <string name="bug_reports_suggest_improvements">Saran atau lapor bug</string>
+    <string name="help_translating_this_app">Terjemahkan aplikasi ini ke bahasa lain</string>
+    <string name="more_info_on_how_to_contribute_to_this_project">Info untuk berkontribusi dalam proyek ini</string>
+    <string name="help">Bantuan</string>
+    <string name="more">Selengkapnya</string>
+    <string name="contribute">Ikut serta</string>
 </resources>

@@ -78,7 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Askar n uskan</string>
     <string name="show_in_device_gallery">Sken timidelt n yibenk</string>
     <string name="language">Tutlayt</string>
-    <string name="language_change_restart_description">Beddel isem n tutlayt n ugrudem. Yessefk ad talseḍ tanekra n usnas akken teddu tutlaut tamaynut</string>
+    <string name="language_change_restart_description">Snifel tutlayt n usnas-agi. Ales tanekra n usnas akken ad tbeddel tutlayt</string>
     <string name="error_cannot_create_save_directory">Tuccḍa : Ur izmir ara ad yernu akaram n usekles</string>
     <string name="other">Wayeḍ</string>
     <string name="downloading">Asider</string>
