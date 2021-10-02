@@ -50,7 +50,19 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="rotate">ଘୂର୍ଣ୍ଣନ କରନ୍ତୁ</string>
     <string name="appearance">ରୂପ</string>
     <string name="editor">ସମ୍ପାଦକ</string>
+    <string name="main_view">ମୁଖ୍ୟ ଦର୍ଶନ</string>
+    <string name="edit_picture">ଛବି ସମ୍ପାଦନା</string>
     <string name="general">ସାଧାରଣ</string>
+    <string name="open_source_licenses">ଖୋଲା ଉତ୍ସ ଲାଇସେନ୍ସଗୁଡ଼ିକ</string>
+    <string name="translate">ଅନୁବାଦ କରନ୍ତୁ</string>
+    <string name="more_info_and_help">ଅଧିକ ସୂଚନା ଏବଂ ସହାୟତା</string>
+    <string name="report_bugs">ବଗ୍‌ ରିପୋର୍ଟ୍‌ କରନ୍ତୁ</string>
+    <string name="join_community">ସମ୍ପ୍ରଦାୟରେ ଯୋଗ ଦିଅନ୍ତୁ</string>
     <string name="help">ସହାୟତା</string>
     <string name="more">ଅଧିକ</string>
+    <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="all">ସମସ୍ତ</string>
+    <string name="show_image">ପ୍ରତିଛବି ଦେଖାନ୍ତୁ</string>
+    <string name="show_edited_image">ସମ୍ପାଦିତ ପ୍ରତିଛବି ଦେଖାନ୍ତୁ</string>
+    <string name="save_as_template">ଟେମ୍ପଲେଟ୍ ଭାବରେ ସଞ୍ଚୟ କରନ୍ତୁ</string>
 </resources>
