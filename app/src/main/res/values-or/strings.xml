@@ -36,6 +36,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="text_color">ପାଠ୍ୟ ରଙ୍ଗ</string>
     <string name="border_color">ବର୍ଡର ରଙ୍ଗ</string>
     <string name="successfully_saved">ସଫଳତାର ସହ ସଞ୍ଚୟ ହୋଇଛି!</string>
+    <string name="top_caption">ଶୀର୍ଷ କ୍ୟାପସନ୍</string>
+    <string name="bottom_caption">ନିମ୍ନ କ୍ୟାପସନ୍</string>
+    <string name="enter_caption">କ୍ୟାପସନ୍ ପ୍ରବେଶ କରନ୍ତୁ</string>
     <string name="font">ଫଣ୍ଟ</string>
     <string name="keep_editing">ସମ୍ପାଦନା ଜାରି ରଖନ୍ତୁ</string>
     <string name="text">ପାଠ୍ୟ</string>
