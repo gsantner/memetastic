@@ -26,6 +26,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">ଗ୍ୟାଲେରୀରୁ ଛବି ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
     <string name="get_picture_from_camera">କ୍ୟାମେରାରୁ ଛବି ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
     <string name="error_cannot_start_camera">କ୍ୟାମେରା ଆରମ୍ଭ କରାଯାଇପାରିଲା ନାହିଁ।</string>
+    <string name="error_picture_selection">କୌଣସି ଛବି ଚୟନ ହୋଇନି, ଉଠାଯାଇନି କି ସଞ୍ଚିତ ହୋଇନାହିଁ।</string>
     <string name="error_couldnot_load_picture_from_storage">ଷ୍ଟୋରେଜରୁ ଛବି ଲୋଡ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
     <string name="donate">ଦାନ କରନ୍ତୁ</string>
     <string name="recommend">ସୁପାରିଶ କରନ୍ତୁ</string>
