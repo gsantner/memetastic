@@ -21,6 +21,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="favs">我的最愛</string>
     <string name="create">建立</string>
     <string name="hidden">被隱藏的項目</string>
+    <string name="rows_with_title">Rows with title</string>
     <string name="get_picture_from_gallery">從圖庫取得圖片</string>
     <string name="get_picture_from_camera">從相機取得圖片</string>
     <string name="error_cannot_start_camera">無法開啟相機</string>
