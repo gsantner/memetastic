@@ -21,6 +21,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="favs">我的最愛</string>
     <string name="create">建立</string>
     <string name="hidden">被隱藏的項目</string>
+    <string name="rows_with_title">Rows with title</string>
+    <string name="picture_grid">Picture Grid</string>
     <string name="get_picture_from_gallery">從圖庫取得圖片</string>
     <string name="get_picture_from_camera">從相機取得圖片</string>
     <string name="error_cannot_start_camera">無法開啟相機</string>
@@ -30,6 +32,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="recommend">推薦</string>
     <string name="changelog">更新紀錄</string>
     <string name="exit">離開</string>
+    <string name="yes">是</string>
     <string name="text_size">字體大小</string>
     <string name="text_color">文字顔色</string>
     <string name="border_color">邊框顏色</string>
@@ -47,6 +50,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="about">說明</string>
     <string name="developed_by">開發者 ：</string>
     <string name="licenses">許可證</string>
+    <string name="show_licenses">顯示授權條款</string>
     <string name="contributors">貢獻人</string>
     <string name="more_information">更多資訊</string>
     <string name="show_third_party_licenses">第三方程式庫</string>
@@ -60,6 +64,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="columns_landscape">列數 （橫向螢幕時）</string>
     <string name="appearance">外觀</string>
     <string name="default_mode">預設模式</string>
+    <string name="functionality">功能</string>
     <string name="save_when_pressing_back">返回時自動儲存</string>
     <string name="padding">圖片留邊</string>
     <string name="overview">介面設定</string>
@@ -76,6 +81,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="downloading_failed">下載失敗</string>
     <string name="unzipping">解壓中...</string>
     <string name="successfully_downloaded">下載完成</string>
+    <string name="palette">調色</string>
     <string name="select_color">選擇顏色</string>
     <string name="code">程式碼</string>
     <string name="favourite">最愛</string>
@@ -98,9 +104,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="saved_meme_successfully__appspecific">此meme成功儲存至您的裝置。請問您想結束編輯meme嗎？</string>
     <string name="shuffle_meme_list__appspecific">隨機meme清單</string>
     <string name="error_storage_permission__appspecific">需要儲存空間權限以儲存memes以及模板</string>
+    <string name="download_latest_assets_message__appspecific">將會下載字型以及迷因模板(大約20MB)。</string>
     <string name="main_view">主頁</string>
     <string name="edit_picture">編輯圖片</string>
     <string name="general">平常</string>
+    <string name="picture_viewer">圖片檢視器</string>
     <string name="open_source_licenses">開源許可</string>
     <string name="rate_this_app">評價這個App</string>
     <string name="translate">翻譯</string>
@@ -118,11 +126,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contributors_public_add_yourself_description">顯示 貢獻者的資訊，貢獻者在提供所有後可在此留下訊息（選項）</string>
     <string name="help">幫助</string>
     <string name="more">再來</string>
+    <string name="community">社群</string>
     <string name="contribute">貢獻</string>
     <string name="the_file_could_not_be_loaded">無法載入檔案</string>
     <string name="close">關閉</string>
     <string name="do_you_like_this_project_want_donate_to_keep_alive">喜歡這個專案嗎？希望它繼續改善而且問題得到解決嗎？\n\n開發應用程式以及撰寫相關部落格文章都需要很多時間！如果你想要幫忙讓專案可以繼續，請考慮小額捐款！\n\n這個專案是在閒暇時間開發的，完全免費，並且沒有任何廣告！</string>
     <string name="all">全部</string>
+    <string name="global_text_settings">全域自行設定</string>
     <string name="show_image">顯示原圖</string>
     <string name="show_edited_image">預覽編輯後圖片</string>
+    <string name="save_as_template">儲存為模板</string>
 </resources>
