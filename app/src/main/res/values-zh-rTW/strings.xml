@@ -43,7 +43,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">字體</string>
     <string name="keep_editing">繼續編輯</string>
     <string name="text">文字</string>
-    <string name="size">依大小排列</string>
+    <string name="size">大小</string>
     <string name="background">背景</string>
     <string name="border">邊框</string>
     <string name="picture">圖片</string>
