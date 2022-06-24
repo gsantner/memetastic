@@ -86,7 +86,14 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="unzipping">압축 파일 푸는 중...</string>
     <string name="successfully_downloaded">다운로드 성공</string>
     <string name="download_latest_assets">최신 자료 다운로드</string>
+    <string name="code">코드</string>
     <string name="favourite">즐겨찾기</string>
+    <string name="show_title">제목 보기</string>
+    <string name="edit_title">제목 수정</string>
+    <string name="hide">숨기기</string>
+    <string name="unhide">펼치기</string>
+    <string name="tap_here_to_add_caption">캡션을 추가하려면 여기를 탭하세요</string>
+    <string name="search_meme__appspecific">밈 찾기</string>
     <string name="main_view">기본 화면</string>
     <string name="edit_picture">이미지 편집</string>
     <string name="general">기본 설정</string>
