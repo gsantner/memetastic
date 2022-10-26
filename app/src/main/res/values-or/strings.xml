@@ -11,7 +11,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <string name="open_navdrawer">ନେଭିଗେସନ୍ ଡ୍ରୟର୍ ଖୋଲନ୍ତୁ</string>
-    <string name="close_navdrawer">ନେଭିଗେସନ୍ ଡ୍ରୟର୍ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="close_navdrawer">ନେଵିଗେଶନ୍ ଡ୍ରୟର୍ ବନ୍ଦ କରିବା</string>
     <string name="humans">ମନୁଷ୍ୟ</string>
     <string name="cartoon">କାର୍ଟୁନ୍</string>
     <string name="animals">ପଶୁ</string>
@@ -22,12 +22,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="create">ସୃଷ୍ଟି କରନ୍ତୁ</string>
     <string name="hidden">ଲୁକ୍କାୟିତ</string>
     <string name="rows_with_title">ଆଖ୍ୟା ସହିତ ଧାଡିଗୁଡ଼ିକ</string>
-    <string name="picture_grid">ଛବି ଗ୍ରିଡ୍</string>
-    <string name="get_picture_from_gallery">ଗ୍ୟାଲେରୀରୁ ଛବି ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
-    <string name="get_picture_from_camera">କ୍ୟାମେରାରୁ ଛବି ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
+    <string name="picture_grid">ଛଵି ଗ୍ରିଡ୍</string>
+    <string name="get_picture_from_gallery">ଗ୍ୟାଲେରୀରୁ ଛଵି ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
+    <string name="get_picture_from_camera">କ୍ୟାମେରାରୁ ଛଵି ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
     <string name="error_cannot_start_camera">କ୍ୟାମେରା ଆରମ୍ଭ କରାଯାଇପାରିଲା ନାହିଁ।</string>
-    <string name="error_picture_selection">କୌଣସି ଛବି ଚୟନ ହୋଇନି, ଉଠାଯାଇନି କି ସଞ୍ଚିତ ହୋଇନାହିଁ।</string>
-    <string name="error_couldnot_load_picture_from_storage">ଷ୍ଟୋରେଜରୁ ଛବି ଲୋଡ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
+    <string name="error_picture_selection">କୌଣସି ଛଵି ଚୟନ ହୋଇନି, ଉଠାଯାଇନି କି ସଞ୍ଚିତ ହୋଇନାହିଁ।</string>
+    <string name="error_couldnot_load_picture_from_storage">ଷ୍ଟୋରେଜରୁ ଛଵି ଲୋଡ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
     <string name="donate">ଦାନ କରନ୍ତୁ</string>
     <string name="recommend">ସୁପାରିଶ କରନ୍ତୁ</string>
     <string name="changelog">ପରିବର୍ତ୍ତନ ଲଗ୍</string>
@@ -45,7 +45,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="text">ପାଠ୍ୟ</string>
     <string name="size">ଆକାର</string>
     <string name="border">ବର୍ଡର</string>
-    <string name="picture">ଛବି</string>
+    <string name="picture">ଛଵି</string>
     <string name="about">ବିଷୟରେ</string>
     <string name="contributors">ଯୋଗଦାନକାରୀ</string>
     <string name="more_information">ଅଧିକ ସୂଚନା</string>
@@ -72,10 +72,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="create_meme__appspecific">ମେମ୍ ସୃଷ୍ଟି କରନ୍ତୁ</string>
     <string name="delete_meme__appspecific">ମେମ୍ ବିଲୋପ କରନ୍ତୁ</string>
     <string name="main_view">ମୁଖ୍ୟ ଦର୍ଶନ</string>
-    <string name="edit_picture">ଛବି ସମ୍ପାଦନା</string>
+    <string name="edit_picture">ଛଵି ସମ୍ପାଦନା</string>
     <string name="general">ସାଧାରଣ</string>
-    <string name="picture_viewer">ଛବି ଦର୍ଶନକାରୀ</string>
-    <string name="pictures_shown_in_gallery_and_this_app">ଛବିଗୁଡ଼ିକ ଗ୍ୟାଲେରୀ ଏବଂ ଏହି ଆପରେ ଦେଖାଯାଇଛି</string>
+    <string name="picture_viewer">ଛଵି ଦର୍ଶନକାରୀ</string>
+    <string name="pictures_shown_in_gallery_and_this_app">ଛଵିଗୁଡ଼ିକ ଗ୍ୟାଲେରୀ ଏଵଂ ଏହି ଆପରେ ଦେଖାଯାଇଛି</string>
     <string name="open_source_licenses">ଖୋଲା ଉତ୍ସ ଲାଇସେନ୍ସଗୁଡ଼ିକ</string>
     <string name="rate_this_app">ଏହି ଆପକୁ ମୂଲ୍ୟାଙ୍କନ କରନ୍ତୁ</string>
     <string name="translate">ଅନୁବାଦ କରନ୍ତୁ</string>
@@ -91,7 +91,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="the_file_could_not_be_loaded">ଫାଇଲ୍ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ।</string>
     <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="all">ସମସ୍ତ</string>
-    <string name="show_image">ପ୍ରତିଛବି ଦେଖାନ୍ତୁ</string>
-    <string name="show_edited_image">ସମ୍ପାଦିତ ପ୍ରତିଛବି ଦେଖାନ୍ତୁ</string>
+    <string name="show_image">ପ୍ରତିଛଵି ଦେଖାନ୍ତୁ</string>
+    <string name="show_edited_image">ସମ୍ପାଦିତ ପ୍ରତିଛଵି ଦେଖାନ୍ତୁ</string>
     <string name="save_as_template">ଟେମ୍ପଲେଟ୍ ଭାବରେ ସଞ୍ଚୟ କରନ୍ତୁ</string>
 </resources>
