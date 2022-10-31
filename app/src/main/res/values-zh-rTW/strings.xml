@@ -58,7 +58,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="gnu_gplv3_license">GNU GPLv3+ 授權條款</string>
     <string name="settings">設定</string>
     <string name="all_caps">英文全部大寫</string>
+    <string name="caps_off">關閉</string>
     <string name="rotate">旋轉</string>
+    <string name="render_quality">渲染質量</string>
+    <string name="picture_quality_percent" formatted="false">圖片的質量和大小。較高的值意味著更長的加載時間。如果設備硬件和圖片尺寸超過25%, 則應用程序可能無法按預期工作%.</string>
     <string name="clear_thumbnails">清除縮圖暫存檔</string>
     <string name="columns_portrait">列數（直立螢幕時）</string>
     <string name="columns_landscape">列數 （橫向螢幕時）</string>
@@ -72,6 +75,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="hide_statusbar_at_this_view">在這個視角隱藏狀態列</string>
     <string name="hide_statusbar">隱藏狀態列</string>
     <string name="thumbnail_quality">縮略圖品質</string>
+    <string name="view_type">檢視類型</string>
     <string name="show_in_device_gallery">在裝置圖片庫中顯示</string>
     <string name="language">語言</string>
     <string name="language_change_restart_description">更改應用程式使用的語言。要重新開啟應用程式才會生效</string>
@@ -81,7 +85,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="downloading_failed">下載失敗</string>
     <string name="unzipping">解壓中...</string>
     <string name="successfully_downloaded">下載完成</string>
+    <string name="download_latest_assets">下載最新資產</string>
+    <string name="download_latest_assets_checking_description">檢查是否有更多可用資產</string>
     <string name="palette">調色</string>
+    <string name="presets">預設集</string>
     <string name="select_color">選擇顏色</string>
     <string name="code">程式碼</string>
     <string name="favourite">最愛</string>
@@ -99,16 +106,22 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="delete_meme__appspecific">刪除Meme</string>
     <string name="no_favourites_description__appspecific">尚未儲存最愛圖片。\n點擊迷因圖右下角的星形按鈕以儲存至我的最愛</string>
     <string name="no_custom_templates_description__appspecific">無自訂模板。\n在此放置模板圖片：%1$s</string>
+    <string name="no_memes_saved_description__appspecific">尚未保存任何模因\n在編輯模因後使用頂部保存按鈕。</string>
     <string name="default_mode_description_description__appspecific">程式啟動時預設開啟的模式(建立、我的最愛或已儲存)</string>
     <string name="press_back_again_to_stop_editing__appspecific">再次返回以結束編輯此meme。若尚未儲存Meme內容將會丟失。</string>
     <string name="saved_meme_successfully__appspecific">此meme成功儲存至您的裝置。請問您想結束編輯meme嗎？</string>
+    <string name="save_when_pressing_back_description__appspecific">如果按回模因, 則自動保存模因</string>
+    <string name="shuffle_meme_list_description__appspecific">選擇類別後洗牌模因列表</string>
     <string name="shuffle_meme_list__appspecific">隨機meme清單</string>
+    <string name="view_type_memelist__appspecific">設置視圖類型(圖片網格, 標題) 的行</string>
     <string name="error_storage_permission__appspecific">需要儲存空間權限以儲存memes以及模板</string>
     <string name="download_latest_assets_message__appspecific">將會下載字型以及迷因模板(大約20MB)。</string>
+    <string name="download_latest_assets_message_description__appspecific">在設置中, 您以後也可以手動獲取最新資產。</string>
     <string name="main_view">主頁</string>
     <string name="edit_picture">編輯圖片</string>
     <string name="general">平常</string>
     <string name="picture_viewer">圖片檢視器</string>
+    <string name="pictures_shown_in_gallery_and_this_app">圖庫和此應用程序中顯示的圖片</string>
     <string name="open_source_licenses">開源許可</string>
     <string name="rate_this_app">評價這個App</string>
     <string name="translate">翻譯</string>
