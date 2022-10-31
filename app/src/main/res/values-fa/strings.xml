@@ -31,6 +31,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="text_size">سایز متن</string>
     <string name="text_color">رنگ متن</string>
     <string name="border_color">رنگ کناره</string>
+    <string name="successfully_saved">با موفقیت ذخیره شد!</string>
+    <string name="top_caption">عنوان بالا</string>
+    <string name="bottom_caption">عنوان پایین</string>
+    <string name="enter_caption">عنوان را وارد کنید</string>
     <string name="font">Font</string>
     <string name="keep_editing">ادامه ویرایش</string>
     <string name="text">متن</string>
@@ -41,6 +45,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="about">درباره مارکور</string>
     <string name="developed_by">توسعه داده شده توسط</string>
     <string name="licenses">مجوزها</string>
+    <string name="show_licenses">مجوزها را نشان دهید</string>
     <string name="contributors">همکاران</string>
     <string name="more_information">اطلاعات بیشتر</string>
     <string name="show_third_party_licenses">نمایش مجوزهای شخص ثالث</string>
@@ -61,6 +66,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="favourite">علاقه‌مندی</string>
     <string name="edit_title">ویرایش عنوان</string>
     <string name="hide">پنهان کردن</string>
+    <string name="unhide">آشکار کردن</string>
     <string name="no_favourites_description__appspecific">هنوز هیچ مورد علاقه ای وجود ندارد.\nاز دکمه ستاره یک الگوی meme استفاده کنید تا آن را به موارد دلخواه اضافه کنید.</string>
     <string name="no_custom_templates_description__appspecific">هنوز هیچ الگوی سفارشی وجود ندارد. n/تصاویر قالب در اینجا: s$1%</string>
     <string name="no_memes_saved_description__appspecific">هنوز هیچ یادداشتی ذخیره نشده است.\nبعد از ویرایش یک یادداشت از دکمه ذخیره بالا استفاده کنید.</string>
