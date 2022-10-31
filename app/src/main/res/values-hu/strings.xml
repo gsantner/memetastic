@@ -60,6 +60,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="all_caps">Mind nagybetű</string>
     <string name="caps_off">Nagybetűk ki</string>
     <string name="rotate">Elforgatás</string>
+    <string name="render_quality">Render-minőség</string>
     <string name="picture_quality_percent" formatted="false">A képek minősége és mérete. A magasabb értékek hosszabb töltési időt jelentenek. A készülék hardwarétől és a képmérettől függően az alkalmazás nem működhet megfelelően ha az érték 25% felett van.</string>
     <string name="clear_thumbnails">Indexkép tisztítása</string>
     <string name="columns_portrait">Álló oszlopok</string>
@@ -78,8 +79,23 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_in_device_gallery">Mutassa meg a készülék galériájában</string>
     <string name="language">Nyelv</string>
     <string name="language_change_restart_description">Az alkalmazás nyelvének megváltoztatása. Indítsd újra az alkalmazást, hogy a módosítások érvénybe lépjenek!</string>
+    <string name="error_cannot_create_save_directory">Hiba: Nem lehet létrehozni a mentési könyvtárat</string>
     <string name="other">Egyebek</string>
+    <string name="downloading">Letöltés</string>
+    <string name="downloading_failed">A letöltés sikertelen</string>
+    <string name="unzipping">Kicsomagolás</string>
+    <string name="successfully_downloaded">Sikeresen letöltött</string>
+    <string name="download_latest_assets">Töltse le a legújabb eszközöket</string>
+    <string name="palette">Színpaletta</string>
+    <string name="presets">Sémák</string>
+    <string name="select_color">Szín kiválasztása</string>
+    <string name="code">Kód</string>
     <string name="favourite">Kedvenc</string>
+    <string name="remove_favourite">Kedvenc eltávolítása</string>
+    <string name="show_title">Műsor címe</string>
+    <string name="edit_title">Cím szerkesztése</string>
+    <string name="hide">Elrejtés</string>
+    <string name="unhide">Szerver mutatása</string>
     <string name="main_view">Alap nézet</string>
     <string name="edit_picture">Kép szerkesztése</string>
     <string name="general">Általános</string>
