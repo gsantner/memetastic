@@ -44,12 +44,15 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="keep_editing">ସମ୍ପାଦନା ଜାରି ରଖନ୍ତୁ</string>
     <string name="text">ପାଠ୍ୟ</string>
     <string name="size">ଆକାର</string>
+    <string name="background">ପୃଷ୍ଠଭୂମି</string>
     <string name="border">ବର୍ଡର</string>
     <string name="picture">ଛଵି</string>
     <string name="about">ବିଷୟରେ</string>
+    <string name="licenses">ଲାଇସେନ୍ସ</string>
     <string name="contributors">ଯୋଗଦାନକାରୀ</string>
     <string name="more_information">ଅଧିକ ସୂଚନା</string>
     <string name="miscellaneous">ଵିଵିଧ</string>
+    <string name="gnu_gplv3_license">ଆପ୍ ର ଲାଇସେନ୍ସ ଦେଖାନ୍ତୁ</string>
     <string name="settings">ସେଟିଂସମୂହ</string>
     <string name="rotate">ଘୂର୍ଣ୍ଣନ କରନ୍ତୁ</string>
     <string name="appearance">ରୂପ</string>
