@@ -48,7 +48,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="border">ବର୍ଡର</string>
     <string name="picture">ଛଵି</string>
     <string name="about">ବିଷୟରେ</string>
+    <string name="developed_by">ଦ୍ୱାରା ବିକଶିତ |</string>
     <string name="licenses">ଲାଇସେନ୍ସ</string>
+    <string name="show_licenses">ଲାଇସେନ୍ସ ଦେଖାନ୍ତୁ |</string>
     <string name="contributors">ଯୋଗଦାନକାରୀ</string>
     <string name="more_information">ଅଧିକ ସୂଚନା</string>
     <string name="miscellaneous">ଵିଵିଧ</string>
@@ -62,7 +64,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="hide_statusbar">ସ୍ଥିତି ଦଣ୍ଡିକା ଲୁଚାଅ</string>
     <string name="thumbnail_quality">ଥମ୍ବନେଲ୍ ଗୁଣବତ୍ତା</string>
     <string name="language">ଭାଷା</string>
+    <string name="language_change_restart_description">ଏହି ଆପ୍ ର ଭାଷା ବଦଳାନ୍ତୁ। ପରିବର୍ତ୍ତନଗୁଡ଼ିକ କାର୍ଯ୍ୟକାରୀ ହେବା ପାଇଁ ଆପ୍ ପୁନଃଆରମ୍ଭ କରନ୍ତୁ</string>
     <string name="other">ଅନ୍ୟ</string>
+    <string name="downloading">ଡାଉନଲୋଡ ହେଉଛି</string>
     <string name="select_color">ରଙ୍ଗ ଚୟନ କରନ୍ତୁ</string>
     <string name="show_title">ଆଖ୍ୟା ଦେଖାନ୍ତୁ</string>
     <string name="edit_title">ଆଖ୍ୟା ସମ୍ପାଦନା</string>
@@ -74,6 +78,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="share_meme__appspecific">ମେମ୍ ଅଂଶୀଦାର କରନ୍ତୁ</string>
     <string name="create_meme__appspecific">ମେମ୍ ସୃଷ୍ଟି କରନ୍ତୁ</string>
     <string name="delete_meme__appspecific">ମେମ୍ ବିଲୋପ କରନ୍ତୁ</string>
+    <string name="view_type_memelist__appspecific">ଭ୍ୟୁ ପ୍ରକାର ସେଟ୍ କରନ୍ତୁ ( ଚିତ୍ର ଗ୍ରୀଡ୍, ଟାଇଟଲ୍ ସହିତ ଧାଡି ) |</string>
     <string name="main_view">ମୁଖ୍ୟ ଦର୍ଶନ</string>
     <string name="edit_picture">ଛଵି ସମ୍ପାଦନା</string>
     <string name="general">ସାଧାରଣ</string>
@@ -87,6 +92,10 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="join_community">ସମ୍ପ୍ରଦାୟରେ ଯୋଗ ଦିଅନ୍ତୁ</string>
     <string name="bug_reports_suggest_improvements">ମତାମତ ଦିଅନ୍ତୁ, ବଗ୍ ରିପୋର୍ଟ୍ କରନ୍ତୁ କିମ୍ୱା ଉନ୍ନତି ପରାମର୍ଶ ଦିଅନ୍ତୁ</string>
     <string name="help_translating_this_app">ଏହି ଆପକୁ ଅନ୍ୟ ଭାଷାରେ ଅନୁବାଦ କରନ୍ତୁ</string>
+    <string name="more_info_on_how_to_contribute_to_this_project">ଏହି ପ୍ରକଳ୍ପରେ କିପରି ସହଯୋଗ କରିବେ ସେ ସମ୍ବନ୍ଧରେ ଅଧିକ ସୂଚନା |</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">ପ୍ରୋଜେକ୍ଟରେ କୋଡ୍ ଯୋଗଦାନ କରନ୍ତୁ |. ନବାଗତଙ୍କ ସମେତ ସମସ୍ତେ ଏହା କରିବାକୁ ସ୍ୱାଗତ |</string>
+    <string name="project_team">ପ୍ରୋଜେକ୍ଟ ଟିମ୍ |</string>
+    <string name="contributors_public_add_yourself_description">ଯୋଗଦାନକାରୀ ସୂଚନା ଦେଖାନ୍ତୁ |. ଯୋଗଦାନ ପରେ ଏହାକୁ ଏକ ଅପ୍ଟ-ଇନ୍ ଆଧାରରେ ଏଠାରେ ଦେଖାଇବାକୁ ପ୍ରଦାନ କରନ୍ତୁ |</string>
     <string name="help">ସହାୟତା</string>
     <string name="more">ଅଧିକ</string>
     <string name="community">ସମ୍ପ୍ରଦାୟ</string>
