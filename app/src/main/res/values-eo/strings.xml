@@ -10,10 +10,13 @@ You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
+    <string name="open_navdrawer">Malfermi navigan fenestron</string>
+    <string name="close_navdrawer">Fermi navigan fenestron</string>
     <string name="humans">Homoj</string>
     <string name="cartoon">Kartuno</string>
     <string name="animals">Bestoj</string>
     <string name="custom">Propraj</string>
+    <string name="rage">Rage</string>
     <string name="saved">Konservita</string>
     <string name="favs">Plej ŝatataj</string>
     <string name="create">Krei</string>
@@ -21,6 +24,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="rows_with_title">Vicoj kun titolo</string>
     <string name="picture_grid">Bilda krado</string>
     <string name="error_cannot_start_camera">Ne povas lanĉi fotilon.</string>
+    <string name="donate">Donaci</string>
     <string name="recommend">Rekomendi</string>
     <string name="changelog">Ŝanĝoprotokolo</string>
     <string name="exit">Eliri</string>
@@ -54,11 +58,22 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="editor">Redaktilo</string>
     <string name="language">Lingvo</string>
     <string name="other">Aliaj</string>
+    <string name="palette">Paletro</string>
+    <string name="select_color">Elektu koloro</string>
+    <string name="code">Kodo</string>
     <string name="favourite">Plej ŝatata</string>
+    <string name="remove_favourite">Nuligi stelumon</string>
+    <string name="hide">Kaŝi</string>
+    <string name="unhide">Malkaŝi</string>
     <string name="save_meme__appspecific">Konservi memeon</string>
     <string name="share_meme__appspecific">Konigi memeon</string>
     <string name="create_meme__appspecific">Krei memeon</string>
     <string name="delete_meme__appspecific">Forigi memeon</string>
+    <string name="no_custom_templates_description__appspecific">Neniuj kutimaj ŝablonoj ankoraŭ.\nPlaĉitaj ŝablonaj bildoj ĉi tie:%1$s</string>
+    <string name="no_memes_saved_description__appspecific">Neniuj memoj savis ankoraŭ.\nUsa la supra ŝpara butono post redaktado de memo.</string>
+    <string name="default_mode_description_description__appspecific">Defaŭlta reĝimo malfermiĝi ĉe ekfunkciigo ( Kreato, Favoj aŭ Savita )</string>
+    <string name="press_back_again_to_stop_editing__appspecific">Premu denove por ĉesi redakti ĉi tiun memon. Meme perdiĝos se ĝi ne jam estas savita.</string>
+    <string name="saved_meme_successfully__appspecific">Ĉi tiu memo estis sukcese stokita en via aparato. Ĉu vi volas forlasi redakti ĉi tiun memon nun?</string>
     <string name="main_view">Ĉefa Vido</string>
     <string name="edit_picture">Redakti bildon</string>
     <string name="general">Ĝeneralaj</string>
