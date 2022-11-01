@@ -9,4 +9,33 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="open_navdrawer">Hap sirtarin nagivues</string>
+    <string name="close_navdrawer">Mbyll sirtarin navigues</string>
+    <string name="cartoon">Filma vizatimorë</string>
+    <string name="custom">E përshtatur</string>
+    <string name="saved">Ruajtur</string>
+    <string name="create">Krijo</string>
+    <string name="hidden">E fshehur</string>
+    <string name="font">Shkronja</string>
+    <string name="keep_editing">Vazhdo përpunimin</string>
+    <string name="text">Tekst</string>
+    <string name="size">Madhësia</string>
+    <string name="background">Sfondi</string>
+    <string name="picture">Figurë</string>
+    <string name="about">Rreth</string>
+    <string name="developed_by">Zhvilluar nga</string>
+    <string name="licenses">Licensa</string>
+    <string name="contributors">Kontribuesit</string>
+    <string name="more_information">Më shumë të dhëna</string>
+    <string name="miscellaneous">Të ndryshme</string>
+    <string name="gnu_gplv3_license">Shfaq licencën e aplikacionit</string>
+    <string name="settings">Parametrat</string>
+    <string name="all_caps">Të gjitha kapelet</string>
+    <string name="caps_off">Kapelet e hequra</string>
+    <string name="picture_quality_percent" formatted="false">Cilësia dhe madhësia e fotove. Vlerat më të larta nënkuptojnë një kohë më të gjatë ngarkimi. Në varësi të harduerit të pajisjes dhe madhësisë së figurës, aplikacioni mund të mos funksionojë siç pritej nëse vlera është mbi 25%.</string>
+    <string name="default_mode">Modaliteti i parazgjedhur</string>
+    <string name="download_latest_assets">Shkarkoni asetet më të fundit</string>
+    <string name="download_latest_assets_checking_description">Duke kontrolluar nëse ka aktive më të fundit në dispozicion</string>
+    <string name="palette">Ngjyrat</string>
+</resources>
