@@ -134,10 +134,19 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="source_code">सोर्स कोड</string>
     <string name="project_license">परियोजना लाइसेंस</string>
     <string name="more_info_on_how_to_contribute_to_this_project">इस परियोजना में योगदान करने के तरीके के बारे में अधिक जानकारी</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">परियोजना में कोड योगदान करें। ऐसा करने के लिए सभी का स्वागत है, जिसमें नवागंतुक भी शामिल हैं</string>
+    <string name="project_team">परियोजना दल</string>
+    <string name="contributors_public_add_yourself_description">योगदानकर्ता जानकारी दिखाएं। योगदान करने के बाद इसे यहां ऑप्ट-इन आधार पर दिखाने के लिए प्रदान करें</string>
     <string name="help">मदद</string>
     <string name="more">अधिक</string>
     <string name="community">Community</string>
     <string name="contribute">योगदान</string>
+    <string name="the_file_could_not_be_loaded">फ़ाइल लोड नहीं की जा सकी.</string>
     <string name="close">बंद</string>
+    <string name="do_you_like_this_project_want_donate_to_keep_alive">क्या आपको यह प्रोजेक्ट पसंद है? क्या आप चाहते हैं कि इसमें सुधार हो और समस्याएं ठीक हो जाएं?\n\nएप्लिकेशन विकसित करने और संबंधित ब्लॉग पोस्ट लिखने में बहुत समय लगता है! यदि आप परियोजना को आगे बढ़ाने में मदद करना चाहते हैं, तो कृपया एक छोटे से दान पर विचार करें!\n\nयह परियोजना ख़ाली समय में, पूरी तरह से मुफ़्त और बिना किसी विज्ञापन के विकसित की गई है!</string>
     <string name="all">सब</string>
+    <string name="global_text_settings">वैश्विक पाठ सेटिंग्स</string>
+    <string name="show_image">छवि दिखाएं</string>
+    <string name="show_edited_image">संपादित छवि दिखाएं</string>
+    <string name="save_as_template">टेम्पलेट के रूप में सहेजें</string>
 </resources>
