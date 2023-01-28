@@ -9,4 +9,38 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="create">دروستکردن</string>
+    <string name="changelog">گۆڕانکارییەکان</string>
+    <string name="exit">دەرچوون</string>
+    <string name="font">فۆنت</string>
+    <string name="size">قەبارە</string>
+    <string name="background">پشت شاشە</string>
+    <string name="about">دەربارە</string>
+    <string name="licenses">مۆڵەت</string>
+    <string name="contributors">بەشداربووان</string>
+    <string name="miscellaneous">هەمەجۆر</string>
+    <string name="gnu_gplv3_license">بینینی مۆڵەتی بەرنامەکە</string>
+    <string name="settings">ڕێکخستنەکان</string>
+    <string name="appearance">ڕووکار</string>
+    <string name="editor">دەستکاریکەر</string>
+    <string name="hide_statusbar">شارنەوەی شریتی دۆخ</string>
+    <string name="language">زمان</string>
+    <string name="language_change_restart_description">بۆ گۆڕینی زمان، پێویستە بەرنامەکە دابخەیت و دووبارە بیکەیتەوە</string>
+    <string name="other">ئەوانی تر</string>
+    <string name="favourite">دڵخواز</string>
+    <string name="edit_picture">دەستکاریکردنی وێنە</string>
+    <string name="general">گشتی</string>
+    <string name="open_source_licenses">مەرج و مۆڵەتی سەرچاوەکان</string>
+    <string name="rate_this_app">هەڵسەنگاندنی بەرنامەکە</string>
+    <string name="translate">وەرگێڕدراوە بۆ کوردی لەلایەن GoRaN</string>
+    <string name="more_info_and_help">زانیاری زیاتر و هاوکاری</string>
+    <string name="report_bugs">هەڵەیەک ڕاپۆرت بکە</string>
+    <string name="join_community">بەشداربوون لە کۆڕبەند</string>
+    <string name="help_translating_this_app">کراوە بە کوردی لەلایەن گۆران غەریب - کوردتێڪ</string>
+    <string name="source_code">کۆدی سەرچاوە</string>
+    <string name="project_license">مۆڵەتی پڕۆژە</string>
+    <string name="help">یارمەتی</string>
+    <string name="more">زیاتر</string>
+    <string name="contribute">هاوکاریکردن</string>
+</resources>
