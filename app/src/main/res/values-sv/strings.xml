@@ -11,7 +11,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <string name="open_navdrawer">Öppna navigeringslådan</string>
-    <string name="close_navdrawer">Stäng navigeringslådan</string>
+    <string name="close_navdrawer">Stäng navigeringsmenyn</string>
     <string name="humans">Människor</string>
     <string name="cartoon">Tecknad serie</string>
     <string name="animals">Djur</string>
@@ -50,7 +50,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">Utvecklad av</string>
     <string name="licenses">Licenser</string>
     <string name="show_licenses">Visa licenser</string>
-    <string name="contributors">Bidragsgivare</string>
+    <string name="contributors">Medhjälpare</string>
     <string name="more_information">Mer information</string>
     <string name="show_third_party_licenses">Visa tredjeparts-licenser</string>
     <string name="miscellaneous">Diverse</string>
@@ -124,7 +124,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="open_source_licenses">Licenser för Öppen Källkod</string>
     <string name="rate_this_app">Betygsätt den här appen</string>
     <string name="translate">Översätt</string>
-    <string name="more_info_and_help">Mer info och hjälp</string>
+    <string name="more_info_and_help">Mer information och hjälp</string>
     <string name="report_bugs">Rapportera buggar</string>
     <string name="join_community">Delta i gemenskapen</string>
     <string name="bug_reports_suggest_improvements">Återkoppla, rapportera buggar eller kom med förbättringsförslag</string>
@@ -132,7 +132,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="source_code">Källkod</string>
     <string name="project_license">Projektets licens</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Mer information om hur du birdar till det här projektet</string>
-    <string name="contribute_code_to_this_project_anybody_welcome">Bidrag med kod till projektet. Alla är välkommna, även nybörjare</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">Bidra med kod till projektet. Alla är välkomna, även nybörjare</string>
     <string name="project_team">Projektlag</string>
     <string name="contributors_public_add_yourself_description">Visa bidragsinformation. Lämna information för att synas här, om du vill, efter bidragande</string>
     <string name="help">Hjälp</string>
