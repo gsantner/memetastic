@@ -39,11 +39,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="top_caption">عنوان بالا</string>
     <string name="bottom_caption">عنوان پایین</string>
     <string name="enter_caption">عنوان را وارد کنید</string>
-    <string name="font">Font</string>
+    <string name="font">قلم</string>
     <string name="keep_editing">ادامه ویرایش</string>
     <string name="text">متن</string>
     <string name="size">مرتب‌سازی بر اساس اندازه</string>
-    <string name="background">Background</string>
+    <string name="background">پس‌زمینه</string>
     <string name="border">حاشیه</string>
     <string name="picture">تصویر</string>
     <string name="about">درباره مارکور</string>
