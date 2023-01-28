@@ -70,9 +70,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="save_when_pressing_back">Uložiť pri stlačení späť</string>
     <string name="padding">Odstup</string>
     <string name="overview">Přehled</string>
-    <string name="editor">Uprav</string>
+    <string name="editor">Editor</string>
     <string name="hide_statusbar_at_this_view">Skryť stavový riadok v tomto zobrazení</string>
-    <string name="hide_statusbar">Skryť stavový riadok</string>
+    <string name="hide_statusbar">Schovať status bar</string>
     <string name="thumbnail_quality">Kvalita miniatúr</string>
     <string name="view_type">Typ zobrazenia</string>
     <string name="show_in_device_gallery">Zobraziť v galérii zariadenia</string>
