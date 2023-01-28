@@ -11,7 +11,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <resources>
     <string name="open_navdrawer">Apri la barra di navigazione</string>
-    <string name="close_navdrawer">Chiudi la barra di navigazione</string>
+    <string name="close_navdrawer">Chiudi barra di navigazione</string>
     <string name="humans">Persone</string>
     <string name="cartoon">Fumetti</string>
     <string name="animals">Animali</string>
@@ -50,7 +50,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">Sviluppato da</string>
     <string name="licenses">Licenze</string>
     <string name="show_licenses">Mostra licenze</string>
-    <string name="contributors">Contributori</string>
+    <string name="contributors">Collaboratori</string>
     <string name="more_information">Altre informazioni</string>
     <string name="show_third_party_licenses">Mostra licenze di terze parti</string>
     <string name="miscellaneous">Varie</string>
