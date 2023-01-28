@@ -29,7 +29,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_picture_selection">Изображение не выбрано.</string>
     <string name="error_couldnot_load_picture_from_storage">Не удалось загрузить изображение из хранилища.</string>
     <string name="recommend">Порекомендовать приложение</string>
-    <string name="changelog">Список изменений</string>
+    <string name="changelog">История изменений</string>
     <string name="exit">Выйти</string>
     <string name="yes">да</string>
     <string name="text_size">Размер текста</string>
@@ -46,11 +46,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">Фон</string>
     <string name="border">Границы</string>
     <string name="picture">Изображение</string>
-    <string name="about">О программе</string>
+    <string name="about">О приложении</string>
     <string name="developed_by">Разработанно</string>
     <string name="licenses">Лицензии</string>
     <string name="show_licenses">Показать лицензии</string>
-    <string name="contributors">Участники</string>
+    <string name="contributors">Разработчики</string>
     <string name="more_information">Дополнительная информация</string>
     <string name="show_third_party_licenses">Показать сторонние лицензии</string>
     <string name="miscellaneous">Прочее</string>
@@ -92,7 +92,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="code">Код</string>
     <string name="favourite">Избранное</string>
     <string name="remove_favourite">Удалить из избранного</string>
-    <string name="show_title">Показать заголовок</string>
+    <string name="show_title">Показывать заголовок</string>
     <string name="edit_title">Изменить заголовок</string>
     <string name="hide">Спрятать</string>
     <string name="unhide">Показать</string>
@@ -123,7 +123,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="pictures_shown_in_gallery_and_this_app">Изображения отображаются в галерее и в этом приложении</string>
     <string name="open_source_licenses">Лицензии открытого ПО</string>
     <string name="rate_this_app">Оценить приложение</string>
-    <string name="translate">Перевести</string>
+    <string name="translate">Перевод</string>
     <string name="more_info_and_help">Дополнительная информация и помощь</string>
     <string name="report_bugs">Сообщить об ошибках</string>
     <string name="join_community">Присоединяйтесь к сообществу</string>
@@ -136,7 +136,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="project_team">Команда проекта</string>
     <string name="contributors_public_add_yourself_description">Показать информации об участниках. Предоставьте информацию о себе, если вы внесли свой вклад в проект</string>
     <string name="help">Помощь</string>
-    <string name="more">Прочее</string>
+    <string name="more">Ещё</string>
     <string name="community">Сообщество</string>
     <string name="contribute">Внести свой вклад</string>
     <string name="the_file_could_not_be_loaded">Файл не может быть загружен.</string>
