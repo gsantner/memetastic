@@ -46,7 +46,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">പശ്ചാത്തലം</string>
     <string name="border">അതിര്</string>
     <string name="picture">ചിത്രം</string>
-    <string name="about">സംബന്ധ വിവരങ്ങൾ</string>
+    <string name="about">കുറിച്ച്</string>
     <string name="developed_by">നിർമ്മാണം</string>
     <string name="licenses">അനുമതിപത്രം</string>
     <string name="show_licenses">ലൈസൻസു് കാണിയ്ക്കക</string>
@@ -118,7 +118,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="download_latest_assets_message_description__appspecific">ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഏറ്റവും പുതിയ ആസ്തികൾ പിന്നീട് സ്വമേധയാ ലഭിക്കും.</string>
     <string name="main_view">പ്രധാന കാഴ്ച</string>
     <string name="edit_picture">ചിത്രം എഡിറ്റുചെയ്യുക</string>
-    <string name="general">പൊതുവായിട്ടുള്ളത്</string>
+    <string name="general">പൊതു</string>
     <string name="picture_viewer">ചിത്ര കാഴ്ചക്കാരൻ</string>
     <string name="pictures_shown_in_gallery_and_this_app">ഗാലറിലും ഈ അപ്ലിക്കേഷനിലും കാണിച്ചിരിക്കുന്ന ചിത്രങ്ങൾ</string>
     <string name="open_source_licenses">ഉറവിട ലൈസൻസുകൾ തുറക്കുക</string>
