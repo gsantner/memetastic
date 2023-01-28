@@ -46,7 +46,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">배경</string>
     <string name="border">테두리</string>
     <string name="picture">사진</string>
-    <string name="about">앱 정보</string>
+    <string name="about">이 앱에 대해서..</string>
     <string name="developed_by">개발자:</string>
     <string name="licenses">라이선스</string>
     <string name="show_licenses">저작권 표시</string>
