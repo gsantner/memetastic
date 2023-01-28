@@ -46,12 +46,12 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">背景</string>
     <string name="border">枠</string>
     <string name="picture">画像</string>
-    <string name="about">情報</string>
+    <string name="about">アプリについて</string>
     <string name="developed_by">開発者</string>
     <string name="licenses">ライセンス</string>
     <string name="show_licenses">ライセンスを表示</string>
     <string name="contributors">貢献者</string>
-    <string name="more_information">追加情報</string>
+    <string name="more_information">詳細情報</string>
     <string name="show_third_party_licenses">サードパーティライセンスを表示</string>
     <string name="miscellaneous">その他</string>
     <string name="gnu_gplv3_license">GNU GPLv3+ ライセンス</string>
