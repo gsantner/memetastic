@@ -26,7 +26,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="get_picture_from_gallery">Hent bilde fra galleri</string>
     <string name="get_picture_from_camera">Ta bilde med kamera</string>
     <string name="error_cannot_start_camera">Kunne ikke starte kamera.</string>
-    <string name="error_picture_selection">Inget bilde valgt, tatt eller lagret.</string>
+    <string name="error_picture_selection">Inget bilde valgt, tatt, eller lagret.</string>
     <string name="error_couldnot_load_picture_from_storage">Kunne ikke laste bilde fra lagring.</string>
     <string name="recommend">Anbefal</string>
     <string name="changelog">Endringslogg</string>
