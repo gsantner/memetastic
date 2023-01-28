@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">කැමරාව ආරම්භ කිරීමට නොහැකි විය.</string>
     <string name="error_picture_selection">පින්තූරයක් තෝරාගෙන, ගත් හෝ සුරැකුවේ නැත.</string>
     <string name="error_couldnot_load_picture_from_storage">ගබඩාවෙන් පින්තූරය පූරණය කිරීමට නොහැකි විය.</string>
-    <string name="donate">පරිත්‍යාග</string>
     <string name="recommend">නිර්දේශ කරන්න</string>
     <string name="changelog">චේන්ජ්ලොග්</string>
     <string name="exit">පිටවෙන්න</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">පරිවර්තනය</string>
     <string name="more_info_and_help">වැඩි විස්තර සහ උදව්</string>
     <string name="report_bugs">දෝෂ වාර්තා කරන්න</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">මෙම ව්‍යාපෘතිය පරිත්‍යාග කිරීම හෝ සහාය දීම පිළිබඳ වැඩි විස්තර</string>
     <string name="join_community">ප්‍රජාවට එක්වන්න</string>
     <string name="bug_reports_suggest_improvements">ප්‍රතිපෝෂණ දෙන්න, දෝෂ වාර්තා කරන්න හෝ වැඩිදියුණු කිරීම් යෝජනා කරන්න</string>
     <string name="help_translating_this_app">මෙම යෙදුම වෙනත් භාෂාවලට පරිවර්තනය කරන්න</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">දායක වන්න</string>
     <string name="the_file_could_not_be_loaded">ගොනුව පූරණය කළ නොහැක.</string>
     <string name="close">වසන්න</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">ඔබ මෙම ව්‍යාපෘතියට කැමතිද? එය වැඩිදියුණු වී ගැටළු නිරාකරණය කර ගැනීමට ඔබට අවශ්‍යද?\n\nයෙදුම් සංවර්ධනය කිරීම සහ අදාළ බ්ලොග් සටහන් ලිවීම සඳහා බොහෝ කාලයක් වැය වේ! ව්‍යාපෘතිය ඉදිරියට ගෙන යාමට ඔබට උදව් කිරීමට අවශ්‍ය නම්, කරුණාකර කුඩා පරිත්‍යාගයක් සලකා බලන්න!\n\nමෙම ව්‍යාපෘතිය විවේක කාලයේදී සංවර්ධනය කර ඇති අතර එය සම්පූර්ණයෙන්ම නොමිලේ සහ කිසිදු වෙළඳ දැන්වීමක් නොමැතිව!</string>
     <string name="all">සියල්ල</string>
     <string name="global_text_settings">ගෝලීය පෙළ සැකසුම්</string>
     <string name="show_image">රූපය පෙන්වන්න</string>

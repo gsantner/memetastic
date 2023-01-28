@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Nije moguce pokrenuti kameru.</string>
     <string name="error_picture_selection">Nijedna slika nije oznacena.</string>
     <string name="error_couldnot_load_picture_from_storage">Ne mogu ucitati sliku iz memorije.</string>
-    <string name="donate">Doniraj</string>
     <string name="recommend">Preporuci</string>
     <string name="changelog">Lista promena</string>
     <string name="exit">Izadji</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Prevedi</string>
     <string name="more_info_and_help">Više informacija i pomoć</string>
     <string name="report_bugs">Prijavi bagove</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Više informacija o doniranju ili podršci ovom projektu</string>
     <string name="join_community">Pridružite se zajednici</string>
     <string name="bug_reports_suggest_improvements">Davanje povratnih informacija, greške u izveštaju ili predlaganje poboljšanja</string>
     <string name="help_translating_this_app">Prevođenje ove aplikacije na druge jezike</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Doprinesi</string>
     <string name="the_file_could_not_be_loaded">Nije moguće učitati datoteku.</string>
     <string name="close">Zatvori</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Da li vam se dopada ovaj projekat? Da li želite da se poboljša i da se problemi otklone?\n\nDeveloping aplikacije i pisanje srodnih blog postova košta mnogo vremena! Ako želite da pomognete kako bi projekat mogao da se nastavi, molimo vas da razmislite o maloj donaciji!\n\nThis projekat je razvijen u slobodno vreme, potpuno besplatno i bez ikakvih reklama!</string>
     <string name="all">Sve</string>
     <string name="global_text_settings">Globalne postavke teksta</string>
     <string name="show_image">Prikaži sliku</string>

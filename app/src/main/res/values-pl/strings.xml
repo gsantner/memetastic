@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Nie udało się włączyć aparatu.</string>
     <string name="error_picture_selection">Nie wybrano żadnego obrazu.</string>
     <string name="error_couldnot_load_picture_from_storage">Nie udało się załadować obrazu z pamięci.</string>
-    <string name="donate">Wspomóż</string>
     <string name="recommend">Poleć</string>
     <string name="changelog">Lista zmian</string>
     <string name="exit">Wyjdź</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Przetłumacz</string>
     <string name="more_info_and_help">Więcej informacji i pomoc</string>
     <string name="report_bugs">Zgłoś błąd</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Więcej informacji na temat dotacjach lub pomaganiu tego projektu</string>
     <string name="join_community">Dołącz do Społeczności</string>
     <string name="bug_reports_suggest_improvements">Zostaw ocenę, zgłoś błędy lub zaproponuj poprawki</string>
     <string name="help_translating_this_app">Przetłumacz tę aplikację na inne języki</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Przyłącz się do projektu</string>
     <string name="the_file_could_not_be_loaded">Plik nie mógł zostać załadowany.</string>
     <string name="close">Zamknij</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Czy podoba Ci się ten projekt? Chcesz go ulepszyć i naprawić problemy?\n\nTworzenie aplikacji i pisanie powiązanych wpisów na blogu kosztuje dużo czasu! Jeśli chcesz pomóc, aby projekt mógł być kontynuowany, rozważ małą dotację!\n\nTen projekt jest rozwijany w czasie wolnym, całkowicie za darmo i bez reklam!</string>
     <string name="all">Wszystko</string>
     <string name="global_text_settings">Globalne ustawienia tekstu</string>
     <string name="show_image">Pokaż obraz</string>

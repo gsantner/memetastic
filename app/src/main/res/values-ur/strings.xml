@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">کیمرا شروع نہیں ہو سکا.</string>
     <string name="error_picture_selection">کوئی تصویر سیلیکٹ، کھنچی یا محفوظ نہیں کی گئی.</string>
     <string name="error_couldnot_load_picture_from_storage">گیلری سے تصویر لوڈ نہیں ہو سکی.</string>
-    <string name="donate">عطیہ کریں</string>
     <string name="recommend">تجویز کریں</string>
     <string name="changelog">لاگ تبدیل کریں</string>
     <string name="exit">بند کریں</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">ترجمہ کریں</string>
     <string name="more_info_and_help">مزید معلومات اور مدد کریں</string>
     <string name="report_bugs">کیڑے رپورٹ کریں</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">اس منصوبے کو عطیہ کرنے یا اس کی حمایت کرنے سے متعلق مزید معلومات</string>
     <string name="join_community">برادری میں شامل ہوں</string>
     <string name="bug_reports_suggest_improvements">آراء دیں ، کیڑے رپورٹ کریں یا بہتری کی تجویز کریں</string>
     <string name="help_translating_this_app">اس ایپ کو دوسری زبانوں میں ترجمہ کریں</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">تعاون کریں</string>
     <string name="the_file_could_not_be_loaded">فائل بھری نہیں ہوسکتی ہے.</string>
     <string name="close">بند کریں</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">کیا آپ کو یہ پروجیکٹ پسند ہے? کیا آپ چاہتے ہیں کہ اس میں بہتری آئے اور مسائل طے ہوگئے? n\n\ ڈویلپمنٹ ایپس اور متعلقہ بلاگ پوسٹس لکھنے میں بہت وقت ہوتا ہے! اگر آپ مدد کرنا چاہتے ہیں تاکہ پروجیکٹ جاری رہ سکے تو ، براہ کرم ایک چھوٹے سے عطیہ پر غور کریں! n\n\یہ پروجیکٹ تفریحی وقت میں تیار کیا جاتا ہے ، مکمل طور پر مفت اور بغیر کسی اشتہار کے!</string>
     <string name="all">سب</string>
     <string name="global_text_settings">عالمی متن کی ترتیبات</string>
     <string name="show_image">تصویر دکھائیں</string>

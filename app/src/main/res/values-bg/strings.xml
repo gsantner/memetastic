@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Камерата не може да се стартира.</string>
     <string name="error_picture_selection">Няма избрана, заснета или запазена снимка.</string>
     <string name="error_couldnot_load_picture_from_storage">Картината не можа да се зареди от хранилището.</string>
-    <string name="donate">Дарение</string>
     <string name="recommend">Препоръчване</string>
     <string name="changelog">Преглед на измененията</string>
     <string name="exit">Изход</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Преведи</string>
     <string name="more_info_and_help">Повече информация и помощ</string>
     <string name="report_bugs">Докладване на грешки</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Повече информация за дарение или подкрепа на този проект</string>
     <string name="join_community">Присъединете се към Общността</string>
     <string name="bug_reports_suggest_improvements">Дайте обратна връзка, докладвайте за грешки или предложете подобрения</string>
     <string name="help_translating_this_app">Преведете това приложение на други езици</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Дайте своя принос</string>
     <string name="the_file_could_not_be_loaded">Файлът не може да бъде зареден.</string>
     <string name="close">Затвори</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Харесвате ли този проект? Искате ли да бъде подобрено и проблемите отстранени?\n\nРазработването на приложения и писането на свързани публикации в блогове струва много време! Ако искате да помогнете, за да може проектът да продължи, моля, помислете за малко дарение!\n\nТози проект е разработен в свободното време, напълно безплатно и без никакви реклами!</string>
     <string name="all">Всички</string>
     <string name="global_text_settings">Глобални текстови настройки</string>
     <string name="show_image">Показване на изображение</string>

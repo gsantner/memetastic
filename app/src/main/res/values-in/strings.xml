@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kamera tidak dapat dinyalakan.</string>
     <string name="error_picture_selection">Tidak ada gambar yang dipilih.</string>
     <string name="error_couldnot_load_picture_from_storage">Tidak dapat memuat gambar dari penyimpanan.</string>
-    <string name="donate">Donasi</string>
     <string name="recommend">Rekomendasi</string>
     <string name="changelog">Catatan Perubahan</string>
     <string name="exit">Keluar</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Terjemahan</string>
     <string name="more_info_and_help">Info dan bantuan lebih lanjut</string>
     <string name="report_bugs">Laporkan Bug</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Info lebih lanjut tentang menyumbang atau mendukung proyek ini</string>
     <string name="join_community">Bergabung ke Komunitas</string>
     <string name="bug_reports_suggest_improvements">Saran atau lapor bug</string>
     <string name="help_translating_this_app">Terjemahkan aplikasi ini ke bahasa lain</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Ikut serta</string>
     <string name="the_file_could_not_be_loaded">File tidak dapat dimuat.</string>
     <string name="close">Tutup</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Apakah Anda suka proyek ini? Apakah Anda ingin itu diperbaiki dan masalah diperbaiki?\n\nMengembangkan aplikasi dan menulis posting blog terkait membutuhkan banyak waktu! Jika Anda ingin membantu agar proyek dapat berlanjut, harap pertimbangkan sumbangan kecil!\n\nProyek ini dikembangkan di waktu senggang, sepenuhnya gratis dan tanpa iklan!</string>
     <string name="all">Semua</string>
     <string name="global_text_settings">Pengaturan teks global</string>
     <string name="show_image">Tampilkan gambar</string>

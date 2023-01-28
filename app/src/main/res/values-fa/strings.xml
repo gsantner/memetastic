@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">دوربین شروع نشد.</string>
     <string name="error_picture_selection">No picture selected, taken or saved.</string>
     <string name="error_couldnot_load_picture_from_storage">بارگیری تصویر از ذخیره سازی امکان پذیر نیست.</string>
-    <string name="donate">کمک مالی</string>
     <string name="recommend">توصیه</string>
     <string name="changelog">لاگ تغییرات</string>
     <string name="exit">خروج</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">ترجمه</string>
     <string name="more_info_and_help">اطّلاعات بیش‌تر و راهنمایی</string>
     <string name="report_bugs">گزارش اشکالات</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">اطلاعات بیشتر در مورد اهدا یا پشتیبانی از این پروژه</string>
     <string name="join_community">Приєднатися до спільноти</string>
     <string name="bug_reports_suggest_improvements">இந்த செயலி குறித்த கருத்துக்கள் மற்றும் பிழைகளை தெரிவிக்கவும் அல்லது மேம்படுத்தத்தல்களை பரிந்துரைக்கவும்</string>
     <string name="help_translating_this_app">மற்ற மொழிகளில் இந்த செயலியை மொழிபெயர்க்கவும்</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">همکاری</string>
     <string name="the_file_could_not_be_loaded">پرونده بارگیری نشد.</string>
     <string name="close">Close</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">آیا این پروژه را دوست دارید? آیا می خواهید بهبود یابد و مشکلات برطرف شود? n\n\توسعه برنامه ها و نوشتن پست های وبلاگ مرتبط زمان زیادی را می طلبد! اگر می خواهید کمک کنید تا پروژه ادامه یابد ، لطفاً یک کمک مالی کوچک در نظر بگیرید! n\n\این پروژه در اوقات فراغت ، کاملاً رایگان و بدون هیچ گونه تبلیغی توسعه یافته است!</string>
     <string name="all">همه</string>
     <string name="global_text_settings">تنظیمات متن جهانی</string>
     <string name="show_image">نمایش تصویر</string>

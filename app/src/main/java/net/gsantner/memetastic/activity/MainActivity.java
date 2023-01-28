@@ -296,7 +296,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        //new AndroidSupportMeWrapper(this).mainOnResume();
         if (MainActivity.LOCAL_ONLY_MODE) {
             _tabLayout.setVisibility(View.GONE);
         }

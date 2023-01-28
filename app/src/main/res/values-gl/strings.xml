@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Non podía comezar a cámara.</string>
     <string name="error_picture_selection">Non hai ningunha imaxe seleccionada, tomada ou gardada.</string>
     <string name="error_couldnot_load_picture_from_storage">Non se podía cargar a imaxe desde o almacenamento.</string>
-    <string name="donate">Doar</string>
     <string name="recommend">Recomendar</string>
     <string name="changelog">Rexistro de cambios</string>
     <string name="exit">Saír</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Traducir</string>
     <string name="more_info_and_help">Máis información e axuda</string>
     <string name="report_bugs">Reporte erros</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Máis información sobre a dotación ou o apoio deste proxecto</string>
     <string name="join_community">Únete á comunidade</string>
     <string name="bug_reports_suggest_improvements">Dar comentarios, informar erros ou suxerir melloras</string>
     <string name="help_translating_this_app">Traducir esta aplicación noutros idiomas</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Colaborar</string>
     <string name="the_file_could_not_be_loaded">O ficheiro non se puido cargar.</string>
     <string name="close">Pechar</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Gústache este proxecto? Queres que siga mellorando e resolvendo os problemas?\n\nDesenvolver aplicacións e escribir a documentación leva moito tempo! Se queres apoiar ao proxecto para que continúe, por favor, considera facer unha pequena doazón!\n\nEste proxecto desenvólvese no tempo libre, ofrécese libre e gratuitamente e sen publicidade!</string>
     <string name="all">Todas</string>
     <string name="global_text_settings">Configuración global de texto</string>
     <string name="show_image">Amosar imaxe</string>

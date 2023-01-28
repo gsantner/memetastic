@@ -17,9 +17,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="app_translate_url" translatable="false">https://crowdin.com/project/memetastic/invite</string>
     <string name="app_web_url" translatable="false">https://gsantner.net/project/memetastic.html?source=inapp</string>
     <string name="app_source_code_url" translatable="false">https://github.com/gsantner/memetastic</string>
-    <string name="app_donate_url" translatable="false"><![CDATA[https://gsantner.net/page/supportme.html?project=memetastic&source=inapp_supdon]]></string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project" translatable="false">@string/more_info_on_how_to_donate_or_otherwise_support_this_project_text</string>
-    <string name="donate_" translatable="false">@string/donate</string>
 
 
     <!-- General -->
@@ -61,13 +58,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     ]]></string>
     <!-- License end -->
 
-    <string name="donate__bitcoin_id" translatable="false">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</string>
-    <string name="donate__bitcoin_amount" translatable="false">0.01</string>
-    <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
-    <string name="donate__bitcoin_url" translatable="false">http://gsantner.net/#donate</string>
-    <string name="donate__url" translatable="false">https://liberapay.com/gsantner/donate</string>
-
-
     <!-- Pref keys -->
     <string name="pref_key__render_quality__percent" translatable="false">pref_key__render_quality__percent</string>
     <string name="pref_key__cleanup_thumbnails" translatable="false">pref_key__cleanup_thumbnails</string>
@@ -105,7 +95,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="pref_key__more_info__join_community" translatable="false">pref_key__more_info__join_community</string>
 
     <string name="pref_key__more_info__app" translatable="false">pref_key__more_info__app</string>
-    <string name="pref_key__more_info__donate" translatable="false">pref_key__more_info__donate</string>
     <string name="pref_key__more_info__project_community" translatable="false">pref_key__more_info__project_community</string>
     <string name="pref_key__more_info__project_team" translatable="false">pref_key__more_info__project_team</string>
     <string name="pref_key__more_info__contributors_public_info" translatable="false">pref_key__more_info__contributors_public_info</string>

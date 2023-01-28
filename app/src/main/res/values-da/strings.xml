@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kunne ikke starte kamera.</string>
     <string name="error_picture_selection">Intet billede valgt, taget eller gemt.</string>
     <string name="error_couldnot_load_picture_from_storage">Kunne ikke indlæse billede fra lager.</string>
-    <string name="donate">Donér</string>
     <string name="recommend">Anbefal</string>
     <string name="changelog">Ændringslog</string>
     <string name="exit">Afslut</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Oversæt</string>
     <string name="more_info_and_help">Mere info og hjælp</string>
     <string name="report_bugs">Rapporter fejl</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Mere info om donationer og støtte af dette projekt</string>
     <string name="join_community">Bliv en del af fællesskabet</string>
     <string name="bug_reports_suggest_improvements">Giv feedback, rapporter fejl og foreslå forbedringer</string>
     <string name="help_translating_this_app">Overset dette program til andre sprog</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Giv en hånd med</string>
     <string name="the_file_could_not_be_loaded">Filen kunne ikke indlæses.</string>
     <string name="close">Luk</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Kan du lide dette projekt? Ønsker du at det bliver forbedret og problemer løst?\n\nUdvikling af apps og skrivning af relaterede blogindlæg koster en masse tid! Hvis du ønsker at hjælpe, så projektet kan fortsætte, så overvej venligst en lille donation!\n\nDette projekt er udviklet i fritid, helt gratis og uden reklamer!</string>
     <string name="all">Alle</string>
     <string name="global_text_settings">Globale tekstindstillinger</string>
     <string name="show_image">Vis billede</string>

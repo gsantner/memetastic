@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Не може да се вклучи Камерата.</string>
     <string name="error_picture_selection">Нема избрана, сликана или зачувана слика.</string>
     <string name="error_couldnot_load_picture_from_storage">Не може да се вчита сликата од складиштето.</string>
-    <string name="donate">Донирај</string>
     <string name="recommend">Препорачано</string>
     <string name="changelog">Листа на промени</string>
     <string name="exit">Излез</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Преведи</string>
     <string name="more_info_and_help">Повеќе информации и помош</string>
     <string name="report_bugs">Пријавете грешки</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Повеќе информации за донирање или поддршка на овој проект</string>
     <string name="join_community">Придружете се на заедницата</string>
     <string name="bug_reports_suggest_improvements">Дајте повратни информации, пријавете грешки или предложете подобрувања</string>
     <string name="help_translating_this_app">Преведете ја оваа апликација на други јазици</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Придонеси</string>
     <string name="the_file_could_not_be_loaded">Датотеката не можеше да се вчита.</string>
     <string name="close">Затвори</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Дали ви се допаѓа овој проект? Дали сакате да се подобри и да се поправат проблемите?\n\nРазвивањето апликации и пишувањето поврзани објави на блог чини многу време! Ако сакате да помогнете за да продолжи проектот, размислете за мала донација!\n\nОвој проект е развиен во слободно време, целосно бесплатно и без никакви реклами!</string>
     <string name="all">Сите</string>
     <string name="global_text_settings"> Глобални поставки за текст</string>
     <string name="show_image">Прикажи слика</string>

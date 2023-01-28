@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kameraa ei voitu käynnistää.</string>
     <string name="error_picture_selection">Kuvaa ei ole valittu, otettu tai tallennettu.</string>
     <string name="error_couldnot_load_picture_from_storage">Kuvaa ei voitu ladata tallennustilasta.</string>
-    <string name="donate">Lahjoita</string>
     <string name="recommend">Suosittele</string>
     <string name="changelog">Muutosloki</string>
     <string name="exit">Poistu</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Käännä</string>
     <string name="more_info_and_help">Lisätietoja ja apua</string>
     <string name="report_bugs">Ilmoita virheistä</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Lisää tietoa tämän projektin lahjoittamisesta tai tukemisesta</string>
     <string name="join_community">Liity yhteisöön</string>
     <string name="bug_reports_suggest_improvements">Anna palautetta, ilmoita virheistä tai ehdota parannuksia</string>
     <string name="help_translating_this_app">Käännä tämä sovellus muille kielille</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Osallistu</string>
     <string name="the_file_could_not_be_loaded">Tiedostoa ei voitu ladata.</string>
     <string name="close">Sulje</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Pidätkö tästä projektista? Haluatko että se paranee ja ongelmat korjataan?\n\nSovellusten kehittäminen ja niihin liittyvien blogiviestien kirjoittaminen maksaa paljon aikaa! Jos haluat auttaa, jotta projekti voi jatkua, harkitse pientä lahjoitusta!\n\nTämä projekti on kehitetty vapaa-ajalla, täysin ilmaiseksi ja ilman mainoksia!</string>
     <string name="all">Kaikki</string>
     <string name="global_text_settings">Yleiset tekstiasetukset</string>
     <string name="show_image">Näytä kuva</string>

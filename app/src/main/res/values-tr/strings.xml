@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kamera başlatılamadı.</string>
     <string name="error_picture_selection">Hiçbir resim seçilmedi, çekilmedi veya kaydedilmedi.</string>
     <string name="error_couldnot_load_picture_from_storage">Resim depolama alanından yüklenemedi.</string>
-    <string name="donate">Bağış yap</string>
     <string name="recommend">Öner</string>
     <string name="changelog">Değişiklik günlüğü</string>
     <string name="exit">Çıkış</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Çeviri</string>
     <string name="more_info_and_help">Bu uygulama hakkında daha fazla bilgi alın ve yardım edin</string>
     <string name="report_bugs">Hataları bildir</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Bu projeye bağış yapma veya destekleme hakkında daha fazla bilgi alın</string>
     <string name="join_community">Topluluğa katıl</string>
     <string name="bug_reports_suggest_improvements">Geri bildirim verin, hataları bildirin veya iyileştirmeler önerin</string>
     <string name="help_translating_this_app">Bu uygulamayı diğer dillere çevirin</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Katkıda Bulun</string>
     <string name="the_file_could_not_be_loaded">Dosya yüklenemedi.</string>
     <string name="close">Kapat</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Bu projeyi beğendiniz mi? Projenin iyileştirilmesini ve sorunların çözülmesini istiyor musunuz?\n\nUygulama geliştirmek ve onunla ilgili blog gönderileri yazmak çok zaman alıyor! Projenin devam edebilmesi için yardım etmek istiyorsanız, lütfen küçük bir bağış yapmayı düşünün!\n\nBu proje boş zamanlarımda, tamamen ücretsiz ve reklamsız olarak geliştirilmiştir!</string>
     <string name="all">Tümü</string>
     <string name="global_text_settings">Genel metin ayarları</string>
     <string name="show_image">Görüntüyü göster</string>

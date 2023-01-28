@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">카메라를 시작할 수 없습니다.</string>
     <string name="error_picture_selection">사진이 선택/저장되지 않았습니다.</string>
     <string name="error_couldnot_load_picture_from_storage">사진을 저장소에서 가져올 수 없습니다.</string>
-    <string name="donate">후원하기</string>
     <string name="recommend">추천</string>
     <string name="changelog">변경사항</string>
     <string name="exit">나가기</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">번역하기</string>
     <string name="more_info_and_help">도움말</string>
     <string name="report_bugs">버그 신고</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">이 프로젝트를 후원하는 자세한 정보</string>
     <string name="join_community">커뮤니티에 참여</string>
     <string name="bug_reports_suggest_improvements">피드백을 주고, 버그를 신고하거나 개선점을 알려주기</string>
     <string name="help_translating_this_app">이 앱을 다른 언어로 번역하기</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">기여</string>
     <string name="the_file_could_not_be_loaded">파일을 로드하지 못했습니다!</string>
     <string name="close">닫기</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">이 프로젝트가 마음에 드십니까? 개선되고 문제가 해결되기를 원하십니까?\n\n앱을 개발하고 관련 블로그 게시물을 작성하는 데 많은 시간이 걸립니다! 프로젝트가 계속 진행될 수 있도록 도와 주려면 작은 기부를 고려하십시오!\n\n이 프로젝트는 여가 시간에 완전히 무료로 광고없이 개발되었습니다!</string>
     <string name="all">전체</string>
     <string name="global_text_settings">전역 텍스트 설정</string>
     <string name="show_image">이미지 표시</string>

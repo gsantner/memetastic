@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">କ୍ୟାମେରା ଆରମ୍ଭ କରାଯାଇପାରିଲା ନାହିଁ।</string>
     <string name="error_picture_selection">କୌଣସି ଛଵି ଚୟନ ହୋଇନି, ଉଠାଯାଇନି କି ସଞ୍ଚିତ ହୋଇନାହିଁ।</string>
     <string name="error_couldnot_load_picture_from_storage">ଷ୍ଟୋରେଜରୁ ଛଵି ଲୋଡ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
-    <string name="donate">ଦାନ କରନ୍ତୁ</string>
     <string name="recommend">ସୁପାରିଶ କରନ୍ତୁ</string>
     <string name="changelog">ପରିବର୍ତ୍ତନ ଲଗ୍</string>
     <string name="exit">ପ୍ରସ୍ଥାନ</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">ଅନୁବାଦ କରନ୍ତୁ</string>
     <string name="more_info_and_help">ଅଧିକ ସୂଚନା ଏବଂ ସହାୟତା</string>
     <string name="report_bugs">ବଗ୍‌ ରିପୋର୍ଟ୍‌ କରନ୍ତୁ</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">ଏହି ପ୍ରକଳ୍ପକୁ ଦାନ କିମ୍ବା ସମର୍ଥନ କରିବା ବିଷୟରେ ଅଧିକ ସୂଚନା |</string>
     <string name="join_community">ସମ୍ପ୍ରଦାୟରେ ଯୋଗ ଦିଅନ୍ତୁ</string>
     <string name="bug_reports_suggest_improvements">ମତାମତ ଦିଅନ୍ତୁ, ବଗ୍ ରିପୋର୍ଟ୍ କରନ୍ତୁ କିମ୍ୱା ଉନ୍ନତି ପରାମର୍ଶ ଦିଅନ୍ତୁ</string>
     <string name="help_translating_this_app">ଏହି ଆପକୁ ଅନ୍ୟ ଭାଷାରେ ଅନୁବାଦ କରନ୍ତୁ</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">ଯୋଗଦାନ କରନ୍ତୁ</string>
     <string name="the_file_could_not_be_loaded">ଫାଇଲ୍ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ।</string>
     <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">ଆପଣ ଏହି ପ୍ରୋଜେକ୍ଟକୁ ପସନ୍ଦ କରନ୍ତି କି? ଆପଣ ଚାହୁଁଛନ୍ତି କି ଏହା ଉନ୍ନତ ହୁଏ ଏବଂ ସମସ୍ୟା ସ୍ଥିର ହୁଏ?\n\nଆପ୍ ବିକାଶ ଏବଂ ଆନୁସଙ୍ଗିକ ବ୍ଲଗ୍ ପୋଷ୍ଟଗୁଡିକ ଲେଖିବା ପାଇଁ ବହୁତ ସମୟ ଖର୍ଚ୍ଚ ହୁଏ! ଯଦି ଆପଣ ସାହାଯ୍ୟ କରିବାକୁ ଚାହାଁନ୍ତି ଯାହା ଦ୍ ାରା ପ୍ରକଳ୍ପ ଆଗକୁ ବ ିପାରେ, ଦୟାକରି ଏକ ଛୋଟ ଦାନ ବିଷୟରେ ବିଚାର କରନ୍ତୁ!\n\n ଏହି ପ୍ରକଳ୍ପ ଅବକାଶ ସମୟରେ, ସମ୍ପୂର୍ଣ୍ଣ ମାଗଣାରେ ଏବଂ କ ଣସି ବିଜ୍ଞାପନ ବିନା ବିକଶିତ ହୋଇଛି!</string>
     <string name="all">ସମସ୍ତ</string>
     <string name="global_text_settings">ଗ୍ଲୋବାଲ୍ ଟେକ୍ସଟ୍ ସେଟିଂସମୂହ |</string>
     <string name="show_image">ପ୍ରତିଛଵି ଦେଖାନ୍ତୁ</string>

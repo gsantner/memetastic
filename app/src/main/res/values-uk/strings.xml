@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Не вдалося запустити камеру.</string>
     <string name="error_picture_selection">Зображення не вибрано.</string>
     <string name="error_couldnot_load_picture_from_storage">Не вдається завантажити зображення зі сховища.</string>
-    <string name="donate">Пожертвувати</string>
     <string name="recommend">Рекомендовані</string>
     <string name="changelog">Перелік змін</string>
     <string name="exit">Вийти</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Перекласти</string>
     <string name="more_info_and_help">Додаткова інформація та допомога</string>
     <string name="report_bugs">Повідомити про помилку</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Детальніше про пожертви або підтримку проекту</string>
     <string name="join_community">Приєднатися до спільноти</string>
     <string name="bug_reports_suggest_improvements">Залиште відгук, повідомте про помилки або запропонуйте покращення</string>
     <string name="help_translating_this_app">Перекласти цей додаток на інші мови</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Допомогти вдосконалити</string>
     <string name="the_file_could_not_be_loaded">Не вдалося завантажити файл.</string>
     <string name="close">Закрити</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Вам подобається цей проект? Бажаєте, щоб його покращували й виправляли помилки? \n\nРозробка застосунків та написання пов\'язаних статей у блозі займає багато часу! Якщо ви хочете допомогти цьому проекту розвиватися далі — зробіть маленьке пожертвування!\n\nЦей проект розроблений у вільний час, не містить реклами та є абсолютно безкоштовним!</string>
     <string name="all">Усе</string>
     <string name="global_text_settings">Глобальні налаштування тексту</string>
     <string name="show_image">Показувати зображення</string>

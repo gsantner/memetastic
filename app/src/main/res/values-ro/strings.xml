@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Nu s-a putut porni Camera.</string>
     <string name="error_picture_selection">Nici o imagine selectată, făcută sau salvată.</string>
     <string name="error_couldnot_load_picture_from_storage">Imaginea nu a putut fi încărcată din spațiul de stocare.</string>
-    <string name="donate">Donează</string>
     <string name="recommend">Recomandă</string>
     <string name="changelog">Jurnalul modificărilor</string>
     <string name="exit">Ieşire</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Traducere</string>
     <string name="more_info_and_help">Mai multe informații și ajutor</string>
     <string name="report_bugs">Raportează erori</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Mai multe informații despre donarea sau susținerea acestui proiect</string>
     <string name="join_community">Alătură-te comunității</string>
     <string name="bug_reports_suggest_improvements">Oferă feedback, raportează erori sau sugerează îmbunătățiri</string>
     <string name="help_translating_this_app">Tradu această aplicație în alte limbi</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Contribuie</string>
     <string name="the_file_could_not_be_loaded">Fișierul nu a putut fi încărcat.</string>
     <string name="close">Inchide</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Îți place acest proiect? Vrei ca el să fie îmbunătățit și problemele să fie rezolvate?\n\nDezvoltarea de aplicații și scrierea postărilor de blog costă mult timp! Dacă doriţi să ajutaţi astfel încât proiectul să poată continua, vă rugăm să luaţi în considerare o mică donaţie!\n\nAcest proiect este dezvoltat în timp liber, complet gratuit și fără reclame!</string>
     <string name="all">Toate</string>
     <string name="global_text_settings">Setări text globale</string>
     <string name="show_image">Arată imaginea</string>

@@ -1,6 +1,5 @@
 [![GitHub releases](https://img.shields.io/github/tag/gsantner/memetastic.svg)](https://github.com/gsantner/memetastic/releases)
 [![GitHub downloads](https://img.shields.io/github/downloads/gsantner/memetastic/total.svg?logo=github&logoColor=lime)](https://github.com/gsantner/memetastic/releases)
-[![Donate - say thanks](https://img.shields.io/badge/donate-say%20thanks-red.svg)](https://gsantner.net/page/supportme.html?project=memetastic&source=readme)
 [![Chat on Matrix](https://img.shields.io/badge/chat-matrix-blue.svg)](https://matrix.to/#/#memetastic:matrix.org)
 [![GitHub CI](https://github.com/gsantner/memetastic/workflows/CI/badge.svg)](https://github.com/gsantner/memetastic/actions)
 
@@ -59,9 +58,6 @@ and if they are in a good image quality (do a quick search before).
 You can maybe find something suitable here:
 * Fonts: [1001fonts](http://www.1001fonts.com) | [Font Squirell](https://www.fontsquirrel.com/fonts/list/find_fonts?filter%5Blicense%5D%5B0%5D=app&filter%5Blicense%5D%5B1%5D=open&sort=hot) | [fontspace](http://www.fontspace.com/) | [Google Fonts](https://fonts.google.com) | [FontMeme](https://fontmeme.com/) | [Identify font](https://www.fontsquirrel.com/matcherator)
 * Meme Templates: [knowyourmeme.com](http://knowyourmeme.com) | [/r/MemeTemplatesOfficial](https://www.reddit.com/r/MemeTemplatesOfficial)  | [memes.at](http://www.memes.at/) | [ragemaker.net](https://ragemaker.net/images)
-
-
-If you like @gsantner's work on <b>MemeTastic</b> and many other Open Source projects, consider [supporting him](https://gsantner.net/page/supportme.html?project=memetastic&source=gh_readme)
 
 
 #### Resources

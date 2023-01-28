@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">ক্যামেরা চালু করা যায়নি।.</string>
     <string name="error_picture_selection">কোনো ছবি নির্বাচিত, তোলা বা সংরক্ষণ করা হয়নি।.</string>
     <string name="error_couldnot_load_picture_from_storage">স্টোরেজ থেকে ছবি লোড করা যায়নি।.</string>
-    <string name="donate">দান করুন</string>
     <string name="recommend">সুপারিশ করুন</string>
     <string name="changelog">পরিবর্তনসূচী</string>
     <string name="exit">প্রস্থান</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">অনুবাদ</string>
     <string name="more_info_and_help">আরো তথ্য এবং সাহায্য</string>
     <string name="report_bugs">বাগ রিপোর্ট করুন</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">এই প্রকল্পে দান বা সমর্থন করার বিষয়ে আরও তথ্য</string>
     <string name="join_community">সম্প্রদায়ে যোগ দিন</string>
     <string name="bug_reports_suggest_improvements">প্রতিক্রিয়া দিন, বাগ রিপোর্ট করুন বা উন্নতির পরামর্শ দিন</string>
     <string name="help_translating_this_app">এই অ্যাপটিকে অন্য ভাষায় অনুবাদ করুন</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">অবদান</string>
     <string name="the_file_could_not_be_loaded">ফাইল লোড করা যায়নি.</string>
     <string name="close">বন্ধ করুন</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">আপনি এই প্রকল্প পছন্দ করেন? আপনি কি চান যে এটি উন্নত হয় এবং সমস্যার সমাধান হয়?\n\nঅ্যাপ তৈরি করতে এবং সম্পর্কিত ব্লগ পোস্ট লিখতে অনেক সময় লাগে! আপনি যদি সাহায্য করতে চান যাতে প্রকল্পটি চলতে পারে, অনুগ্রহ করে একটি ছোট অনুদান বিবেচনা করুন!\n\nএই প্রকল্পটি অবসর সময়ে তৈরি করা হয়েছে, সম্পূর্ণ বিনামূল্যে এবং কোনো বিজ্ঞাপন ছাড়াই!</string>
     <string name="all">সব</string>
     <string name="global_text_settings">গ্লোবাল টেক্সট সেটিংস</string>
     <string name="show_image">ছবি দেখান</string>

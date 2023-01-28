@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">無法開啟相機</string>
     <string name="error_picture_selection">無相片被選擇、拍攝，或儲存</string>
     <string name="error_couldnot_load_picture_from_storage">無法從儲存空間載入圖片</string>
-    <string name="donate">贊助</string>
     <string name="recommend">推薦</string>
     <string name="changelog">更新紀錄</string>
     <string name="exit">離開</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">翻譯</string>
     <string name="more_info_and_help">更多關於這個App的資訊和幫助</string>
     <string name="report_bugs">回報臭蟲</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">更多贊助或其它支援這個專案的訊息</string>
     <string name="join_community">加入社團</string>
     <string name="bug_reports_suggest_improvements">提供回饋，回報臭蟲或改善建議</string>
     <string name="help_translating_this_app">翻譯這個Apo的語文界面</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">貢獻</string>
     <string name="the_file_could_not_be_loaded">無法載入檔案</string>
     <string name="close">關閉</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">喜歡這個專案嗎？希望它繼續改善而且問題得到解決嗎？\n\n開發應用程式以及撰寫相關部落格文章都需要很多時間！如果你想要幫忙讓專案可以繼續，請考慮小額捐款！\n\n這個專案是在閒暇時間開發的，完全免費，並且沒有任何廣告！</string>
     <string name="all">全部</string>
     <string name="global_text_settings">全域自行設定</string>
     <string name="show_image">顯示原圖</string>

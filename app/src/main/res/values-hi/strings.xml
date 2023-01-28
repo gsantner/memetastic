@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">कैमरा शुरू नहीं किया जा सका</string>
     <string name="error_picture_selection">कोई चित्र नहीं चुना गया था</string>
     <string name="error_couldnot_load_picture_from_storage">भंडारण से चित्र लोड नहीं किया जा सका</string>
-    <string name="donate">दान करें</string>
     <string name="recommend">सिफारिश करें</string>
     <string name="changelog">बदलाव लॉग</string>
     <string name="exit">बाहर जाएं</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">अनुवाद करें</string>
     <string name="more_info_and_help">अधिक जानकारी और सहायता</string>
     <string name="report_bugs">रिपोर्ट बग</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">इस परियोजना के दान या समर्थन के बारे में अधिक जानकारी</string>
     <string name="join_community">समुदाय में शामिल हो जाइए</string>
     <string name="bug_reports_suggest_improvements">फ़ीडबैक दें, बग की रिपोर्ट करें या सुधार सुझाएं</string>
     <string name="help_translating_this_app">इस ऐप का अन्य भाषाओं में अनुवाद करें</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">योगदान</string>
     <string name="the_file_could_not_be_loaded">फ़ाइल लोड नहीं की जा सकी.</string>
     <string name="close">बंद</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">क्या आपको यह प्रोजेक्ट पसंद है? क्या आप चाहते हैं कि इसमें सुधार हो और समस्याएं ठीक हो जाएं?\n\nएप्लिकेशन विकसित करने और संबंधित ब्लॉग पोस्ट लिखने में बहुत समय लगता है! यदि आप परियोजना को आगे बढ़ाने में मदद करना चाहते हैं, तो कृपया एक छोटे से दान पर विचार करें!\n\nयह परियोजना ख़ाली समय में, पूरी तरह से मुफ़्त और बिना किसी विज्ञापन के विकसित की गई है!</string>
     <string name="all">सब</string>
     <string name="global_text_settings">वैश्विक पाठ सेटिंग्स</string>
     <string name="show_image">छवि दिखाएं</string>

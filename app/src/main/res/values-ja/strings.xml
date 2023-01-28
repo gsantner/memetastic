@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">カメラを開始できません。</string>
     <string name="error_picture_selection">画像が選択されていません。</string>
     <string name="error_couldnot_load_picture_from_storage">ストレージから画像を読み込めません。</string>
-    <string name="donate">寄付</string>
     <string name="recommend">おすすめ</string>
     <string name="changelog">変更履歴</string>
     <string name="exit">終了</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">翻訳</string>
     <string name="more_info_and_help">詳細情報とヘルプ</string>
     <string name="report_bugs">バグを報告</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">寄付やこのプロジェクトの支援などの詳細情報</string>
     <string name="join_community">コミュニティに参加する</string>
     <string name="bug_reports_suggest_improvements">フィードバック、バグ報告、改善を提案してください</string>
     <string name="help_translating_this_app">このアプリを他の言語に翻訳してください</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">貢献する</string>
     <string name="the_file_could_not_be_loaded">ファイルを読み込めませんでした。</string>
     <string name="close">閉じる</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">このプロジェクトを気に入っていただけましたか? 改善したい、あるいは問題を修正したいですか?\n\nアプリの開発や、関連するブログの記事を書くに多くの時間がかかります! プロジェクトを進めるために、支援をしていただける場合は、少しの寄付をご検討ください!\n\nこのプロジェクトは余暇に開発していて、完全に無料で、広告はありません!</string>
     <string name="all">すべて</string>
     <string name="global_text_settings">グローバルテキスト設定</string>
     <string name="show_image">画像を表示</string>

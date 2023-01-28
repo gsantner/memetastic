@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Nem lehetett elindítani a kamerát.</string>
     <string name="error_picture_selection">Nincs kiválasztott, készített vagy mentett kép.</string>
     <string name="error_couldnot_load_picture_from_storage">Nem lehetett betölteni a képet a tárhelyből.</string>
-    <string name="donate">Adományozás</string>
     <string name="recommend">Ajánlás</string>
     <string name="changelog">Újdonságok</string>
     <string name="exit">Kilépés</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Fordít</string>
     <string name="more_info_and_help">Több információ és segítség</string>
     <string name="report_bugs">Hibajelentés</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">További információ a projekt adományozásáról vagy támogatásáról</string>
     <string name="join_community">Csatlakozzon a közösséghez</string>
     <string name="bug_reports_suggest_improvements">Adj visszajelzést, jelents be hibákat, vagy javasolj fejlesztést</string>
     <string name="help_translating_this_app">Fordítsd le az alkalmazást más nyelvekre</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Közreműködés</string>
     <string name="the_file_could_not_be_loaded">Nem lehetett betölteni a fájlt.</string>
     <string name="close">Bezárás</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Tetszik ez a projekt? Szeretnéd, ha fejlesztenék és megoldanák a problémákat?\n\nAz alkalmazások fejlesztése és a hozzá kapcsolódó blog posztok megírása rengeteg időbe kerül! Ha szeretnél segíteni, hogy a projekt tovább folytatódjon, kérlek fontolj meg egy kis adományozást!\n\nEzt a projektet a szabadidőnkben csináljuk, teljesen ingyen és bármiféle hirdetés nélkül!</string>
     <string name="all">Mind</string>
     <string name="global_text_settings">Globális szöveg beállítások</string>
     <string name="show_image">Kép megjelenítése</string>

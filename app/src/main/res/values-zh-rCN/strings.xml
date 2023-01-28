@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">无法启动相机。</string>
     <string name="error_picture_selection">没有选取照片</string>
     <string name="error_couldnot_load_picture_from_storage">无法从手机存储中读取图片</string>
-    <string name="donate">捐赠</string>
     <string name="recommend">向好友推荐</string>
     <string name="changelog">更新日志</string>
     <string name="exit">退出</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">翻译</string>
     <string name="more_info_and_help">更多信息与帮助</string>
     <string name="report_bugs">报告错误</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">更多关于捐赠或支持这个项目的信息</string>
     <string name="join_community">加入社区</string>
     <string name="bug_reports_suggest_improvements">给出反馈，报告问题，或提出改进建议</string>
     <string name="help_translating_this_app">翻译本应用</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">贡献</string>
     <string name="the_file_could_not_be_loaded">无法加载文件。</string>
     <string name="close">关闭</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">你喜欢这个项目吗？你想要它得到改善并解决问题吗？\n\n开发应用并撰写相关博客文章需要花费大量时间！如果你想要帮助项目继续进行，请考虑小额捐赠！\n\n这个项目是在闲暇时间开发的，完全免费且没有任何广告！</string>
     <string name="all">全部</string>
     <string name="global_text_settings">全局文本设置</string>
     <string name="show_image">显示图像</string>

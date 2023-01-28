@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kon nie met kamera begin nie.</string>
     <string name="error_picture_selection">Geen foto gekies, geneem of gered nie.</string>
     <string name="error_couldnot_load_picture_from_storage">Geen foto gekiem, geenem van gered nie.</string>
-    <string name="donate">Skenk</string>
     <string name="recommend">Beveel aan</string>
     <string name="changelog">Verandering-log</string>
     <string name="exit">Gaan Uit</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Vertaal</string>
     <string name="more_info_and_help">Meer inligting en hulp</string>
     <string name="report_bugs">Rapporteer foute</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Meer inligting oor die skenking of ondersteuning van hierdie projek</string>
     <string name="join_community">Sluit aan by die gemeenskap</string>
     <string name="bug_reports_suggest_improvements">Gee terugvoering, rapporteer foute of stel verbeterings voor</string>
     <string name="help_translating_this_app">Vertaal hierdie app in ander tale</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Bydra</string>
     <string name="the_file_could_not_be_loaded">Die lêer kon nie gelaai word nie.</string>
     <string name="close">Sluit</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Hou u van hierdie projek? Wil u hê dat dit verbeter word en probleme reggestel word?\n\nOntwikkel apps en skryfverwante blogposte kos baie tyd! As u wil help sodat die projek kan aangaan, moet u \'n klein skenking oorweeg!\n\nHierdie projek is in vrye tyd ontwikkel, heeltemal gratis en sonder advertensies!</string>
     <string name="all">Alle</string>
     <string name="global_text_settings">Globale teksinstellings</string>
     <string name="show_image">Show image</string>

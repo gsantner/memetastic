@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Não foi possível iniciar a câmara.</string>
     <string name="error_picture_selection">Não há imagens selecionadas, obtidas ou guardadas.</string>
     <string name="error_couldnot_load_picture_from_storage">Não foi possível carregar a imagem do armazenamento.</string>
-    <string name="donate">Donativos</string>
     <string name="recommend">Recomendadas</string>
     <string name="changelog">Alterações</string>
     <string name="exit">Sair</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Traduzir</string>
     <string name="more_info_and_help">Mais informações/ajuda</string>
     <string name="report_bugs">Reportar erros</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Mais informações sobre como participar neste projeto</string>
     <string name="join_community">Participe na comunidade</string>
     <string name="bug_reports_suggest_improvements">Comentários, reporte de erros e sugestões</string>
     <string name="help_translating_this_app">Traduzir esta aplicação</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Contribuir</string>
     <string name="the_file_could_not_be_loaded">Não foi possível carregar o ficheiro.</string>
     <string name="close">Fechar</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Gosta deste projeto? Deseja ajudar a melhorar a aplicação e a corrigir erros?\n\nO desenvolvimento de aplicações custa-me imenso tempo! Se quiser ajudar a manter o projeto, por favor considere a hipótese de um donativo!\n\nEsta aplicação é desenvolvida durante o meu tempo livre, é completamente livre e não tem anúncios!</string>
     <string name="all">Tudo</string>
     <string name="global_text_settings">Definições globais de texto</string>
     <string name="show_image">Mostrar imagem</string>

@@ -27,7 +27,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Could not start Camera.</string>
     <string name="error_picture_selection">No picture selected, taken or saved.</string>
     <string name="error_couldnot_load_picture_from_storage">Could not load picture from storage.</string>
-    <string name="donate">Donate</string>
     <string name="recommend">Recommend</string>
     <string name="changelog">Changelog</string>
     <string name="exit">Exit</string>
@@ -130,7 +129,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Translate</string>
     <string name="more_info_and_help">More info and help</string>
     <string name="report_bugs">Report bugs</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">More info on donating or supporting this project</string>
 
 
     <string name="join_community">Join the Community</string>
@@ -149,7 +147,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="the_file_could_not_be_loaded">The file could not be loaded.</string>
 
     <string name="close">Close</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Do you like this project? Do you want that it gets improved and problems fixed?\n\nDeveloping apps and writing related blog posts costs a lot of time! If you want to help so that the project can go on, please consider a small donation!\n\nThis project is developed in leisure time, completely for free and without any advertisements!</string>
     <string name="all">All</string>
     <string name="global_text_settings">Global text settings</string>
     <string name="show_image">Show image</string>

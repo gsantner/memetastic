@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Није могао покренути Камеру.</string>
     <string name="error_picture_selection">Nijedna slika nije oznacena.</string>
     <string name="error_couldnot_load_picture_from_storage">Не могу да учитам слику из складишта.</string>
-    <string name="donate">Doniraj</string>
     <string name="recommend">Препоручено</string>
     <string name="changelog">Дневник измена</string>
     <string name="exit">Izadji</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Преводите</string>
     <string name="more_info_and_help">Више информација и помоћи</string>
     <string name="report_bugs">Пријави багове</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Више информација о донацији или подршци овом пројекту</string>
     <string name="join_community">Придружи се заједници</string>
     <string name="bug_reports_suggest_improvements">Дајте повратне информације, пријавите грешке или предложите побољшања</string>
     <string name="help_translating_this_app">Преведи ову апликацију на друге језике</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Допринеси</string>
     <string name="the_file_could_not_be_loaded">Датотека се није могла учитати.</string>
     <string name="close">Затвори</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Да ли вам се свиђа овај пројекат? Да ли желите да се побољша и проблеми реше?\n\nПорвевелопмент апликације и писање повезаних блогова кошта много времена! Ако желите да помогнете како би пројекат могао да се настави, размотрите малу донацију!\n\nОвај пројекат се развија у слободно време, потпуно бесплатно и без икаквих реклама!</string>
     <string name="all">Све</string>
     <string name="global_text_settings">Глобална подешавања текста</string>
     <string name="show_image">Прикажи слику</string>

@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">ക്യാമറ തുറക്കാനായില്ല.</string>
     <string name="error_picture_selection">ചിത്രം തിരഞ്ഞെടുക്കുകയോ സംരക്ഷിക്കുകയോ ചെയ്തിട്ടില്ല.</string>
     <string name="error_couldnot_load_picture_from_storage">സംഭരണിയിൽനിന്നും ചിത്രം ലോഡു്ചെയ്യാനായില്ല.</string>
-    <string name="donate">സംഭാവനചെയ്യുക</string>
     <string name="recommend">ശുപാർശിതം</string>
     <string name="changelog">അടയാളപ്പെടുത്തിയ മാറ്റങ്ങൾ</string>
     <string name="exit">പുറത്തുകടക്കുക</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">പരിഭാഷപ്പെടുത്തുക</string>
     <string name="more_info_and_help">കൂടുതൽ സഹായങ്ങളും വിവരങ്ങളും</string>
     <string name="report_bugs">പ്രശ്നങ്ങള്‍ റിപ്പോർട്ടുചെയ്യുക</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">ഈ പ്രോജക്റ്റിലേയ്ക്കു് സംഭാവന ചെയ്യുന്നതിനോ പിന്തുണയ്ക്കുന്നതിനോ വേണ്ട കൂടുതൽ വിവരങ്ങൾ</string>
     <string name="join_community">കമ്മ്യൂണിറ്റിയിൽ ചേരുക</string>
     <string name="bug_reports_suggest_improvements">ഫീഡ്‌ബാക്ക് നൽകുക, ബഗുകൾ റിപ്പോർട്ടുചെയ്യുക അല്ലെങ്കിൽ മെച്ചപ്പെടുത്തലുകൾ നിർദ്ദേശിക്കുക</string>
     <string name="help_translating_this_app">ഈ അപ്ലിക്കേഷൻ മറ്റ് ഭാഷകളിലേക്ക് പരിഭാഷപ്പെടുത്തുക</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">സംഭാവന</string>
     <string name="the_file_could_not_be_loaded">ഫയൽ ലോഡുചെയ്യാനായില്ല.</string>
     <string name="close">അടയ്ക്കുക</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">ഈ പ്രോജക്റ്റ് ഇഷ്ടമായോ? ഇത് മെച്ചപ്പെടുത്തണമെന്നും പ്രശ്നങ്ങൾ പരിഹരിക്കണമെന്നും നിങ്ങൾ ആഗ്രഹിക്കുന്നോ?\n\nഅപ്ലിക്കേഷനുകൾ വികസിപ്പിക്കുന്നതും അനുബന്ധമായി ബ്ലോഗുകള്‍ എഴുതുന്നതിനും ധാരാളം സമയം ചിലവാകും! പ്രോജക്റ്റ് തുടരുന്നതിന് നിങ്ങൾക്ക് സഹായിക്കാൻ താൽപ്പര്യമുണ്ടെങ്കിൽ, ദയവായി ഒരു ചെറിയ സംഭാവന നൽകുന്ന കാര്യം പരിഗണിക്കുക!\n\nഈ പ്രോജക്റ്റ് ഒഴിവുസമയങ്ങള്‍ വിനിയോഗിച്ചു് വികസിപ്പിച്ചെടുത്തതാണു് കൂടാതെ, പൂർണ്ണമായും സജന്യവും പരസ്യങ്ങളില്ലാതെയും!</string>
     <string name="all">എല്ലാം</string>
     <string name="global_text_settings">ആഗോള ടെക്സ്റ്റ് ക്രമീകരണങ്ങൾ</string>
     <string name="show_image">ചിത്രം കാണിയ്ക്കുക</string>

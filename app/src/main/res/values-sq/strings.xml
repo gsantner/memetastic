@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kamera nuk mund të nisej.</string>
     <string name="error_picture_selection">Asnjë foto nuk është zgjedhur, marrë apo ruajtur.</string>
     <string name="error_couldnot_load_picture_from_storage">Fotografia nuk mund të ngarkohej nga ruajtja.</string>
-    <string name="donate">Dhuroni</string>
     <string name="recommend">Rekomando</string>
     <string name="changelog">Ndryshim</string>
     <string name="exit">Dil</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Përkthimet</string>
     <string name="more_info_and_help">Më shumë informacion dhe ndihmë</string>
     <string name="report_bugs">Raportoni gabimet</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Më shumë informacion mbi dhurimin ose mbështetjen e këtij projekti</string>
     <string name="join_community">Bashkohu komunitetit</string>
     <string name="bug_reports_suggest_improvements">Jepni komente, raportoni gabime ose sugjeroni përmirësime</string>
     <string name="help_translating_this_app">Përkthejeni këtë aplikacion në gjuhë të tjera</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Kontribuoj</string>
     <string name="the_file_could_not_be_loaded">Skedari nuk mund të ngarkohej.</string>
     <string name="close">Mbyll</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">A ju pëlqen ky projekt? Dëshiron që të përmirësohet dhe të zgjidhen problemet?\n\nZhvillimi i aplikacioneve dhe shkrimi i postimeve të lidhura me blogun kushton shumë kohë! Nëse doni të ndihmoni që projekti të vazhdojë, ju lutem konsideroni një donacion të vogël!\n\nKy projekt zhvillohet në kohën e lirë, plotësisht falas dhe pa reklama!</string>
     <string name="all">Gjithë</string>
     <string name="global_text_settings">Cilësimet globale të tekstit</string>
     <string name="show_image">Shfaq imazhin</string>

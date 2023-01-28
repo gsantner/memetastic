@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">לא היתה אפשרות להפעיל את \'מצלמה\'.</string>
     <string name="error_picture_selection">אף תמונה לא נבחרה, נלקחה או נשמרה.</string>
     <string name="error_couldnot_load_picture_from_storage">לא היתה אפשרות לטעון תמונה מאחסון.</string>
-    <string name="donate">תרום</string>
     <string name="recommend">מומלץ</string>
     <string name="changelog">רשימת שינויים</string>
     <string name="exit">יציאה</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">תרגם</string>
     <string name="more_info_and_help">מידע נוסף ועזרה</string>
     <string name="report_bugs">דווח על באגים</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">מידע נוסף על תרומה או תמיכה בפרויקט זה</string>
     <string name="join_community">הצטרף לקהילה</string>
     <string name="bug_reports_suggest_improvements">תן משוב, דווח על שגיאות או הצע שיפורים</string>
     <string name="help_translating_this_app">תרגם ישום זה לשפות אחרות</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">עזור לנו</string>
     <string name="the_file_could_not_be_loaded">לא ניתן היה לטעון את הקובץ.</string>
     <string name="close">סגירה</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">האם אתה אוהב את הפרויקט הזה? האם אתה רוצה שזה ישתפר ובעיות יתוקנו? n\n\פיתוח אפליקציות וכתיבת פוסטים קשורים לבלוג עולים הרבה זמן! אם אתה רוצה לעזור כדי שהפרויקט יוכל להמשיך, אנא שקול תרומה קטנה! n\n\פרויקט זה מפותח בשעות הפנאי, לגמרי בחינם וללא פרסומות!</string>
     <string name="all">הכול</string>
     <string name="global_text_settings">הגדרות טקסט גלובליות</string>
     <string name="show_image">הצגת תמונה</string>

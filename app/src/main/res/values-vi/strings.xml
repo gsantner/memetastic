@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Không thể khởi động máy ảnh.</string>
     <string name="error_picture_selection">Không có ảnh nào được chọn, chụp hoặc lưu.</string>
     <string name="error_couldnot_load_picture_from_storage">Không thể tải ảnh từ bộ nhớ.</string>
-    <string name="donate">Quyên góp</string>
     <string name="recommend">Đề xuất</string>
     <string name="changelog">Nhật ký thay đổi</string>
     <string name="exit">Thoát</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Dịch</string>
     <string name="more_info_and_help">Nhiều thông tin hơn và trợ giúp</string>
     <string name="report_bugs">Báo cáo lỗi</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Nhiều thông tin hơn về việc quyên góp hoặc hỗ trợ dự án này</string>
     <string name="join_community">Tham gia cộng đồng</string>
     <string name="bug_reports_suggest_improvements">Phản hồi, báo cáo lỗi hoặc đề xuất sự cải thiện</string>
     <string name="help_translating_this_app">Dịch ứng dụng này ra các ngôn ngữ khác</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Đóng góp</string>
     <string name="the_file_could_not_be_loaded">Không thể tải tệp.</string>
     <string name="close">Đóng</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Bạn có thích dự án này không? Bạn có muốn nó được cải thiện và những vấn đề của nó được sửa không?\n\nViệc phát triển các ứng dụng và viết các bài đăng blog có liên quan tốn rất nhiều thời gian! Nếu bạn muốn giúp đỡ để cho dự án được tiếp tục, thì hãy vui lòng cân nhắc việc quyên góp một khoản nhỏ!\n\nDự án này được phát triển trong thời gian rảnh, hoàn toàn miễn phí và không có quảng cáo!</string>
     <string name="all">Tất cả</string>
     <string name="global_text_settings">Cài đặt văn bản toàn ứng dụng</string>
     <string name="show_image">Hiện hình ảnh</string>

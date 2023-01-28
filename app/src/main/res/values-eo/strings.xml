@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Ne povas lanĉi fotilon.</string>
     <string name="error_picture_selection">Neniu bildo elektita, prenita aŭ konservita.</string>
     <string name="error_couldnot_load_picture_from_storage">Ne povis ŝarĝi bildon el stokado.</string>
-    <string name="donate">Donaci</string>
     <string name="recommend">Rekomendi</string>
     <string name="changelog">Ŝanĝoprotokolo</string>
     <string name="exit">Eliri</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Traduku</string>
     <string name="more_info_and_help">Pli da informo kaj helpo</string>
     <string name="report_bugs">Raporti erarojn</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Pliaj informoj pri donado aŭ subtenado de ĉi tiu projekto</string>
     <string name="join_community">Aliĝi la komunumon</string>
     <string name="bug_reports_suggest_improvements">Donu retrosciigon, raportu erarojn aŭ sugestu plibonigojn</string>
     <string name="help_translating_this_app">Traduku ĉi tiun apon al aliaj lingvoj</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Kontribui</string>
     <string name="the_file_could_not_be_loaded">La dosiero ne povus esti ŝarĝita.</string>
     <string name="close">Fermi</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Ĉu vi ŝatas ĉi tiun projekton? Ĉu vi volas, ke ĝi pliboniĝu kaj problemoj ripariĝu?\n\nDisvolvi programojn kaj verki rilatajn blogajn afiŝojn kostas multan tempon! Se vi volas helpi por ke la projekto daŭrigu, bonvolu konsideri malgrandan donacon!\n\nĈi tiu projekto disvolviĝas en libertempo, tute senpage kaj sen reklamoj!</string>
     <string name="all">Ĉiuj</string>
     <string name="global_text_settings">Tutmondaj tekstaj agordoj</string>
     <string name="show_image">Montri bildon</string>

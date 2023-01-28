@@ -28,7 +28,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_cannot_start_camera">Kunne ikke finne noe kamera.</string>
     <string name="error_picture_selection">Inget bilde valgt, tatt eller lagret.</string>
     <string name="error_couldnot_load_picture_from_storage">Kunne ikke laste opp bildet fra lagring.</string>
-    <string name="donate">Doner</string>
     <string name="recommend">Anbefal</string>
     <string name="changelog">Endringslogg</string>
     <string name="exit">Avslutt</string>
@@ -127,7 +126,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="translate">Oversett</string>
     <string name="more_info_and_help">Mer info om dette</string>
     <string name="report_bugs">Rapporter feil</string>
-    <string name="more_info_on_how_to_donate_or_otherwise_support_this_project_text">Mer info om donering eller støtte av dette prosjektet</string>
     <string name="join_community">Bli med i fellesskapet</string>
     <string name="bug_reports_suggest_improvements">Gi tilbakemeldinger, rapporter feil eller foreslå forbedringer</string>
     <string name="help_translating_this_app">Hjelp oss oversett denne appen til flere språk</string>
@@ -143,7 +141,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="contribute">Bidra</string>
     <string name="the_file_could_not_be_loaded">Kan ikke laste filen.</string>
     <string name="close">Lukk</string>
-    <string name="do_you_like_this_project_want_donate_to_keep_alive">Liker du dette prosjektet? Vil du at det blir forbedret og problemer fikset?\n\nUtvikle apper og skrive relaterte blogginnlegg koster mye tid! Hvis du vil hjelpe så at prosjektet kan gå videre, kan du vurdere en liten donasjon!\n\nDette prosjektet er utviklet på fritid, helt gratis og uten reklamer!</string>
     <string name="all">Alt</string>
     <string name="global_text_settings">Globale tekstinnstillinger</string>
     <string name="show_image">Vis bildet</string>
