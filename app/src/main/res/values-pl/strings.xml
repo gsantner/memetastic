@@ -46,11 +46,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">Tło</string>
     <string name="border">Krawędź</string>
     <string name="picture">Obraz</string>
-    <string name="about">Informacje</string>
+    <string name="about">O aplikacji</string>
     <string name="developed_by">Stworzone przez</string>
     <string name="licenses">Licencje</string>
     <string name="show_licenses">Pokaż licencje</string>
-    <string name="contributors">Wnieśli wkład</string>
+    <string name="contributors">Współautorzy</string>
     <string name="more_information">Więcej informacji</string>
     <string name="show_third_party_licenses">Pokaż licencje dzieł osób trzecich</string>
     <string name="miscellaneous">Różne</string>
@@ -77,7 +77,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Typ widoku</string>
     <string name="show_in_device_gallery">Pokaż w galerii urządzenia</string>
     <string name="language">Język</string>
-    <string name="language_change_restart_description">Zmienia język aplikacji. Zrestartuj żeby wprowadzić zmiany</string>
+    <string name="language_change_restart_description">Zmień język aplikacji. Uruchom ponownie aplikację, aby zobaczyć zmiany</string>
     <string name="error_cannot_create_save_directory">Błąd: Nie można utworzyć folderu zapisu</string>
     <string name="other">Inne</string>
     <string name="downloading">Pobieranie</string>
@@ -129,7 +129,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="join_community">Dołącz do Społeczności</string>
     <string name="bug_reports_suggest_improvements">Zostaw ocenę, zgłoś błędy lub zaproponuj poprawki</string>
     <string name="help_translating_this_app">Przetłumacz tę aplikację na inne języki</string>
-    <string name="source_code">Kod Źródłowy</string>
+    <string name="source_code">Kod źródłowy</string>
     <string name="project_license">Licencja Projektu</string>
     <string name="more_info_on_how_to_contribute_to_this_project">Więcej informacji o tym, jak współtworzyć ten projekt</string>
     <string name="contribute_code_to_this_project_anybody_welcome">Współtwórz kod projektu. Każdy może to zrobić w tym nowicjusze</string>
