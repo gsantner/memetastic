@@ -48,9 +48,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="picture">ඡායාරූපය</string>
     <string name="about">පිලිබඳව</string>
     <string name="developed_by">සංවර්ධනය කරන ලදි</string>
-    <string name="licenses">බලපත්‍ර</string>
+    <string name="licenses">බලපත්ර</string>
     <string name="show_licenses">බලපත්‍ර පෙන්වන්න</string>
-    <string name="contributors">සහදායකයින්</string>
+    <string name="contributors">සහ දායකයින්</string>
     <string name="more_information">වැඩි විස්තර</string>
     <string name="show_third_party_licenses">තුන්වන පාර්ශ්ව බලපත්‍ර පෙන්වන්න</string>
     <string name="miscellaneous">විවිධ</string>
