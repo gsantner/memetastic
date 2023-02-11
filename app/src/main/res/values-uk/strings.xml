@@ -29,7 +29,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_picture_selection">Зображення не вибрано.</string>
     <string name="error_couldnot_load_picture_from_storage">Не вдається завантажити зображення зі сховища.</string>
     <string name="recommend">Рекомендовані</string>
-    <string name="changelog">Перелік змін</string>
+    <string name="changelog">Журнал змін</string>
     <string name="exit">Вийти</string>
     <string name="yes">так</string>
     <string name="text_size">Розмір шрифту</string>
@@ -46,11 +46,11 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="background">Тло</string>
     <string name="border">Рамка</string>
     <string name="picture">Зображення</string>
-    <string name="about">Про Markor</string>
+    <string name="about">Про нас</string>
     <string name="developed_by">Розроблено</string>
     <string name="licenses">Ліцензії</string>
     <string name="show_licenses">Показати ліцензії</string>
-    <string name="contributors">Автори</string>
+    <string name="contributors">Учасники</string>
     <string name="more_information">Докладніше</string>
     <string name="show_third_party_licenses">Показати ліцензії сторонніх компонентів</string>
     <string name="miscellaneous">Різне</string>
@@ -136,7 +136,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="project_team">Команда проєкту</string>
     <string name="contributors_public_add_yourself_description">Показати інформацію про учасників. Ви можете додати сюди інформацію про себе, якщо зробили внесок до проєкту</string>
     <string name="help">Допомога</string>
-    <string name="more">Ще</string>
+    <string name="more">Більше</string>
     <string name="community">Спільнота</string>
     <string name="contribute">Допомогти вдосконалити</string>
     <string name="the_file_could_not_be_loaded">Не вдалося завантажити файл.</string>
