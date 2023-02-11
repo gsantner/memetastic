@@ -29,7 +29,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_picture_selection">No s\'ha seleccionat cap imatge</string>
     <string name="error_couldnot_load_picture_from_storage">No s\'ha pogut carregar la imatge des de l\'emmagatzematge.</string>
     <string name="recommend">Recomana</string>
-    <string name="changelog">Registre de canvis</string>
+    <string name="changelog">Novetats</string>
     <string name="exit">Surt</string>
     <string name="yes">sí</string>
     <string name="text_size">Mida del text</string>
