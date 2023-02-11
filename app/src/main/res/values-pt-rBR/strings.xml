@@ -29,7 +29,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_picture_selection">Nenhuma imagem selecionada.</string>
     <string name="error_couldnot_load_picture_from_storage">Não foi possível carregar a imagem do armazenamento.</string>
     <string name="recommend">Recomendar</string>
-    <string name="changelog">Histórico de atualizações</string>
+    <string name="changelog">Histórico de mudanças</string>
     <string name="exit">Sair</string>
     <string name="yes">Sim</string>
     <string name="text_size">Tamanho do texto</string>
@@ -52,7 +52,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="show_licenses">Ver licenças</string>
     <string name="contributors">Colaboradores</string>
     <string name="more_information">Mais informação</string>
-    <string name="show_third_party_licenses">Ver licenças de terceiros</string>
+    <string name="show_third_party_licenses">Exibir licenças de terceiros</string>
     <string name="miscellaneous">Diversos</string>
     <string name="gnu_gplv3_license">Ver licença GNU GPLv3</string>
     <string name="settings">Configurações</string>
