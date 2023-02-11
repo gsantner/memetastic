@@ -1,7 +1,6 @@
 /*#######################################################
  *
- *   Maintained by Gregor Santner, 2017-
- *   https://gsantner.net/
+ *   Maintained 2017-2023 by Gregor Santner <gsantner AT mailbox DOT org>
  *
  *   License: Apache 2.0
  *  https://github.com/gsantner/opoc/#licensing

@@ -1,9 +1,8 @@
 /*#######################################################
  *
- *   Maintained by Gregor Santner, 2017-
- *   https://gsantner.net/
+ *   Maintained 2017-2023 by Gregor Santner <gsantner AT mailbox DOT org>
  *
- *   License of this file: Apache 2.0 (Commercial upon request)
+ *   License of this file: Apache 2.0
  *     https://www.apache.org/licenses/LICENSE-2.0
  *     https://github.com/gsantner/opoc/#licensing
  *
@@ -75,7 +74,7 @@ public class MoreInfoFragment extends GsPreferenceFragmentCompat<AppSettings> {
                 }
                 case R.string.pref_key__more_info__help: {
                     _cu.openWebpageInExternalBrowser(
-                            String.format("https://gsantner.net/project/%s.html?source=inapp_more_help_faq",
+                            String.format("https://github.com/gsantner/%s#readme",
                                     getString(R.string.app_name_real).toLowerCase()));
                     return true;
                 }

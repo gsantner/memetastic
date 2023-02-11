@@ -1,7 +1,5 @@
 <!--
 This file contains references to people who contributed to the app.
-If you helped by translating the app, please send a message on Crowdin.  
-You can also send a mail to [gsantner AT mailbox DOT org](http://gsantner.net#contact) to get included.
 
 Schema:  **[Name](Reference)**<br/>~° Text
 
@@ -14,7 +12,7 @@ Where:
 
 ## LIST OF CONTRIBUTORS
 -->
-* **[Gregor Santner](http://gsantner.net)**<br/>~° Current developer of MemeTastic
+* **[Gregor Santner](https://github.com/gsantner)**<br/>~° Current developer of MemeTastic
 * **[Matthias Ringwald]()**<br/>~° Development of initial version of MemeTastic
 * **[Naofumi Fukue](https://github.com/naofum)**<br/>~° Japanese translation
 * **[François Vincent](https://github.com/poussinou)**<br/>~° French translation

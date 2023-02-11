@@ -1,7 +1,7 @@
 ### Ongoing
-- See [Discussions](https://github.com/gsantner/memetastic/discussions), [Issues](https://github.com/gsantner/memetastic/issues) and [Project website](https://gsantner.net/) to see what is going on.
+- See [Discussions](https://github.com/gsantner/memetastic/discussions), [Issues](https://github.com/gsantner/memetastic/issues) and [Project page](https://github.com/gsantner/memetastic) to see what is going on.
 
-### v1.7 [Blog post](https://gsantner.net/blog/2021/07/30/memetastic-v1.7-offline-meme-templates-funny-sites.html?source=inapp_changelog&project=memetastic)  
+### v1.7 ([Details](https://github.com/gsantner/memetastic/blob/master/NEWS.md#memetastic-v17---rotation-gesture-for-imageviewer))  
 - Translate app into more languages
 - Make favourite icon in popup smaller, by @gsantner
 - Disable menu button when not in selection at "create page", fixes #149, by @gsantner
@@ -9,7 +9,7 @@
 - Update list of links to memes & meme templates
 - Replace CI/CD with GitHub Actions
 
-### v1.6 [Blog post](https://gsantner.net/blog/2019/08/15/memetastic-v1.6-offline-meme-templates-funny-sites.html?source=inapp_changelog&project=memetastic)  
+### v1.6 ([Details](https://github.com/gsantner/memetastic/blob/master/NEWS.md#memetastic-v16---complete-offline-redesign-meme-templates))  
 - Simplify overall app usage
 - Change primary color brown-black to improve readability
 - Add caption option (in creator) to apply text appearance changes to all captions

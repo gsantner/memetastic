@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-Project by Gregor Santner (https://gsantner.net)
+Maintained 2016-2023 by Gregor Santner <gsantner AT mailbox DOT org>
 
 To the extent possible under law, the person who associated CC0 with
 this file has waived all copyright and related or neighboring rights
@@ -15,14 +15,13 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="app_community_url" translatable="false">https://matrix.to/#/#memetastic:matrix.org</string>
     <string name="app_bugreport_url" translatable="false">https://github.com/gsantner/memetastic/issues</string>
     <string name="app_translate_url" translatable="false">https://crowdin.com/project/memetastic/invite</string>
-    <string name="app_web_url" translatable="false">https://gsantner.net/project/memetastic.html?source=inapp</string>
+    <string name="app_web_url" translatable="false">https://github.com/gsantner/memetastic#readme</string>
     <string name="app_source_code_url" translatable="false">https://github.com/gsantner/memetastic</string>
-
 
     <!-- General -->
     <string name="app_www_source" translatable="false">https://github.com/gsantner/memetastic</string>
 
-    <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.net\n\nMatthias Ringwald</string>
+    <string name="info_author" translatable="false">Gregor Santner\ngsantner AT mailbox DOT org\n\nMatthias Ringwald</string>
     <string name="page_additional_contact_text" translatable="false">GitHub\nhttps://github.com/gsantner/memetastic</string>
 
     <string name="app_description" translatable="false">much meme. very wow.</string>
@@ -39,16 +38,16 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 
     <!-- You are NOT allowed to remove parts of the license text below-->
     <string name="copyright_short" translatable="false">
-        MemeTastic by Gregor Santner (http://gsantner.net)
-        \nCopyright © 2016-2021
+        MemeTastic by Gregor Santner (http://github.com/gsantner/memetastic)
+        \nCopyright © 2016-2023
     </string>
     <string name="copyright_license_text_official" translatable="false"><![CDATA[
-        ### Copyright © 2016-2021
-        \n**MemeTastic by [Gregor Santner](http://gsantner.net)**
+        ### Copyright © 2016-2023
+        \n**MemeTastic by [Gregor Santner](https://github.com/gsantner/memetastic)**
         \n
         \n**Get the official version of MemeTastic:**
         \n
-            [Source code](https://github.com/gsantner/memetastic) | [Homepage](http://gsantner.net/#MemeTastic)
+        [Source code](https://github.com/gsantner/memetastic) | [Project site](https://github.com/gsantner/memetastic)
         \n[Google Play](https://play.google.com/store/apps/details?id=io.github.gsantner.memetastic)~°| [F-Droid](https://f-droid.org/repository/browse/?fdid=io.github.gsantner.memetastic)
         \n
         \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
