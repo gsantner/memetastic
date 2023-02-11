@@ -77,7 +77,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Tipo de vista</string>
     <string name="show_in_device_gallery">Mostrar na galeria do dispositivo</string>
     <string name="language">Idioma</string>
-    <string name="language_change_restart_description">Altera o idioma da aplicação. Tem que reiniciar a aplicação para aplicar as alterações</string>
+    <string name="language_change_restart_description">Altera o idioma da aplicação. Tem que reiniciar a aplicação para aplicar as alterações.</string>
     <string name="error_cannot_create_save_directory">Erro: não foi possível criar o diretório</string>
     <string name="other">Outro</string>
     <string name="downloading">A descarregar</string>
