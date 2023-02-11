@@ -29,8 +29,8 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="error_picture_selection">Hiçbir resim seçilmedi, çekilmedi veya kaydedilmedi.</string>
     <string name="error_couldnot_load_picture_from_storage">Resim depolama alanından yüklenemedi.</string>
     <string name="recommend">Öner</string>
-    <string name="changelog">Değişiklik günlüğü</string>
-    <string name="exit">Çıkış</string>
+    <string name="changelog">Değişme Günlüğü</string>
+    <string name="exit">Çık</string>
     <string name="yes">evet</string>
     <string name="text_size">Metin Boyutu</string>
     <string name="text_color">Metin Rengi</string>
@@ -42,7 +42,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="font">Yazı Tipi</string>
     <string name="keep_editing">Düzenlemeye devam et</string>
     <string name="text">Metin</string>
-    <string name="size">Boyut</string>
+    <string name="size">Boyuta göre sırala</string>
     <string name="background">Arka plan</string>
     <string name="border">Kenar</string>
     <string name="picture">Resim</string>
@@ -50,9 +50,9 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="developed_by">Geliştiren</string>
     <string name="licenses">Lisanslar</string>
     <string name="show_licenses">Lisansları göster</string>
-    <string name="contributors">Katkıda bulunanlar</string>
+    <string name="contributors">Katkıda Bulunanlar</string>
     <string name="more_information">Daha fazla bilgi</string>
-    <string name="show_third_party_licenses">3. parti lisanslarını göster</string>
+    <string name="show_third_party_licenses">Üçüncü parti lisansları göster</string>
     <string name="miscellaneous">Çeşitli</string>
     <string name="gnu_gplv3_license">Uygulamanın lisansını göster</string>
     <string name="settings">Ayarlar</string>
@@ -77,7 +77,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="view_type">Görünüm Türü</string>
     <string name="show_in_device_gallery">Cihaz galerisinde göster</string>
     <string name="language">Dil</string>
-    <string name="language_change_restart_description">Bu uygulamanın dilini değiştirin. Değişikliklerin etkili olması için uygulamayı yeniden başlatın</string>
+    <string name="language_change_restart_description">Uygulamanın dilini değiştir. Değişikliklerin etkili olması için uygulamayı yeniden başlat</string>
     <string name="error_cannot_create_save_directory">Hata: Kayıt dizini oluşturulamıyor</string>
     <string name="other">Diğer</string>
     <string name="downloading">İndiriliyor</string>
