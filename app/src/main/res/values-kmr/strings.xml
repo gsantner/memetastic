@@ -9,4 +9,20 @@ to the public domain.
 You should have received a copy of the CC0 legalcode along with this
 work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-<resources></resources>
+<resources>
+    <string name="exit">Derkeve</string>
+    <string name="size">Mezinayî</string>
+    <string name="about">Debar</string>
+    <string name="miscellaneous">Dîtir</string>
+    <string name="settings">Mîhengan</string>
+    <string name="appearance">Xuyang</string>
+    <string name="editor">Edîtor</string>
+    <string name="language">Ziman</string>
+    <string name="general">Giştî</string>
+    <string name="join_community">Tevlî komê bibe</string>
+    <string name="source_code">Koda çavkanî</string>
+    <string name="help">Alîkarî</string>
+    <string name="more">Bêhtir</string>
+    <string name="contribute">Paraxwe dayin</string>
+    <string name="close">Girtin</string>
+</resources>
