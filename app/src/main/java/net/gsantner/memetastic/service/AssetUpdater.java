@@ -243,7 +243,6 @@ public class AssetUpdater {
 
             MemeConfig.Config conf = null;
             File configFile = new File(folder, MEMETASTIC_CONFIG_FILE);
-            FileUtils.touch(new File(folder, ".nomedia"));
             if (configFile.exists()) {
                 try {
                     String contents = FileUtils.readTextFile(configFile);

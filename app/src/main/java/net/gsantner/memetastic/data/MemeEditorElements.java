@@ -19,13 +19,13 @@
 #########################################################*/
 package net.gsantner.memetastic.data;
 
+import static net.gsantner.memetastic.data.MemeConfig.Point;
+
 import android.graphics.Bitmap;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import static net.gsantner.memetastic.data.MemeConfig.Point;
 
 /**
  * A memes settings

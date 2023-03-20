@@ -80,7 +80,6 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="pref_key__is_migrated" translatable="false">pref_key__is_migrated</string>
     <string name="pref_key__download_assets_try" translatable="false">pref_key__download_assets_try</string>
     <string name="pref_key__memelist_view_type" translatable="false">pref_key__memelist_view_type</string>
-    <string name="pref_key__is_show_in_gallery" translatable="false">pref_key__is_show_in_gallery</string>
     <string name="pref_key__hidden_meme_templates" translatable="false">pref_key__hidden_meme_templates</string>
 
     <string name="pref_key__more_info__settings" translatable="false">pref_key__more_info__settings</string>

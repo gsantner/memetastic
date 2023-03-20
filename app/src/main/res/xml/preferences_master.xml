@@ -22,9 +22,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/settings">
-    
-    
-    <PreferenceScreen android:icon="@drawable/ic_grid_on_black_24dp" android:title="@string/overview" android:summary="@string/main_view">
+
+
+    <PreferenceScreen
+        android:icon="@drawable/ic_grid_on_black_24dp"
+        android:summary="@string/main_view"
+        android:title="@string/overview">
 
         <ListPreference
             android:defaultValue="0"
@@ -76,7 +79,10 @@
 
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/editor" android:summary="@string/edit_picture" android:icon="@drawable/ic_edit_black_24dp">
+    <PreferenceScreen
+        android:icon="@drawable/ic_edit_black_24dp"
+        android:summary="@string/edit_picture"
+        android:title="@string/editor">
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -103,13 +109,11 @@
     </PreferenceScreen>
 
 
-    <PreferenceScreen android:title="@string/picture_viewer" android:icon="@drawable/ic_image_black_24dp" android:summary="@string/pictures_shown_in_gallery_and_this_app">
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:icon="@drawable/ic_photo_library_black_24dp"
-            android:key="@string/pref_key__is_show_in_gallery"
-            android:title="@string/show_in_device_gallery" />
-        
+    <PreferenceScreen
+        android:icon="@drawable/ic_image_black_24dp"
+        android:summary="@string/pictures_shown_in_gallery_and_this_app"
+        android:title="@string/picture_viewer">
+
         <Preference
             android:icon="@drawable/ic_delete_sweep_black_24dp"
             android:key="@string/pref_key__cleanup_thumbnails"
