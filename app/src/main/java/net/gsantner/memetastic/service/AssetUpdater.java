@@ -54,7 +54,7 @@ import io.github.gsantner.memetastic.R;
 @SuppressLint("SimpleDateFormat")
 public class AssetUpdater {
     public static final SimpleDateFormat FORMAT_MINUTE = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-    public static final SimpleDateFormat FORMAT_MINUTE_FILE = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm");
+    public static final SimpleDateFormat FORMAT_MINUTE_FILE = new SimpleDateFormat("yyyy-MM-dd'T'HH-mm-ss");
 
     private static final String URL_ARCHIVE_ZIP = "https://github.com/gsantner/memetastic-assets/archive/master.zip";
     private static final String URL_API = "https://api.github.com/repos/gsantner/memetastic-assets";
