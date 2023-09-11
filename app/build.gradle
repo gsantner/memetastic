@@ -40,7 +40,7 @@ android {
 
         resValue "string", "manifest_package_id", "io.github.gsantner.memetastic"
         applicationId "io.github.gsantner.memetastic"
-        versionName "1.7.1"
+        versionName "1.7.2"
         versionCode 72
         setProperty("archivesBaseName", applicationId + "-v" + versionCode + "-" + versionName)
     }
