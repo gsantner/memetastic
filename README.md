@@ -76,19 +76,16 @@ If you publish an app based on MemeTastic you MUST
 * Show that the app is not MemeTastic but a modified/custom version, MemeTastic developers are not related to modified versions and do not endorse your product
 
 ## Screenshots
-<div style="display:flex;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/01.png" width="19%" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/02.png" width="19%" style="margin-left:10px;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/03.png" width="19%" style="margin-left:10px;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/04.png" width="19%" style="margin-left:10px;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/05.png" width="19%" style="margin-left:10px;" >
+<div>
+	<img src="https://raw.githubusercontent.com/gsantner/memetastic/master/metadata/en-US/phoneScreenshots/01.jpg" width="24%" />
+	<img src="https://raw.githubusercontent.com/gsantner/memetastic/master/metadata/en-US/phoneScreenshots/02.jpg" width="24%" />
+	<img src="https://raw.githubusercontent.com/gsantner/memetastic/master/metadata/en-US/phoneScreenshots/03.jpg" width="24%" />
+	<img src="https://raw.githubusercontent.com/gsantner/memetastic/master/metadata/en-US/phoneScreenshots/04.jpg" width="24%" />
 </div>
 
-<div style="display:flex;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/06.png" width="19%" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/07.png" width="19%" style="margin-left:10px;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/08.png" width="19%" style="margin-left:10px;" >
-	<img src="https://raw.githubusercontent.com/gsantner/memetastic-metadata-latest/master/en-US/phoneScreenshots/09.png" width="19%" style="margin-left:10px;" >
+<div>
+	<img src="https://raw.githubusercontent.com/gsantner/memetastic/master/metadata/en-US/phoneScreenshots/05.jpg" width="48%" />
+	<img src="https://raw.githubusercontent.com/gsantner/memetastic/master/metadata/en-US/phoneScreenshots/06.jpg" width="48%" />
 </div>
 
 ## FAQ
@@ -170,4 +167,3 @@ Website: <https://www.reddit.com/r/MemeTemplatesOfficial/.compact>
 * [/r/BikiniBottomTwitter](https://www.reddit.com/r/BikiniBottomTwitter/.compact)
 * [/r/wowmemes](https://www.reddit.com/r/wowmemes/.compact)
 * [/r/de](https://www.reddit.com/r/de/.compact)
-
