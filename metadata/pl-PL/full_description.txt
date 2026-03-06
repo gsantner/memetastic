@@ -1,0 +1,25 @@
+😌 <b>Prosty kreator memów</b> - całkowicie bez reklam i znaków wodnych.
+
+Memy można tworzyć z szablonów znajdujących się w folderze obrazów MemeTastic, 
+ze zdjęć udostępnionych do aplikacji oraz zdjęć z galerii i aparatu. 
+Połączenie internetowe nie jest wymagane ani używane.
+
+Dostępnych jest wiele opcji dostosowywania memów:
+
+
+😄 Napis na górze i na dole
+😃 Kolor czcionki i obramowania tekstu
+😁 Rozmiar tekstu, rodzaj czcionki oraz wielkie litery
+😃 Rozmiar i kolor tła
+😜 Obrót zdjęcia
+
+
+<b>Więcej funkcji:</b>
+👓 Pokaż zapisane i ulubione memy
+👉 Udostępnij dowolnej aplikacji akceptującej zdjęcia
+
+
+<b>Wesprzyj projekt:</b>
+ ✋ <a href="https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fmemetastic.git&name=MemeTastic&mail=gro.xobliam@@rentnasg&web=https%3A%2F%2Fgithub.com%2Fgsantner%2FMemeTastic">Przetłumacz za pomocą Stringlate</a>
+ ✋ <a href="https://matrix.to/#/#memetastic:matrix.org">Dołącz do dyskusji na Matrixie</a>
+ ✋ <a href="https://github.com/gsantner/memetastic#contributions">Więcej informacji na temat wsparcia</a>
