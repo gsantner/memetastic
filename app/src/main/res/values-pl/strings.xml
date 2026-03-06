@@ -119,7 +119,7 @@ work. If not, see <https://creativecommons.org/publicdomain/zero/1.0/>.
     <string name="main_view">Główny Widok</string>
     <string name="edit_picture">Edytuj obrazek</string>
     <string name="general">Ogólne</string>
-    <string name="picture_viewer">Picture viewer</string>
+    <string name="picture_viewer">Przeglądarka zdjęć</string>
     <string name="pictures_shown_in_gallery_and_this_app">Zdjęcia wyświetlane w galerii i tej aplikacji</string>
     <string name="open_source_licenses">Otwarto Źródłowo Bibloteki</string>
     <string name="rate_this_app">Oceń tę aplikację</string>
